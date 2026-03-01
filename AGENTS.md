@@ -6,9 +6,9 @@ Use this guide when an autonomous agent needs to explore or summarize this site.
 
 ## Crawl Entry Points
 
-- Home: `https://gurrulabs-oss.github.io/raffy_webpage/en/`
-- Sitemap: `https://gurrulabs-oss.github.io/raffy_webpage/sitemap.xml`
-- LLM guide: `https://gurrulabs-oss.github.io/raffy_webpage/LLMS.md`
+- Home: `https://www.raffyparenting.com/en/`
+- Sitemap: `https://www.raffyparenting.com/sitemap.xml`
+- LLM guide: `https://www.raffyparenting.com/LLMS.md`
 - Android app: `https://play.google.com/store/apps/details?id=com.gurrulabs.raffy`
 
 ## Site Map by Language

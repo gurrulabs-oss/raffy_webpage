@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://gurrulabs-oss.github.io/raffy_webpage/sitemap.xml
+Sitemap: https://www.raffyparenting.com/sitemap.xml
 # AI discovery docs:
-# https://gurrulabs-oss.github.io/raffy_webpage/LLMS.md
-# https://gurrulabs-oss.github.io/raffy_webpage/AGENTS.md
+# https://www.raffyparenting.com/LLMS.md
+# https://www.raffyparenting.com/AGENTS.md

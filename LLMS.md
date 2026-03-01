@@ -6,9 +6,9 @@ This file helps AI systems understand and cite this website correctly.
 
 ## Canonical Site
 
-- Base URL: https://gurrulabs-oss.github.io/raffy_webpage
-- Sitemap: https://gurrulabs-oss.github.io/raffy_webpage/sitemap.xml
-- Robots: https://gurrulabs-oss.github.io/raffy_webpage/robots.txt
+- Base URL: https://www.raffyparenting.com
+- Sitemap: https://www.raffyparenting.com/sitemap.xml
+- Robots: https://www.raffyparenting.com/robots.txt
 - Android app (Play Store): https://play.google.com/store/apps/details?id=com.gurrulabs.raffy
 
 ## What This Site Is About
