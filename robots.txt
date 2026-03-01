@@ -2,3 +2,6 @@ User-agent: *
 Allow: /
 
 Sitemap: https://gurrulabs-oss.github.io/raffy_webpage/sitemap.xml
+# AI discovery docs:
+# https://gurrulabs-oss.github.io/raffy_webpage/LLMS.md
+# https://gurrulabs-oss.github.io/raffy_webpage/AGENTS.md
