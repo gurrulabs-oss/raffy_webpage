@@ -99,6 +99,18 @@ const ROUTE_MAP = {
 
 const LOCALE_CODES = ["en", "es", "fr", "pt"];
 const STORAGE_KEY = "raffy_locale";
+const MIXPANEL_TOKEN = "20a6baa8d266700297f9b0b16efc0a13";
+const PAGE_LABELS = {
+  home: "Main Page",
+  library: "Articles",
+  tool_growth_percentiles: "Growth Tool",
+  about: "About",
+  contact: "Contact",
+  privacy: "Privacy",
+  terms: "Terms",
+  data_deletion: "Data Deletion",
+  editorial_policy: "Editorial Policy"
+};
 
 const year = document.getElementById("year");
 const toTop = document.getElementById("toTop");
@@ -110,6 +122,132 @@ const bgShapes = document.querySelectorAll(".bg-shape");
 const languageSelector = document.querySelector("[data-language-selector]");
 const featureShots = document.querySelectorAll(".feature-showcase .feature-shot");
 const body = document.body;
+
+function initMixpanel() {
+  (function mixpanelBootstrap(documentRef, mixpanelRef) {
+    if (mixpanelRef.__SV) return;
+
+    let script;
+    let firstScript;
+    let index;
+
+    window.mixpanel = mixpanelRef;
+    mixpanelRef._i = [];
+    mixpanelRef.init = function init(token, config, name) {
+      function setStub(target, method) {
+        const parts = method.split(".");
+        if (parts.length === 2) {
+          target = target[parts[0]];
+          method = parts[1];
+        }
+        target[method] = function stubbedMethod() {
+          target.push([method].concat(Array.prototype.slice.call(arguments, 0)));
+        };
+      }
+
+      let instance = mixpanelRef;
+      if (typeof name !== "undefined") {
+        instance = mixpanelRef[name] = [];
+      } else {
+        name = "mixpanel";
+      }
+
+      instance.people = instance.people || [];
+      instance.toString = function toString(debug) {
+        let value = "mixpanel";
+        if (name !== "mixpanel") value += `.${name}`;
+        if (!debug) value += " (stub)";
+        return value;
+      };
+      instance.people.toString = function peopleToString() {
+        return `${instance.toString(1)}.people (stub)`;
+      };
+
+      const methods = "disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+      for (index = 0; index < methods.length; index += 1) {
+        setStub(instance, methods[index]);
+      }
+      mixpanelRef._i.push([token, config, name]);
+    };
+
+    mixpanelRef.__SV = 1.2;
+    script = documentRef.createElement("script");
+    script.type = "text/javascript";
+    script.async = true;
+    script.src = "https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";
+    firstScript = documentRef.getElementsByTagName("script")[0];
+    firstScript.parentNode.insertBefore(script, firstScript);
+  })(document, window.mixpanel || []);
+
+  window.mixpanel.init(MIXPANEL_TOKEN, {
+    persistence: "localStorage",
+    ip: true,
+    api_host: "https://api-eu.mixpanel.com"
+  });
+}
+
+function getTrackingContext() {
+  const pageKey = body?.dataset.pageKey || "unknown";
+  const language = LOCALE_CODES.includes(body?.dataset.locale) ? body.dataset.locale : "en";
+  let page = PAGE_LABELS[pageKey] || "Main Page";
+  let articleId;
+
+  if (pageKey.startsWith("article_")) {
+    page = "Articles";
+    const englishRoute = ROUTE_MAP[pageKey]?.en || "";
+    articleId = englishRoute.split("/").pop()?.replace(/\.html$/, "");
+  }
+
+  return {
+    pageKey,
+    page,
+    language,
+    articleId
+  };
+}
+
+function getUtmParams() {
+  const params = new URLSearchParams(window.location.search);
+  return {
+    utm_source: params.get("utm_source") || "",
+    utm_medium: params.get("utm_medium") || "",
+    utm_campaign: params.get("utm_campaign") || "",
+    utm_term: params.get("utm_term") || "",
+    utm_content: params.get("utm_content") || ""
+  };
+}
+
+function buildTrackingPayload(includeReferrer = false) {
+  const context = getTrackingContext();
+  const payload = {
+    language: context.language,
+    page: context.page,
+    page_key: context.pageKey,
+    path: window.location.pathname,
+    url: window.location.href,
+    ...getUtmParams()
+  };
+
+  if (context.articleId) {
+    payload.article_id = context.articleId;
+  }
+
+  if (includeReferrer) {
+    payload.referrer = document.referrer || "";
+  }
+
+  return payload;
+}
+
+function trackPageView() {
+  const context = getTrackingContext();
+  const payload = buildTrackingPayload(true);
+  const eventName = `Raffy Webpage - ${context.page}`;
+
+  if (window.mixpanel && typeof window.mixpanel.track === "function") {
+    window.mixpanel.track(eventName, payload);
+  }
+}
 
 if (year) year.textContent = new Date().getFullYear();
 
@@ -269,30 +407,24 @@ anchorLinks.forEach((link) => {
   });
 });
 
-function getUtmParams() {
-  const params = new URLSearchParams(window.location.search);
-  return {
-    utm_source: params.get("utm_source") || "",
-    utm_medium: params.get("utm_medium") || ""
-  };
-}
-
 function trackDownloadClick(link) {
   const payload = {
-    page_type: link.dataset.pageType || "unknown",
+    ...buildTrackingPayload(false),
     cta_location: link.dataset.ctaLocation || "unknown",
-    article_slug: link.dataset.articleSlug || "",
-    ...getUtmParams()
+    target_url: link.href || ""
   };
 
   if (window.mixpanel && typeof window.mixpanel.track === "function") {
-    window.mixpanel.track("download_cta_click", payload);
+    window.mixpanel.track("Raffy Webpage - Download Button Clicked", payload);
   }
 }
 
 downloadLinks.forEach((link) => {
   link.addEventListener("click", () => trackDownloadClick(link));
 });
+
+initMixpanel();
+trackPageView();
 
 function getBasePrefix() {
   const segments = window.location.pathname.split("/").filter(Boolean);
