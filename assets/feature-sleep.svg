@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="Sleep module preview">
+  <rect width="640" height="360" fill="#edf4ff"/>
+  <rect x="120" y="48" width="400" height="264" rx="24" fill="#ffffff" stroke="#c9d8ff"/>
+  <rect x="152" y="82" width="336" height="24" rx="10" fill="#355bc7"/>
+  <rect x="168" y="142" width="304" height="92" rx="18" fill="#f4f8ff" stroke="#c9d8ff"/>
+  <circle cx="220" cy="188" r="24" fill="#7ea3ff"/>
+  <path d="M216 166C226 176 226 198 216 210C232 210 246 196 246 180C246 170 240 160 232 154C226 158 220 161 216 166Z" fill="#ffffff"/>
+  <rect x="270" y="176" width="160" height="12" rx="6" fill="#c9d8ff"/>
+  <rect x="270" y="198" width="120" height="10" rx="5" fill="#dfe8ff"/>
+  <text x="320" y="294" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#1d2f6f">Sleep</text>
+</svg>

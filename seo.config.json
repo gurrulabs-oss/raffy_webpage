@@ -1,0 +1,24 @@
+{
+  "siteOrigin": "https://gurrulabs-oss.github.io/raffy_webpage",
+  "defaultLocale": "en",
+  "indexable": true,
+  "xDefault": "/en/",
+  "locales": {
+    "en": {
+      "hreflang": "en-US",
+      "name": "English"
+    },
+    "es": {
+      "hreflang": "es-ES",
+      "name": "Español"
+    },
+    "fr": {
+      "hreflang": "fr-FR",
+      "name": "Français"
+    },
+    "pt": {
+      "hreflang": "pt-BR",
+      "name": "Português (Brasil)"
+    }
+  }
+}

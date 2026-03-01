@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculateur OMS de percentiles bebe (poids, taille, perimetre cranien) | Raffy</title>
+  <meta name="description" content="Calculez les percentiles OMS du bebe pour le poids, la taille/longueur et le perimetre cranien avec age corrige en cas de prematurite.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://gurrulabs-oss.github.io/raffy_webpage/fr/outils/calculateur-percentiles-bebe-oms.html">
+  <link rel="alternate" hreflang="en-US" href="https://gurrulabs-oss.github.io/raffy_webpage/en/tools/baby-growth-percentile-calculator-who.html">
+  <link rel="alternate" hreflang="es-ES" href="https://gurrulabs-oss.github.io/raffy_webpage/es/herramientas/calculadora-percentiles-bebe-oms.html">
+  <link rel="alternate" hreflang="fr-FR" href="https://gurrulabs-oss.github.io/raffy_webpage/fr/outils/calculateur-percentiles-bebe-oms.html">
+  <link rel="alternate" hreflang="pt-BR" href="https://gurrulabs-oss.github.io/raffy_webpage/pt/ferramentas/calculadora-percentis-bebe-oms.html">
+  <link rel="alternate" hreflang="x-default" href="https://gurrulabs-oss.github.io/raffy_webpage/en/">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Calculateur OMS de percentiles bebe (poids, taille, perimetre cranien) | Raffy">
+  <meta property="og:description" content="Calculez les percentiles OMS du bebe pour le poids, la taille/longueur et le perimetre cranien avec age corrige en cas de prematurite.">
+  <meta property="og:url" content="https://gurrulabs-oss.github.io/raffy_webpage/fr/outils/calculateur-percentiles-bebe-oms.html">
+  <meta property="og:image" content="https://gurrulabs-oss.github.io/raffy_webpage/assets/raffy-social-preview.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Calculateur OMS de percentiles bebe (poids, taille, perimetre cranien) | Raffy">
+  <meta name="twitter:description" content="Calculez les percentiles OMS du bebe pour le poids, la taille/longueur et le perimetre cranien avec age corrige en cas de prematurite.">
+  <meta name="twitter:image" content="https://gurrulabs-oss.github.io/raffy_webpage/assets/raffy-social-preview.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../../assets/raffy-logo.png">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../tools/percentile-calculator.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "Calculateur OMS de percentiles bebe",
+        "url": "https://gurrulabs-oss.github.io/raffy_webpage/fr/outils/calculateur-percentiles-bebe-oms.html",
+        "description": "Calculez les percentiles OMS du bebe pour le poids, la taille/longueur et le perimetre cranien avec age corrige en cas de prematurite.",
+        "inLanguage": "fr-FR"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Raffy",
+        "applicationCategory": "HealthApplication",
+        "operatingSystem": "Android",
+        "url": "https://play.google.com/store/apps/details?id=com.gurrulabs.raffy"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://gurrulabs-oss.github.io/raffy_webpage/fr/"},
+          {"@type": "ListItem", "position": 2, "name": "Outils", "item": "https://gurrulabs-oss.github.io/raffy_webpage/fr/outils/calculateur-percentiles-bebe-oms.html"},
+          {"@type": "ListItem", "position": 3, "name": "Calculateur OMS de percentiles bebe", "item": "https://gurrulabs-oss.github.io/raffy_webpage/fr/outils/calculateur-percentiles-bebe-oms.html"}
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body data-page-key="tool_growth_percentiles" data-locale="fr">
+  <div class="bg-dynamic" aria-hidden="true">
+    <span class="bg-shape s1"></span>
+    <span class="bg-shape s2"></span>
+    <span class="bg-shape s3"></span>
+    <span class="bg-shape s4"></span>
+    <span class="bg-shape s5"></span>
+  </div>
+
+  <header>
+    <div class="container nav">
+      <a class="brand" href="../index.html">
+        <img decoding="async" loading="eager" class="brand-logo" src="../../assets/raffy-logo.png" alt="Raffy logo" width="500" height="500">
+        <span>Raffy</span>
+      </a>
+      <nav class="navlinks">
+        <a href="../index.html">Accueil</a>
+        <a href="../articles/index.html">Articles</a>
+        <a href="calculateur-percentiles-bebe-oms.html">Outils</a>
+      </nav>
+      <div class="nav-controls">
+        <div class="lang-switch">
+          <label class="sr-only" for="lang-select">Selecteur de langue</label>
+          <select id="lang-select" data-language-selector aria-label="Selecteur de langue">
+            <option value="en">English</option>
+            <option value="es">Espanol</option>
+            <option value="fr" selected>Francais</option>
+            <option value="pt">Portugues (Brasil)</option>
+          </select>
+        </div>
+        <a class="play-store-badge-link play-store-badge-link-sm" href="https://play.google.com/store/apps/details?id=com.gurrulabs.raffy" data-track-download="true" data-page-type="tool" data-cta-location="header" aria-label="Telecharger sur Google Play"><img decoding="async" loading="lazy" class="play-store-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Disponible sur Google Play"></a>
+      </div>
+    </div>
+  </header>
+
+  <main class="tool-wrap" id="top">
+    <section class="tool-grid">
+      <article class="tool-card">
+        <p class="kicker"><span class="dot"></span> Standards OMS</p>
+        <h1>Calculateur OMS de percentiles bebe</h1>
+        <p class="tool-sub">Calculez les percentiles OMS avec une ou plusieurs mesures: poids, longueur/taille et perimetre cranien.</p>
+
+        <form class="tool-form" data-percentile-form novalidate>
+          <div class="field-row">
+            <div class="field">
+              <label for="sex">Sexe</label>
+              <select id="sex" name="sex" required>
+                <option value=""></option>
+                <option value="female">Fille</option>
+                <option value="male">Garcon</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="birth_date">Date de naissance</label>
+              <input id="birth_date" name="birth_date" type="date" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="measurement_date">Date de mesure</label>
+            <input id="measurement_date" name="measurement_date" type="date" required>
+          </div>
+
+          <div class="field">
+            <label>
+              <input data-corrected-toggle type="checkbox" name="use_corrected_age" value="1">
+              Utiliser l age corrige (prematurite)
+            </label>
+          </div>
+
+          <div class="field is-hidden" data-corrected-group aria-hidden="true">
+            <label for="gestational_weeks">Age gestationnel a la naissance (semaines)</label>
+            <input id="gestational_weeks" name="gestational_weeks" type="number" min="22" max="40" step="0.1" placeholder="40">
+          </div>
+
+          <fieldset class="fieldset">
+            <legend>Mesure (remplir une ou plusieurs)</legend>
+            <div class="field">
+              <label for="weight_kg">Poids (kg)</label>
+              <input id="weight_kg" name="weight_kg" type="number" min="0.5" max="35" step="0.01" inputmode="decimal">
+            </div>
+            <div class="field">
+              <label for="length_height_cm">Longueur/Taille (cm)</label>
+              <input id="length_height_cm" name="length_height_cm" type="number" min="30" max="130" step="0.1" inputmode="decimal">
+            </div>
+            <div class="field">
+              <label for="head_circumference_cm">Perimetre cranien (cm)</label>
+              <input id="head_circumference_cm" name="head_circumference_cm" type="number" min="20" max="65" step="0.1" inputmode="decimal">
+            </div>
+            <p class="help-text">Vous pouvez saisir une, deux, ou les trois mesures.</p>
+          </fieldset>
+
+          <div class="tool-actions">
+            <button class="btn" type="submit">Calculer le percentile</button>
+            <button class="btn btn-ghost" type="reset">Reinitialiser</button>
+          </div>
+          <p class="feedback error" role="alert" data-form-error></p>
+        </form>
+      </article>
+
+      <article class="tool-card" data-results-card>
+        <h2>Resultat</h2>
+        <div class="results-head">
+          <p data-result-metric></p>
+          <p data-result-age></p>
+        </div>
+        <div class="results-kpi">
+          <p class="kpi" data-result-percentile></p>
+        </div>
+        <div data-chart-wrap></div>
+        <div class="result-note-list" data-result-note></div>
+      </article>
+    </section>
+
+    <section class="section" id="download">
+      <article class="section-card cta">
+        <div>
+          <h2>Besoin d une app complete de suivi bebe?</h2>
+          <p>Raffy connecte courbes de croissance, repas, sommeil et notes medicales.</p>
+        </div>
+        <a class="play-store-badge-link" href="https://play.google.com/store/apps/details?id=com.gurrulabs.raffy" data-track-download="true" data-page-type="tool" data-cta-location="footer-cta" aria-label="Telecharger Raffy sur Google Play"><img decoding="async" loading="lazy" class="play-store-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Disponible sur Google Play"></a>
+      </article>
+    </section>
+  </main>
+
+    <footer class="container footer">
+  <p>© <span id="year"></span> Raffy App</p>
+  <nav class="footer-links" aria-label="Pages de confiance et mentions legales">
+    <a href="../a-propos.html">A propos</a>
+        <a href="../outils/calculateur-percentiles-bebe-oms.html">Calculateur OMS</a>
+        <a href="../politique-editoriale.html">Politique editoriale</a>
+        <a href="../confidentialite.html">Confidentialite</a>
+        <a href="../suppression-donnees.html">Suppression des donnees</a>
+        <a href="../conditions.html">Conditions</a>
+        <a href="../contact.html">Contact</a>
+  </nav>
+</footer>
+
+  <button class="to-top" id="toTop" aria-label="Haut de page">↑</button>
+  <script src="../../script.js"></script>
+  <script type="module" src="../../tools/percentile-calculator.js"></script>
+</body>
+</html>

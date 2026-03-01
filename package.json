@@ -1,0 +1,11 @@
+{
+  "name": "raffy-webpage",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "seo:sync": "node scripts/seo_sync.mjs",
+    "seo:sitemap": "node scripts/seo_sitemap.mjs",
+    "seo:validate": "node scripts/seo_validate.mjs",
+    "seo:all": "npm run seo:sync && npm run seo:sitemap && npm run seo:validate"
+  }
+}

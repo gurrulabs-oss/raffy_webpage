@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gurrulabs-oss.github.io/raffy_webpage/sitemap.xml

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="Growth module preview">
+  <rect width="640" height="360" fill="#f2fbf7"/>
+  <rect x="120" y="48" width="400" height="264" rx="24" fill="#ffffff" stroke="#bfdcd1"/>
+  <rect x="152" y="82" width="336" height="24" rx="10" fill="#2e6f5c"/>
+  <polyline points="170,230 230,190 285,200 345,150 400,168 470,120" fill="none" stroke="#57bfa3" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="230" cy="190" r="8" fill="#57bfa3"/>
+  <circle cx="345" cy="150" r="8" fill="#57bfa3"/>
+  <circle cx="470" cy="120" r="8" fill="#57bfa3"/>
+  <rect x="170" y="250" width="90" height="14" rx="7" fill="#dff4ec"/>
+  <rect x="270" y="250" width="90" height="14" rx="7" fill="#dff4ec"/>
+  <rect x="370" y="250" width="90" height="14" rx="7" fill="#dff4ec"/>
+  <text x="320" y="294" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#2e6f5c">Growth</text>
+</svg>

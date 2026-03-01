@@ -1,0 +1,171 @@
+:root {
+  --nude-25: #f7f6f7;
+  --mint-50: #f2fbf7;
+  --mint-120: #dff4ec;
+  --mint-700: #2e6f5c;
+  --text: #25332e;
+  --muted: rgba(37, 51, 46, .78);
+  --outline: #bfdcd1;
+  --radius: 18px;
+  --shadow: 0 12px 26px rgba(37, 51, 46, .08);
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Manrope", sans-serif;
+  background: var(--nude-25);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.article-wrap {
+  width: min(860px, calc(100% - 2rem));
+  margin: 2rem auto 3rem;
+}
+
+.article-card {
+  background: #ffffff;
+  border: 1px solid var(--outline);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem 1.55rem;
+}
+
+.chip {
+  display: inline-flex;
+  padding: .28rem .68rem;
+  border-radius: 999px;
+  font-size: .76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: var(--mint-700);
+  background: var(--mint-120);
+}
+
+h1 {
+  margin: .7rem 0 .55rem;
+  font-size: clamp(2rem, 3.8vw, 2.8rem);
+  line-height: 1.1;
+  letter-spacing: -.02em;
+  color: #163b31;
+}
+
+.excerpt {
+  margin: 0 0 1rem;
+  color: var(--muted);
+  font-size: 1.06rem;
+}
+
+h2 {
+  margin: 1.35rem 0 .55rem;
+  padding-left: .65rem;
+  border-left: 4px solid var(--mint-700);
+  font-size: 1.4rem;
+  line-height: 1.25;
+  color: var(--mint-700);
+}
+
+p { margin: .55rem 0; }
+
+.article-card p,
+.article-card li {
+  font-size: 1.06rem;
+  line-height: 1.78;
+}
+
+.article-card ul {
+  margin: .5rem 0 1rem;
+  padding-left: 1.25rem;
+}
+
+.article-card li {
+  margin: .18rem 0;
+}
+
+.milestone-figure {
+  margin: .85rem 0 1rem;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--outline);
+  background: #ffffff;
+  box-shadow: var(--shadow);
+}
+
+.milestone-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 420px;
+  object-fit: cover;
+}
+
+.milestone-figure figcaption {
+  padding: .62rem .8rem;
+  background: var(--mint-50);
+  color: var(--mint-700);
+  font-size: .93rem;
+  font-weight: 700;
+}
+
+.placeholder {
+  border: 1px dashed var(--outline);
+  background: var(--mint-50);
+  border-radius: 12px;
+  padding: .8rem;
+  color: var(--muted);
+  font-size: .95rem;
+}
+
+.download-box {
+  margin-top: 1.2rem;
+  padding: .95rem;
+  border-radius: 12px;
+  border: 1px solid var(--outline);
+  background: linear-gradient(180deg, #ffffff, var(--mint-50));
+}
+
+.download-box p {
+  margin: 0 0 .55rem;
+  font-weight: 700;
+}
+
+.download-box .play-store-badge-link {
+  display: inline-flex;
+  line-height: 0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.download-box .play-store-badge {
+  display: block;
+  width: 190px;
+  height: auto;
+}
+
+.related-articles {
+  margin-top: 1.25rem;
+}
+
+.related-articles h2 {
+  margin-top: 0;
+}
+
+.related-articles ul {
+  margin: .4rem 0 0;
+}
+
+.related-articles a {
+  color: var(--mint-700);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+@media (max-width: 860px) {
+  .download-box .play-store-badge { width: 175px; }
+  .article-card { padding: 1.2rem 1.05rem; }
+  .article-card p,
+  .article-card li { font-size: 1rem; line-height: 1.7; }
+  .milestone-figure img { max-height: 300px; }
+}

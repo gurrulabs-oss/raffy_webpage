@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Raffy</title>
+  <meta name="robots" content="noindex,follow">
+  <meta http-equiv="refresh" content="0; url=./en/">
+  <script>
+    (function () {
+      var allowed = { en: true, es: true, fr: true, pt: true };
+      var preferred = "en";
+      try {
+        var saved = localStorage.getItem("raffy_locale");
+        if (saved && allowed[saved]) preferred = saved;
+      } catch (e) {
+        preferred = "en";
+      }
+      window.location.replace("./" + preferred + "/");
+    })();
+  </script>
+</head>
+<body>
+  <p>Redirecting to Raffy...</p>
+</body>
+</html>

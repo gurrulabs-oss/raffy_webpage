@@ -1,0 +1,340 @@
+const ROUTE_MAP = {
+  home: {
+    en: "/en/",
+    es: "/es/",
+    fr: "/fr/",
+    pt: "/pt/"
+  },
+  library: {
+    en: "/en/articles/",
+    es: "/es/articulos/",
+    fr: "/fr/articles/",
+    pt: "/pt/artigos/"
+  },
+  article_sleep_routine: {
+    en: "/en/articles/baby-sleep-routine-by-age.html",
+    es: "/es/articulos/rutina-sueno-bebe-por-edad.html",
+    fr: "/fr/articles/routine-sommeil-bebe-par-age.html",
+    pt: "/pt/artigos/rotina-sono-bebe-por-idade.html"
+  },
+  article_solids_guide: {
+    en: "/en/articles/baby-solids-guide-blw-purees.html",
+    es: "/es/articulos/guia-alimentacion-complementaria-blw.html",
+    fr: "/fr/articles/guide-diversification-bebe-blw.html",
+    pt: "/pt/artigos/guia-introducao-alimentar-bebe-blw.html"
+  },
+  article_growth_percentiles: {
+    en: "/en/articles/baby-weight-height-percentiles-guide.html",
+    es: "/es/articulos/percentiles-peso-talla-bebe.html",
+    fr: "/fr/articles/percentiles-poids-taille-bebe.html",
+    pt: "/pt/artigos/percentis-peso-altura-bebe.html"
+  },
+  tool_growth_percentiles: {
+    en: "/en/tools/baby-growth-percentile-calculator-who.html",
+    es: "/es/herramientas/calculadora-percentiles-bebe-oms.html",
+    fr: "/fr/outils/calculateur-percentiles-bebe-oms.html",
+    pt: "/pt/ferramentas/calculadora-percentis-bebe-oms.html"
+  },
+  article_newborn_routine: {
+    en: "/en/articles/newborn-daily-routine-guide.html",
+    es: "/es/articulos/rutina-diaria-recien-nacido.html",
+    fr: "/fr/articles/routine-quotidienne-nouveau-ne.html",
+    pt: "/pt/artigos/rotina-diaria-recem-nascido.html"
+  },
+  article_milestones_year_one: {
+    en: "/en/articles/first-year-baby-milestones-guide.html",
+    es: "/es/articulos/hitos-desarrollo-primer-ano-bebe.html",
+    fr: "/fr/articles/etapes-developpement-premiere-annee-bebe.html",
+    pt: "/pt/artigos/marcos-desenvolvimento-primeiro-ano-bebe.html"
+  },
+  article_parenting_confidence: {
+    en: "/en/articles/parenting-with-confidence-guide.html",
+    es: "/es/articulos/criar-con-confianza-y-sin-culpa.html",
+    fr: "/fr/articles/eduquer-avec-confiance-sans-culpabilite.html",
+    pt: "/pt/artigos/criar-com-confianca-sem-culpa.html"
+  },
+  article_first_vaccine: {
+    en: "/en/articles/first-baby-vaccine-what-i-learned.html",
+    es: "/es/articulos/primera-vacuna-bebe-lo-que-aprendi.html",
+    fr: "/fr/articles/premier-vaccin-bebe-ce-que-jai-appris.html",
+    pt: "/pt/artigos/primeira-vacina-bebe-o-que-aprendi.html"
+  },
+  about: {
+    en: "/en/about.html",
+    es: "/es/sobre.html",
+    fr: "/fr/a-propos.html",
+    pt: "/pt/sobre.html"
+  },
+  editorial_policy: {
+    en: "/en/editorial-policy.html",
+    es: "/es/politica-editorial.html",
+    fr: "/fr/politique-editoriale.html",
+    pt: "/pt/politica-editorial.html"
+  },
+  privacy: {
+    en: "/en/privacy.html",
+    es: "/es/privacidad.html",
+    fr: "/fr/confidentialite.html",
+    pt: "/pt/privacidade.html"
+  },
+  data_deletion: {
+    en: "/en/data-deletion.html",
+    es: "/es/eliminacion-datos.html",
+    fr: "/fr/suppression-donnees.html",
+    pt: "/pt/exclusao-dados.html"
+  },
+  terms: {
+    en: "/en/terms.html",
+    es: "/es/terminos.html",
+    fr: "/fr/conditions.html",
+    pt: "/pt/termos.html"
+  },
+  contact: {
+    en: "/en/contact.html",
+    es: "/es/contacto.html",
+    fr: "/fr/contact.html",
+    pt: "/pt/contato.html"
+  }
+};
+
+const LOCALE_CODES = ["en", "es", "fr", "pt"];
+const STORAGE_KEY = "raffy_locale";
+
+const year = document.getElementById("year");
+const toTop = document.getElementById("toTop");
+const reveals = document.querySelectorAll(".reveal");
+const anchorLinks = document.querySelectorAll('a[href^="#"]');
+const downloadLinks = document.querySelectorAll('[data-track-download="true"]');
+const bgLayer = document.querySelector(".bg-dynamic");
+const bgShapes = document.querySelectorAll(".bg-shape");
+const languageSelector = document.querySelector("[data-language-selector]");
+const featureShots = document.querySelectorAll(".feature-showcase .feature-shot");
+const body = document.body;
+
+if (year) year.textContent = new Date().getFullYear();
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("is-visible");
+    }
+  });
+}, { threshold: 0.15 });
+
+reveals.forEach((card, i) => {
+  card.style.transitionDelay = `${Math.min(i * 70, 280)}ms`;
+  observer.observe(card);
+});
+
+function initFeatureShotZoom() {
+  if (!featureShots.length || !body) return;
+
+  const locale = body.dataset.locale || "en";
+  const labels = {
+    en: { close: "Close", closeAria: "Close enlarged feature image" },
+    es: { close: "Cerrar", closeAria: "Cerrar imagen ampliada de la funcionalidad" },
+    fr: { close: "Fermer", closeAria: "Fermer l'image agrandie de la fonctionnalite" },
+    pt: { close: "Fechar", closeAria: "Fechar imagem ampliada da funcionalidade" }
+  };
+  const ui = labels[locale] || labels.en;
+
+  const viewer = document.createElement("aside");
+  viewer.className = "feature-zoom-viewer";
+  viewer.setAttribute("hidden", "");
+  viewer.setAttribute("aria-live", "polite");
+  viewer.innerHTML = `<button class="feature-zoom-close" type="button" aria-label="${ui.closeAria}">${ui.close}</button><img class="feature-zoom-image" alt="">`;
+  document.body.appendChild(viewer);
+
+  const viewerImage = viewer.querySelector(".feature-zoom-image");
+  const closeButton = viewer.querySelector(".feature-zoom-close");
+  let activeShot = null;
+
+  const closeViewer = () => {
+    if (!activeShot) return;
+    viewer.classList.remove("is-open");
+    viewer.setAttribute("hidden", "");
+    activeShot.classList.remove("is-zoom-source");
+    activeShot.setAttribute("aria-expanded", "false");
+    activeShot = null;
+  };
+
+  const openViewer = (shot) => {
+    if (activeShot === shot && viewer.classList.contains("is-open")) {
+      closeViewer();
+      return;
+    }
+
+    if (activeShot) {
+      activeShot.classList.remove("is-zoom-source");
+      activeShot.setAttribute("aria-expanded", "false");
+    }
+
+    viewerImage.src = shot.currentSrc || shot.src;
+    viewerImage.alt = shot.alt || "";
+    viewerImage.classList.toggle("is-contain", shot.classList.contains("feature-shot-contain"));
+
+    viewer.removeAttribute("hidden");
+    viewer.classList.add("is-open");
+
+    shot.classList.add("is-zoom-source");
+    shot.setAttribute("aria-expanded", "true");
+    activeShot = shot;
+  };
+
+  closeButton?.addEventListener("click", closeViewer);
+
+  featureShots.forEach((shot) => {
+    shot.classList.add("feature-shot-zoomable");
+    shot.setAttribute("role", "button");
+    shot.setAttribute("tabindex", "0");
+    shot.setAttribute("aria-expanded", "false");
+
+    shot.addEventListener("click", () => openViewer(shot));
+    shot.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        openViewer(shot);
+      }
+      if (event.key === "Escape") {
+        closeViewer();
+      }
+    });
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeViewer();
+    }
+  });
+}
+
+initFeatureShotZoom();
+
+window.addEventListener("scroll", () => {
+  if (!toTop) return;
+  if (window.scrollY > 320) toTop.classList.add("show");
+  else toTop.classList.remove("show");
+});
+
+let bgTicking = false;
+
+function updateDynamicBackground() {
+  const scrollLimit = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
+  const p = Math.min(Math.max(window.scrollY / scrollLimit, 0), 1);
+
+  if (bgLayer) {
+    bgLayer.style.setProperty("--bg-x1", `${16 + p * 24}%`);
+    bgLayer.style.setProperty("--bg-y1", `${14 + p * 18}%`);
+    bgLayer.style.setProperty("--bg-x2", `${84 - p * 28}%`);
+    bgLayer.style.setProperty("--bg-y2", `${20 + p * 28}%`);
+    bgLayer.style.setProperty("--bg-x3", `${52 + p * 8}%`);
+    bgLayer.style.setProperty("--bg-y3", `${86 - p * 24}%`);
+  }
+
+  bgShapes.forEach((shape, index) => {
+    const direction = index % 2 === 0 ? 1 : -1;
+    const driftX = (index + 1) * 12 * p * direction;
+    const driftY = (index + 1) * 18 * p * (direction * -1);
+    const rotate = (index + 1) * 4 * p * direction;
+    shape.style.transform = `translate3d(${driftX}px, ${driftY}px, 0) rotate(${rotate}deg)`;
+  });
+
+  bgTicking = false;
+}
+
+window.addEventListener("scroll", () => {
+  if (bgTicking) return;
+  bgTicking = true;
+  window.requestAnimationFrame(updateDynamicBackground);
+}, { passive: true });
+
+window.addEventListener("resize", () => {
+  window.requestAnimationFrame(updateDynamicBackground);
+});
+
+updateDynamicBackground();
+
+toTop?.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+anchorLinks.forEach((link) => {
+  link.addEventListener("click", (event) => {
+    const href = link.getAttribute("href");
+    if (!href || href === "#") return;
+    const target = document.querySelector(href);
+    if (!target) return;
+    event.preventDefault();
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+});
+
+function getUtmParams() {
+  const params = new URLSearchParams(window.location.search);
+  return {
+    utm_source: params.get("utm_source") || "",
+    utm_medium: params.get("utm_medium") || ""
+  };
+}
+
+function trackDownloadClick(link) {
+  const payload = {
+    page_type: link.dataset.pageType || "unknown",
+    cta_location: link.dataset.ctaLocation || "unknown",
+    article_slug: link.dataset.articleSlug || "",
+    ...getUtmParams()
+  };
+
+  if (window.mixpanel && typeof window.mixpanel.track === "function") {
+    window.mixpanel.track("download_cta_click", payload);
+  }
+}
+
+downloadLinks.forEach((link) => {
+  link.addEventListener("click", () => trackDownloadClick(link));
+});
+
+function getBasePrefix() {
+  const segments = window.location.pathname.split("/").filter(Boolean);
+  const localeIndex = segments.findIndex((segment) => LOCALE_CODES.includes(segment));
+  if (localeIndex === -1) return "";
+
+  const rawPrefix = `/${segments.slice(0, localeIndex).join("/")}`;
+  return rawPrefix === "/" ? "" : rawPrefix;
+}
+
+function getRouteForLocale(pageKey, nextLocale) {
+  const pageRoutes = ROUTE_MAP[pageKey] || ROUTE_MAP.home;
+  return pageRoutes[nextLocale] || ROUTE_MAP.home[nextLocale] || ROUTE_MAP.home.en;
+}
+
+function handleLanguageSelector() {
+  if (!languageSelector || !body) return;
+
+  const pageKey = body.dataset.pageKey || "home";
+  const currentLocale = body.dataset.locale || "en";
+
+  languageSelector.value = currentLocale;
+
+  try {
+    localStorage.setItem(STORAGE_KEY, currentLocale);
+  } catch (error) {
+    // Ignore storage restrictions.
+  }
+
+  languageSelector.addEventListener("change", () => {
+    const nextLocale = languageSelector.value;
+
+    try {
+      localStorage.setItem(STORAGE_KEY, nextLocale);
+    } catch (error) {
+      // Ignore storage restrictions.
+    }
+
+    const target = getRouteForLocale(pageKey, nextLocale);
+    const basePrefix = getBasePrefix();
+    window.location.href = `${basePrefix}${target}`;
+  });
+}
+
+handleLanguageSelector();

@@ -1,0 +1,164 @@
+{
+  "pages": [
+    {
+      "id": "home",
+      "type": "home",
+      "routes": {
+        "en": "/en/",
+        "es": "/es/",
+        "fr": "/fr/",
+        "pt": "/pt/"
+      }
+    },
+    {
+      "id": "library",
+      "type": "library",
+      "routes": {
+        "en": "/en/articles/",
+        "es": "/es/articulos/",
+        "fr": "/fr/articles/",
+        "pt": "/pt/artigos/"
+      }
+    },
+    {
+      "id": "article_sleep_routine",
+      "type": "article",
+      "routes": {
+        "en": "/en/articles/baby-sleep-routine-by-age.html",
+        "es": "/es/articulos/rutina-sueno-bebe-por-edad.html",
+        "fr": "/fr/articles/routine-sommeil-bebe-par-age.html",
+        "pt": "/pt/artigos/rotina-sono-bebe-por-idade.html"
+      }
+    },
+    {
+      "id": "article_solids_guide",
+      "type": "article",
+      "routes": {
+        "en": "/en/articles/baby-solids-guide-blw-purees.html",
+        "es": "/es/articulos/guia-alimentacion-complementaria-blw.html",
+        "fr": "/fr/articles/guide-diversification-bebe-blw.html",
+        "pt": "/pt/artigos/guia-introducao-alimentar-bebe-blw.html"
+      }
+    },
+    {
+      "id": "article_growth_percentiles",
+      "type": "article",
+      "routes": {
+        "en": "/en/articles/baby-weight-height-percentiles-guide.html",
+        "es": "/es/articulos/percentiles-peso-talla-bebe.html",
+        "fr": "/fr/articles/percentiles-poids-taille-bebe.html",
+        "pt": "/pt/artigos/percentis-peso-altura-bebe.html"
+      }
+    },
+    {
+      "id": "tool_growth_percentiles",
+      "type": "tool",
+      "routes": {
+        "en": "/en/tools/baby-growth-percentile-calculator-who.html",
+        "es": "/es/herramientas/calculadora-percentiles-bebe-oms.html",
+        "fr": "/fr/outils/calculateur-percentiles-bebe-oms.html",
+        "pt": "/pt/ferramentas/calculadora-percentis-bebe-oms.html"
+      }
+    },
+    {
+      "id": "article_newborn_routine",
+      "type": "article",
+      "routes": {
+        "en": "/en/articles/newborn-daily-routine-guide.html",
+        "es": "/es/articulos/rutina-diaria-recien-nacido.html",
+        "fr": "/fr/articles/routine-quotidienne-nouveau-ne.html",
+        "pt": "/pt/artigos/rotina-diaria-recem-nascido.html"
+      }
+    },
+    {
+      "id": "article_milestones_year_one",
+      "type": "article",
+      "routes": {
+        "en": "/en/articles/first-year-baby-milestones-guide.html",
+        "es": "/es/articulos/hitos-desarrollo-primer-ano-bebe.html",
+        "fr": "/fr/articles/etapes-developpement-premiere-annee-bebe.html",
+        "pt": "/pt/artigos/marcos-desenvolvimento-primeiro-ano-bebe.html"
+      }
+    },
+    {
+      "id": "article_parenting_confidence",
+      "type": "article",
+      "routes": {
+        "en": "/en/articles/parenting-with-confidence-guide.html",
+        "es": "/es/articulos/criar-con-confianza-y-sin-culpa.html",
+        "fr": "/fr/articles/eduquer-avec-confiance-sans-culpabilite.html",
+        "pt": "/pt/artigos/criar-com-confianca-sem-culpa.html"
+      }
+    },
+    {
+      "id": "article_first_vaccine",
+      "type": "article",
+      "routes": {
+        "en": "/en/articles/first-baby-vaccine-what-i-learned.html",
+        "es": "/es/articulos/primera-vacuna-bebe-lo-que-aprendi.html",
+        "fr": "/fr/articles/premier-vaccin-bebe-ce-que-jai-appris.html",
+        "pt": "/pt/artigos/primeira-vacina-bebe-o-que-aprendi.html"
+      }
+    },
+    {
+      "id": "about",
+      "type": "trust",
+      "routes": {
+        "en": "/en/about.html",
+        "es": "/es/sobre.html",
+        "fr": "/fr/a-propos.html",
+        "pt": "/pt/sobre.html"
+      }
+    },
+    {
+      "id": "editorial_policy",
+      "type": "trust",
+      "routes": {
+        "en": "/en/editorial-policy.html",
+        "es": "/es/politica-editorial.html",
+        "fr": "/fr/politique-editoriale.html",
+        "pt": "/pt/politica-editorial.html"
+      }
+    },
+    {
+      "id": "privacy",
+      "type": "trust",
+      "routes": {
+        "en": "/en/privacy.html",
+        "es": "/es/privacidad.html",
+        "fr": "/fr/confidentialite.html",
+        "pt": "/pt/privacidade.html"
+      }
+    },
+    {
+      "id": "data_deletion",
+      "type": "trust",
+      "routes": {
+        "en": "/en/data-deletion.html",
+        "es": "/es/eliminacion-datos.html",
+        "fr": "/fr/suppression-donnees.html",
+        "pt": "/pt/exclusao-dados.html"
+      }
+    },
+    {
+      "id": "terms",
+      "type": "trust",
+      "routes": {
+        "en": "/en/terms.html",
+        "es": "/es/terminos.html",
+        "fr": "/fr/conditions.html",
+        "pt": "/pt/termos.html"
+      }
+    },
+    {
+      "id": "contact",
+      "type": "trust",
+      "routes": {
+        "en": "/en/contact.html",
+        "es": "/es/contacto.html",
+        "fr": "/fr/contact.html",
+        "pt": "/pt/contato.html"
+      }
+    }
+  ]
+}

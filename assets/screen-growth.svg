@@ -1,0 +1,17 @@
+<svg width="960" height="600" viewBox="0 0 960 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="960" height="600" rx="44" fill="#EEF7FF"/>
+  <rect x="70" y="56" width="820" height="488" rx="34" fill="white"/>
+  <rect x="106" y="100" width="246" height="36" rx="18" fill="#D8EAFF"/>
+  <rect x="372" y="100" width="484" height="36" rx="18" fill="#EDF5FF"/>
+  <rect x="106" y="170" width="750" height="338" rx="24" fill="#F8FBFF"/>
+  <rect x="140" y="206" width="214" height="20" rx="10" fill="#D8EAFF"/>
+  <path d="M170 430L280 356L388 376L496 300L604 332L712 252L790 286" stroke="#4D8ED4" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="280" cy="356" r="11" fill="#4D8ED4"/>
+  <circle cx="496" cy="300" r="11" fill="#4D8ED4"/>
+  <circle cx="712" cy="252" r="11" fill="#4D8ED4"/>
+  <line x1="170" y1="450" x2="804" y2="450" stroke="#CFE5FA" stroke-width="10" stroke-linecap="round"/>
+  <line x1="170" y1="414" x2="804" y2="414" stroke="#DFEEFC" stroke-width="6" stroke-linecap="round"/>
+  <line x1="170" y1="378" x2="804" y2="378" stroke="#DFEEFC" stroke-width="6" stroke-linecap="round"/>
+  <line x1="170" y1="342" x2="804" y2="342" stroke="#DFEEFC" stroke-width="6" stroke-linecap="round"/>
+  <line x1="170" y1="306" x2="804" y2="306" stroke="#DFEEFC" stroke-width="6" stroke-linecap="round"/>
+</svg>
