@@ -23,6 +23,12 @@ const ROUTE_MAP = {
     fr: "/fr/articles/guide-diversification-bebe-blw.html",
     pt: "/pt/artigos/guia-introducao-alimentar-bebe-blw.html"
   },
+  article_weekly_menu_9_months: {
+    en: "/en/articles/weekly-menu-9-month-old-baby.html",
+    es: "/es/articulos/menu-semanal-bebe-9-meses.html",
+    fr: "/fr/articles/menu-hebdomadaire-bebe-9-mois.html",
+    pt: "/pt/artigos/cardapio-semanal-bebe-9-meses.html"
+  },
   article_growth_percentiles: {
     en: "/en/articles/baby-weight-height-percentiles-guide.html",
     es: "/es/articulos/percentiles-peso-talla-bebe.html",
@@ -121,6 +127,7 @@ const bgLayer = document.querySelector(".bg-dynamic");
 const bgShapes = document.querySelectorAll(".bg-shape");
 const languageSelector = document.querySelector("[data-language-selector]");
 const featureShots = document.querySelectorAll(".feature-showcase .feature-shot");
+const clickableCards = document.querySelectorAll(".article-grid .article-card");
 const body = document.body;
 
 function initMixpanel() {
@@ -347,6 +354,81 @@ function initFeatureShotZoom() {
 }
 
 initFeatureShotZoom();
+
+function initClickableArticleCards() {
+  if (!clickableCards.length) return;
+
+  const interactiveSelector = "a, button, input, select, textarea, label";
+
+  clickableCards.forEach((card) => {
+    const primaryLink = card.querySelector(":scope > .article-link");
+    if (!primaryLink) return;
+
+    card.classList.add("article-card-clickable");
+    if (!card.hasAttribute("tabindex")) card.tabIndex = 0;
+    if (!card.hasAttribute("role")) card.setAttribute("role", "link");
+
+    const cardTitle = card.querySelector("h3")?.textContent?.trim();
+    if (cardTitle) {
+      card.setAttribute("aria-label", cardTitle);
+    }
+
+    card.addEventListener("click", (event) => {
+      const target = event.target;
+      if (!(target instanceof Element)) return;
+      if (target.closest(interactiveSelector)) return;
+      primaryLink.click();
+    });
+
+    card.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter" && event.key !== " ") return;
+      event.preventDefault();
+      primaryLink.click();
+    });
+  });
+}
+
+initClickableArticleCards();
+
+function initFooterPlayBadge() {
+  const footer = document.querySelector("footer.footer");
+  if (!footer || footer.querySelector(".footer-play-store")) return;
+
+  const locale = body?.dataset.locale || "en";
+  const labels = {
+    en: { aria: "Get it on Google Play", alt: "Get it on Google Play" },
+    es: { aria: "Descargar en Google Play", alt: "Disponible en Google Play" },
+    fr: { aria: "Télécharger sur Google Play", alt: "Disponible sur Google Play" },
+    pt: { aria: "Baixar no Google Play", alt: "Disponível no Google Play" }
+  };
+  const copy = labels[locale] || labels.en;
+
+  const pageKey = body?.dataset.pageKey || "";
+  const pageType = pageKey === "home" ? "home" : pageKey === "library" ? "library" : pageKey.startsWith("article_") ? "article" : "trust";
+  const articleSlug = pageType === "article" ? window.location.pathname.split("/").pop()?.replace(/\.html$/, "") || "" : "";
+
+  const link = document.createElement("a");
+  link.className = "play-store-badge-link footer-play-store";
+  link.href = "https://play.google.com/store/apps/details?id=com.gurrulabs.raffy";
+  link.setAttribute("aria-label", copy.aria);
+  link.dataset.trackDownload = "true";
+  link.dataset.pageType = pageType;
+  link.dataset.ctaLocation = "footer";
+  if (articleSlug) link.dataset.articleSlug = articleSlug;
+
+  const image = document.createElement("img");
+  image.decoding = "async";
+  image.loading = "lazy";
+  image.className = "play-store-badge";
+  image.src = "https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png";
+  image.alt = copy.alt;
+
+  link.appendChild(image);
+  footer.appendChild(link);
+  link.addEventListener("click", () => trackDownloadClick(link));
+}
+
+initFooterPlayBadge();
 
 window.addEventListener("scroll", () => {
   if (!toTop) return;

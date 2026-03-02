@@ -58,6 +58,23 @@ h1 {
   font-size: 1.06rem;
 }
 
+.article-cover {
+  margin: .85rem 0 1rem;
+  border-radius: 14px;
+  border: 1px solid var(--outline);
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: var(--shadow);
+}
+
+.article-cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 460px;
+  object-fit: cover;
+}
+
 h2 {
   margin: 1.35rem 0 .55rem;
   padding-left: .65rem;
@@ -82,6 +99,125 @@ p { margin: .55rem 0; }
 
 .article-card li {
   margin: .18rem 0;
+}
+
+.article-card h3 {
+  margin: 1rem 0 .35rem;
+  font-size: 1.16rem;
+  color: #234f42;
+}
+
+.menu-days {
+  display: flex;
+  flex-direction: column;
+  gap: .95rem;
+}
+
+.day-menu {
+  border: 1px solid var(--outline);
+  border-radius: 14px;
+  padding: .8rem;
+  background: linear-gradient(180deg, #ffffff, #f9fdfb);
+}
+
+.day-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr);
+  gap: .95rem;
+  align-items: center;
+}
+
+.day-text h3 {
+  margin-top: .15rem;
+  font-size: 1.32rem;
+  line-height: 1.2;
+  color: #1f5f52;
+}
+
+.day-text ul {
+  margin-bottom: 0;
+}
+
+.day-text .meal-label {
+  color: #208a75;
+  font-weight: 800;
+}
+
+.day-menu.day-image-left .day-text {
+  order: 2;
+}
+
+.day-menu.day-image-left .day-figure {
+  order: 1;
+}
+
+.day-menu.day-image-left .day-layout {
+  grid-template-columns: minmax(0, .75fr) minmax(0, 1.25fr);
+}
+
+.day-menu.day-image-right .day-text {
+  order: 1;
+}
+
+.day-menu.day-image-right .day-figure {
+  order: 2;
+}
+
+.day-figure {
+  margin: 0;
+}
+
+.day-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  border: 1px solid #dceae4;
+  background: #ffffff;
+}
+
+.table-scroll {
+  overflow-x: auto;
+  margin: .65rem 0 1rem;
+  border-radius: 12px;
+  border: 1px solid var(--outline);
+}
+
+.menu-table {
+  width: 100%;
+  min-width: 680px;
+  border-collapse: collapse;
+  background: #ffffff;
+}
+
+.menu-table th,
+.menu-table td {
+  border-bottom: 1px solid #e2ece7;
+  padding: .58rem .65rem;
+  text-align: left;
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+.menu-table th {
+  background: var(--mint-50);
+  color: var(--mint-700);
+  font-size: .88rem;
+  letter-spacing: .01em;
+  font-weight: 800;
+}
+
+.menu-table td {
+  font-size: .95rem;
+}
+
+.note-box {
+  margin-top: .95rem;
+  padding: .75rem .82rem;
+  border-radius: 10px;
+  border: 1px solid #d6e7df;
+  background: #f8fcfa;
+  color: #2f473f;
 }
 
 .milestone-figure {
@@ -168,4 +304,7 @@ p { margin: .55rem 0; }
   .article-card p,
   .article-card li { font-size: 1rem; line-height: 1.7; }
   .milestone-figure img { max-height: 300px; }
+  .day-layout { grid-template-columns: 1fr; }
+  .day-menu .day-text { order: 1 !important; }
+  .day-menu .day-figure { order: 2 !important; }
 }

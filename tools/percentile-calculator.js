@@ -212,6 +212,7 @@ let datasetByMetric = null;
 let daysPerMonth = 30.4375;
 let unitSystem = 'metric';
 let lastRenderPayload = null;
+const SUPPORTED_LANGUAGES = ['en', 'es', 'fr', 'pt'];
 
 const locale = document.body.dataset.locale || 'en';
 const copy = LOCALES[locale] || LOCALES.en;
@@ -261,6 +262,7 @@ async function init() {
 
   form?.addEventListener('submit', (event) => {
     event.preventDefault();
+    trackGrowthToolSubmitClick();
     runCalculation();
   });
 
@@ -343,6 +345,74 @@ function onUnitSystemChange(nextUnit) {
     renderEmptyChart();
     renderEmptyNotes();
   }
+}
+
+function getUtmParams() {
+  const params = new URLSearchParams(window.location.search);
+  return {
+    utm_source: params.get('utm_source') || '',
+    utm_medium: params.get('utm_medium') || '',
+    utm_campaign: params.get('utm_campaign') || '',
+    utm_term: params.get('utm_term') || '',
+    utm_content: params.get('utm_content') || ''
+  };
+}
+
+function baseTrackingPayload() {
+  const language = SUPPORTED_LANGUAGES.includes(document.body?.dataset?.locale)
+    ? document.body.dataset.locale
+    : 'en';
+
+  return {
+    language,
+    page: 'Growth Tool',
+    page_key: document.body?.dataset?.pageKey || 'tool_growth_percentiles',
+    path: window.location.pathname,
+    url: window.location.href,
+    ...getUtmParams()
+  };
+}
+
+function hasInputValue(fieldName) {
+  const field = form?.elements?.namedItem(fieldName);
+  if (!(field instanceof HTMLInputElement || field instanceof HTMLSelectElement)) return false;
+  return field.value.trim().length > 0;
+}
+
+function trackMixpanelEvent(eventName, payload) {
+  if (window.mixpanel && typeof window.mixpanel.track === 'function') {
+    window.mixpanel.track(eventName, payload);
+  }
+}
+
+function trackGrowthToolSubmitClick() {
+  trackMixpanelEvent('Raffy Webpage - Growth Tool Submit Clicked', {
+    ...baseTrackingPayload(),
+    unit_system: unitSystem,
+    corrected_age_enabled: Boolean(correctedToggle?.checked),
+    has_weight_input: hasInputValue('weight_kg'),
+    has_length_height_input: hasInputValue('length_height_cm'),
+    has_head_circumference_input: hasInputValue('head_circumference_cm')
+  });
+}
+
+function trackGrowthToolResults(payload) {
+  const percentiles = payload.results.map((result) => result.percentile);
+  const minPercentile = Math.min(...percentiles);
+  const maxPercentile = Math.max(...percentiles);
+  const avgPercentile = percentiles.reduce((sum, value) => sum + value, 0) / percentiles.length;
+
+  trackMixpanelEvent('Raffy Webpage - Growth Tool Results Shown', {
+    ...baseTrackingPayload(),
+    unit_system: unitSystem,
+    corrected_age_enabled: Boolean(payload.correctedAgeMeta),
+    measurement_count: payload.results.length,
+    measurement_types: payload.results.map((result) => result.measurement.type).join(','),
+    age_days: Math.round(payload.ageDaysForEvaluation),
+    min_percentile: Number(minPercentile.toFixed(1)),
+    max_percentile: Number(maxPercentile.toFixed(1)),
+    avg_percentile: Number(avgPercentile.toFixed(1))
+  });
 }
 
 function convertCurrentInputs(fromUnit, toUnit) {
@@ -494,6 +564,7 @@ function runCalculation() {
   };
 
   lastRenderPayload = payload;
+  trackGrowthToolResults(payload);
   renderResults(payload);
 }
 

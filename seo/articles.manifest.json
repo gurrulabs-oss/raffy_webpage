@@ -41,6 +41,16 @@
       }
     },
     {
+      "id": "article_weekly_menu_9_months",
+      "type": "article",
+      "routes": {
+        "en": "/en/articles/weekly-menu-9-month-old-baby.html",
+        "es": "/es/articulos/menu-semanal-bebe-9-meses.html",
+        "fr": "/fr/articles/menu-hebdomadaire-bebe-9-mois.html",
+        "pt": "/pt/artigos/cardapio-semanal-bebe-9-meses.html"
+      }
+    },
+    {
       "id": "article_growth_percentiles",
       "type": "article",
       "routes": {

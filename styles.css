@@ -421,6 +421,26 @@ p { margin: .5rem 0; }
   padding: 1rem;
 }
 
+.article-card-clickable {
+  cursor: pointer;
+}
+
+.article-card-clickable:focus-visible {
+  outline: 2px solid var(--mint-700);
+  outline-offset: 2px;
+}
+
+.article-card-thumb {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid var(--outline);
+  background: #ffffff;
+  margin: 0 0 .72rem;
+}
+
 .article-tag {
   display: inline-flex;
   padding: .25rem .6rem;
@@ -846,13 +866,22 @@ details p { color: var(--muted); }
   padding: 2rem 0 3rem;
   color: var(--muted2);
   border-top: 1px solid var(--outline);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: .7rem 1rem;
+}
+
+.footer > p {
+  margin: 0;
 }
 
 .footer-links {
-  margin-top: .55rem;
+  margin-top: 0;
   display: flex;
   flex-wrap: wrap;
   gap: .65rem 1rem;
+  flex: 1 1 560px;
 }
 
 .footer-links a {
@@ -865,7 +894,16 @@ details p { color: var(--muted); }
   text-decoration: underline;
 }
 
+.footer .footer-play-store {
+  margin-left: auto;
+}
+
+.footer .footer-play-store .play-store-badge {
+  width: 172px;
+}
+
 .to-top {
+  display: none !important;
   position: fixed;
   right: 16px;
   bottom: 16px;
@@ -919,6 +957,8 @@ details p { color: var(--muted); }
   .brand-logo { width: 56px; height: 56px; }
   .play-store-badge { width: 190px; }
   .play-store-badge-link-sm .play-store-badge { width: 155px; }
+  .footer .footer-play-store .play-store-badge { width: 152px; }
+  .footer .footer-play-store { margin-left: 0; }
   .lang-switch select {
     min-width: 116px;
     padding: .42rem .56rem;
