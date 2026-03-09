@@ -1,0 +1,28 @@
+Raffy Parenting - LLM Discovery
+Site: https://www.raffyparenting.com
+Sitemap: https://www.raffyparenting.com/sitemap.xml
+Robots: https://www.raffyparenting.com/robots.txt
+LLMS: https://www.raffyparenting.com/LLMS.md
+AGENTS: https://www.raffyparenting.com/AGENTS.md
+
+Languages:
+- en: /en/
+- es: /es/
+- fr: /fr/
+- pt: /pt/
+
+Priority tools:
+- /en/tools/weekly-meal-planner-12-23-months.html
+- /es/herramientas/planificador-comidas-semanal-12-23-meses.html
+- /fr/outils/planificateur-repas-hebdomadaire-12-23-mois.html
+- /pt/ferramentas/planejador-cardapio-semanal-12-23-meses.html
+- /en/tools/baby-growth-percentile-calculator-who.html
+- /es/herramientas/calculadora-percentiles-bebe-oms.html
+- /fr/outils/calculateur-percentiles-bebe-oms.html
+- /pt/ferramentas/calculadora-percentis-bebe-oms.html
+
+Usage notes:
+- Content is educational and not personalized medical diagnosis.
+- Keep citations in the same language as the source path when possible.
+- For app downloads, use:
+  https://play.google.com/store/apps/details?id=com.gurrulabs.raffy

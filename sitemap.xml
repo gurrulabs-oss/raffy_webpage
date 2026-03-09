@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
     <loc>https://www.raffyparenting.com/en/</loc>
     <lastmod>2026-02-27</lastmod>
@@ -69,6 +71,14 @@
     <lastmod>2026-02-27</lastmod>
   </url>
   <url>
+    <loc>https://www.raffyparenting.com/en/tools/</loc>
+    <lastmod>2026-03-08</lastmod>
+  </url>
+  <url>
+    <loc>https://www.raffyparenting.com/en/tools/weekly-meal-planner-12-23-months.html</loc>
+    <lastmod>2026-03-06</lastmod>
+  </url>
+  <url>
     <loc>https://www.raffyparenting.com/es/</loc>
     <lastmod>2026-02-27</lastmod>
   </url>
@@ -119,6 +129,14 @@
   <url>
     <loc>https://www.raffyparenting.com/es/herramientas/calculadora-percentiles-bebe-oms.html</loc>
     <lastmod>2026-02-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.raffyparenting.com/es/herramientas/</loc>
+    <lastmod>2026-03-08</lastmod>
+  </url>
+  <url>
+    <loc>https://www.raffyparenting.com/es/herramientas/planificador-comidas-semanal-12-23-meses.html</loc>
+    <lastmod>2026-03-06</lastmod>
   </url>
   <url>
     <loc>https://www.raffyparenting.com/es/politica-editorial.html</loc>
@@ -197,6 +215,14 @@
     <lastmod>2026-02-27</lastmod>
   </url>
   <url>
+    <loc>https://www.raffyparenting.com/fr/outils/</loc>
+    <lastmod>2026-03-08</lastmod>
+  </url>
+  <url>
+    <loc>https://www.raffyparenting.com/fr/outils/planificateur-repas-hebdomadaire-12-23-mois.html</loc>
+    <lastmod>2026-03-06</lastmod>
+  </url>
+  <url>
     <loc>https://www.raffyparenting.com/fr/politique-editoriale.html</loc>
     <lastmod>2026-02-27</lastmod>
   </url>
@@ -257,6 +283,14 @@
     <lastmod>2026-02-27</lastmod>
   </url>
   <url>
+    <loc>https://www.raffyparenting.com/pt/ferramentas/</loc>
+    <lastmod>2026-03-08</lastmod>
+  </url>
+  <url>
+    <loc>https://www.raffyparenting.com/pt/ferramentas/planejador-cardapio-semanal-12-23-meses.html</loc>
+    <lastmod>2026-03-06</lastmod>
+  </url>
+  <url>
     <loc>https://www.raffyparenting.com/pt/politica-editorial.html</loc>
     <lastmod>2026-02-27</lastmod>
   </url>
@@ -274,10 +308,14 @@
   </url>
   <url>
     <loc>https://www.raffyparenting.com/LLMS.md</loc>
-    <lastmod>2026-03-01</lastmod>
+    <lastmod>2026-03-09</lastmod>
   </url>
   <url>
     <loc>https://www.raffyparenting.com/AGENTS.md</loc>
-    <lastmod>2026-03-01</lastmod>
+    <lastmod>2026-03-09</lastmod>
+  </url>
+  <url>
+    <loc>https://www.raffyparenting.com/llms.txt</loc>
+    <lastmod>2026-03-09</lastmod>
   </url>
 </urlset>

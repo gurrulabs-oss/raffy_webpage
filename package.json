@@ -6,6 +6,7 @@
     "seo:sync": "node scripts/seo_sync.mjs",
     "seo:sitemap": "node scripts/seo_sitemap.mjs",
     "seo:validate": "node scripts/seo_validate.mjs",
-    "seo:all": "npm run seo:sync && npm run seo:sitemap && npm run seo:validate"
+    "seo:all": "npm run seo:sync && npm run seo:sitemap && npm run seo:validate",
+    "meal:validate": "node scripts/meal_planner_validate.mjs"
   }
 }

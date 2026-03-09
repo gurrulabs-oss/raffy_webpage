@@ -41,6 +41,18 @@ const ROUTE_MAP = {
     fr: "/fr/outils/calculateur-percentiles-bebe-oms.html",
     pt: "/pt/ferramentas/calculadora-percentis-bebe-oms.html"
   },
+  tool_library: {
+    en: "/en/tools/",
+    es: "/es/herramientas/",
+    fr: "/fr/outils/",
+    pt: "/pt/ferramentas/"
+  },
+  tool_weekly_meal_planner: {
+    en: "/en/tools/weekly-meal-planner-12-23-months.html",
+    es: "/es/herramientas/planificador-comidas-semanal-12-23-meses.html",
+    fr: "/fr/outils/planificateur-repas-hebdomadaire-12-23-mois.html",
+    pt: "/pt/ferramentas/planejador-cardapio-semanal-12-23-meses.html"
+  },
   article_newborn_routine: {
     en: "/en/articles/newborn-daily-routine-guide.html",
     es: "/es/articulos/rutina-diaria-recien-nacido.html",
@@ -109,7 +121,9 @@ const MIXPANEL_TOKEN = "20a6baa8d266700297f9b0b16efc0a13";
 const PAGE_LABELS = {
   home: "Main Page",
   library: "Articles",
+  tool_library: "Tools",
   tool_growth_percentiles: "Growth Tool",
+  tool_weekly_meal_planner: "Meal Planner Tool",
   about: "About",
   contact: "Contact",
   privacy: "Privacy",
@@ -404,7 +418,7 @@ function initFooterPlayBadge() {
   const copy = labels[locale] || labels.en;
 
   const pageKey = body?.dataset.pageKey || "";
-  const pageType = pageKey === "home" ? "home" : pageKey === "library" ? "library" : pageKey.startsWith("article_") ? "article" : "trust";
+  const pageType = pageKey === "home" ? "home" : pageKey === "library" ? "library" : pageKey.startsWith("article_") ? "article" : pageKey.startsWith("tool_") ? "tool" : "trust";
   const articleSlug = pageType === "article" ? window.location.pathname.split("/").pop()?.replace(/\.html$/, "") || "" : "";
 
   const link = document.createElement("a");

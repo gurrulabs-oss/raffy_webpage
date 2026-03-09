@@ -1,0 +1,5408 @@
+{
+  "version": "1.2.0",
+  "capturedAt": "2026-03-06",
+  "rules": {
+    "ageMonths": {
+      "min": 12,
+      "max": 23
+    },
+    "kcalFormula": {
+      "description": "kcalTarget = round(700 + (ageMonths-12) * (300/11))",
+      "baseKcal": 700,
+      "slopePerMonth": 27.2727272727,
+      "maxKcal": 1000
+    },
+    "mealDistribution": {
+      "breakfast": 0.2,
+      "snack_am": 0.1,
+      "lunch": 0.3,
+      "snack_pm": 0.15,
+      "dinner": 0.25
+    },
+    "dailyKcalTolerancePct": 10,
+    "weeklyAverageTolerancePct": 5,
+    "amdrPct": {
+      "carb": {
+        "min": 45,
+        "max": 65
+      },
+      "fat": {
+        "min": 30,
+        "max": 40
+      },
+      "protein": {
+        "min": 5,
+        "max": 20
+      }
+    },
+    "maxDishRepeatsPerWeek": 1,
+    "minUniqueDishesPerWeek": 33,
+    "repeatExceptions": [
+      "milk_plain"
+    ],
+    "strictMode": {
+      "maxAddedSugarGPerDay": 0,
+      "maxAddedSaltMgPerDay": 0
+    },
+    "milkGuidance": {
+      "type": "non_breastfed_default",
+      "targetBandsMlPerDay": [
+        {
+          "ageMinMonths": 12,
+          "ageMaxMonths": 14,
+          "targetMlPerDay": 500
+        },
+        {
+          "ageMinMonths": 15,
+          "ageMaxMonths": 23,
+          "targetMlPerDay": 450
+        }
+      ],
+      "split": {
+        "breakfastPct": 60,
+        "dinnerPct": 40
+      }
+    }
+  },
+  "foods": [
+    {
+      "id": "whole_milk",
+      "name": "Whole milk, pasteurized",
+      "nutritionPer100g": {
+        "kcal": 61,
+        "proteinG": 3.2,
+        "fatG": 3.3,
+        "carbG": 4.8,
+        "fiberG": 0,
+        "sugarsG": 4.8,
+        "sodiumMg": 43
+      },
+      "source": "USDA FoodData Central (curated values)",
+      "capturedAt": "2026-03-06",
+      "foodGroups": [
+        "dairy"
+      ]
+    },
+    {
+      "id": "whole_plain_yogurt",
+      "name": "Plain whole yogurt, unsweetened",
+      "nutritionPer100g": {
+        "kcal": 61,
+        "proteinG": 3.5,
+        "fatG": 3.3,
+        "carbG": 4.7,
+        "fiberG": 0,
+        "sugarsG": 4.7,
+        "sodiumMg": 46
+      },
+      "source": "USDA FoodData Central (curated values)",
+      "capturedAt": "2026-03-06",
+      "foodGroups": [
+        "dairy"
+      ]
+    },
+    {
+      "id": "oats_dry",
+      "name": "Oats, dry",
+      "nutritionPer100g": {
+        "kcal": 389,
+        "proteinG": 16.9,
+        "fatG": 6.9,
+        "carbG": 66.3,
+        "fiberG": 10.6,
+        "sugarsG": 0.9,
+        "sodiumMg": 2
+      },
+      "source": "USDA FoodData Central (curated values)",
+      "capturedAt": "2026-03-06",
+      "foodGroups": [
+        "grain"
+      ]
+    },
+    {
+      "id": "banana",
+      "name": "Banana",
+      "nutritionPer100g": {
+        "kcal": 89,
+        "proteinG": 1.1,
+        "fatG": 0.3,
+        "carbG": 22.8,
+        "fiberG": 2.6,
+        "sugarsG": 12.2,
+        "sodiumMg": 1
+      },
+      "source": "USDA FoodData Central (curated values)",
+      "capturedAt": "2026-03-06",
+      "foodGroups": [
+        "fruit"
+      ]
+    },
+    {
+      "id": "whole_wheat_bread",
+      "name": "Whole wheat bread",
+      "nutritionPer100g": {
+        "kcal": 247,
+        "proteinG": 13,
+        "fatG": 4.2,
+        "carbG": 41,
+        "fiberG": 7,
+        "sugarsG": 5,
+        "sodiumMg": 430
+      },
+      "source": "USDA FoodData Central (curated values)",
+      "capturedAt": "2026-03-06",
+      "foodGroups": [
+        "grain"
+      ]
+    },
+    {
+      "id": "tomato",
+      "name": "Tomato",
+      "nutritionPer100g": {
+        "kcal": 18,
+        "proteinG": 0.9,
+        "fatG": 0.2,
+        "carbG": 3.9,
+        "fiberG": 1.2,
+        "sugarsG": 2.6,
+        "sodiumMg": 5
+      },
+      "source": "USDA FoodData Central (curated values)",
+      "capturedAt": "2026-03-06",
+      "foodGroups": [
+        "vegetable"
+      ]
+    },
+    {
+      "id": "olive_oil",
+      "name": "Olive oil, extra virgin",
+      "nutritionPer100g": {
+        "kcal": 884,
+        "proteinG": 0,
+        "fatG": 100,
+        "carbG": 0,
+        "fiberG": 0,
+        "sugarsG": 0,
+        "sodiumMg": 0
+      },
+      "source": "USDA FoodData Central (curated values)",
+      "capturedAt": "2026-03-06",
+      "foodGroups": [
+        "fat"
+      ]
+    },
+    {
+      "id": "pear",
+      "name": "Pear",
+      "nutritionPer100g": {
+        "kcal": 57,
+        "proteinG": 0.4,
+        "fatG": 0.1,
+        "carbG": 15.2,
+        "fiberG": 3.1,
+        "sugarsG": 9.8,
+        "sodiumMg": 1
+      },
+      "source": "USDA FoodData Central (curated values)",
+      "capturedAt": "2026-03-06",
+      "foodGroups": [
+        "fruit"
+      ]
+    },
+    {
+      "id": "avocado",
+      "name": "Avocado",
+      "nutritionPer100g": {
+        "kcal": 160,
+        "proteinG": 2,
+        "fatG": 14.7,
+        "carbG": 8.5,
+        "fiberG": 6.7,
+        "sugarsG": 0.7,
+        "sodiumMg": 7
+      },
+      "source": "USDA FoodData Central (curated values)",
+      "capturedAt": "2026-03-06",
+      "foodGroups": [
+        "fruit",
+        "fat"
+      ]
+    },
+    {
+      "id": "egg",
+      "name": "Egg, whole",
+      "nutritionPer100g": {
+        "kcal": 143,
+        "proteinG": 12.6,
+        "fatG": 9.5,
+        "carbG": 0.7,
+        "fiberG": 0,
+        "sugarsG": 0.4,
+        "sodiumMg": 142
+      },
+      "source": "USDA FoodData Central (curated values)",
+      "capturedAt": "2026-03-06",
+      "foodGroups": [
+        "animal_protein"
+      ]
+    },
+    {
+      "id": "zucchini",
+      "name": "Zucchini",
+      "nutritionPer100g": {
+        "kcal": 17,
+        "proteinG": 1.2,
+        "fatG": 0.3,
+        "carbG": 3.1,
+        "fiberG": 1,
+        "sugarsG": 2.5,
+        "sodiumMg": 8
+      },
+      "source": "USDA FoodData Central (curated values)",
+      "capturedAt": "2026-03-06",
+      "foodGroups": [
+        "vegetable"
+      ]
+    },
+    {
+      "id": "apple",
+      "name": "Apple",
+      "nutritionPer100g": {
+        "kcal": 52,
+        "proteinG": 0.3,
+        "fatG": 0.2,
+        "carbG": 13.8,
+        "fiberG": 2.4,
+        "sugarsG": 10.4,
+        "sodiumMg": 1
+      },
+      "source": "USDA FoodData Central (curated values)",
+      "capturedAt": "2026-03-06",
+      "foodGroups": [
+        "fruit"
+      ]
+    },
+    {
+      "id": "prune",
+      "name": "Prune, dried",
+      "nutritionPer100g": {
+        "kcal": 240,
+        "proteinG": 2.2,
+        "fatG": 0.4,
+        "carbG": 63.9,
+        "fiberG": 7.1,
+        "sugarsG": 38.1,
+        "sodiumMg": 2
+      },
+      "source": "USDA FoodData Central (curated values)",
+      "capturedAt": "2026-03-06",
+      "foodGroups": [
+        "fruit"
+      ]
+    },
+    {
+      "id": "chickpeas_cooked",
+      "name": "Chickpeas, cooked",
+      "nutritionPer100g": {
+        "kcal": 164,
+        "proteinG": 8.9,
+        "fatG": 2.6,
+        "carbG": 27.4,
+        "fiberG": 7.6,
+        "sugarsG": 4.8,
+        "sodiumMg": 24
+      },
+      "source": "USDA FoodData Central (curated values)",
+      "capturedAt": "2026-03-06",
+      "foodGroups": [
+        "legume"
+      ]
+    },
+    {
+      "id": "carrot",
+      "name": "Carrot",
+      "nutritionPer100g": {
+        "kcal": 41,
+        "proteinG": 0.9,
+        "fatG": 0.2,
+        "carbG": 9.6,
+        "fiberG": 2.8,
+        "sugarsG": 4.7,
+        "sodiumMg": 69
+      },
+      "source": "USDA FoodData Central (curated values)",
+      "capturedAt": "2026-03-06",
+      "foodGroups": [
+        "vegetable"
+      ]
+    },
+    {
+      "id": "bell_pepper_red",
+      "name": "Bell pepper, red",
+      "nutritionPer100g": {
+        "kcal": 31,
+        "proteinG": 1,
+        "fatG": 0.3,
+        "carbG": 6,
+        "fiberG": 2.1,
+        "sugarsG": 4.2,
+        "sodiumMg": 4
+      },
+      "source": "USDA FoodData Central (curated values)",
+      "capturedAt": "2026-03-06",
+      "foodGroups": [
+        "vegetable"
+      ]
+    },
+    {
+      "id": "fresh_cheese_pasteurized",
+      "name": "Fresh cheese, pasteurized",
+      "nutritionPer100g": {
+        "kcal": 98,
+        "proteinG": 11,
+        "fatG": 5,
+        "carbG": 3,
+        "fiberG": 0,
+        "sugarsG": 3,
+        "sodiumMg": 330
+      },
+      "source": "USDA FoodData Central (curated values)",
+      "capturedAt": "2026-03-06",
+      "foodGroups": [
+        "dairy",
+        "animal_protein"
+      ]
+    },
+    {
+      "id": "lentils_cooked",
+      "name": "Lentils, cooked",
+      "nutritionPer100g": {
+        "kcal": 116,
+        "proteinG": 9,
+        "fatG": 0.4,
+        "carbG": 20.1,
+        "fiberG": 7.9,
+        "sugarsG": 1.8,
+        "sodiumMg": 2
+      },
+      "source": "USDA FoodData Central (curated values)",
+      "capturedAt": "2026-03-06",
+      "foodGroups": [
+        "legume"
+      ]
+    },
+    {
+      "id": "pumpkin",
+      "name": "Pumpkin",
+      "nutritionPer100g": {
+        "kcal": 26,
+        "proteinG": 1,
+        "fatG": 0.1,
+        "carbG": 6.5,
+        "fiberG": 0.5,
+        "sugarsG": 2.8,
+        "sodiumMg": 1
+      },
+      "source": "USDA FoodData Central (curated values)",
+      "capturedAt": "2026-03-06",
+      "foodGroups": [
+        "vegetable"
+      ]
+    },
+    {
+      "id": "rice_cooked",
+      "name": "Rice, cooked",
+      "nutritionPer100g": {
+        "kcal": 130,
+        "proteinG": 2.4,
+        "fatG": 0.3,
+        "carbG": 28.2,
+        "fiberG": 0.4,
+        "sugarsG": 0.1,
+        "sodiumMg": 1
+      },
+      "source": "USDA FoodData Central (curated values)",
+      "capturedAt": "2026-03-06",
+      "foodGroups": [
+        "grain"
+      ]
+    },
+    {
+      "id": "white_beans_cooked",
+      "name": "White beans, cooked",
+      "nutritionPer100g": {
+        "kcal": 139,
+        "proteinG": 9.7,
+        "fatG": 0.5,
+        "carbG": 25.1,
+        "fiberG": 6.3,
+        "sugarsG": 0.3,
+        "sodiumMg": 2
+      },
+      "source": "USDA FoodData Central (curated values)",
+      "capturedAt": "2026-03-06",
+      "foodGroups": [
+        "legume"
+      ]
+    },
+    {
+      "id": "leek",
+      "name": "Leek",
+      "nutritionPer100g": {
+        "kcal": 61,
+        "proteinG": 1.5,
+        "fatG": 0.3,
+        "carbG": 14.2,
+        "fiberG": 1.8,
+        "sugarsG": 3.9,
+        "sodiumMg": 20
+      },
+      "source": "USDA FoodData Central (curated values)",
+      "capturedAt": "2026-03-06",
+      "foodGroups": [
+        "vegetable"
+      ]
+    },
+    {
+      "id": "potato_boiled",
+      "name": "Potato, boiled",
+      "nutritionPer100g": {
+        "kcal": 87,
+        "proteinG": 1.9,
+        "fatG": 0.1,
+        "carbG": 20.1,
+        "fiberG": 1.8,
+        "sugarsG": 0.9,
+        "sodiumMg": 6
+      },
+      "source": "USDA FoodData Central (curated values)",
+      "capturedAt": "2026-03-06",
+      "foodGroups": [
+        "starchy_veg"
+      ]
+    },
+    {
+      "id": "green_beans",
+      "name": "Green beans",
+      "nutritionPer100g": {
+        "kcal": 31,
+        "proteinG": 1.8,
+        "fatG": 0.1,
+        "carbG": 7,
+        "fiberG": 3.4,
+        "sugarsG": 3.3,
+        "sodiumMg": 6
+      },
+      "source": "USDA FoodData Central (curated values)",
+      "capturedAt": "2026-03-06",
+      "foodGroups": [
+        "vegetable"
+      ]
+    },
+    {
+      "id": "hake",
+      "name": "Hake",
+      "nutritionPer100g": {
+        "kcal": 90,
+        "proteinG": 18,
+        "fatG": 2,
+        "carbG": 0,
+        "fiberG": 0,
+        "sugarsG": 0,
+        "sodiumMg": 70
+      },
+      "source": "USDA FoodData Central (curated values)",
+      "capturedAt": "2026-03-06",
+      "foodGroups": [
+        "animal_protein"
+      ]
+    },
+    {
+      "id": "salmon",
+      "name": "Salmon",
+      "nutritionPer100g": {
+        "kcal": 208,
+        "proteinG": 20,
+        "fatG": 13,
+        "carbG": 0,
+        "fiberG": 0,
+        "sugarsG": 0,
+        "sodiumMg": 59
+      },
+      "source": "USDA FoodData Central (curated values)",
+      "capturedAt": "2026-03-06",
+      "foodGroups": [
+        "animal_protein"
+      ]
+    },
+    {
+      "id": "cod",
+      "name": "Cod",
+      "nutritionPer100g": {
+        "kcal": 82,
+        "proteinG": 18,
+        "fatG": 0.7,
+        "carbG": 0,
+        "fiberG": 0,
+        "sugarsG": 0,
+        "sodiumMg": 54
+      },
+      "source": "USDA FoodData Central (curated values)",
+      "capturedAt": "2026-03-06",
+      "foodGroups": [
+        "animal_protein"
+      ]
+    },
+    {
+      "id": "broccoli",
+      "name": "Broccoli",
+      "nutritionPer100g": {
+        "kcal": 35,
+        "proteinG": 2.4,
+        "fatG": 0.4,
+        "carbG": 7.2,
+        "fiberG": 3.3,
+        "sugarsG": 1.4,
+        "sodiumMg": 41
+      },
+      "source": "USDA FoodData Central (curated values)",
+      "capturedAt": "2026-03-06",
+      "foodGroups": [
+        "vegetable"
+      ]
+    },
+    {
+      "id": "chicken_thigh_cooked",
+      "name": "Chicken thigh, cooked",
+      "nutritionPer100g": {
+        "kcal": 209,
+        "proteinG": 26,
+        "fatG": 10.9,
+        "carbG": 0,
+        "fiberG": 0,
+        "sugarsG": 0,
+        "sodiumMg": 90
+      },
+      "source": "USDA FoodData Central (curated values)",
+      "capturedAt": "2026-03-06",
+      "foodGroups": [
+        "animal_protein"
+      ]
+    },
+    {
+      "id": "couscous_cooked",
+      "name": "Couscous, cooked",
+      "nutritionPer100g": {
+        "kcal": 112,
+        "proteinG": 3.8,
+        "fatG": 0.2,
+        "carbG": 23.2,
+        "fiberG": 1.4,
+        "sugarsG": 0.1,
+        "sodiumMg": 5
+      },
+      "source": "USDA FoodData Central (curated values)",
+      "capturedAt": "2026-03-06",
+      "foodGroups": [
+        "grain"
+      ]
+    },
+    {
+      "id": "turkey_cooked",
+      "name": "Turkey, cooked",
+      "nutritionPer100g": {
+        "kcal": 135,
+        "proteinG": 29,
+        "fatG": 1,
+        "carbG": 0,
+        "fiberG": 0,
+        "sugarsG": 0,
+        "sodiumMg": 60
+      },
+      "source": "USDA FoodData Central (curated values)",
+      "capturedAt": "2026-03-06",
+      "foodGroups": [
+        "animal_protein"
+      ]
+    },
+    {
+      "id": "beef_lean_cooked",
+      "name": "Beef, lean, cooked",
+      "nutritionPer100g": {
+        "kcal": 217,
+        "proteinG": 26,
+        "fatG": 12,
+        "carbG": 0,
+        "fiberG": 0,
+        "sugarsG": 0,
+        "sodiumMg": 55
+      },
+      "source": "USDA FoodData Central (curated values)",
+      "capturedAt": "2026-03-06",
+      "foodGroups": [
+        "animal_protein"
+      ]
+    },
+    {
+      "id": "whole_wheat_pasta_cooked",
+      "name": "Whole wheat pasta, cooked",
+      "nutritionPer100g": {
+        "kcal": 149,
+        "proteinG": 5.8,
+        "fatG": 0.9,
+        "carbG": 30.7,
+        "fiberG": 4.1,
+        "sugarsG": 0.9,
+        "sodiumMg": 1
+      },
+      "source": "USDA FoodData Central (curated values)",
+      "capturedAt": "2026-03-06",
+      "foodGroups": [
+        "grain"
+      ]
+    },
+    {
+      "id": "quinoa_cooked",
+      "name": "Quinoa, cooked",
+      "nutritionPer100g": {
+        "kcal": 120,
+        "proteinG": 4.4,
+        "fatG": 1.9,
+        "carbG": 21.3,
+        "fiberG": 2.8,
+        "sugarsG": 0.9,
+        "sodiumMg": 7
+      },
+      "source": "USDA FoodData Central (curated values)",
+      "capturedAt": "2026-03-06",
+      "foodGroups": [
+        "grain"
+      ]
+    },
+    {
+      "id": "vegetable_broth_no_salt",
+      "name": "Vegetable broth, no added salt",
+      "nutritionPer100g": {
+        "kcal": 5,
+        "proteinG": 0.2,
+        "fatG": 0.1,
+        "carbG": 0.8,
+        "fiberG": 0.2,
+        "sugarsG": 0.2,
+        "sodiumMg": 10
+      },
+      "source": "USDA FoodData Central (curated values)",
+      "capturedAt": "2026-03-06",
+      "foodGroups": [
+        "vegetable"
+      ]
+    },
+    {
+      "id": "vermicelli_cooked",
+      "name": "Vermicelli, cooked",
+      "nutritionPer100g": {
+        "kcal": 131,
+        "proteinG": 5,
+        "fatG": 1.1,
+        "carbG": 25,
+        "fiberG": 1.4,
+        "sugarsG": 0.7,
+        "sodiumMg": 1
+      },
+      "source": "USDA FoodData Central (curated values)",
+      "capturedAt": "2026-03-06",
+      "foodGroups": [
+        "grain"
+      ]
+    },
+    {
+      "id": "spinach_cooked",
+      "name": "Spinach, cooked",
+      "nutritionPer100g": {
+        "kcal": 23,
+        "proteinG": 2.9,
+        "fatG": 0.4,
+        "carbG": 3.6,
+        "fiberG": 2.4,
+        "sugarsG": 0.4,
+        "sodiumMg": 70
+      },
+      "source": "USDA FoodData Central (curated values)",
+      "capturedAt": "2026-03-06",
+      "foodGroups": [
+        "vegetable"
+      ]
+    },
+    {
+      "id": "sweet_potato_baked",
+      "name": "Sweet potato, baked",
+      "nutritionPer100g": {
+        "kcal": 90,
+        "proteinG": 2,
+        "fatG": 0.2,
+        "carbG": 20.7,
+        "fiberG": 3.3,
+        "sugarsG": 6.5,
+        "sodiumMg": 36
+      },
+      "source": "USDA FoodData Central (curated values)",
+      "capturedAt": "2026-03-06",
+      "foodGroups": [
+        "starchy_veg"
+      ]
+    },
+    {
+      "id": "berries_mixed",
+      "name": "Mixed berries",
+      "nutritionPer100g": {
+        "kcal": 50,
+        "proteinG": 0.7,
+        "fatG": 0.3,
+        "carbG": 12,
+        "fiberG": 4,
+        "sugarsG": 7,
+        "sodiumMg": 1
+      },
+      "source": "USDA FoodData Central (curated values)",
+      "capturedAt": "2026-03-06",
+      "foodGroups": [
+        "fruit"
+      ]
+    }
+  ],
+  "dishes": [
+    {
+      "id": "milk_plain",
+      "names": {
+        "es": "Leche entera pasteurizada",
+        "en": "Pasteurized whole milk",
+        "fr": "Lait entier pasteurise",
+        "pt": "Leite integral pasteurizado"
+      },
+      "allowedMeals": [
+        "breakfast",
+        "dinner"
+      ],
+      "ingredients": [
+        {
+          "foodId": "whole_milk",
+          "grams": 200
+        }
+      ],
+      "tags": {
+        "proteinSource": "dairy",
+        "allergens": [
+          "milk"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": false
+    },
+    {
+      "id": "yogurt_pear_oats",
+      "names": {
+        "es": "Yogur con pera y avena",
+        "en": "Yogurt with pear and oats",
+        "fr": "Yaourt avec poire et avoine",
+        "pt": "Iogurte com pera e aveia"
+      },
+      "allowedMeals": [
+        "breakfast",
+        "snack_am",
+        "snack_pm"
+      ],
+      "ingredients": [
+        {
+          "foodId": "whole_plain_yogurt",
+          "grams": 100
+        },
+        {
+          "foodId": "pear",
+          "grams": 60
+        },
+        {
+          "foodId": "oats_dry",
+          "grams": 10
+        }
+      ],
+      "tags": {
+        "proteinSource": "dairy",
+        "allergens": [
+          "milk",
+          "gluten"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "oatmeal_banana",
+      "names": {
+        "es": "Avena cocida con platano",
+        "en": "Cooked oats with banana",
+        "fr": "Avoine cuite avec banane",
+        "pt": "Aveia cozida com banana"
+      },
+      "allowedMeals": [
+        "breakfast"
+      ],
+      "ingredients": [
+        {
+          "foodId": "oats_dry",
+          "grams": 25
+        },
+        {
+          "foodId": "banana",
+          "grams": 80
+        },
+        {
+          "foodId": "whole_milk",
+          "grams": 100
+        }
+      ],
+      "tags": {
+        "proteinSource": "mixed",
+        "allergens": [
+          "milk",
+          "gluten"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "soft_wholegrain_bread_tomato_olive_oil",
+      "names": {
+        "es": "Pan integral blando con tomate y AOVE",
+        "en": "Soft wholegrain bread with tomato and olive oil",
+        "fr": "Pain complet moelleux avec tomate et huile d'olive",
+        "pt": "Pao integral macio com tomate e azeite"
+      },
+      "allowedMeals": [
+        "breakfast"
+      ],
+      "ingredients": [
+        {
+          "foodId": "whole_wheat_bread",
+          "grams": 35
+        },
+        {
+          "foodId": "tomato",
+          "grams": 40
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 4
+        }
+      ],
+      "tags": {
+        "proteinSource": "mixed",
+        "allergens": [
+          "gluten"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "porridge_oats_pear",
+      "names": {
+        "es": "Gachas de avena con pera",
+        "en": "Oat porridge with pear",
+        "fr": "Porridge d'avoine a la poire",
+        "pt": "Papa de aveia com pera"
+      },
+      "allowedMeals": [
+        "breakfast"
+      ],
+      "ingredients": [
+        {
+          "foodId": "oats_dry",
+          "grams": 22
+        },
+        {
+          "foodId": "pear",
+          "grams": 90
+        },
+        {
+          "foodId": "whole_milk",
+          "grams": 100
+        }
+      ],
+      "tags": {
+        "proteinSource": "mixed",
+        "allergens": [
+          "milk",
+          "gluten"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "soft_bread_mashed_avocado",
+      "names": {
+        "es": "Pan blando con aguacate triturado",
+        "en": "Soft bread with mashed avocado",
+        "fr": "Pain moelleux avec avocat ecrase",
+        "pt": "Pao macio com abacate amassado"
+      },
+      "allowedMeals": [
+        "breakfast"
+      ],
+      "ingredients": [
+        {
+          "foodId": "whole_wheat_bread",
+          "grams": 30
+        },
+        {
+          "foodId": "avocado",
+          "grams": 45
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 2
+        }
+      ],
+      "tags": {
+        "proteinSource": "plant",
+        "allergens": [
+          "gluten"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "french_omelette_zucchini",
+      "names": {
+        "es": "Tortilla francesa con calabacin",
+        "en": "French omelette with zucchini",
+        "fr": "Omelette nature avec courgette",
+        "pt": "Omelete francesa com abobrinha"
+      },
+      "allowedMeals": [
+        "breakfast",
+        "dinner"
+      ],
+      "ingredients": [
+        {
+          "foodId": "egg",
+          "grams": 55
+        },
+        {
+          "foodId": "zucchini",
+          "grams": 60
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 3
+        }
+      ],
+      "tags": {
+        "proteinSource": "egg",
+        "allergens": [
+          "egg"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "apple_pear_compote_yogurt",
+      "names": {
+        "es": "Compota de manzana y pera con yogur",
+        "en": "Apple and pear compote with yogurt",
+        "fr": "Compote pomme-poire avec yaourt",
+        "pt": "Compota de maca e pera com iogurte"
+      },
+      "allowedMeals": [
+        "snack_am"
+      ],
+      "ingredients": [
+        {
+          "foodId": "apple",
+          "grams": 70
+        },
+        {
+          "foodId": "pear",
+          "grams": 60
+        },
+        {
+          "foodId": "whole_plain_yogurt",
+          "grams": 70
+        }
+      ],
+      "tags": {
+        "proteinSource": "dairy",
+        "allergens": [
+          "milk"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "mashed_banana_yogurt",
+      "names": {
+        "es": "Platano chafado con yogur",
+        "en": "Mashed banana with yogurt",
+        "fr": "Banane ecrasee avec yaourt",
+        "pt": "Banana amassada com iogurte"
+      },
+      "allowedMeals": [
+        "snack_am",
+        "snack_pm"
+      ],
+      "ingredients": [
+        {
+          "foodId": "banana",
+          "grams": 60
+        },
+        {
+          "foodId": "whole_plain_yogurt",
+          "grams": 80
+        }
+      ],
+      "tags": {
+        "proteinSource": "dairy",
+        "allergens": [
+          "milk"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "apple_prune_oats_yogurt",
+      "names": {
+        "es": "Manzana con ciruela, avena y yogur",
+        "en": "Apple with prune, oats, and yogurt",
+        "fr": "Pomme avec pruneau, avoine et yaourt",
+        "pt": "Maca com ameixa, aveia e iogurte"
+      },
+      "allowedMeals": [
+        "snack_am"
+      ],
+      "ingredients": [
+        {
+          "foodId": "apple",
+          "grams": 60
+        },
+        {
+          "foodId": "prune",
+          "grams": 10
+        },
+        {
+          "foodId": "oats_dry",
+          "grams": 8
+        },
+        {
+          "foodId": "whole_plain_yogurt",
+          "grams": 70
+        }
+      ],
+      "tags": {
+        "proteinSource": "dairy",
+        "allergens": [
+          "milk",
+          "gluten"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "mild_hummus_cooked_veg",
+      "names": {
+        "es": "Hummus suave con verduras cocidas",
+        "en": "Mild hummus with cooked vegetables",
+        "fr": "Houmous doux avec legumes cuits",
+        "pt": "Homus suave com legumes cozidos"
+      },
+      "allowedMeals": [
+        "snack_am",
+        "snack_pm"
+      ],
+      "ingredients": [
+        {
+          "foodId": "chickpeas_cooked",
+          "grams": 70
+        },
+        {
+          "foodId": "carrot",
+          "grams": 40
+        },
+        {
+          "foodId": "bell_pepper_red",
+          "grams": 30
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 4
+        }
+      ],
+      "tags": {
+        "proteinSource": "legume",
+        "allergens": [
+          "legume"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "soft_bread_fresh_cheese_tomato",
+      "names": {
+        "es": "Pan blando con queso fresco y tomate",
+        "en": "Soft bread with fresh cheese and tomato",
+        "fr": "Pain tendre avec fromage frais et tomate",
+        "pt": "Pao macio com queijo fresco e tomate"
+      },
+      "allowedMeals": [
+        "breakfast",
+        "snack_pm"
+      ],
+      "ingredients": [
+        {
+          "foodId": "whole_wheat_bread",
+          "grams": 30
+        },
+        {
+          "foodId": "fresh_cheese_pasteurized",
+          "grams": 50
+        },
+        {
+          "foodId": "tomato",
+          "grams": 35
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 2
+        }
+      ],
+      "tags": {
+        "proteinSource": "dairy",
+        "allergens": [
+          "milk",
+          "gluten"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "soft_lentils_vegetables",
+      "names": {
+        "es": "Lentejas suaves con verduras",
+        "en": "Soft lentils with vegetables",
+        "fr": "Lentilles douces aux legumes",
+        "pt": "Lentilhas suaves com legumes"
+      },
+      "allowedMeals": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        {
+          "foodId": "lentils_cooked",
+          "grams": 120
+        },
+        {
+          "foodId": "carrot",
+          "grams": 40
+        },
+        {
+          "foodId": "zucchini",
+          "grams": 40
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 5
+        }
+      ],
+      "tags": {
+        "proteinSource": "legume",
+        "allergens": [
+          "legume"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "chickpeas_pumpkin_rice",
+      "names": {
+        "es": "Garbanzos con calabaza y arroz",
+        "en": "Chickpeas with pumpkin and rice",
+        "fr": "Pois chiches, courge et riz",
+        "pt": "Grao-de-bico com abobora e arroz"
+      },
+      "allowedMeals": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        {
+          "foodId": "chickpeas_cooked",
+          "grams": 90
+        },
+        {
+          "foodId": "pumpkin",
+          "grams": 80
+        },
+        {
+          "foodId": "rice_cooked",
+          "grams": 70
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 5
+        }
+      ],
+      "tags": {
+        "proteinSource": "legume",
+        "allergens": [
+          "legume"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "white_beans_leek_carrot",
+      "names": {
+        "es": "Alubias blancas con puerro y zanahoria",
+        "en": "White beans with leek and carrot",
+        "fr": "Haricots blancs, poireau et carotte",
+        "pt": "Feijao branco com alho-poro e cenoura"
+      },
+      "allowedMeals": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        {
+          "foodId": "white_beans_cooked",
+          "grams": 110
+        },
+        {
+          "foodId": "leek",
+          "grams": 50
+        },
+        {
+          "foodId": "carrot",
+          "grams": 50
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 5
+        }
+      ],
+      "tags": {
+        "proteinSource": "legume",
+        "allergens": [
+          "legume"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "steamed_hake_potato_greenbeans",
+      "names": {
+        "es": "Merluza al vapor con patata y judia verde",
+        "en": "Steamed hake with potato and green beans",
+        "fr": "Merlu vapeur avec pomme de terre et haricots verts",
+        "pt": "Merluza no vapor com batata e vagem"
+      },
+      "allowedMeals": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        {
+          "foodId": "hake",
+          "grams": 65
+        },
+        {
+          "foodId": "potato_boiled",
+          "grams": 110
+        },
+        {
+          "foodId": "green_beans",
+          "grams": 70
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 5
+        }
+      ],
+      "tags": {
+        "proteinSource": "fish",
+        "allergens": [
+          "fish"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "baked_salmon_sweetpotato",
+      "names": {
+        "es": "Salmon al horno con boniato",
+        "en": "Baked salmon with sweet potato",
+        "fr": "Saumon au four avec patate douce",
+        "pt": "Salmao assado com batata-doce"
+      },
+      "allowedMeals": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        {
+          "foodId": "salmon",
+          "grams": 60
+        },
+        {
+          "foodId": "sweet_potato_baked",
+          "grams": 120
+        },
+        {
+          "foodId": "broccoli",
+          "grams": 50
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 4
+        }
+      ],
+      "tags": {
+        "proteinSource": "fish",
+        "allergens": [
+          "fish"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "flaked_cod_potato_broccoli",
+      "names": {
+        "es": "Bacalao desmigado con patata y brocoli",
+        "en": "Flaked cod with potato and broccoli",
+        "fr": "Morue emiettee avec pomme de terre et brocoli",
+        "pt": "Bacalhau desfiado com batata e brocolis"
+      },
+      "allowedMeals": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        {
+          "foodId": "cod",
+          "grams": 70
+        },
+        {
+          "foodId": "potato_boiled",
+          "grams": 100
+        },
+        {
+          "foodId": "broccoli",
+          "grams": 70
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 5
+        }
+      ],
+      "tags": {
+        "proteinSource": "fish",
+        "allergens": [
+          "fish"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "chicken_stew_vegetables_couscous",
+      "names": {
+        "es": "Pollo guisado con verduras y cuscus",
+        "en": "Chicken stew with vegetables and couscous",
+        "fr": "Poulet mijote aux legumes et couscous",
+        "pt": "Frango cozido com legumes e cuscuz"
+      },
+      "allowedMeals": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        {
+          "foodId": "chicken_thigh_cooked",
+          "grams": 65
+        },
+        {
+          "foodId": "carrot",
+          "grams": 45
+        },
+        {
+          "foodId": "zucchini",
+          "grams": 45
+        },
+        {
+          "foodId": "couscous_cooked",
+          "grams": 80
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 5
+        }
+      ],
+      "tags": {
+        "proteinSource": "poultry",
+        "allergens": [
+          "gluten"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "turkey_rice_zucchini",
+      "names": {
+        "es": "Pavo con arroz y calabacin",
+        "en": "Turkey with rice and zucchini",
+        "fr": "Dinde avec riz et courgette",
+        "pt": "Peru com arroz e abobrinha"
+      },
+      "allowedMeals": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        {
+          "foodId": "turkey_cooked",
+          "grams": 60
+        },
+        {
+          "foodId": "rice_cooked",
+          "grams": 90
+        },
+        {
+          "foodId": "zucchini",
+          "grams": 70
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 5
+        }
+      ],
+      "tags": {
+        "proteinSource": "poultry",
+        "allergens": [],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "lean_beef_vegetable_sauce",
+      "names": {
+        "es": "Ternera magra con salsa de verduras",
+        "en": "Lean beef with vegetable sauce",
+        "fr": "Boeuf maigre sauce legumes",
+        "pt": "Carne bovina magra com molho de legumes"
+      },
+      "allowedMeals": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        {
+          "foodId": "beef_lean_cooked",
+          "grams": 60
+        },
+        {
+          "foodId": "tomato",
+          "grams": 70
+        },
+        {
+          "foodId": "carrot",
+          "grams": 40
+        },
+        {
+          "foodId": "leek",
+          "grams": 30
+        },
+        {
+          "foodId": "potato_boiled",
+          "grams": 70
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 4
+        }
+      ],
+      "tags": {
+        "proteinSource": "red_meat",
+        "allergens": [],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "whole_wheat_pasta_lentil_bolognese",
+      "names": {
+        "es": "Pasta integral corta con bolonesa de lentejas",
+        "en": "Whole wheat pasta with lentil bolognese",
+        "fr": "Pates completes avec bolognaise de lentilles",
+        "pt": "Macarrao integral com bolonhesa de lentilha"
+      },
+      "allowedMeals": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        {
+          "foodId": "whole_wheat_pasta_cooked",
+          "grams": 100
+        },
+        {
+          "foodId": "lentils_cooked",
+          "grams": 80
+        },
+        {
+          "foodId": "tomato",
+          "grams": 70
+        },
+        {
+          "foodId": "carrot",
+          "grams": 30
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 4
+        }
+      ],
+      "tags": {
+        "proteinSource": "legume",
+        "allergens": [
+          "gluten",
+          "legume"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "creamy_rice_chicken_vegetables",
+      "names": {
+        "es": "Arroz meloso con pollo y verduras",
+        "en": "Creamy rice with chicken and vegetables",
+        "fr": "Riz fondant au poulet et legumes",
+        "pt": "Arroz cremoso com frango e legumes"
+      },
+      "allowedMeals": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        {
+          "foodId": "rice_cooked",
+          "grams": 100
+        },
+        {
+          "foodId": "chicken_thigh_cooked",
+          "grams": 55
+        },
+        {
+          "foodId": "carrot",
+          "grams": 40
+        },
+        {
+          "foodId": "pumpkin",
+          "grams": 50
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 4
+        }
+      ],
+      "tags": {
+        "proteinSource": "poultry",
+        "allergens": [],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "quinoa_vegetables_egg",
+      "names": {
+        "es": "Quinoa con verduras y huevo",
+        "en": "Quinoa with vegetables and egg",
+        "fr": "Quinoa aux legumes et oeuf",
+        "pt": "Quinoa com legumes e ovo"
+      },
+      "allowedMeals": [
+        "lunch",
+        "dinner"
+      ],
+      "ingredients": [
+        {
+          "foodId": "quinoa_cooked",
+          "grams": 100
+        },
+        {
+          "foodId": "egg",
+          "grams": 45
+        },
+        {
+          "foodId": "zucchini",
+          "grams": 50
+        },
+        {
+          "foodId": "carrot",
+          "grams": 30
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 4
+        }
+      ],
+      "tags": {
+        "proteinSource": "egg",
+        "allergens": [
+          "egg"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "vegetable_puree_egg",
+      "names": {
+        "es": "Pure de verduras con huevo",
+        "en": "Vegetable puree with egg",
+        "fr": "Puree de legumes avec oeuf",
+        "pt": "Pure de legumes com ovo"
+      },
+      "allowedMeals": [
+        "dinner"
+      ],
+      "ingredients": [
+        {
+          "foodId": "potato_boiled",
+          "grams": 90
+        },
+        {
+          "foodId": "zucchini",
+          "grams": 80
+        },
+        {
+          "foodId": "carrot",
+          "grams": 60
+        },
+        {
+          "foodId": "egg",
+          "grams": 45
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 4
+        }
+      ],
+      "tags": {
+        "proteinSource": "egg",
+        "allergens": [
+          "egg"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "zucchini_cream_turkey",
+      "names": {
+        "es": "Crema de calabacin con pavo",
+        "en": "Zucchini cream with turkey",
+        "fr": "Creme de courgette a la dinde",
+        "pt": "Creme de abobrinha com peru"
+      },
+      "allowedMeals": [
+        "dinner"
+      ],
+      "ingredients": [
+        {
+          "foodId": "zucchini",
+          "grams": 120
+        },
+        {
+          "foodId": "potato_boiled",
+          "grams": 80
+        },
+        {
+          "foodId": "turkey_cooked",
+          "grams": 50
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 4
+        }
+      ],
+      "tags": {
+        "proteinSource": "poultry",
+        "allergens": [],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "thin_noodle_soup_chicken",
+      "names": {
+        "es": "Sopa de fideos finos con pollo",
+        "en": "Thin noodle soup with chicken",
+        "fr": "Soupe de vermicelles au poulet",
+        "pt": "Sopa de macarrao fino com frango"
+      },
+      "allowedMeals": [
+        "dinner"
+      ],
+      "ingredients": [
+        {
+          "foodId": "vegetable_broth_no_salt",
+          "grams": 180
+        },
+        {
+          "foodId": "vermicelli_cooked",
+          "grams": 70
+        },
+        {
+          "foodId": "chicken_thigh_cooked",
+          "grams": 50
+        },
+        {
+          "foodId": "carrot",
+          "grams": 30
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 3
+        }
+      ],
+      "tags": {
+        "proteinSource": "poultry",
+        "allergens": [
+          "gluten"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "yogurt_crushed_berries",
+      "names": {
+        "es": "Yogur con frutos rojos triturados",
+        "en": "Yogurt with crushed berries",
+        "fr": "Yaourt aux fruits rouges ecrases",
+        "pt": "Iogurte com frutas vermelhas amassadas"
+      },
+      "allowedMeals": [
+        "snack_am",
+        "snack_pm"
+      ],
+      "ingredients": [
+        {
+          "foodId": "whole_plain_yogurt",
+          "grams": 100
+        },
+        {
+          "foodId": "berries_mixed",
+          "grams": 60
+        },
+        {
+          "foodId": "oats_dry",
+          "grams": 10
+        }
+      ],
+      "tags": {
+        "proteinSource": "dairy",
+        "allergens": [
+          "milk",
+          "gluten"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "roasted_sweetpotato_fresh_cheese",
+      "names": {
+        "es": "Boniato asado con queso fresco",
+        "en": "Roasted sweet potato with fresh cheese",
+        "fr": "Patate douce rotie au fromage frais",
+        "pt": "Batata-doce assada com queijo fresco"
+      },
+      "allowedMeals": [
+        "snack_pm",
+        "dinner"
+      ],
+      "ingredients": [
+        {
+          "foodId": "sweet_potato_baked",
+          "grams": 120
+        },
+        {
+          "foodId": "fresh_cheese_pasteurized",
+          "grams": 70
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 3
+        }
+      ],
+      "tags": {
+        "proteinSource": "dairy",
+        "allergens": [
+          "milk"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "scrambled_egg_spinach_potato",
+      "names": {
+        "es": "Revuelto de huevo con espinaca y patata",
+        "en": "Scrambled egg with spinach and potato",
+        "fr": "Oeufs brouilles avec epinards et pomme de terre",
+        "pt": "Ovo mexido com espinafre e batata"
+      },
+      "allowedMeals": [
+        "dinner"
+      ],
+      "ingredients": [
+        {
+          "foodId": "egg",
+          "grams": 55
+        },
+        {
+          "foodId": "spinach_cooked",
+          "grams": 60
+        },
+        {
+          "foodId": "potato_boiled",
+          "grams": 90
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 4
+        }
+      ],
+      "tags": {
+        "proteinSource": "egg",
+        "allergens": [
+          "egg"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "soft_bread_fresh_cheese_pear",
+      "names": {
+        "es": "Pan blando con queso fresco y pera",
+        "en": "Soft bread with fresh cheese and pear",
+        "fr": "Pain tendre avec fromage frais et poire",
+        "pt": "Pao macio com queijo fresco e pera"
+      },
+      "allowedMeals": [
+        "breakfast"
+      ],
+      "ingredients": [
+        {
+          "foodId": "whole_wheat_bread",
+          "grams": 30
+        },
+        {
+          "foodId": "fresh_cheese_pasteurized",
+          "grams": 45
+        },
+        {
+          "foodId": "pear",
+          "grams": 50
+        }
+      ],
+      "tags": {
+        "proteinSource": "dairy",
+        "allergens": [
+          "milk",
+          "gluten"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "banana_berries_yogurt_oats",
+      "names": {
+        "es": "Platano, frutos rojos, yogur y avena",
+        "en": "Banana, berries, yogurt, and oats",
+        "fr": "Banane, fruits rouges, yaourt et avoine",
+        "pt": "Banana, frutas vermelhas, iogurte e aveia"
+      },
+      "allowedMeals": [
+        "breakfast"
+      ],
+      "ingredients": [
+        {
+          "foodId": "banana",
+          "grams": 60
+        },
+        {
+          "foodId": "berries_mixed",
+          "grams": 50
+        },
+        {
+          "foodId": "whole_plain_yogurt",
+          "grams": 90
+        },
+        {
+          "foodId": "oats_dry",
+          "grams": 10
+        }
+      ],
+      "tags": {
+        "proteinSource": "dairy",
+        "allergens": [
+          "milk",
+          "gluten"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "soft_bread_avocado_egg",
+      "names": {
+        "es": "Pan blando con aguacate y huevo",
+        "en": "Soft bread with avocado and egg",
+        "fr": "Pain tendre avec avocat et oeuf",
+        "pt": "Pao macio com abacate e ovo"
+      },
+      "allowedMeals": [
+        "breakfast"
+      ],
+      "ingredients": [
+        {
+          "foodId": "whole_wheat_bread",
+          "grams": 25
+        },
+        {
+          "foodId": "avocado",
+          "grams": 30
+        },
+        {
+          "foodId": "egg",
+          "grams": 35
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 2
+        }
+      ],
+      "tags": {
+        "proteinSource": "egg",
+        "allergens": [
+          "egg",
+          "gluten"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "apple_oat_yogurt_bowl",
+      "names": {
+        "es": "Manzana, avena y yogur",
+        "en": "Apple, oats, and yogurt bowl",
+        "fr": "Bol pomme, avoine et yaourt",
+        "pt": "Tigela de maca, aveia e iogurte"
+      },
+      "allowedMeals": [
+        "breakfast"
+      ],
+      "ingredients": [
+        {
+          "foodId": "apple",
+          "grams": 70
+        },
+        {
+          "foodId": "oats_dry",
+          "grams": 14
+        },
+        {
+          "foodId": "whole_plain_yogurt",
+          "grams": 90
+        }
+      ],
+      "tags": {
+        "proteinSource": "dairy",
+        "allergens": [
+          "milk",
+          "gluten"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "soft_bread_hummus_tomato",
+      "names": {
+        "es": "Pan blando con hummus y tomate",
+        "en": "Soft bread with hummus and tomato",
+        "fr": "Pain tendre avec houmous et tomate",
+        "pt": "Pao macio com homus e tomate"
+      },
+      "allowedMeals": [
+        "snack_am"
+      ],
+      "ingredients": [
+        {
+          "foodId": "whole_wheat_bread",
+          "grams": 28
+        },
+        {
+          "foodId": "chickpeas_cooked",
+          "grams": 45
+        },
+        {
+          "foodId": "tomato",
+          "grams": 30
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 3
+        }
+      ],
+      "tags": {
+        "proteinSource": "legume",
+        "allergens": [
+          "gluten",
+          "legume"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "pear_avocado_yogurt",
+      "names": {
+        "es": "Pera, aguacate y yogur",
+        "en": "Pear, avocado, and yogurt",
+        "fr": "Poire, avocat et yaourt",
+        "pt": "Pera, abacate e iogurte"
+      },
+      "allowedMeals": [
+        "snack_am"
+      ],
+      "ingredients": [
+        {
+          "foodId": "pear",
+          "grams": 60
+        },
+        {
+          "foodId": "avocado",
+          "grams": 25
+        },
+        {
+          "foodId": "whole_plain_yogurt",
+          "grams": 80
+        }
+      ],
+      "tags": {
+        "proteinSource": "dairy",
+        "allergens": [
+          "milk"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "banana_fresh_cheese",
+      "names": {
+        "es": "Platano con queso fresco",
+        "en": "Banana with fresh cheese",
+        "fr": "Banane avec fromage frais",
+        "pt": "Banana com queijo fresco"
+      },
+      "allowedMeals": [
+        "snack_am"
+      ],
+      "ingredients": [
+        {
+          "foodId": "banana",
+          "grams": 60
+        },
+        {
+          "foodId": "fresh_cheese_pasteurized",
+          "grams": 55
+        }
+      ],
+      "tags": {
+        "proteinSource": "dairy",
+        "allergens": [
+          "milk"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "berries_yogurt_pear",
+      "names": {
+        "es": "Frutos rojos, yogur y pera",
+        "en": "Berries, yogurt, and pear",
+        "fr": "Fruits rouges, yaourt et poire",
+        "pt": "Frutas vermelhas, iogurte e pera"
+      },
+      "allowedMeals": [
+        "snack_am"
+      ],
+      "ingredients": [
+        {
+          "foodId": "berries_mixed",
+          "grams": 50
+        },
+        {
+          "foodId": "whole_plain_yogurt",
+          "grams": 80
+        },
+        {
+          "foodId": "pear",
+          "grams": 60
+        }
+      ],
+      "tags": {
+        "proteinSource": "dairy",
+        "allergens": [
+          "milk"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "hake_rice_zucchini",
+      "names": {
+        "es": "Merluza con arroz y calabacin",
+        "en": "Hake with rice and zucchini",
+        "fr": "Merlu avec riz et courgette",
+        "pt": "Merluza com arroz e abobrinha"
+      },
+      "allowedMeals": [
+        "lunch"
+      ],
+      "ingredients": [
+        {
+          "foodId": "hake",
+          "grams": 90
+        },
+        {
+          "foodId": "rice_cooked",
+          "grams": 90
+        },
+        {
+          "foodId": "zucchini",
+          "grams": 80
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 4
+        }
+      ],
+      "tags": {
+        "proteinSource": "fish",
+        "allergens": [
+          "fish"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "turkey_sweetpotato_broccoli",
+      "names": {
+        "es": "Pavo con boniato y brocoli",
+        "en": "Turkey with sweet potato and broccoli",
+        "fr": "Dinde avec patate douce et brocoli",
+        "pt": "Peru com batata-doce e brocolis"
+      },
+      "allowedMeals": [
+        "lunch"
+      ],
+      "ingredients": [
+        {
+          "foodId": "turkey_cooked",
+          "grams": 85
+        },
+        {
+          "foodId": "sweet_potato_baked",
+          "grams": 100
+        },
+        {
+          "foodId": "broccoli",
+          "grams": 80
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 4
+        }
+      ],
+      "tags": {
+        "proteinSource": "poultry",
+        "allergens": [],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "lentils_pumpkin_quinoa",
+      "names": {
+        "es": "Lentejas con calabaza y quinoa",
+        "en": "Lentils with pumpkin and quinoa",
+        "fr": "Lentilles avec courge et quinoa",
+        "pt": "Lentilhas com abobora e quinoa"
+      },
+      "allowedMeals": [
+        "lunch"
+      ],
+      "ingredients": [
+        {
+          "foodId": "lentils_cooked",
+          "grams": 120
+        },
+        {
+          "foodId": "pumpkin",
+          "grams": 100
+        },
+        {
+          "foodId": "quinoa_cooked",
+          "grams": 85
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 4
+        }
+      ],
+      "tags": {
+        "proteinSource": "legume",
+        "allergens": [
+          "legume"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "beef_couscous_leek_carrot",
+      "names": {
+        "es": "Ternera con cuscus, puerro y zanahoria",
+        "en": "Beef with couscous, leek, and carrot",
+        "fr": "Boeuf avec couscous, poireau et carotte",
+        "pt": "Carne bovina com cuscuz, alho-poro e cenoura"
+      },
+      "allowedMeals": [
+        "lunch"
+      ],
+      "ingredients": [
+        {
+          "foodId": "beef_lean_cooked",
+          "grams": 55
+        },
+        {
+          "foodId": "couscous_cooked",
+          "grams": 80
+        },
+        {
+          "foodId": "leek",
+          "grams": 50
+        },
+        {
+          "foodId": "carrot",
+          "grams": 60
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 4
+        }
+      ],
+      "tags": {
+        "proteinSource": "red_meat",
+        "allergens": [
+          "gluten"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "roasted_sweetpotato_hummus",
+      "names": {
+        "es": "Boniato asado con hummus",
+        "en": "Roasted sweet potato with hummus",
+        "fr": "Patate douce rotie avec houmous",
+        "pt": "Batata-doce assada com homus"
+      },
+      "allowedMeals": [
+        "snack_pm"
+      ],
+      "ingredients": [
+        {
+          "foodId": "sweet_potato_baked",
+          "grams": 90
+        },
+        {
+          "foodId": "chickpeas_cooked",
+          "grams": 45
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 3
+        }
+      ],
+      "tags": {
+        "proteinSource": "legume",
+        "allergens": [
+          "legume"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "soft_bread_avocado_turkey",
+      "names": {
+        "es": "Pan blando con aguacate y pavo",
+        "en": "Soft bread with avocado and turkey",
+        "fr": "Pain tendre avec avocat et dinde",
+        "pt": "Pao macio com abacate e peru"
+      },
+      "allowedMeals": [
+        "snack_pm"
+      ],
+      "ingredients": [
+        {
+          "foodId": "whole_wheat_bread",
+          "grams": 25
+        },
+        {
+          "foodId": "avocado",
+          "grams": 25
+        },
+        {
+          "foodId": "turkey_cooked",
+          "grams": 40
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 2
+        }
+      ],
+      "tags": {
+        "proteinSource": "poultry",
+        "allergens": [
+          "gluten"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "pear_yogurt_oats_pm",
+      "names": {
+        "es": "Pera con yogur y avena",
+        "en": "Pear with yogurt and oats",
+        "fr": "Poire avec yaourt et avoine",
+        "pt": "Pera com iogurte e aveia"
+      },
+      "allowedMeals": [
+        "snack_pm"
+      ],
+      "ingredients": [
+        {
+          "foodId": "pear",
+          "grams": 60
+        },
+        {
+          "foodId": "whole_plain_yogurt",
+          "grams": 80
+        },
+        {
+          "foodId": "oats_dry",
+          "grams": 8
+        }
+      ],
+      "tags": {
+        "proteinSource": "dairy",
+        "allergens": [
+          "milk",
+          "gluten"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "soft_bread_fresh_cheese_berries",
+      "names": {
+        "es": "Pan blando con queso fresco y frutos rojos",
+        "en": "Soft bread with fresh cheese and berries",
+        "fr": "Pain tendre avec fromage frais et fruits rouges",
+        "pt": "Pao macio com queijo fresco e frutas vermelhas"
+      },
+      "allowedMeals": [
+        "snack_pm"
+      ],
+      "ingredients": [
+        {
+          "foodId": "whole_wheat_bread",
+          "grams": 25
+        },
+        {
+          "foodId": "fresh_cheese_pasteurized",
+          "grams": 40
+        },
+        {
+          "foodId": "berries_mixed",
+          "grams": 45
+        }
+      ],
+      "tags": {
+        "proteinSource": "dairy",
+        "allergens": [
+          "milk",
+          "gluten"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "zucchini_potato_hake_cream",
+      "names": {
+        "es": "Crema de calabacin, patata y merluza",
+        "en": "Zucchini, potato, and hake cream",
+        "fr": "Creme de courgette, pomme de terre et merlu",
+        "pt": "Creme de abobrinha, batata e merluza"
+      },
+      "allowedMeals": [
+        "dinner"
+      ],
+      "ingredients": [
+        {
+          "foodId": "zucchini",
+          "grams": 100
+        },
+        {
+          "foodId": "potato_boiled",
+          "grams": 90
+        },
+        {
+          "foodId": "hake",
+          "grams": 70
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 4
+        }
+      ],
+      "tags": {
+        "proteinSource": "fish",
+        "allergens": [
+          "fish"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "rice_spinach_egg",
+      "names": {
+        "es": "Arroz con espinaca y huevo",
+        "en": "Rice with spinach and egg",
+        "fr": "Riz avec epinards et oeuf",
+        "pt": "Arroz com espinafre e ovo"
+      },
+      "allowedMeals": [
+        "dinner"
+      ],
+      "ingredients": [
+        {
+          "foodId": "rice_cooked",
+          "grams": 75
+        },
+        {
+          "foodId": "spinach_cooked",
+          "grams": 60
+        },
+        {
+          "foodId": "egg",
+          "grams": 45
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 4
+        }
+      ],
+      "tags": {
+        "proteinSource": "egg",
+        "allergens": [
+          "egg"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "white_beans_pumpkin_carrot",
+      "names": {
+        "es": "Alubias blancas con calabaza y zanahoria",
+        "en": "White beans with pumpkin and carrot",
+        "fr": "Haricots blancs avec courge et carotte",
+        "pt": "Feijao branco com abobora e cenoura"
+      },
+      "allowedMeals": [
+        "dinner"
+      ],
+      "ingredients": [
+        {
+          "foodId": "white_beans_cooked",
+          "grams": 110
+        },
+        {
+          "foodId": "pumpkin",
+          "grams": 90
+        },
+        {
+          "foodId": "carrot",
+          "grams": 60
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 4
+        }
+      ],
+      "tags": {
+        "proteinSource": "legume",
+        "allergens": [
+          "legume"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "couscous_turkey_broccoli",
+      "names": {
+        "es": "Cuscus con pavo y brocoli",
+        "en": "Couscous with turkey and broccoli",
+        "fr": "Couscous avec dinde et brocoli",
+        "pt": "Cuscuz com peru e brocolis"
+      },
+      "allowedMeals": [
+        "dinner"
+      ],
+      "ingredients": [
+        {
+          "foodId": "couscous_cooked",
+          "grams": 75
+        },
+        {
+          "foodId": "turkey_cooked",
+          "grams": 70
+        },
+        {
+          "foodId": "broccoli",
+          "grams": 80
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 4
+        }
+      ],
+      "tags": {
+        "proteinSource": "poultry",
+        "allergens": [
+          "gluten"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "pear_banana_yogurt_oats",
+      "names": {
+        "es": "Pera, platano, yogur y avena",
+        "en": "Pear, banana, yogurt, and oats",
+        "fr": "Poire, banane, yaourt et avoine",
+        "pt": "Pera, banana, iogurte e aveia"
+      },
+      "allowedMeals": [
+        "breakfast"
+      ],
+      "ingredients": [
+        {
+          "foodId": "pear",
+          "grams": 50
+        },
+        {
+          "foodId": "banana",
+          "grams": 50
+        },
+        {
+          "foodId": "whole_plain_yogurt",
+          "grams": 85
+        },
+        {
+          "foodId": "oats_dry",
+          "grams": 8
+        }
+      ],
+      "tags": {
+        "proteinSource": "dairy",
+        "allergens": [
+          "milk",
+          "gluten"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "soft_bread_egg_tomato_breakfast",
+      "names": {
+        "es": "Pan blando con huevo y tomate",
+        "en": "Soft bread with egg and tomato",
+        "fr": "Pain tendre avec oeuf et tomate",
+        "pt": "Pao macio com ovo e tomate"
+      },
+      "allowedMeals": [
+        "breakfast"
+      ],
+      "ingredients": [
+        {
+          "foodId": "whole_wheat_bread",
+          "grams": 28
+        },
+        {
+          "foodId": "egg",
+          "grams": 40
+        },
+        {
+          "foodId": "tomato",
+          "grams": 35
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 2
+        }
+      ],
+      "tags": {
+        "proteinSource": "egg",
+        "allergens": [
+          "egg",
+          "gluten"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "avocado_yogurt_berries_oats",
+      "names": {
+        "es": "Aguacate, yogur, frutos rojos y avena",
+        "en": "Avocado, yogurt, berries, and oats",
+        "fr": "Avocat, yaourt, fruits rouges et avoine",
+        "pt": "Abacate, iogurte, frutas vermelhas e aveia"
+      },
+      "allowedMeals": [
+        "breakfast"
+      ],
+      "ingredients": [
+        {
+          "foodId": "avocado",
+          "grams": 30
+        },
+        {
+          "foodId": "whole_plain_yogurt",
+          "grams": 85
+        },
+        {
+          "foodId": "berries_mixed",
+          "grams": 50
+        },
+        {
+          "foodId": "oats_dry",
+          "grams": 8
+        }
+      ],
+      "tags": {
+        "proteinSource": "dairy",
+        "allergens": [
+          "milk",
+          "gluten"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "apple_prune_oat_bowl",
+      "names": {
+        "es": "Manzana, ciruela, yogur y avena",
+        "en": "Apple, prune, yogurt, and oats",
+        "fr": "Pomme, pruneau, yaourt et avoine",
+        "pt": "Maca, ameixa, iogurte e aveia"
+      },
+      "allowedMeals": [
+        "breakfast"
+      ],
+      "ingredients": [
+        {
+          "foodId": "apple",
+          "grams": 70
+        },
+        {
+          "foodId": "prune",
+          "grams": 8
+        },
+        {
+          "foodId": "whole_plain_yogurt",
+          "grams": 80
+        },
+        {
+          "foodId": "oats_dry",
+          "grams": 14
+        }
+      ],
+      "tags": {
+        "proteinSource": "dairy",
+        "allergens": [
+          "milk",
+          "gluten"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "soft_bread_avocado_fresh_cheese",
+      "names": {
+        "es": "Pan blando con aguacate y queso fresco",
+        "en": "Soft bread with avocado and fresh cheese",
+        "fr": "Pain tendre avec avocat et fromage frais",
+        "pt": "Pao macio com abacate e queijo fresco"
+      },
+      "allowedMeals": [
+        "snack_am"
+      ],
+      "ingredients": [
+        {
+          "foodId": "whole_wheat_bread",
+          "grams": 25
+        },
+        {
+          "foodId": "avocado",
+          "grams": 25
+        },
+        {
+          "foodId": "fresh_cheese_pasteurized",
+          "grams": 40
+        }
+      ],
+      "tags": {
+        "proteinSource": "dairy",
+        "allergens": [
+          "milk",
+          "gluten"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "apple_berries_yogurt_snack",
+      "names": {
+        "es": "Manzana, frutos rojos y yogur",
+        "en": "Apple, berries, and yogurt",
+        "fr": "Pomme, fruits rouges et yaourt",
+        "pt": "Maca, frutas vermelhas e iogurte"
+      },
+      "allowedMeals": [
+        "snack_am"
+      ],
+      "ingredients": [
+        {
+          "foodId": "apple",
+          "grams": 60
+        },
+        {
+          "foodId": "berries_mixed",
+          "grams": 50
+        },
+        {
+          "foodId": "whole_plain_yogurt",
+          "grams": 80
+        }
+      ],
+      "tags": {
+        "proteinSource": "dairy",
+        "allergens": [
+          "milk"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "pear_banana_fresh_cheese",
+      "names": {
+        "es": "Pera, platano y queso fresco",
+        "en": "Pear, banana, and fresh cheese",
+        "fr": "Poire, banane et fromage frais",
+        "pt": "Pera, banana e queijo fresco"
+      },
+      "allowedMeals": [
+        "snack_am"
+      ],
+      "ingredients": [
+        {
+          "foodId": "pear",
+          "grams": 50
+        },
+        {
+          "foodId": "banana",
+          "grams": 40
+        },
+        {
+          "foodId": "fresh_cheese_pasteurized",
+          "grams": 45
+        }
+      ],
+      "tags": {
+        "proteinSource": "dairy",
+        "allergens": [
+          "milk"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "soft_bread_egg_tomato_snack",
+      "names": {
+        "es": "Pan blando con huevo y tomate suave",
+        "en": "Soft bread with egg and tomato snack",
+        "fr": "Pain tendre avec oeuf et tomate douce",
+        "pt": "Pao macio com ovo e tomate suave"
+      },
+      "allowedMeals": [
+        "snack_am"
+      ],
+      "ingredients": [
+        {
+          "foodId": "whole_wheat_bread",
+          "grams": 25
+        },
+        {
+          "foodId": "egg",
+          "grams": 35
+        },
+        {
+          "foodId": "tomato",
+          "grams": 30
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 2
+        }
+      ],
+      "tags": {
+        "proteinSource": "egg",
+        "allergens": [
+          "egg",
+          "gluten"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "salmon_rice_broccoli",
+      "names": {
+        "es": "Salmon con arroz y brocoli",
+        "en": "Salmon with rice and broccoli",
+        "fr": "Saumon avec riz et brocoli",
+        "pt": "Salmao com arroz e brocolis"
+      },
+      "allowedMeals": [
+        "lunch"
+      ],
+      "ingredients": [
+        {
+          "foodId": "salmon",
+          "grams": 70
+        },
+        {
+          "foodId": "rice_cooked",
+          "grams": 85
+        },
+        {
+          "foodId": "broccoli",
+          "grams": 80
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 4
+        }
+      ],
+      "tags": {
+        "proteinSource": "fish",
+        "allergens": [
+          "fish"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "chicken_potato_carrot",
+      "names": {
+        "es": "Pollo con patata y zanahoria",
+        "en": "Chicken with potato and carrot",
+        "fr": "Poulet avec pomme de terre et carotte",
+        "pt": "Frango com batata e cenoura"
+      },
+      "allowedMeals": [
+        "lunch"
+      ],
+      "ingredients": [
+        {
+          "foodId": "chicken_thigh_cooked",
+          "grams": 65
+        },
+        {
+          "foodId": "potato_boiled",
+          "grams": 110
+        },
+        {
+          "foodId": "carrot",
+          "grams": 70
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 4
+        }
+      ],
+      "tags": {
+        "proteinSource": "poultry",
+        "allergens": [],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "cod_quinoa_pumpkin",
+      "names": {
+        "es": "Bacalao con quinoa y calabaza",
+        "en": "Cod with quinoa and pumpkin",
+        "fr": "Cabillaud avec quinoa et courge",
+        "pt": "Bacalhau com quinoa e abobora"
+      },
+      "allowedMeals": [
+        "lunch"
+      ],
+      "ingredients": [
+        {
+          "foodId": "cod",
+          "grams": 85
+        },
+        {
+          "foodId": "quinoa_cooked",
+          "grams": 95
+        },
+        {
+          "foodId": "pumpkin",
+          "grams": 100
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 4
+        }
+      ],
+      "tags": {
+        "proteinSource": "fish",
+        "allergens": [
+          "fish"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "turkey_couscous_zucchini",
+      "names": {
+        "es": "Pavo con cuscus y calabacin",
+        "en": "Turkey with couscous and zucchini",
+        "fr": "Dinde avec couscous et courgette",
+        "pt": "Peru com cuscuz e abobrinha"
+      },
+      "allowedMeals": [
+        "lunch"
+      ],
+      "ingredients": [
+        {
+          "foodId": "turkey_cooked",
+          "grams": 80
+        },
+        {
+          "foodId": "couscous_cooked",
+          "grams": 90
+        },
+        {
+          "foodId": "zucchini",
+          "grams": 80
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 4
+        }
+      ],
+      "tags": {
+        "proteinSource": "poultry",
+        "allergens": [
+          "gluten"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "soft_bread_hummus_avocado",
+      "names": {
+        "es": "Pan blando con hummus y aguacate",
+        "en": "Soft bread with hummus and avocado",
+        "fr": "Pain tendre avec houmous et avocat",
+        "pt": "Pao macio com homus e abacate"
+      },
+      "allowedMeals": [
+        "snack_pm"
+      ],
+      "ingredients": [
+        {
+          "foodId": "whole_wheat_bread",
+          "grams": 25
+        },
+        {
+          "foodId": "chickpeas_cooked",
+          "grams": 40
+        },
+        {
+          "foodId": "avocado",
+          "grams": 20
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 2
+        }
+      ],
+      "tags": {
+        "proteinSource": "legume",
+        "allergens": [
+          "gluten",
+          "legume"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "apple_yogurt_berries_pm",
+      "names": {
+        "es": "Manzana, yogur y frutos rojos",
+        "en": "Apple, yogurt, and berries",
+        "fr": "Pomme, yaourt et fruits rouges",
+        "pt": "Maca, iogurte e frutas vermelhas"
+      },
+      "allowedMeals": [
+        "snack_pm"
+      ],
+      "ingredients": [
+        {
+          "foodId": "apple",
+          "grams": 60
+        },
+        {
+          "foodId": "whole_plain_yogurt",
+          "grams": 80
+        },
+        {
+          "foodId": "berries_mixed",
+          "grams": 50
+        },
+        {
+          "foodId": "oats_dry",
+          "grams": 8
+        }
+      ],
+      "tags": {
+        "proteinSource": "dairy",
+        "allergens": [
+          "milk",
+          "gluten"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "sweetpotato_yogurt_pear",
+      "names": {
+        "es": "Boniato, yogur y pera",
+        "en": "Sweet potato, yogurt, and pear",
+        "fr": "Patate douce, yaourt et poire",
+        "pt": "Batata-doce, iogurte e pera"
+      },
+      "allowedMeals": [
+        "snack_pm"
+      ],
+      "ingredients": [
+        {
+          "foodId": "sweet_potato_baked",
+          "grams": 80
+        },
+        {
+          "foodId": "whole_plain_yogurt",
+          "grams": 60
+        },
+        {
+          "foodId": "pear",
+          "grams": 50
+        }
+      ],
+      "tags": {
+        "proteinSource": "dairy",
+        "allergens": [
+          "milk"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "banana_oat_fresh_cheese",
+      "names": {
+        "es": "Platano, avena y queso fresco",
+        "en": "Banana, oats, and fresh cheese",
+        "fr": "Banane, avoine et fromage frais",
+        "pt": "Banana, aveia e queijo fresco"
+      },
+      "allowedMeals": [
+        "snack_pm"
+      ],
+      "ingredients": [
+        {
+          "foodId": "banana",
+          "grams": 50
+        },
+        {
+          "foodId": "oats_dry",
+          "grams": 8
+        },
+        {
+          "foodId": "fresh_cheese_pasteurized",
+          "grams": 40
+        }
+      ],
+      "tags": {
+        "proteinSource": "dairy",
+        "allergens": [
+          "milk",
+          "gluten"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "pumpkin_cod_rice",
+      "names": {
+        "es": "Calabaza con bacalao y arroz",
+        "en": "Pumpkin with cod and rice",
+        "fr": "Courge avec cabillaud et riz",
+        "pt": "Abobora com bacalhau e arroz"
+      },
+      "allowedMeals": [
+        "dinner"
+      ],
+      "ingredients": [
+        {
+          "foodId": "pumpkin",
+          "grams": 100
+        },
+        {
+          "foodId": "cod",
+          "grams": 75
+        },
+        {
+          "foodId": "rice_cooked",
+          "grams": 80
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 4
+        }
+      ],
+      "tags": {
+        "proteinSource": "fish",
+        "allergens": [
+          "fish"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "potato_broccoli_chicken",
+      "names": {
+        "es": "Patata con brocoli y pollo",
+        "en": "Potato with broccoli and chicken",
+        "fr": "Pomme de terre avec brocoli et poulet",
+        "pt": "Batata com brocolis e frango"
+      },
+      "allowedMeals": [
+        "dinner"
+      ],
+      "ingredients": [
+        {
+          "foodId": "potato_boiled",
+          "grams": 100
+        },
+        {
+          "foodId": "broccoli",
+          "grams": 80
+        },
+        {
+          "foodId": "chicken_thigh_cooked",
+          "grams": 60
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 4
+        }
+      ],
+      "tags": {
+        "proteinSource": "poultry",
+        "allergens": [],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "quinoa_zucchini_turkey",
+      "names": {
+        "es": "Quinoa con calabacin y pavo",
+        "en": "Quinoa with zucchini and turkey",
+        "fr": "Quinoa avec courgette et dinde",
+        "pt": "Quinoa com abobrinha e peru"
+      },
+      "allowedMeals": [
+        "dinner"
+      ],
+      "ingredients": [
+        {
+          "foodId": "quinoa_cooked",
+          "grams": 85
+        },
+        {
+          "foodId": "zucchini",
+          "grams": 90
+        },
+        {
+          "foodId": "turkey_cooked",
+          "grams": 75
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 4
+        }
+      ],
+      "tags": {
+        "proteinSource": "poultry",
+        "allergens": [],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "lentils_carrot_potato",
+      "names": {
+        "es": "Lentejas con zanahoria y patata",
+        "en": "Lentils with carrot and potato",
+        "fr": "Lentilles avec carotte et pomme de terre",
+        "pt": "Lentilhas com cenoura e batata"
+      },
+      "allowedMeals": [
+        "dinner"
+      ],
+      "ingredients": [
+        {
+          "foodId": "lentils_cooked",
+          "grams": 115
+        },
+        {
+          "foodId": "carrot",
+          "grams": 70
+        },
+        {
+          "foodId": "potato_boiled",
+          "grams": 90
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 4
+        }
+      ],
+      "tags": {
+        "proteinSource": "legume",
+        "allergens": [
+          "legume"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "snack_am_banana_yogurt_small",
+      "names": {
+        "es": "Platano con yogur suave",
+        "en": "Banana with plain yogurt",
+        "fr": "Banane avec yaourt nature",
+        "pt": "Banana com iogurte natural"
+      },
+      "allowedMeals": [
+        "snack_am"
+      ],
+      "ingredients": [
+        {
+          "foodId": "banana",
+          "grams": 50
+        },
+        {
+          "foodId": "whole_plain_yogurt",
+          "grams": 60
+        }
+      ],
+      "tags": {
+        "proteinSource": "dairy",
+        "allergens": [
+          "milk"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "snack_am_soft_bread_avocado",
+      "names": {
+        "es": "Pan blando con aguacate",
+        "en": "Soft bread with avocado",
+        "fr": "Pain tendre avec avocat",
+        "pt": "Pao macio com abacate"
+      },
+      "allowedMeals": [
+        "snack_am"
+      ],
+      "ingredients": [
+        {
+          "foodId": "whole_wheat_bread",
+          "grams": 20
+        },
+        {
+          "foodId": "avocado",
+          "grams": 20
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 1
+        }
+      ],
+      "tags": {
+        "proteinSource": "plant",
+        "allergens": [
+          "gluten"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "snack_am_yogurt_pear_bits",
+      "names": {
+        "es": "Yogur natural con pera",
+        "en": "Plain yogurt with pear",
+        "fr": "Yaourt nature avec poire",
+        "pt": "Iogurte natural com pera"
+      },
+      "allowedMeals": [
+        "snack_am"
+      ],
+      "ingredients": [
+        {
+          "foodId": "whole_plain_yogurt",
+          "grams": 90
+        },
+        {
+          "foodId": "pear",
+          "grams": 50
+        }
+      ],
+      "tags": {
+        "proteinSource": "dairy",
+        "allergens": [
+          "milk"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "snack_am_pear_banana_yogurt",
+      "names": {
+        "es": "Pera y platano con yogur",
+        "en": "Pear and banana with yogurt",
+        "fr": "Poire et banane avec yaourt",
+        "pt": "Pera e banana com iogurte"
+      },
+      "allowedMeals": [
+        "snack_am"
+      ],
+      "ingredients": [
+        {
+          "foodId": "pear",
+          "grams": 40
+        },
+        {
+          "foodId": "banana",
+          "grams": 35
+        },
+        {
+          "foodId": "whole_plain_yogurt",
+          "grams": 40
+        }
+      ],
+      "tags": {
+        "proteinSource": "dairy",
+        "allergens": [
+          "milk"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "snack_am_bread_tomato_oil",
+      "names": {
+        "es": "Pan con tomate y AOVE",
+        "en": "Bread with tomato and olive oil",
+        "fr": "Pain avec tomate et huile d olive",
+        "pt": "Pao com tomate e azeite"
+      },
+      "allowedMeals": [
+        "snack_am"
+      ],
+      "ingredients": [
+        {
+          "foodId": "whole_wheat_bread",
+          "grams": 22
+        },
+        {
+          "foodId": "tomato",
+          "grams": 30
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 2
+        }
+      ],
+      "tags": {
+        "proteinSource": "mixed",
+        "allergens": [
+          "gluten"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "snack_am_mini_omelette_bread",
+      "names": {
+        "es": "Mini tortilla con pan",
+        "en": "Mini omelette with bread",
+        "fr": "Mini omelette avec pain",
+        "pt": "Mini omelete com pao"
+      },
+      "allowedMeals": [
+        "snack_am"
+      ],
+      "ingredients": [
+        {
+          "foodId": "egg",
+          "grams": 35
+        },
+        {
+          "foodId": "whole_wheat_bread",
+          "grams": 10
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 2
+        }
+      ],
+      "tags": {
+        "proteinSource": "egg",
+        "allergens": [
+          "egg",
+          "gluten"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "snack_am_fresh_cheese_pear_bread",
+      "names": {
+        "es": "Queso fresco con pera y pan",
+        "en": "Fresh cheese with pear and bread",
+        "fr": "Fromage frais avec poire et pain",
+        "pt": "Queijo fresco com pera e pao"
+      },
+      "allowedMeals": [
+        "snack_am"
+      ],
+      "ingredients": [
+        {
+          "foodId": "fresh_cheese_pasteurized",
+          "grams": 35
+        },
+        {
+          "foodId": "pear",
+          "grams": 45
+        },
+        {
+          "foodId": "whole_wheat_bread",
+          "grams": 10
+        }
+      ],
+      "tags": {
+        "proteinSource": "dairy",
+        "allergens": [
+          "milk",
+          "gluten"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "snack_am_pear_yogurt_oats",
+      "names": {
+        "es": "Pera con yogur y avena",
+        "en": "Pear with yogurt and oats",
+        "fr": "Poire avec yaourt et avoine",
+        "pt": "Pera com iogurte e aveia"
+      },
+      "allowedMeals": [
+        "snack_am"
+      ],
+      "ingredients": [
+        {
+          "foodId": "pear",
+          "grams": 40
+        },
+        {
+          "foodId": "whole_plain_yogurt",
+          "grams": 70
+        },
+        {
+          "foodId": "oats_dry",
+          "grams": 6
+        }
+      ],
+      "tags": {
+        "proteinSource": "dairy",
+        "allergens": [
+          "milk",
+          "gluten"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "snack_am_oat_banana_cookie_style",
+      "names": {
+        "es": "Avena con platano tipo galleta casera",
+        "en": "Oats and banana cookie style",
+        "fr": "Avoine et banane style biscuit maison",
+        "pt": "Aveia com banana estilo biscoito caseiro"
+      },
+      "allowedMeals": [
+        "snack_am"
+      ],
+      "ingredients": [
+        {
+          "foodId": "oats_dry",
+          "grams": 12
+        },
+        {
+          "foodId": "banana",
+          "grams": 45
+        },
+        {
+          "foodId": "whole_plain_yogurt",
+          "grams": 40
+        }
+      ],
+      "tags": {
+        "proteinSource": "mixed",
+        "allergens": [
+          "milk",
+          "gluten"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "snack_am_apple_compote_yogurt",
+      "names": {
+        "es": "Compota de manzana con yogur",
+        "en": "Apple compote with yogurt",
+        "fr": "Compote de pomme avec yaourt",
+        "pt": "Compota de maca com iogurte"
+      },
+      "allowedMeals": [
+        "snack_am"
+      ],
+      "ingredients": [
+        {
+          "foodId": "apple",
+          "grams": 70
+        },
+        {
+          "foodId": "whole_plain_yogurt",
+          "grams": 70
+        },
+        {
+          "foodId": "prune",
+          "grams": 6
+        }
+      ],
+      "tags": {
+        "proteinSource": "dairy",
+        "allergens": [
+          "milk"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "snack_am_mini_bread_hummus",
+      "names": {
+        "es": "Mini pan integral con hummus",
+        "en": "Mini whole bread with hummus",
+        "fr": "Mini pain complet avec houmous",
+        "pt": "Mini pao integral com homus"
+      },
+      "allowedMeals": [
+        "snack_am"
+      ],
+      "ingredients": [
+        {
+          "foodId": "whole_wheat_bread",
+          "grams": 18
+        },
+        {
+          "foodId": "chickpeas_cooked",
+          "grams": 35
+        },
+        {
+          "foodId": "tomato",
+          "grams": 20
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 2
+        }
+      ],
+      "tags": {
+        "proteinSource": "legume",
+        "allergens": [
+          "gluten",
+          "legume"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "snack_am_yogurt_berries_soft",
+      "names": {
+        "es": "Yogur natural con frutos rojos",
+        "en": "Plain yogurt with berries",
+        "fr": "Yaourt nature aux fruits rouges",
+        "pt": "Iogurte natural com frutas vermelhas"
+      },
+      "allowedMeals": [
+        "snack_am"
+      ],
+      "ingredients": [
+        {
+          "foodId": "whole_plain_yogurt",
+          "grams": 80
+        },
+        {
+          "foodId": "berries_mixed",
+          "grams": 55
+        },
+        {
+          "foodId": "oats_dry",
+          "grams": 5
+        }
+      ],
+      "tags": {
+        "proteinSource": "dairy",
+        "allergens": [
+          "milk",
+          "gluten"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "snack_am_pear_berries_yogurt",
+      "names": {
+        "es": "Pera y frutos rojos con yogur",
+        "en": "Pear and berries with yogurt",
+        "fr": "Poire et fruits rouges avec yaourt",
+        "pt": "Pera e frutas vermelhas com iogurte"
+      },
+      "allowedMeals": [
+        "snack_am"
+      ],
+      "ingredients": [
+        {
+          "foodId": "pear",
+          "grams": 45
+        },
+        {
+          "foodId": "berries_mixed",
+          "grams": 50
+        },
+        {
+          "foodId": "whole_plain_yogurt",
+          "grams": 50
+        }
+      ],
+      "tags": {
+        "proteinSource": "dairy",
+        "allergens": [
+          "milk"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "snack_am_oat_banana_egg_pancake",
+      "names": {
+        "es": "Tortita suave de avena y platano",
+        "en": "Soft oat and banana pancake",
+        "fr": "Petite crepe douce avoine-banane",
+        "pt": "Panqueca macia de aveia e banana"
+      },
+      "allowedMeals": [
+        "snack_am"
+      ],
+      "ingredients": [
+        {
+          "foodId": "oats_dry",
+          "grams": 10
+        },
+        {
+          "foodId": "banana",
+          "grams": 35
+        },
+        {
+          "foodId": "egg",
+          "grams": 20
+        }
+      ],
+      "tags": {
+        "proteinSource": "egg",
+        "allergens": [
+          "egg",
+          "gluten"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "snack_am_fresh_cheese_tomato_bread",
+      "names": {
+        "es": "Queso fresco con tomate y pan",
+        "en": "Fresh cheese with tomato and bread",
+        "fr": "Fromage frais avec tomate et pain",
+        "pt": "Queijo fresco com tomate e pao"
+      },
+      "allowedMeals": [
+        "snack_am"
+      ],
+      "ingredients": [
+        {
+          "foodId": "fresh_cheese_pasteurized",
+          "grams": 30
+        },
+        {
+          "foodId": "whole_wheat_bread",
+          "grams": 16
+        },
+        {
+          "foodId": "tomato",
+          "grams": 25
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 1
+        }
+      ],
+      "tags": {
+        "proteinSource": "dairy",
+        "allergens": [
+          "milk",
+          "gluten"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "snack_am_bread_fresh_cheese_pear",
+      "names": {
+        "es": "Pan integral con queso fresco y pera",
+        "en": "Whole bread with fresh cheese and pear",
+        "fr": "Pain complet avec fromage frais et poire",
+        "pt": "Pao integral com queijo fresco e pera"
+      },
+      "allowedMeals": [
+        "snack_am"
+      ],
+      "ingredients": [
+        {
+          "foodId": "whole_wheat_bread",
+          "grams": 16
+        },
+        {
+          "foodId": "fresh_cheese_pasteurized",
+          "grams": 25
+        },
+        {
+          "foodId": "pear",
+          "grams": 30
+        }
+      ],
+      "tags": {
+        "proteinSource": "dairy",
+        "allergens": [
+          "milk",
+          "gluten"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "snack_am_berries_yogurt_pear_small",
+      "names": {
+        "es": "Yogur con pera y frutos rojos",
+        "en": "Yogurt with pear and berries",
+        "fr": "Yaourt avec poire et fruits rouges",
+        "pt": "Iogurte com pera e frutas vermelhas"
+      },
+      "allowedMeals": [
+        "snack_am"
+      ],
+      "ingredients": [
+        {
+          "foodId": "whole_plain_yogurt",
+          "grams": 70
+        },
+        {
+          "foodId": "pear",
+          "grams": 35
+        },
+        {
+          "foodId": "berries_mixed",
+          "grams": 30
+        }
+      ],
+      "tags": {
+        "proteinSource": "dairy",
+        "allergens": [
+          "milk"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "snack_am_bread_avocado_tomato",
+      "names": {
+        "es": "Pan con aguacate y tomate",
+        "en": "Bread with avocado and tomato",
+        "fr": "Pain avec avocat et tomate",
+        "pt": "Pao com abacate e tomate"
+      },
+      "allowedMeals": [
+        "snack_am"
+      ],
+      "ingredients": [
+        {
+          "foodId": "whole_wheat_bread",
+          "grams": 18
+        },
+        {
+          "foodId": "avocado",
+          "grams": 18
+        },
+        {
+          "foodId": "tomato",
+          "grams": 20
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 1
+        }
+      ],
+      "tags": {
+        "proteinSource": "plant",
+        "allergens": [
+          "gluten"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "snack_am_milk_banana_oats_shake",
+      "names": {
+        "es": "Batido suave de leche, platano y avena",
+        "en": "Soft milk, banana and oats shake",
+        "fr": "Boisson douce lait-banane-avoine",
+        "pt": "Batido suave de leite, banana e aveia"
+      },
+      "allowedMeals": [
+        "snack_am"
+      ],
+      "ingredients": [
+        {
+          "foodId": "whole_milk",
+          "grams": 130
+        },
+        {
+          "foodId": "banana",
+          "grams": 35
+        },
+        {
+          "foodId": "oats_dry",
+          "grams": 6
+        }
+      ],
+      "tags": {
+        "proteinSource": "dairy",
+        "allergens": [
+          "milk",
+          "gluten"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "snack_am_egg_bread_tomato",
+      "names": {
+        "es": "Huevo con pan y tomate suave",
+        "en": "Egg with bread and soft tomato",
+        "fr": "Oeuf avec pain et tomate douce",
+        "pt": "Ovo com pao e tomate suave"
+      },
+      "allowedMeals": [
+        "snack_am"
+      ],
+      "ingredients": [
+        {
+          "foodId": "egg",
+          "grams": 25
+        },
+        {
+          "foodId": "whole_wheat_bread",
+          "grams": 16
+        },
+        {
+          "foodId": "tomato",
+          "grams": 20
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 1
+        }
+      ],
+      "tags": {
+        "proteinSource": "egg",
+        "allergens": [
+          "egg",
+          "gluten"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "snack_pm_yogurt_crushed_berries_soft",
+      "names": {
+        "es": "Yogur natural con fresas trituradas",
+        "en": "Plain yogurt with crushed berries",
+        "fr": "Yaourt nature avec fruits rouges ecrases",
+        "pt": "Iogurte natural com frutas vermelhas amassadas"
+      },
+      "allowedMeals": [
+        "snack_pm"
+      ],
+      "ingredients": [
+        {
+          "foodId": "whole_plain_yogurt",
+          "grams": 80
+        },
+        {
+          "foodId": "berries_mixed",
+          "grams": 60
+        },
+        {
+          "foodId": "oats_dry",
+          "grams": 4
+        }
+      ],
+      "tags": {
+        "proteinSource": "dairy",
+        "allergens": [
+          "milk",
+          "gluten"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "snack_pm_bread_avocado_oil",
+      "names": {
+        "es": "Pan con aguacate y aceite suave",
+        "en": "Bread with avocado and olive oil",
+        "fr": "Pain avec avocat et huile d olive",
+        "pt": "Pao com abacate e azeite"
+      },
+      "allowedMeals": [
+        "snack_pm"
+      ],
+      "ingredients": [
+        {
+          "foodId": "whole_wheat_bread",
+          "grams": 20
+        },
+        {
+          "foodId": "avocado",
+          "grams": 20
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 1
+        }
+      ],
+      "tags": {
+        "proteinSource": "plant",
+        "allergens": [
+          "gluten"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "snack_pm_oats_banana_milk",
+      "names": {
+        "es": "Avena cocida con platano y leche",
+        "en": "Cooked oats with banana and milk",
+        "fr": "Avoine cuite avec banane et lait",
+        "pt": "Aveia cozida com banana e leite"
+      },
+      "allowedMeals": [
+        "snack_pm"
+      ],
+      "ingredients": [
+        {
+          "foodId": "oats_dry",
+          "grams": 12
+        },
+        {
+          "foodId": "banana",
+          "grams": 50
+        },
+        {
+          "foodId": "whole_milk",
+          "grams": 60
+        }
+      ],
+      "tags": {
+        "proteinSource": "dairy",
+        "allergens": [
+          "milk",
+          "gluten"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "snack_pm_mini_sandwich_cheese_tomato",
+      "names": {
+        "es": "Mini sandwich de queso y tomate",
+        "en": "Mini cheese and tomato sandwich",
+        "fr": "Mini sandwich fromage et tomate",
+        "pt": "Mini sanduiche de queijo e tomate"
+      },
+      "allowedMeals": [
+        "snack_pm"
+      ],
+      "ingredients": [
+        {
+          "foodId": "whole_wheat_bread",
+          "grams": 25
+        },
+        {
+          "foodId": "fresh_cheese_pasteurized",
+          "grams": 35
+        },
+        {
+          "foodId": "tomato",
+          "grams": 25
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 1
+        }
+      ],
+      "tags": {
+        "proteinSource": "dairy",
+        "allergens": [
+          "milk",
+          "gluten"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "snack_pm_mini_omelette_bread",
+      "names": {
+        "es": "Mini tortilla francesa con pan",
+        "en": "Mini french omelette with bread",
+        "fr": "Mini omelette francaise avec pain",
+        "pt": "Mini omelete francesa com pao"
+      },
+      "allowedMeals": [
+        "snack_pm"
+      ],
+      "ingredients": [
+        {
+          "foodId": "egg",
+          "grams": 35
+        },
+        {
+          "foodId": "whole_wheat_bread",
+          "grams": 15
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 2
+        }
+      ],
+      "tags": {
+        "proteinSource": "egg",
+        "allergens": [
+          "egg",
+          "gluten"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "snack_pm_pear_apple_compote_yogurt",
+      "names": {
+        "es": "Compota de pera y manzana con yogur",
+        "en": "Pear and apple compote with yogurt",
+        "fr": "Compote poire-pomme avec yaourt",
+        "pt": "Compota de pera e maca com iogurte"
+      },
+      "allowedMeals": [
+        "snack_pm"
+      ],
+      "ingredients": [
+        {
+          "foodId": "pear",
+          "grams": 50
+        },
+        {
+          "foodId": "apple",
+          "grams": 50
+        },
+        {
+          "foodId": "whole_plain_yogurt",
+          "grams": 40
+        }
+      ],
+      "tags": {
+        "proteinSource": "dairy",
+        "allergens": [
+          "milk"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "snack_pm_yogurt_oats_pear",
+      "names": {
+        "es": "Yogur natural con avena suave",
+        "en": "Plain yogurt with soft oats",
+        "fr": "Yaourt nature avec avoine douce",
+        "pt": "Iogurte natural com aveia suave"
+      },
+      "allowedMeals": [
+        "snack_pm"
+      ],
+      "ingredients": [
+        {
+          "foodId": "whole_plain_yogurt",
+          "grams": 85
+        },
+        {
+          "foodId": "oats_dry",
+          "grams": 10
+        },
+        {
+          "foodId": "pear",
+          "grams": 20
+        }
+      ],
+      "tags": {
+        "proteinSource": "dairy",
+        "allergens": [
+          "milk",
+          "gluten"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "snack_pm_yogurt_berries_banana",
+      "names": {
+        "es": "Batido de yogur con frutos rojos y platano",
+        "en": "Yogurt shake with berries and banana",
+        "fr": "Boisson yaourt avec fruits rouges et banane",
+        "pt": "Batido de iogurte com frutas vermelhas e banana"
+      },
+      "allowedMeals": [
+        "snack_pm"
+      ],
+      "ingredients": [
+        {
+          "foodId": "whole_plain_yogurt",
+          "grams": 90
+        },
+        {
+          "foodId": "berries_mixed",
+          "grams": 60
+        },
+        {
+          "foodId": "banana",
+          "grams": 20
+        }
+      ],
+      "tags": {
+        "proteinSource": "dairy",
+        "allergens": [
+          "milk"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "snack_pm_bread_avocado_egg_mash",
+      "names": {
+        "es": "Pan con aguacate y huevo triturado",
+        "en": "Bread with avocado and mashed egg",
+        "fr": "Pain avec avocat et oeuf ecrase",
+        "pt": "Pao com abacate e ovo amassado"
+      },
+      "allowedMeals": [
+        "snack_pm"
+      ],
+      "ingredients": [
+        {
+          "foodId": "whole_wheat_bread",
+          "grams": 20
+        },
+        {
+          "foodId": "avocado",
+          "grams": 20
+        },
+        {
+          "foodId": "egg",
+          "grams": 25
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 1
+        }
+      ],
+      "tags": {
+        "proteinSource": "egg",
+        "allergens": [
+          "egg",
+          "gluten"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "snack_pm_fresh_cheese_bread_tomato",
+      "names": {
+        "es": "Dados de queso fresco con pan",
+        "en": "Fresh cheese cubes with bread",
+        "fr": "Des de fromage frais avec pain",
+        "pt": "Cubos de queijo fresco com pao"
+      },
+      "allowedMeals": [
+        "snack_pm"
+      ],
+      "ingredients": [
+        {
+          "foodId": "fresh_cheese_pasteurized",
+          "grams": 40
+        },
+        {
+          "foodId": "whole_wheat_bread",
+          "grams": 20
+        },
+        {
+          "foodId": "tomato",
+          "grams": 15
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 1
+        }
+      ],
+      "tags": {
+        "proteinSource": "dairy",
+        "allergens": [
+          "milk",
+          "gluten"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "snack_pm_pear_yogurt_oats_soft",
+      "names": {
+        "es": "Pera madura con yogur",
+        "en": "Ripe pear with yogurt",
+        "fr": "Poire mure avec yaourt",
+        "pt": "Pera madura com iogurte"
+      },
+      "allowedMeals": [
+        "snack_pm"
+      ],
+      "ingredients": [
+        {
+          "foodId": "pear",
+          "grams": 50
+        },
+        {
+          "foodId": "whole_plain_yogurt",
+          "grams": 80
+        },
+        {
+          "foodId": "oats_dry",
+          "grams": 4
+        }
+      ],
+      "tags": {
+        "proteinSource": "dairy",
+        "allergens": [
+          "milk",
+          "gluten"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "snack_pm_oat_apple_egg_pancake",
+      "names": {
+        "es": "Tortita de avena y manzana",
+        "en": "Oat and apple pancake",
+        "fr": "Crepe avoine et pomme",
+        "pt": "Panqueca de aveia e maca"
+      },
+      "allowedMeals": [
+        "snack_pm"
+      ],
+      "ingredients": [
+        {
+          "foodId": "oats_dry",
+          "grams": 12
+        },
+        {
+          "foodId": "apple",
+          "grams": 50
+        },
+        {
+          "foodId": "egg",
+          "grams": 20
+        }
+      ],
+      "tags": {
+        "proteinSource": "egg",
+        "allergens": [
+          "egg",
+          "gluten"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "snack_pm_bread_hummus_tomato",
+      "names": {
+        "es": "Pan integral con hummus",
+        "en": "Whole bread with hummus",
+        "fr": "Pain complet avec houmous",
+        "pt": "Pao integral com homus"
+      },
+      "allowedMeals": [
+        "snack_pm"
+      ],
+      "ingredients": [
+        {
+          "foodId": "whole_wheat_bread",
+          "grams": 20
+        },
+        {
+          "foodId": "chickpeas_cooked",
+          "grams": 35
+        },
+        {
+          "foodId": "tomato",
+          "grams": 20
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 2
+        }
+      ],
+      "tags": {
+        "proteinSource": "legume",
+        "allergens": [
+          "gluten",
+          "legume"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "snack_pm_yogurt_banana_oats",
+      "names": {
+        "es": "Yogur con platano machacado",
+        "en": "Yogurt with mashed banana",
+        "fr": "Yaourt avec banane ecrasee",
+        "pt": "Iogurte com banana amassada"
+      },
+      "allowedMeals": [
+        "snack_pm"
+      ],
+      "ingredients": [
+        {
+          "foodId": "whole_plain_yogurt",
+          "grams": 80
+        },
+        {
+          "foodId": "banana",
+          "grams": 50
+        },
+        {
+          "foodId": "oats_dry",
+          "grams": 5
+        }
+      ],
+      "tags": {
+        "proteinSource": "dairy",
+        "allergens": [
+          "milk",
+          "gluten"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "snack_pm_mini_chicken_croquette",
+      "names": {
+        "es": "Mini croqueta casera de pollo",
+        "en": "Mini homemade chicken croquette",
+        "fr": "Mini croquette maison au poulet",
+        "pt": "Mini croquete caseiro de frango"
+      },
+      "allowedMeals": [
+        "snack_pm"
+      ],
+      "ingredients": [
+        {
+          "foodId": "chicken_thigh_cooked",
+          "grams": 20
+        },
+        {
+          "foodId": "potato_boiled",
+          "grams": 35
+        },
+        {
+          "foodId": "egg",
+          "grams": 8
+        },
+        {
+          "foodId": "whole_wheat_bread",
+          "grams": 8
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 1
+        }
+      ],
+      "tags": {
+        "proteinSource": "poultry",
+        "allergens": [
+          "egg",
+          "gluten"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "snack_pm_zucchini_fresh_cheese_soft",
+      "names": {
+        "es": "Calabacin blandito con queso fresco",
+        "en": "Soft zucchini with fresh cheese",
+        "fr": "Courgette tendre avec fromage frais",
+        "pt": "Abobrinha macia com queijo fresco"
+      },
+      "allowedMeals": [
+        "snack_pm"
+      ],
+      "ingredients": [
+        {
+          "foodId": "zucchini",
+          "grams": 40
+        },
+        {
+          "foodId": "fresh_cheese_pasteurized",
+          "grams": 35
+        },
+        {
+          "foodId": "whole_wheat_bread",
+          "grams": 8
+        },
+        {
+          "foodId": "olive_oil",
+          "grams": 1
+        }
+      ],
+      "tags": {
+        "proteinSource": "dairy",
+        "allergens": [
+          "milk",
+          "gluten"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "snack_pm_bread_avocado_pear",
+      "names": {
+        "es": "Pan con aguacate y pera",
+        "en": "Bread with avocado and pear",
+        "fr": "Pain avec avocat et poire",
+        "pt": "Pao com abacate e pera"
+      },
+      "allowedMeals": [
+        "snack_pm"
+      ],
+      "ingredients": [
+        {
+          "foodId": "whole_wheat_bread",
+          "grams": 18
+        },
+        {
+          "foodId": "avocado",
+          "grams": 20
+        },
+        {
+          "foodId": "pear",
+          "grams": 25
+        }
+      ],
+      "tags": {
+        "proteinSource": "plant",
+        "allergens": [
+          "gluten"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "snack_pm_yogurt_pear_berries",
+      "names": {
+        "es": "Yogur con pera y frutos rojos",
+        "en": "Yogurt with pear and berries",
+        "fr": "Yaourt avec poire et fruits rouges",
+        "pt": "Iogurte com pera e frutas vermelhas"
+      },
+      "allowedMeals": [
+        "snack_pm"
+      ],
+      "ingredients": [
+        {
+          "foodId": "whole_plain_yogurt",
+          "grams": 75
+        },
+        {
+          "foodId": "pear",
+          "grams": 45
+        },
+        {
+          "foodId": "berries_mixed",
+          "grams": 30
+        }
+      ],
+      "tags": {
+        "proteinSource": "dairy",
+        "allergens": [
+          "milk"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "snack_pm_mini_muffin_banana_oats",
+      "names": {
+        "es": "Mini muffin casero de platano y avena",
+        "en": "Mini homemade banana oat muffin",
+        "fr": "Mini muffin maison banane-avoine",
+        "pt": "Mini muffin caseiro de banana e aveia"
+      },
+      "allowedMeals": [
+        "snack_pm"
+      ],
+      "ingredients": [
+        {
+          "foodId": "oats_dry",
+          "grams": 10
+        },
+        {
+          "foodId": "banana",
+          "grams": 40
+        },
+        {
+          "foodId": "egg",
+          "grams": 12
+        },
+        {
+          "foodId": "whole_plain_yogurt",
+          "grams": 25
+        }
+      ],
+      "tags": {
+        "proteinSource": "egg",
+        "allergens": [
+          "egg",
+          "milk",
+          "gluten"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "snack_pm_milk_oats_banana_shake",
+      "names": {
+        "es": "Batido de leche, avena y platano",
+        "en": "Milk, oats, and banana shake",
+        "fr": "Boisson lait, avoine et banane",
+        "pt": "Batido de leite, aveia e banana"
+      },
+      "allowedMeals": [
+        "snack_pm"
+      ],
+      "ingredients": [
+        {
+          "foodId": "whole_milk",
+          "grams": 100
+        },
+        {
+          "foodId": "oats_dry",
+          "grams": 7
+        },
+        {
+          "foodId": "banana",
+          "grams": 35
+        }
+      ],
+      "tags": {
+        "proteinSource": "dairy",
+        "allergens": [
+          "milk",
+          "gluten"
+        ],
+        "texture": "soft"
+      },
+      "addedSugarG": 0,
+      "addedSaltMg": 0,
+      "dietProfiles": [
+        "omnivore"
+      ],
+      "selectable": true
+    }
+  ],
+  "references": [
+    {
+      "title": "WHO Guideline for complementary feeding of infants and young children 6-23 months of age",
+      "organization": "WHO",
+      "url": "https://www.who.int/publications/i/item/9789240081864",
+      "capturedAt": "2026-03-06"
+    },
+    {
+      "title": "WHO Infant feeding recommendation summary (ELENA interventions)",
+      "organization": "WHO",
+      "url": "https://www.who.int/tools/elena/interventions/complementary-feeding",
+      "capturedAt": "2026-03-06"
+    },
+    {
+      "title": "WHO/UNICEF minimum meal frequency indicator context for non-breastfed children",
+      "organization": "WHO/UNICEF",
+      "url": "https://www.who.int/data/nutrition/nlis/info/minimum-meal-frequency-(mmf)",
+      "capturedAt": "2026-03-06"
+    },
+    {
+      "title": "AAP/HealthyChildren recommended drinks for young children",
+      "organization": "AAP / HealthyChildren",
+      "url": "https://www.healthychildren.org/English/healthy-living/nutrition/Pages/Recommended-Drinks-for-Children-Age-5-and-Younger.aspx",
+      "capturedAt": "2026-03-06"
+    },
+    {
+      "title": "CDC foods and drinks for children 12 through 23 months",
+      "organization": "CDC",
+      "url": "https://www.cdc.gov/infant-toddler-nutrition/foods-and-drinks/foods-and-drinks-for-12-through-23-months.html",
+      "capturedAt": "2026-03-06"
+    },
+    {
+      "title": "DRI Macronutrient ranges",
+      "organization": "National Academies",
+      "url": "https://nap.nationalacademies.org/read/10925/chapter/25",
+      "capturedAt": "2026-03-06"
+    },
+    {
+      "title": "FoodData Central API Guide",
+      "organization": "USDA",
+      "url": "https://fdc.nal.usda.gov/api-guide",
+      "capturedAt": "2026-03-06"
+    }
+  ]
+}

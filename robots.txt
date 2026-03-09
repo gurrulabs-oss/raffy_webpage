@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
+Allow: /LLMS.md
+Allow: /AGENTS.md
+Allow: /llms.txt
 
 Sitemap: https://www.raffyparenting.com/sitemap.xml
-# AI discovery docs:
-# https://www.raffyparenting.com/LLMS.md
-# https://www.raffyparenting.com/AGENTS.md

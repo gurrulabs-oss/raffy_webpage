@@ -3,6 +3,16 @@
   "defaultLocale": "en",
   "indexable": true,
   "xDefault": "/en/",
+  "extraIndexablePaths": [
+    "/LLMS.md",
+    "/AGENTS.md",
+    "/llms.txt"
+  ],
+  "aiDiscoveryPaths": [
+    "/LLMS.md",
+    "/AGENTS.md",
+    "/llms.txt"
+  ],
   "locales": {
     "en": {
       "hreflang": "en-US",

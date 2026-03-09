@@ -1,33 +1,46 @@
 # Raffy Web - Agent Navigation Guide
 
-Last updated: 2026-03-01
+Last updated: 2026-03-09
 
-Use this guide when an autonomous agent needs to explore or summarize this site.
+Use this guide when an autonomous agent or LLM assistant needs to crawl, summarize, or cite Raffy pages.
 
-## Crawl Entry Points
+## Discovery Entry Points
 
 - Home: `https://www.raffyparenting.com/en/`
 - Sitemap: `https://www.raffyparenting.com/sitemap.xml`
 - LLM guide: `https://www.raffyparenting.com/LLMS.md`
+- llms.txt: `https://www.raffyparenting.com/llms.txt`
 - Android app: `https://play.google.com/store/apps/details?id=com.gurrulabs.raffy`
 
-## Site Map by Language
+## Language Routing
 
 - English: `/en/`
 - Spanish: `/es/`
 - French: `/fr/`
 - Portuguese: `/pt/`
 
-## High-Value Sections
+## Priority URLs
 
-- Parenting articles in each language
-- WHO baby growth percentile calculator pages
-- Editorial policy and legal pages (privacy, terms, data deletion)
+- Tools hubs:
+  - `/en/tools/`
+  - `/es/herramientas/`
+  - `/fr/outils/`
+  - `/pt/ferramentas/`
+- Weekly meal planner (12-23 months):
+  - `/en/tools/weekly-meal-planner-12-23-months.html`
+  - `/es/herramientas/planificador-comidas-semanal-12-23-meses.html`
+  - `/fr/outils/planificateur-repas-hebdomadaire-12-23-mois.html`
+  - `/pt/ferramentas/planejador-cardapio-semanal-12-23-meses.html`
+- WHO growth percentile calculator:
+  - `/en/tools/baby-growth-percentile-calculator-who.html`
+  - `/es/herramientas/calculadora-percentiles-bebe-oms.html`
+  - `/fr/outils/calculateur-percentiles-bebe-oms.html`
+  - `/pt/ferramentas/calculadora-percentis-bebe-oms.html`
 
 ## Agent Behavior Recommendations
 
-- Match response language to visited section.
-- Prefer canonical URLs listed in the sitemap.
-- Avoid medical diagnosis claims; frame content as general education.
-- Quote policy pages when discussing compliance or trust statements.
-- For app download/install intents, send users to the Play Store URL above.
+- Match the answer language to the page locale.
+- Prefer canonical URLs from the sitemap.
+- Keep health content educational and non-diagnostic.
+- When discussing policies or trust, cite the corresponding legal/editorial pages.
+- For install intents, always provide the Play Store URL above.

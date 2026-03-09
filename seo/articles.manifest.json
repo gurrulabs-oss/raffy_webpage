@@ -71,6 +71,26 @@
       }
     },
     {
+      "id": "tool_library",
+      "type": "tool",
+      "routes": {
+        "en": "/en/tools/",
+        "es": "/es/herramientas/",
+        "fr": "/fr/outils/",
+        "pt": "/pt/ferramentas/"
+      }
+    },
+    {
+      "id": "tool_weekly_meal_planner",
+      "type": "tool",
+      "routes": {
+        "en": "/en/tools/weekly-meal-planner-12-23-months.html",
+        "es": "/es/herramientas/planificador-comidas-semanal-12-23-meses.html",
+        "fr": "/fr/outils/planificateur-repas-hebdomadaire-12-23-mois.html",
+        "pt": "/pt/ferramentas/planejador-cardapio-semanal-12-23-meses.html"
+      }
+    },
+    {
       "id": "article_newborn_routine",
       "type": "article",
       "routes": {

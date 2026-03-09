@@ -6,6 +6,8 @@ const config = readJson(path.join(ROOT, "seo.config.json"));
 const manifest = readJson(path.join(ROOT, "seo", "articles.manifest.json"));
 const siteOrigin = normalizeOrigin(config.siteOrigin);
 const localeCodes = Object.keys(config.locales);
+const extraIndexablePaths = normalizePaths(config.extraIndexablePaths || []);
+const aiDiscoveryPaths = normalizePaths(config.aiDiscoveryPaths || extraIndexablePaths);
 
 const errors = [];
 
@@ -137,6 +139,27 @@ if (config.indexable) {
       errors.push(`Missing indexable URL in sitemap: ${expected}`);
     }
   }
+  for (const route of extraIndexablePaths) {
+    const expected = `${siteOrigin}${route}`;
+    if (!sitemap.includes(`<loc>${expected}</loc>`)) {
+      errors.push(`Missing extra indexable URL in sitemap: ${expected}`);
+    }
+    const filePath = routeToFile(route);
+    if (!fs.existsSync(filePath)) {
+      errors.push(`Missing file for extra indexable path ${route}: ${rel(filePath)}`);
+    }
+  }
+
+  const robotsPath = path.join(ROOT, "robots.txt");
+  assertExists(robotsPath, "Missing robots.txt");
+  if (fs.existsSync(robotsPath)) {
+    const robots = fs.readFileSync(robotsPath, "utf8");
+    for (const route of aiDiscoveryPaths) {
+      if (!robots.includes(`Allow: ${route}`)) {
+        errors.push(`robots.txt missing AI discovery allow rule: ${route}`);
+      }
+    }
+  }
 }
 
 if (errors.length > 0) {
@@ -155,6 +178,12 @@ function readJson(filePath) {
 
 function normalizeOrigin(origin) {
   return String(origin || "").replace(/\/$/, "");
+}
+
+function normalizePaths(values) {
+  return (Array.isArray(values) ? values : [])
+    .map((value) => String(value || "").trim())
+    .filter((value) => value.startsWith("/"));
 }
 
 function routeToFile(route) {
