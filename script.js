@@ -32,6 +32,12 @@ const ROUTE_MAP = {
     fr: "/fr/articles/menu-hebdomadaire-bebe-9-mois.html",
     pt: "/pt/artigos/cardapio-semanal-bebe-9-meses.html"
   },
+  article_android_tracker: {
+    en: "/en/articles/android-baby-tracker-app-guide.html",
+    es: "/es/articulos/app-android-seguimiento-bebe-guia.html",
+    fr: "/fr/articles/application-android-suivi-bebe-guide.html",
+    pt: "/pt/artigos/app-android-acompanhamento-bebe-guia.html"
+  },
   article_growth_percentiles: {
     en: "/en/articles/baby-weight-height-percentiles-guide.html",
     es: "/es/articulos/percentiles-peso-talla-bebe.html",
@@ -241,6 +247,42 @@ function getUtmParams() {
   };
 }
 
+function detectAiReferrer() {
+  const referrer = (document.referrer || "").toLowerCase();
+  if (!referrer) {
+    return { ai_referral: false, ai_referrer_source: "unknown" };
+  }
+
+  const knownSources = [
+    { source: "chatgpt", patterns: ["chatgpt.com", "chat.openai.com"] },
+    { source: "perplexity", patterns: ["perplexity.ai"] },
+    { source: "gemini", patterns: ["gemini.google.com"] },
+    { source: "copilot", patterns: ["copilot.microsoft.com", "bing.com/chat"] },
+    { source: "claude", patterns: ["claude.ai"] }
+  ];
+
+  for (const known of knownSources) {
+    if (known.patterns.some((pattern) => referrer.includes(pattern))) {
+      return { ai_referral: true, ai_referrer_source: known.source };
+    }
+  }
+
+  const otherAiPatterns = [
+    "you.com",
+    "phind.com",
+    "poe.com",
+    "meta.ai",
+    "mistral.ai",
+    "grok.com"
+  ];
+
+  if (otherAiPatterns.some((pattern) => referrer.includes(pattern))) {
+    return { ai_referral: true, ai_referrer_source: "other" };
+  }
+
+  return { ai_referral: false, ai_referrer_source: "unknown" };
+}
+
 function buildTrackingPayload(includeReferrer = false) {
   const context = getTrackingContext();
   const payload = {
@@ -249,7 +291,8 @@ function buildTrackingPayload(includeReferrer = false) {
     page_key: context.pageKey,
     path: window.location.pathname,
     url: window.location.href,
-    ...getUtmParams()
+    ...getUtmParams(),
+    ...detectAiReferrer()
   };
 
   if (context.articleId) {

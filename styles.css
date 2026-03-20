@@ -415,6 +415,11 @@ p { margin: .5rem 0; }
   gap: .95rem;
 }
 
+/* Home page: keep only the first visible row of featured articles. */
+body[data-page-key="home"] #articles .article-grid > .article-card:nth-child(n + 4) {
+  display: none;
+}
+
 .article-card {
   border: 1px solid var(--outline);
   border-radius: var(--radius);
@@ -968,6 +973,9 @@ details p { color: var(--muted); }
   .cover-image { max-height: 280px; }
   .navlinks { display: none; }
   .article-grid { grid-template-columns: 1fr; }
+  body[data-page-key="home"] #articles .article-grid > .article-card:nth-child(n + 2) {
+    display: none;
+  }
   .grid2 { grid-template-columns: 1fr; }
   .shots { grid-template-columns: 1fr; }
   .feature-showcase { padding: 1rem; }

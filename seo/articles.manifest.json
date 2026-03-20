@@ -51,6 +51,16 @@
       }
     },
     {
+      "id": "article_android_tracker",
+      "type": "article",
+      "routes": {
+        "en": "/en/articles/android-baby-tracker-app-guide.html",
+        "es": "/es/articulos/app-android-seguimiento-bebe-guia.html",
+        "fr": "/fr/articles/application-android-suivi-bebe-guide.html",
+        "pt": "/pt/artigos/app-android-acompanhamento-bebe-guia.html"
+      }
+    },
+    {
       "id": "article_growth_percentiles",
       "type": "article",
       "routes": {
