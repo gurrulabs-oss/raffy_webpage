@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Estimador de cantidad de alimentación por edad | Raffy</title>
+  <meta name="description" content="Estima ingesta diaria por edad, peso y número de comidas para planificación práctica.">
+  <meta name="robots" content="index,follow,max-snippet:160,max-image-preview:large">
+  <link rel="canonical" href="https://www.raffyparenting.com/es/herramientas/estimador-cantidad-alimentacion.html">
+  <link rel="alternate" hreflang="en-US" href="https://www.raffyparenting.com/en/tools/feeding-quantity-estimator.html">
+  <link rel="alternate" hreflang="es-ES" href="https://www.raffyparenting.com/es/herramientas/estimador-cantidad-alimentacion.html">
+  <link rel="alternate" hreflang="fr-FR" href="https://www.raffyparenting.com/fr/outils/estimateur-quantites-alimentation.html">
+  <link rel="alternate" hreflang="pt-BR" href="https://www.raffyparenting.com/pt/ferramentas/estimador-quantidade-alimentacao.html">
+  <link rel="alternate" hreflang="x-default" href="https://www.raffyparenting.com/en/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Estimador de cantidad de alimentación por edad | Raffy">
+  <meta property="og:description" content="Estima ingesta diaria por edad, peso y número de comidas para planificación práctica.">
+  <meta property="og:url" content="https://www.raffyparenting.com/es/herramientas/estimador-cantidad-alimentacion.html">
+  <meta property="og:image" content="https://www.raffyparenting.com/assets/raffy-social-preview.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Estimador de cantidad de alimentación por edad | Raffy">
+  <meta name="twitter:description" content="Estima ingesta diaria por edad, peso y número de comidas para planificación práctica.">
+  <meta name="twitter:image" content="https://www.raffyparenting.com/assets/raffy-social-preview.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../../assets/raffy-logo.png">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../tools/tool-cluster.css">
+</head>
+<body data-page-key="tool_feeding" data-locale="es">
+  <div class="bg-dynamic" aria-hidden="true">
+    <span class="bg-shape s1"></span><span class="bg-shape s2"></span><span class="bg-shape s3"></span><span class="bg-shape s4"></span><span class="bg-shape s5"></span>
+  </div>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="../index.html">
+        <img class="brand-logo" src="../../assets/raffy-logo.png" alt="Raffy logo" width="500" height="500" decoding="async" loading="eager">
+        <span>Raffy</span>
+      </a>
+      <nav class="navlinks">
+        <a href="../index.html">Inicio</a>
+        <a href="../articulos/index.html">Artículos</a>
+        <a href="index.html">Herramientas</a>
+      </nav>
+      <div class="nav-controls">
+        <div class="lang-switch">
+          <label class="sr-only" for="lang-select">Selector de idioma</label>
+          <select id="lang-select" data-language-selector aria-label="Selector de idioma"><option value="en">English</option><option value="es" selected>Español</option><option value="fr">Français</option><option value="pt">Português (Brasil)</option></select>
+        </div>
+        <a class="play-store-badge-link play-store-badge-link-sm" href="https://play.google.com/store/apps/details?id=com.gurrulabs.raffy" data-track-download="true" data-page-type="tool" data-cta-location="header" aria-label="Descargar en Google Play"><img decoding="async" loading="lazy" class="play-store-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Descargar en Google Play"></a>
+      </div>
+    </div>
+  </header>
+
+  <main class="tool-wrap">
+    <section class="tool-card">
+      <h1>Estimador de cantidad de alimentación por edad</h1>
+      <p>Estima ingesta diaria por edad, peso y número de comidas para planificación práctica.</p>
+      <form data-tool-kind="feeding" data-locale="es">
+<div class="tool-grid">
+  <div class="tool-field">
+    <label for="age_months">Edad (meses)</label>
+    <input id="age_months" name="age_months" type="number" min="4" max="36" step="1" value="12" required>
+  </div>
+  <div class="tool-field">
+    <label for="weight_kg">Peso (kg)</label>
+    <input id="weight_kg" name="weight_kg" type="number" min="3" max="20" step="0.1" value="9.5" required>
+  </div>
+  <div class="tool-field">
+    <label for="meals_per_day">Comidas/día</label>
+    <input id="meals_per_day" name="meals_per_day" type="number" min="3" max="7" step="1" value="5" required>
+  </div>
+</div>
+
+        <div class="tool-actions">
+          <button class="btn" type="submit">Generar plan</button>
+          <button class="btn btn-ghost" type="reset">Restablecer</button>
+        </div>
+      </form>
+      <div class="tool-output" data-tool-output></div>
+      <div class="tool-related">
+        <a href="../articulos/index.html">Leer guía</a>
+        <a href="planificador-comidas-semanal-12-23-meses.html">Abrir herramienta: Planificador de comidas semanal</a>
+      </div>
+    </section>
+  </main>
+  <footer class="container footer">
+    <p>© <span id="year"></span> Raffy App</p>
+    <nav class="footer-links" aria-label="Páginas de confianza y legales">
+      <a href="../sobre.html">Quiénes somos</a>
+      <a href="../politica-editorial.html">Política editorial</a>
+      <a href="../privacidad.html">Privacidad</a>
+      <a href="../eliminacion-datos.html">Eliminación de datos</a>
+      <a href="../terminos.html">Términos</a>
+      <a href="../contacto.html">Contacto</a>
+    </nav>
+  </footer>
+  <button class="to-top" id="toTop" aria-label="Volver arriba">↑</button>
+<script src="../../script.js"></script>
+  <script type="module" src="../../tools/tool-cluster.js"></script>
+</body>
+</html>

@@ -17,6 +17,9 @@ const ROUTE_MAP = {
     fr: "/fr/articles/routine-sommeil-bebe-par-age.html",
     pt: "/pt/artigos/rotina-sono-bebe-por-idade.html"
   },
+  article_naps_transitions_sleep_0_2: {
+    en: "/en/articles/baby-naps-transitions-and-sleep-0-2-years.html"
+  },
   article_solids_guide: {
     en: "/en/articles/baby-solids-guide-blw-purees.html",
     es: "/es/articulos/guia-alimentacion-complementaria-blw.html",
@@ -532,8 +535,30 @@ function getBasePrefix() {
 }
 
 function getRouteForLocale(pageKey, nextLocale) {
-  const pageRoutes = ROUTE_MAP[pageKey] || ROUTE_MAP.home;
-  return pageRoutes[nextLocale] || ROUTE_MAP.home[nextLocale] || ROUTE_MAP.home.en;
+  const pageRoutes = ROUTE_MAP[pageKey];
+  if (pageRoutes && pageRoutes[nextLocale]) {
+    return pageRoutes[nextLocale];
+  }
+
+  const hreflangByLocale = {
+    en: "en-US",
+    es: "es-ES",
+    fr: "fr-FR",
+    pt: "pt-BR"
+  };
+  const targetHreflang = hreflangByLocale[nextLocale];
+  if (targetHreflang) {
+    const link = document.querySelector(`link[rel="alternate"][hreflang="${targetHreflang}"]`);
+    if (link && link.href) {
+      try {
+        return new URL(link.href).pathname;
+      } catch (error) {
+        // Ignore malformed URLs and fallback to home.
+      }
+    }
+  }
+
+  return ROUTE_MAP.home[nextLocale] || ROUTE_MAP.home.en;
 }
 
 function handleLanguageSelector() {

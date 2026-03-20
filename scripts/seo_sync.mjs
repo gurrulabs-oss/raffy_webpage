@@ -161,11 +161,11 @@ function updateCanonical(html, canonicalUrl) {
 }
 
 function updateAlternates(html, alternateBlock) {
-  const pattern = /<link\s+rel="alternate"\s+hreflang="[^"]+"\s+href="[^"]+"\s*>\s*(?:\n\s*<link\s+rel="alternate"\s+hreflang="[^"]+"\s+href="[^"]+"\s*>\s*)+/i;
-  if (pattern.test(html)) {
-    return html.replace(pattern, `${alternateBlock}\n  `);
+  const cleaned = html.replace(/\s*<link\s+rel="alternate"\s+hreflang="[^"]+"\s+href="[^"]+"\s*>\s*/gi, "\n  ");
+  if (/<link\s+rel="canonical"[^>]*>\s*/i.test(cleaned)) {
+    return cleaned.replace(/<link\s+rel="canonical"[^>]*>\s*/i, (m) => `${m}${alternateBlock}\n  `);
   }
-  return html.replace(/<link\s+rel="canonical"[^>]*>\s*/i, (m) => `${m}${alternateBlock}\n  `);
+  return cleaned.replace(/<meta\s+name="description"[^>]*>\s*/i, (m) => `${m}${alternateBlock}\n  `);
 }
 
 function updateMetaContent(html, attrName, attrValue, contentValue) {

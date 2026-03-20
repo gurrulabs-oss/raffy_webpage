@@ -54,8 +54,16 @@ for (const page of manifestPages) {
   }
 
   const alternates = new Map();
+  const alternateCounts = new Map();
   for (const match of html.matchAll(/<link\s+rel="alternate"\s+hreflang="([^"]+)"\s+href="([^"]+)"\s*>/gi)) {
+    alternateCounts.set(match[1], (alternateCounts.get(match[1]) || 0) + 1);
     alternates.set(match[1], match[2]);
+  }
+
+  for (const [hreflang, count] of alternateCounts.entries()) {
+    if (count > 1) {
+      errors.push(`Duplicate hreflang ${hreflang} in ${rel(page.filePath)} (count=${count})`);
+    }
   }
 
   for (const locale of localeCodes) {
