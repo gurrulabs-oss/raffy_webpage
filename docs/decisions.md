@@ -8,4 +8,6 @@
 - **Public AI discovery files** (`/AGENTS.md`, `/LLMS.md`, `/llms.txt`) are indexable site content listed in
   `seo.config.json` and `robots.txt`. Agent instructions live in `CLAUDE.md`, not in `AGENTS.md`.
 - **Legal pages are owner-only.**
+- **Analytics = Mixpanel**, a project shared across Gurru Labs websites (EU host). Event names are prefixed
+  `Raffy Webpage - ` to separate them from the other sites. The privacy policy already lists Mixpanel.
 - **Newsletter via `mailto:`** — no backend/email provider yet.

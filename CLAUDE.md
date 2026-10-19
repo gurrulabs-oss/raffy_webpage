@@ -8,7 +8,8 @@ Live in production on GitHub Pages; current focus is new articles and UI improve
 - Hand-written static HTML/CSS/vanilla JS, no framework, no bundler, no npm dependencies.
 - Node (ESM `.mjs`) scripts for SEO sync/sitemap/validation; old one-off Ruby generators in `scripts/*.rb`.
 - Hosting: GitHub Pages, custom domain via `CNAME`. CI: `.github/workflows/seo-validate.yml`.
-- No analytics and no backend; newsletter form is a `mailto:` form.
+- Analytics: Mixpanel (EU host, project shared across Gurru Labs websites), set up in `script.js`; events are
+  named `Raffy Webpage - …`. No backend; newsletter form is a `mailto:` form.
 
 ## Commands
 - Build: none (static). SEO pipeline: `npm run seo:all` (sync → sitemap → validate). **Rewrites files — see Rules.**

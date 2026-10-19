@@ -7,7 +7,8 @@
 
 ## Pages
 - Each locale folder (`en/ es/ fr/ pt/`) holds full, self-contained HTML pages (header/nav duplicated per page).
-- Shared site-wide code: `/styles.css`, `/script.js` (nav, locale switcher persisting `raffy_locale`, UI).
+- Shared site-wide code: `/styles.css`, `/script.js` (nav, locale switcher persisting `raffy_locale`, UI,
+  Mixpanel init + page-view and download-click tracking; Play Store badges injected around `script.js:472`).
 - Articles also load `articles/article.css`. Tool pages load from `/tools/`:
   - `meal-planner.js/.css` + `meal-planner-data.json` — weekly meal planner 12–23 months. `meal-planner.js` is an
     ES module also imported by `scripts/meal_planner_validate.mjs` (`generateMealPlanner`, `computeDishNutrition`, …).
