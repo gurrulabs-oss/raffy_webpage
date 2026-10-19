@@ -1,0 +1,13 @@
+# Keep internal agent notes, SEO playbooks and build scripts off the published GitHub Pages site.
+exclude:
+  - CLAUDE.md
+  - docs/
+  - seo-operations.md
+  - seo/
+  - scripts/
+  - package.json
+  - seo.config.json
+  - node_modules/
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
