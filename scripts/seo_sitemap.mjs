@@ -8,6 +8,8 @@ const manifest = readJson(path.join(ROOT, "seo", "articles.manifest.json"));
 const siteOrigin = normalizeOrigin(config.siteOrigin);
 const extraIndexablePaths = normalizePaths(config.extraIndexablePaths || []);
 const aiDiscoveryPaths = normalizePaths(config.aiDiscoveryPaths || extraIndexablePaths);
+const existingLastmod = readExistingLastmods(path.join(ROOT, "sitemap.xml"));
+const today = new Date().toISOString().slice(0, 10);
 const urls = [];
 
 for (const page of manifest.pages) {
@@ -17,11 +19,8 @@ for (const page of manifest.pages) {
       throw new Error(`Missing file for route ${route}: ${filePath}`);
     }
 
-    const stat = fs.statSync(filePath);
-    urls.push({
-      loc: `${siteOrigin}${route}`,
-      lastmod: stat.mtime.toISOString().slice(0, 10)
-    });
+    const loc = `${siteOrigin}${route}`;
+    urls.push({ loc, lastmod: resolveLastmod(filePath, loc) });
   }
 }
 
@@ -30,11 +29,8 @@ for (const route of extraIndexablePaths) {
   if (!fs.existsSync(filePath)) {
     throw new Error(`Missing file for extra indexable path ${route}: ${filePath}`);
   }
-  const stat = fs.statSync(filePath);
-  urls.push({
-    loc: `${siteOrigin}${route}`,
-    lastmod: stat.mtime.toISOString().slice(0, 10)
-  });
+  const loc = `${siteOrigin}${route}`;
+  urls.push({ loc, lastmod: resolveLastmod(filePath, loc) });
 }
 
 const dedupedUrls = Array.from(new Map(urls.map((entry) => [entry.loc, entry])).values());
@@ -84,4 +80,22 @@ function routeToFile(route) {
   const trimmed = route.startsWith("/") ? route.slice(1) : route;
   const relative = trimmed.endsWith("/") ? `${trimmed}index.html` : trimmed;
   return path.join(ROOT, relative);
+}
+
+function readExistingLastmods(filePath) {
+  const map = new Map();
+  if (!fs.existsSync(filePath)) return map;
+  const xml = fs.readFileSync(filePath, "utf8");
+  for (const m of xml.matchAll(/<loc>([^<]+)<\/loc>\s*<lastmod>(\d{4}-\d{2}-\d{2})<\/lastmod>/g)) {
+    map.set(m[1].trim(), m[2]);
+  }
+  return map;
+}
+
+function resolveLastmod(filePath, loc) {
+  if (filePath.endsWith(".html")) {
+    const m = fs.readFileSync(filePath, "utf8").match(/"dateModified"\s*:\s*"(\d{4}-\d{2}-\d{2})"/);
+    if (m) return m[1];
+  }
+  return existingLastmod.get(loc) || today;
 }
