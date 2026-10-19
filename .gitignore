@@ -1,0 +1,7 @@
+
+# Agent hub board state (not code); only the template is versioned
+.lead/tickets/*
+!.lead/tickets/TEMPLATE.md
+
+# macOS
+.DS_Store
