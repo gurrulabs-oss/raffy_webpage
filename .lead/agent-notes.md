@@ -15,3 +15,4 @@ Facts learned while working. One line each. Newest at the bottom. Trim via a "Re
 - In headless runs `curl`, chained shell commands and `git -C` may require approval; plain single `git` commands from repo root work.
 - Local Node is v25; CI uses Node 20. Scripts use only node: built-ins.
 - `.DS_Store` files are untracked junk; `.gitignore` (untracked at onboarding) only ignores `.lead/tickets/`.
+- Root `_config.yml` `exclude:` list controls what GitHub Pages (Jekyll) publishes; add new internal non-dot files there. System Ruby 2.6 can't install Jekyll locally.
