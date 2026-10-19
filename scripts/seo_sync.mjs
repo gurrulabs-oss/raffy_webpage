@@ -89,6 +89,8 @@ const preloadMap = {
 };
 
 let touched = 0;
+let total = 0;
+let legacyTouched = 0;
 
 for (const page of manifest.pages) {
   for (const locale of localeCodes) {
@@ -99,6 +101,7 @@ for (const page of manifest.pages) {
     }
 
     let html = fs.readFileSync(filePath, "utf8");
+    const original = html;
 
     html = html.replace(/https:\/\/example\.com/g, siteOrigin);
     html = updateCanonical(html, `${siteOrigin}${route}`);
@@ -115,20 +118,26 @@ for (const page of manifest.pages) {
     html = rewriteImages(html, webpSrcMap, dimensionMap);
     html = replaceFooter(html, buildFooter(locale, route, trustRoutes, footerLabels));
 
-    fs.writeFileSync(filePath, html, "utf8");
-    touched += 1;
+    if (html !== original) {
+      fs.writeFileSync(filePath, html, "utf8");
+      touched += 1;
+    }
+    total += 1;
   }
 }
 
 const legacyPaths = walkHtml(path.join(ROOT, "articles"));
 for (const filePath of legacyPaths) {
-  let html = fs.readFileSync(filePath, "utf8");
-  html = html.replace(/https:\/\/example\.com/g, siteOrigin);
+  const original = fs.readFileSync(filePath, "utf8");
+  let html = original.replace(/https:\/\/example\.com/g, siteOrigin);
   html = updateRobots(html, "noindex,follow");
-  fs.writeFileSync(filePath, html, "utf8");
+  if (html !== original) {
+    fs.writeFileSync(filePath, html, "utf8");
+    legacyTouched += 1;
+  }
 }
 
-console.log(`SEO sync updated ${touched} localized pages and ${legacyPaths.length} legacy redirects.`);
+console.log(`SEO sync updated ${touched} of ${total} localized pages and ${legacyTouched} of ${legacyPaths.length} legacy redirects.`);
 
 function readJson(filePath) {
   return JSON.parse(fs.readFileSync(filePath, "utf8"));
@@ -192,9 +201,14 @@ function updateRobots(html, contentValue) {
 
 function rewriteJsonLdPublisher(html, pageType) {
   if (pageType !== "article") return html;
-  return html.replace(/"author"\s*:\s*\{[^}]+\},\s*/g, (authorBlock) => {
-    if (authorBlock.includes("publisher")) return authorBlock;
-    return `${authorBlock}"publisher": {"@type": "Organization", "name": "Raffy"},\n    `;
+  const publisherLine = '"publisher": {"@type": "Organization", "name": "Raffy"},';
+  return html.replace(/(<script\s+type="application\/ld\+json"[^>]*>)([\s\S]*?)(<\/script>)/gi, (whole, open, body, close) => {
+    if (!/"@type"\s*:\s*"Article"/.test(body)) return whole;
+    const authorRe = /([ \t]*)"author"\s*:\s*\{[^}]*\},?[ \t]*\n/;
+    if (!authorRe.test(body)) return whole;
+    const stripped = body.replace(/^[ \t]*"publisher"\s*:\s*\{[^}]*\},?[ \t]*\n/gm, "");
+    const rewritten = stripped.replace(authorRe, (authorLine) => `${authorLine}    ${publisherLine}\n`);
+    return `${open}${rewritten}${close}`;
   });
 }
 

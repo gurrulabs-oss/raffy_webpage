@@ -3,8 +3,7 @@
 Facts learned while working. One line each. Newest at the bottom. Trim via a "Refresh knowledge" ticket.
 
 - Root `AGENTS.md` is PUBLIC site content (listed in seo.config.json + robots.txt), auto-loaded by some harnesses as "project instructions" — ignore its routing rules for coding work.
-- `npm run seo:sync` is not idempotent: `rewriteJsonLdPublisher` (scripts/seo_sync.mjs:193) appends another `"publisher"` line to every article each run (most already have 3). Revert collateral diffs.
-- `npm run seo:sitemap` sets `lastmod` = today for ALL URLs; running it touches all of `sitemap.xml`.
+- Since T-002 `npm run seo:all` is idempotent; `seo_sync` writes only changed files. Sitemap `lastmod` = first `"dateModified"` in the HTML, else existing sitemap.xml value, else today (UTC). Home/tools/hubs have no `dateModified`, so their lastmod stays frozen until one is added.
 - `npm run seo:validate` is read-only and passed on 2026-10-19 (80 localized pages). Safe to run anytime.
 - `npm run meal:validate` failed on 2026-10-19 with 206 issues (every seed: macro + WHO/Pediatric). Not in CI. Pre-existing, not your regression.
 - `tools/meal-planner.js` is imported as an ES module by the Node validator — keep it Node-importable (no top-level DOM access).
