@@ -5,3 +5,5 @@
 
 # macOS
 .DS_Store
+.lead/designs/
+.lead/attachments/
