@@ -25,10 +25,13 @@ Read the ticket Spec. Write the **Plan** section:
 Default to Sonnet; use Opus only for design-heavy or subtle logic. Prefer fewer, well-briefed subtasks.
 For content tickets, one worker per locale is a good split after the EN page is approved in the Plan.
 Do not change code in this mode.
+A small, well-understood change (one or two files, a few lines) gets `agent: lead`: you make it yourself during
+execution, since a worker pays a whole second context.
 
 ### execute
 1. Work on the current branch only. Never push. Never merge.
-2. Spawn `worker` subagents per the approved Plan with the model chosen there. Give each a self-contained
+2. Spawn `worker` subagents per the approved Plan with the model chosen there (subtasks marked
+   `agent: lead` you do yourself). Give each a self-contained
    brief; workers do not see the ticket or chat. Run independent subtasks in parallel.
 3. Verify: use the `verify` skill, review the diff against every acceptance criterion.
    For M/L tickets also spawn `reviewer`. Send fixes back to workers. Max 3 rounds.
