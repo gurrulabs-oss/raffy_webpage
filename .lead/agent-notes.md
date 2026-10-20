@@ -15,3 +15,4 @@ Facts learned while working. One line each. Newest at the bottom. Trim via a "Re
 - Local Node is v25; CI uses Node 20. Scripts use only node: built-ins.
 - `.DS_Store` files are untracked junk; `.gitignore` (untracked at onboarding) only ignores `.lead/tickets/`.
 - Root `_config.yml` `exclude:` list controls what GitHub Pages (Jekyll) publishes; add new internal non-dot files there. System Ruby 2.6 can't install Jekyll locally.
+- Mockups MUST go in `.lead/designs/T-NNN/*.html` (plural "designs"). The hub's Design panel only lists that folder; anything in `.lead/design/` or elsewhere is invisible to the owner. Check the folder for existing pages first and don't overwrite them. Asset paths from there are `../../../assets/...`.
