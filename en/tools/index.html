@@ -27,7 +27,7 @@
   <meta name="twitter:image" content="https://www.raffyparenting.com/assets/raffy-social-preview.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,600&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="../../assets/raffy-logo.png">
   <link rel="stylesheet" href="../../styles.css">
   <script type="application/ld+json">
@@ -64,93 +64,68 @@
   </script>
 </head>
 <body data-page-key="tool_library" data-locale="en">
-  <div class="bg-dynamic" aria-hidden="true">
-    <span class="bg-shape s1"></span><span class="bg-shape s2"></span><span class="bg-shape s3"></span><span class="bg-shape s4"></span><span class="bg-shape s5"></span>
-  </div>
-  <header>
+  <header class="site-header">
     <div class="container nav">
       <a class="brand" href="../index.html">
         <img class="brand-logo" src="../../assets/raffy-logo.png" alt="Raffy logo" width="500" height="500" decoding="async" loading="eager">
         <span>Raffy</span>
       </a>
-      <nav class="navlinks">
+      <nav class="navlinks" id="site-nav" aria-label="Main">
         <a href="../index.html">Home</a>
         <a href="../articles/index.html">Articles</a>
-        <a href="index.html">Tools</a>
+        <a aria-current="page" href="index.html">Tools</a>
       </nav>
-      <div class="nav-controls">
+      <div class="nav-end">
         <div class="lang-switch">
           <label class="sr-only" for="lang-select">Language selector</label>
-          <select id="lang-select" data-language-selector aria-label="Language selector"><option value="en" selected>English</option><option value="es">Español</option><option value="fr">Français</option><option value="pt">Português (Brasil)</option></select>
+          <select class="lang" id="lang-select" data-language-selector aria-label="Language selector">
+            <option value="en" selected>English</option>
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+            <option value="pt">Português (Brasil)</option>
+          </select>
         </div>
-        <a class="play-store-badge-link play-store-badge-link-sm" href="https://play.google.com/store/apps/details?id=com.gurrulabs.raffy" data-track-download="true" data-page-type="tool" data-cta-location="header" aria-label="Get it on Google Play"><img decoding="async" loading="lazy" class="play-store-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play"></a>
+        <a class="btn btn-sm" href="https://play.google.com/store/apps/details?id=com.gurrulabs.raffy" data-track-download="true" data-page-type="tool" data-cta-location="header"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3.5v17l14-8.5Z"/></svg>Get the app</a>
+        <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-nav"><svg class="ico-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="ico-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
       </div>
     </div>
   </header>
 
-  <main class="container section">
-    <article class="section-card">
-      <h1>Tools Hub</h1>
-      <p>Solve everyday parenting bottlenecks with practical tools for sleep, feeding, growth, and daily tracking.</p>
-      <p>Use tools for quick decisions, then move to the Raffy Android app when you need reminders and long-term history. <a href="../articles/android-baby-tracker-app-guide.html">Read the Android workflow guide</a>.</p>
-      <section class="article-grid" style="margin-top:18px;">
-<article class="article-card reveal">
-  <p class="article-tag">Tool</p>
-  <h3>WHO Baby Growth Percentile Calculator</h3>
-  <p>Unsure if growth is on track? Get WHO percentile and z-score in seconds for weight, length/height, and head circumference.</p>
-  <a href="baby-growth-percentile-calculator-who.html" class="article-link">Open tool</a>
-</article>
+  <main>
+    <header class="tool-hero">
+      <div class="container">
+        <div class="inner">
+          <ol class="crumbs"><li><a href="../index.html">Home</a></li><li>Tools</li></ol>
+          <p class="eyebrow">Free web tools</p>
+          <h1>Tools <em>Hub</em></h1>
+          <p class="sub">Solve everyday parenting bottlenecks with practical tools for sleep, feeding, growth, and daily tracking.</p>
+          <p class="sub">Use tools for quick decisions, then move to the Raffy Android app when you need reminders and long-term history. <a href="../articles/android-baby-tracker-app-guide.html">Read the Android workflow guide</a>.</p>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <h2 class="sr-only">Free web tools</h2>
+      <div class="tool-grid">
+        <a class="card tool-tile t-mint" href="baby-growth-percentile-calculator-who.html"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 20h18M5 16l4-5 4 3 6-8"/><path d="M15 6h4v4"/></svg></span><div><h3>WHO Baby Growth Percentile Calculator</h3><p>Unsure if growth is on track? Get WHO percentile and z-score in seconds for weight, length/height, and head circumference.</p><span class="go">Open tool <span aria-hidden="true">→</span></span><span class="app-hint"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3.5v17l14-8.5Z"/></svg></span>Also in the Raffy app</span></div></a>
+        <a class="card tool-tile t-peach" href="weekly-meal-planner-12-23-months.html"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span><div><h3>Weekly Meal Planner 12-23 months</h3><p>Out of meal ideas? Build a 7-day plan for toddlers 12-23 months with balanced variety and portions you can actually serve.</p><span class="go">Open tool <span aria-hidden="true">→</span></span><span class="app-hint"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3.5v17l14-8.5Z"/></svg></span>Also in the Raffy app</span></div></a>
+        <a class="card tool-tile t-sky" href="wake-window-planner.html"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><h3>Wake Window Planner by Age</h3><p>Fighting overtired meltdowns? Find age-based wake windows and a nap flow you can use today.</p><span class="go">Open tool <span aria-hidden="true">→</span></span><span class="app-hint"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3.5v17l14-8.5Z"/></svg></span>Also in the Raffy app</span></div></a>
+        <a class="card tool-tile t-sky" href="nap-transition-helper.html"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 18h16M6 18v-5a6 6 0 0 1 12 0v5M9 8l-2-3M15 8l2-3"/></svg></span><div><h3>Nap Transition Helper</h3><p>Not sure if it is time to drop a nap? Spot transition signs and follow a step-by-step adjustment plan.</p><span class="go">Open tool <span aria-hidden="true">→</span></span><span class="app-hint"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3.5v17l14-8.5Z"/></svg></span>Also in the Raffy app</span></div></a>
+        <a class="card tool-tile t-peach" href="solids-progression-planner.html"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 11h16a8 8 0 0 1-16 0ZM12 3v4M8 5l1 2M16 5l-1 2"/></svg></span><div><h3>Solids Progression Planner by Age</h3><p>Stuck on what texture to offer next? Plan weekly texture upgrades and food variety without guesswork.</p><span class="go">Open tool <span aria-hidden="true">→</span></span><span class="app-hint"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3.5v17l14-8.5Z"/></svg></span>Also in the Raffy app</span></div></a>
+        <a class="card tool-tile t-sun" href="diaper-output-tracker.html"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11Z"/></svg></span><div><h3>Diaper Output Tracker by Age</h3><p>Wondering if diaper output is normal? Track wet diapers and stools to catch hydration red flags early.</p><span class="go">Open tool <span aria-hidden="true">→</span></span><span class="app-hint"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3.5v17l14-8.5Z"/></svg></span>Also in the Raffy app</span></div></a>
+        <a class="card tool-tile t-peach" href="feeding-quantity-estimator.html"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 2h6M10 2v3l-2 3v12a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V8l-2-3V2M8 12h8"/></svg></span><div><h3>Feeding Quantity Estimator by Age</h3><p>Unsure how much to feed? Estimate daily intake targets by age, weight, and meal count with less guesswork.</p><span class="go">Open tool <span aria-hidden="true">→</span></span><span class="app-hint"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3.5v17l14-8.5Z"/></svg></span>Also in the Raffy app</span></div></a>
+        <a class="card tool-tile is-blue" href="../articles/android-baby-tracker-app-guide.html"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3.5v17l14-8.5Z"/></svg></span><div><span class="tag">Guide</span><h3>Best Android Baby Tracker App for Daily Routines</h3><p>Decide when a web tool is enough and when Android app tracking is the better next step.</p><span class="go">Read guide <span aria-hidden="true">→</span></span></div></a>
+      </div>
 
-<article class="article-card reveal">
-  <p class="article-tag">Tool</p>
-  <h3>Weekly Meal Planner 12-23 months</h3>
-  <p>Out of meal ideas? Build a 7-day plan for toddlers 12-23 months with balanced variety and portions you can actually serve.</p>
-  <a href="weekly-meal-planner-12-23-months.html" class="article-link">Open tool</a>
-</article>
-
-<article class="article-card reveal">
-  <p class="article-tag">Tool</p>
-  <h3>Wake Window Planner by Age</h3>
-  <p>Fighting overtired meltdowns? Find age-based wake windows and a nap flow you can use today.</p>
-  <a href="wake-window-planner.html" class="article-link">Open tool</a>
-</article>
-
-<article class="article-card reveal">
-  <p class="article-tag">Tool</p>
-  <h3>Nap Transition Helper</h3>
-  <p>Not sure if it is time to drop a nap? Spot transition signs and follow a step-by-step adjustment plan.</p>
-  <a href="nap-transition-helper.html" class="article-link">Open tool</a>
-</article>
-
-<article class="article-card reveal">
-  <p class="article-tag">Tool</p>
-  <h3>Solids Progression Planner by Age</h3>
-  <p>Stuck on what texture to offer next? Plan weekly texture upgrades and food variety without guesswork.</p>
-  <a href="solids-progression-planner.html" class="article-link">Open tool</a>
-</article>
-
-<article class="article-card reveal">
-  <p class="article-tag">Tool</p>
-  <h3>Diaper Output Tracker by Age</h3>
-  <p>Wondering if diaper output is normal? Track wet diapers and stools to catch hydration red flags early.</p>
-  <a href="diaper-output-tracker.html" class="article-link">Open tool</a>
-</article>
-
-<article class="article-card reveal">
-  <p class="article-tag">Tool</p>
-  <h3>Feeding Quantity Estimator by Age</h3>
-  <p>Unsure how much to feed? Estimate daily intake targets by age, weight, and meal count with less guesswork.</p>
-  <a href="feeding-quantity-estimator.html" class="article-link">Open tool</a>
-</article>
-<article class="article-card reveal">
-  <p class="article-tag">Guide</p>
-  <h3>Best Android Baby Tracker App for Daily Routines</h3>
-  <p>Decide when a web tool is enough and when Android app tracking is the better next step.</p>
-  <a href="../articles/android-baby-tracker-app-guide.html" class="article-link">Read guide</a>
-</article>
-
+      <section class="cta-section">
+        <div class="cta-band">
+          <div>
+            <h2>Need a complete <em>baby tracking app?</em></h2>
+            <p>Raffy connects growth charts, feeding, sleep and medical notes in one place.</p>
+          </div>
+          <a class="play-store-badge-link" href="https://play.google.com/store/apps/details?id=com.gurrulabs.raffy" data-track-download="true" data-page-type="tool" data-cta-location="footer-band" aria-label="Get it on Google Play"><img decoding="async" loading="lazy" class="play-store-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play"></a>
+        </div>
       </section>
-    </article>
+    </div>
   </main>
   <footer class="container footer">
     <p>© <span id="year"></span> Raffy App</p>

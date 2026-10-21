@@ -29,10 +29,10 @@
   <meta name="twitter:image" content="https://www.raffyparenting.com/assets/raffy-social-preview.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,600&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="../assets/raffy-logo.png">
   <link rel="stylesheet" href="../styles.css">
-  <link rel="preload" as="image" href="../assets/portada_es.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="../assets/feeding.webp" fetchpriority="high">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -140,145 +140,189 @@
   </script>
 </head>
 <body data-page-key="home" data-locale="es">
-  <div class="bg-dynamic" aria-hidden="true">
-  <span class="bg-shape s1"></span>
-  <span class="bg-shape s2"></span>
-  <span class="bg-shape s3"></span>
-  <span class="bg-shape s4"></span>
-  <span class="bg-shape s5"></span>
-</div>
-
-  <header>
+  <header class="site-header">
     <div class="container nav">
       <a class="brand" href="./">
         <img decoding="async" loading="eager" class="brand-logo" src="../assets/raffy-logo.png" alt="Raffy logo" width="500" height="500">
         <span>Raffy</span>
       </a>
-      <nav class="navlinks">
+      <nav class="navlinks" id="site-nav" aria-label="Principal">
         <a href="#what">Qué es Raffy</a>
         <a href="articulos/index.html">Artículos</a>
         <a href="#features">Funciones</a>
         <a href="herramientas/index.html">Herramientas</a>
         <a href="#faq">FAQ</a>
       </nav>
-      <div class="nav-controls">
+      <div class="nav-end">
         <div class="lang-switch">
-  <label class="sr-only" for="lang-select">Selector de idioma</label>
-  <select id="lang-select" data-language-selector aria-label="Selector de idioma">
-    <option value="en">English</option><option value="es" selected>Español</option><option value="fr">Français</option><option value="pt">Português (Brasil)</option>
-  </select>
-</div>
-        <a class="play-store-badge-link play-store-badge-link-sm" href="https://play.google.com/store/apps/details?id=com.gurrulabs.raffy" data-track-download="true" data-page-type="home" data-cta-location="header" aria-label="Descargar en Google Play"><img decoding="async" loading="lazy" class="play-store-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Disponible en Google Play"></a>
+          <label class="sr-only" for="lang-select">Selector de idioma</label>
+          <select class="lang" id="lang-select" data-language-selector aria-label="Selector de idioma">
+            <option value="en">English</option>
+            <option value="es" selected>Español</option>
+            <option value="fr">Français</option>
+            <option value="pt">Português (Brasil)</option>
+          </select>
+        </div>
+        <a class="btn btn-sm" href="https://play.google.com/store/apps/details?id=com.gurrulabs.raffy" data-track-download="true" data-page-type="home" data-cta-location="header"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3.5v17l14-8.5Z"/></svg>Descargar la app</a>
+        <button class="menu-btn" type="button" aria-label="Menú" aria-expanded="false" aria-controls="site-nav"><svg class="ico-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="ico-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
       </div>
     </div>
   </header>
 
   <main id="top">
-    <section class="container section">
-      <article class="intro-copy">
-        <p class="kicker"><span class="dot"></span>App para seguimiento del bebé en familias actuales</p>
-        <h1>Seguimiento del sueño, la alimentación y el crecimiento del bebé en una sola app</h1>
-        <p class="intro-line">Más calma diaria gracias a rutinas claras y datos útiles.</p>
-        <p class="lead">Raffy ayuda a registrar siestas, tomas, sólidos, peso y talla, pañales, medicación y notas diarias en una línea de tiempo fácil de entender.</p>
-      </article>
-    </section>
-    <section class="hero container">
-      <article class="cover-card">
-        <a href="herramientas/calculadora-percentiles-bebe-oms.html" aria-label="Abrir calculadora OMS de percentiles">
-          <img decoding="async" loading="eager" class="cover-image" src="../assets/portada_es.webp" alt="Portada de Raffy" fetchpriority="high" width="1748" height="1240">
-        </a>
-      </article>
-    </section>
-
-    <section id="what" class="container section">
-      <article class="section-card">
-        <h2>¿Qué es Raffy?</h2>
-        <p>Raffy es una app Android pensada para simplificar el cuidado diario del bebé. Reúne rutinas, progreso y contexto para tomar decisiones con confianza. Para decisiones puntuales usa herramientas web, y para seguimiento continuo usa la app.</p>
-      </article>
-    </section>
-    <section id="features" class="container section">
-      <article class="section-card feature-showcase">
-        <div class="feature-showcase-head">
-          <p class="kicker"><span class="dot"></span>Todo lo que necesitas, en una sola app</p>
-          <h2>Módulos potentes para cada momento del día</h2>
-          <p class="lead">Desde las primeras tomas hasta los hitos del desarrollo, Raffy conecta rutinas, salud y crecimiento.</p>
-        </div>
-        <div class="feature-bento">
-          <article class="feature-tile reveal"><img decoding="async" loading="lazy" class="feature-shot feature-shot-contain" src="/assets/doctor.webp" alt="Pantalla de medicación y pediatra en Raffy" width="1080" height="1920"><div class="feature-copy"><h3>Médicos y medicinas</h3><p>Mantén medicación, recordatorios, notas pediátricas y seguimiento de vacunas en una sola línea de salud del bebé.</p></div></article>
-          <article class="feature-tile reveal"><img decoding="async" loading="lazy" class="feature-shot" src="/assets/feeding.webp" alt="Pantalla de alimentación en Raffy" width="921" height="2048"><div class="feature-copy"><h3>Alimentación</h3><p>Registra lactancia o biberón, cantidades y duración para llevar un seguimiento de alimentación del bebé claro y diario.</p></div></article>
-          <article class="feature-tile reveal"><img decoding="async" loading="lazy" class="feature-shot feature-shot-contain" src="/assets/sleep.webp" alt="Pantalla de sueño en Raffy" width="921" height="2048"><div class="feature-copy"><h3>Sueño</h3><p>Controla siestas, ventanas de sueño y hora de dormir con un rastreador de sueño del bebé para rutinas por edad.</p></div></article>
-          <article class="feature-tile reveal"><img decoding="async" loading="lazy" class="feature-shot feature-shot-contain" src="/assets/growth.webp" alt="Pantalla de crecimiento en Raffy" width="1080" height="1920"><div class="feature-copy"><h3>Crecimiento</h3><p>Sigue peso, talla y percentiles con gráficas de crecimiento del bebé para detectar avances y comentar cambios con pediatría. <a href="herramientas/calculadora-percentiles-bebe-oms.html">Abrir calculadora OMS</a>.</p></div></article>
-        </div>
-      </article>
-    </section>
-
-
-    <section id="articles" class="container section">
-      <article class="section-card">
-        <h2>Guías destacadas para madres y padres</h2>
-        <p class="article-intro">Contenido práctico sobre rutina de sueño, alimentación complementaria, percentiles y desarrollo del primer año.</p>
-        <div class="article-grid">
-          <article class="article-card reveal"><img decoding="async" loading="lazy" class="article-card-thumb" src="../articles/images/hitos-desarrollo-4-6.png" alt="Portada del artículo sobre el primer año del bebé"><p class="article-tag">Desarrollo</p><h3>El primer año de tu bebé: el año que te cambia para siempre</h3><p>Una guía cercana del primer año del bebé, trimestre a trimestre, para acompañar su desarrollo sin ansiedad.</p><a href="articulos/hitos-desarrollo-primer-ano-bebe.html" class="article-link">Leer artículo</a></article>
-          <article class="article-card reveal"><img decoding="async" loading="lazy" class="article-card-thumb" src="../articles/menu_9_months/cover_article_menu_9_months.png" alt="Portada del menú semanal para bebé de 9 meses"><p class="article-tag">Menú 9 meses</p><h3>Menú semanal para bebé de 9 meses: plan completo de 7 días</h3><p>Plan semanal de 7 días para bebé de 9 meses con comidas, calorías orientativas y notas de seguridad.</p><a href="articulos/menu-semanal-bebe-9-meses.html" class="article-link">Leer artículo</a></article>
-          <article class="article-card reveal"><img decoding="async" loading="lazy" class="article-card-thumb" src="../articles/images/vaccine.png" alt="Imagen de portada del artículo sobre la primera vacuna del bebé"><p class="article-tag">Vacunas</p><h3>La primera vacuna de mi bebé: lo que sentí y lo que aprendí</h3><p>Un relato real del primer día de vacuna: dudas, evidencia y la tranquilidad que llega después.</p><a href="articulos/primera-vacuna-bebe-lo-que-aprendi.html" class="article-link">Leer artículo</a></article>
-          <article class="article-card reveal"><p class="article-tag">Sueño del bebé</p><h3>Rutina de sueño del bebé por edad: guía práctica semanal</h3><p>Crea una rutina de sueño del bebé por edad con ventanas de sueño, siestas y hora de dormir más estable.</p><a href="articulos/rutina-sueno-bebe-por-edad.html" class="article-link">Leer artículo</a></article>
-          <article class="article-card reveal"><p class="article-tag">Alimentación</p><h3>Guía de alimentación complementaria: BLW, purés y seguridad</h3><p>Guía práctica de alimentación complementaria con BLW y purés, formatos seguros y planificación inicial.</p><a href="articulos/guia-alimentacion-complementaria-blw.html" class="article-link">Leer artículo</a></article>
-          <article class="article-card reveal"><p class="article-tag">Crecimiento</p><h3>Percentiles de peso y talla del bebé: cómo interpretar el crecimiento</h3><p>Aprende a interpretar percentiles de peso y talla del bebé y cuándo conviene consultar al pediatra.</p><a href="articulos/percentiles-peso-talla-bebe.html" class="article-link">Leer artículo</a></article>
-          <article class="article-card reveal"><p class="article-tag">Flujo Android</p><h3>Mejor app Android para seguimiento del bebé</h3><p>Aprende cuándo usar una herramienta web y cuándo pasar al seguimiento diario en Raffy.</p><a href="articulos/app-android-seguimiento-bebe-guia.html" class="article-link">Leer artículo</a></article>
-        </div>
-        <div class="article-actions">
-          <a class="btn btn-ghost" href="articulos/index.html">Ir a la biblioteca de artículos</a>
-        </div>
-      </article>
-    </section>
-
-    <section id="faq" class="container section">
-      <article class="section-card">
-        <h2>Preguntas frecuentes sobre Raffy</h2>
-        <p class="lead">Resolvemos dudas comunes sobre sueño, alimentación, crecimiento y uso diario de Raffy.</p>
-        <details>
-          <summary>¿Para qué sirve una app de seguimiento del bebé como Raffy?</summary>
-          <p>Raffy te ayuda a registrar sueño, lactancia o biberón, sólidos, pañales, medicación, vacunas, peso y talla del bebé en una sola línea de tiempo.</p>
-        </details>
-        <details>
-          <summary>¿Raffy es solo para recién nacidos?</summary>
-          <p>No. Puedes usarla desde recién nacido y adaptarla durante el primer año y etapas posteriores según cambian las rutinas familiares.</p>
-        </details>
-        <details>
-          <summary>¿Raffy funciona sin internet?</summary>
-          <p>Sí. El registro principal puede continuar sin conexión y sincronizarse cuando vuelvas a tener internet.</p>
-        </details>
-        <details>
-          <summary>¿Cómo ayuda Raffy con la rutina de sueño del bebé?</summary>
-          <p>Puedes registrar siestas, ventanas de sueño, hora de dormir y despertares para identificar patrones y ajustar una rutina por edad. Si necesitas una guía práctica, revisa <a href="articulos/rutina-sueno-bebe-por-edad.html">esta rutina de sueño del bebé por edad</a>.</p>
-        </details>
-        <details>
-          <summary>¿Se pueden seguir percentiles de peso y talla del bebé?</summary>
-          <p>Sí. Raffy permite seguir peso, talla y tendencias de crecimiento para detectar cambios y comentarlos en consulta pediátrica. Puedes ampliar con esta <a href="articulos/percentiles-peso-talla-bebe.html">guía de percentiles de peso y talla</a> y hacer cálculos con la <a href="herramientas/calculadora-percentiles-bebe-oms.html">calculadora OMS de percentiles</a>.</p>
-        </details>
-        <details>
-          <summary>¿Raffy incluye seguimiento de alimentación del bebé?</summary>
-          <p>Sí. Puedes llevar registro de lactancia, biberón y alimentación complementaria para tener un historial claro y útil en el día a día.</p>
-        </details>
-        <details>
-          <summary>¿Puedo registrar medicamentos y vacunas en Raffy?</summary>
-          <p>Sí. Puedes mantener medicación, recordatorios y notas de seguimiento para organizar mejor la salud del bebé.</p>
-        </details>
-        <details>
-          <summary>¿Raffy está disponible para Android?</summary>
-          <p>Sí. Raffy está disponible en Google Play para dispositivos Android.</p>
-        </details>
-      </article>
-    </section>
-
-    <section id="download" class="container section">
-      <article class="section-card cta">
+    <section class="hero">
+      <div class="container hero-grid">
         <div>
-          <h2>Controla sueño y crecimiento del bebé con Raffy</h2>
+          <p class="eyebrow">App para seguimiento del bebé en familias actuales</p>
+          <h1>Seguimiento del sueño, la alimentación y el crecimiento del bebé en <span class="hl">una sola app</span></h1>
+          <p class="intro-line">Más calma diaria gracias a rutinas claras y datos útiles.</p>
+          <p class="lead">Raffy ayuda a registrar siestas, tomas, sólidos, peso y talla, pañales, medicación y notas diarias en una línea de tiempo fácil de entender.</p>
+          <div class="hero-cta">
+            <a class="play-store-badge-link" href="https://play.google.com/store/apps/details?id=com.gurrulabs.raffy" data-track-download="true" data-page-type="home" data-cta-location="hero" aria-label="Descargar en Google Play"><img decoding="async" loading="lazy" class="play-store-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Disponible en Google Play"></a>
+            <a class="btn btn-secondary" href="herramientas/index.html">Prueba las herramientas gratis</a>
+          </div>
+          <ul class="trust">
+            <li><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 12v8H4v-8M2 7h20v5H2zM12 22V7M12 7S10 3 7.5 3a2 2 0 0 0 0 4M12 7s2-4 4.5-4a2 2 0 0 1 0 4"/></svg></span>Gratis en Google Play</li>
+            <li><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 8.5a15 15 0 0 1 20 0M5.5 12a10 10 0 0 1 13 0M9 15.5a5 5 0 0 1 6 0M12 19h.01"/></svg></span>Funciona sin conexión</li>
+            <li><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span>English, Español, Français, Português</li>
+          </ul>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="phone p1"><img decoding="async" loading="eager" src="../assets/feeding.webp" alt="" width="921" height="2048"></div>
+          <div class="phone p2"><img decoding="async" loading="eager" src="../assets/sleep_es.webp" alt="" width="921" height="2048"></div>
+          <div class="float-chip c1"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg></span><div>Siesta registrada<small>1 h 20 min · 13:05</small></div></div>
+          <div class="float-chip c2"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 20h18M5 16l4-5 4 3 6-8"/><path d="M15 6h4v4"/></svg></span><div>Peso 7,9 kg<small>P50 · curva OMS</small></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="what" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>¿Qué es Raffy?</h2>
+          <p>Raffy es una app Android pensada para simplificar el cuidado diario del bebé. Reúne rutinas, progreso y contexto para tomar decisiones con confianza. Para decisiones puntuales usa herramientas web, y para seguimiento continuo usa la app.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="section home-features">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Todo lo que necesitas, en una sola app</p>
+          <h2>Módulos potentes para cada momento del día</h2>
+          <p>Desde las primeras tomas hasta los hitos del desarrollo, Raffy conecta rutinas, salud y crecimiento.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="card feature t-sky">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg></span>
+            <h3>Sueño</h3>
+            <p>Controla siestas, ventanas de sueño y hora de dormir con un rastreador de sueño del bebé para rutinas por edad.</p>
+            <a class="in-app" href="https://play.google.com/store/apps/details?id=com.gurrulabs.raffy" data-track-download="true" data-page-type="home" data-cta-location="feature-card"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3.5v17l14-8.5Z"/></svg></span>En la app</a>
+            <div class="shot"><img decoding="async" loading="lazy" src="../assets/sleep_es.webp" alt="Pantalla de sueño en Raffy" width="921" height="2048"></div>
+          </article>
+          <article class="card feature t-peach">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 2h6M10 2v3l-2 3v12a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V8l-2-3V2M8 12h8"/></svg></span>
+            <h3>Alimentación</h3>
+            <p>Registra lactancia o biberón, cantidades y duración para llevar un seguimiento de alimentación del bebé claro y diario.</p>
+            <a class="in-app" href="https://play.google.com/store/apps/details?id=com.gurrulabs.raffy" data-track-download="true" data-page-type="home" data-cta-location="feature-card"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3.5v17l14-8.5Z"/></svg></span>En la app</a>
+            <div class="shot"><img decoding="async" loading="lazy" src="../assets/feeding.webp" alt="Pantalla de alimentación en Raffy" width="921" height="2048"></div>
+          </article>
+          <article class="card feature t-mint">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 20h18M5 16l4-5 4 3 6-8"/><path d="M15 6h4v4"/></svg></span>
+            <h3>Crecimiento</h3>
+            <p>Sigue peso, talla y percentiles con gráficas de crecimiento del bebé para detectar avances y comentar cambios con pediatría. <a href="herramientas/calculadora-percentiles-bebe-oms.html">Abrir calculadora OMS</a>.</p>
+            <a class="in-app" href="https://play.google.com/store/apps/details?id=com.gurrulabs.raffy" data-track-download="true" data-page-type="home" data-cta-location="feature-card"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3.5v17l14-8.5Z"/></svg></span>En la app</a>
+            <div class="shot"><img decoding="async" loading="lazy" src="../assets/growth.webp" alt="Pantalla de crecimiento en Raffy" width="1080" height="1920"></div>
+          </article>
+          <article class="card feature t-sun">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3v6a4 4 0 0 0 8 0V3M10 13v2a5 5 0 0 0 10 0v-2"/><circle cx="20" cy="11" r="2"/></svg></span>
+            <h3>Médicos y medicinas</h3>
+            <p>Mantén medicación, recordatorios, notas pediátricas y seguimiento de vacunas en una sola línea de salud del bebé.</p>
+            <a class="in-app" href="https://play.google.com/store/apps/details?id=com.gurrulabs.raffy" data-track-download="true" data-page-type="home" data-cta-location="feature-card"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3.5v17l14-8.5Z"/></svg></span>En la app</a>
+            <div class="shot"><img decoding="async" loading="lazy" src="../assets/doctor_es.webp" alt="Pantalla de medicación y pediatra en Raffy" width="1080" height="1920"></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="tools" class="section band">
+      <div class="container">
+        <div class="section-head-row">
+          <div class="section-head">
+            <p class="eyebrow">Herramientas web gratuitas</p>
+            <h2>Respuestas rápidas antes de abrir la app</h2>
+          </div>
+          <a class="btn btn-secondary" href="herramientas/index.html">Ver las 7 herramientas</a>
+        </div>
+        <div class="tool-grid">
+          <a class="card tool-tile t-mint" href="herramientas/calculadora-percentiles-bebe-oms.html"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 20h18M5 16l4-5 4 3 6-8"/><path d="M15 6h4v4"/></svg></span><div><h3>Calculadora OMS de percentiles del bebé</h3><p>Peso, talla y perímetro craneal frente a las curvas de la OMS.</p><span class="go">Abrir herramienta <span aria-hidden="true">→</span></span></div></a>
+          <a class="card tool-tile t-sky" href="herramientas/planificador-ventanas-sueno.html"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><h3>Planificador de ventanas de sueño</h3><p>Ventanas de vigilia y estructura de siestas por edad.</p><span class="go">Abrir herramienta <span aria-hidden="true">→</span></span></div></a>
+          <a class="card tool-tile t-peach" href="herramientas/planificador-comidas-semanal-12-23-meses.html"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span><div><h3>Planificador semanal de comidas (12-23 meses)</h3><p>Un menú de 7 días para peques con porciones.</p><span class="go">Abrir herramienta <span aria-hidden="true">→</span></span></div></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="articles" class="section">
+      <div class="container">
+        <div class="section-head-row">
+          <div class="section-head">
+            <p class="eyebrow">Guías de crianza</p>
+            <h2>Guías destacadas para madres y padres</h2>
+            <p>Contenido práctico sobre rutina de sueño, alimentación complementaria, percentiles y desarrollo del primer año.</p>
+          </div>
+          <a class="btn btn-secondary" href="articulos/index.html">Ir a la biblioteca de artículos</a>
+        </div>
+        <div class="article-grid">
+          <a class="card a-card" href="articulos/hitos-desarrollo-primer-ano-bebe.html">
+            <div class="a-thumb"><img decoding="async" loading="lazy" src="../articles/images/hitos-desarrollo-4-6.png" alt="Portada del artículo sobre el primer año del bebé"></div>
+            <div class="a-body"><span class="tag">Desarrollo</span><h3>El primer año de tu bebé: el año que te cambia para siempre</h3><p>Una guía cercana del primer año del bebé, trimestre a trimestre, para acompañar su desarrollo sin ansiedad.</p><div class="a-meta"><span>Leer artículo</span></div></div>
+          </a>
+          <a class="card a-card" href="articulos/menu-semanal-bebe-9-meses.html">
+            <div class="a-thumb"><img decoding="async" loading="lazy" src="../articles/menu_9_months/cover_article_menu_9_months.png" alt="Portada del menú semanal para bebé de 9 meses"></div>
+            <div class="a-body"><span class="tag peach">Menú 9 meses</span><h3>Menú semanal para bebé de 9 meses: plan completo de 7 días</h3><p>Plan semanal de 7 días para bebé de 9 meses con comidas, calorías orientativas y notas de seguridad.</p><div class="a-meta"><span>Leer artículo</span></div></div>
+          </a>
+          <a class="card a-card" href="articulos/primera-vacuna-bebe-lo-que-aprendi.html">
+            <div class="a-thumb"><img decoding="async" loading="lazy" src="../articles/images/vaccine.png" alt="Imagen de portada del artículo sobre la primera vacuna del bebé"></div>
+            <div class="a-body"><span class="tag sun">Vacunas</span><h3>La primera vacuna de mi bebé: lo que sentí y lo que aprendí</h3><p>Un relato real del primer día de vacuna: dudas, evidencia y la tranquilidad que llega después.</p><div class="a-meta"><span>Leer artículo</span></div></div>
+          </a>
+        </div>
+        <h3 class="more-guides-title">Más guías</h3>
+        <div class="a-more">
+            <a class="card a-mini" href="articulos/rutina-sueno-bebe-por-edad.html"><span class="tag sky">Sueño del bebé</span><h3>Rutina de sueño del bebé por edad: guía práctica semanal</h3><p>Crea una rutina de sueño del bebé por edad con ventanas de sueño, siestas y hora de dormir más estable.</p><span class="a-read">Leer artículo</span></a>
+            <a class="card a-mini" href="articulos/guia-alimentacion-complementaria-blw.html"><span class="tag peach">Alimentación</span><h3>Guía de alimentación complementaria: BLW, purés y seguridad</h3><p>Guía práctica de alimentación complementaria con BLW y purés, formatos seguros y planificación inicial.</p><span class="a-read">Leer artículo</span></a>
+            <a class="card a-mini" href="articulos/percentiles-peso-talla-bebe.html"><span class="tag">Crecimiento</span><h3>Percentiles de peso y talla del bebé: cómo interpretar el crecimiento</h3><p>Aprende a interpretar percentiles de peso y talla del bebé y cuándo conviene consultar al pediatra.</p><span class="a-read">Leer artículo</span></a>
+            <a class="card a-mini" href="articulos/app-android-seguimiento-bebe-guia.html"><span class="tag sun">Flujo Android</span><h3>Mejor app Android para seguimiento del bebé</h3><p>Aprende cuándo usar una herramienta web y cuándo pasar al seguimiento diario en Raffy.</p><span class="a-read">Leer artículo</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Preguntas frecuentes sobre Raffy</h2>
+          <p>Resolvemos dudas comunes sobre sueño, alimentación, crecimiento y uso diario de Raffy.</p>
+        </div>
+        <div class="faq">
+          <details open><summary>¿Para qué sirve una app de seguimiento del bebé como Raffy?</summary><p>Raffy te ayuda a registrar sueño, lactancia o biberón, sólidos, pañales, medicación, vacunas, peso y talla del bebé en una sola línea de tiempo.</p></details>
+          <details><summary>¿Raffy es solo para recién nacidos?</summary><p>No. Puedes usarla desde recién nacido y adaptarla durante el primer año y etapas posteriores según cambian las rutinas familiares.</p></details>
+          <details><summary>¿Raffy funciona sin internet?</summary><p>Sí. El registro principal puede continuar sin conexión y sincronizarse cuando vuelvas a tener internet.</p></details>
+          <details><summary>¿Cómo ayuda Raffy con la rutina de sueño del bebé?</summary><p>Puedes registrar siestas, ventanas de sueño, hora de dormir y despertares para identificar patrones y ajustar una rutina por edad. Si necesitas una guía práctica, revisa <a href="articulos/rutina-sueno-bebe-por-edad.html">esta rutina de sueño del bebé por edad</a>.</p></details>
+          <details><summary>¿Se pueden seguir percentiles de peso y talla del bebé?</summary><p>Sí. Raffy permite seguir peso, talla y tendencias de crecimiento para detectar cambios y comentarlos en consulta pediátrica. Puedes ampliar con esta <a href="articulos/percentiles-peso-talla-bebe.html">guía de percentiles de peso y talla</a> y hacer cálculos con la <a href="herramientas/calculadora-percentiles-bebe-oms.html">calculadora OMS de percentiles</a>.</p></details>
+          <details><summary>¿Raffy incluye seguimiento de alimentación del bebé?</summary><p>Sí. Puedes llevar registro de lactancia, biberón y alimentación complementaria para tener un historial claro y útil en el día a día.</p></details>
+          <details><summary>¿Puedo registrar medicamentos y vacunas en Raffy?</summary><p>Sí. Puedes mantener medicación, recordatorios y notas de seguimiento para organizar mejor la salud del bebé.</p></details>
+          <details><summary>¿Raffy está disponible para Android?</summary><p>Sí. Raffy está disponible en Google Play para dispositivos Android.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section id="download" class="container">
+      <div class="cta-band">
+        <div>
+          <h2>Controla sueño y <em>crecimiento</em> del bebé con Raffy</h2>
           <p>Descárgala en Google Play y organiza rutinas en minutos.</p>
         </div>
         <a class="play-store-badge-link" href="https://play.google.com/store/apps/details?id=com.gurrulabs.raffy" data-track-download="true" data-page-type="home" data-cta-location="footer-cta" aria-label="Descargar en Google Play"><img decoding="async" loading="lazy" class="play-store-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Disponible en Google Play"></a>
-      </article>
+      </div>
     </section>
   </main>
 

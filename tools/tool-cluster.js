@@ -377,35 +377,147 @@ function renderOutput(form, lines, summary, locale) {
   `;
 }
 
+/* ---------- B v2 markup (all locales; the legacy renderer stays as a fallback for old markup) ----------
+   Static HTML carries the form, hints, inline error text, empty/error states and the app card.
+   The script only fills values: [data-r-title|summary|disclaimer] from localePack, [data-r-stats],
+   [data-r-headline], [data-r-tips]. Everything is guarded so legacy markup keeps working. */
+const CHECK_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12 4.5 4.5L19 7"/></svg>';
+
+function escapeHtml(value) {
+  return String(value).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+
+function setState(state) {
+  document.body.classList.remove("state-empty", "state-result", "state-error");
+  document.body.classList.add(`state-${state}`);
+}
+
+// "820 kcal/day" -> big number + small unit; values without a unit ("4-6") stay as they are.
+function statValueHtml(value) {
+  const match = /^(.*?\d)\s+([^\d\s].*)$/.exec(value);
+  return match ? `${escapeHtml(match[1])} <small>${escapeHtml(match[2])}</small>` : escapeHtml(value);
+}
+
+function renderResult(root, { lines = [], stats = [], headline = "", alert = "", bullet = "check", summary, locale }) {
+  const pack = localePack[locale] || localePack.en;
+  const result = root.querySelector(".result");
+  if (!result) return;
+  const fill = (selector, text) => {
+    const el = result.querySelector(selector);
+    if (el) el.textContent = text;
+  };
+  fill("[data-r-title]", pack.resultTitle);
+  fill("[data-r-summary]", summary);
+  fill("[data-r-disclaimer]", pack.disclaimer);
+  fill("[data-r-headline]", headline);
+
+  // Warning line (diaper tool with warning signs): amber alert above the tips, never a check-marked tip.
+  const alertEl = result.querySelector("[data-r-alert]");
+  if (alertEl) {
+    const text = alertEl.querySelector("[data-r-alert-text]");
+    if (text) text.textContent = alert;
+    alertEl.hidden = !alert;
+  } else if (alert) {
+    lines = [...lines, alert];
+  }
+
+  const statsEl = result.querySelector("[data-r-stats]");
+  if (statsEl) {
+    statsEl.innerHTML = stats
+      .map(([label, value]) => `<div class="stat"><p class="k">${escapeHtml(label)}</p><p class="v">${statValueHtml(value)}</p></div>`)
+      .join("");
+  }
+  const tipsEl = result.querySelector("[data-r-tips]");
+  if (tipsEl) {
+    // "dot" bullets for lists that mix reassurance with cautions (a check mark would read as "all clear").
+    const marker = bullet === "dot" ? '<span class="dot" aria-hidden="true"></span>' : CHECK_ICON;
+    tipsEl.innerHTML = lines.map((line) => `<li>${marker}<span>${escapeHtml(line)}</span></li>`).join("");
+  }
+
+  setState("result");
+  window.RaffyStickyCta?.show();
+  if (window.matchMedia("(max-width: 980px)").matches) {
+    root.querySelector(".pane.res")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}
+
+function clearFieldError(control) {
+  const field = control.closest(".field");
+  if (!field) return;
+  field.classList.remove("has-error");
+  control.removeAttribute("aria-invalid");
+}
+
+// Returns true when every control is valid; otherwise marks the invalid fields and focuses the first one.
+function validateForm(form) {
+  const controls = [...form.elements].filter((el) => el.willValidate);
+  const invalid = controls.filter((el) => !el.checkValidity());
+  controls.filter((el) => !invalid.includes(el)).forEach(clearFieldError);
+  if (!invalid.length) return true;
+  invalid.forEach((el) => {
+    el.closest(".field")?.classList.add("has-error");
+    el.setAttribute("aria-invalid", "true");
+  });
+  invalid[0].focus();
+  return false;
+}
+
 function attachTool(form) {
   const locale = form.dataset.locale || "en";
   const kind = form.dataset.toolKind;
   const pack = localePack[locale] || localePack.en;
+  const root = form.closest("[data-tool-root]");
+
+  // Legacy markup renders into [data-tool-output]; B v2 markup renders into the result pane.
+  const show = ({ lines, summary, stats = [], headline = "", alert = "", bullet }) => {
+    if (root) renderResult(root, { lines, stats, headline, alert, bullet, summary, locale });
+    else renderOutput(form, [...stats.map(([label, value]) => `${label}: ${value}`), ...lines], summary, locale);
+  };
+  // Lists whose first entry is a headline sentence (nap, solids, diaper) show it large above the tips.
+  const withHeadline = (lines) => (root ? { headline: lines[0], lines: lines.slice(1) } : { lines });
+
+  if (root) {
+    form.addEventListener("input", (event) => {
+      const control = event.target;
+      if (control instanceof HTMLInputElement && control.checkValidity()) clearFieldError(control);
+    });
+    form.addEventListener("reset", () => {
+      form.querySelectorAll(".field").forEach((field) => field.classList.remove("has-error"));
+      form.querySelectorAll("[aria-invalid]").forEach((el) => el.removeAttribute("aria-invalid"));
+      setState("empty");
+      window.RaffyStickyCta?.hide();
+    });
+  }
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
 
+    if (root && !validateForm(form)) {
+      setState("error");
+      window.RaffyStickyCta?.hide();
+      return;
+    }
+
     if (kind === "wake") {
       const ageMonths = Number(form.age_months.value || 0);
       const model = wakeWindowModel(ageMonths, locale);
-      renderOutput(
-        form,
-        [`${pack.wake.napLabel}: ${model.naps}`, `${pack.wake.windowLabel}: ${model.window}`, ...model.notes],
-        pack.wake.summary,
-        locale
-      );
+      show({
+        stats: [[pack.wake.napLabel, model.naps], [pack.wake.windowLabel, model.window]],
+        lines: model.notes,
+        summary: pack.wake.summary
+      });
     }
 
     if (kind === "nap") {
       const ageMonths = Number(form.age_months.value || 0);
       const currentNaps = Number(form.current_naps.value || 0);
-      renderOutput(form, napTransitionModel(ageMonths, currentNaps, locale), pack.nap.summary, locale);
+      show({ ...withHeadline(napTransitionModel(ageMonths, currentNaps, locale)), summary: pack.nap.summary });
     }
 
     if (kind === "solids") {
       const ageMonths = Number(form.age_months.value || 0);
       const stage = String(form.texture_stage.value || "mashed");
-      renderOutput(form, solidsModel(ageMonths, stage, locale), pack.solids.summary, locale);
+      show({ ...withHeadline(solidsModel(ageMonths, stage, locale)), summary: pack.solids.summary });
     }
 
     if (kind === "diaper") {
@@ -413,14 +525,32 @@ function attachTool(form) {
       const wetDiapers = Number(form.wet_diapers.value || 0);
       const stools = Number(form.stools.value || 0);
       const redFlag = Boolean(form.red_flags.checked);
-      renderOutput(form, diaperModel(ageMonths, wetDiapers, stools, redFlag, locale), pack.diaper.summary, locale);
+      const lines = diaperModel(ageMonths, wetDiapers, stools, redFlag, locale);
+      if (root) {
+        // With warning signs the last line is the escalation advice: shown as an alert, not as a tip.
+        const alert = redFlag ? lines[lines.length - 1] : "";
+        const rest = redFlag ? lines.slice(0, -1) : lines;
+        show({ headline: rest[0], lines: rest.slice(1), alert, bullet: "dot", summary: pack.diaper.summary });
+      } else {
+        show({ lines, summary: pack.diaper.summary });
+      }
     }
 
     if (kind === "feeding") {
       const ageMonths = Number(form.age_months.value || 0);
       const weightKg = Number(form.weight_kg.value || 0);
       const mealsPerDay = Number(form.meals_per_day.value || 1);
-      renderOutput(form, feedingModel(ageMonths, weightKg, mealsPerDay, locale), pack.feeding.summary, locale);
+      const lines = feedingModel(ageMonths, weightKg, mealsPerDay, locale);
+      if (root) {
+        // The first two lines are "label: value" (daily energy, per-meal target): shown as big numbers.
+        const stats = lines.slice(0, 2).map((line) => {
+          const at = line.indexOf(": ");
+          return at < 0 ? ["", line] : [line.slice(0, at), line.slice(at + 2)];
+        });
+        show({ stats, lines: lines.slice(2), summary: pack.feeding.summary });
+      } else {
+        show({ lines, summary: pack.feeding.summary });
+      }
     }
   });
 }

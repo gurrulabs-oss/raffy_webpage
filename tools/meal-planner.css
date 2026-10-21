@@ -1,7 +1,7 @@
 .tool-wrap {
   width: min(var(--max), calc(100% - 2.4rem));
   margin: 0 auto;
-  padding: clamp(1rem, 2vw, 1.45rem) 0 2.35rem;
+  padding: 0 0 2.35rem;
 }
 
 .tool-planner-grid {
@@ -637,4 +637,58 @@
     border-top: 0;
     padding-top: 0;
   }
+}
+
+
+/* =====================================================================
+   B v2 tokens (T-010). The older rules above used --text/--muted/--outline/... which the B v2
+   design system no longer defines; map them to the new tokens and restyle the shared surfaces.
+   The planner UI itself is unchanged.
+   ===================================================================== */
+:root {
+  --text: var(--ink);
+  --muted: var(--ink-2);
+  --muted2: var(--ink-3);
+  --outline: var(--line);
+  --shadow: var(--shadow-1);
+  --radius2: var(--r-lg);
+}
+
+.tool-planner-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-1);
+}
+.tool-planner-card::before { display: none; }
+.tool-planner-controls { top: calc(var(--header-h) + var(--s4)); }
+
+.tool-planner-form label { font-size: .875rem; font-weight: 700; color: var(--ink-2); }
+.tool-planner-form input:not([type="checkbox"]),
+.tool-planner-form select {
+  min-height: 52px;
+  border: 1.5px solid var(--line-2);
+  border-radius: 14px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.tool-planner-form input[readonly] { background: var(--mint-50); color: var(--ink-2); }
+.tool-planner-form input:focus-visible,
+.tool-planner-form select:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: 2px;
+  border-color: var(--mint-700);
+  box-shadow: none;
+}
+.tool-planner-toggle { border: 1.5px dashed var(--mint-300); border-radius: 14px; font-weight: 600; color: var(--ink); min-height: 44px; }
+.tool-planner-toggle input { width: 22px; height: 22px; }
+.tool-planner-actions .btn { min-height: 56px; }
+.tool-planner-error { color: var(--coral-600); }
+
+.planner-inline-app { background: var(--mint-100); border: 1px solid var(--mint-300); border-radius: var(--r-md); }
+.planner-inline-app p { color: var(--ink-2); }
+.tool-hero + .tool-wrap { padding-top: 0; }
+
+@media (max-width: 720px) {
+  .tool-wrap { width: calc(100% - 2rem); }
 }

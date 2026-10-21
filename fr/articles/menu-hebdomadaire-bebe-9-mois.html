@@ -29,7 +29,7 @@
   <meta name="twitter:image" content="https://www.raffyparenting.com/articles/menu_9_months/cover_article_menu_9_months.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../styles.css">
   <link rel="stylesheet" href="../../articles/article.css">
   <script type="application/ld+json">
@@ -92,47 +92,83 @@
   </script>
 </head>
 <body data-page-key="article_weekly_menu_9_months" data-locale="fr">
-  <div class="bg-dynamic" aria-hidden="true">
-  <span class="bg-shape s1"></span>
-  <span class="bg-shape s2"></span>
-  <span class="bg-shape s3"></span>
-  <span class="bg-shape s4"></span>
-  <span class="bg-shape s5"></span>
-</div>
-
-  <header>
+  <header class="site-header">
     <div class="container nav">
       <a class="brand" href="../index.html">
         <img decoding="async" loading="eager" class="brand-logo" src="../../assets/raffy-logo.png" alt="Raffy logo" width="500" height="500">
         <span>Raffy</span>
       </a>
-      <nav class="navlinks">
+      <nav class="navlinks" id="site-nav" aria-label="Principale">
         <a href="../index.html">Accueil</a>
-        <a href="index.html">Articles</a>
+        <a aria-current="page" href="index.html">Articles</a>
       </nav>
-      <div class="nav-controls">
+      <div class="nav-end">
         <div class="lang-switch">
-  <label class="sr-only" for="lang-select">Sélecteur de langue</label>
-  <select id="lang-select" data-language-selector aria-label="Sélecteur de langue">
-    <option value="en">English</option><option value="es">Español</option><option value="fr" selected>Français</option><option value="pt">Português (Brasil)</option>
-  </select>
-</div>
-        <a class="play-store-badge-link play-store-badge-link-sm" href="https://play.google.com/store/apps/details?id=com.gurrulabs.raffy" data-track-download="true" data-page-type="article" data-cta-location="header" data-article-slug="menu-hebdomadaire-bebe-9-mois" aria-label="Télécharger sur Google Play"><img decoding="async" loading="lazy" class="play-store-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Disponible sur Google Play"></a>
+          <label class="sr-only" for="lang-select">Sélecteur de langue</label>
+          <select class="lang" id="lang-select" data-language-selector aria-label="Sélecteur de langue">
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="fr" selected>Français</option>
+            <option value="pt">Português (Brasil)</option>
+          </select>
+        </div>
+        <a class="btn btn-sm" href="https://play.google.com/store/apps/details?id=com.gurrulabs.raffy" data-track-download="true" data-page-type="article" data-cta-location="header" data-article-slug="menu-hebdomadaire-bebe-9-mois"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3.5v17l14-8.5Z"/></svg>Télécharger l'app</a>
+        <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-nav"><svg class="ico-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="ico-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
       </div>
     </div>
   </header>
 
-  <main class="article-wrap">
-    <article class="article-card">
-      <span class="chip">Alimentation</span>
-      <h1>Menu hebdomadaire bébé 9 mois : plan complet sur 7 jours</h1>
-      <p class="excerpt">Ce menu hebdomadaire pour bébé de 9 mois propose une organisation claire sur 7 jours avec petit-déjeuner, collation, déjeuner, goûter et dîner.</p>
-      <figure class="article-cover">
+    <main>
+    <header class="article-hero">
+      <div class="container">
+        <div class="inner">
+          <ol class="crumbs"><li><a href="../index.html">Accueil</a></li><li><a href="index.html">Articles</a></li><li>Menu hebdomadaire bébé 9 mois</li></ol>
+          <p class="eyebrow">Alimentation</p>
+          <h1>Menu hebdomadaire bébé 9 mois : plan complet sur 7 jours</h1>
+          <p class="excerpt">Ce menu hebdomadaire pour bébé de 9 mois propose une organisation claire sur 7 jours avec petit-déjeuner, collation, déjeuner, goûter et dîner.</p>
+          <div class="byline">
+            <span class="avatar"><img src="../../assets/raffy-logo.png" alt="" width="26" height="26" decoding="async" loading="lazy"></span>
+            <span>L'équipe éditoriale de Raffy</span><span class="sep"></span>
+            <span data-minutes="3">3 min de lecture</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <figure class="article-cover is-poster">
         <img decoding="async" loading="eager" fetchpriority="high" src="../../articles/menu_9_months/cover_article_menu_9_months.png" alt="Image de couverture du menu hebdomadaire bébé 9 mois">
       </figure>
-      <p>Ce contenu est éducatif, basé sur des recommandations générales (OMS, AEP, ESPGHAN), et ne remplace pas un avis médical individualisé.</p>
 
-      <h2>Repères nutritionnels à 9 mois</h2>
+      <div class="article-layout">
+        <nav class="toc" aria-label="Sur cette page">
+          <p class="toc-title">Sur cette page</p>
+          <ol>
+            <li><a href="#reperes-nutritionnels-a-9-mois">Repères nutritionnels à 9 mois</a></li>
+            <li><a href="#detail-quotidien-du-menu">Détail quotidien du menu</a></li>
+            <li><a href="#resume-du-menu-hebdomadaire-7-jours">Résumé du menu hebdomadaire (7 jours)</a></li>
+            <li><a href="#moyenne-nutritionnelle-sur-la-semaine">Moyenne nutritionnelle sur la semaine</a></li>
+            <li><a href="#securite-alimentaire-en-diversification">Sécurité alimentaire en diversification</a></li>
+            <li><a href="#transformer-ce-menu-en-routine-durable">Transformer ce menu en routine durable</a></li>
+          </ol>
+        </nav>
+
+        <article class="prose">
+          <details class="toc-mobile card">
+            <summary>Sur cette page · 6 sections</summary>
+            <ol>
+              <li><a href="#reperes-nutritionnels-a-9-mois">Repères nutritionnels à 9 mois</a></li>
+              <li><a href="#detail-quotidien-du-menu">Détail quotidien du menu</a></li>
+              <li><a href="#resume-du-menu-hebdomadaire-7-jours">Résumé du menu hebdomadaire (7 jours)</a></li>
+              <li><a href="#moyenne-nutritionnelle-sur-la-semaine">Moyenne nutritionnelle sur la semaine</a></li>
+              <li><a href="#securite-alimentaire-en-diversification">Sécurité alimentaire en diversification</a></li>
+              <li><a href="#transformer-ce-menu-en-routine-durable">Transformer ce menu en routine durable</a></li>
+            </ol>
+          </details>
+
+          <p>Ce contenu est éducatif, basé sur des recommandations générales (OMS, AEP, ESPGHAN), et ne remplace pas un avis médical individualisé.</p>
+
+          <h2 id="reperes-nutritionnels-a-9-mois">Repères nutritionnels à 9 mois</h2>
       <ul>
         <li><span class="meal-label">Apport énergétique indicatif:</span> 700-900 kcal/jour selon le poids, l'appétit et les prises de lait.</li>
         <li><span class="meal-label">Répartition indicative:</span> glucides 45-55%, lipides 35-40%, protéines 10-15% (environ 1,2 g/kg/jour).</li>
@@ -140,7 +176,16 @@
         <li><span class="meal-label">Textures:</span> purée épaisse, écrasé ou DME adaptée selon le développement du bébé.</li>
       </ul>
 
-      <h2>Détail quotidien du menu</h2>
+          <div class="inline-cta">
+            <div class="copy">
+              <h3>Suivez tout dans Raffy</h3>
+              <p>Sommeil, repas, croissance et routines dans une seule app Android gratuite.</p>
+              <a class="play-store-badge-link play-store-badge-link-sm" href="https://play.google.com/store/apps/details?id=com.gurrulabs.raffy" data-track-download="true" data-page-type="article" data-cta-location="inline-article" data-article-slug="menu-hebdomadaire-bebe-9-mois" aria-label="Télécharger sur Google Play"><img decoding="async" loading="lazy" class="play-store-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Disponible sur Google Play"></a>
+            </div>
+            <img src="../../assets/feeding.webp" alt="" width="120" height="170" loading="lazy" decoding="async">
+          </div>
+
+          <h2 id="detail-quotidien-du-menu">Détail quotidien du menu</h2>
       <div class="menu-days">
         <section class="day-menu day-image-right">
           <div class="day-layout">
@@ -160,7 +205,7 @@
           </div>
         </section>
 
-        <section class="day-menu day-image-left">
+          <section class="day-menu day-image-left">
           <div class="day-layout">
             <div class="day-text">
               <h3>Mardi (~790 kcal)</h3>
@@ -178,7 +223,7 @@
           </div>
         </section>
 
-        <section class="day-menu day-image-right">
+          <section class="day-menu day-image-right">
           <div class="day-layout">
             <div class="day-text">
               <h3>Mercredi (~830 kcal)</h3>
@@ -196,7 +241,7 @@
           </div>
         </section>
 
-        <section class="day-menu day-image-left">
+          <section class="day-menu day-image-left">
           <div class="day-layout">
             <div class="day-text">
               <h3>Jeudi (~800 kcal)</h3>
@@ -214,7 +259,7 @@
           </div>
         </section>
 
-        <section class="day-menu day-image-right">
+          <section class="day-menu day-image-right">
           <div class="day-layout">
             <div class="day-text">
               <h3>Vendredi (~820 kcal)</h3>
@@ -232,7 +277,7 @@
           </div>
         </section>
 
-        <section class="day-menu day-image-left">
+          <section class="day-menu day-image-left">
           <div class="day-layout">
             <div class="day-text">
               <h3>Samedi (~835 kcal)</h3>
@@ -250,7 +295,7 @@
           </div>
         </section>
 
-        <section class="day-menu day-image-right">
+          <section class="day-menu day-image-right">
           <div class="day-layout">
             <div class="day-text">
               <h3>Dimanche (~820 kcal)</h3>
@@ -269,7 +314,7 @@
         </section>
       </div>
 
-      <h2>Résumé du menu hebdomadaire (7 jours)</h2>
+          <h2 id="resume-du-menu-hebdomadaire-7-jours">Résumé du menu hebdomadaire (7 jours)</h2>
       <div class="table-scroll">
         <table class="menu-table">
           <thead>
@@ -319,7 +364,7 @@
         </table>
       </div>
 
-      <h2>Moyenne nutritionnelle sur la semaine</h2>
+          <h2 id="moyenne-nutritionnelle-sur-la-semaine">Moyenne nutritionnelle sur la semaine</h2>
       <ul>
         <li><span class="meal-label">Énergie quotidienne moyenne:</span> ~816 kcal.</li>
         <li><span class="meal-label">Glucides:</span> 48-51%.</li>
@@ -327,40 +372,65 @@
         <li><span class="meal-label">Lipides:</span> 35-39%.</li>
       </ul>
 
-      <h2>Sécurité alimentaire en diversification</h2>
-      <ul>
+          <h2 id="securite-alimentaire-en-diversification">Sécurité alimentaire en diversification</h2>
+      <div class="callout safety"><p class="callout-title"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6Z"/><path d="m9 12 2 2 4-4"/></svg></span>Sécurité pédiatrique</p><ul>
         <li>Éviter le miel, le sucre ajouté et le sel ajouté la première année.</li>
         <li>Toujours surveiller le repas et éviter les formes à haut risque d'étouffement.</li>
         <li>Introduire les allergènes progressivement, sous forme sécurisée, en observant la tolérance.</li>
         <li>En cas de prématurité, difficultés alimentaires ou croissance fragile, adapter le menu avec le pédiatre.</li>
-      </ul>
+      </ul></div>
 
-      <div class="note-box">
+          <div class="note-box callout">
         <strong>Note éditoriale :</strong> cet article est informatif et ne constitue ni diagnostic ni prescription médicale individuelle.
       </div>
 
-      <h2>Transformer ce menu en routine durable</h2>
+          <h2 id="transformer-ce-menu-en-routine-durable">Transformer ce menu en routine durable</h2>
       <p>Pour tenir ce menu dans le temps, suivez les repas, le sommeil et la croissance. Vous pouvez utiliser le <a href="../outils/calculateur-percentiles-bebe-oms.html">calculateur OMS de percentiles bébé</a> et ce <a href="guide-diversification-bebe-blw.html">guide diversification bébé</a>.</p>
       <p>A partir de 12 mois, beaucoup de familles ont besoin d'un outil plus souple qu'un menu fixe. Utilisez le <a href="../outils/planificateur-repas-hebdomadaire-12-23-mois.html">planificateur de repas bebe 12-23 mois</a> pour generer un nouveau menu sur 7 jours avec objectif de lait, controle calorique et variete hebdomadaire.</p>
-
-      <div class="download-box">
-        <p>Avec Raffy, centralisez repas, habitudes et évolution de votre bébé pour ajuster votre menu chaque semaine.</p>
-        <a class="play-store-badge-link" href="https://play.google.com/store/apps/details?id=com.gurrulabs.raffy" data-track-download="true" data-page-type="article" data-cta-location="inline" data-article-slug="menu-hebdomadaire-bebe-9-mois" aria-label="Télécharger sur Google Play"><img decoding="async" loading="lazy" class="play-store-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Disponible sur Google Play"></a>
+        </article>
       </div>
 
-      <section class="related-articles">
-        <h2>Articles liés</h2>
-        <ul>
-          <li><a href="../outils/planificateur-repas-hebdomadaire-12-23-mois.html">Planificateur de repas bebe et jeunes enfants (12-23 mois)</a></li>
-          <li><a href="guide-diversification-bebe-blw.html">Guide diversification bébé : DME, purées et sécurité</a></li>
-          <li><a href="percentiles-poids-taille-bebe.html">Percentiles poids taille bébé : comprendre les courbes de croissance</a></li>
-          <li><a href="../outils/calculateur-percentiles-bebe-oms.html">Calculateur OMS de percentiles bébé</a></li>
-        </ul>
+      <section class="cta-section article-cta">
+        <div class="cta-band">
+          <div>
+              <p>Avec Raffy, centralisez repas, habitudes et évolution de votre bébé pour ajuster votre menu chaque semaine.</p>
+          </div>
+          <a class="play-store-badge-link" href="https://play.google.com/store/apps/details?id=com.gurrulabs.raffy" data-track-download="true" data-page-type="article" data-cta-location="inline" data-article-slug="menu-hebdomadaire-bebe-9-mois" aria-label="Télécharger sur Google Play"><img decoding="async" loading="lazy" class="play-store-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Disponible sur Google Play"></a>
+        </div>
       </section>
-    </article>
+
+      <section class="related related-articles">
+        <div class="section-head-row"><div class="section-head"><h2>Articles liés</h2></div></div>
+        <div class="article-grid">
+          <a class="card a-card" href="../outils/planificateur-repas-hebdomadaire-12-23-mois.html">
+            <div class="a-thumb fallback t-peach"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="3" width="14" height="18" rx="3"/><path d="M8 7h8M8 12h.01M12 12h.01M16 12h.01M8 16h.01M12 16h.01M16 16h.01"/></svg></div>
+            <div class="a-body"><span class="tag peach">Outil gratuit</span><h3>Planificateur de repas bebe et jeunes enfants (12-23 mois)</h3></div>
+          </a>
+          <a class="card a-card" href="guide-diversification-bebe-blw.html">
+            <div class="a-thumb fallback t-peach"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 11h16a8 8 0 0 1-16 0ZM12 3v4M8 5l1 2M16 5l-1 2"/></svg></div>
+            <div class="a-body"><span class="tag peach">Alimentation</span><h3>Guide diversification bébé : DME, purées et sécurité</h3><div class="a-meta"><span>1 min de lecture</span></div></div>
+          </a>
+          <a class="card a-card" href="percentiles-poids-taille-bebe.html">
+            <div class="a-thumb fallback t-mint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 20h18M5 16l4-5 4 3 6-8"/><path d="M15 6h4v4"/></svg></div>
+            <div class="a-body"><span class="tag">Croissance</span><h3>Percentiles poids taille bébé : comprendre les courbes de croissance</h3><div class="a-meta"><span>1 min de lecture</span></div></div>
+          </a>
+          <a class="card a-card" href="../outils/calculateur-percentiles-bebe-oms.html">
+            <div class="a-thumb fallback t-mint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="3" width="14" height="18" rx="3"/><path d="M8 7h8M8 12h.01M12 12h.01M16 12h.01M8 16h.01M12 16h.01M16 16h.01"/></svg></div>
+            <div class="a-body"><span class="tag">Outil gratuit</span><h3>Calculateur OMS de percentiles bébé</h3></div>
+          </a>
+        </div>
+      </section>
+    </div>
   </main>
 
-  <footer class="container footer">
+  <div class="sticky-cta" data-sticky="scroll">
+    <img src="../../assets/raffy-logo.png" alt="" width="40" height="40" decoding="async" loading="lazy">
+    <div class="t">Raffy pour bébé<small>Gratuit · Android</small></div>
+    <a class="btn btn-sm" href="https://play.google.com/store/apps/details?id=com.gurrulabs.raffy" data-track-download="true" data-page-type="article" data-cta-location="sticky">Télécharger l'app</a>
+    <button class="x" type="button" aria-label="Fermer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  </div>
+
+<footer class="container footer">
     <p>© <span id="year"></span> Raffy App</p>
     <nav class="footer-links" aria-label="Pages de confiance et mentions légales">
       <a href="../a-propos.html">À propos</a>
@@ -374,5 +444,6 @@
 
   <button class="to-top" id="toTop" aria-label="Retour en haut">↑</button>
   <script src="../../script.js"></script>
+  <script src="../../articles/article.js" defer></script>
 </body>
 </html>
