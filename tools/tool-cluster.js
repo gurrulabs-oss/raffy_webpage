@@ -377,7 +377,7 @@ function renderOutput(form, lines, summary, locale) {
   `;
 }
 
-/* ---------- B v2 markup (en pages first; es/fr/pt keep the legacy renderer until ported) ----------
+/* ---------- B v2 markup (all locales; the legacy renderer stays as a fallback for old markup) ----------
    Static HTML carries the form, hints, inline error text, empty/error states and the app card.
    The script only fills values: [data-r-title|summary|disclaimer] from localePack, [data-r-stats],
    [data-r-headline], [data-r-tips]. Everything is guarded so legacy markup keeps working. */

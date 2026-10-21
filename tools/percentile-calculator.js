@@ -282,7 +282,7 @@ const LOCALES = {
     tabLength: 'Comprimento',
     tabHeight: 'Altura',
     tabHead: 'Cabeça',
-    tabAdd: '+ Adicionar',
+    tabAdd: '+ Incluir',
     groupFemale: 'meninas',
     groupMale: 'meninos',
     lessWeight: 'pesam menos',
