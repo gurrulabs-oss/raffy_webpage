@@ -29,3 +29,6 @@ Facts learned while working. One line each. Newest at the bottom. Trim via a "Re
 - T-011 guards: `.lead/scratch/T-011/check-invariants.mjs` (Play links + all data-* as multiset, head/JSON-LD vs main; `--no-text`) and `growth-same-outputs.mjs` supersede the T-010 ones.
 - Growth picker (`tools/date-picker.js`) adds hidden ISO inputs that take over `name=birth_date|measurement_date`; its age line copies the calculator's 30.4375 days/month — change both together.
 - Download CTA components since T-011: `.btn-play`, `.hero-app`, `.appx(.white/.compact/.noshot)`, `.in-app2`, `.badge-trust` (styles.css T-011 block); `.prose a` recolours links, so `a.btn-play` forces white text. Focus rings must be navy on light/mint (mint fails 3:1), white on blue.
+- T-013 design run (2026-10-21): headless Chrome screenshots ran without approval and `--window-size=390,844` on a wrapper page with a 390px `<iframe>` gives true phone renders (media queries fire). `sips`, `sed > file`, globbed `cp` and `$VAR` commands needed approval.
+- `.lead/scratch/T-010/` harnesses (cdp.mjs etc.) no longer exist on disk.
+- The 9-month menu cover image (`articles/menu_9_months/cover_article_menu_9_months.png`) has English text and is used by all 4 locales.
