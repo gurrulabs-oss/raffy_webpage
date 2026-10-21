@@ -23,3 +23,4 @@ Facts learned while working. One line each. Newest at the bottom. Trim via a "Re
 - `tools/tool-cluster.js` and `percentile-calculator.js` keep a legacy renderer for old markup alongside the B v2 one (`[data-tool-root]`); locale strings live in their LOCALES tables.
 - `.lead/attachments/` and `.lead/designs/` are gitignored (hub reads them from disk); `.lead/scratch/` is committed.
 - Agent working files go in `.lead/scratch/` (gitignored since T-010): never commit them; the hub's post-deploy check probes every changed .html, and dot-folders 404 on GitHub Pages.
+- In headless design runs (2026-10-21) Chrome, `node` and `curl` all needed approval: mockups could not be rendered or syntax-checked, and Google Fonts could not be fetched (mockups fall back to system fonts).
