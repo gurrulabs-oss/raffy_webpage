@@ -27,7 +27,7 @@
   <meta name="twitter:image" content="https://www.raffyparenting.com/assets/raffy-social-preview.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="../../assets/raffy-logo.png">
   <link rel="stylesheet" href="../../styles.css">
   <script type="application/ld+json">
@@ -64,68 +64,93 @@
   </script>
 </head>
 <body data-page-key="tool_library" data-locale="es">
-  <header class="site-header">
+  <div class="bg-dynamic" aria-hidden="true">
+    <span class="bg-shape s1"></span><span class="bg-shape s2"></span><span class="bg-shape s3"></span><span class="bg-shape s4"></span><span class="bg-shape s5"></span>
+  </div>
+  <header>
     <div class="container nav">
       <a class="brand" href="../index.html">
         <img class="brand-logo" src="../../assets/raffy-logo.png" alt="Raffy logo" width="500" height="500" decoding="async" loading="eager">
         <span>Raffy</span>
       </a>
-      <nav class="navlinks" id="site-nav" aria-label="Principal">
+      <nav class="navlinks">
         <a href="../index.html">Inicio</a>
         <a href="../articulos/index.html">Artículos</a>
-        <a aria-current="page" href="index.html">Herramientas</a>
+        <a href="index.html">Herramientas</a>
       </nav>
-      <div class="nav-end">
+      <div class="nav-controls">
         <div class="lang-switch">
           <label class="sr-only" for="lang-select">Selector de idioma</label>
-          <select class="lang" id="lang-select" data-language-selector aria-label="Selector de idioma">
-            <option value="en">English</option>
-            <option value="es" selected>Español</option>
-            <option value="fr">Français</option>
-            <option value="pt">Português (Brasil)</option>
-          </select>
+          <select id="lang-select" data-language-selector aria-label="Selector de idioma"><option value="en">English</option><option value="es" selected>Español</option><option value="fr">Français</option><option value="pt">Português (Brasil)</option></select>
         </div>
-        <a class="btn btn-sm" href="https://play.google.com/store/apps/details?id=com.gurrulabs.raffy" data-track-download="true" data-page-type="tool" data-cta-location="header"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3.5v17l14-8.5Z"/></svg>Descargar la app</a>
-        <button class="menu-btn" type="button" aria-label="Menú" aria-expanded="false" aria-controls="site-nav"><svg class="ico-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="ico-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+        <a class="play-store-badge-link play-store-badge-link-sm" href="https://play.google.com/store/apps/details?id=com.gurrulabs.raffy" data-track-download="true" data-page-type="tool" data-cta-location="header" aria-label="Descargar en Google Play"><img decoding="async" loading="lazy" class="play-store-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Descargar en Google Play"></a>
       </div>
     </div>
   </header>
 
-  <main>
-    <header class="tool-hero">
-      <div class="container">
-        <div class="inner">
-          <ol class="crumbs"><li><a href="../index.html">Inicio</a></li><li>Herramientas</li></ol>
-          <p class="eyebrow">Herramientas web gratuitas</p>
-          <h1>Herramientas para <em>familias</em></h1>
-          <p class="sub">Resuelve bloqueos del día a día con herramientas prácticas para sueño, alimentación, crecimiento y seguimiento.</p>
-          <p class="sub">Usa herramientas para decisiones rápidas y pasa a la app Android de Raffy cuando necesites recordatorios e historial continuo. <a href="../articulos/app-android-seguimiento-bebe-guia.html">Leer guía Android</a>.</p>
-        </div>
-      </div>
-    </header>
-    <div class="container">
-      <h2 class="sr-only">Herramientas web gratuitas</h2>
-      <div class="tool-grid">
-        <a class="card tool-tile t-mint" href="calculadora-percentiles-bebe-oms.html"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 20h18M5 16l4-5 4 3 6-8"/><path d="M15 6h4v4"/></svg></span><div><span class="tag">Herramienta</span><h3>Calculadora de percentiles del bebé (OMS)</h3><p>¿Dudas si el crecimiento va bien? Obtén percentil y z-score OMS en segundos para peso, talla/longitud y perímetro cefálico.</p><span class="go">Abrir herramienta <span aria-hidden="true">→</span></span><span class="app-hint"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3.5v17l14-8.5Z"/></svg></span>También en la app de Raffy</span></div></a>
-        <a class="card tool-tile t-peach" href="planificador-comidas-semanal-12-23-meses.html"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span><div><span class="tag">Herramienta</span><h3>Planificador semanal de comidas (12-23 meses)</h3><p>¿Sin ideas para las comidas? Genera un menú de 7 días para 12-23 meses con variedad equilibrada y porciones realistas.</p><span class="go">Abrir herramienta <span aria-hidden="true">→</span></span><span class="app-hint"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3.5v17l14-8.5Z"/></svg></span>También en la app de Raffy</span></div></a>
-        <a class="card tool-tile t-sky" href="planificador-ventanas-sueno.html"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><span class="tag">Herramienta</span><h3>Planificador de ventanas de sueño por edad</h3><p>¿Tu bebé llega pasado de sueño? Calcula ventanas de vigilia por edad y arma una rutina de siestas más estable.</p><span class="go">Abrir herramienta <span aria-hidden="true">→</span></span><span class="app-hint"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3.5v17l14-8.5Z"/></svg></span>También en la app de Raffy</span></div></a>
-        <a class="card tool-tile t-sky" href="ayudante-transicion-siestas.html"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 18h16M6 18v-5a6 6 0 0 1 12 0v5M9 8l-2-3M15 8l2-3"/></svg></span><div><span class="tag">Herramienta</span><h3>Ayudante de transición de siestas</h3><p>¿No sabes si toca quitar una siesta? Detecta señales de transición y aplica ajustes paso a paso.</p><span class="go">Abrir herramienta <span aria-hidden="true">→</span></span><span class="app-hint"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3.5v17l14-8.5Z"/></svg></span>También en la app de Raffy</span></div></a>
-        <a class="card tool-tile t-peach" href="planificador-progresion-solidos.html"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 11h16a8 8 0 0 1-16 0ZM12 3v4M8 5l1 2M16 5l-1 2"/></svg></span><div><span class="tag">Herramienta</span><h3>Planificador de progresión de sólidos por edad</h3><p>¿Bloqueada con la siguiente textura? Planifica avances semanales y variedad de alimentos sin improvisar.</p><span class="go">Abrir herramienta <span aria-hidden="true">→</span></span><span class="app-hint"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3.5v17l14-8.5Z"/></svg></span>También en la app de Raffy</span></div></a>
-        <a class="card tool-tile t-sun" href="calculadora-panales-eliminacion.html"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11Z"/></svg></span><div><span class="tag">Herramienta</span><h3>Calculadora de pañales y eliminación por edad</h3><p>¿Te preocupa si las eliminaciones son normales? Registra pañales mojados y deposiciones para detectar señales de alerta.</p><span class="go">Abrir herramienta <span aria-hidden="true">→</span></span><span class="app-hint"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3.5v17l14-8.5Z"/></svg></span>También en la app de Raffy</span></div></a>
-        <a class="card tool-tile t-peach" href="estimador-cantidad-alimentacion.html"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 2h6M10 2v3l-2 3v12a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V8l-2-3V2M8 12h8"/></svg></span><div><span class="tag">Herramienta</span><h3>Estimador de cantidad de alimentación por edad</h3><p>¿No tienes claro cuánto ofrecer? Estima objetivos diarios según edad, peso y número de comidas.</p><span class="go">Abrir herramienta <span aria-hidden="true">→</span></span><span class="app-hint"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3.5v17l14-8.5Z"/></svg></span>También en la app de Raffy</span></div></a>
-        <a class="card tool-tile is-blue" href="../articulos/app-android-seguimiento-bebe-guia.html"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3.5v17l14-8.5Z"/></svg></span><div><span class="tag">Guía</span><h3>Mejor app Android para seguimiento del bebé</h3><p>Aprende cuándo una herramienta web basta y cuándo conviene un seguimiento continuo en app.</p><span class="go">Leer guía <span aria-hidden="true">→</span></span></div></a>
-      </div>
+  <main class="container section">
+    <article class="section-card">
+      <h1>Herramientas para familias</h1>
+      <p>Resuelve bloqueos del día a día con herramientas prácticas para sueño, alimentación, crecimiento y seguimiento.</p>
+      <p>Usa herramientas para decisiones rápidas y pasa a la app Android de Raffy cuando necesites recordatorios e historial continuo. <a href="../articulos/app-android-seguimiento-bebe-guia.html">Leer guía Android</a>.</p>
+      <section class="article-grid" style="margin-top:18px;">
+<article class="article-card reveal">
+  <p class="article-tag">Herramienta</p>
+  <h3>Calculadora de percentiles del bebé (OMS)</h3>
+  <p>¿Dudas si el crecimiento va bien? Obtén percentil y z-score OMS en segundos para peso, talla/longitud y perímetro cefálico.</p>
+  <a href="calculadora-percentiles-bebe-oms.html" class="article-link">Abrir herramienta</a>
+</article>
 
-      <section class="cta-section">
-        <div class="cta-band">
-          <div>
-            <h2>¿Necesitas una app completa para el <em>seguimiento del bebé?</em></h2>
-            <p>Raffy conecta curvas de crecimiento, tomas, sueño y notas médicas en un solo lugar.</p>
-          </div>
-          <a class="play-store-badge-link" href="https://play.google.com/store/apps/details?id=com.gurrulabs.raffy" data-track-download="true" data-page-type="tool" data-cta-location="footer-band" aria-label="Descargar en Google Play"><img decoding="async" loading="lazy" class="play-store-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Disponible en Google Play"></a>
-        </div>
+<article class="article-card reveal">
+  <p class="article-tag">Herramienta</p>
+  <h3>Planificador semanal de comidas (12-23 meses)</h3>
+  <p>¿Sin ideas para las comidas? Genera un menú de 7 días para 12-23 meses con variedad equilibrada y porciones realistas.</p>
+  <a href="planificador-comidas-semanal-12-23-meses.html" class="article-link">Abrir herramienta</a>
+</article>
+
+<article class="article-card reveal">
+  <p class="article-tag">Herramienta</p>
+  <h3>Planificador de ventanas de sueño por edad</h3>
+  <p>¿Tu bebé llega pasado de sueño? Calcula ventanas de vigilia por edad y arma una rutina de siestas más estable.</p>
+  <a href="planificador-ventanas-sueno.html" class="article-link">Abrir herramienta</a>
+</article>
+
+<article class="article-card reveal">
+  <p class="article-tag">Herramienta</p>
+  <h3>Ayudante de transición de siestas</h3>
+  <p>¿No sabes si toca quitar una siesta? Detecta señales de transición y aplica ajustes paso a paso.</p>
+  <a href="ayudante-transicion-siestas.html" class="article-link">Abrir herramienta</a>
+</article>
+
+<article class="article-card reveal">
+  <p class="article-tag">Herramienta</p>
+  <h3>Planificador de progresión de sólidos por edad</h3>
+  <p>¿Bloqueada con la siguiente textura? Planifica avances semanales y variedad de alimentos sin improvisar.</p>
+  <a href="planificador-progresion-solidos.html" class="article-link">Abrir herramienta</a>
+</article>
+
+<article class="article-card reveal">
+  <p class="article-tag">Herramienta</p>
+  <h3>Calculadora de pañales y eliminación por edad</h3>
+  <p>¿Te preocupa si las eliminaciones son normales? Registra pañales mojados y deposiciones para detectar señales de alerta.</p>
+  <a href="calculadora-panales-eliminacion.html" class="article-link">Abrir herramienta</a>
+</article>
+
+<article class="article-card reveal">
+  <p class="article-tag">Herramienta</p>
+  <h3>Estimador de cantidad de alimentación por edad</h3>
+  <p>¿No tienes claro cuánto ofrecer? Estima objetivos diarios según edad, peso y número de comidas.</p>
+  <a href="estimador-cantidad-alimentacion.html" class="article-link">Abrir herramienta</a>
+</article>
+<article class="article-card reveal">
+  <p class="article-tag">Guía</p>
+  <h3>Mejor app Android para seguimiento del bebé</h3>
+  <p>Aprende cuándo una herramienta web basta y cuándo conviene un seguimiento continuo en app.</p>
+  <a href="../articulos/app-android-seguimiento-bebe-guia.html" class="article-link">Leer guía</a>
+</article>
+
       </section>
-    </div>
+    </article>
   </main>
   <footer class="container footer">
     <p>© <span id="year"></span> Raffy App</p>

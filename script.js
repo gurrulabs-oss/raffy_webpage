@@ -143,7 +143,11 @@ const PAGE_LABELS = {
 
 const year = document.getElementById("year");
 const toTop = document.getElementById("toTop");
+const reveals = document.querySelectorAll(".reveal");
 const anchorLinks = document.querySelectorAll('a[href^="#"]');
+const downloadLinks = document.querySelectorAll('[data-track-download="true"]');
+const bgLayer = document.querySelector(".bg-dynamic");
+const bgShapes = document.querySelectorAll(".bg-shape");
 const languageSelector = document.querySelector("[data-language-selector]");
 const featureShots = document.querySelectorAll(".feature-showcase .feature-shot");
 const clickableCards = document.querySelectorAll(".article-grid .article-card");
@@ -314,6 +318,19 @@ function trackPageView() {
 
 if (year) year.textContent = new Date().getFullYear();
 
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("is-visible");
+    }
+  });
+}, { threshold: 0.15 });
+
+reveals.forEach((card, i) => {
+  card.style.transitionDelay = `${Math.min(i * 70, 280)}ms`;
+  observer.observe(card);
+});
+
 function initFeatureShotZoom() {
   if (!featureShots.length || !body) return;
 
@@ -468,6 +485,7 @@ function initFooterPlayBadge() {
 
   link.appendChild(image);
   footer.appendChild(link);
+  link.addEventListener("click", () => trackDownloadClick(link));
 }
 
 initFooterPlayBadge();
@@ -477,6 +495,44 @@ window.addEventListener("scroll", () => {
   if (window.scrollY > 320) toTop.classList.add("show");
   else toTop.classList.remove("show");
 });
+
+let bgTicking = false;
+
+function updateDynamicBackground() {
+  const scrollLimit = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
+  const p = Math.min(Math.max(window.scrollY / scrollLimit, 0), 1);
+
+  if (bgLayer) {
+    bgLayer.style.setProperty("--bg-x1", `${16 + p * 24}%`);
+    bgLayer.style.setProperty("--bg-y1", `${14 + p * 18}%`);
+    bgLayer.style.setProperty("--bg-x2", `${84 - p * 28}%`);
+    bgLayer.style.setProperty("--bg-y2", `${20 + p * 28}%`);
+    bgLayer.style.setProperty("--bg-x3", `${52 + p * 8}%`);
+    bgLayer.style.setProperty("--bg-y3", `${86 - p * 24}%`);
+  }
+
+  bgShapes.forEach((shape, index) => {
+    const direction = index % 2 === 0 ? 1 : -1;
+    const driftX = (index + 1) * 12 * p * direction;
+    const driftY = (index + 1) * 18 * p * (direction * -1);
+    const rotate = (index + 1) * 4 * p * direction;
+    shape.style.transform = `translate3d(${driftX}px, ${driftY}px, 0) rotate(${rotate}deg)`;
+  });
+
+  bgTicking = false;
+}
+
+window.addEventListener("scroll", () => {
+  if (bgTicking) return;
+  bgTicking = true;
+  window.requestAnimationFrame(updateDynamicBackground);
+}, { passive: true });
+
+window.addEventListener("resize", () => {
+  window.requestAnimationFrame(updateDynamicBackground);
+});
+
+updateDynamicBackground();
 
 toTop?.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
@@ -505,12 +561,8 @@ function trackDownloadClick(link) {
   }
 }
 
-// Delegated, so Play links inserted later (tool result card, sticky bar) are tracked too.
-document.addEventListener("click", (event) => {
-  const target = event.target;
-  if (!(target instanceof Element)) return;
-  const link = target.closest('[data-track-download="true"]');
-  if (link) trackDownloadClick(link);
+downloadLinks.forEach((link) => {
+  link.addEventListener("click", () => trackDownloadClick(link));
 });
 
 initMixpanel();
@@ -582,120 +634,3 @@ function handleLanguageSelector() {
 }
 
 handleLanguageSelector();
-
-function initMobileNav() {
-  const header = document.querySelector(".site-header");
-  const button = header?.querySelector(".menu-btn");
-  if (!header || !button) return;
-
-  const desktopQuery = window.matchMedia("(min-width: 981px)");
-  const isOpen = () => header.classList.contains("is-open");
-  const setOpen = (open) => {
-    header.classList.toggle("is-open", open);
-    button.setAttribute("aria-expanded", String(open));
-  };
-
-  setOpen(false);
-  button.addEventListener("click", () => setOpen(!isOpen()));
-
-  // Capture phase: collapse the menu before in-page anchor scrolling measures the layout.
-  header.addEventListener("click", (event) => {
-    const target = event.target;
-    if (target instanceof Element && target.closest(".navlinks a")) setOpen(false);
-  }, true);
-
-  document.addEventListener("keydown", (event) => {
-    if (event.key !== "Escape" || !isOpen()) return;
-    setOpen(false);
-    button.focus();
-  });
-
-  desktopQuery.addEventListener?.("change", (event) => {
-    if (event.matches) setOpen(false);
-  });
-}
-
-initMobileNav();
-
-// Sticky mobile app bar (.sticky-cta). Shown on mobile widths when the page opts in with
-// data-sticky="scroll" (on <body> or the bar) and the reader passed ~40% of the page, or when a
-// tool calls window.RaffyStickyCta.show() after a result. Dismissal is remembered per session.
-function initStickyCta() {
-  const DISMISS_KEY = "raffy_sticky_cta_dismissed";
-  const SCROLL_RATIO = 0.4;
-  const mobileQuery = window.matchMedia("(max-width: 720px)");
-  let requested = false;
-  let suppressed = false;
-  let scrolledPast = false;
-  let dismissedInMemory = false;
-  let ticking = false;
-
-  const getBar = () => document.querySelector(".sticky-cta");
-  const isDismissed = () => {
-    if (dismissedInMemory) return true;
-    try {
-      return sessionStorage.getItem(DISMISS_KEY) === "1";
-    } catch (error) {
-      return false;
-    }
-  };
-  const wantsScroll = (bar) => body?.dataset.sticky === "scroll" || bar.dataset.sticky === "scroll";
-
-  function update() {
-    const bar = getBar();
-    if (!bar) return;
-    const visible = mobileQuery.matches && !isDismissed() && !suppressed
-      && (requested || (wantsScroll(bar) && scrolledPast));
-    bar.classList.toggle("is-visible", visible);
-  }
-
-  function onScroll() {
-    ticking = false;
-    if (scrolledPast) return;
-    const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-    if (scrollable > 0 && window.scrollY / scrollable >= SCROLL_RATIO) {
-      scrolledPast = true;
-      update();
-    }
-  }
-
-  window.addEventListener("scroll", () => {
-    if (ticking || scrolledPast) return;
-    ticking = true;
-    window.requestAnimationFrame(onScroll);
-  }, { passive: true });
-
-  mobileQuery.addEventListener?.("change", update);
-
-  document.addEventListener("click", (event) => {
-    const target = event.target;
-    if (!(target instanceof Element)) return;
-    const close = target.closest(".sticky-cta .x, .sticky-cta [data-sticky-close]");
-    if (!close) return;
-    dismissedInMemory = true;
-    try {
-      sessionStorage.setItem(DISMISS_KEY, "1");
-    } catch (error) {
-      // Ignore storage restrictions; the in-memory flag still hides the bar.
-    }
-    update();
-  });
-
-  window.RaffyStickyCta = {
-    show() {
-      requested = true;
-      suppressed = false;
-      update();
-    },
-    hide() {
-      requested = false;
-      suppressed = true;
-      update();
-    }
-  };
-
-  onScroll();
-  update();
-}
-
-initStickyCta();
