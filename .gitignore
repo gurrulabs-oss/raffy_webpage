@@ -7,3 +7,6 @@
 .DS_Store
 .lead/designs/
 .lead/attachments/
+
+# Agent working files (scripts, drafts); never published or committed
+.lead/scratch/
