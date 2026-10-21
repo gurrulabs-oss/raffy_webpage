@@ -6,6 +6,12 @@
 .is-hidden { display: none; }
 .gtool [hidden] { display: none !important; }
 
+/* Breadcrumb: one line, the last crumb truncates (as on article pages) */
+.tool-hero .crumbs { flex-wrap: nowrap; align-items: center; }
+.tool-hero .crumbs li { flex: none; }
+.tool-hero .crumbs li:last-child { flex: 0 1 auto; display: block; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tool-hero .crumbs li:last-child::before { display: inline-block; }
+
 /* ---------- Form ---------- */
 .gtool .field-sex { margin-top: 0; }
 .gtool .field .err { margin-top: 2px; }
@@ -53,6 +59,7 @@
   margin: -4px 0 16px; padding: 12px 14px; border-radius: 14px; background: rgba(255, 255, 255, .14);
   border-left: 3px solid #fff; color: #fff; font-size: var(--fs-sm); line-height: 1.5;
 }
+.gtool .mtabs-list { display: contents; }
 .gtool .mtabs button { min-width: 0; }
 .gtool .mtabs button.is-add b { font-size: 18px; }
 .gtool .res-empty.is-error .ico { background: #fff; color: var(--coral-600); }

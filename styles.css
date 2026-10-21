@@ -333,7 +333,6 @@ body:has(main > .hero:first-child, main > .tool-hero:first-child, main > .articl
 .cta-band h2 { color: #fff; font-size: clamp(2rem, 1.5rem + 1.6vw, 2.75rem); }
 .cta-band h2 em { color: var(--mint-on-blue); }
 .cta-band p { color: #fff; margin-top: var(--s3); font-size: var(--fs-lg); max-width: 46ch; }
-.cta-band .gp-badge { box-shadow: 0 0 0 1.5px rgba(255, 255, 255, .7); }
 .cta-band .copy .gp-badge { margin-top: var(--s5); }
 /* Variant with a phone screenshot rising from the bottom edge (tool page, as in B v2) */
 .cta-band.has-shot { grid-template-columns: 1.2fr 1fr; padding-bottom: 0; align-items: end; }
@@ -386,6 +385,7 @@ body:has(main > .hero:first-child, main > .tool-hero:first-child, main > .articl
 .article-cover { border-radius: var(--r-xl); overflow: hidden; aspect-ratio: 21 / 9; background: var(--mint-50); margin: calc(var(--s7) * -1) 0 var(--s7); position: relative; z-index: 1; border: 1px solid var(--line); box-shadow: var(--shadow-1); }
 .article-cover img { width: 100%; height: 100%; object-fit: cover; }
 .article-layout { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: var(--s8); align-items: start; }
+.article-layout > * { min-width: 0; }
 .toc { position: sticky; top: calc(var(--header-h) + var(--s5)); font-size: var(--fs-sm); }
 .toc-title { font-size: var(--fs-xs); font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--mint-700); margin-bottom: var(--s3); }
 .toc ol { list-style: none; margin: 0; padding: 0; border-left: 2px solid var(--line); }
@@ -396,7 +396,7 @@ body:has(main > .hero:first-child, main > .tool-hero:first-child, main > .articl
 .toc-mobile summary { min-height: 44px; display: flex; align-items: center; color: var(--ink); }
 
 /* Prose */
-.prose { max-width: var(--measure); font-size: var(--fs-lg); line-height: 1.75; color: var(--ink-2); }
+.prose { min-width: 0; max-width: var(--measure); font-size: var(--fs-lg); line-height: 1.75; color: var(--ink-2); }
 .prose > * + * { margin-top: 1.1em; }
 .prose h2 { font-size: 2rem; line-height: 1.12; margin-top: 2.1em; scroll-margin-top: calc(var(--header-h) + 1rem); color: var(--ink); }
 .prose h3 { font-size: 1.25rem; margin-top: 1.8em; color: var(--ink); }
@@ -428,7 +428,7 @@ body:has(main > .hero:first-child, main > .tool-hero:first-child, main > .articl
 .inline-cta .copy { padding-bottom: var(--s5); }
 .inline-cta h3 { margin: 0; font-family: var(--font-display); font-weight: 600; font-size: 1.5rem; line-height: 1.15; letter-spacing: -.01em; }
 .inline-cta p { color: var(--ink-2); margin: var(--s2) 0 var(--s4); line-height: 1.5; }
-.inline-cta img { align-self: end; border-radius: 16px 16px 0 0; box-shadow: var(--shadow-chart); height: 170px; object-fit: cover; object-position: top; }
+.inline-cta > img { align-self: end; border-radius: 16px 16px 0 0; box-shadow: var(--shadow-chart); height: 170px; object-fit: cover; object-position: top; }
 .related { margin-top: var(--s8); }
 
 /* Sticky mobile app bar: hidden by default; script.js adds .is-visible on mobile widths
@@ -478,7 +478,9 @@ body.state-empty .sticky-cta, body.state-error .sticky-cta { display: none !impo
 .meas { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 18px; padding-top: 22px; border-top: 1px dashed rgba(29, 47, 111, .3); }
 .help { font-size: var(--fs-xs); color: var(--ink-3); margin-top: 10px; }
 .actions { display: flex; gap: 16px; align-items: center; margin-top: 26px; }
-.actions .btn { flex: 1; min-height: 56px; }
+.actions .btn { min-height: 56px; }
+.actions .btn:not(.btn-text) { flex: 1 1 auto; white-space: nowrap; }
+.actions .btn-text { flex: none; }
 
 /* Fields (shared) */
 .field { display: flex; flex-direction: column; gap: 6px; margin-top: var(--s5); }
@@ -553,7 +555,7 @@ body.state-empty .sticky-cta, body.state-error .sticky-cta { display: none !impo
 }
 .res-cta .copy { flex: 1; }
 .res-cta b { display: block; font-size: var(--fs-sm); }
-.res-cta .gp-badge { box-shadow: 0 0 0 1.5px rgba(255, 255, 255, .7); flex: none; }
+.res-cta .gp-badge { flex: none; }
 
 /* Older result hooks (kept so nothing breaks; restyled) */
 .result-empty { padding: var(--s7) var(--s6); text-align: center; color: var(--ink-3); border: 1.5px dashed var(--line-2); border-radius: var(--r-lg); background: transparent; box-shadow: none; }
@@ -580,7 +582,6 @@ body.state-empty .sticky-cta, body.state-error .sticky-cta { display: none !impo
 .disclaimer svg { width: 18px; height: 18px; flex: none; margin-top: 2px; }
 .result-cta { margin-top: var(--s5); display: flex; align-items: center; justify-content: space-between; gap: var(--s4); padding: var(--s4) var(--s5); border-radius: var(--r-md); background: var(--blue); color: #fff; }
 .result-cta p { font-weight: 700; font-size: var(--fs-sm); line-height: 1.4; }
-.result-cta .gp-badge { box-shadow: 0 0 0 1.5px rgba(255, 255, 255, .7); }
 /* Stat-tile results inside the soft blue panel (wake window planner): tiles on white cards are the primary visual */
 .pane.res .result-head h2 { font-family: var(--font); font-size: .875rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: #fff; }
 .pane.res .result-head .tag { background: #fff; color: var(--ink); }
@@ -653,7 +654,7 @@ body.state-empty .sticky-cta, body.state-error .sticky-cta { display: none !impo
   .tool-grid { grid-template-columns: 1fr 1fr; }
   .article-grid { grid-template-columns: 1fr 1fr; }
   .a-card.featured { grid-column: 1 / -1; }
-  .article-layout { grid-template-columns: 1fr; gap: 0; }
+  .article-layout { grid-template-columns: minmax(0, 1fr); gap: 0; }
   .toc { display: none; }
   .toc-mobile { display: block; margin-bottom: var(--s6); }
   .tool-layout { grid-template-columns: 1fr; }
@@ -699,7 +700,7 @@ body.state-empty .sticky-cta, body.state-error .sticky-cta { display: none !impo
   .prose h3 { font-size: 1.125rem; }
   .inline-cta { grid-template-columns: 1fr 88px; padding-left: var(--s5); }
   .inline-cta h3 { font-size: 1.25rem; }
-  .inline-cta img { height: 140px; }
+  .inline-cta > img { height: 140px; }
   .sticky-cta.is-visible {
     display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; align-items: center; gap: var(--s2) var(--s3);
     background: rgba(255, 255, 255, .96); backdrop-filter: blur(10px); border-top: 1px solid var(--line);
@@ -941,7 +942,6 @@ body[data-page-key="home"] #articles .article-grid > .article-card:nth-child(n +
 
 /* Production Google badge (<a class="play-store-badge-link">) on soft blue and white-card surfaces:
    same treatment as the .gp-badge alias above. */
-.cta-band .play-store-badge-link { box-shadow: 0 0 0 1.5px rgba(255, 255, 255, .7); }
 .cta-band .copy .play-store-badge-link { margin-top: var(--s5); }
 .pane.res .app-card .play-store-badge-link { box-shadow: none; }
 .app-card .play-store-badge-link-sm .play-store-badge { width: 150px; }
@@ -956,10 +956,18 @@ body[data-page-key="home"] #articles .article-grid > .article-card:nth-child(n +
 .hero + #what .section-head { margin-bottom: 0; max-width: 760px; }
 .hero + #what + #features { padding-top: var(--s7); }
 
-/* Home: only the first row of guides is visible; the rest stays in the HTML for crawlers and the library link */
-#articles .article-grid > .a-card:nth-child(n + 4) { display: none; }
+/* Home: three large guide cards, then the remaining guides as compact cards */
 #articles .a-meta span { color: var(--mint-700); font-size: var(--fs-sm); font-weight: 800; }
 .a-card:hover .a-meta span { text-decoration: underline; text-underline-offset: 3px; }
+.more-guides-title { margin: var(--s7) 0 var(--s4); font-size: var(--fs-h3); }
+.a-more { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: var(--s4); }
+.a-mini { display: flex; flex-direction: column; gap: var(--s2); padding: var(--s4) var(--s5); text-decoration: none; color: inherit; transition: transform .15s ease, box-shadow .15s ease; }
+.a-mini:hover { transform: translateY(-2px); box-shadow: var(--shadow-2); }
+.a-mini:hover h3 { color: var(--navy-500); }
+.a-mini h3 { font-size: 1rem; }
+.a-mini p { color: var(--ink-2); font-size: var(--fs-sm); line-height: 1.5; }
+.a-mini .a-read { margin-top: auto; padding-top: var(--s2); font-size: var(--fs-sm); font-weight: 800; color: var(--mint-700); }
+.a-mini:hover .a-read { text-decoration: underline; text-underline-offset: 3px; }
 .band .tool-tile .go span[aria-hidden] { margin-left: 2px; }
 .tool-tile.is-blue .tag { background: #fff; color: var(--ink); margin-bottom: var(--s2); }
 

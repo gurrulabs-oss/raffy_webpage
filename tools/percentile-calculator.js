@@ -1006,10 +1006,26 @@ function yAxisLabelFor(metricSelection) {
   return unitSystem === 'metric' ? copy.chartYAxisLengthMetric : copy.chartYAxisLengthImperial;
 }
 
+// New layout: show a window around the baby's age (0-12, 0-24, 0-36 or 0-60 months: the first end
+// that is at least 3 months past the age), within the metric's own data range. Display only.
+const CHART_WINDOW_ENDS = [12, 24, 36, 60];
+
+function chartWindowRows(rows, ageDays) {
+  if (!isNewLayout || !rows || rows.length < 2) return rows;
+  const ageMonths = ageDays / daysPerMonth;
+  const dataMin = rows[0].ageMonths;
+  const dataMax = rows[rows.length - 1].ageMonths;
+  const target = CHART_WINDOW_ENDS.find((end) => end >= ageMonths + 3) ?? dataMax;
+  const end = Math.min(target, dataMax);
+  const windowed = rows.filter((row) => row.ageMonths >= dataMin && row.ageMonths <= end + 1e-9);
+  return windowed.length >= 2 ? windowed : rows;
+}
+
 function renderEmptyChart() {
   if (!datasetByMetric || !chartOut) return;
-  const rows = datasetByMetric.wfa?.female || datasetByMetric.wfa?.male;
-  if (!rows || rows.length === 0) return;
+  const allRows = datasetByMetric.wfa?.female || datasetByMetric.wfa?.male;
+  if (!allRows || allRows.length === 0) return;
+  const rows = chartWindowRows(allRows, 0);
 
   const svg = buildChartSvg({
     rows,
@@ -1057,8 +1073,13 @@ function ordinalSuffix(n) {
   return 'th';
 }
 
+// The displayed whole-number percentile; the sentence and the out-of-range note use the same value.
+function displayedPercentile(percentile) {
+  return Math.round(percentile);
+}
+
 function percentileParts(percentile) {
-  const n = Math.min(99, Math.max(1, Math.round(percentile)));
+  const n = Math.min(99, Math.max(1, displayedPercentile(percentile)));
   const prefix = percentile < 0.5 ? '<' : (percentile >= 99.5 ? '>' : '');
   const suffix = ordinalSuffix(n);
   const number = `${prefix}${n}`;
@@ -1121,16 +1142,17 @@ function resultSentence(result, sex) {
     more: copy[`more${key}`]
   };
 
-  if (result.percentile < 3) return capitalizeFirst(fill(copy.sentenceBelow, values));
-  if (result.percentile > 97) return capitalizeFirst(fill(copy.sentenceAbove, values));
+  const lower = displayedPercentile(result.percentile);
+  if (lower < 3) return capitalizeFirst(fill(copy.sentenceBelow, values));
+  if (lower > 97) return capitalizeFirst(fill(copy.sentenceAbove, values));
 
-  const lower = Math.round(result.percentile);
   const text = fill(copy.sentenceTemplate, { ...values, lower, higher: 100 - lower });
   return lower === 50 ? `${copy.sentenceMiddlePrefix}${text}` : capitalizeFirst(text);
 }
 
 function isOutsideTypicalRange(percentile) {
-  return percentile < 3 || percentile > 97;
+  const shown = displayedPercentile(percentile);
+  return shown < 3 || shown > 97;
 }
 
 function setResultState(state) {
@@ -1184,8 +1206,9 @@ function renderSelectedResult(payload) {
   }
 
   if (!chartOut) return;
+  const chartRows = chartWindowRows(result.rows, result.ageDays);
   const svg = buildChartSvg({
-    rows: result.rows,
+    rows: chartRows,
     metricSelection: result.metricSelection,
     measurementType: type,
     ageDays: result.ageDays,
@@ -1196,7 +1219,7 @@ function renderSelectedResult(payload) {
 
   chartOut.innerHTML = chartCardMarkup({
     title: chartTitle(result.metricSelection, type, payload.sex),
-    range: chartRangeText(result.rows),
+    range: chartRangeText(chartRows),
     svg,
     withBaby: true,
     placeholder: false
@@ -1207,21 +1230,27 @@ function renderSelectedResult(payload) {
 
 function renderTabs(payload) {
   if (!tabsOut) return;
-  tabsOut.setAttribute('aria-label', copy.tabsLabel);
 
-  tabsOut.innerHTML = MEASUREMENT_ORDER.map((type) => {
+  // Tabs sit in an inner role="tablist" (display: contents); "+ Add" chips are plain buttons next to it.
+  // CSS order keeps the weight / length / head positions.
+  const tabs = [];
+  const adds = [];
+  MEASUREMENT_ORDER.forEach((type, index) => {
     const result = payload.results.find((item) => item.measurement.type === type);
     const selection = result ? result.metricSelection : selectMetric(type, payload.ageDaysForEvaluation);
     const label = copy[`tab${measurementKey(type, selection)}`];
 
     if (!result) {
-      return `<button type="button" role="tab" class="is-add" aria-selected="false" tabindex="-1" data-tab-add="${type}"><small>${label}</small><b>${copy.tabAdd}</b></button>`;
+      adds.push(`<button type="button" class="is-add" style="order:${index}" data-tab-add="${type}"><small>${label}</small><b>${copy.tabAdd}</b></button>`);
+      return;
     }
 
     const parts = percentileParts(result.percentile);
     const selected = type === selectedResultType;
-    return `<button type="button" role="tab" id="growth-tab-${type}" aria-selected="${selected}" aria-controls="growth-chart-panel" tabindex="${selected ? 0 : -1}" data-tab-type="${type}"><small>${label}</small><b>${escapeHtml(parts.number)}${escapeHtml(parts.suffix)}</b></button>`;
-  }).join('');
+    tabs.push(`<button type="button" role="tab" id="growth-tab-${type}" style="order:${index}" aria-selected="${selected}" aria-controls="growth-chart-panel" tabindex="${selected ? 0 : -1}" data-tab-type="${type}"><small>${label}</small><b>${escapeHtml(parts.number)}${escapeHtml(parts.suffix)}</b></button>`);
+  });
+
+  tabsOut.innerHTML = `<div class="mtabs-list" role="tablist" aria-label="${escapeHtml(copy.tabsLabel)}">${tabs.join('')}</div>${adds.join('')}`;
 }
 
 function selectResultTab(type) {
@@ -1238,7 +1267,7 @@ function focusMeasurementInput(type) {
 }
 
 function onTabClick(event) {
-  const button = event.target instanceof Element ? event.target.closest('[role="tab"]') : null;
+  const button = event.target instanceof Element ? event.target.closest('button') : null;
   if (!button) return;
   if (button.dataset.tabAdd) {
     focusMeasurementInput(button.dataset.tabAdd);

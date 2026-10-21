@@ -136,3 +136,11 @@ form[data-tool-kind] select.input {
 @media (max-width: 720px) {
   .res-headline { font-size: 1.5rem; }
 }
+
+/* Warning line in the diaper result: amber alert, no check mark */
+.res-alert { display: flex; gap: var(--s3); align-items: flex-start; margin: var(--s4) 0 0; padding: 14px 16px; border-radius: 14px; background: var(--sun-50); border: 1.5px solid var(--sun-300); color: var(--ink); font-weight: 700; line-height: 1.45; }
+.res-alert[hidden] { display: none; }
+.res-alert > span:first-child { display: inline-flex; flex: none; color: var(--sun-800); margin-top: 2px; }
+.res-alert svg { width: 20px; height: 20px; }
+/* Plain bullets for lists that are not "all clear" ticks */
+.pane.res .tips li .dot { flex: none; width: 8px; height: 8px; margin: 9px 6px 0 6px; border-radius: 50%; background: var(--mint-on-blue); }

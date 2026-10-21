@@ -398,7 +398,7 @@ function statValueHtml(value) {
   return match ? `${escapeHtml(match[1])} <small>${escapeHtml(match[2])}</small>` : escapeHtml(value);
 }
 
-function renderResult(root, { lines = [], stats = [], headline = "", summary, locale }) {
+function renderResult(root, { lines = [], stats = [], headline = "", alert = "", bullet = "check", summary, locale }) {
   const pack = localePack[locale] || localePack.en;
   const result = root.querySelector(".result");
   if (!result) return;
@@ -411,6 +411,16 @@ function renderResult(root, { lines = [], stats = [], headline = "", summary, lo
   fill("[data-r-disclaimer]", pack.disclaimer);
   fill("[data-r-headline]", headline);
 
+  // Warning line (diaper tool with warning signs): amber alert above the tips, never a check-marked tip.
+  const alertEl = result.querySelector("[data-r-alert]");
+  if (alertEl) {
+    const text = alertEl.querySelector("[data-r-alert-text]");
+    if (text) text.textContent = alert;
+    alertEl.hidden = !alert;
+  } else if (alert) {
+    lines = [...lines, alert];
+  }
+
   const statsEl = result.querySelector("[data-r-stats]");
   if (statsEl) {
     statsEl.innerHTML = stats
@@ -418,7 +428,11 @@ function renderResult(root, { lines = [], stats = [], headline = "", summary, lo
       .join("");
   }
   const tipsEl = result.querySelector("[data-r-tips]");
-  if (tipsEl) tipsEl.innerHTML = lines.map((line) => `<li>${CHECK_ICON}<span>${escapeHtml(line)}</span></li>`).join("");
+  if (tipsEl) {
+    // "dot" bullets for lists that mix reassurance with cautions (a check mark would read as "all clear").
+    const marker = bullet === "dot" ? '<span class="dot" aria-hidden="true"></span>' : CHECK_ICON;
+    tipsEl.innerHTML = lines.map((line) => `<li>${marker}<span>${escapeHtml(line)}</span></li>`).join("");
+  }
 
   setState("result");
   window.RaffyStickyCta?.show();
@@ -455,8 +469,8 @@ function attachTool(form) {
   const root = form.closest("[data-tool-root]");
 
   // Legacy markup renders into [data-tool-output]; B v2 markup renders into the result pane.
-  const show = ({ lines, summary, stats = [], headline = "" }) => {
-    if (root) renderResult(root, { lines, stats, headline, summary, locale });
+  const show = ({ lines, summary, stats = [], headline = "", alert = "", bullet }) => {
+    if (root) renderResult(root, { lines, stats, headline, alert, bullet, summary, locale });
     else renderOutput(form, [...stats.map(([label, value]) => `${label}: ${value}`), ...lines], summary, locale);
   };
   // Lists whose first entry is a headline sentence (nap, solids, diaper) show it large above the tips.
@@ -511,7 +525,15 @@ function attachTool(form) {
       const wetDiapers = Number(form.wet_diapers.value || 0);
       const stools = Number(form.stools.value || 0);
       const redFlag = Boolean(form.red_flags.checked);
-      show({ ...withHeadline(diaperModel(ageMonths, wetDiapers, stools, redFlag, locale)), summary: pack.diaper.summary });
+      const lines = diaperModel(ageMonths, wetDiapers, stools, redFlag, locale);
+      if (root) {
+        // With warning signs the last line is the escalation advice: shown as an alert, not as a tip.
+        const alert = redFlag ? lines[lines.length - 1] : "";
+        const rest = redFlag ? lines.slice(0, -1) : lines;
+        show({ headline: rest[0], lines: rest.slice(1), alert, bullet: "dot", summary: pack.diaper.summary });
+      } else {
+        show({ lines, summary: pack.diaper.summary });
+      }
     }
 
     if (kind === "feeding") {
