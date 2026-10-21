@@ -812,6 +812,8 @@ main > .container.section:last-child, main.container.section { padding-bottom: 0
 .section-card.cta a:not(.play-store-badge-link) { color: #fff; }
 .section-card.cta :focus-visible { outline-color: #fff; }
 .cta .play-store-badge-link { margin-left: auto; }
+.cta .cta-badge { margin-left: auto; }
+.cta .cta-badge .play-store-badge-link { margin-left: 0; }
 
 /* Eyebrow-style kicker with leading line */
 .kicker {
@@ -887,6 +889,7 @@ main > .container.section:last-child, main.container.section { padding-bottom: 0
   .section-card { padding: var(--s5); border-radius: var(--r-md); }
   .section-card.cta { padding: var(--s5); border-radius: var(--r-lg); }
   .cta .play-store-badge-link { margin-left: 0; }
+  .cta .cta-badge { margin-left: 0; }
   .footer .footer-play-store { margin-left: 0; }
   .footer .footer-links { flex-basis: 100%; }
 }
@@ -936,3 +939,213 @@ main > .container.section:last-child, main.container.section { padding-bottom: 0
 /* Tool pages: the app screenshot only "rises" into the band instead of stretching it */
 .cta-band.has-shot .cta-shot { max-height: 360px; overflow: hidden; }
 @media (max-width: 720px) { .cta-band.has-shot .cta-shot { max-height: 280px; } }
+
+/* =====================================================================
+   T-011: CTA design system + header (language pill, navy "Get the app").
+   Markup expected by each component is documented next to it. Old classes
+   (.btn, .gp-badge, .app-card, .inline-cta, .in-app, .sticky-cta ...) keep working.
+   ===================================================================== */
+
+/* ---- Google Play logo (official multicolour triangle). Works as inline <svg class="gp-logo"> or <i class="gp-logo" aria-hidden="true"></i> ---- */
+.gp-logo { width: 18px; height: 19px; flex: none; display: block; }
+i.gp-logo {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='30 336.7 120.9 129.2'%3E%3Cpath fill='%23FFD400' d='M119.2,421.2c15.3-8.4,27-14.8,28-15.3c3.2-1.7,6.5-6.2,0-9.7c-2.1-1.1-13.4-7.3-28-15.3l-20.1,20.2L119.2,421.2z'/%3E%3Cpath fill='%23FF3333' d='M99.1,401.1l-64.2,64.7c1.5,0.2,3.2-0.2,5.2-1.3c4.2-2.3,48.8-26.7,79.1-43.3L99.1,401.1L99.1,401.1z'/%3E%3Cpath fill='%2348FF48' d='M99.1,401.1l20.1-20.2c0,0-74.6-40.7-79.1-43.1c-1.7-1-3.6-1.3-5.3-1L99.1,401.1z'/%3E%3Cpath fill='%233BCCFF' d='M99.1,401.1l-64.3-64.3c-2.6,0.6-4.8,2.9-4.8,7.6c0,7.5,0,107.5,0,113.8c0,4.3,1.7,7.4,4.9,7.7L99.1,401.1z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+/* ---- Navy Play button. <a class="btn-play [sm] [on-blue]" href=PLAY data-track-download="true" ...><i class="gp-logo" aria-hidden="true"></i>Label</a>
+   Large two-line variant: <a class="btn-play"><i class="gp-logo"></i><span class="two"><small>Get it on</small>Google Play</span></a>
+   Also applied automatically to the header and sticky-bar "Get the app" .btn[data-track-download] (see below). ---- */
+.btn-play,
+.site-header .btn[data-track-download],
+.sticky-cta .btn[data-track-download] {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 52px; padding: 0 1.4rem 0 1.15rem; border-radius: var(--r-md);
+  background: var(--ink); color: #fff; border: 0; text-decoration: none; cursor: pointer;
+  font: inherit; font-weight: 800; font-size: var(--fs-md); white-space: nowrap; line-height: 1.1;
+  box-shadow: 0 1px 2px rgba(29, 47, 111, .18), 0 8px 18px -10px rgba(29, 47, 111, .55);
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+}
+.btn-play:hover,
+.site-header .btn[data-track-download]:hover,
+.sticky-cta .btn[data-track-download]:hover { background: #16265e; color: #fff; transform: translateY(-2px); box-shadow: 0 12px 24px -10px rgba(29, 47, 111, .55); }
+.btn-play:active,
+.site-header .btn[data-track-download]:active,
+.sticky-cta .btn[data-track-download]:active { transform: translateY(0); }
+.btn-play:focus-visible,
+.site-header .btn[data-track-download]:focus-visible,
+.sticky-cta .btn[data-track-download]:focus-visible { outline: 3px solid var(--navy-500); outline-offset: 3px; }
+.btn-play .two { display: flex; flex-direction: column; align-items: flex-start; }
+.btn-play .two small { font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; opacity: .78; }
+.btn-play.sm,
+.site-header .btn[data-track-download],
+.sticky-cta .btn[data-track-download] { min-height: 44px; padding: 0 1rem 0 .85rem; gap: 8px; font-size: .875rem; border-radius: var(--r-sm); }
+.btn-play.sm .gp-logo,
+.site-header .btn[data-track-download] .gp-logo,
+.sticky-cta .btn[data-track-download] .gp-logo { width: 15px; height: 16px; }
+.btn-play.on-blue { background: #fff; color: var(--ink); }
+.btn-play.on-blue:hover { background: var(--mint-50); color: var(--ink); }
+.btn-play.on-blue:focus-visible { outline-color: #fff; }
+
+/* ---- Official Google badge: untouched image, gains only the hover lift (+ visible focus ring) ---- */
+.gp-badge, .play-store-badge-link { transition: transform .15s ease, box-shadow .15s ease; }
+.gp-badge:hover, .play-store-badge-link:hover { transform: translateY(-2px); }
+.gp-badge:focus-visible, .play-store-badge-link:focus-visible { outline: 3px solid var(--navy-500); outline-offset: 3px; }
+@media (max-width: 720px) {
+  .appx.white { grid-template-columns: 68px minmax(0, 1fr); gap: 12px; padding: 14px; }
+  .appx.white > img { width: 68px; height: 104px; }
+  .appx.white .btn-play { white-space: normal; text-align: left; max-width: 100%; padding-block: 6px; }
+}
+
+/* "Free · Android" line under the official badge: <p class="badge-trust"><svg ...check/>Free · Android</p> (badge wrapper + p in one block) */
+.badge-trust { display: flex; align-items: center; gap: 8px; margin-top: 12px; font-size: var(--fs-xs); font-weight: 700; opacity: .9; }
+.badge-trust svg { width: 14px; height: 14px; flex: none; }
+
+/* ---- Tool hero chip: <div class="hero-app"><img src=logo alt="" width="40" height="40"><p class="t">Pitch<small>Second line</small></p><a class="btn-play sm" ...><i class="gp-logo"></i>Get Raffy</a></div> ---- */
+.hero-app {
+  display: inline-flex; align-items: center; gap: 14px; margin-top: var(--s5); padding: 8px 8px 8px 10px;
+  background: #fff; border-radius: 20px; box-shadow: 0 1px 2px rgba(29, 47, 111, .06), 0 14px 30px -18px rgba(29, 47, 111, .35);
+  max-width: 100%;
+}
+.hero-app img { width: 40px; height: 40px; border-radius: 11px; background: var(--mint-100); flex: none; }
+.hero-app .t { margin: 0; font-size: var(--fs-sm); font-weight: 800; color: var(--ink); line-height: 1.25; }
+.hero-app .t small { display: block; font-size: var(--fs-xs); font-weight: 600; color: var(--ink-3); }
+
+/* ---- Feature card pill link: <a class="in-app2" href=PLAY ...><i class="gp-logo"></i>In the app<svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a> ---- */
+.in-app2 {
+  align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 14px 0 12px; border-radius: var(--r-pill);
+  background: var(--sky-50); color: var(--ink); font-size: var(--fs-sm); font-weight: 800; text-decoration: none;
+  transition: background .15s ease, transform .15s ease;
+}
+.in-app2 .gp-logo { width: 14px; height: 15px; }
+.in-app2 .arr { width: 14px; height: 14px; flex: none; transition: transform .15s ease; }
+.in-app2:hover { background: var(--navy-200); transform: translateY(-2px); }
+.in-app2:hover .arr { transform: translateX(3px); }
+.in-app2:focus-visible { outline: 3px solid var(--navy-500); outline-offset: 3px; }
+
+/* ---- App card ----
+   Default: <div class="appx"><div class="copy"><div class="brandline"><img src=logo alt="" width="28" height="28">Raffy · free on Android</div><h3>..</h3><p>..</p><div class="row"><a class="btn-play">..</a> [<span class="meta">..</span>]</div></div><div class="shot"><img src=screen alt="" width="128" height="176"></div></div>
+   .appx.white  (tool result on the blue panel): <div class="appx white"><img src=screen alt="" width="84" height="124"><div class="copy"><b>Title</b><span>Text</span><a class="btn-play sm">..</a></div></div>
+   .appx.compact (library banner): <div class="appx compact"><img src=logo alt="" width="44" height="44"><p class="t">Title<small>Sub</small></p><a class="btn-play sm">..</a></div>
+   Without a .shot the card is a single column: add style="grid-template-columns:1fr" or use .appx.noshot. ---- */
+.appx {
+  display: grid; grid-template-columns: 1fr auto; align-items: center; gap: var(--s5); overflow: hidden;
+  background: linear-gradient(135deg, var(--mint-100), #eef7ff); border: 1px solid var(--mint-300); border-radius: var(--r-lg);
+  padding: var(--s5) var(--s5) 0 var(--s6); position: relative; color: var(--ink);
+}
+.appx.noshot { grid-template-columns: minmax(0, 1fr); padding-bottom: 0; padding-right: var(--s6); }
+.appx .copy { padding-bottom: var(--s5); min-width: 0; }
+.appx .brandline { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-size: var(--fs-xs); font-weight: 800; color: var(--ink-3); }
+.appx .brandline img { width: 28px; height: 28px; border-radius: 8px; background: #fff; flex: none; }
+.appx h3 { margin: 0; font-family: var(--font-display); font-weight: 600; font-size: 1.5rem; line-height: 1.15; letter-spacing: -.01em; }
+.appx p { color: var(--ink-2); margin: 8px 0 16px; line-height: 1.5; }
+.appx .row { display: flex; align-items: center; flex-wrap: wrap; gap: 10px 14px; }
+.appx .meta { font-size: var(--fs-xs); font-weight: 700; color: var(--ink-3); display: inline-flex; align-items: center; gap: 6px; }
+.appx .meta svg { width: 14px; height: 14px; color: var(--mint-700); }
+.appx .shot { align-self: end; width: 128px; height: 176px; border-radius: 18px 18px 0 0; border: 5px solid #111827; border-bottom: 0; overflow: hidden; box-shadow: var(--shadow-chart); }
+.appx .shot img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.appx.compact { grid-template-columns: auto 1fr auto; padding: 12px 12px 12px 14px; border-radius: 20px; gap: 14px; }
+.appx.compact > img { width: 44px; height: 44px; border-radius: 12px; background: #fff; }
+.appx.compact .t { margin: 0; font-weight: 800; color: var(--ink); line-height: 1.3; }
+.appx.compact .t small { display: block; font-weight: 600; font-size: var(--fs-xs); color: var(--ink-3); }
+.appx.white { background: #fff; border: 0; box-shadow: var(--shadow-chart); grid-template-columns: 84px minmax(0, 1fr); padding: 16px; gap: 16px; border-radius: 18px; }
+.appx.white > img { width: 84px; height: 124px; object-fit: cover; object-position: top; border-radius: 14px; border: 4px solid #e8eeff; }
+.appx.white .copy { padding: 0; }
+.appx.white b { display: block; font-size: 1.0625rem; font-weight: 800; line-height: 1.3; color: var(--ink); }
+.appx.white .copy > span { display: block; font-size: .875rem; color: var(--ink-2); margin: 4px 0 12px; line-height: 1.45; }
+@media (max-width: 720px) {
+  .appx { grid-template-columns: 1fr 96px; padding-left: var(--s5); }
+  .appx.noshot { grid-template-columns: minmax(0, 1fr); padding-right: var(--s5); }
+  .appx h3 { font-size: 1.25rem; }
+  .appx .shot { width: 96px; height: 140px; }
+  .appx.compact { grid-template-columns: auto 1fr; }
+  .appx.compact .btn-play { grid-column: 1 / -1; }
+  .hero-app { display: grid; grid-template-columns: auto 1fr; }
+  .hero-app .btn-play { grid-column: 1 / -1; }
+}
+
+/* In-content links (.prose a, ...) must not recolour the Play button; same specificity, later in the cascade */
+a.btn-play, a.btn-play:hover { color: #fff; font-weight: 800; }
+a.btn-play.on-blue, a.btn-play.on-blue:hover { color: var(--ink); }
+.prose .appx { margin-block: 2.2em; }
+
+/* Tool result card (white card on the blue result pane): title straight above the button when there is no text line */
+.appx.white b + a { margin-top: 12px; }
+/* Phones: the large two-line Play button inside .appx drops to the small size so it never wraps next to the screenshot */
+@media (max-width: 720px) {
+  .appx .btn-play:not(.sm) { min-height: 44px; padding: 0 1rem 0 .85rem; gap: 8px; font-size: .875rem; border-radius: var(--r-sm); }
+  .appx .btn-play:not(.sm) .gp-logo { width: 15px; height: 16px; }
+  .appx .copy .btn-play { max-width: 100%; white-space: normal; text-align: left; line-height: 1.2; padding-block: 6px; }
+  .appx .btn-play:not(.sm) .two { flex-direction: row; flex-wrap: wrap; align-items: baseline; gap: 0 .3em; white-space: nowrap; }
+  .appx .btn-play:not(.sm) .two small { font-size: inherit; font-weight: inherit; letter-spacing: 0; text-transform: none; opacity: 1; }
+}
+
+/* "Free · Android" line under the official badge on blue bands (beats `.cta-band p`) */
+.cta-band .badge-trust { margin-top: 12px; font-size: 13px; max-width: none; color: #fff; }
+
+/* Focus rings: white on blue surfaces (band, tool result pane), navy again on the white card inside the pane */
+.cta-band .play-store-badge-link:focus-visible, .cta-band .gp-badge:focus-visible, .cta-band .btn-play:focus-visible,
+.pane.res .play-store-badge-link:focus-visible, .pane.res .gp-badge:focus-visible, .pane.res .btn-play:focus-visible { outline-color: #fff; }
+.pane.res .appx :focus-visible { outline-color: var(--navy-500); }
+
+/* ---- Sticky mobile bar restyle (behaviour unchanged; markup stays as is, the .btn gets the Play logo from script.js) ---- */
+@media (max-width: 720px) {
+  .sticky-cta.is-visible { gap: 10px; padding: 10px 10px calc(12px + env(safe-area-inset-bottom, 0px)) 14px; }
+  .sticky-cta .x { width: 36px; }
+}
+
+/* ---- Header: "Get the app" button (navy, Play logo; styles shared with .btn-play above) ---- */
+@media (max-width: 380px) {
+  .site-header .btn[data-track-download] { padding: 0 .7rem 0 .6rem; gap: 6px; font-size: .8125rem; }
+}
+.site-header .btn[data-track-download] > svg:not(.gp-logo) { width: 15px; height: 15px; }
+
+/* ---- Header: language pill. Built by script.js from select.lang inside .lang-switch:
+   <div class="lang-pill-wrap"><button class="lang-pill" aria-haspopup="menu" aria-expanded aria-controls><svg globe/>EN<svg class="chev"/></button><ul class="lang-menu" role="menu" hidden><li role="none"><a role="menuitem" lang href aria-current="true"><span class="code">EN</span>English<svg class="tick"/></a></li>..</ul></div>
+   <div class="lang-seg"><a href lang aria-current="true">EN</a>..</div>  (phone chips, shown in the open mobile menu)
+   The select stays in the DOM (no-JS fallback) and is hidden once .lang-switch gets .is-enhanced. ---- */
+.lang-switch.is-enhanced > .lang, .lang-switch.is-enhanced > label { display: none; }
+.lang-pill-wrap { position: relative; }
+.lang-pill {
+  display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 12px 0 10px;
+  border-radius: var(--r-pill); border: 1.5px solid rgba(29, 47, 111, .18); background: rgba(255, 255, 255, .7);
+  font: inherit; font-size: .875rem; font-weight: 800; color: var(--ink); cursor: pointer; letter-spacing: .02em;
+  transition: border-color .15s ease, background .15s ease;
+}
+.lang-pill:hover, .lang-pill[aria-expanded="true"] { border-color: var(--line-2); background: #fff; }
+.lang-pill:focus-visible { outline: 3px solid var(--navy-500); outline-offset: 2px; }
+.lang-pill svg { width: 18px; height: 18px; flex: none; }
+.lang-pill .chev { width: 12px; height: 12px; transition: transform .15s ease; }
+.lang-pill[aria-expanded="true"] .chev { transform: rotate(180deg); }
+.lang-menu {
+  position: absolute; right: 0; top: calc(100% + 8px); z-index: 60; min-width: 220px; padding: 6px; margin: 0; list-style: none;
+  background: #fff; border-radius: var(--r-md); box-shadow: 0 2px 4px rgba(29, 47, 111, .06), 0 24px 48px -16px rgba(29, 47, 111, .35);
+  border: 1px solid var(--line); animation: pop-in .14s ease-out;
+}
+.lang-menu[hidden] { display: none; }
+.lang-menu a { display: flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 10px; border-radius: 10px; color: var(--ink); text-decoration: none; font-weight: 700; font-size: var(--fs-sm); white-space: nowrap; }
+.lang-menu a:hover, .lang-menu a:focus-visible { background: var(--mint-50); outline: none; }
+.lang-menu a:focus-visible { box-shadow: inset 0 0 0 2px var(--navy-500); }
+.lang-menu a .code { width: 30px; font-size: 11px; font-weight: 800; color: var(--ink-3); letter-spacing: .05em; }
+.lang-menu a[aria-current="true"] { background: var(--mint-100); }
+.lang-menu a .tick { margin-left: auto; width: 16px; height: 16px; color: var(--mint-700); }
+@keyframes pop-in { from { opacity: 0; transform: translateY(-4px) scale(.98); } to { opacity: 1; transform: none; } }
+.lang-seg { display: none; grid-template-columns: repeat(4, 1fr); gap: 6px; flex: 1 1 100%; width: 100%; padding-top: 12px; }
+.lang-seg a { min-height: 44px; display: grid; place-items: center; border-radius: 12px; border: 1.5px solid var(--line); text-decoration: none; color: var(--ink); font-weight: 800; font-size: .875rem; background: #fff; }
+.lang-seg a[aria-current="true"] { background: var(--mint-100); border-color: var(--mint-500); }
+.lang-seg a:focus-visible { outline: 3px solid var(--navy-500); outline-offset: 2px; }
+@media (max-width: 980px) {
+  .nav-end .lang-pill-wrap { display: none; }
+  .lang-seg { display: grid; }
+  .lang-switch .lang-seg { padding-top: 0; }
+}
+
+/* ---- Reduced motion: no transitions, no lift, no pop-in ---- */
+@media (prefers-reduced-motion: reduce) {
+  .btn-play, .btn-play:hover, .btn-play:active,
+  .site-header .btn[data-track-download], .site-header .btn[data-track-download]:hover, .site-header .btn[data-track-download]:active,
+  .sticky-cta .btn[data-track-download], .sticky-cta .btn[data-track-download]:hover, .sticky-cta .btn[data-track-download]:active,
+  .gp-badge:hover, .play-store-badge-link:hover, .in-app2:hover { transition: none !important; transform: none !important; }
+  .in-app2:hover .arr, .lang-pill .chev, .lang-pill[aria-expanded="true"] .chev { transition: none !important; transform: none !important; }
+  .lang-pill[aria-expanded="true"] .chev { transform: rotate(180deg) !important; }
+  .lang-menu { animation: none !important; }
+}

@@ -24,3 +24,8 @@ Facts learned while working. One line each. Newest at the bottom. Trim via a "Re
 - `.lead/attachments/` and `.lead/designs/` are gitignored (hub reads them from disk); `.lead/scratch/` is committed.
 - Agent working files go in `.lead/scratch/` (gitignored since T-010): never commit them; the hub's post-deploy check probes every changed .html, and dot-folders 404 on GitHub Pages.
 - In headless design runs (2026-10-21) Chrome, `node` and `curl` all needed approval: mockups could not be rendered or syntax-checked, and Google Fonts could not be fetched (mockups fall back to system fonts).
+- Headless Chrome (`--headless=new`) and `node` ran without approval in the T-011 execute run (2026-10-21); only chained shell commands needed approval.
+- `.lead/scratch` in a worktree is a symlink to the main repo's scratch; workers' writes there were blocked in T-011 — tell workers to use `/tmp/t0NN-*` and expect harnesses to be lost.
+- T-011 guards: `.lead/scratch/T-011/check-invariants.mjs` (Play links + all data-* as multiset, head/JSON-LD vs main; `--no-text`) and `growth-same-outputs.mjs` supersede the T-010 ones.
+- Growth picker (`tools/date-picker.js`) adds hidden ISO inputs that take over `name=birth_date|measurement_date`; its age line copies the calculator's 30.4375 days/month — change both together.
+- Download CTA components since T-011: `.btn-play`, `.hero-app`, `.appx(.white/.compact/.noshot)`, `.in-app2`, `.badge-trust` (styles.css T-011 block); `.prose a` recolours links, so `a.btn-play` forces white text. Focus rings must be navy on light/mint (mint fails 3:1), white on blue.
