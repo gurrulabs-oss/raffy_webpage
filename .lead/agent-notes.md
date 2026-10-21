@@ -16,3 +16,10 @@ Facts learned while working. One line each. Newest at the bottom. Trim via a "Re
 - `.DS_Store` files are untracked junk; `.gitignore` (untracked at onboarding) only ignores `.lead/tickets/`.
 - Root `_config.yml` `exclude:` list controls what GitHub Pages (Jekyll) publishes; add new internal non-dot files there. System Ruby 2.6 can't install Jekyll locally.
 - Mockups MUST go in `.lead/designs/T-NNN/*.html` (plural "designs"). The hub's Design panel only lists that folder; anything in `.lead/design/` or elsewhere is invisible to the owner. Check the folder for existing pages first and don't overwrite them. Asset paths from there are `../../../assets/...`.
+- Since T-010: `.lead/scratch/T-010/check-invariants.mjs` compares every page with `main` (head tags, JSON-LD, hrefs, Play links + tracking, visible text); `growth-same-outputs.mjs` guards the growth maths. Reuse them for any page/UI ticket.
+- `scripts/seo_sync.mjs` also injects a home hero `<link rel=preload>` (`preloadMap`) and adds `decoding/loading/width/height` to every `<img>`; removing a preload by hand gets undone — edit the map.
+- Since T-010 download tracking in `script.js` is delegated on `document` (CTAs inserted later are tracked); `window.RaffyStickyCta.show()/hide()` drives the mobile sticky bar; `data-sticky="scroll"` shows it after 40% scroll.
+- Headless Chrome CLI clamps `--window-size` below ~500px; for true 390px use CDP `Emulation.setDeviceMetricsOverride` (harness: `.lead/scratch/T-010/fr/cdp.mjs`). `.gtool` has `overflow:hidden`, so scrollWidth misses clipping inside tool panes — check descendants' rects (`fr/ovf.mjs`).
+- `tools/tool-cluster.js` and `percentile-calculator.js` keep a legacy renderer for old markup alongside the B v2 one (`[data-tool-root]`); locale strings live in their LOCALES tables.
+- `.lead/attachments/` and `.lead/designs/` are gitignored (hub reads them from disk); `.lead/scratch/` is committed.
+- Agent working files go in `.lead/scratch/` (gitignored since T-010): never commit them; the hub's post-deploy check probes every changed .html, and dot-folders 404 on GitHub Pages.

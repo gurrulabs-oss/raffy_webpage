@@ -54,7 +54,35 @@ const LOCALES = {
     chartYAxisHeadImperial: 'Head circumference (in)',
     carouselPrev: 'Previous chart',
     carouselNext: 'Next chart',
-    weeksSuffix: 'weeks'
+    weeksSuffix: 'weeks',
+    tabsLabel: 'Measurement',
+    tabWeight: 'Weight',
+    tabLength: 'Length',
+    tabHeight: 'Height',
+    tabHead: 'Head',
+    tabAdd: '+ Add',
+    groupFemale: 'girls',
+    groupMale: 'boys',
+    lessWeight: 'weigh less',
+    moreWeight: 'weigh more',
+    lessLength: 'are shorter',
+    moreLength: 'are longer',
+    lessHeight: 'are shorter',
+    moreHeight: 'are taller',
+    lessHead: 'have a smaller head',
+    moreHead: 'have a larger head',
+    sentenceTemplate: 'about {lower} in 100 {group} the same age {less}, and {higher} {more}.',
+    sentenceMiddlePrefix: 'Right in the middle: ',
+    sentenceBelow: 'fewer than 3 in 100 {group} the same age {less}.',
+    sentenceAbove: 'fewer than 3 in 100 {group} the same age {more}.',
+    rangeNote: 'Some healthy babies sit here, and one measurement is only a snapshot. Share it with your pediatrician, who can look at the trend with you.',
+    percentileAria: '{ordinal} percentile',
+    chartAria: 'Growth chart: {metric}',
+    chartRange: 'WHO, {from}–{to} months',
+    legendBaby: 'Your baby',
+    legendMedian: 'Median (P50)',
+    legendBand: 'P15–P85',
+    legendOuter: 'P3 / P97'
   },
   es: {
     pageTitle: 'Calculadora OMS de percentiles del bebe',
@@ -100,7 +128,35 @@ const LOCALES = {
     chartYAxisHeadImperial: 'Perimetro craneal (in)',
     carouselPrev: 'Grafica anterior',
     carouselNext: 'Grafica siguiente',
-    weeksSuffix: 'semanas'
+    weeksSuffix: 'semanas',
+    tabsLabel: 'Medida',
+    tabWeight: 'Peso',
+    tabLength: 'Longitud',
+    tabHeight: 'Talla',
+    tabHead: 'Cabeza',
+    tabAdd: '+ Añadir',
+    groupFemale: 'niñas',
+    groupMale: 'niños',
+    lessWeight: 'pesan menos',
+    moreWeight: 'pesan más',
+    lessLength: 'miden menos',
+    moreLength: 'miden más',
+    lessHeight: 'miden menos',
+    moreHeight: 'miden más',
+    lessHead: 'tienen la cabeza más pequeña',
+    moreHead: 'tienen la cabeza más grande',
+    sentenceTemplate: 'aproximadamente {lower} de cada 100 {group} de la misma edad {less} y {higher} {more}.',
+    sentenceMiddlePrefix: 'Justo en el medio: ',
+    sentenceBelow: 'menos de 3 de cada 100 {group} de la misma edad {less}.',
+    sentenceAbove: 'menos de 3 de cada 100 {group} de la misma edad {more}.',
+    rangeNote: 'Algunos bebés sanos están en esta zona y una sola medición es solo una foto del momento. Coméntalo con tu pediatra, que puede revisar la evolución contigo.',
+    percentileAria: 'percentil {n}',
+    chartAria: 'Gráfica de crecimiento: {metric}',
+    chartRange: 'OMS, {from}–{to} meses',
+    legendBaby: 'Tu bebé',
+    legendMedian: 'Mediana (P50)',
+    legendBand: 'P15–P85',
+    legendOuter: 'P3 / P97'
   },
   fr: {
     pageTitle: 'Calculateur OMS de percentiles bebe',
@@ -146,7 +202,35 @@ const LOCALES = {
     chartYAxisHeadImperial: 'Perimetre cranien (in)',
     carouselPrev: 'Graphique precedent',
     carouselNext: 'Graphique suivant',
-    weeksSuffix: 'semaines'
+    weeksSuffix: 'semaines',
+    tabsLabel: 'Mesure',
+    tabWeight: 'Poids',
+    tabLength: 'Longueur',
+    tabHeight: 'Taille',
+    tabHead: 'Tête',
+    tabAdd: '+ Ajouter',
+    groupFemale: 'filles',
+    groupMale: 'garçons',
+    lessWeight: 'pèsent moins',
+    moreWeight: 'pèsent plus',
+    lessLength: 'mesurent moins',
+    moreLength: 'mesurent plus',
+    lessHeight: 'mesurent moins',
+    moreHeight: 'mesurent plus',
+    lessHead: 'ont un périmètre crânien plus petit',
+    moreHead: 'ont un périmètre crânien plus grand',
+    sentenceTemplate: 'environ {lower} {group} sur 100 du même âge {less}, et {higher} {more}.',
+    sentenceMiddlePrefix: 'Pile au milieu : ',
+    sentenceBelow: 'moins de 3 {group} sur 100 du même âge {less}.',
+    sentenceAbove: 'moins de 3 {group} sur 100 du même âge {more}.',
+    rangeNote: 'Certains bébés en bonne santé se situent ici, et une seule mesure n’est qu’un instantané. Parlez-en à votre pédiatre, qui pourra suivre l’évolution avec vous.',
+    percentileAria: '{ordinal} percentile',
+    chartAria: 'Courbe de croissance : {metric}',
+    chartRange: 'OMS, {from}–{to} mois',
+    legendBaby: 'Votre bébé',
+    legendMedian: 'Médiane (P50)',
+    legendBand: 'P15–P85',
+    legendOuter: 'P3 / P97'
   },
   pt: {
     pageTitle: 'Calculadora OMS de percentis do bebe',
@@ -192,7 +276,35 @@ const LOCALES = {
     chartYAxisHeadImperial: 'Perimetro cefalico (in)',
     carouselPrev: 'Grafico anterior',
     carouselNext: 'Grafico seguinte',
-    weeksSuffix: 'semanas'
+    weeksSuffix: 'semanas',
+    tabsLabel: 'Medida',
+    tabWeight: 'Peso',
+    tabLength: 'Comprimento',
+    tabHeight: 'Altura',
+    tabHead: 'Cabeça',
+    tabAdd: '+ Incluir',
+    groupFemale: 'meninas',
+    groupMale: 'meninos',
+    lessWeight: 'pesam menos',
+    moreWeight: 'pesam mais',
+    lessLength: 'medem menos',
+    moreLength: 'medem mais',
+    lessHeight: 'medem menos',
+    moreHeight: 'medem mais',
+    lessHead: 'têm a cabeça menor',
+    moreHead: 'têm a cabeça maior',
+    sentenceTemplate: 'cerca de {lower} em cada 100 {group} da mesma idade {less}, e {higher} {more}.',
+    sentenceMiddlePrefix: 'Bem no meio: ',
+    sentenceBelow: 'menos de 3 em cada 100 {group} da mesma idade {less}.',
+    sentenceAbove: 'menos de 3 em cada 100 {group} da mesma idade {more}.',
+    rangeNote: 'Alguns bebês saudáveis ficam nessa faixa, e uma única medição é só um retrato do momento. Converse com o pediatra, que pode acompanhar a evolução com você.',
+    percentileAria: 'percentil {n}',
+    chartAria: 'Gráfico de crescimento: {metric}',
+    chartRange: 'OMS, {from}–{to} meses',
+    legendBaby: 'Seu bebê',
+    legendMedian: 'Mediana (P50)',
+    legendBand: 'P15–P85',
+    legendOuter: 'P3 / P97'
   }
 };
 
@@ -207,8 +319,25 @@ const noteOut = document.querySelector('[data-result-note]');
 const chartOut = document.querySelector('[data-chart-wrap]');
 const correctedToggle = document.querySelector('[data-corrected-toggle]');
 const correctedGroup = document.querySelector('[data-corrected-group]');
+// B v2 layout hooks (only on pages with the new markup; older markup keeps the legacy rendering)
+const tabsOut = document.querySelector('[data-result-tabs]');
+const isNewLayout = Boolean(tabsOut);
+const sentenceOut = document.querySelector('[data-result-sentence]');
+const rangeOut = document.querySelector('[data-result-range]');
+const resultExtra = document.querySelector('[data-result-extra]');
+const stateEmpty = document.querySelector('[data-state-empty]');
+const stateError = document.querySelector('[data-state-error]');
+const stateResult = document.querySelector('[data-state-result]');
+const MEASUREMENT_FIELDS = {
+  weight: 'weight_kg',
+  lengthHeight: 'length_height_cm',
+  headCircumference: 'head_circumference_cm'
+};
+const MEASUREMENT_ORDER = ['weight', 'lengthHeight', 'headCircumference'];
 
 let datasetByMetric = null;
+let selectedResultType = null;
+let chartRenderWidth = 0;
 let daysPerMonth = 30.4375;
 let unitSystem = 'metric';
 let lastRenderPayload = null;
@@ -246,6 +375,7 @@ async function init() {
   resultsCard?.classList.remove('is-hidden');
   renderEmptyChart();
   renderEmptyNotes();
+  setResultState('empty');
 
   correctedToggle?.addEventListener('change', () => {
     const isChecked = correctedToggle.checked;
@@ -258,6 +388,15 @@ async function init() {
     if (!(target instanceof HTMLInputElement)) return;
     if (target.name !== 'unit_system') return;
     onUnitSystemChange(target.value === 'imperial' ? 'imperial' : 'metric');
+  });
+
+  // Editing a highlighted field clears its inline error
+  form?.addEventListener('input', (event) => {
+    const target = event.target;
+    if (!(target instanceof HTMLInputElement)) return;
+    const isMeasurement = Object.values(MEASUREMENT_FIELDS).includes(target.name);
+    clearFieldError(target.name);
+    if (isMeasurement) clearFieldError('measurements');
   });
 
   form?.addEventListener('submit', (event) => {
@@ -285,9 +424,16 @@ async function init() {
 
       clearMessages();
       lastRenderPayload = null;
+      selectedResultType = null;
+      setResultState('empty');
+      if (window.RaffyStickyCta) window.RaffyStickyCta.hide();
       setDefaultMeasurementDate();
     }, 0);
   });
+
+  tabsOut?.addEventListener('click', onTabClick);
+  tabsOut?.addEventListener('keydown', onTabKeydown);
+  watchChartWidth();
 }
 
 function applyStaticCopy() {
@@ -447,14 +593,29 @@ function setMeasurementInputUI(fieldName, measurementType) {
 
   const label = form?.querySelector(`label[for="${fieldName}"]`);
   if (label) {
+    let labelText;
     if (measurementType === 'weight') {
-      label.textContent = unitSystem === 'metric' ? copy.weightInputMetric : copy.weightInputImperial;
+      labelText = unitSystem === 'metric' ? copy.weightInputMetric : copy.weightInputImperial;
     } else if (measurementType === 'lengthHeight') {
-      label.textContent = unitSystem === 'metric' ? copy.lengthInputMetric : copy.lengthInputImperial;
+      labelText = unitSystem === 'metric' ? copy.lengthInputMetric : copy.lengthInputImperial;
     } else {
-      label.textContent = unitSystem === 'metric' ? copy.headInputMetric : copy.headInputImperial;
+      labelText = unitSystem === 'metric' ? copy.headInputMetric : copy.headInputImperial;
+    }
+
+    // New markup: visible name + screen-reader unit "(kg)"; the unit is also shown inside the input
+    const nameEl = label.querySelector('[data-label-name]');
+    const unitEl = label.querySelector('[data-label-unit]');
+    if (nameEl) {
+      const unitMatch = /\s*(\([^)]*\))\s*$/.exec(labelText);
+      nameEl.textContent = unitMatch ? labelText.slice(0, unitMatch.index) : labelText;
+      if (unitEl) unitEl.textContent = unitMatch ? ` ${unitMatch[1]}` : '';
+    } else {
+      label.textContent = labelText;
     }
   }
+
+  const unitBadge = form?.querySelector(`[data-unit-for="${fieldName}"]`);
+  if (unitBadge) unitBadge.textContent = unitFor(measurementType);
 
   const config = measurementConfig(measurementType, unitSystem);
   input.min = String(config.min);
@@ -477,7 +638,7 @@ function runCalculation() {
   ].filter(Boolean);
 
   if (!sex || !birthDate || !measurementDate || measurementEntries.length === 0) {
-    showError(copy.missingRequiredError);
+    showError(copy.missingRequiredError, firstMissingField(sex, birthDate, measurementDate, measurementEntries.length));
     return;
   }
 
@@ -486,7 +647,7 @@ function runCalculation() {
   const chronologicalAgeDays = dateDiffDays(birth, meas);
 
   if (!Number.isFinite(chronologicalAgeDays) || chronologicalAgeDays < 0) {
-    showError(copy.dateError);
+    showError(copy.dateError, 'measurement_date');
     return;
   }
 
@@ -496,7 +657,7 @@ function runCalculation() {
   if (correctedToggle?.checked) {
     const gestationalWeeks = valueNumber('gestational_weeks');
     if (!Number.isFinite(gestationalWeeks) || gestationalWeeks < 22 || gestationalWeeks > 40) {
-      showError(copy.gestationalError);
+      showError(copy.gestationalError, 'gestational_weeks');
       return;
     }
 
@@ -504,7 +665,7 @@ function runCalculation() {
     ageDaysForEvaluation = chronologicalAgeDays - correctionDays;
 
     if (ageDaysForEvaluation < 0) {
-      showError(copy.correctedAgeError);
+      showError(copy.correctedAgeError, 'gestational_weeks');
       return;
     }
 
@@ -518,7 +679,7 @@ function runCalculation() {
 
   for (const measurement of measurementEntries) {
     if (!isMeasurementInRange(measurement.type, measurement.valueSi)) {
-      showError(copy.invalidValueError);
+      showError(copy.invalidValueError, MEASUREMENT_FIELDS[measurement.type]);
       return;
     }
 
@@ -526,7 +687,7 @@ function runCalculation() {
     const rows = datasetByMetric[metricSelection.metric]?.[sex];
 
     if (!rows || rows.length === 0) {
-      showError(copy.rangeError);
+      showError(copy.rangeError, 'birth_date');
       return;
     }
 
@@ -534,7 +695,7 @@ function runCalculation() {
     const maxAge = rows[rows.length - 1].ageDays;
 
     if (ageDaysForEvaluation < minAge || ageDaysForEvaluation > maxAge) {
-      showError(copy.rangeError);
+      showError(copy.rangeError, 'birth_date');
       return;
     }
 
@@ -542,7 +703,7 @@ function runCalculation() {
     const zScore = zFromMeasurement(measurement.valueSi, lms);
 
     if (!Number.isFinite(zScore)) {
-      showError(copy.invalidValueError);
+      showError(copy.invalidValueError, MEASUREMENT_FIELDS[measurement.type]);
       return;
     }
 
@@ -558,14 +719,29 @@ function runCalculation() {
 
   const payload = {
     results,
+    sex,
     chronologicalAgeDays,
     correctedAgeMeta,
     ageDaysForEvaluation
   };
 
   lastRenderPayload = payload;
+  selectedResultType = null;
   trackGrowthToolResults(payload);
   renderResults(payload);
+  revealResult();
+}
+
+// After a successful Calculate: show the sticky app bar and, when the result sits under the
+// form (stacked layout), scroll it into view and move focus to it.
+function revealResult() {
+  if (window.RaffyStickyCta) window.RaffyStickyCta.show();
+  if (!isNewLayout || !stateResult) return;
+  const stacked = window.matchMedia('(max-width: 980px)').matches;
+  if (!stacked) return;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  stateResult.focus({ preventScroll: true });
+  (resultsCard || stateResult).scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
 }
 
 function readMeasurement(fieldName, type) {
@@ -581,6 +757,11 @@ function readMeasurement(fieldName, type) {
 
 function renderResults(payload) {
   resultsCard?.classList.remove('is-hidden');
+
+  if (isNewLayout) {
+    renderResultsV2(payload);
+    return;
+  }
 
   const ageParts = [`${copy.ageChronological}: ${formatAge(payload.chronologicalAgeDays)}`];
   if (payload.correctedAgeMeta) {
@@ -724,7 +905,7 @@ function setupCarousel(root, totalSlides) {
   update();
 }
 
-function buildChartSvg({ rows, metricSelection, measurementType, ageDays, valueSi, showPoint }) {
+function buildChartSvg({ rows, metricSelection, measurementType, ageDays, valueSi, showPoint, width, ariaExtra }) {
   const minX = rows[0].ageMonths;
   const maxX = rows[rows.length - 1].ageMonths;
 
@@ -741,60 +922,74 @@ function buildChartSvg({ rows, metricSelection, measurementType, ageDays, valueS
   if (showPoint) allY.push(pointY);
 
   const yMinRaw = Math.min(...allY);
-  const yMaxRaw = Math.max(...allY);
-  const yPad = (yMaxRaw - yMinRaw || 1) * 0.08;
+  const yMax0 = Math.max(...allY);
+  const yPad = (yMax0 - yMinRaw || 1) * 0.08;
   const yMin = yMinRaw - yPad;
-  const yMax = yMaxRaw + yPad;
+  const yMax = yMax0 + yPad;
 
-  const vbW = 760;
-  const vbH = 460;
-  const pad = { left: 72, right: 94, top: 28, bottom: 58 };
+  // The SVG is drawn at its real on-screen width (measured), so 1 unit = 1px and labels keep a fixed size.
+  const vbW = Math.round(Math.max(280, Math.min(760, width || chartRenderWidth || 460)));
+  const vbH = Math.round(Math.max(220, Math.min(380, vbW / 1.6)));
+  const pad = { left: 42, right: 40, top: 26, bottom: 46 };
   const plotW = vbW - pad.left - pad.right;
   const plotH = vbH - pad.top - pad.bottom;
 
   const xScale = (x) => pad.left + ((x - minX) / (maxX - minX || 1)) * plotW;
   const yScale = (y) => pad.top + (1 - (y - yMin) / (yMax - yMin || 1)) * plotH;
+  const r1 = (n) => Math.round(n * 10) / 10;
 
   const gridX = buildXTicks(minX, maxX).map((tick) => {
-    const x = xScale(tick);
-    return `<g><line x1="${x}" y1="${pad.top}" x2="${x}" y2="${pad.top + plotH}" class="grid-line" /><text x="${x}" y="${pad.top + plotH + 26}" text-anchor="middle" class="axis-text">${tick}</text></g>`;
+    const x = r1(xScale(tick));
+    return `<text x="${x}" y="${pad.top + plotH + 20}" text-anchor="middle" class="axis-text">${tick}</text>`;
   }).join('');
 
-  const gridY = buildYTicks(yMin, yMax).map((tick) => {
-    const y = yScale(tick);
-    return `<g><line x1="${pad.left}" y1="${y}" x2="${pad.left + plotW}" y2="${y}" class="grid-line" /><text x="${pad.left - 12}" y="${y + 4}" text-anchor="end" class="axis-text">${formatValue(tick, 1)}</text></g>`;
+  const gridY = buildYTicks(yMin, yMax).filter((tick) => tick >= yMin && tick <= yMax).map((tick) => {
+    const y = r1(yScale(tick));
+    return `<line x1="${pad.left}" y1="${y}" x2="${pad.left + plotW}" y2="${y}" class="grid-line" /><text x="${pad.left - 8}" y="${y + 4}" text-anchor="end" class="axis-text">${Number.isInteger(tick) ? String(tick) : formatValue(tick, 1)}</text>`;
   }).join('');
 
-  const curveLines = curves.map((curve, idx) => {
-    const points = curve.points.map((p) => `${xScale(p.x)},${yScale(p.y)}`).join(' ');
-    const styleClass = curve.label === 'P50' ? 'curve-line curve-main' : `curve-line curve-${idx}`;
-    return `<polyline points="${points}" class="${styleClass}" fill="none" />`;
-  }).join('');
-
-  const curveLabels = curves.map((curve) => {
-    const last = curve.points[curve.points.length - 1];
-    return `<text x="${xScale(last.x) + 10}" y="${yScale(last.y) + 4}" class="percentile-label">${curve.label}</text>`;
-  }).join('');
-
-  const pointX = xScale(ageDays / daysPerMonth);
-  const pointMarkup = showPoint
-    ? `<circle cx="${pointX}" cy="${yScale(pointY)}" r="6" class="baby-point" />`
+  const byLabel = Object.fromEntries(curves.map((curve) => [curve.label, curve]));
+  const toPoints = (curve) => curve.points.map((p) => `${r1(xScale(p.x))},${r1(yScale(p.y))}`);
+  const band = byLabel.P15 && byLabel.P85
+    ? `<polygon class="band-fill" points="${[...toPoints(byLabel.P15), ...toPoints(byLabel.P85).reverse()].join(' ')}" />`
     : '';
 
+  const curveLines = curves.map((curve) => {
+    const styleClass = curve.label === 'P50' ? 'p50' : (curve.label === 'P15' || curve.label === 'P85' ? 'p-mid' : 'p-out');
+    return `<polyline points="${toPoints(curve).join(' ')}" class="curve-line ${styleClass}" fill="none" />`;
+  }).join('');
+
+  const curveLabels = curves.filter((curve) => ['P3', 'P50', 'P97'].includes(curve.label)).map((curve) => {
+    const last = curve.points[curve.points.length - 1];
+    return `<text x="${r1(xScale(last.x) + 6)}" y="${r1(yScale(last.y) + 4)}" class="plabels">${curve.label}</text>`;
+  }).join('');
+
+  let pointMarkup = '';
+  if (showPoint) {
+    const px = r1(xScale(ageDays / daysPerMonth));
+    const py = r1(yScale(pointY));
+    const valueLabel = `${formatMeasurementValue(pointY, measurementType, unitSystem)} ${unitFor(measurementType)}`;
+    const toLeft = px > pad.left + plotW * 0.72;
+    const lx = toLeft ? px - 14 : px + 14;
+    const ly = py < pad.top + 18 ? py + 24 : py - 12;
+    pointMarkup = `<circle class="dot-halo" cx="${px}" cy="${py}" r="12" /><circle class="dot" cx="${px}" cy="${py}" r="7" /><text x="${lx}" y="${ly}" text-anchor="${toLeft ? 'end' : 'start'}" class="dot-label">${valueLabel}</text>`;
+  }
+
   const yAxisLabel = yAxisLabelFor(metricSelection);
+  const yUnit = unitFor(measurementType);
+  const aria = `${(copy.chartAria || '{metric}').replace('{metric}', metricName(metricSelection, measurementType))}. ${yAxisLabel}, ${copy.chartXAxis}${ariaExtra ? `. ${ariaExtra}` : ''}`;
 
   return `
-    <svg viewBox="0 0 ${vbW} ${vbH}" role="img" aria-label="${metricName(metricSelection, measurementType)} chart">
-      <rect x="0" y="0" width="${vbW}" height="${vbH}" rx="24" class="chart-bg" />
-      ${gridX}
+    <svg class="growth-chart" viewBox="0 0 ${vbW} ${vbH}" width="${vbW}" height="${vbH}" role="img" aria-label="${aria}">
       ${gridY}
       <line x1="${pad.left}" y1="${pad.top + plotH}" x2="${pad.left + plotW}" y2="${pad.top + plotH}" class="axis-line" />
-      <line x1="${pad.left}" y1="${pad.top}" x2="${pad.left}" y2="${pad.top + plotH}" class="axis-line" />
+      ${band}
       ${curveLines}
       ${curveLabels}
+      ${gridX}
+      <text x="${pad.left - 8}" y="${pad.top - 12}" text-anchor="end" class="axis-unit">${yUnit}</text>
+      <text x="${pad.left + plotW / 2}" y="${vbH - 6}" text-anchor="middle" class="axis-title">${copy.chartXAxis}</text>
       ${pointMarkup}
-      <text x="${pad.left + plotW / 2}" y="${vbH - 14}" text-anchor="middle" class="axis-title">${copy.chartXAxis}</text>
-      <text x="18" y="${pad.top + plotH / 2}" text-anchor="middle" transform="rotate(-90 18 ${pad.top + plotH / 2})" class="axis-title">${yAxisLabel}</text>
     </svg>
   `;
 }
@@ -811,10 +1006,26 @@ function yAxisLabelFor(metricSelection) {
   return unitSystem === 'metric' ? copy.chartYAxisLengthMetric : copy.chartYAxisLengthImperial;
 }
 
+// New layout: show a window around the baby's age (0-12, 0-24, 0-36 or 0-60 months: the first end
+// that is at least 3 months past the age), within the metric's own data range. Display only.
+const CHART_WINDOW_ENDS = [12, 24, 36, 60];
+
+function chartWindowRows(rows, ageDays) {
+  if (!isNewLayout || !rows || rows.length < 2) return rows;
+  const ageMonths = ageDays / daysPerMonth;
+  const dataMin = rows[0].ageMonths;
+  const dataMax = rows[rows.length - 1].ageMonths;
+  const target = CHART_WINDOW_ENDS.find((end) => end >= ageMonths + 3) ?? dataMax;
+  const end = Math.min(target, dataMax);
+  const windowed = rows.filter((row) => row.ageMonths >= dataMin && row.ageMonths <= end + 1e-9);
+  return windowed.length >= 2 ? windowed : rows;
+}
+
 function renderEmptyChart() {
   if (!datasetByMetric || !chartOut) return;
-  const rows = datasetByMetric.wfa?.female || datasetByMetric.wfa?.male;
-  if (!rows || rows.length === 0) return;
+  const allRows = datasetByMetric.wfa?.female || datasetByMetric.wfa?.male;
+  if (!allRows || allRows.length === 0) return;
+  const rows = chartWindowRows(allRows, 0);
 
   const svg = buildChartSvg({
     rows,
@@ -825,7 +1036,337 @@ function renderEmptyChart() {
     showPoint: false
   });
 
+  if (isNewLayout) {
+    chartOut.removeAttribute('role');
+    chartOut.removeAttribute('aria-labelledby');
+    chartOut.innerHTML = chartCardMarkup({
+      title: chartTitle({ metric: 'wfa' }, 'weight', null),
+      range: chartRangeText(rows),
+      svg,
+      withBaby: false,
+      placeholder: true
+    });
+    return;
+  }
+
   chartOut.innerHTML = `<div class="chart-shell">${svg}</div>`;
+}
+
+// ---------- B v2 result panel (new markup only) ----------
+
+function fill(template, values) {
+  return String(template || '').replace(/\{(\w+)\}/g, (match, key) => (key in values ? String(values[key]) : match));
+}
+
+function capitalizeFirst(text) {
+  return text ? text.charAt(0).toUpperCase() + text.slice(1) : text;
+}
+
+function ordinalSuffix(n) {
+  if (locale === 'fr') return n === 1 ? 'er' : 'e';
+  if (locale === 'es' || locale === 'pt') return 'º';
+  const j = n % 10;
+  const k = n % 100;
+  if (j === 1 && k !== 11) return 'st';
+  if (j === 2 && k !== 12) return 'nd';
+  if (j === 3 && k !== 13) return 'rd';
+  return 'th';
+}
+
+// The displayed whole-number percentile; the sentence and the out-of-range note use the same value.
+function displayedPercentile(percentile) {
+  return Math.round(percentile);
+}
+
+function percentileParts(percentile) {
+  const n = Math.min(99, Math.max(1, displayedPercentile(percentile)));
+  const prefix = percentile < 0.5 ? '<' : (percentile >= 99.5 ? '>' : '');
+  const suffix = ordinalSuffix(n);
+  const number = `${prefix}${n}`;
+  const aria = fill(copy.percentileAria || '{ordinal}', { ordinal: `${number}${suffix}`, n: number });
+  return { number, suffix, aria };
+}
+
+function escapeHtml(text) {
+  return String(text).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+function measurementKey(type, metricSelection) {
+  if (type === 'weight') return 'Weight';
+  if (type === 'headCircumference') return 'Head';
+  return metricSelection?.mode === 'length' ? 'Length' : 'Height';
+}
+
+function groupLabel(sex) {
+  return sex === 'male' ? copy.groupMale : copy.groupFemale;
+}
+
+function stripMetricSource(name) {
+  return String(name || '').replace(/\s*\([^)]*\)\s*$/, '');
+}
+
+function chartTitle(metricSelection, measurementType, sex) {
+  const base = stripMetricSource(metricName(metricSelection, measurementType));
+  return sex ? `${base} · ${groupLabel(sex)}` : base;
+}
+
+function chartRangeText(rows) {
+  return fill(copy.chartRange || '{from}–{to}', {
+    from: formatValue(rows[0].ageMonths, 0),
+    to: formatValue(rows[rows.length - 1].ageMonths, 0)
+  });
+}
+
+function chartCardMarkup({ title, range, svg, withBaby, placeholder }) {
+  const legend = [
+    withBaby ? `<span><i class="lg-dot"></i>${copy.legendBaby}</span>` : '',
+    `<span><i class="lg-median"></i>${copy.legendMedian}</span>`,
+    `<span><i class="lg-band"></i>${copy.legendBand}</span>`,
+    `<span><i class="lg-outer"></i>${copy.legendOuter}</span>`
+  ].join('');
+
+  return `
+    <div class="chart-card${placeholder ? ' is-placeholder' : ''}"${placeholder ? ' aria-hidden="true"' : ''}>
+      <div class="chart-head">${escapeHtml(title)}<span>${escapeHtml(range)}</span></div>
+      ${svg}
+      <div class="legend">${legend}</div>
+    </div>
+  `;
+}
+
+function resultSentence(result, sex) {
+  const key = measurementKey(result.measurement.type, result.metricSelection);
+  const values = {
+    group: groupLabel(sex),
+    less: copy[`less${key}`],
+    more: copy[`more${key}`]
+  };
+
+  const lower = displayedPercentile(result.percentile);
+  if (lower < 3) return capitalizeFirst(fill(copy.sentenceBelow, values));
+  if (lower > 97) return capitalizeFirst(fill(copy.sentenceAbove, values));
+
+  const text = fill(copy.sentenceTemplate, { ...values, lower, higher: 100 - lower });
+  return lower === 50 ? `${copy.sentenceMiddlePrefix}${text}` : capitalizeFirst(text);
+}
+
+function isOutsideTypicalRange(percentile) {
+  const shown = displayedPercentile(percentile);
+  return shown < 3 || shown > 97;
+}
+
+function setResultState(state) {
+  if (!isNewLayout) return;
+  if (stateEmpty) stateEmpty.hidden = state !== 'empty';
+  if (stateError) stateError.hidden = state !== 'error';
+  if (stateResult) stateResult.hidden = state !== 'result';
+  if (tabsOut) tabsOut.hidden = state !== 'result';
+  if (resultExtra) resultExtra.hidden = state !== 'result';
+  document.body.classList.remove('state-empty', 'state-result', 'state-error');
+  document.body.classList.add(`state-${state}`);
+}
+
+function renderResultsV2(payload) {
+  if (!payload.results.some((result) => result.measurement.type === selectedResultType)) {
+    selectedResultType = payload.results[0].measurement.type;
+  }
+
+  const ageParts = [`${copy.ageChronological}: ${formatAge(payload.chronologicalAgeDays)}`];
+  if (payload.correctedAgeMeta) {
+    ageParts.push(`${copy.ageCorrected}: ${formatAge(payload.ageDaysForEvaluation)} (${payload.correctedAgeMeta.gestationalWeeks} ${copy.weeksSuffix})`);
+  }
+  if (ageOut) ageOut.textContent = ageParts.join(' · ');
+
+  renderTabs(payload);
+  renderSelectedResult(payload);
+  setResultState('result');
+}
+
+function renderSelectedResult(payload) {
+  const result = payload.results.find((item) => item.measurement.type === selectedResultType) || payload.results[0];
+  const type = result.measurement.type;
+  const displayValue = fromSi(type, result.measurement.valueSi, unitSystem);
+  const valueText = `${formatMeasurementValue(displayValue, type, unitSystem)} ${unitFor(type)}`;
+  const parts = percentileParts(result.percentile);
+
+  if (metricOut) {
+    metricOut.textContent = `${metricName(result.metricSelection, type)}: ${valueText} · ${copy.percentileLabel} P${formatValue(result.percentile, 1)}`;
+  }
+
+  if (percentileOut) {
+    percentileOut.innerHTML = `<span class="sr-only">${escapeHtml(parts.aria)}</span><b aria-hidden="true">${escapeHtml(parts.number)}</b><sup aria-hidden="true">${escapeHtml(parts.suffix)}</sup>`;
+  }
+
+  if (sentenceOut) sentenceOut.textContent = resultSentence(result, payload.sex);
+
+  if (rangeOut) {
+    const outside = isOutsideTypicalRange(result.percentile);
+    rangeOut.textContent = outside ? copy.rangeNote : '';
+    rangeOut.hidden = !outside;
+  }
+
+  if (!chartOut) return;
+  const chartRows = chartWindowRows(result.rows, result.ageDays);
+  const svg = buildChartSvg({
+    rows: chartRows,
+    metricSelection: result.metricSelection,
+    measurementType: type,
+    ageDays: result.ageDays,
+    valueSi: result.measurement.valueSi,
+    showPoint: true,
+    ariaExtra: `${copy.legendBaby}: ${valueText}, ${parts.aria}`
+  });
+
+  chartOut.innerHTML = chartCardMarkup({
+    title: chartTitle(result.metricSelection, type, payload.sex),
+    range: chartRangeText(chartRows),
+    svg,
+    withBaby: true,
+    placeholder: false
+  });
+  chartOut.setAttribute('role', 'tabpanel');
+  chartOut.setAttribute('aria-labelledby', `growth-tab-${type}`);
+}
+
+function renderTabs(payload) {
+  if (!tabsOut) return;
+
+  // Tabs sit in an inner role="tablist" (display: contents); "+ Add" chips are plain buttons next to it.
+  // CSS order keeps the weight / length / head positions.
+  const tabs = [];
+  const adds = [];
+  MEASUREMENT_ORDER.forEach((type, index) => {
+    const result = payload.results.find((item) => item.measurement.type === type);
+    const selection = result ? result.metricSelection : selectMetric(type, payload.ageDaysForEvaluation);
+    const label = copy[`tab${measurementKey(type, selection)}`];
+
+    if (!result) {
+      adds.push(`<button type="button" class="is-add" style="order:${index}" data-tab-add="${type}"><small>${label}</small><b>${copy.tabAdd}</b></button>`);
+      return;
+    }
+
+    const parts = percentileParts(result.percentile);
+    const selected = type === selectedResultType;
+    tabs.push(`<button type="button" role="tab" id="growth-tab-${type}" style="order:${index}" aria-selected="${selected}" aria-controls="growth-chart-panel" tabindex="${selected ? 0 : -1}" data-tab-type="${type}"><small>${label}</small><b>${escapeHtml(parts.number)}${escapeHtml(parts.suffix)}</b></button>`);
+  });
+
+  tabsOut.innerHTML = `<div class="mtabs-list" role="tablist" aria-label="${escapeHtml(copy.tabsLabel)}">${tabs.join('')}</div>${adds.join('')}`;
+}
+
+function selectResultTab(type) {
+  if (!lastRenderPayload) return;
+  selectedResultType = type;
+  renderTabs(lastRenderPayload);
+  renderSelectedResult(lastRenderPayload);
+  tabsOut?.querySelector(`[data-tab-type="${type}"]`)?.focus();
+}
+
+function focusMeasurementInput(type) {
+  const input = form?.elements?.namedItem(MEASUREMENT_FIELDS[type]);
+  if (input instanceof HTMLInputElement) input.focus();
+}
+
+function onTabClick(event) {
+  const button = event.target instanceof Element ? event.target.closest('button') : null;
+  if (!button) return;
+  if (button.dataset.tabAdd) {
+    focusMeasurementInput(button.dataset.tabAdd);
+    return;
+  }
+  if (button.dataset.tabType) selectResultTab(button.dataset.tabType);
+}
+
+function onTabKeydown(event) {
+  const keys = ['ArrowLeft', 'ArrowRight', 'Home', 'End'];
+  if (!keys.includes(event.key) || !tabsOut) return;
+  const tabs = [...tabsOut.querySelectorAll('[role="tab"]')];
+  const current = tabs.indexOf(document.activeElement);
+  if (current < 0) return;
+  event.preventDefault();
+
+  let next = current;
+  if (event.key === 'ArrowRight') next = (current + 1) % tabs.length;
+  if (event.key === 'ArrowLeft') next = (current - 1 + tabs.length) % tabs.length;
+  if (event.key === 'Home') next = 0;
+  if (event.key === 'End') next = tabs.length - 1;
+
+  const target = tabs[next];
+  if (target.dataset.tabType) selectResultTab(target.dataset.tabType);
+  else target.focus();
+}
+
+// Re-draw the chart when its on-screen width changes, so text in the SVG stays at its intended size.
+function measureChartWidth() {
+  if (!chartOut) return 0;
+  const svg = chartOut.querySelector('svg');
+  const width = svg ? svg.getBoundingClientRect().width : 0;
+  return width || Math.max(0, chartOut.clientWidth - 32);
+}
+
+function repaintChart() {
+  if (lastRenderPayload) {
+    if (isNewLayout) renderSelectedResult(lastRenderPayload);
+    else renderCharts(lastRenderPayload.results);
+  } else {
+    renderEmptyChart();
+  }
+}
+
+function watchChartWidth() {
+  if (!chartOut) return;
+  const check = () => {
+    const width = Math.round(measureChartWidth());
+    if (!width || Math.abs(width - chartRenderWidth) <= 4) return;
+    chartRenderWidth = width;
+    repaintChart();
+  };
+
+  if (typeof ResizeObserver === 'function') {
+    let frame = 0;
+    new ResizeObserver(() => {
+      window.cancelAnimationFrame(frame);
+      frame = window.requestAnimationFrame(check);
+    }).observe(chartOut);
+  } else {
+    window.addEventListener('resize', check);
+  }
+  check();
+}
+
+// ---------- Inline form errors (new markup) ----------
+
+function firstMissingField(sex, birthDate, measurementDate, measurementCount) {
+  if (!sex) return 'sex';
+  if (!birthDate) return 'birth_date';
+  if (!measurementDate) return 'measurement_date';
+  if (!measurementCount) return 'measurements';
+  return null;
+}
+
+function fieldInputs(fieldName) {
+  if (!form) return [];
+  if (fieldName === 'measurements') {
+    return Object.values(MEASUREMENT_FIELDS).map((name) => form.elements.namedItem(name)).filter(Boolean);
+  }
+  if (fieldName === 'sex') return [...form.querySelectorAll('input[name="sex"]')];
+  const el = form.elements.namedItem(fieldName);
+  return el instanceof Element ? [el] : [];
+}
+
+function clearFieldError(fieldName) {
+  if (!isNewLayout || !form || !fieldName) return;
+  const box = form.querySelector(`[data-field="${fieldName}"]`);
+  if (!box || !box.classList.contains('has-error')) return;
+  box.classList.remove('has-error');
+  fieldInputs(fieldName).forEach((input) => input.removeAttribute('aria-invalid'));
+  const errEl = form.querySelector(`[data-field-error="${fieldName}"]`);
+  const textEl = errEl?.querySelector('[data-err-text]') || errEl;
+  if (textEl) textEl.textContent = '';
+}
+
+function clearFieldErrors() {
+  if (!isNewLayout || !form) return;
+  form.querySelectorAll('[data-field].has-error').forEach((box) => clearFieldError(box.dataset.field));
 }
 
 function valueAtZ(lms, z) {
@@ -1042,10 +1583,35 @@ function valueNumber(name) {
 
 function clearMessages() {
   if (errorBox) errorBox.textContent = '';
+  clearFieldErrors();
 }
 
-function showError(message) {
-  if (errorBox) errorBox.textContent = message;
+function showError(message, fieldName) {
+  const box = isNewLayout && fieldName ? form?.querySelector(`[data-field="${fieldName}"]`) : null;
+  if (!box) {
+    if (errorBox) errorBox.textContent = message;
+    return;
+  }
+
+  // Inline error on the field, focus it, and switch the result panel to its error state
+  if (errorBox) errorBox.textContent = '';
+  clearFieldErrors();
+  box.classList.add('has-error');
+  const errEl = form.querySelector(`[data-field-error="${fieldName}"]`);
+  const textEl = errEl?.querySelector('[data-err-text]') || errEl;
+  if (textEl) textEl.textContent = message;
+
+  const inputs = fieldInputs(fieldName);
+  inputs.forEach((input) => input.setAttribute('aria-invalid', 'true'));
+  const focusTarget = fieldName === 'sex'
+    ? (inputs.find((input) => input.checked) || inputs[0])
+    : inputs[0];
+  if (focusTarget instanceof HTMLElement) focusTarget.focus();
+
+  lastRenderPayload = null;
+  selectedResultType = null;
+  renderEmptyChart();
+  setResultState('error');
 }
 
 function setDefaultMeasurementDate() {

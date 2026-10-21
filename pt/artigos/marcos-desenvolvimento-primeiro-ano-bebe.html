@@ -29,7 +29,7 @@
   <meta name="twitter:image" content="https://www.raffyparenting.com/assets/raffy-social-preview.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../styles.css">
   <link rel="stylesheet" href="../../articles/article.css">
   <script type="application/ld+json">
@@ -60,50 +60,95 @@
   </script>
 </head>
 <body data-page-key="article_milestones_year_one" data-locale="pt">
-  <div class="bg-dynamic" aria-hidden="true">
-  <span class="bg-shape s1"></span>
-  <span class="bg-shape s2"></span>
-  <span class="bg-shape s3"></span>
-  <span class="bg-shape s4"></span>
-  <span class="bg-shape s5"></span>
-</div>
-
-  <header>
+  <header class="site-header">
     <div class="container nav">
       <a class="brand" href="../index.html">
         <img decoding="async" loading="eager" class="brand-logo" src="../../assets/raffy-logo.png" alt="Raffy logo" width="500" height="500">
         <span>Raffy</span>
       </a>
-      <nav class="navlinks">
+      <nav class="navlinks" id="site-nav" aria-label="Principal">
         <a href="../index.html">Início</a>
-        <a href="index.html">Artigos</a>
+        <a aria-current="page" href="index.html">Artigos</a>
       </nav>
-      <div class="nav-controls">
+      <div class="nav-end">
         <div class="lang-switch">
-  <label class="sr-only" for="lang-select">Seletor de idioma</label>
-  <select id="lang-select" data-language-selector aria-label="Seletor de idioma">
-    <option value="en">English</option><option value="es">Español</option><option value="fr">Français</option><option value="pt" selected>Português (Brasil)</option>
-  </select>
-</div>
-        <a class="play-store-badge-link play-store-badge-link-sm" href="https://play.google.com/store/apps/details?id=com.gurrulabs.raffy" data-track-download="true" data-page-type="article" data-cta-location="header" data-article-slug="marcos-desenvolvimento-primeiro-ano-bebe" aria-label="Baixar no Google Play"><img decoding="async" loading="lazy" class="play-store-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Disponível no Google Play"></a>
+          <label class="sr-only" for="lang-select">Seletor de idioma</label>
+          <select class="lang" id="lang-select" data-language-selector aria-label="Seletor de idioma">
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+            <option value="pt" selected>Português (Brasil)</option>
+          </select>
+        </div>
+        <a class="btn btn-sm" href="https://play.google.com/store/apps/details?id=com.gurrulabs.raffy" data-track-download="true" data-page-type="article" data-cta-location="header" data-article-slug="marcos-desenvolvimento-primeiro-ano-bebe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3.5v17l14-8.5Z"/></svg>Baixar o app</a>
+        <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-nav"><svg class="ico-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="ico-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
       </div>
     </div>
   </header>
 
-  <main class="article-wrap">
-    <article class="article-card">
-      <span class="chip">Desenvolvimento</span>
-      <h1>O primeiro ano do seu bebê: o ano que muda você para sempre</h1>
-      <p class="excerpt">Ninguém prepara você para o quanto o primeiro ano passa rápido: num dia você aprende a sustentar a cabecinha, no outro ele já tenta ficar em pé.</p>
-      <p>O primeiro ano não é só crescimento. É uma transformação constante do seu bebê... e sua também. Se você está aqui, talvez esteja pensando: está tudo bem? isso é normal? será que ele já deveria fazer aquilo?</p>
+    <main>
+    <header class="article-hero">
+      <div class="container">
+        <div class="inner">
+          <ol class="crumbs"><li><a href="../index.html">Início</a></li><li><a href="index.html">Artigos</a></li><li>O primeiro ano do seu bebê: o ano que muda você para sempre</li></ol>
+          <p class="eyebrow">Desenvolvimento</p>
+          <h1>O primeiro ano do seu bebê: o ano que muda você para sempre</h1>
+          <p class="excerpt">Ninguém prepara você para o quanto o primeiro ano passa rápido: num dia você aprende a sustentar a cabecinha, no outro ele já tenta ficar em pé.</p>
+          <div class="byline">
+            <span class="avatar"><img src="../../assets/raffy-logo.png" alt="" width="26" height="26" decoding="async" loading="lazy"></span>
+            <span>Equipe editorial do Raffy</span><span class="sep"></span>
+            <span data-minutes="3">3 min de leitura</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+
+      <div class="article-layout">
+        <nav class="toc" aria-label="Nesta página">
+          <p class="toc-title">Nesta página</p>
+          <ol>
+            <li><a href="#quando-chegam-ao-mundo-vem-mais">Quando chegam ao mundo: vêm mais preparados do que parece</a></li>
+            <li><a href="#nao-e-so-quando-faz-algo-mas-como-ele">Não é só quando faz algo, mas como ele vive isso</a></li>
+            <li><a href="#a-jornada-trimestre-a-trimestre-sem">A jornada trimestre a trimestre (sem obsessão pelo calendário)</a></li>
+            <li><a href="#o-mais-importante-para-lembrar">O mais importante para lembrar</a></li>
+            <li><a href="#quando-procurar-o-pediatra">Quando procurar o pediatra</a></li>
+            <li><a href="#sua-presenca-e-o-verdadeiro-motor-do">Sua presença é o verdadeiro motor do desenvolvimento</a></li>
+          </ol>
+        </nav>
+
+        <article class="prose">
+          <details class="toc-mobile card">
+            <summary>Nesta página · 6 seções</summary>
+            <ol>
+              <li><a href="#quando-chegam-ao-mundo-vem-mais">Quando chegam ao mundo: vêm mais preparados do que parece</a></li>
+              <li><a href="#nao-e-so-quando-faz-algo-mas-como-ele">Não é só quando faz algo, mas como ele vive isso</a></li>
+              <li><a href="#a-jornada-trimestre-a-trimestre-sem">A jornada trimestre a trimestre (sem obsessão pelo calendário)</a></li>
+              <li><a href="#o-mais-importante-para-lembrar">O mais importante para lembrar</a></li>
+              <li><a href="#quando-procurar-o-pediatra">Quando procurar o pediatra</a></li>
+              <li><a href="#sua-presenca-e-o-verdadeiro-motor-do">Sua presença é o verdadeiro motor do desenvolvimento</a></li>
+            </ol>
+          </details>
+
+          <p>O primeiro ano não é só crescimento. É uma transformação constante do seu bebê... e sua também. Se você está aqui, talvez esteja pensando: está tudo bem? isso é normal? será que ele já deveria fazer aquilo?</p>
       <p>Respire. Vamos falar sobre tudo isso sem pressão.</p>
 
-      <h2>Quando chegam ao mundo: vêm mais preparados do que parece</h2>
+          <h2 id="quando-chegam-ao-mundo-vem-mais">Quando chegam ao mundo: vêm mais preparados do que parece</h2>
       <p>Recém-nascidos parecem frágeis, mas chegam com reflexos poderosos: virar a cabeça ao toque na bochecha, sugar automaticamente e segurar seu dedo com força.</p>
       <p>Até aquele sustinho que assusta no começo é reflexo normal. Muitos movimentos automáticos desaparecem nos primeiros meses, e isso é bom sinal: o cérebro está amadurecendo e assumindo controle voluntário.</p>
       <p>O pediatra observa isso nas consultas, e você também começa a reconhecer esses sinais no dia a dia.</p>
 
-      <h2>Não é só quando faz algo, mas como ele vive isso</h2>
+          <div class="inline-cta">
+            <div class="copy">
+              <h3>Acompanhe tudo no Raffy</h3>
+              <p>Sono, mamadas, crescimento e rotinas em um único app gratuito para Android.</p>
+              <a class="play-store-badge-link play-store-badge-link-sm" href="https://play.google.com/store/apps/details?id=com.gurrulabs.raffy" data-track-download="true" data-page-type="article" data-cta-location="inline-article" data-article-slug="marcos-desenvolvimento-primeiro-ano-bebe" aria-label="Baixar no Google Play"><img decoding="async" loading="lazy" class="play-store-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Disponível no Google Play"></a>
+            </div>
+            <img src="../../assets/growth.webp" alt="" width="120" height="170" loading="lazy" decoding="async">
+          </div>
+
+          <h2 id="nao-e-so-quando-faz-algo-mas-como-ele">Não é só quando faz algo, mas como ele vive isso</h2>
       <p>Desenvolvimento não é lista de tarefas para cumprir. É um processo vivo que avança em várias áreas conectadas:</p>
       <ul>
         <li>Como o bebê se movimenta.</li>
@@ -113,9 +158,9 @@
       </ul>
       <p>Quando ele se sente seguro, explora mais. Quanto mais explora, mais aprende. E quanto mais aprende, mais tenta. Você é a base dele.</p>
 
-      <h2>A jornada trimestre a trimestre (sem obsessão pelo calendário)</h2>
+          <h2 id="a-jornada-trimestre-a-trimestre-sem">A jornada trimestre a trimestre (sem obsessão pelo calendário)</h2>
 
-      <h3>0 a 3 meses: aprender a estar fora do útero</h3>
+          <h3>0 a 3 meses: aprender a estar fora do útero</h3>
       <figure class="milestone-figure">
         <img decoding="async" loading="lazy" src="../../articles/images/hitos-desarrollo-10-12.png" alt="Marcos do bebê de 0 a 3 meses" width="512" height="512">
         <figcaption>Adaptação inicial: sua voz acalma, seu rosto vira referência e o vínculo começa.</figcaption>
@@ -123,7 +168,7 @@
       <p>Os primeiros meses são de adaptação. A visão ainda é borrada, mas o bebê reconhece seu rosto. Sua voz acalma, seu cheiro conforta, e o controle da cabeça começa a aparecer.</p>
       <p>Ele se comunica pelo choro, e você começa a entender os sinais. Perto da sexta semana, costuma aparecer o primeiro sorriso social. Parece pequeno, mas muda tudo.</p>
 
-      <h3>4 a 6 meses: descobrir que pode agir</h3>
+          <h3>4 a 6 meses: descobrir que pode agir</h3>
       <figure class="milestone-figure">
         <img decoding="async" loading="lazy" src="../../articles/images/hitos-desarrollo-0-3.png" alt="Marcos do bebê de 4 a 6 meses" width="512" height="512">
         <figcaption>Rola, pega, balbucia e interage com mais intenção.</figcaption>
@@ -131,7 +176,7 @@
       <p>Aqui o bebê percebe que consegue fazer coisas: rolar, pegar, levar tudo à boca. Não é para desafiar você, é uma forma de explorar.</p>
       <p>Os sons repetidos e as risadas aparecem mais. Rostos familiares viram preferência, e estranhos podem causar reserva.</p>
 
-      <h3>7 a 9 meses: o mundo se expande</h3>
+          <h3>7 a 9 meses: o mundo se expande</h3>
       <figure class="milestone-figure">
         <img decoding="async" loading="lazy" src="../../articles/images/hitos-desarrollo-7-9.png" alt="Marcos do bebê de 7 a 9 meses" width="512" height="512">
         <figcaption>Mais movimento, mais exploração e apego mais evidente.</figcaption>
@@ -139,7 +184,7 @@
       <p>De repente, ele se move por todo lado: senta sozinho, engatinha (ou se arrasta, ou rola), e alguns começam a ficar em pé com apoio.</p>
       <p>Também pode surgir ansiedade de separação. Se chora quando você sai do cômodo, não é manha: é apego saudável. O brinca de esconder encanta porque a noção de permanência começa a se firmar.</p>
 
-      <h3>10 a 12 meses: quase independente</h3>
+          <h3>10 a 12 meses: quase independente</h3>
       <figure class="milestone-figure">
         <img decoding="async" loading="lazy" src="../../articles/images/hitos-desarrollo-4-6.png" alt="Marcos do bebê de 10 a 12 meses" width="512" height="512">
         <figcaption>Fica em pé, aponta, entende comandos simples e interage com intenção.</figcaption>
@@ -147,7 +192,7 @@
       <p>O trecho final do primeiro ano é intenso: ele fica em pé, anda com apoio e talvez dê passos sozinho. Pode apontar para pedir, falar mama ou papa com intenção, e entender pedidos simples.</p>
       <p>Ele já não só reage ao mundo. Começa a interagir com intenção.</p>
 
-      <h2>O mais importante para lembrar</h2>
+          <h2 id="o-mais-importante-para-lembrar">O mais importante para lembrar</h2>
       <ul>
         <li>Nem todo bebê anda com 12 meses.</li>
         <li>Nem todo bebê fala palavras claras antes de um ano.</li>
@@ -155,10 +200,10 @@
       </ul>
       <p>Marcos são janelas amplas, não datas fixas. Alguns observam mais antes de tentar. Outros se lançam cedo.</p>
 
-      <h2>Quando procurar o pediatra</h2>
-      <p>Se uma preocupação persiste, converse com o pediatra. Pedir ajuda também é cuidado.</p>
+          <h2 id="quando-procurar-o-pediatra">Quando procurar o pediatra</h2>
+      <div class="callout safety"><p class="callout-title"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6Z"/><path d="m9 12 2 2 4-4"/></svg></span>Segurança pediátrica</p><p>Se uma preocupação persiste, converse com o pediatra. Pedir ajuda também é cuidado.</p></div>
 
-      <h2>Sua presença é o verdadeiro motor do desenvolvimento</h2>
+          <h2 id="sua-presenca-e-o-verdadeiro-motor-do">Sua presença é o verdadeiro motor do desenvolvimento</h2>
       <p>Mais do que brinquedos sofisticados ou exercícios estruturados, o que mais impulsiona o desenvolvimento é a conexão diária:</p>
       <ul>
         <li>Falar com o bebê.</li>
@@ -169,24 +214,46 @@
       </ul>
       <p>O primeiro ano não é competição. É base de segurança emocional.</p>
       <p>Daqui a alguns anos, você não vai lembrar se ele andou com 11 ou 14 meses. Vai lembrar do cheiro, das risadas e das mãozinhas segurando as suas.</p>
-
-      <div class="download-box">
-        <p>O primeiro ano passa voando. Acompanhe com calma e comemore cada pequena conquista.</p>
-        <a class="play-store-badge-link" href="https://play.google.com/store/apps/details?id=com.gurrulabs.raffy" data-track-download="true" data-page-type="article" data-cta-location="inline" data-article-slug="marcos-desenvolvimento-primeiro-ano-bebe" aria-label="Baixar no Google Play"><img decoding="async" loading="lazy" class="play-store-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Disponível no Google Play"></a>
+        </article>
       </div>
 
-      <section class="related-articles">
-        <h2>Artigos relacionados</h2>
-        <ul>
-        <li><a href="rotina-sono-bebe-por-idade.html">Rotina de sono do bebê por idade: guia prático semanal</a></li>
-          <li><a href="guia-introducao-alimentar-bebe-blw.html">Guia de introdução alimentar do bebê: BLW, papinhas e segurança</a></li>
-          <li><a href="percentis-peso-altura-bebe.html">Percentis de peso e altura do bebê: como entender a curva</a></li>
-        </ul>
+      <section class="cta-section article-cta">
+        <div class="cta-band">
+          <div>
+              <p>O primeiro ano passa voando. Acompanhe com calma e comemore cada pequena conquista.</p>
+          </div>
+          <a class="play-store-badge-link" href="https://play.google.com/store/apps/details?id=com.gurrulabs.raffy" data-track-download="true" data-page-type="article" data-cta-location="inline" data-article-slug="marcos-desenvolvimento-primeiro-ano-bebe" aria-label="Baixar no Google Play"><img decoding="async" loading="lazy" class="play-store-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Disponível no Google Play"></a>
+        </div>
       </section>
-    </article>
+
+      <section class="related related-articles">
+        <div class="section-head-row"><div class="section-head"><h2>Artigos relacionados</h2></div></div>
+        <div class="article-grid">
+          <a class="card a-card" href="rotina-sono-bebe-por-idade.html">
+            <div class="a-thumb fallback t-sky"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg></div>
+            <div class="a-body"><span class="tag sky">Sono do bebê</span><h3>Rotina de sono do bebê por idade: guia prático semanal</h3><div class="a-meta"><span>1 min de leitura</span></div></div>
+          </a>
+          <a class="card a-card" href="guia-introducao-alimentar-bebe-blw.html">
+            <div class="a-thumb fallback t-peach"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 11h16a8 8 0 0 1-16 0ZM12 3v4M8 5l1 2M16 5l-1 2"/></svg></div>
+            <div class="a-body"><span class="tag peach">Alimentação</span><h3>Guia de introdução alimentar do bebê: BLW, papinhas e segurança</h3><div class="a-meta"><span>1 min de leitura</span></div></div>
+          </a>
+          <a class="card a-card" href="percentis-peso-altura-bebe.html">
+            <div class="a-thumb fallback t-mint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 20h18M5 16l4-5 4 3 6-8"/><path d="M15 6h4v4"/></svg></div>
+            <div class="a-body"><span class="tag">Crescimento</span><h3>Percentis de peso e altura do bebê: como entender a curva</h3><div class="a-meta"><span>1 min de leitura</span></div></div>
+          </a>
+        </div>
+      </section>
+    </div>
   </main>
 
-    <footer class="container footer">
+  <div class="sticky-cta" data-sticky="scroll">
+    <img src="../../assets/raffy-logo.png" alt="" width="40" height="40" decoding="async" loading="lazy">
+    <div class="t">Raffy para o bebê<small>Grátis · Android</small></div>
+    <a class="btn btn-sm" href="https://play.google.com/store/apps/details?id=com.gurrulabs.raffy" data-track-download="true" data-page-type="article" data-cta-location="sticky">Baixar o app</a>
+    <button class="x" type="button" aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  </div>
+
+<footer class="container footer">
     <p>© <span id="year"></span> Raffy App</p>
     <nav class="footer-links" aria-label="Páginas de confiança e legais">
       <a href="../sobre.html">Sobre</a>
@@ -200,5 +267,6 @@
 
   <button class="to-top" id="toTop" aria-label="Voltar ao topo">↑</button>
   <script src="../../script.js"></script>
+  <script src="../../articles/article.js" defer></script>
 </body>
 </html>

@@ -82,10 +82,10 @@ const footerLabels = {
 };
 
 const preloadMap = {
-  en: "../assets/portada.webp",
-  es: "../assets/portada_es.webp",
-  fr: "../assets/portada.webp",
-  pt: "../assets/portada.webp"
+  en: "../assets/feeding.webp",
+  es: "../assets/feeding.webp",
+  fr: "../assets/feeding.webp",
+  pt: "../assets/feeding.webp"
 };
 
 let touched = 0;
