@@ -90,95 +90,141 @@
     </div>
   </header>
 
-  <main class="tool-wrap" id="top">
-    <section class="tool-grid">
-      <article class="tool-card">
-        <p class="kicker"><span class="dot"></span> Padroes OMS</p>
-        <h1>Calculadora OMS de percentis do bebe</h1>
-        <p class="tool-sub">Calcule percentis OMS com uma ou mais medidas: peso, altura/comprimento e perimetro cefalico.</p>
+  <main id="top">
+    <header class="tool-hero has-overlap">
+      <div class="container">
+        <div class="inner">
+          <ol class="crumbs"><li><a href="../index.html">Início</a></li><li><a href="index.html">Ferramentas</a></li><li>Calculadora OMS de percentis do bebe</li></ol>
+          <p class="eyebrow">Padroes OMS</p>
+          <h1>Calculadora OMS de <em>percentis</em> do bebe</h1>
+          <p class="sub tool-sub">Calcule percentis OMS com uma ou mais medidas: peso, altura/comprimento e perimetro cefalico.</p>
+          <ul class="trust">
+            <li><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12 4.5 4.5L19 7"/></svg></span>Padrões de crescimento infantil da OMS</li>
+            <li><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12 4.5 4.5L19 7"/></svg></span>Grátis</li>
+            <li><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12 4.5 4.5L19 7"/></svg></span>Sem cadastro</li>
+          </ul>
+          <p class="hero-applink"><a href="https://play.google.com/store/apps/details?id=com.gurrulabs.raffy" data-track-download="true" data-page-type="tool" data-cta-location="hero"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3.5v17l14-8.5Z"/></svg></span>Prefere acompanhar automaticamente? Baixe o Raffy no Google Play</a></p>
+        </div>
+      </div>
+    </header>
 
-        <form class="tool-form" data-percentile-form novalidate>
-          <div class="field-row">
-            <div class="field">
-              <label for="sex">Sexo</label>
-              <select id="sex" name="sex" required>
-                <option value=""></option>
-                <option value="female">Menina</option>
-                <option value="male">Menino</option>
-              </select>
-            </div>
-            <div class="field">
+    <div class="container">
+      <section class="gtool" aria-label="Calculadora de percentis de crescimento">
+        <form class="pane" data-percentile-form novalidate>
+          <h2>Seu bebê</h2>
+          <div class="field field-sex" data-field="sex">
+            <fieldset class="seg" aria-describedby="sex-err">
+              <legend>Sexo</legend>
+              <label><input id="sex" type="radio" name="sex" value="female" required><span>Menina</span></label>
+              <label><input type="radio" name="sex" value="male"><span>Menino</span></label>
+            </fieldset>
+            <p class="err" id="sex-err" data-field-error="sex"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3 2 20h20Z"/><path d="M12 10v4M12 17h.01"/></svg></span><span data-err-text></span></p>
+          </div>
+          <div class="row2">
+            <div class="field" data-field="birth_date">
               <label for="birth_date">Data de nascimento</label>
-              <input id="birth_date" name="birth_date" type="date" required>
+              <input class="input" id="birth_date" name="birth_date" type="date" required aria-describedby="birth_date-err">
+              <p class="err" id="birth_date-err" data-field-error="birth_date"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3 2 20h20Z"/><path d="M12 10v4M12 17h.01"/></svg></span><span data-err-text></span></p>
+            </div>
+            <div class="field" data-field="measurement_date">
+              <label for="measurement_date">Data da medicao</label>
+              <input class="input" id="measurement_date" name="measurement_date" type="date" required aria-describedby="measurement_date-err">
+              <p class="err" id="measurement_date-err" data-field-error="measurement_date"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3 2 20h20Z"/><path d="M12 10v4M12 17h.01"/></svg></span><span data-err-text></span></p>
             </div>
           </div>
 
-          <div class="field">
-            <label for="measurement_date">Data da medicao</label>
-            <input id="measurement_date" name="measurement_date" type="date" required>
-          </div>
+          <label class="check"><input data-corrected-toggle type="checkbox" name="use_corrected_age" value="1">Usar idade corrigida (prematuridade)</label>
 
-          <div class="field">
-            <label>
-              <input data-corrected-toggle type="checkbox" name="use_corrected_age" value="1">
-              Usar idade corrigida (prematuridade)
-            </label>
-          </div>
-
-          <div class="field is-hidden" data-corrected-group aria-hidden="true">
+          <div class="field is-hidden" data-corrected-group data-field="gestational_weeks" aria-hidden="true">
             <label for="gestational_weeks">Idade gestacional ao nascer (semanas)</label>
-            <input id="gestational_weeks" name="gestational_weeks" type="number" min="22" max="40" step="0.1" placeholder="40">
+            <input class="input" id="gestational_weeks" name="gestational_weeks" type="number" min="22" max="40" step="0.1" placeholder="40" inputmode="decimal" aria-describedby="gestational_weeks-err">
+            <p class="err" id="gestational_weeks-err" data-field-error="gestational_weeks"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3 2 20h20Z"/><path d="M12 10v4M12 17h.01"/></svg></span><span data-err-text></span></p>
           </div>
 
-          <fieldset class="fieldset">
+          <fieldset class="fieldset meas-fieldset" data-field="measurements" aria-describedby="measurements-err">
             <legend>Medicao (preencha uma ou mais)</legend>
-            <div class="field">
-              <label for="weight_kg">Peso (kg)</label>
-              <input id="weight_kg" name="weight_kg" type="number" min="0.5" max="35" step="0.01" inputmode="decimal">
+            <div class="meas">
+              <div class="field" data-field="weight_kg">
+                <label for="weight_kg"><span data-label-name>Peso</span><span class="sr-only" data-label-unit> (kg)</span></label>
+                <div class="input-wrap"><input class="input" id="weight_kg" name="weight_kg" type="number" min="0.5" max="35" step="0.01" inputmode="decimal" aria-describedby="weight_kg-err"><span class="unit" data-unit-for="weight_kg" aria-hidden="true">kg</span></div>
+                <p class="err" id="weight_kg-err" data-field-error="weight_kg"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3 2 20h20Z"/><path d="M12 10v4M12 17h.01"/></svg></span><span data-err-text></span></p>
+              </div>
+              <div class="field" data-field="length_height_cm">
+                <label for="length_height_cm"><span data-label-name>Comprimento/Altura</span><span class="sr-only" data-label-unit> (cm)</span></label>
+                <div class="input-wrap"><input class="input" id="length_height_cm" name="length_height_cm" type="number" min="30" max="130" step="0.1" inputmode="decimal" aria-describedby="length_height_cm-err"><span class="unit" data-unit-for="length_height_cm" aria-hidden="true">cm</span></div>
+                <p class="err" id="length_height_cm-err" data-field-error="length_height_cm"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3 2 20h20Z"/><path d="M12 10v4M12 17h.01"/></svg></span><span data-err-text></span></p>
+              </div>
+              <div class="field" data-field="head_circumference_cm">
+                <label for="head_circumference_cm"><span data-label-name>Perimetro cefalico</span><span class="sr-only" data-label-unit> (cm)</span></label>
+                <div class="input-wrap"><input class="input" id="head_circumference_cm" name="head_circumference_cm" type="number" min="20" max="65" step="0.1" inputmode="decimal" aria-describedby="head_circumference_cm-err"><span class="unit" data-unit-for="head_circumference_cm" aria-hidden="true">cm</span></div>
+                <p class="err" id="head_circumference_cm-err" data-field-error="head_circumference_cm"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3 2 20h20Z"/><path d="M12 10v4M12 17h.01"/></svg></span><span data-err-text></span></p>
+              </div>
             </div>
-            <div class="field">
-              <label for="length_height_cm">Comprimento/Altura (cm)</label>
-              <input id="length_height_cm" name="length_height_cm" type="number" min="30" max="130" step="0.1" inputmode="decimal">
-            </div>
-            <div class="field">
-              <label for="head_circumference_cm">Perimetro cefalico (cm)</label>
-              <input id="head_circumference_cm" name="head_circumference_cm" type="number" min="20" max="65" step="0.1" inputmode="decimal">
-            </div>
-            <p class="help-text">Voce pode informar uma, duas ou as tres medidas.</p>
+            <p class="help help-text">Voce pode informar uma, duas ou as tres medidas.</p>
+            <p class="err" id="measurements-err" data-field-error="measurements"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3 2 20h20Z"/><path d="M12 10v4M12 17h.01"/></svg></span><span data-err-text></span></p>
           </fieldset>
 
-          <div class="tool-actions">
-            <button class="btn" type="submit">Calcular percentil</button>
-            <button class="btn btn-ghost" type="reset">Limpar</button>
+          <div class="actions">
+            <button class="btn btn-lg" type="submit">Calcular percentil</button>
+            <button class="btn btn-text" type="reset">Limpar</button>
           </div>
           <p class="feedback error" role="alert" data-form-error></p>
         </form>
-      </article>
 
-      <article class="tool-card" data-results-card>
-        <h2>Resultado</h2>
-        <div class="results-head">
-          <p data-result-metric></p>
-          <p data-result-age></p>
+        <div class="pane res" data-results-card>
+          <h2>Resultado</h2>
+          <div class="res-states" aria-live="polite">
+            <div class="res-empty" data-state-empty>
+              <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 20h18M5 16l4-5 4 3 6-8"/><path d="M15 6h4v4"/></svg></div>
+              <h3>Seu resultado aparece aqui</h3>
+              <p>Informe os dados do seu bebê e pelo menos uma medida, depois toque em Calcular percentil para ver onde ele está na curva da OMS.</p>
+            </div>
+            <div class="res-empty is-error" data-state-error hidden>
+              <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3 2 20h20Z"/><path d="M12 10v4M12 17h.01"/></svg></div>
+              <h3>Confira o campo destacado</h3>
+              <p>Corrija o campo destacado e toque em Calcular percentil de novo.</p>
+            </div>
+            <div class="res-summary" data-state-result tabindex="-1" hidden>
+              <p class="res-meta" data-result-metric></p>
+              <p class="res-meta res-age" data-result-age></p>
+              <div class="res-top">
+                <p class="big" data-result-percentile></p>
+                <p class="big-text" data-result-sentence></p>
+              </div>
+              <p class="res-range" data-result-range hidden></p>
+            </div>
+          </div>
+          <div class="mtabs" data-result-tabs hidden></div>
+          <div class="chart-wrap" id="growth-chart-panel" data-chart-wrap></div>
+          <div data-result-extra hidden>
+            <p class="res-note"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg></span>Apenas informativo. Uma única medição não é um diagnóstico; a tendência ao longo do tempo importa mais. Converse com o pediatra se algo preocupar você.</p>
+            <div class="app-card">
+              <img src="../../assets/growth.webp" alt="Tela de gráfico de crescimento do Raffy" width="1080" height="1920" loading="lazy" decoding="async">
+              <div class="copy"><b>Acompanhe isso ao longo do tempo no Raffy</b><span>Salve cada medição e veja a curva crescer.</span><a class="play-store-badge-link play-store-badge-link-sm" href="https://play.google.com/store/apps/details?id=com.gurrulabs.raffy" data-track-download="true" data-page-type="tool" data-cta-location="tool-result" aria-label="Baixar no Google Play"><img decoding="async" loading="lazy" class="play-store-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Disponível no Google Play"></a></div>
+            </div>
+          </div>
         </div>
-        <div class="results-kpi">
-          <p class="kpi" data-result-percentile></p>
-        </div>
-        <div data-chart-wrap></div>
-        <div class="result-note-list" data-result-note></div>
-      </article>
-    </section>
+      </section>
 
-    <section class="section" id="download">
-      <article class="section-card cta">
-        <div>
-          <h2>Precisa de um app completo para acompanhar o bebe?</h2>
-          <p>Raffy conecta curvas de crescimento, alimentacao, sono e notas medicas em um so lugar.</p>
+      <section class="cta-section" id="download">
+        <div class="cta-band has-shot">
+          <div class="copy">
+            <h2>Precisa de um app completo <em>para acompanhar o bebe?</em></h2>
+            <p>Raffy conecta curvas de crescimento, alimentacao, sono e notas medicas em um so lugar.</p>
+            <a class="play-store-badge-link" href="https://play.google.com/store/apps/details?id=com.gurrulabs.raffy" data-track-download="true" data-page-type="tool" data-cta-location="footer-cta" aria-label="Baixar Raffy no Google Play"><img decoding="async" loading="lazy" class="play-store-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Disponivel no Google Play"></a>
+          </div>
+          <div class="cta-shot"><img src="../../assets/growth.webp" alt="Tela de gráfico de crescimento do Raffy" width="1080" height="1920" loading="lazy" decoding="async"></div>
         </div>
-        <a class="play-store-badge-link" href="https://play.google.com/store/apps/details?id=com.gurrulabs.raffy" data-track-download="true" data-page-type="tool" data-cta-location="footer-cta" aria-label="Baixar Raffy no Google Play"><img decoding="async" loading="lazy" class="play-store-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Disponivel no Google Play"></a>
-      </article>
-    </section>
+      </section>
+    </div>
   </main>
+
+  <div class="sticky-cta">
+    <img src="../../assets/raffy-logo.png" alt="" width="40" height="40" decoding="async" loading="lazy">
+    <div class="t">Raffy para o bebê<small>Crescimento, alimentação e sono em um só app</small></div>
+    <a class="btn btn-sm" href="https://play.google.com/store/apps/details?id=com.gurrulabs.raffy" data-track-download="true" data-page-type="tool" data-cta-location="sticky">Baixar o app</a>
+    <button class="x" type="button" aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  </div>
 
     <footer class="container footer">
     <p>© <span id="year"></span> Raffy App</p>

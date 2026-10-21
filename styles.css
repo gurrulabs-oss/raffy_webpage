@@ -477,7 +477,7 @@ body.state-empty .sticky-cta, body.state-error .sticky-cta { display: none !impo
 .check input { width: 22px; height: 22px; margin: 0; accent-color: var(--mint-700); flex: none; }
 .meas { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 18px; padding-top: 22px; border-top: 1px dashed rgba(29, 47, 111, .3); }
 .help { font-size: var(--fs-xs); color: var(--ink-3); margin-top: 10px; }
-.actions { display: flex; gap: 16px; align-items: center; margin-top: 26px; }
+.actions { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin-top: 26px; }
 .actions .btn { min-height: 56px; }
 .actions .btn:not(.btn-text) { flex: 1 1 auto; white-space: nowrap; }
 .actions .btn-text { flex: none; }
@@ -658,7 +658,7 @@ body.state-empty .sticky-cta, body.state-error .sticky-cta { display: none !impo
   .toc { display: none; }
   .toc-mobile { display: block; margin-bottom: var(--s6); }
   .tool-layout { grid-template-columns: 1fr; }
-  .gtool { grid-template-columns: 1fr; }
+  .gtool { grid-template-columns: minmax(0, 1fr); }
   .pane.res { border-top: 1px solid var(--blue); }
   .cta-band.has-shot { grid-template-columns: 1fr; }
   .cta-band.has-shot .copy { padding-bottom: 0; }
@@ -729,7 +729,8 @@ body.state-empty .sticky-cta, body.state-error .sticky-cta { display: none !impo
   .big sup { font-size: 24px; margin-top: 8px; }
   .res-top { gap: 14px; }
   .big-text { font-size: var(--fs-sm); }
-  .mtabs button { flex-direction: column; gap: 0; padding: 8px 10px; }
+  .mtabs button { flex-direction: column; gap: 0; padding: 8px 6px; }
+  .mtabs small { overflow-wrap: anywhere; }
   .chart-card { padding: 12px 8px 10px; }
   .res-cta { flex-wrap: wrap; }
   .res-empty h3 { font-size: 1.5rem; }
