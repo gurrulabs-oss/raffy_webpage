@@ -934,3 +934,38 @@ body[data-page-key="home"] #articles .article-grid > .article-card:nth-child(n +
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
 }
+
+/* =====================================================================
+   T-010 S3: home, tools hub and cluster-tool pages (additive; Part 1 above is untouched).
+   ===================================================================== */
+
+/* Production Google badge (<a class="play-store-badge-link">) on soft blue and white-card surfaces:
+   same treatment as the .gp-badge alias above. */
+.cta-band .play-store-badge-link { box-shadow: 0 0 0 1.5px rgba(255, 255, 255, .7); }
+.cta-band .copy .play-store-badge-link { margin-top: var(--s5); }
+.pane.res .app-card .play-store-badge-link { box-shadow: none; }
+.app-card .play-store-badge-link-sm .play-store-badge { width: 150px; }
+.cta-shot img { height: auto; }
+
+/* Home hero: the existing intro line sits between the H1 and the lead paragraph */
+.hero .intro-line { margin: var(--s4) 0 0; font-size: 1.1875rem; font-weight: 700; color: var(--ink); line-height: 1.4; max-width: 36ch; }
+.hero .intro-line + .lead { margin-top: var(--s2); }
+.hero .hero-cta .play-store-badge-link { box-shadow: 0 6px 18px -8px rgba(29, 47, 111, .45); }
+.hero .hero-cta .play-store-badge { width: 190px; }
+.hero + #what { padding-block: var(--s8) 0; }
+.hero + #what .section-head { margin-bottom: 0; max-width: 760px; }
+.hero + #what + #features { padding-top: var(--s7); }
+
+/* Home: only the first row of guides is visible; the rest stays in the HTML for crawlers and the library link */
+#articles .article-grid > .a-card:nth-child(n + 4) { display: none; }
+#articles .a-meta span { color: var(--mint-700); font-size: var(--fs-sm); font-weight: 800; }
+.a-card:hover .a-meta span { text-decoration: underline; text-underline-offset: 3px; }
+.band .tool-tile .go span[aria-hidden] { margin-left: 2px; }
+.tool-tile.is-blue .tag { background: #fff; color: var(--ink); margin-bottom: var(--s2); }
+
+@media (max-width: 980px) {
+  .hero + #what { padding-top: var(--s7); }
+}
+/* Tool pages: the app screenshot only "rises" into the band instead of stretching it */
+.cta-band.has-shot .cta-shot { max-height: 360px; overflow: hidden; }
+@media (max-width: 720px) { .cta-band.has-shot .cta-shot { max-height: 280px; } }
