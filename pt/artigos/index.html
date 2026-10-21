@@ -29,10 +29,9 @@
   <meta name="twitter:image" content="https://www.raffyparenting.com/assets/raffy-social-preview.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="../../assets/raffy-logo.png">
   <link rel="stylesheet" href="../../styles.css">
-  <link rel="stylesheet" href="../../articles/article.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -78,122 +77,66 @@
   </script>
 </head>
 <body data-page-key="library" data-locale="pt">
-  <header class="site-header">
+  <div class="bg-dynamic" aria-hidden="true">
+  <span class="bg-shape s1"></span>
+  <span class="bg-shape s2"></span>
+  <span class="bg-shape s3"></span>
+  <span class="bg-shape s4"></span>
+  <span class="bg-shape s5"></span>
+</div>
+
+  <header>
     <div class="container nav">
       <a class="brand" href="../index.html">
         <img decoding="async" loading="eager" class="brand-logo" src="../../assets/raffy-logo.png" alt="Raffy logo" width="500" height="500">
         <span>Raffy</span>
       </a>
-      <nav class="navlinks" id="site-nav" aria-label="Principal">
+      <nav class="navlinks">
         <a href="../index.html">Início</a>
-        <a aria-current="page" href="index.html">Artigos</a>
+        <a href="index.html">Artigos</a>
         <a href="../ferramentas/index.html">Ferramentas</a>
       </nav>
-      <div class="nav-end">
+      <div class="nav-controls">
         <div class="lang-switch">
-          <label class="sr-only" for="lang-select">Seletor de idioma</label>
-          <select class="lang" id="lang-select" data-language-selector aria-label="Seletor de idioma">
-            <option value="en">English</option>
-            <option value="es">Español</option>
-            <option value="fr">Français</option>
-            <option value="pt" selected>Português (Brasil)</option>
-          </select>
-        </div>
-        <a class="btn btn-sm" href="https://play.google.com/store/apps/details?id=com.gurrulabs.raffy" data-track-download="true" data-page-type="library" data-cta-location="header"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3.5v17l14-8.5Z"/></svg>Baixar o app</a>
-        <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-nav"><svg class="ico-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="ico-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  <label class="sr-only" for="lang-select">Seletor de idioma</label>
+  <select id="lang-select" data-language-selector aria-label="Seletor de idioma">
+    <option value="en">English</option><option value="es">Español</option><option value="fr">Français</option><option value="pt" selected>Português (Brasil)</option>
+  </select>
+</div>
+        <a class="play-store-badge-link play-store-badge-link-sm" href="https://play.google.com/store/apps/details?id=com.gurrulabs.raffy" data-track-download="true" data-page-type="library" data-cta-location="header" aria-label="Baixar no Google Play"><img decoding="async" loading="lazy" class="play-store-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Disponível no Google Play"></a>
       </div>
     </div>
   </header>
 
-    <main>
-    <header class="article-hero">
-      <div class="container">
-        <div class="inner">
-          <ol class="crumbs"><li><a href="../index.html">Início</a></li><li>Artigos</li></ol>
-          <p class="eyebrow">Biblioteca de conteúdo Raffy</p>
-          <h1>Guias para tomar decisões com mais confiança todos os dias</h1>
-          <p class="excerpt">Artigos práticos com fluxos Android para acompanhar sono, alimentação, crescimento e desenvolvimento infantil.</p>
-        </div>
-      </div>
-    </header>
+  <main>
+    <section class="container section">
+      <article class="intro-copy">
+        <p class="kicker"><span class="dot"></span>Biblioteca de conteúdo Raffy</p>
+        <h1>Guias para tomar decisões com mais confiança todos os dias</h1>
+        <p class="lead">Artigos práticos com fluxos Android para acompanhar sono, alimentação, crescimento e desenvolvimento infantil.</p>
+      </article>
+    </section>
 
-    <div class="container library">
-      <div class="section-head">
+    <section class="container section">
+      <article class="section-card">
         <h2>Todos os artigos disponíveis</h2>
-        <p>Uma biblioteca direta ao ponto, com orientação aplicável no dia a dia.</p>
-      </div>
-
-      <div class="chips" role="group" aria-label="Filtrar por tema" data-filter>
-        <button class="chip" type="button" aria-pressed="true" data-filter-value="all">Todos · 9</button>
-        <button class="chip" type="button" aria-pressed="false" data-filter-value="sleep">Sono</button>
-        <button class="chip" type="button" aria-pressed="false" data-filter-value="feeding">Alimentação</button>
-        <button class="chip" type="button" aria-pressed="false" data-filter-value="growth">Crescimento e desenvolvimento</button>
-        <button class="chip" type="button" aria-pressed="false" data-filter-value="health">Saúde</button>
-        <button class="chip" type="button" aria-pressed="false" data-filter-value="family">Família e app</button>
-      </div>
-
-      <div class="app-banner">
-        <img src="../../assets/raffy-logo.png" alt="" width="44" height="44" decoding="async" loading="lazy">
-        <p class="t">Raffy para o bebê<small>Crescimento, alimentação e sono em um só app</small></p>
-        <a class="play-store-badge-link play-store-badge-link-sm" href="https://play.google.com/store/apps/details?id=com.gurrulabs.raffy" data-track-download="true" data-page-type="library" data-cta-location="library-banner" aria-label="Baixar no Google Play"><img decoding="async" loading="lazy" class="play-store-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Disponível no Google Play"></a>
-      </div>
-
-      <div class="article-grid">
-          <article class="card a-card featured" data-topic="growth">
-            <div class="a-thumb"><img decoding="async" loading="lazy" src="../../articles/images/hitos-desarrollo-4-6.png" alt="Imagem de capa do artigo sobre o primeiro ano do bebê"></div>
-            <div class="a-body"><span class="tag">Desenvolvimento</span><h3>O primeiro ano do seu bebê: o ano que muda você para sempre</h3><p>Um guia acolhedor, trimestre a trimestre, para apoiar o desenvolvimento do bebê sem pressão.</p><div class="a-meta"><span>3 min de leitura</span><a href="marcos-desenvolvimento-primeiro-ano-bebe.html" class="article-link">Ler artigo</a></div></div>
-          </article>
-          <article class="card a-card" data-topic="feeding">
-            <div class="a-thumb"><img decoding="async" loading="lazy" src="../../articles/menu_9_months/cover_article_menu_9_months.png" alt="Imagem de capa do cardápio semanal para bebê de 9 meses"></div>
-            <div class="a-body"><span class="tag peach">Cardápio 9 meses</span><h3>Cardápio semanal para bebê de 9 meses: plano completo de 7 dias</h3><p>Um plano semanal de 7 dias para bebê de 9 meses com refeições, calorias aproximadas e orientações de segurança.</p><div class="a-meta"><span>3 min de leitura</span><a href="cardapio-semanal-bebe-9-meses.html" class="article-link">Ler artigo</a></div></div>
-          </article>
-          <article class="card a-card" data-topic="health">
-            <div class="a-thumb"><img decoding="async" loading="lazy" src="../../articles/images/vaccine.png" alt="Imagem de capa do artigo sobre a primeira vacina do bebê"></div>
-            <div class="a-body"><span class="tag sun">Vacinas</span><h3>A primeira vacina do meu bebê: o que senti e o que aprendi</h3><p>Um relato real do primeiro dia de vacina: dúvidas, evidências e mais tranquilidade depois.</p><div class="a-meta"><span>3 min de leitura</span><a href="primeira-vacina-bebe-o-que-aprendi.html" class="article-link">Ler artigo</a></div></div>
-          </article>
-          <article class="card a-card" data-topic="sleep">
-            <div class="a-thumb fallback t-sky"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg></div>
-            <div class="a-body"><span class="tag sky">Sono do bebê</span><h3>Rotina de sono do bebê por idade: guia prático semanal</h3><p>Monte uma rotina de sono do bebê por idade com janelas de sono, sonecas e horário noturno mais estável.</p><div class="a-meta"><span>1 min de leitura</span><a href="rotina-sono-bebe-por-idade.html" class="article-link">Ler artigo</a></div></div>
-          </article>
-          <article class="card a-card" data-topic="feeding">
-            <div class="a-thumb fallback t-peach"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 11h16a8 8 0 0 1-16 0ZM12 3v4M8 5l1 2M16 5l-1 2"/></svg></div>
-            <div class="a-body"><span class="tag peach">Alimentação</span><h3>Guia de introdução alimentar do bebê: BLW, papinhas e segurança</h3><p>Guia prático de introdução alimentar com BLW e papinhas, formatos seguros e planejamento inicial.</p><div class="a-meta"><span>1 min de leitura</span><a href="guia-introducao-alimentar-bebe-blw.html" class="article-link">Ler artigo</a></div></div>
-          </article>
-          <article class="card a-card" data-topic="growth">
-            <div class="a-thumb fallback t-mint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 20h18M5 16l4-5 4 3 6-8"/><path d="M15 6h4v4"/></svg></div>
-            <div class="a-body"><span class="tag">Crescimento</span><h3>Percentis de peso e altura do bebê: como entender a curva</h3><p>Entenda percentis de peso e altura do bebê e saiba quando procurar avaliação pediátrica.</p><div class="a-meta"><span>1 min de leitura</span><a href="percentis-peso-altura-bebe.html" class="article-link">Ler artigo</a></div></div>
-          </article>
-          <article class="card a-card" data-topic="sleep">
-            <div class="a-thumb fallback t-mint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/></svg></div>
-            <div class="a-body"><span class="tag">Recém-nascido</span><h3>Rotina diária do recém-nascido que funciona de verdade</h3><p>Organize a rotina do recém-nascido para mamadas, sono e cuidados sem horários rígidos.</p><div class="a-meta"><span>1 min de leitura</span><a href="rotina-diaria-recem-nascido.html" class="article-link">Ler artigo</a></div></div>
-          </article>
-          <article class="card a-card" data-topic="family">
-            <div class="a-thumb fallback t-sun"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 3 2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.5 6.7 19.4l1.2-6L3.4 9.3l6-.7Z"/></svg></div>
-            <div class="a-body"><span class="tag sun">Parentalidade</span><h3>Criar com confiança e menos culpa: guia prático</h3><p>Estratégias para reduzir carga mental, alinhar cuidadores e criar com mais confiança no dia a dia.</p><div class="a-meta"><span>1 min de leitura</span><a href="criar-com-confianca-sem-culpa.html" class="article-link">Ler artigo</a></div></div>
-          </article>
-          <article class="card a-card" data-topic="family">
-            <div class="a-thumb fallback t-mint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3.5v17l14-8.5Z"/></svg></div>
-            <div class="a-body"><span class="tag">Fluxo Android</span><h3>Melhor app Android para acompanhamento do bebê</h3><p>Combine ferramentas web com o Raffy para rotina diária, lembretes e histórico contínuo.</p><div class="a-meta"><span>1 min de leitura</span><a href="app-android-acompanhamento-bebe-guia.html" class="article-link">Ler artigo</a></div></div>
-          </article>
-      </div>
-
-      <section class="cta-section">
-        <div class="cta-band">
-          <div><h2>Transforme os guias em uma <em>rotina</em> diária</h2><p>Baixe o Raffy no Google Play e comece a organizar rotinas em minutos.</p></div>
-          <a class="play-store-badge-link" href="https://play.google.com/store/apps/details?id=com.gurrulabs.raffy" data-track-download="true" data-page-type="library" data-cta-location="footer-band" aria-label="Baixar no Google Play"><img decoding="async" loading="lazy" class="play-store-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Disponível no Google Play"></a>
+        <p class="article-intro">Uma biblioteca direta ao ponto, com orientação aplicável no dia a dia.</p>
+        <div class="article-grid">
+          <article class="article-card reveal"><img decoding="async" loading="lazy" class="article-card-thumb" src="../../articles/images/hitos-desarrollo-4-6.png" alt="Imagem de capa do artigo sobre o primeiro ano do bebê"><p class="article-tag">Desenvolvimento</p><h3>O primeiro ano do seu bebê: o ano que muda você para sempre</h3><p>Um guia acolhedor, trimestre a trimestre, para apoiar o desenvolvimento do bebê sem pressão.</p><a href="marcos-desenvolvimento-primeiro-ano-bebe.html" class="article-link">Ler artigo</a></article>
+          <article class="article-card reveal"><img decoding="async" loading="lazy" class="article-card-thumb" src="../../articles/menu_9_months/cover_article_menu_9_months.png" alt="Imagem de capa do cardápio semanal para bebê de 9 meses"><p class="article-tag">Cardápio 9 meses</p><h3>Cardápio semanal para bebê de 9 meses: plano completo de 7 dias</h3><p>Um plano semanal de 7 dias para bebê de 9 meses com refeições, calorias aproximadas e orientações de segurança.</p><a href="cardapio-semanal-bebe-9-meses.html" class="article-link">Ler artigo</a></article>
+          <article class="article-card reveal"><img decoding="async" loading="lazy" class="article-card-thumb" src="../../articles/images/vaccine.png" alt="Imagem de capa do artigo sobre a primeira vacina do bebê"><p class="article-tag">Vacinas</p><h3>A primeira vacina do meu bebê: o que senti e o que aprendi</h3><p>Um relato real do primeiro dia de vacina: dúvidas, evidências e mais tranquilidade depois.</p><a href="primeira-vacina-bebe-o-que-aprendi.html" class="article-link">Ler artigo</a></article>
+          <article class="article-card reveal"><p class="article-tag">Sono do bebê</p><h3>Rotina de sono do bebê por idade: guia prático semanal</h3><p>Monte uma rotina de sono do bebê por idade com janelas de sono, sonecas e horário noturno mais estável.</p><a href="rotina-sono-bebe-por-idade.html" class="article-link">Ler artigo</a></article>
+          <article class="article-card reveal"><p class="article-tag">Alimentação</p><h3>Guia de introdução alimentar do bebê: BLW, papinhas e segurança</h3><p>Guia prático de introdução alimentar com BLW e papinhas, formatos seguros e planejamento inicial.</p><a href="guia-introducao-alimentar-bebe-blw.html" class="article-link">Ler artigo</a></article>
+          <article class="article-card reveal"><p class="article-tag">Crescimento</p><h3>Percentis de peso e altura do bebê: como entender a curva</h3><p>Entenda percentis de peso e altura do bebê e saiba quando procurar avaliação pediátrica.</p><a href="percentis-peso-altura-bebe.html" class="article-link">Ler artigo</a></article>
+          <article class="article-card reveal"><p class="article-tag">Recém-nascido</p><h3>Rotina diária do recém-nascido que funciona de verdade</h3><p>Organize a rotina do recém-nascido para mamadas, sono e cuidados sem horários rígidos.</p><a href="rotina-diaria-recem-nascido.html" class="article-link">Ler artigo</a></article>
+          <article class="article-card reveal"><p class="article-tag">Parentalidade</p><h3>Criar com confiança e menos culpa: guia prático</h3><p>Estratégias para reduzir carga mental, alinhar cuidadores e criar com mais confiança no dia a dia.</p><a href="criar-com-confianca-sem-culpa.html" class="article-link">Ler artigo</a></article>
+          <article class="article-card reveal"><p class="article-tag">Fluxo Android</p><h3>Melhor app Android para acompanhamento do bebê</h3><p>Combine ferramentas web com o Raffy para rotina diária, lembretes e histórico contínuo.</p><a href="app-android-acompanhamento-bebe-guia.html" class="article-link">Ler artigo</a></article>
         </div>
-      </section>
-    </div>
+      </article>
+    </section>
   </main>
 
-  <div class="sticky-cta" data-sticky="scroll">
-    <img src="../../assets/raffy-logo.png" alt="" width="40" height="40" decoding="async" loading="lazy">
-    <div class="t">Raffy para o bebê<small>Grátis · Android</small></div>
-    <a class="btn btn-sm" href="https://play.google.com/store/apps/details?id=com.gurrulabs.raffy" data-track-download="true" data-page-type="library" data-cta-location="sticky">Baixar o app</a>
-    <button class="x" type="button" aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
-  </div>
-
-<footer class="container footer">
+    <footer class="container footer">
     <p>© <span id="year"></span> Raffy App</p>
     <nav class="footer-links" aria-label="Páginas de confiança e legais">
       <a href="../sobre.html">Sobre</a>
@@ -207,6 +150,5 @@
 
   <button class="to-top" id="toTop" aria-label="Voltar ao topo">↑</button>
   <script src="../../script.js"></script>
-  <script src="../../articles/article.js" defer></script>
 </body>
 </html>
