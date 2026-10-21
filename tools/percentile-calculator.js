@@ -1350,6 +1350,9 @@ function fieldInputs(fieldName) {
   }
   if (fieldName === 'sex') return [...form.querySelectorAll('input[name="sex"]')];
   const el = form.elements.namedItem(fieldName);
+  // Date fields enhanced by tools/date-picker.js: the ISO value is a hidden input; errors go on the visible text field
+  const display = el instanceof HTMLElement && el.dataset.dateDisplay ? document.getElementById(el.dataset.dateDisplay) : null;
+  if (display) return [display];
   return el instanceof Element ? [el] : [];
 }
 
@@ -1620,4 +1623,6 @@ function setDefaultMeasurementDate() {
   const now = new Date();
   const local = new Date(now.getTime() - now.getTimezoneOffset() * 60000);
   measurementDateField.value = local.toISOString().slice(0, 10);
+  // Lets tools/date-picker.js show the new value in its visible field
+  measurementDateField.dispatchEvent(new Event('change', { bubbles: true }));
 }

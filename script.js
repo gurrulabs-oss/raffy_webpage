@@ -583,6 +583,177 @@ function handleLanguageSelector() {
 
 handleLanguageSelector();
 
+// Official Google Play logo (multicolour triangle), injected into the header and sticky-bar "Get the app"
+// buttons so every page (including legal pages whose markup we do not touch) gets the same navy Play button.
+const GP_LOGO_SVG = '<svg class="gp-logo" viewBox="30 336.7 120.9 129.2" aria-hidden="true" focusable="false">'
+  + '<path fill="#FFD400" d="M119.2,421.2c15.3-8.4,27-14.8,28-15.3c3.2-1.7,6.5-6.2,0-9.7c-2.1-1.1-13.4-7.3-28-15.3l-20.1,20.2L119.2,421.2z"/>'
+  + '<path fill="#FF3333" d="M99.1,401.1l-64.2,64.7c1.5,0.2,3.2-0.2,5.2-1.3c4.2-2.3,48.8-26.7,79.1-43.3L99.1,401.1L99.1,401.1z"/>'
+  + '<path fill="#48FF48" d="M99.1,401.1l20.1-20.2c0,0-74.6-40.7-79.1-43.1c-1.7-1-3.6-1.3-5.3-1L99.1,401.1z"/>'
+  + '<path fill="#3BCCFF" d="M99.1,401.1l-64.3-64.3c-2.6,0.6-4.8,2.9-4.8,7.6c0,7.5,0,107.5,0,113.8c0,4.3,1.7,7.4,4.9,7.7L99.1,401.1z"/></svg>';
+
+function initPlayButtons() {
+  document.querySelectorAll('.site-header .btn[data-track-download], .sticky-cta .btn[data-track-download]').forEach((button) => {
+    if (button.querySelector(".gp-logo")) return;
+    // Replace the old outline play-arrow icon (if any) with the real Play logo; href and data-* are untouched.
+    button.querySelectorAll(":scope > svg").forEach((icon) => icon.remove());
+    button.insertAdjacentHTML("afterbegin", GP_LOGO_SVG);
+  });
+}
+
+initPlayButtons();
+
+// Header language pill: built from the existing select.lang, which stays in the DOM as the no-JS fallback.
+// Menu items are real links to exactly the targets the select navigates to.
+function initLanguagePill() {
+  if (!languageSelector || !body) return;
+  const wrapper = languageSelector.closest(".lang-switch");
+  if (!wrapper || wrapper.querySelector(".lang-pill")) return;
+
+  const pageKey = body.dataset.pageKey || "home";
+  const currentLocale = LOCALE_CODES.includes(body.dataset.locale) ? body.dataset.locale : "en";
+  const basePrefix = getBasePrefix();
+  const groupLabel = languageSelector.getAttribute("aria-label") || "Language";
+  const langAttr = { en: "en", es: "es", fr: "fr", pt: "pt-BR" };
+
+  const options = [...languageSelector.options].filter((option) => LOCALE_CODES.includes(option.value));
+  if (!options.length) return;
+  const items = options.map((option) => ({
+    locale: option.value,
+    code: option.value.toUpperCase(),
+    name: option.textContent.trim(),
+    href: `${basePrefix}${getRouteForLocale(pageKey, option.value)}`,
+    current: option.value === currentLocale
+  }));
+  const current = items.find((item) => item.current) || items[0];
+
+  const ICON_GLOBE = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3Z"/></svg>';
+  const ICON_CHEV = '<svg class="chev" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" focusable="false"><path d="M1 1.5l5 5 5-5"/></svg>';
+  const ICON_TICK = '<svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12 4.5 4.5L19 7"/></svg>';
+
+  const menuId = "lang-menu";
+  const wrap = document.createElement("div");
+  wrap.className = "lang-pill-wrap";
+
+  const pill = document.createElement("button");
+  pill.type = "button";
+  pill.className = "lang-pill";
+  pill.setAttribute("aria-haspopup", "menu");
+  pill.setAttribute("aria-expanded", "false");
+  pill.setAttribute("aria-controls", menuId);
+  pill.setAttribute("aria-label", `${groupLabel}: ${current.name} (${current.code})`);
+  pill.innerHTML = `${ICON_GLOBE}${current.code}${ICON_CHEV}`;
+
+  const menu = document.createElement("ul");
+  menu.className = "lang-menu";
+  menu.id = menuId;
+  menu.setAttribute("role", "menu");
+  menu.setAttribute("aria-label", groupLabel);
+  menu.hidden = true;
+  const links = items.map((item) => {
+    const li = document.createElement("li");
+    li.setAttribute("role", "none");
+    const a = document.createElement("a");
+    a.href = item.href;
+    a.setAttribute("role", "menuitem");
+    a.setAttribute("lang", langAttr[item.locale]);
+    if (item.current) a.setAttribute("aria-current", "true");
+    a.innerHTML = `<span class="code">${item.code}</span>${item.name}${item.current ? ICON_TICK : ""}`;
+    li.appendChild(a);
+    menu.appendChild(li);
+    return a;
+  });
+  wrap.append(pill, menu);
+
+  // Phone chips (shown inside the open mobile menu via CSS)
+  const seg = document.createElement("div");
+  seg.className = "lang-seg";
+  seg.setAttribute("role", "group");
+  seg.setAttribute("aria-label", groupLabel);
+  items.forEach((item) => {
+    const a = document.createElement("a");
+    a.href = item.href;
+    a.textContent = item.code;
+    a.setAttribute("lang", langAttr[item.locale]);
+    a.setAttribute("aria-label", item.name);
+    if (item.current) a.setAttribute("aria-current", "true");
+    seg.appendChild(a);
+  });
+
+  const remember = (event) => {
+    const link = event.target instanceof Element ? event.target.closest("a[lang]") : null;
+    const item = link ? items.find((candidate) => candidate.href === link.getAttribute("href")) : null;
+    if (!item) return;
+    try {
+      localStorage.setItem(STORAGE_KEY, item.locale);
+    } catch (error) {
+      // Ignore storage restrictions.
+    }
+  };
+  menu.addEventListener("click", remember);
+  seg.addEventListener("click", remember);
+
+  const isOpen = () => !menu.hidden;
+  const setOpen = (open, focusIndex) => {
+    menu.hidden = !open;
+    pill.setAttribute("aria-expanded", String(open));
+    if (open) {
+      const index = focusIndex === "last" ? links.length - 1 : 0;
+      links[index].focus({ preventScroll: true });
+    }
+  };
+
+  pill.addEventListener("click", () => setOpen(!isOpen(), 0));
+  pill.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowDown") {
+      event.preventDefault();
+      setOpen(true, 0);
+    } else if (event.key === "ArrowUp") {
+      event.preventDefault();
+      setOpen(true, "last");
+    }
+  });
+
+  wrap.addEventListener("keydown", (event) => {
+    if (!isOpen()) return;
+    const index = links.indexOf(document.activeElement);
+    if (event.key === "Escape") {
+      event.preventDefault();
+      event.stopPropagation();
+      setOpen(false);
+      pill.focus();
+    } else if (event.key === "ArrowDown") {
+      event.preventDefault();
+      links[(index + 1) % links.length].focus();
+    } else if (event.key === "ArrowUp") {
+      event.preventDefault();
+      links[(index - 1 + links.length) % links.length].focus();
+    } else if (event.key === "Home") {
+      event.preventDefault();
+      links[0].focus();
+    } else if (event.key === "End") {
+      event.preventDefault();
+      links[links.length - 1].focus();
+    } else if (event.key === " " && index >= 0) {
+      event.preventDefault();
+      links[index].click();
+    } else if (event.key === "Tab") {
+      setOpen(false);
+    }
+  });
+
+  document.addEventListener("pointerdown", (event) => {
+    if (isOpen() && event.target instanceof Node && !wrap.contains(event.target)) setOpen(false);
+  });
+  document.addEventListener("focusin", (event) => {
+    if (isOpen() && event.target instanceof Node && !wrap.contains(event.target)) setOpen(false);
+  });
+
+  wrapper.append(wrap, seg);
+  wrapper.classList.add("is-enhanced");
+}
+
+initLanguagePill();
+
 function initMobileNav() {
   const header = document.querySelector(".site-header");
   const button = header?.querySelector(".menu-btn");
