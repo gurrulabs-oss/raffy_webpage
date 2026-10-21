@@ -23,32 +23,35 @@
   <meta name="twitter:image" content="https://www.raffyparenting.com/assets/raffy-social-preview.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,600&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="../../assets/raffy-logo.png">
   <link rel="stylesheet" href="../../styles.css">
   <link rel="stylesheet" href="../../tools/tool-cluster.css">
 </head>
 <body data-page-key="tool_nap" data-locale="fr">
-  <div class="bg-dynamic" aria-hidden="true">
-    <span class="bg-shape s1"></span><span class="bg-shape s2"></span><span class="bg-shape s3"></span><span class="bg-shape s4"></span><span class="bg-shape s5"></span>
-  </div>
-  <header>
+  <header class="site-header">
     <div class="container nav">
       <a class="brand" href="../index.html">
         <img class="brand-logo" src="../../assets/raffy-logo.png" alt="Raffy logo" width="500" height="500" decoding="async" loading="eager">
         <span>Raffy</span>
       </a>
-      <nav class="navlinks">
+      <nav class="navlinks" id="site-nav" aria-label="Principale">
         <a href="../index.html">Accueil</a>
         <a href="../articles/index.html">Articles</a>
-        <a href="index.html">Outils</a>
+        <a aria-current="page" href="index.html">Outils</a>
       </nav>
-      <div class="nav-controls">
+      <div class="nav-end">
         <div class="lang-switch">
           <label class="sr-only" for="lang-select">Sélecteur de langue</label>
-          <select id="lang-select" data-language-selector aria-label="Sélecteur de langue"><option value="en">English</option><option value="es">Español</option><option value="fr" selected>Français</option><option value="pt">Português (Brasil)</option></select>
+          <select class="lang" id="lang-select" data-language-selector aria-label="Sélecteur de langue">
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="fr" selected>Français</option>
+            <option value="pt">Português (Brasil)</option>
+          </select>
         </div>
-        <a class="play-store-badge-link play-store-badge-link-sm" href="https://play.google.com/store/apps/details?id=com.gurrulabs.raffy" data-track-download="true" data-page-type="tool" data-cta-location="header" aria-label="Télécharger sur Google Play"><img decoding="async" loading="lazy" class="play-store-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Télécharger sur Google Play"></a>
+        <a class="btn btn-sm" href="https://play.google.com/store/apps/details?id=com.gurrulabs.raffy" data-track-download="true" data-page-type="tool" data-cta-location="header"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3.5v17l14-8.5Z"/></svg>Télécharger l'app</a>
+        <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-nav"><svg class="ico-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="ico-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
       </div>
     </div>
   </header>
