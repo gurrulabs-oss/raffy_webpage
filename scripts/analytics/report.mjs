@@ -68,11 +68,6 @@ const table = (head, rows) => rows.length
   ? [`| ${head.join(' | ')} |`, `|${head.map(() => '---').join('|')}|`, ...rows.map((r) => `| ${r.map(esc).join(' | ')} |`)].join('\n')
   : '_No data._';
 const pagePath = (p) => { try { const u = new URL(p); return u.pathname + u.search; } catch { return String(p ?? ''); } };
-const median = (arr) => {
-  if (!arr.length) return 0;
-  const s = [...arr].sort((a, b) => a - b); const m = s.length >> 1;
-  return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2;
-};
 
 // ---------- GSC ----------
 const arr = (v) => (Array.isArray(v) ? v : []);
@@ -146,13 +141,18 @@ function sectionRising() {
 }
 function sectionLowCtr() {
   const pages = gscPages(gsc.current);
-  const med = {};
-  for (const l of LOCALES) med[l] = median(pages.filter((p) => (p.locale || 'other') === l && num(p.impressions) >= 1).map((p) => num(p.ctr)));
+  const rate = {};
+  // Locale CTR (clicks / impressions): a per-page median collapses to 0 while most pages have few impressions.
+  for (const l of LOCALES) {
+    const lp = pages.filter((p) => (LOCALES.includes(p.locale) ? p.locale : 'other') === l);
+    const impr = lp.reduce((s, p) => s + num(p.impressions), 0);
+    rate[l] = impr ? lp.reduce((s, p) => s + num(p.clicks), 0) / impr : 0;
+  }
   const rows = pages
-    .filter((p) => { const l = LOCALES.includes(p.locale) ? p.locale : 'other'; return num(p.impressions) >= 100 && num(p.ctr) < med[l] / 2; })
+    .filter((p) => { const l = LOCALES.includes(p.locale) ? p.locale : 'other'; return num(p.impressions) >= 100 && num(p.ctr) < rate[l] / 2; })
     .sort((a, b) => num(b.impressions) - num(a.impressions)).slice(0, 25)
-    .map((p) => { const l = LOCALES.includes(p.locale) ? p.locale : 'other'; return [pagePath(p.page), p.locale, int(p.impressions), pct(p.ctr, 2), pct(med[l], 2), pos(p.position)]; });
-  return table(['Page', 'Locale', 'Impressions', 'CTR', 'Locale median CTR', 'Pos'], rows);
+    .map((p) => { const l = LOCALES.includes(p.locale) ? p.locale : 'other'; return [pagePath(p.page), p.locale, int(p.impressions), pct(p.ctr, 2), pct(rate[l], 2), pos(p.position)]; });
+  return table(['Page', 'Locale', 'Impressions', 'CTR', 'Locale CTR', 'Pos'], rows);
 }
 
 // ---------- Mixpanel ----------

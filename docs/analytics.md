@@ -11,7 +11,8 @@ Read-only pulls the Lead uses to pick article topics and get pages indexed. Driv
 - Output: `.lead/analytics/<UTC date>/{gsc,index,mixpanel}.json`, `report.md` (gitignored, dot folder so
   GitHub Pages never serves it).
 - Windows: current = 28 days ending 3 days ago (GSC lag), previous = the 28 days before. Rising query =
-  impressions ≥ 20 and +≥50% (or new). Low-CTR page = ≥ 100 impressions and CTR < half its locale's median.
+  impressions ≥ 20 and +≥50% (or new). Low-CTR page = ≥ 100 impressions and CTR < half its locale's CTR.
+  The index check covers sitemap pages only (`.html` or `/`), not `AGENTS.md`/`LLMS.md`.
 - Mixpanel: raw export (EU), only `Raffy Webpage - ` events; page view = any prefixed event except
   Download Button Clicked / Growth Tool Submit Clicked / Growth Tool Results Shown; path from `path` property.
 - Google has no API for "Request indexing" on normal pages: the report lists not-indexed sitemap URLs for a
@@ -45,6 +46,9 @@ Test: `npm run analytics:pull`, then open the newest `.lead/analytics/*/report.m
 ## Weekly run
 Mondays 06:00 via macOS `launchd` on the owner's Mac: `scripts/analytics/weekly.sh` runs
 `claude -p "Use the analytics skill in weekly mode."` in the repo (writes `weekly.md`, files ≤ 2 inbox tickets).
+Needs the `analytics` skill in `.claude/skills/` (the hub moves it there from `.lead/pending-claude/`).
+The run reads search queries (outside text), so it may only run the analytics npm scripts and write under
+`.lead/analytics/` and `.lead/tickets/`; everything else is denied.
 Install once, from the main checkout:
 ```sh
 sed -e "s#REPO_PATH#$PWD#" -e "s#HOME_PATH#$HOME#" scripts/analytics/com.raffyparenting.analytics-weekly.plist \

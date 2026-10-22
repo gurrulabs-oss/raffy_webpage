@@ -17,17 +17,21 @@ class ApiError extends Error {
   constructor(status, message) { super(`HTTP ${status}: ${message}`); this.status = status; }
 }
 
+// Retries 429/5xx with backoff (2s, 6s) so one transient error doesn't drop the whole source.
 async function api(token, method, url, body) {
-  const res = await fetch(url, {
-    method,
-    headers: { authorization: `Bearer ${token}`, 'content-type': 'application/json' },
-    body: body ? JSON.stringify(body) : undefined,
-  });
-  const text = await res.text();
-  let data = {};
-  try { data = text ? JSON.parse(text) : {}; } catch { /* non-JSON body */ }
-  if (!res.ok) throw new ApiError(res.status, data.error?.message || text.slice(0, 200) || res.statusText);
-  return data;
+  for (let attempt = 0; ; attempt++) {
+    const res = await fetch(url, {
+      method,
+      headers: { authorization: `Bearer ${token}`, 'content-type': 'application/json' },
+      body: body ? JSON.stringify(body) : undefined,
+    });
+    const text = await res.text();
+    let data = {};
+    try { data = text ? JSON.parse(text) : {}; } catch { /* non-JSON body */ }
+    if (res.ok) return data;
+    if ((res.status === 429 || res.status >= 500) && attempt < 2) { await sleep(attempt ? 6000 : 2000); continue; }
+    throw new ApiError(res.status, data.error?.message || text.slice(0, 200) || res.statusText);
+  }
 }
 
 const localeOf = (page) => {
@@ -70,18 +74,12 @@ function siteOrigin() {
 
 function sitemapUrls() {
   const xml = fs.readFileSync(path.join(REPO_ROOT, 'sitemap.xml'), 'utf8');
-  return [...xml.matchAll(/<loc>\s*([^<\s]+)\s*<\/loc>/g)].map((m) => m[1]);
+  // Pages only: AGENTS.md / LLMS.md are listed for crawlers but are not pages to get indexed.
+  return [...xml.matchAll(/<loc>\s*([^<\s]+)\s*<\/loc>/g)].map((m) => m[1]).filter((u) => /(\.html|\/)$/.test(u));
 }
 
-async function inspectUrl(token, property, url) {
-  const endpoint = 'https://searchconsole.googleapis.com/v1/urlInspection/index:inspect';
-  const body = { inspectionUrl: url, siteUrl: property };
-  try {
-    return await api(token, 'POST', endpoint, body);
-  } catch (e) {
-    if (e.status === 429 || e.status >= 500) { await sleep(2000); return api(token, 'POST', endpoint, body); }
-    throw e;
-  }
+function inspectUrl(token, property, url) {
+  return api(token, 'POST', 'https://searchconsole.googleapis.com/v1/urlInspection/index:inspect', { inspectionUrl: url, siteUrl: property });
 }
 
 function toInspectResult(url, resp) {
@@ -157,7 +155,7 @@ async function main() {
   const index = {
     generatedAt, property, sitemapUrl, sitemapSubmitted, results,
     summary: { total: results.length, indexed, notIndexed: results.length - indexed - errors, errors },
-    needsManualRequest: results.filter((r) => r.verdict !== 'PASS').map((r) => r.url),
+    needsManualRequest: results.filter((r) => !r.error && r.verdict !== 'PASS').map((r) => r.url),
   };
   fs.writeFileSync(path.join(outDir, 'index.json'), JSON.stringify(index, null, 2) + '\n');
   console.log(`index.json: ${indexed}/${results.length} indexed, ${errors} errors, sitemap ${sitemapSubmitted}`);

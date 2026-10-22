@@ -32,3 +32,6 @@ Facts learned while working. One line each. Newest at the bottom. Trim via a "Re
 - T-013 design run (2026-10-21): headless Chrome screenshots ran without approval and `--window-size=390,844` on a wrapper page with a 390px `<iframe>` gives true phone renders (media queries fire). `sips`, `sed > file`, globbed `cp` and `$VAR` commands needed approval.
 - `.lead/scratch/T-010/` harnesses (cdp.mjs etc.) no longer exist on disk.
 - The 9-month menu cover image (`articles/menu_9_months/cover_article_menu_9_months.png`) has English text and is used by all 4 locales.
+- Since T-012: `npm run analytics:pull` (scripts/analytics/) pulls GSC + URL inspection + Mixpanel into gitignored `.lead/analytics/<date>/` + `report.md`; credentials in `~/.config/raffy-analytics/` (docs/analytics.md). Test offline with `--fixtures scripts/analytics/fixtures --out /tmp/x`. Live API paths were untested at merge (no keys).
+- Mixpanel page view = any `Raffy Webpage - ` event except Download/Growth Tool Submit/Results (`scripts/analytics/mixpanel.mjs`); adding a new site event means adding it to that exclusion list or page views inflate.
+- The weekly `claude -p` run (`scripts/analytics/weekly.sh`, launchd) reads outside text (search queries): keep its allowedTools scoped to the analytics npm scripts and writes under `.lead/analytics/` and `.lead/tickets/`.
