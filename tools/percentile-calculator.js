@@ -504,6 +504,28 @@ function getUtmParams() {
   };
 }
 
+function detectAiReferrer() {
+  const referrer = (document.referrer || '').toLowerCase();
+  if (!referrer) return { ai_referral: false, ai_referrer_source: 'unknown' };
+  const knownSources = [
+    { source: 'chatgpt', patterns: ['chatgpt.com', 'chat.openai.com'] },
+    { source: 'perplexity', patterns: ['perplexity.ai'] },
+    { source: 'gemini', patterns: ['gemini.google.com'] },
+    { source: 'copilot', patterns: ['copilot.microsoft.com', 'bing.com/chat'] },
+    { source: 'claude', patterns: ['claude.ai'] }
+  ];
+  for (const known of knownSources) {
+    if (known.patterns.some((pattern) => referrer.includes(pattern))) {
+      return { ai_referral: true, ai_referrer_source: known.source };
+    }
+  }
+  const otherAiPatterns = ['you.com', 'phind.com', 'poe.com', 'meta.ai', 'mistral.ai', 'grok.com'];
+  if (otherAiPatterns.some((pattern) => referrer.includes(pattern))) {
+    return { ai_referral: true, ai_referrer_source: 'other' };
+  }
+  return { ai_referral: false, ai_referrer_source: 'unknown' };
+}
+
 function baseTrackingPayload() {
   const language = SUPPORTED_LANGUAGES.includes(document.body?.dataset?.locale)
     ? document.body.dataset.locale
@@ -515,7 +537,8 @@ function baseTrackingPayload() {
     page_key: document.body?.dataset?.pageKey || 'tool_growth_percentiles',
     path: window.location.pathname,
     url: window.location.href,
-    ...getUtmParams()
+    ...getUtmParams(),
+    ...detectAiReferrer()
   };
 }
 
@@ -526,27 +549,82 @@ function hasInputValue(fieldName) {
 }
 
 function trackMixpanelEvent(eventName, payload) {
-  if (window.mixpanel && typeof window.mixpanel.track === 'function') {
-    window.mixpanel.track(eventName, payload);
+  try {
+    if (window.mixpanel && typeof window.mixpanel.track === 'function') {
+      window.mixpanel.track(eventName, payload);
+    }
+  } catch (error) {
+    // Tracking must never break the tool.
   }
 }
 
+const AVG_DAYS_PER_MONTH = 30.4375;
+const TRACK_KEYS = {
+  weight: { value: 'weight_kg', percentile: 'weight_percentile', z: 'weight_z_score' },
+  lengthHeight: { value: 'length_height_cm', percentile: 'length_height_percentile', z: 'length_height_z_score' },
+  headCircumference: { value: 'head_circumference_cm', percentile: 'head_circumference_percentile', z: 'head_circumference_z_score' }
+};
+
+function roundTo(value, decimals) {
+  return Number(Number(value).toFixed(decimals));
+}
+
+// Raw inputs in SI units (kg/cm) whatever unit system the user typed in; birth dates become an age.
+function growthInputProps() {
+  const props = {};
+  const sex = valueOf('sex');
+  if (sex === 'male' || sex === 'female') props.sex = sex;
+
+  for (const type of MEASUREMENT_ORDER) {
+    const raw = valueNumber(MEASUREMENT_FIELDS[type]);
+    if (Number.isFinite(raw)) props[TRACK_KEYS[type].value] = roundTo(toSi(type, raw, unitSystem), 2);
+  }
+
+  const birth = parseDateUTC(valueOf('birth_date'));
+  const meas = parseDateUTC(valueOf('measurement_date'));
+  const ageDays = dateDiffDays(birth, meas);
+  if (Number.isFinite(ageDays) && ageDays >= 0) {
+    props.age_days = Math.round(ageDays);
+    props.age_months = roundTo(ageDays / AVG_DAYS_PER_MONTH, 1);
+  }
+
+  if (correctedToggle?.checked) {
+    const gestationalWeeks = valueNumber('gestational_weeks');
+    if (Number.isFinite(gestationalWeeks)) props.gestational_weeks = gestationalWeeks;
+  }
+  return props;
+}
+
 function trackGrowthToolSubmitClick() {
+  try {
   trackMixpanelEvent('Raffy Webpage - Growth Tool Submit Clicked', {
     ...baseTrackingPayload(),
+    ...growthInputProps(),
     unit_system: unitSystem,
     corrected_age_enabled: Boolean(correctedToggle?.checked),
     has_weight_input: hasInputValue('weight_kg'),
     has_length_height_input: hasInputValue('length_height_cm'),
     has_head_circumference_input: hasInputValue('head_circumference_cm')
   });
+  } catch (error) {
+    // Tracking must never break the tool.
+  }
 }
 
 function trackGrowthToolResults(payload) {
+  try {
   const percentiles = payload.results.map((result) => result.percentile);
   const minPercentile = Math.min(...percentiles);
   const maxPercentile = Math.max(...percentiles);
   const avgPercentile = percentiles.reduce((sum, value) => sum + value, 0) / percentiles.length;
+
+  const measurementResultProps = {};
+  for (const result of payload.results) {
+    const keys = TRACK_KEYS[result.measurement.type];
+    measurementResultProps[keys.value] = roundTo(result.measurement.valueSi, 2);
+    measurementResultProps[keys.percentile] = roundTo(result.percentile, 1);
+    measurementResultProps[keys.z] = roundTo(result.zScore, 2);
+  }
 
   trackMixpanelEvent('Raffy Webpage - Growth Tool Results Shown', {
     ...baseTrackingPayload(),
@@ -557,8 +635,16 @@ function trackGrowthToolResults(payload) {
     age_days: Math.round(payload.ageDaysForEvaluation),
     min_percentile: Number(minPercentile.toFixed(1)),
     max_percentile: Number(maxPercentile.toFixed(1)),
-    avg_percentile: Number(avgPercentile.toFixed(1))
+    avg_percentile: Number(avgPercentile.toFixed(1)),
+    sex: payload.sex,
+    age_months: roundTo(payload.ageDaysForEvaluation / AVG_DAYS_PER_MONTH, 1),
+    chronological_age_days: Math.round(payload.chronologicalAgeDays),
+    chronological_age_months: roundTo(payload.chronologicalAgeDays / AVG_DAYS_PER_MONTH, 1),
+    ...measurementResultProps
   });
+  } catch (error) {
+    // Tracking must never break the tool.
+  }
 }
 
 function convertCurrentInputs(fromUnit, toUnit) {
@@ -712,6 +798,7 @@ function runCalculation() {
       metricSelection,
       measurement,
       percentile,
+      zScore,
       rows,
       ageDays: ageDaysForEvaluation
     });

@@ -85,6 +85,109 @@ const localePack = {
   }
 };
 
+/* ---------- Mixpanel tracking (same base payload as tools/percentile-calculator.js) ---------- */
+const TRACKING_LANGUAGES = ["en", "es", "fr", "pt"];
+const TOOL_NAMES = {
+  wake: "Wake Window Planner",
+  nap: "Nap Transition Helper",
+  feeding: "Feeding Quantity Estimator",
+  diaper: "Diaper Output Tracker",
+  solids: "Solids Progression Planner"
+};
+
+function getUtmParams() {
+  const params = new URLSearchParams(window.location.search);
+  return {
+    utm_source: params.get("utm_source") || "",
+    utm_medium: params.get("utm_medium") || "",
+    utm_campaign: params.get("utm_campaign") || "",
+    utm_term: params.get("utm_term") || "",
+    utm_content: params.get("utm_content") || ""
+  };
+}
+
+function detectAiReferrer() {
+  const referrer = (document.referrer || "").toLowerCase();
+  if (!referrer) return { ai_referral: false, ai_referrer_source: "unknown" };
+  const knownSources = [
+    { source: "chatgpt", patterns: ["chatgpt.com", "chat.openai.com"] },
+    { source: "perplexity", patterns: ["perplexity.ai"] },
+    { source: "gemini", patterns: ["gemini.google.com"] },
+    { source: "copilot", patterns: ["copilot.microsoft.com", "bing.com/chat"] },
+    { source: "claude", patterns: ["claude.ai"] }
+  ];
+  for (const known of knownSources) {
+    if (known.patterns.some((pattern) => referrer.includes(pattern))) {
+      return { ai_referral: true, ai_referrer_source: known.source };
+    }
+  }
+  const otherAiPatterns = ["you.com", "phind.com", "poe.com", "meta.ai", "mistral.ai", "grok.com"];
+  if (otherAiPatterns.some((pattern) => referrer.includes(pattern))) {
+    return { ai_referral: true, ai_referrer_source: "other" };
+  }
+  return { ai_referral: false, ai_referrer_source: "unknown" };
+}
+
+function baseTrackingPayload(toolName) {
+  const language = TRACKING_LANGUAGES.includes(document.body?.dataset?.locale)
+    ? document.body.dataset.locale
+    : "en";
+
+  return {
+    language,
+    page: toolName,
+    page_key: document.body?.dataset?.pageKey || "unknown",
+    path: window.location.pathname,
+    url: window.location.href,
+    ...getUtmParams(),
+    ...detectAiReferrer()
+  };
+}
+
+function trackToolEvent(kind, suffix, properties) {
+  try {
+    const toolName = TOOL_NAMES[kind];
+    if (!toolName || !window.mixpanel || typeof window.mixpanel.track !== "function") return;
+    window.mixpanel.track(`Raffy Webpage - ${toolName} ${suffix}`, {
+      ...baseTrackingPayload(toolName),
+      ...properties
+    });
+  } catch (error) {
+    // Tracking must never break the tool.
+  }
+}
+
+// Raw numeric inputs (snake_case names carry the unit); selects/checkboxes use their internal English values.
+function toolInputs(kind, form) {
+  const props = toolInputValues(kind, form);
+  // Blank fields are omitted rather than sent as 0
+  Object.keys(props).forEach((key) => props[key] === undefined && delete props[key]);
+  return props;
+}
+
+function toolInputValues(kind, form) {
+  const num = (name) => {
+    const raw = String(form.elements[name]?.value ?? "").trim();
+    return raw === "" || !Number.isFinite(Number(raw)) ? undefined : Number(raw);
+  };
+  const ageMonths = num("age_months");
+  if (kind === "wake") return { age_months: ageMonths };
+  if (kind === "nap") return { age_months: ageMonths, naps_per_day: num("current_naps") };
+  if (kind === "solids") return { age_months: ageMonths, texture_stage: String(form.elements.texture_stage?.value || "mashed") };
+  if (kind === "diaper") {
+    return {
+      age_months: ageMonths,
+      wet_diapers_per_day: num("wet_diapers"),
+      stools_per_day: num("stools"),
+      warning_signs: Boolean(form.elements.red_flags?.checked)
+    };
+  }
+  if (kind === "feeding") {
+    return { age_months: ageMonths, weight_kg: num("weight_kg"), meals_per_day: num("meals_per_day") };
+  }
+  return {};
+}
+
 function resolveLocale(locale) {
   return localePack[locale] ? locale : "en";
 }
@@ -311,11 +414,19 @@ function diaperModel(ageMonths, wetDiapers, stools, redFlag, locale) {
   return tips;
 }
 
-function feedingModel(ageMonths, weightKg, mealsPerDay, locale) {
-  const lang = resolveLocale(locale);
+function feedingNumbers(ageMonths, weightKg, mealsPerDay) {
   const kcalPerKg = ageMonths <= 12 ? 82 : 78;
   const dailyKcal = Math.round(weightKg * kcalPerKg);
   const perMeal = Math.round(dailyKcal / Math.max(mealsPerDay, 1));
+  let milk = [400, 500];
+  if (ageMonths <= 8) milk = [500, 700];
+  if (ageMonths >= 18) milk = [300, 450];
+  return { dailyKcal, perMeal, milkMinMl: milk[0], milkMaxMl: milk[1] };
+}
+
+function feedingModel(ageMonths, weightKg, mealsPerDay, locale) {
+  const lang = resolveLocale(locale);
+  const { dailyKcal, perMeal } = feedingNumbers(ageMonths, weightKg, mealsPerDay);
 
   const milkRangeByLocale = {
     en: { base: "400-500 ml/day", early: "500-700 ml/day", late: "300-450 ml/day" },
@@ -491,6 +602,7 @@ function attachTool(form) {
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
+    trackToolEvent(kind, "Submit Clicked", toolInputs(kind, form));
 
     if (root && !validateForm(form)) {
       setState("error");
@@ -506,18 +618,28 @@ function attachTool(form) {
         lines: model.notes,
         summary: pack.wake.summary
       });
+      trackToolEvent(kind, "Results Shown", {
+        ...toolInputs(kind, form),
+        naps_per_day_range: model.naps,
+        wake_window_range: model.window
+      });
     }
 
     if (kind === "nap") {
       const ageMonths = Number(form.age_months.value || 0);
       const currentNaps = Number(form.current_naps.value || 0);
       show({ ...withHeadline(napTransitionModel(ageMonths, currentNaps, locale)), summary: pack.nap.summary });
+      // Mirrors the branches in napTransitionModel.
+      const transition = currentNaps >= 3 && ageMonths >= 7 ? "3_to_2" : currentNaps === 2 && ageMonths >= 14 ? "2_to_1" : "none";
+      trackToolEvent(kind, "Results Shown", { ...toolInputs(kind, form), transition_suggestion: transition });
     }
 
     if (kind === "solids") {
       const ageMonths = Number(form.age_months.value || 0);
       const stage = String(form.texture_stage.value || "mashed");
       show({ ...withHeadline(solidsModel(ageMonths, stage, locale)), summary: pack.solids.summary });
+      const ageStage = ageMonths < 6 ? "under_6_months" : ageMonths <= 8 ? "6_to_8_months" : ageMonths <= 12 ? "9_to_12_months" : "13_months_plus";
+      trackToolEvent(kind, "Results Shown", { ...toolInputs(kind, form), age_stage: ageStage });
     }
 
     if (kind === "diaper") {
@@ -534,6 +656,11 @@ function attachTool(form) {
       } else {
         show({ lines, summary: pack.diaper.summary });
       }
+      trackToolEvent(kind, "Results Shown", {
+        ...toolInputs(kind, form),
+        low_wet_diapers: wetDiapers < 4,
+        pediatric_contact_advised: redFlag
+      });
     }
 
     if (kind === "feeding") {
@@ -551,6 +678,14 @@ function attachTool(form) {
       } else {
         show({ lines, summary: pack.feeding.summary });
       }
+      const numbers = feedingNumbers(ageMonths, weightKg, mealsPerDay);
+      trackToolEvent(kind, "Results Shown", {
+        ...toolInputs(kind, form),
+        daily_energy_kcal: numbers.dailyKcal,
+        energy_per_meal_kcal: numbers.perMeal,
+        milk_min_ml_per_day: numbers.milkMinMl,
+        milk_max_ml_per_day: numbers.milkMaxMl
+      });
     }
   });
 }
