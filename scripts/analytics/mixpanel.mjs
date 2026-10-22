@@ -8,8 +8,8 @@ import { credentialsDir, dateWindows, snapshotDir, parseArgs } from './lib/commo
 
 const PREFIX = 'Raffy Webpage - ';
 const DOWNLOAD = PREFIX + 'Download Button Clicked';
-const GT_SUBMIT = PREFIX + 'Growth Tool Submit Clicked';
-const GT_RESULTS = PREFIX + 'Growth Tool Results Shown';
+const SUBMIT_SUFFIX = ' Submit Clicked';
+const RESULTS_SUFFIX = ' Results Shown';
 const LOCALES = new Set(['en', 'es', 'fr', 'pt']);
 
 function loadCredentials() {
@@ -44,7 +44,7 @@ function pathOf(props) {
 }
 
 function newWindow() {
-  return { pages: new Map(), visitors: new Set(), aiReferrals: {}, utmSources: {} };
+  return { pages: new Map(), visitors: new Set(), aiReferrals: {}, utmSources: {}, toolEvents: [] };
 }
 
 function newPage(p) {
@@ -52,9 +52,18 @@ function newPage(p) {
   return {
     path: p, locale: LOCALES.has(seg) ? seg : 'other',
     pageViews: 0, visitors: new Set(), downloads: 0, downloadsByCta: {},
-    growthToolSubmits: 0, growthToolResults: 0,
+    toolSubmits: 0, toolResults: 0,
   };
 }
+
+function localeOf(props, p) {
+  if (LOCALES.has(props.language)) return props.language;
+  const seg = p.split('/')[1];
+  return LOCALES.has(seg) ? seg : 'other';
+}
+
+// Trailing-slash-insensitive path key (query/hash already stripped by pathOf).
+function normPath(p) { return p.length > 1 ? p.replace(/\/+$/, '') : p; }
 
 function bump(obj, k) { obj[k] = (obj[k] || 0) + 1; }
 
@@ -67,13 +76,20 @@ function addEvent(win, ev) {
   let page = win.pages.get(p);
   if (!page) { page = newPage(p); win.pages.set(p, page); }
   const id = props.distinct_id;
+  const time = Number(props.time);
+  const rest = name.slice(PREFIX.length);
+  const isSubmit = rest.length > SUBMIT_SUFFIX.length && rest.endsWith(SUBMIT_SUFFIX);
+  const isResults = rest.length > RESULTS_SUFFIX.length && rest.endsWith(RESULTS_SUFFIX);
+  const tracked = id != null && Number.isFinite(time);
+  const locale = localeOf(props, p);
   if (name === DOWNLOAD) {
     page.downloads++;
     bump(page.downloadsByCta, props.cta_location || 'unknown');
-  } else if (name === GT_SUBMIT) {
-    page.growthToolSubmits++;
-  } else if (name === GT_RESULTS) {
-    page.growthToolResults++;
+    if (tracked) win.toolEvents.push({ kind: 'download', tool: null, id, locale, path: normPath(p), time });
+  } else if (isSubmit || isResults) {
+    const suffix = isSubmit ? SUBMIT_SUFFIX : RESULTS_SUFFIX;
+    if (isSubmit) page.toolSubmits++; else page.toolResults++;
+    if (tracked) win.toolEvents.push({ kind: isSubmit ? 'submit' : 'results', tool: rest.slice(0, -suffix.length), id, locale, path: normPath(p), time });
   } else {
     page.pageViews++;
     if (id != null) { page.visitors.add(id); win.visitors.add(id); }
@@ -84,12 +100,47 @@ function addEvent(win, ev) {
   }
 }
 
+// Per tool x locale: distinct ids with Submit -> later Results (same path) -> later Download (same path).
+// Export `time` is whole seconds and Submit/Results fire in the same handler, so ties count as "later".
+function toolFunnel(events) {
+  const byPath = new Map(); // key: tool|locale|id|path -> {submit, results[], }
+  const downloads = new Map(); // key: id|path -> times
+  for (const e of events) {
+    if (e.kind === 'download') {
+      const k = `${e.id}\u0000${e.path}`;
+      if (!downloads.has(k)) downloads.set(k, []);
+      downloads.get(k).push(e.time);
+      continue;
+    }
+    const k = [e.tool, e.locale, e.id, e.path].join('\u0000');
+    const r = byPath.get(k) || { tool: e.tool, locale: e.locale, id: e.id, path: e.path, submits: [], results: [] };
+    (e.kind === 'submit' ? r.submits : r.results).push(e.time);
+    byPath.set(k, r);
+  }
+  const groups = new Map(); // tool|locale -> {submit:Set, results:Set, download:Set}
+  for (const r of byPath.values()) {
+    if (!r.submits.length) continue;
+    const g = groups.get(`${r.tool}\u0000${r.locale}`) || { tool: r.tool, locale: r.locale, submit: new Set(), results: new Set(), download: new Set() };
+    groups.set(`${r.tool}\u0000${r.locale}`, g);
+    g.submit.add(r.id);
+    const tSubmit = Math.min(...r.submits);
+    const laterResults = r.results.filter((t) => t >= tSubmit);
+    if (!laterResults.length) continue;
+    g.results.add(r.id);
+    const tResults = Math.min(...laterResults);
+    if ((downloads.get(`${r.id}\u0000${r.path}`) || []).some((t) => t >= tResults)) g.download.add(r.id);
+  }
+  return [...groups.values()]
+    .map((g) => ({ tool: g.tool, locale: g.locale, submitted: g.submit.size, resultsShown: g.results.size, downloaded: g.download.size }))
+    .sort((a, b) => b.submitted - a.submitted || a.tool.localeCompare(b.tool) || a.locale.localeCompare(b.locale));
+}
+
 function finalize(win) {
   const pages = [...win.pages.values()].map((p) => ({
     path: p.path, locale: p.locale, pageViews: p.pageViews, uniqueVisitors: p.visitors.size,
     downloads: p.downloads, downloadsByCta: p.downloadsByCta,
     conversion: p.pageViews > 0 ? p.downloads / p.pageViews : null,
-    growthToolSubmits: p.growthToolSubmits, growthToolResults: p.growthToolResults,
+    toolSubmits: p.toolSubmits, toolResults: p.toolResults,
   })).sort((a, b) => b.pageViews - a.pageViews || a.path.localeCompare(b.path));
   const sum = (k) => pages.reduce((s, p) => s + p[k], 0);
   const pageViews = sum('pageViews');
@@ -98,9 +149,9 @@ function finalize(win) {
     totals: {
       pageViews, uniqueVisitors: win.visitors.size, downloads,
       conversion: pageViews > 0 ? downloads / pageViews : null,
-      growthToolSubmits: sum('growthToolSubmits'), growthToolResults: sum('growthToolResults'),
+      toolSubmits: sum('toolSubmits'), toolResults: sum('toolResults'),
     },
-    pages, aiReferrals: win.aiReferrals, utmSources: win.utmSources,
+    pages, aiReferrals: win.aiReferrals, utmSources: win.utmSources, toolFunnel: toolFunnel(win.toolEvents),
   };
 }
 

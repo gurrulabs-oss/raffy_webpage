@@ -181,6 +181,20 @@ function sectionMixpanel() {
   return [table(['Page', 'Views', 'Downloads', 'Conversion', 'Top CTA'], rows), '', '**Totals**', '', tot, '', '**AI referrals**', '', aiT].join('\n');
 }
 
+function sectionToolFunnel() {
+  const rows = arr(mp.current?.toolFunnel);
+  if (!rows.length) return '_No tool events in the current window._';
+  const step = (n, d) => (num(d) ? pct(num(n) / num(d), 1) : '-');
+  const sorted = [...rows].sort((a, b) => num(b.submitted) - num(a.submitted) || String(a.tool).localeCompare(String(b.tool)) || String(a.locale).localeCompare(String(b.locale)));
+  return [
+    table(['Tool', 'Locale', 'Submitted', 'Results shown', 'Submit → Results', 'Downloaded', 'Results → Download', 'Submit → Download'],
+      sorted.map((r) => [r.tool, r.locale, int(r.submitted), int(r.resultsShown), step(r.resultsShown, r.submitted),
+        int(r.downloaded), step(r.downloaded, r.resultsShown), step(r.downloaded, r.submitted)])),
+    '',
+    '_Distinct visitors per tool and locale. Results and Download count only when they happen at or after the previous step (same second counts), on the same path._',
+  ].join('\n');
+}
+
 // ---------- Indexing ----------
 function sectionIndex() {
   const s = idx.summary || {};
@@ -224,6 +238,7 @@ const md = [
   '## Rising queries', '', safe(sectionRising, 'gsc.json', gsc), '',
   '## High impressions, low CTR pages', '', safe(sectionLowCtr, 'gsc.json', gsc), '',
   '## Page → download conversion', '', safe(sectionMixpanel, 'mixpanel.json', mp), '',
+  '## Tool funnel', '', safe(sectionToolFunnel, 'mixpanel.json', mp), '',
   '## Indexing', '', safe(sectionIndex, 'index.json', idx), '',
 ].join('\n');
 

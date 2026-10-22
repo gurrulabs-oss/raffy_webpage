@@ -1032,6 +1032,71 @@ async function initBrowserTool() {
     strictMode: true
   };
 
+  // ---- Mixpanel tracking (browser only; same base payload as tools/percentile-calculator.js) ----
+  const TRACKING_LANGUAGES = ["en", "es", "fr", "pt"];
+  const TOOL_NAME = "Meal Planner";
+
+  function getUtmParams() {
+    const params = new URLSearchParams(window.location.search);
+    return {
+      utm_source: params.get("utm_source") || "",
+      utm_medium: params.get("utm_medium") || "",
+      utm_campaign: params.get("utm_campaign") || "",
+      utm_term: params.get("utm_term") || "",
+      utm_content: params.get("utm_content") || ""
+    };
+  }
+
+  function detectAiReferrer() {
+    const referrer = (document.referrer || "").toLowerCase();
+    if (!referrer) return { ai_referral: false, ai_referrer_source: "unknown" };
+    const knownSources = [
+      { source: "chatgpt", patterns: ["chatgpt.com", "chat.openai.com"] },
+      { source: "perplexity", patterns: ["perplexity.ai"] },
+      { source: "gemini", patterns: ["gemini.google.com"] },
+      { source: "copilot", patterns: ["copilot.microsoft.com", "bing.com/chat"] },
+      { source: "claude", patterns: ["claude.ai"] }
+    ];
+    for (const known of knownSources) {
+      if (known.patterns.some((pattern) => referrer.includes(pattern))) {
+        return { ai_referral: true, ai_referrer_source: known.source };
+      }
+    }
+    const otherAiPatterns = ["you.com", "phind.com", "poe.com", "meta.ai", "mistral.ai", "grok.com"];
+    if (otherAiPatterns.some((pattern) => referrer.includes(pattern))) {
+      return { ai_referral: true, ai_referrer_source: "other" };
+    }
+    return { ai_referral: false, ai_referrer_source: "unknown" };
+  }
+
+  function baseTrackingPayload() {
+    const trackedLocale = TRACKING_LANGUAGES.includes(document.body?.dataset?.locale)
+      ? document.body.dataset.locale
+      : "en";
+
+    return {
+      language: trackedLocale,
+      page: "Meal Planner Tool",
+      page_key: document.body?.dataset?.pageKey || "tool_weekly_meal_planner",
+      path: window.location.pathname,
+      url: window.location.href,
+      ...getUtmParams(),
+      ...detectAiReferrer()
+    };
+  }
+
+  function trackMealPlannerEvent(suffix, buildProperties) {
+    try {
+      if (!window.mixpanel || typeof window.mixpanel.track !== "function") return;
+      window.mixpanel.track(`Raffy Webpage - ${TOOL_NAME} ${suffix}`, {
+        ...baseTrackingPayload(),
+        ...buildProperties()
+      });
+    } catch (error) {
+      // Tracking must never break the tool.
+    }
+  }
+
   syncMilkFromAge();
   renderPlan(generateMealPlanner(defaults, dataset));
 
@@ -1060,9 +1125,29 @@ async function initBrowserTool() {
       strictMode: formData.get("strict_mode") === "on"
     };
 
+    const submittedInputs = () => ({
+      age_months: ageMonths,
+      sex: input.sex,
+      milk_ml_per_day: adjustedMilk,
+      strict_mode: input.strictMode
+    });
+    trackMealPlannerEvent("Submit Clicked", submittedInputs);
+
     try {
       const result = generateMealPlanner(input, dataset);
       renderPlan(result);
+      trackMealPlannerEvent("Results Shown", () => ({
+        ...submittedInputs(),
+        effective_age_months: result.input.ageMonths,
+        kcal_target_per_day: Math.round(result.targets.kcalTarget),
+        weekly_average_kcal_per_day: Math.round(result.targets.weeklyAverageKcal),
+        milk_target_ml_per_day: result.targets.milkTargetMl,
+        carb_pct: result.weeklyMacroPct.carbPct,
+        fat_pct: result.weeklyMacroPct.fatPct,
+        protein_pct: result.weeklyMacroPct.proteinPct,
+        unique_dishes: result.dishUsage.length,
+        warning_count: result.warnings.length
+      }));
     } catch (error) {
       if (errorBox) errorBox.textContent = error.message;
     }
