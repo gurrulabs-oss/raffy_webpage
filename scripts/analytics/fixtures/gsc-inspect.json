@@ -1,0 +1,915 @@
+{
+  "default": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/fr/articles/routine-quotidienne-nouveau-ne.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Discovered - currently not indexed",
+        "indexingState": "INDEXING_ALLOWED"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/pt/artigos/marcos-desenvolvimento-primeiro-ano-bebe.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "indexingState": "INDEXING_ALLOWED"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/es/articulos/percentiles-peso-talla-bebe.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Discovered - currently not indexed",
+        "indexingState": "INDEXING_ALLOWED"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/pt/ferramentas/planejador-cardapio-semanal-12-23-meses.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "NEUTRAL",
+        "coverageState": "URL is unknown to Google",
+        "indexingState": "INDEXING_ALLOWED"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/AGENTS.md": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "NEUTRAL",
+        "coverageState": "Crawled - currently not indexed",
+        "indexingState": "INDEXING_ALLOWED"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/en/": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/en/"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/en/about.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/en/about.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/en/articles/": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/en/articles/"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/en/articles/android-baby-tracker-app-guide.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/en/articles/android-baby-tracker-app-guide.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/en/articles/baby-sleep-routine-by-age.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/en/articles/baby-sleep-routine-by-age.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/en/articles/baby-solids-guide-blw-purees.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/en/articles/baby-solids-guide-blw-purees.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/en/articles/baby-weight-height-percentiles-guide.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/en/articles/baby-weight-height-percentiles-guide.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/en/articles/first-baby-vaccine-what-i-learned.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/en/articles/first-baby-vaccine-what-i-learned.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/en/articles/first-year-baby-milestones-guide.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/en/articles/first-year-baby-milestones-guide.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/en/articles/newborn-daily-routine-guide.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/en/articles/newborn-daily-routine-guide.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/en/articles/parenting-with-confidence-guide.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/en/articles/parenting-with-confidence-guide.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/en/articles/weekly-menu-9-month-old-baby.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/en/articles/weekly-menu-9-month-old-baby.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/en/contact.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/en/contact.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/en/data-deletion.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/en/data-deletion.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/en/editorial-policy.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/en/editorial-policy.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/en/privacy.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/en/privacy.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/en/terms.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/en/terms.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/en/tools/": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/en/tools/"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/en/tools/baby-growth-percentile-calculator-who.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/en/tools/baby-growth-percentile-calculator-who.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/en/tools/weekly-meal-planner-12-23-months.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/en/tools/weekly-meal-planner-12-23-months.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/es/": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/es/"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/es/articulos/": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/es/articulos/"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/es/articulos/app-android-seguimiento-bebe-guia.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/es/articulos/app-android-seguimiento-bebe-guia.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/es/articulos/criar-con-confianza-y-sin-culpa.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/es/articulos/criar-con-confianza-y-sin-culpa.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/es/articulos/guia-alimentacion-complementaria-blw.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/es/articulos/guia-alimentacion-complementaria-blw.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/es/articulos/hitos-desarrollo-primer-ano-bebe.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/es/articulos/hitos-desarrollo-primer-ano-bebe.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/es/articulos/menu-semanal-bebe-9-meses.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/es/articulos/menu-semanal-bebe-9-meses.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/es/articulos/primera-vacuna-bebe-lo-que-aprendi.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/es/articulos/primera-vacuna-bebe-lo-que-aprendi.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/es/articulos/rutina-diaria-recien-nacido.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/es/articulos/rutina-diaria-recien-nacido.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/es/articulos/rutina-sueno-bebe-por-edad.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/es/articulos/rutina-sueno-bebe-por-edad.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/es/contacto.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/es/contacto.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/es/eliminacion-datos.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/es/eliminacion-datos.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/es/herramientas/": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/es/herramientas/"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/es/herramientas/calculadora-percentiles-bebe-oms.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/es/herramientas/calculadora-percentiles-bebe-oms.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/es/herramientas/planificador-comidas-semanal-12-23-meses.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/es/herramientas/planificador-comidas-semanal-12-23-meses.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/es/politica-editorial.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/es/politica-editorial.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/es/privacidad.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/es/privacidad.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/es/sobre.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/es/sobre.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/es/terminos.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/es/terminos.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/fr/": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/fr/"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/fr/a-propos.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/fr/a-propos.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/fr/articles/": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/fr/articles/"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/fr/articles/application-android-suivi-bebe-guide.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/fr/articles/application-android-suivi-bebe-guide.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/fr/articles/eduquer-avec-confiance-sans-culpabilite.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/fr/articles/eduquer-avec-confiance-sans-culpabilite.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/fr/articles/etapes-developpement-premiere-annee-bebe.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/fr/articles/etapes-developpement-premiere-annee-bebe.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/fr/articles/guide-diversification-bebe-blw.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/fr/articles/guide-diversification-bebe-blw.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/fr/articles/menu-hebdomadaire-bebe-9-mois.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/fr/articles/menu-hebdomadaire-bebe-9-mois.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/fr/articles/percentiles-poids-taille-bebe.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/fr/articles/percentiles-poids-taille-bebe.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/fr/articles/premier-vaccin-bebe-ce-que-jai-appris.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/fr/articles/premier-vaccin-bebe-ce-que-jai-appris.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/fr/articles/routine-sommeil-bebe-par-age.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/fr/articles/routine-sommeil-bebe-par-age.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/fr/conditions.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/fr/conditions.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/fr/confidentialite.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/fr/confidentialite.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/fr/contact.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/fr/contact.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/fr/outils/": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/fr/outils/"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/fr/outils/calculateur-percentiles-bebe-oms.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/fr/outils/calculateur-percentiles-bebe-oms.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/fr/outils/planificateur-repas-hebdomadaire-12-23-mois.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/fr/outils/planificateur-repas-hebdomadaire-12-23-mois.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/fr/politique-editoriale.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/fr/politique-editoriale.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/fr/suppression-donnees.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/fr/suppression-donnees.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/LLMS.md": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/LLMS.md"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/llms.txt": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/llms.txt"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/pt/": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/pt/"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/pt/artigos/": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/pt/artigos/"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/pt/artigos/app-android-acompanhamento-bebe-guia.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/pt/artigos/app-android-acompanhamento-bebe-guia.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/pt/artigos/cardapio-semanal-bebe-9-meses.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/pt/artigos/cardapio-semanal-bebe-9-meses.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/pt/artigos/criar-com-confianca-sem-culpa.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/pt/artigos/criar-com-confianca-sem-culpa.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/pt/artigos/guia-introducao-alimentar-bebe-blw.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/pt/artigos/guia-introducao-alimentar-bebe-blw.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/pt/artigos/percentis-peso-altura-bebe.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/pt/artigos/percentis-peso-altura-bebe.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/pt/artigos/primeira-vacina-bebe-o-que-aprendi.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/pt/artigos/primeira-vacina-bebe-o-que-aprendi.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/pt/artigos/rotina-diaria-recem-nascido.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/pt/artigos/rotina-diaria-recem-nascido.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/pt/artigos/rotina-sono-bebe-por-idade.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/pt/artigos/rotina-sono-bebe-por-idade.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/pt/contato.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/pt/contato.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/pt/exclusao-dados.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/pt/exclusao-dados.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/pt/ferramentas/": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/pt/ferramentas/"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/pt/ferramentas/calculadora-percentis-bebe-oms.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/pt/ferramentas/calculadora-percentis-bebe-oms.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/pt/politica-editorial.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/pt/politica-editorial.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/pt/privacidade.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/pt/privacidade.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/pt/sobre.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/pt/sobre.html"
+      }
+    }
+  },
+  "https://www.raffyparenting.com/pt/termos.html": {
+    "inspectionResult": {
+      "indexStatusResult": {
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "indexingState": "INDEXING_ALLOWED",
+        "lastCrawlTime": "2026-10-15T08:12:44Z",
+        "googleCanonical": "https://www.raffyparenting.com/pt/termos.html"
+      }
+    }
+  }
+}
