@@ -8,3 +8,4 @@ One line per doc: when to read it. Keep each doc focused and under ~150 lines.
 - `publishing.md` — read when adding or updating an article or tool page (end-to-end checklist).
 - Existing SEO playbooks (owner-maintained): `../seo-operations.md`, `../seo/content-calendar.md`,
   `../seo/backlink-sprint.md`, `../seo/traffic-scorecard.md`.
+- `analytics.md` — read when using Search Console/Mixpanel data (`analytics` skill), setting up credentials or the weekly run.

@@ -1,0 +1,202 @@
+{
+  "rows": [
+    {
+      "keys": [
+        "https://www.raffyparenting.com/en/articles/baby-sleep-routine-by-age.html"
+      ],
+      "clicks": 3,
+      "impressions": 488,
+      "ctr": 0.006147540983606557,
+      "position": 12.87
+    },
+    {
+      "keys": [
+        "https://www.raffyparenting.com/en/articles/baby-solids-guide-blw-purees.html"
+      ],
+      "clicks": 29,
+      "impressions": 749,
+      "ctr": 0.03871829105473965,
+      "position": 14.47
+    },
+    {
+      "keys": [
+        "https://www.raffyparenting.com/en/tools/baby-growth-percentile-calculator-who.html"
+      ],
+      "clicks": 42,
+      "impressions": 620,
+      "ctr": 0.06774193548387097,
+      "position": 9.54
+    },
+    {
+      "keys": [
+        "https://www.raffyparenting.com/en/articles/newborn-daily-routine-guide.html"
+      ],
+      "clicks": 37,
+      "impressions": 457,
+      "ctr": 0.08096280087527352,
+      "position": 7.1
+    },
+    {
+      "keys": [
+        "https://www.raffyparenting.com/en/tools/weekly-meal-planner-12-23-months.html"
+      ],
+      "clicks": 17,
+      "impressions": 412,
+      "ctr": 0.0412621359223301,
+      "position": 13.14
+    },
+    {
+      "keys": [
+        "https://www.raffyparenting.com/en/articles/android-baby-tracker-app-guide.html"
+      ],
+      "clicks": 25,
+      "impressions": 387,
+      "ctr": 0.06459948320413436,
+      "position": 9.87
+    },
+    {
+      "keys": [
+        "https://www.raffyparenting.com/es/articulos/rutina-sueno-bebe-por-edad.html"
+      ],
+      "clicks": 42,
+      "impressions": 603,
+      "ctr": 0.06965174129353234,
+      "position": 9.43
+    },
+    {
+      "keys": [
+        "https://www.raffyparenting.com/es/herramientas/calculadora-percentiles-bebe-oms.html"
+      ],
+      "clicks": 2,
+      "impressions": 589,
+      "ctr": 0.003395585738539898,
+      "position": 10.82
+    },
+    {
+      "keys": [
+        "https://www.raffyparenting.com/es/articulos/guia-alimentacion-complementaria-blw.html"
+      ],
+      "clicks": 22,
+      "impressions": 584,
+      "ctr": 0.03767123287671233,
+      "position": 14.74
+    },
+    {
+      "keys": [
+        "https://www.raffyparenting.com/es/articulos/menu-semanal-bebe-9-meses.html"
+      ],
+      "clicks": 18,
+      "impressions": 248,
+      "ctr": 0.07258064516129033,
+      "position": 7.04
+    },
+    {
+      "keys": [
+        "https://www.raffyparenting.com/fr/articles/routine-sommeil-bebe-par-age.html"
+      ],
+      "clicks": 31,
+      "impressions": 524,
+      "ctr": 0.05916030534351145,
+      "position": 10.43
+    },
+    {
+      "keys": [
+        "https://www.raffyparenting.com/fr/outils/calculateur-percentiles-bebe-oms.html"
+      ],
+      "clicks": 48,
+      "impressions": 533,
+      "ctr": 0.0900562851782364,
+      "position": 5.69
+    },
+    {
+      "keys": [
+        "https://www.raffyparenting.com/fr/articles/guide-diversification-bebe-blw.html"
+      ],
+      "clicks": 38,
+      "impressions": 430,
+      "ctr": 0.08837209302325581,
+      "position": 5.94
+    },
+    {
+      "keys": [
+        "https://www.raffyparenting.com/fr/articles/percentiles-poids-taille-bebe.html"
+      ],
+      "clicks": 39,
+      "impressions": 404,
+      "ctr": 0.09653465346534654,
+      "position": 4.72
+    },
+    {
+      "keys": [
+        "https://www.raffyparenting.com/pt/artigos/rotina-sono-bebe-por-idade.html"
+      ],
+      "clicks": 14,
+      "impressions": 436,
+      "ctr": 0.03211009174311927,
+      "position": 15.16
+    },
+    {
+      "keys": [
+        "https://www.raffyparenting.com/pt/ferramentas/calculadora-percentis-bebe-oms.html"
+      ],
+      "clicks": 13,
+      "impressions": 369,
+      "ctr": 0.03523035230352303,
+      "position": 14.46
+    },
+    {
+      "keys": [
+        "https://www.raffyparenting.com/pt/artigos/guia-introducao-alimentar-bebe-blw.html"
+      ],
+      "clicks": 30,
+      "impressions": 435,
+      "ctr": 0.06896551724137931,
+      "position": 9.25
+    },
+    {
+      "keys": [
+        "https://www.raffyparenting.com/pt/artigos/cardapio-semanal-bebe-9-meses.html"
+      ],
+      "clicks": 7,
+      "impressions": 173,
+      "ctr": 0.04046242774566474,
+      "position": 11.53
+    },
+    {
+      "keys": [
+        "https://www.raffyparenting.com/en/"
+      ],
+      "clicks": 27,
+      "impressions": 544,
+      "ctr": 0.04963235294117647,
+      "position": 9
+    },
+    {
+      "keys": [
+        "https://www.raffyparenting.com/es/"
+      ],
+      "clicks": 27,
+      "impressions": 544,
+      "ctr": 0.04963235294117647,
+      "position": 9
+    },
+    {
+      "keys": [
+        "https://www.raffyparenting.com/fr/"
+      ],
+      "clicks": 27,
+      "impressions": 544,
+      "ctr": 0.04963235294117647,
+      "position": 9
+    },
+    {
+      "keys": [
+        "https://www.raffyparenting.com/pt/"
+      ],
+      "clicks": 27,
+      "impressions": 544,
+      "ctr": 0.04963235294117647,
+      "position": 9
+    }
+  ]
+}

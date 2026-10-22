@@ -10,3 +10,6 @@
 
 # Agent working files (scripts, drafts); never published or committed
 .lead/scratch/
+
+# Analytics snapshots (GSC / Mixpanel pulls); local only, never published
+.lead/analytics/
