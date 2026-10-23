@@ -358,7 +358,7 @@ async function init() {
   ensureUnitSwitcher();
 
   try {
-    const dataUrl = new URL('./who-lms-data.json', import.meta.url);
+    const dataUrl = new URL('./who-lms-data.json?v=2', import.meta.url);
     const response = await fetch(dataUrl, { cache: 'force-cache' });
     const payload = await response.json();
     daysPerMonth = Number(payload?.meta?.daysPerMonth || 30.4375);
@@ -748,7 +748,7 @@ function runCalculation() {
     }
 
     const correctionDays = Math.max(0, (40 - gestationalWeeks) * 7);
-    ageDaysForEvaluation = chronologicalAgeDays - correctionDays;
+    ageDaysForEvaluation = evaluationAgeDays(chronologicalAgeDays - correctionDays);
 
     if (ageDaysForEvaluation < 0) {
       showError(copy.correctedAgeError, 'gestational_weeks');
@@ -764,35 +764,15 @@ function runCalculation() {
   const results = [];
 
   for (const measurement of measurementEntries) {
-    if (!isMeasurementInRange(measurement.type, measurement.valueSi)) {
-      showError(copy.invalidValueError, MEASUREMENT_FIELDS[measurement.type]);
+    const evaluation = evaluateMeasurement(datasetByMetric, sex, measurement.type, measurement.valueSi, ageDaysForEvaluation);
+
+    if (!evaluation.ok) {
+      showError(evaluation.error === 'range' ? copy.rangeError : copy.invalidValueError,
+        evaluation.error === 'range' ? 'birth_date' : MEASUREMENT_FIELDS[measurement.type]);
       return;
     }
 
-    const metricSelection = selectMetric(measurement.type, ageDaysForEvaluation);
-    const rows = datasetByMetric[metricSelection.metric]?.[sex];
-
-    if (!rows || rows.length === 0) {
-      showError(copy.rangeError, 'birth_date');
-      return;
-    }
-
-    const minAge = rows[0].ageDays;
-    const maxAge = rows[rows.length - 1].ageDays;
-
-    if (ageDaysForEvaluation < minAge || ageDaysForEvaluation > maxAge) {
-      showError(copy.rangeError, 'birth_date');
-      return;
-    }
-
-    const lms = interpolateLms(rows, ageDaysForEvaluation);
-    const zScore = zFromMeasurement(measurement.valueSi, lms);
-
-    if (!Number.isFinite(zScore)) {
-      showError(copy.invalidValueError, MEASUREMENT_FIELDS[measurement.type]);
-      return;
-    }
-
+    const { metricSelection, rows, zScore } = evaluation;
     const percentile = Math.max(0.1, Math.min(99.9, normalCdf(zScore) * 100));
     results.push({
       metricSelection,
@@ -800,7 +780,7 @@ function runCalculation() {
       percentile,
       zScore,
       rows,
-      ageDays: ageDaysForEvaluation
+      ageDays: evaluation.ageDays
     });
   }
 
@@ -996,8 +976,9 @@ function buildChartSvg({ rows, metricSelection, measurementType, ageDays, valueS
   const minX = rows[0].ageMonths;
   const maxX = rows[rows.length - 1].ageMonths;
 
+  const curveRows = chartSampleRows(rows);
   const curves = Z_POINTS.map((pt) => {
-    const points = rows.map((row) => ({
+    const points = curveRows.map((row) => ({
       x: row.ageMonths,
       y: fromSi(measurementType, valueAtZ(row, pt.z), unitSystem)
     }));
@@ -1468,12 +1449,46 @@ function valueAtZ(lms, z) {
   return lms.M * Math.pow(base, 1 / lms.L);
 }
 
-function zFromMeasurement(value, lms) {
+// WHO restricted application of the LMS method (used by WHO for weight-for-age): beyond |z| = 3 the
+// distance from the +-3 SD value is measured in units of the 2-to-3 SD interval, so extreme weights do
+// not get absurd z-scores. Plain LMS for everything else (length/height/head circumference use plain LMS).
+function zFromMeasurement(value, lms, restricted = false) {
   if (value <= 0 || lms.M <= 0 || lms.S <= 0) return Number.NaN;
-  if (Math.abs(lms.L) < 1e-8) {
-    return Math.log(value / lms.M) / lms.S;
-  }
-  return (Math.pow(value / lms.M, lms.L) - 1) / (lms.L * lms.S);
+  const z = Math.abs(lms.L) < 1e-8
+    ? Math.log(value / lms.M) / lms.S
+    : (Math.pow(value / lms.M, lms.L) - 1) / (lms.L * lms.S);
+  if (!restricted || !(Math.abs(z) > 3)) return z;
+
+  const sd3 = valueAtZ(lms, Math.sign(z) * 3);
+  const sd2 = valueAtZ(lms, Math.sign(z) * 2);
+  if (!Number.isFinite(sd3) || !Number.isFinite(sd2)) return z;
+  return Math.sign(z) * 3 + (value - sd3) / Math.abs(sd3 - sd2);
+}
+
+function zForMeasurement(measurementType, value, lms) {
+  return zFromMeasurement(value, lms, measurementType === 'weight');
+}
+
+// WHO Anthro rounds the age to whole days (half up) before the table lookup.
+function evaluationAgeDays(ageDays) {
+  return Math.floor(ageDays + 0.5 + 1e-9);
+}
+
+// Full lookup for one measurement: age -> whole days -> table (length/height) -> LMS -> z.
+// Returns { ok: false, error: 'value' | 'range' } or { ok: true, ageDays, metricSelection, rows, lms, zScore }.
+function evaluateMeasurement(index, sex, measurementType, valueSi, rawAgeDays) {
+  const ageDays = evaluationAgeDays(rawAgeDays);
+  if (!isMeasurementInRange(measurementType, valueSi)) return { ok: false, error: 'value' };
+
+  const metricSelection = selectMetric(measurementType, ageDays);
+  const rows = index[metricSelection.metric]?.[sex];
+  if (!rows || rows.length === 0) return { ok: false, error: 'range' };
+  if (ageDays < rows[0].ageDays || ageDays > rows[rows.length - 1].ageDays) return { ok: false, error: 'range' };
+
+  const lms = interpolateLms(rows, ageDays);
+  const zScore = zForMeasurement(measurementType, valueSi, lms);
+  if (!Number.isFinite(zScore)) return { ok: false, error: 'value' };
+  return { ok: true, ageDays, metricSelection, rows, lms, zScore };
 }
 
 function indexRows(rows) {
@@ -1495,9 +1510,17 @@ function interpolateLms(rows, ageDays) {
   if (ageDays <= rows[0].ageDays) return rows[0];
   if (ageDays >= rows[rows.length - 1].ageDays) return rows[rows.length - 1];
 
-  let hi = rows.findIndex((row) => row.ageDays >= ageDays);
-  if (hi <= 0) hi = 1;
-  const lo = hi - 1;
+  // binary search: first row with row.ageDays >= ageDays (rows are sorted by ageDays)
+  let lo = 0;
+  let hi = rows.length - 1;
+  while (lo < hi) {
+    const mid = (lo + hi) >> 1;
+    if (rows[mid].ageDays >= ageDays) hi = mid;
+    else lo = mid + 1;
+  }
+  if (lo <= 0) lo = 1;
+  hi = lo;
+  lo = hi - 1;
 
   const r0 = rows[lo];
   const r1 = rows[hi];
@@ -1511,6 +1534,25 @@ function interpolateLms(rows, ageDays) {
     M: r0.M + (r1.M - r0.M) * t,
     S: r0.S + (r1.S - r0.S) * t
   };
+}
+
+// Rows to draw the percentile curves from. The data has one row per day up to 1 year and monthly rows
+// after that; drawing every daily row would bloat the SVG, so keep every day for the first weeks and
+// thin the daily rows out as the curves flatten. The steps are chosen so the polyline stays within
+// 0.01 z of WHO's daily curves (checked by scripts/growth/audit.mjs, check 7b).
+const CHART_SAMPLE_STEPS = [[28, 1], [56, 2], [112, 4], [365, 7]]; // [up to day, keep every n-th day]
+
+function chartSampleRows(rows) {
+  const last = rows.length - 1;
+  return rows.filter((row, i) => {
+    if (i === 0 || i === last) return true;
+    const prev = rows[i - 1];
+    const next = rows[i + 1];
+    // the monthly part of the data (gap > 1 day on either side) is already sparse: keep it all
+    if (row.ageDays - prev.ageDays > 1 || next.ageDays - row.ageDays > 1) return true;
+    const step = CHART_SAMPLE_STEPS.find(([until]) => row.ageDays <= until)?.[1] ?? 1;
+    return row.ageDays % step === 0;
+  });
 }
 
 function selectMetric(measurementType, ageDays) {
