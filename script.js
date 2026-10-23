@@ -513,6 +513,26 @@ document.addEventListener("click", (event) => {
   if (link) trackDownloadClick(link);
 });
 
+function trackPlannerLinkClick(link) {
+  const payload = {
+    location: link.dataset.trackPlanner || "unknown",
+    locale: getTrackingContext().language,
+    page: window.location.pathname
+  };
+
+  if (window.mixpanel && typeof window.mixpanel.track === "function") {
+    window.mixpanel.track("Raffy Webpage - Meal Planner Link Clicked", payload);
+  }
+}
+
+// Links from articles to the weekly meal planner: <a data-track-planner="bridge|faq|closing|...">.
+document.addEventListener("click", (event) => {
+  const target = event.target;
+  if (!(target instanceof Element)) return;
+  const link = target.closest("[data-track-planner]");
+  if (link) trackPlannerLinkClick(link);
+});
+
 initMixpanel();
 trackPageView();
 

@@ -8,6 +8,8 @@ import { credentialsDir, dateWindows, snapshotDir, parseArgs } from './lib/commo
 
 const PREFIX = 'Raffy Webpage - ';
 const DOWNLOAD = PREFIX + 'Download Button Clicked';
+// Click events that are neither downloads nor tool funnel steps; never counted as page views.
+const NON_PAGE_VIEW_EVENTS = new Set([PREFIX + 'Meal Planner Link Clicked']);
 const SUBMIT_SUFFIX = ' Submit Clicked';
 const RESULTS_SUFFIX = ' Results Shown';
 const LOCALES = new Set(['en', 'es', 'fr', 'pt']);
@@ -70,6 +72,7 @@ function bump(obj, k) { obj[k] = (obj[k] || 0) + 1; }
 function addEvent(win, ev) {
   const name = ev && ev.event;
   if (typeof name !== 'string' || !name.startsWith(PREFIX)) return;
+  if (NON_PAGE_VIEW_EVENTS.has(name)) return;
   const props = ev.properties || {};
   const p = pathOf(props);
   if (!p) return;
