@@ -1151,9 +1151,6 @@ a.btn-play.on-blue, a.btn-play.on-blue:hover { color: var(--ink); }
 }
 
 /* ===================== T-013 · Weekly menu article (9 months) components ===================== */
-/* Article hero: app chip under the byline (reuses the T-011 .hero-app component from the tool pages) */
-.article-hero .hero-app { margin-top: var(--s5); }
-
 /* "En resumen" direct-answer box: 1 sentence + 4 key numbers. Plain text, easy for search engines and LLMs to quote.
    <section class="answer-box" id="en-resumen"><p class="callout-title">..</p><p>..</p><dl><div><dt>..</dt><dd>..<small>..</small></dd></div>x4</dl></section> */
 .answer-box { border-radius: var(--r-md); background: #fff; border: 1px solid var(--mint-300); padding: var(--s5); box-shadow: var(--shadow-1); }
