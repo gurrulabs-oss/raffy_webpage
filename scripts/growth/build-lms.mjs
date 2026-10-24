@@ -1,0 +1,93 @@
+#!/usr/bin/env node
+// Regenerates tools/who-lms-data.json from the WHO Child Growth Standards EXPANDED (daily) LMS tables.
+//
+// Usage: node scripts/growth/build-lms.mjs [--ref-dir <dir>] [--out <file>]
+//   --ref-dir  cache dir for the WHO xlsx files (default: $TMPDIR/raffy-who-ref; downloaded if missing)
+//   --out      output file (default: tools/who-lms-data.json)
+//
+// Rows (schema unchanged: {meta, rows:[{metric, sex, ageMonths, ageDays, L, M, S}]}):
+//   - one row per DAY for ages 0..365 d (wfa, lhfa_0_2 length, hcfa), so the chart/LMS lookup is exact
+//     where WHO's curves bend most (first months); ageMonths = ageDays / 30.4375 (4 decimals; day 365 -> 12);
+//   - after day 365, one row per month m = 13..60 placed at ageDays = round(m x 30.4375) with the
+//     L/M/S taken from the WHO daily table AT THAT DAY (not the monthly file), ageMonths = m;
+//   - lhfa_0_2 (lying length) covers days 0..730; lhfa_2_5 (standing height) covers day 731 (ageMonths 24; the first
+//     height day in WHO's table) and months 25..60. The WHO expanded lhfa table is one sheet: days 0..730
+//     are length, 731+ are height (WHO Anthro convention: length if age < 731 d).
+// Deterministic: same inputs -> byte-identical output.
+import { writeFileSync } from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { WHO_FILES, defaultRefDir, ensureDownloaded, loadTable, LENGTH_MAX_DAY } from './who-tables.mjs';
+
+const args = process.argv.slice(2);
+const opt = (n, d) => { const i = args.indexOf(n); return i >= 0 ? args[i + 1] : d; };
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
+const refDir = opt('--ref-dir', defaultRefDir());
+const outFile = path.resolve(opt('--out', path.join(root, 'tools/who-lms-data.json')));
+
+const DPM = 30.4375;
+const DAILY_MAX_DAY = 365;
+const LAST_DAY = 1826; // 60 months
+const UNITS = { wfa: 'kg', lhfa_0_2: 'cm', lhfa_2_5: 'cm', hcfa: 'cm' };
+
+await ensureDownloaded({ refDir, kinds: ['zscore'], log: (m) => console.error(m) });
+
+const num = (v) => Number(v.toFixed(6)); // WHO tables carry <= 5 decimals; this strips float noise
+const round4 = (v) => Math.round(v * 1e4) / 1e4;
+// ties go to the even day (month 24 = 730.5 d -> 730), which is where the previous monthly file placed it,
+// and keeps the lying-length table ending on day 730
+const monthDay = (m) => {
+  const x = m * DPM, f = Math.floor(x), d = x - f;
+  return d < 0.5 ? f : d > 0.5 ? f + 1 : (f % 2 === 0 ? f : f + 1);
+};
+
+// output table -> WHO table + [first, last] day included + extra monthly nodes
+const TABLES = [
+  { metric: 'hcfa', who: 'hcfa', dailyFrom: 0, monthlyTo: 60 },
+  { metric: 'lhfa_0_2', who: 'lhfa', dailyFrom: 0, monthlyTo: 24 },
+  { metric: 'lhfa_2_5', who: 'lhfa', dailyFrom: null, monthlyFrom: 25, monthlyTo: 60, firstDay: LENGTH_MAX_DAY + 1 },
+  { metric: 'wfa', who: 'wfa', dailyFrom: 0, monthlyTo: 60 }
+];
+
+const rows = [];
+for (const t of TABLES) for (const sex of ['female', 'male']) {
+  const who = loadTable(t.who, sex, { refDir, kind: 'zscore' }).rows;
+  const byDay = new Map(who.map((r) => [r.day, r]));
+  const get = (day) => {
+    const r = byDay.get(day);
+    if (!r) throw new Error(`WHO ${t.who}/${sex}: day ${day} missing`);
+    return r;
+  };
+  const push = (day, ageMonths) => {
+    const r = get(day);
+    rows.push({ metric: t.metric, sex, ageMonths, ageDays: day, L: num(r.L), M: num(r.M), S: num(r.S) });
+  };
+  // ageMonths of the 12-month (day 365) and 24-month (day 731) rows is the whole month so the chart's
+  // x-axis ends/starts on a clean 12 / 24 instead of 11.9918 / 24.0164
+  if (t.dailyFrom !== null) for (let day = t.dailyFrom; day <= DAILY_MAX_DAY; day++) push(day, day === DAILY_MAX_DAY ? 12 : round4(day / DPM));
+  if (t.firstDay !== undefined) push(t.firstDay, 24);
+  for (let m = t.monthlyFrom ?? 13; m <= t.monthlyTo; m++) {
+    const day = Math.min(monthDay(m), LAST_DAY);
+    if (t.who === 'lhfa' && t.metric === 'lhfa_0_2' && day > LENGTH_MAX_DAY) throw new Error('length table must end at day 730');
+    push(day, m);
+  }
+}
+
+// sanity: strictly increasing days per table/sex
+for (const t of TABLES) for (const sex of ['female', 'male']) {
+  const days = rows.filter((r) => r.metric === t.metric && r.sex === sex).map((r) => r.ageDays);
+  days.forEach((d, i) => { if (i && d <= days[i - 1]) throw new Error(`${t.metric}/${sex}: non-increasing day ${d}`); });
+}
+
+const url = (metric, sex) => WHO_FILES.find((f) => f.metric === metric && f.sex === sex && f.kind === 'zscore').url;
+const meta = {
+  source: 'WHO Child Growth Standards',
+  units: UNITS,
+  daysPerMonth: DPM,
+  note: `Daily LMS rows for ages 0-${DAILY_MAX_DAY} days (WHO expanded tables), then one row per month (13-60) placed at round(month x ${DPM}) days with the L/M/S of that WHO daily row. lhfa_0_2 = recumbent length, days 0-${LENGTH_MAX_DAY}; lhfa_2_5 = standing height, from day ${LENGTH_MAX_DAY + 1}. Generated by scripts/growth/build-lms.mjs.`,
+  dailyUntilDay: DAILY_MAX_DAY,
+  files: TABLES.flatMap((t) => ['male', 'female'].map((sex) => ({ metric: t.metric, sex, url: url(t.who, sex) })))
+};
+
+writeFileSync(outFile, JSON.stringify({ meta, rows }));
+console.error(`wrote ${outFile}: ${rows.length} rows`);

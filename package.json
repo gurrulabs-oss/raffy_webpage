@@ -9,6 +9,8 @@
     "seo:all": "npm run seo:sync && npm run seo:sitemap && npm run seo:validate",
     "meal:validate": "node scripts/meal_planner_validate.mjs",
     "analytics:pull": "node scripts/analytics/all.mjs",
-    "analytics:report": "node scripts/analytics/report.mjs"
+    "analytics:report": "node scripts/analytics/report.mjs",
+    "growth:audit": "node scripts/growth/audit.mjs",
+    "growth:build-lms": "node scripts/growth/build-lms.mjs"
   }
 }
