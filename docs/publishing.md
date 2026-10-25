@@ -13,3 +13,14 @@
 
 Checklist per article: primary + 3 secondary keywords, single h1, ≥3 same-locale internal links,
 `datePublished`/`dateModified`, pediatric safety section if health-related, Play Store CTA, no `example.com`.
+
+## Notify search engines (IndexNow)
+
+After a deploy is live on production, ping IndexNow (Bing and partners) with the changed URLs:
+
+    npm run seo:indexnow -- --changed <previous-main-sha>   # only pages whose files changed since that commit
+    npm run seo:indexnow                                    # all sitemap URLs
+    npm run seo:indexnow -- --dry-run                       # print the payload, send nothing
+
+The key file `<key>.txt` at the repo root must stay published (not in `_config.yml` exclude). The first full run
+(no args) is due after the T-018 ticket merges and deploys. 200/202 = accepted; anything else exits 1.
