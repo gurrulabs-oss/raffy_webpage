@@ -45,3 +45,9 @@ Facts learned while working. One line each. Newest at the bottom. Trim via a "Re
 - `percentile-calculator.js` fetches the data with `cache: 'force-cache'`: bump the `?v=N` on `who-lms-data.json` whenever the data file changes, or returning visitors keep the old one.
 - `buildXTicks` prints the first/last row's `ageMonths` raw as axis labels: data rows at window edges must carry whole-month `ageMonths` (build-lms sets day 365 → 12, day 731 → 24).
 - WHO conventions (anthro R source): restricted z beyond ±3 for weight-for-age only; age rounded half up to whole days; length table if age < 731 d; WHO's expanded lhfa file is one table (0–730 length, 731+ height).
+- `npm run seo:sitemap` REGENERATES `robots.txt` from `scripts/seo_sitemap.mjs` (since T-018 incl. named AI-bot/Bingbot groups): edit robots rules there, never in robots.txt.
+- Since T-018: IndexNow key file `8009526c53babac4013f97218b92f330.txt` at root; `npm run seo:indexnow [-- --dry-run] [-- --changed <ref>]` submits sitemap URLs (diffs `<ref>..HEAD`, committed only). Run after each deploy.
+- Live `/LLMS.md` and `/AGENTS.md` are served raw (`text/markdown`) because they have no front matter; never add `---` front matter to them.
+- As of 2026-10-25 only 3 of 8 tool pages per locale are in the sitemap/manifest (hub, percentile, meal planner); fix tracked in T-023.
+- `~/.config/raffy-analytics/` did not exist on 2026-10-25: `npm run analytics:pull` fails until the owner sets up credentials.
+- No official Raffy/Gurru Labs social or developer profile URL exists (web + raffy-app repo, 2026-10-25); Organization `sameAs` = Play Store only.

@@ -52,6 +52,16 @@ if (config.indexable) {
   for (const route of aiDiscoveryPaths) {
     robotsLines.push(`Allow: ${route}`);
   }
+  // Explicit groups for AI search/user/training crawlers and Bing (docs/ai-visibility.md).
+  // A bot that matches its own group ignores `*`, so each group repeats `Allow: /`.
+  const namedBots = [
+    "OAI-SearchBot", "ChatGPT-User", "GPTBot",
+    "Claude-SearchBot", "Claude-User", "ClaudeBot",
+    "PerplexityBot", "Perplexity-User", "Google-Extended", "Bingbot"
+  ];
+  for (const bot of namedBots) {
+    robotsLines.push("", `User-agent: ${bot}`, "Allow: /");
+  }
 } else {
   robotsLines.push("Disallow: /");
 }
