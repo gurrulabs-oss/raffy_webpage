@@ -14,117 +14,117 @@ The app is available only on Google Play. The website has no accounts; tools run
 
 ## Free tools
 
-- [Free tools hub](https://www.raffyparenting.com/en/tools/): Expanded tool cluster for parenting workflows.
-- [WHO baby growth percentile calculator](https://www.raffyparenting.com/en/tools/baby-growth-percentile-calculator-who.html): Calculate WHO baby growth percentiles for weight, length or height, and head circumference with corrected age support for prematurity.
-- [Weekly meal planner for babies and kids](https://www.raffyparenting.com/en/tools/weekly-meal-planner-12-23-months.html): Meal planner for babies and kids aged 12-23 months: create a 7-day menu with WHO-aligned feeding logic, calorie targets, milk-by-age goals, and weekly variety checks.
-- [Diaper Output Tracker by Age](https://www.raffyparenting.com/en/tools/diaper-output-tracker.html): Track wet diapers and stools to monitor hydration and know when to escalate care.
-- [Feeding Quantity Estimator by Age](https://www.raffyparenting.com/en/tools/feeding-quantity-estimator.html): Estimate daily intake targets by age, weight, and number of meals for practical planning.
+- [Tools Hub](https://www.raffyparenting.com/en/tools/): Expanded tool cluster for parenting workflows.
+- [WHO Baby Growth Percentile Calculator (Weight, Length/Height, Head Circumference)](https://www.raffyparenting.com/en/tools/baby-growth-percentile-calculator-who.html): Calculate WHO baby growth percentiles for weight, length or height, and head circumference with corrected age support for prematurity.
+- [Wake Window Planner by Age](https://www.raffyparenting.com/en/tools/wake-window-planner.html): Estimate wake windows and nap structure by age to build calmer daily sleep rhythms.
 - [Nap Transition Helper](https://www.raffyparenting.com/en/tools/nap-transition-helper.html): Check if your baby is approaching a nap transition and get step-by-step adjustment tips.
 - [Solids Progression Planner by Age](https://www.raffyparenting.com/en/tools/solids-progression-planner.html): Plan texture progression and food variety week by week for complementary feeding.
-- [Wake Window Planner by Age](https://www.raffyparenting.com/en/tools/wake-window-planner.html): Estimate wake windows and nap structure by age to build calmer daily sleep rhythms.
+- [Feeding Quantity Estimator by Age](https://www.raffyparenting.com/en/tools/feeding-quantity-estimator.html): Estimate daily intake targets by age, weight, and number of meals for practical planning.
+- [Diaper Output Tracker by Age](https://www.raffyparenting.com/en/tools/diaper-output-tracker.html): Track wet diapers and stools to monitor hydration and know when to escalate care.
+- [Weekly Meal Planner for Babies and Kids (12-23 Months)](https://www.raffyparenting.com/en/tools/weekly-meal-planner-12-23-months.html): Meal planner for babies and kids aged 12-23 months: create a 7-day menu with WHO-aligned feeding logic, calorie targets, milk-by-age goals, and weekly variety checks.
 
 ## Articles (English)
 
-- [Parenting guides for confident daily decisions](https://www.raffyparenting.com/en/articles/): Explore practical guides on baby sleep routine, solids, growth percentiles, newborn schedules, and milestones.
-- [How to choose the best Android baby tracker workflow](https://www.raffyparenting.com/en/articles/android-baby-tracker-app-guide.html): Find the right Android baby tracker workflow for sleep, feeding, growth and routines. Learn when web tools are enough and when Raffy app tracking is better.
+- [Parenting Article Library](https://www.raffyparenting.com/en/articles/): Explore practical guides on baby sleep routine, solids, growth percentiles, newborn schedules, and milestones.
 - [Baby Sleep Routine by Age: Practical Weekly Guide](https://www.raffyparenting.com/en/articles/baby-sleep-routine-by-age.html): Build a realistic baby sleep routine by age with nap windows, bedtime consistency and wake-up anchors.
 - [Baby Solids Guide: BLW, Purees and Safe First Foods](https://www.raffyparenting.com/en/articles/baby-solids-guide-blw-purees.html): A practical baby solids guide with BLW and puree options, safe food formats, and first-week planning tips.
-- [Baby Weight and Height Percentiles: How to Read Growth Trends](https://www.raffyparenting.com/en/articles/baby-weight-height-percentiles-guide.html): Understand baby growth percentiles, trend lines and when weight or height changes require pediatric follow-up.
-- [My Baby's First Vaccine: What I Felt and What I Learned](https://www.raffyparenting.com/en/articles/first-baby-vaccine-what-i-learned.html): A first-person guide to your baby's first vaccine: fear, evidence, common reactions, and why vaccinating protects the whole community.
-- [Your Baby's First Year: The Year That Changes You Forever](https://www.raffyparenting.com/en/articles/first-year-baby-milestones-guide.html): A warm guide to your baby's first year: milestones by trimester, attachment, common doubts, and how to support development without pressure.
-- [Newborn Daily Routine That Works in Real Life](https://www.raffyparenting.com/en/articles/newborn-daily-routine-guide.html): Create a newborn routine for feeds, sleep and diaper care without rigid hour-by-hour schedules.
-- [Parenting With Confidence: Reduce Guilt and Mental Load](https://www.raffyparenting.com/en/articles/parenting-with-confidence-guide.html): Practical strategies to parent with more confidence, less guilt and better communication at home.
 - [9-Month-Old Baby Weekly Menu: Complete 7-Day Meal Plan](https://www.raffyparenting.com/en/articles/weekly-menu-9-month-old-baby.html): 9-month-old baby weekly menu: 7 days of meals, calorie ranges, safety tips, and what changes from 10 to 12 months.
+- [Best Android Baby Tracker App for Daily Routines](https://www.raffyparenting.com/en/articles/android-baby-tracker-app-guide.html): Find the right Android baby tracker workflow for sleep, feeding, growth and routines. Learn when web tools are enough and when Raffy app tracking is better.
+- [Baby Weight and Height Percentiles: How to Read Growth Trends](https://www.raffyparenting.com/en/articles/baby-weight-height-percentiles-guide.html): Understand baby growth percentiles, trend lines and when weight or height changes require pediatric follow-up.
+- [Newborn Daily Routine That Works in Real Life](https://www.raffyparenting.com/en/articles/newborn-daily-routine-guide.html): Create a newborn routine for feeds, sleep and diaper care without rigid hour-by-hour schedules.
+- [Your Baby's First Year: The Year That Changes You Forever](https://www.raffyparenting.com/en/articles/first-year-baby-milestones-guide.html): A warm guide to your baby's first year: milestones by trimester, attachment, common doubts, and how to support development without pressure.
+- [Parenting With Confidence: Reduce Guilt and Mental Load](https://www.raffyparenting.com/en/articles/parenting-with-confidence-guide.html): Practical strategies to parent with more confidence, less guilt and better communication at home.
+- [My Baby's First Vaccine: What I Felt and What I Learned](https://www.raffyparenting.com/en/articles/first-baby-vaccine-what-i-learned.html): A first-person guide to your baby's first vaccine: fear, evidence, common reactions, and why vaccinating protects the whole community.
 
 ## Español
 
 - [Herramientas para familias](https://www.raffyparenting.com/es/herramientas/): Explora herramientas para sueño, alimentación, crecimiento y seguimiento diario.
-- [Calculadora OMS de percentiles del bebé](https://www.raffyparenting.com/es/herramientas/calculadora-percentiles-bebe-oms.html): Calcula percentiles OMS de peso, talla o longitud y perímetro craneal del bebé con opción de edad corregida por prematuridad.
-- [Planificador de comidas para bebes y ninos](https://www.raffyparenting.com/es/herramientas/planificador-comidas-semanal-12-23-meses.html): Planificador de comidas para bebes y ninos de 12-23 meses: crea un menu semanal de 7 dias con logica OMS, objetivo de leche por edad, control calorico y variedad semanal.
-- [Ayudante de transición de siestas](https://www.raffyparenting.com/es/herramientas/ayudante-transicion-siestas.html): Comprueba si se acerca una transición de siestas y recibe pasos de ajuste.
-- [Calculadora de pañales y eliminación por edad](https://www.raffyparenting.com/es/herramientas/calculadora-panales-eliminacion.html): Registra pañales mojados y deposiciones para vigilar hidratación y señales de consulta.
-- [Estimador de cantidad de alimentación por edad](https://www.raffyparenting.com/es/herramientas/estimador-cantidad-alimentacion.html): Estima ingesta diaria por edad, peso y número de comidas para planificación práctica.
-- [Planificador de progresión de sólidos por edad](https://www.raffyparenting.com/es/herramientas/planificador-progresion-solidos.html): Planifica progresión de texturas y variedad semanal en alimentación complementaria.
+- [Calculadora OMS de percentiles del bebé (peso, talla y perímetro craneal)](https://www.raffyparenting.com/es/herramientas/calculadora-percentiles-bebe-oms.html): Calcula percentiles OMS de peso, talla o longitud y perímetro craneal del bebé con opción de edad corregida por prematuridad.
 - [Planificador de ventanas de sueño por edad](https://www.raffyparenting.com/es/herramientas/planificador-ventanas-sueno.html): Estima ventanas de vigilia y estructura de siestas por edad para un sueño más predecible.
-- [Guías de crianza para decidir con más confianza cada día](https://www.raffyparenting.com/es/articulos/): Explora guías prácticas sobre rutina de sueño del bebé, alimentación complementaria, percentiles y desarrollo infantil.
-- [Cómo elegir una app Android de seguimiento del bebé sin perder tiempo](https://www.raffyparenting.com/es/articulos/app-android-seguimiento-bebe-guia.html): Guía práctica para decidir cuándo usar herramientas web y cuándo usar una app Android de seguimiento del bebé como Raffy.
-- [Criar con confianza y menos culpa: guía práctica](https://www.raffyparenting.com/es/articulos/criar-con-confianza-y-sin-culpa.html): Estrategias para criar con confianza, bajar la carga mental y mejorar la coordinación familiar.
-- [Guía de alimentación complementaria: BLW, purés y seguridad](https://www.raffyparenting.com/es/articulos/guia-alimentacion-complementaria-blw.html): Guía práctica de alimentación complementaria con BLW y purés, formatos seguros y planificación inicial.
-- [El primer año de tu bebé: el año que te cambia para siempre](https://www.raffyparenting.com/es/articulos/hitos-desarrollo-primer-ano-bebe.html): Una guía cercana del primer año del bebé: hitos por trimestre, apego, dudas frecuentes y cómo acompañar su desarrollo sin ansiedad.
-- [Menú semanal para bebé de 9 meses: plan completo de 7 días](https://www.raffyparenting.com/es/articulos/menu-semanal-bebe-9-meses.html): Menú semanal para bebé de 9 meses: 7 días con desayuno, media mañana, comida, merienda y cena, calorías orientativas y qué cambia de 10 a 12 meses.
-- [Percentiles de peso y talla del bebé: cómo interpretar el crecimiento](https://www.raffyparenting.com/es/articulos/percentiles-peso-talla-bebe.html): Aprende a interpretar percentiles de peso y talla del bebé y cuándo conviene consultar al pediatra.
-- [La primera vacuna de mi bebé: lo que sentí y lo que aprendí](https://www.raffyparenting.com/es/articulos/primera-vacuna-bebe-lo-que-aprendi.html): Testimonio real sobre la primera vacuna del bebé: dudas, evidencia, efectos esperables y por qué vacunar también protege a otros.
-- [Rutina diaria del recién nacido que sí funciona](https://www.raffyparenting.com/es/articulos/rutina-diaria-recien-nacido.html): Organiza una rutina diaria del recién nacido para tomas, sueño y cuidados sin horarios rígidos.
+- [Ayudante de transición de siestas](https://www.raffyparenting.com/es/herramientas/ayudante-transicion-siestas.html): Comprueba si se acerca una transición de siestas y recibe pasos de ajuste.
+- [Planificador de progresión de sólidos por edad](https://www.raffyparenting.com/es/herramientas/planificador-progresion-solidos.html): Planifica progresión de texturas y variedad semanal en alimentación complementaria.
+- [Estimador de cantidad de alimentación por edad](https://www.raffyparenting.com/es/herramientas/estimador-cantidad-alimentacion.html): Estima ingesta diaria por edad, peso y número de comidas para planificación práctica.
+- [Calculadora de pañales y eliminación por edad](https://www.raffyparenting.com/es/herramientas/calculadora-panales-eliminacion.html): Registra pañales mojados y deposiciones para vigilar hidratación y señales de consulta.
+- [Planificador de Comidas para Bebes y Ninos (12-23 meses)](https://www.raffyparenting.com/es/herramientas/planificador-comidas-semanal-12-23-meses.html): Planificador de comidas para bebes y ninos de 12-23 meses: crea un menu semanal de 7 dias con logica OMS, objetivo de leche por edad, control calorico y variedad semanal.
+- [Biblioteca de artículos de crianza](https://www.raffyparenting.com/es/articulos/): Explora guías prácticas sobre rutina de sueño del bebé, alimentación complementaria, percentiles y desarrollo infantil.
 - [Rutina de sueño del bebé por edad: guía práctica semanal](https://www.raffyparenting.com/es/articulos/rutina-sueno-bebe-por-edad.html): Crea una rutina de sueño del bebé por edad con ventanas de sueño, siestas y hora de dormir más estable.
+- [Guía de alimentación complementaria: BLW, purés y seguridad](https://www.raffyparenting.com/es/articulos/guia-alimentacion-complementaria-blw.html): Guía práctica de alimentación complementaria con BLW y purés, formatos seguros y planificación inicial.
+- [Menú semanal para bebé de 9 meses: plan completo de 7 días](https://www.raffyparenting.com/es/articulos/menu-semanal-bebe-9-meses.html): Menú semanal para bebé de 9 meses: 7 días con desayuno, media mañana, comida, merienda y cena, calorías orientativas y qué cambia de 10 a 12 meses.
+- [Mejor app Android para seguimiento del bebé](https://www.raffyparenting.com/es/articulos/app-android-seguimiento-bebe-guia.html): Guía práctica para decidir cuándo usar herramientas web y cuándo usar una app Android de seguimiento del bebé como Raffy.
+- [Percentiles de peso y talla del bebé: cómo interpretar el crecimiento](https://www.raffyparenting.com/es/articulos/percentiles-peso-talla-bebe.html): Aprende a interpretar percentiles de peso y talla del bebé y cuándo conviene consultar al pediatra.
+- [Rutina diaria del recién nacido que sí funciona](https://www.raffyparenting.com/es/articulos/rutina-diaria-recien-nacido.html): Organiza una rutina diaria del recién nacido para tomas, sueño y cuidados sin horarios rígidos.
+- [El primer año de tu bebé: el año que te cambia para siempre](https://www.raffyparenting.com/es/articulos/hitos-desarrollo-primer-ano-bebe.html): Una guía cercana del primer año del bebé: hitos por trimestre, apego, dudas frecuentes y cómo acompañar su desarrollo sin ansiedad.
+- [Criar con confianza y menos culpa: guía práctica](https://www.raffyparenting.com/es/articulos/criar-con-confianza-y-sin-culpa.html): Estrategias para criar con confianza, bajar la carga mental y mejorar la coordinación familiar.
+- [La primera vacuna de mi bebé: lo que sentí y lo que aprendí](https://www.raffyparenting.com/es/articulos/primera-vacuna-bebe-lo-que-aprendi.html): Testimonio real sobre la primera vacuna del bebé: dudas, evidencia, efectos esperables y por qué vacunar también protege a otros.
 
 ## Français
 
 - [Outils parentaux](https://www.raffyparenting.com/fr/outils/): Explorez des outils pour le sommeil, l'alimentation, la croissance et le suivi quotidien.
-- [Calculateur OMS de percentiles bebe](https://www.raffyparenting.com/fr/outils/calculateur-percentiles-bebe-oms.html): Calculez les percentiles OMS du bebe pour le poids, la taille/longueur et le perimetre cranien avec age corrige en cas de prematurite.
-- [Planificateur de repas pour bebes et jeunes enfants](https://www.raffyparenting.com/fr/outils/planificateur-repas-hebdomadaire-12-23-mois.html): Planificateur de repas pour bebes et jeunes enfants 12-23 mois: creez un menu sur 7 jours avec logique OMS, objectif de lait par age, verification calorique et variete hebdomadaire.
-- [Assistant de transition des siestes](https://www.raffyparenting.com/fr/outils/assistant-transition-siestes.html): Vérifiez si une transition de siestes approche et obtenez des étapes d'ajustement.
-- [Calculateur couches et élimination par âge](https://www.raffyparenting.com/fr/outils/calculateur-couches-elimination.html): Suivez couches mouillées et selles pour surveiller hydratation et signes d'alerte.
-- [Estimateur de quantités alimentaires par âge](https://www.raffyparenting.com/fr/outils/estimateur-quantites-alimentation.html): Estimez les apports quotidiens selon âge, poids et nombre de repas.
+- [Calculateur OMS de percentiles bebe (poids, taille, perimetre cranien)](https://www.raffyparenting.com/fr/outils/calculateur-percentiles-bebe-oms.html): Calculez les percentiles OMS du bebe pour le poids, la taille/longueur et le perimetre cranien avec age corrige en cas de prematurite.
 - [Planificateur de fenêtres d'éveil par âge](https://www.raffyparenting.com/fr/outils/planificateur-fenetres-eveil.html): Estimez fenêtres d'éveil et structure des siestes selon l'âge pour un rythme plus stable.
+- [Assistant de transition des siestes](https://www.raffyparenting.com/fr/outils/assistant-transition-siestes.html): Vérifiez si une transition de siestes approche et obtenez des étapes d'ajustement.
 - [Planificateur de progression de la diversification](https://www.raffyparenting.com/fr/outils/planificateur-progression-diversification.html): Planifiez progression des textures et variété hebdomadaire en diversification.
-- [Guides parentaux pour des décisions quotidiennes plus sereines](https://www.raffyparenting.com/fr/articles/): Découvrez des guides pratiques sur le sommeil bébé, la diversification alimentaire, les percentiles et les routines.
-- [Comment choisir une application Android de suivi bebe sans se compliquer](https://www.raffyparenting.com/fr/articles/application-android-suivi-bebe-guide.html): Guide pratique pour choisir quand utiliser des outils web et quand utiliser une application Android de suivi bébé comme Raffy.
-- [Éduquer avec confiance et moins de culpabilité](https://www.raffyparenting.com/fr/articles/eduquer-avec-confiance-sans-culpabilite.html): Méthodes concrètes pour réduire la charge mentale parentale et renforcer la confiance éducative.
-- [La première année de votre bébé : l'année qui vous change pour toujours](https://www.raffyparenting.com/fr/articles/etapes-developpement-premiere-annee-bebe.html): Un guide rassurant de la première année de bébé : étapes par trimestre, attachement, doutes fréquents et développement sans pression.
+- [Estimateur de quantités alimentaires par âge](https://www.raffyparenting.com/fr/outils/estimateur-quantites-alimentation.html): Estimez les apports quotidiens selon âge, poids et nombre de repas.
+- [Calculateur couches et élimination par âge](https://www.raffyparenting.com/fr/outils/calculateur-couches-elimination.html): Suivez couches mouillées et selles pour surveiller hydratation et signes d'alerte.
+- [Planificateur de Repas pour Bebes et Jeunes Enfants (12-23 mois)](https://www.raffyparenting.com/fr/outils/planificateur-repas-hebdomadaire-12-23-mois.html): Planificateur de repas pour bebes et jeunes enfants 12-23 mois: creez un menu sur 7 jours avec logique OMS, objectif de lait par age, verification calorique et variete hebdomadaire.
+- [Bibliothèque d'articles parentalité](https://www.raffyparenting.com/fr/articles/): Découvrez des guides pratiques sur le sommeil bébé, la diversification alimentaire, les percentiles et les routines.
+- [Routine sommeil bébé par âge : guide pratique hebdomadaire](https://www.raffyparenting.com/fr/articles/routine-sommeil-bebe-par-age.html): Mettez en place une routine sommeil bébé par âge avec siestes, fenêtres d'éveil et coucher plus régulier.
 - [Guide diversification bébé : DME, purées et sécurité](https://www.raffyparenting.com/fr/articles/guide-diversification-bebe-blw.html): Guide pratique de diversification alimentaire avec DME, purées, formats sûrs et plan de démarrage.
 - [Menu hebdomadaire bébé 9 mois : plan complet sur 7 jours](https://www.raffyparenting.com/fr/articles/menu-hebdomadaire-bebe-9-mois.html): Menu hebdomadaire bébé 9 mois : 7 jours de repas, calories indicatives, sécurité alimentaire et ce qui change de 10 à 12 mois.
+- [Meilleure application Android de suivi bébé](https://www.raffyparenting.com/fr/articles/application-android-suivi-bebe-guide.html): Guide pratique pour choisir quand utiliser des outils web et quand utiliser une application Android de suivi bébé comme Raffy.
 - [Percentiles poids taille bébé : comprendre les courbes de croissance](https://www.raffyparenting.com/fr/articles/percentiles-poids-taille-bebe.html): Comprenez les percentiles de croissance bébé et identifiez les situations à discuter avec le pédiatre.
-- [Le premier vaccin de mon bébé : ce que j'ai ressenti et appris](https://www.raffyparenting.com/fr/articles/premier-vaccin-bebe-ce-que-jai-appris.html): Un témoignage sur le premier vaccin de bébé : doutes, données fiables, réactions attendues et protection collective.
 - [Routine quotidienne du nouveau-né qui fonctionne vraiment](https://www.raffyparenting.com/fr/articles/routine-quotidienne-nouveau-ne.html): Organisez une routine nouveau-né pour repas, sommeil et soins sans planning rigide.
-- [Routine sommeil bébé par âge : guide pratique hebdomadaire](https://www.raffyparenting.com/fr/articles/routine-sommeil-bebe-par-age.html): Mettez en place une routine sommeil bébé par âge avec siestes, fenêtres d'éveil et coucher plus régulier.
+- [La première année de votre bébé : l'année qui vous change pour toujours](https://www.raffyparenting.com/fr/articles/etapes-developpement-premiere-annee-bebe.html): Un guide rassurant de la première année de bébé : étapes par trimestre, attachement, doutes fréquents et développement sans pression.
+- [Éduquer avec confiance et moins de culpabilité](https://www.raffyparenting.com/fr/articles/eduquer-avec-confiance-sans-culpabilite.html): Méthodes concrètes pour réduire la charge mentale parentale et renforcer la confiance éducative.
+- [Le premier vaccin de mon bébé : ce que j'ai ressenti et appris](https://www.raffyparenting.com/fr/articles/premier-vaccin-bebe-ce-que-jai-appris.html): Un témoignage sur le premier vaccin de bébé : doutes, données fiables, réactions attendues et protection collective.
 
 ## Português (Brasil)
 
 - [Ferramentas para famílias](https://www.raffyparenting.com/pt/ferramentas/): Explore ferramentas para sono, alimentação, crescimento e acompanhamento diário.
-- [Calculadora OMS de percentis do bebe](https://www.raffyparenting.com/pt/ferramentas/calculadora-percentis-bebe-oms.html): Calcule percentis OMS do bebe para peso, comprimento/altura e perimetro cefalico com opcao de idade corrigida para prematuridade.
-- [Planejador de cardapio para bebes e criancas](https://www.raffyparenting.com/pt/ferramentas/planejador-cardapio-semanal-12-23-meses.html): Planejador de cardapio para bebes e criancas de 12-23 meses: gere um menu semanal de 7 dias com logica OMS, meta de leite por idade, validacao calorica e variedade semanal.
-- [Ajudante de transição de sonecas](https://www.raffyparenting.com/pt/ferramentas/ajudante-transicao-sonecas.html): Verifique se uma transição de sonecas está chegando e receba ajustes práticos.
-- [Calculadora de fraldas e eliminações por idade](https://www.raffyparenting.com/pt/ferramentas/calculadora-fraldas-eliminacao.html): Registre fraldas molhadas e evacuações para monitorar hidratação e sinais de alerta.
-- [Estimador de quantidade alimentar por idade](https://www.raffyparenting.com/pt/ferramentas/estimador-quantidade-alimentacao.html): Estime metas de ingestão diária por idade, peso e número de refeições.
+- [Calculadora OMS de percentis do bebe (peso, altura e perimetro cefalico)](https://www.raffyparenting.com/pt/ferramentas/calculadora-percentis-bebe-oms.html): Calcule percentis OMS do bebe para peso, comprimento/altura e perimetro cefalico com opcao de idade corrigida para prematuridade.
 - [Planejador de janelas de vigília por idade](https://www.raffyparenting.com/pt/ferramentas/planejador-janelas-vigilia.html): Estime janelas de vigília e estrutura de sonecas por idade para rotinas mais previsíveis.
+- [Ajudante de transição de sonecas](https://www.raffyparenting.com/pt/ferramentas/ajudante-transicao-sonecas.html): Verifique se uma transição de sonecas está chegando e receba ajustes práticos.
 - [Planejador de progressão alimentar por idade](https://www.raffyparenting.com/pt/ferramentas/planejador-progresso-alimentacao.html): Planeje progressão de texturas e variedade alimentar semanal na introdução alimentar.
-- [Guias para tomar decisões com mais confiança todos os dias](https://www.raffyparenting.com/pt/artigos/): Explore guias práticos sobre sono do bebê, introdução alimentar, percentis de crescimento e rotina de recém-nascido.
-- [Como escolher um app Android de acompanhamento do bebe sem complicar](https://www.raffyparenting.com/pt/artigos/app-android-acompanhamento-bebe-guia.html): Guia prático para decidir quando usar ferramentas web e quando usar um app Android de acompanhamento do bebê como o Raffy.
-- [Cardápio semanal para bebê de 9 meses: plano completo de 7 dias](https://www.raffyparenting.com/pt/artigos/cardapio-semanal-bebe-9-meses.html): Cardápio semanal para bebê de 9 meses: 7 dias com café da manhã, lanches, almoço e jantar, calorias aproximadas e o que muda de 10 a 12 meses.
-- [Criar com confiança e menos culpa: guia prático](https://www.raffyparenting.com/pt/artigos/criar-com-confianca-sem-culpa.html): Estratégias para reduzir carga mental, alinhar cuidadores e criar com mais confiança no dia a dia.
-- [Guia de introdução alimentar do bebê: BLW, papinhas e segurança](https://www.raffyparenting.com/pt/artigos/guia-introducao-alimentar-bebe-blw.html): Guia prático de introdução alimentar com BLW e papinhas, formatos seguros e planejamento inicial.
-- [O primeiro ano do seu bebê: o ano que muda você para sempre](https://www.raffyparenting.com/pt/artigos/marcos-desenvolvimento-primeiro-ano-bebe.html): Um guia acolhedor do primeiro ano do bebê: marcos por trimestre, apego, dúvidas comuns e desenvolvimento sem pressão.
-- [Percentis de peso e altura do bebê: como entender a curva](https://www.raffyparenting.com/pt/artigos/percentis-peso-altura-bebe.html): Entenda percentis de peso e altura do bebê e saiba quando procurar avaliação pediátrica.
-- [A primeira vacina do meu bebê: o que senti e o que aprendi](https://www.raffyparenting.com/pt/artigos/primeira-vacina-bebe-o-que-aprendi.html): Um relato real sobre a primeira vacina do bebê: dúvidas, evidências, reações esperadas e proteção coletiva.
-- [Rotina diária do recém-nascido que funciona de verdade](https://www.raffyparenting.com/pt/artigos/rotina-diaria-recem-nascido.html): Organize a rotina do recém-nascido para mamadas, sono e cuidados sem horários rígidos.
+- [Estimador de quantidade alimentar por idade](https://www.raffyparenting.com/pt/ferramentas/estimador-quantidade-alimentacao.html): Estime metas de ingestão diária por idade, peso e número de refeições.
+- [Calculadora de fraldas e eliminações por idade](https://www.raffyparenting.com/pt/ferramentas/calculadora-fraldas-eliminacao.html): Registre fraldas molhadas e evacuações para monitorar hidratação e sinais de alerta.
+- [Planejador de Cardapio para Bebes e Criancas (12-23 meses)](https://www.raffyparenting.com/pt/ferramentas/planejador-cardapio-semanal-12-23-meses.html): Planejador de cardapio para bebes e criancas de 12-23 meses: gere um menu semanal de 7 dias com logica OMS, meta de leite por idade, validacao calorica e variedade semanal.
+- [Biblioteca de artigos para pais](https://www.raffyparenting.com/pt/artigos/): Explore guias práticos sobre sono do bebê, introdução alimentar, percentis de crescimento e rotina de recém-nascido.
 - [Rotina de sono do bebê por idade: guia prático semanal](https://www.raffyparenting.com/pt/artigos/rotina-sono-bebe-por-idade.html): Monte uma rotina de sono do bebê por idade com janelas de sono, sonecas e horário noturno mais estável.
+- [Guia de introdução alimentar do bebê: BLW, papinhas e segurança](https://www.raffyparenting.com/pt/artigos/guia-introducao-alimentar-bebe-blw.html): Guia prático de introdução alimentar com BLW e papinhas, formatos seguros e planejamento inicial.
+- [Cardápio semanal para bebê de 9 meses: plano completo de 7 dias](https://www.raffyparenting.com/pt/artigos/cardapio-semanal-bebe-9-meses.html): Cardápio semanal para bebê de 9 meses: 7 dias com café da manhã, lanches, almoço e jantar, calorias aproximadas e o que muda de 10 a 12 meses.
+- [Melhor app Android para acompanhamento do bebe](https://www.raffyparenting.com/pt/artigos/app-android-acompanhamento-bebe-guia.html): Guia prático para decidir quando usar ferramentas web e quando usar um app Android de acompanhamento do bebê como o Raffy.
+- [Percentis de peso e altura do bebê: como entender a curva](https://www.raffyparenting.com/pt/artigos/percentis-peso-altura-bebe.html): Entenda percentis de peso e altura do bebê e saiba quando procurar avaliação pediátrica.
+- [Rotina diária do recém-nascido que funciona de verdade](https://www.raffyparenting.com/pt/artigos/rotina-diaria-recem-nascido.html): Organize a rotina do recém-nascido para mamadas, sono e cuidados sem horários rígidos.
+- [O primeiro ano do seu bebê: o ano que muda você para sempre](https://www.raffyparenting.com/pt/artigos/marcos-desenvolvimento-primeiro-ano-bebe.html): Um guia acolhedor do primeiro ano do bebê: marcos por trimestre, apego, dúvidas comuns e desenvolvimento sem pressão.
+- [Criar com confiança e menos culpa: guia prático](https://www.raffyparenting.com/pt/artigos/criar-com-confianca-sem-culpa.html): Estratégias para reduzir carga mental, alinhar cuidadores e criar com mais confiança no dia a dia.
+- [A primeira vacina do meu bebê: o que senti e o que aprendi](https://www.raffyparenting.com/pt/artigos/primeira-vacina-bebe-o-que-aprendi.html): Um relato real sobre a primeira vacina do bebê: dúvidas, evidências, reações esperadas e proteção coletiva.
 
 ## Optional
 
 - [LLMS.md](https://www.raffyparenting.com/LLMS.md): reference summary of Raffy and the site
 - [AGENTS.md](https://www.raffyparenting.com/AGENTS.md): short factual overview and URL index
 - [Sitemap](https://www.raffyparenting.com/sitemap.xml): all indexable URLs
-- [About Raffy](https://www.raffyparenting.com/en/about.html): Learn about Raffy's mission, editorial standards, and commitment to practical baby-care guidance for families.
-- [Contact](https://www.raffyparenting.com/en/contact.html): Contact Raffy for content feedback, corrections, or partnership opportunities.
-- [Request Data Deletion - Raffy](https://www.raffyparenting.com/en/data-deletion.html): How to request personal data deletion for Raffy by email, what information to include, and expected processing time.
-- [Editorial Policy](https://www.raffyparenting.com/en/editorial-policy.html): Raffy's editorial policy explains content quality, review process, updates, and medical-safety boundaries.
-- [Privacy Policy for Raffy](https://www.raffyparenting.com/en/privacy.html): Read Raffy Privacy Policy, including data collection, child data handling, third-party services, consent controls, GDPR and CPRA compliance, and deletion rights.
-- [Terms of Use](https://www.raffyparenting.com/en/terms.html): Terms and usage conditions for Raffy's website content and downloadable app links.
-- [Contacto (ES)](https://www.raffyparenting.com/es/contacto.html)
-- [Solicitud de Eliminación de Datos - Raffy (ES)](https://www.raffyparenting.com/es/eliminacion-datos.html)
-- [Política editorial (ES)](https://www.raffyparenting.com/es/politica-editorial.html)
-- [Política de Privacidad de Raffy (ES)](https://www.raffyparenting.com/es/privacidad.html)
-- [Quiénes somos (ES)](https://www.raffyparenting.com/es/sobre.html)
-- [Términos de uso (ES)](https://www.raffyparenting.com/es/terminos.html)
-- [À propos (FR)](https://www.raffyparenting.com/fr/a-propos.html)
-- [Conditions d'utilisation (FR)](https://www.raffyparenting.com/fr/conditions.html)
-- [Politique de Confidentialite de Raffy (FR)](https://www.raffyparenting.com/fr/confidentialite.html)
-- [Contact (FR)](https://www.raffyparenting.com/fr/contact.html)
-- [Politique éditoriale (FR)](https://www.raffyparenting.com/fr/politique-editoriale.html)
-- [Demande de Suppression des Donnees - Raffy (FR)](https://www.raffyparenting.com/fr/suppression-donnees.html)
-- [Contato (pt-BR)](https://www.raffyparenting.com/pt/contato.html)
-- [Solicitacao de Exclusao de Dados - Raffy (pt-BR)](https://www.raffyparenting.com/pt/exclusao-dados.html)
-- [Política editorial (pt-BR)](https://www.raffyparenting.com/pt/politica-editorial.html)
-- [Politica de Privacidade da Raffy (pt-BR)](https://www.raffyparenting.com/pt/privacidade.html)
-- [Sobre (pt-BR)](https://www.raffyparenting.com/pt/sobre.html)
-- [Termos de uso (pt-BR)](https://www.raffyparenting.com/pt/termos.html)
+- [About Raffy (EN)](https://www.raffyparenting.com/en/about.html): Learn about Raffy's mission, editorial standards, and commitment to practical baby-care guidance for families.
+- [Contact (EN)](https://www.raffyparenting.com/en/contact.html): Contact Raffy for content feedback, corrections, or partnership opportunities.
+- [Request Data Deletion - Raffy (EN)](https://www.raffyparenting.com/en/data-deletion.html): How to request personal data deletion for Raffy by email, what information to include, and expected processing time.
+- [Editorial Policy (EN)](https://www.raffyparenting.com/en/editorial-policy.html): Raffy's editorial policy explains content quality, review process, updates, and medical-safety boundaries.
+- [Privacy Policy for Raffy (EN)](https://www.raffyparenting.com/en/privacy.html): Read Raffy Privacy Policy, including data collection, child data handling, third-party services, consent controls, GDPR and CPRA compliance, and deletion rights.
+- [Terms of Use (EN)](https://www.raffyparenting.com/en/terms.html): Terms and usage conditions for Raffy's website content and downloadable app links.
+- [Contacto (ES)](https://www.raffyparenting.com/es/contacto.html): Contacta con Raffy para sugerencias editoriales, correcciones o colaboraciones.
+- [Solicitud de Eliminación de Datos - Raffy (ES)](https://www.raffyparenting.com/es/eliminacion-datos.html): Cómo solicitar por email la eliminación de datos personales en Raffy, qué información incluir y plazo de respuesta.
+- [Política editorial (ES)](https://www.raffyparenting.com/es/politica-editorial.html): Política editorial de Raffy: criterios de calidad, actualización y límites de contenido médico.
+- [Política de Privacidad de Raffy (ES)](https://www.raffyparenting.com/es/privacidad.html): Política de privacidad de Raffy sobre recopilación de datos, seguridad, consentimiento, servicios de terceros y derechos de eliminación.
+- [Quiénes somos (ES)](https://www.raffyparenting.com/es/sobre.html): Conoce quiénes somos en Raffy, nuestra misión, cómo trabajamos y dónde ver todas nuestras apps en Google Play.
+- [Términos de uso (ES)](https://www.raffyparenting.com/es/terminos.html): Condiciones de uso del contenido y recursos publicados en el sitio web de Raffy.
+- [À propos (FR)](https://www.raffyparenting.com/fr/a-propos.html): Découvrez la mission de Raffy, notre approche éditoriale et notre engagement pour les familles.
+- [Conditions d'utilisation (FR)](https://www.raffyparenting.com/fr/conditions.html): Conditions d'utilisation du site Raffy et de ses contenus informatifs.
+- [Politique de Confidentialite Raffy (FR)](https://www.raffyparenting.com/fr/confidentialite.html): Politique de confidentialite Raffy sur la collecte de donnees, la securite, le consentement et les droits des utilisateurs.
+- [Contact (FR)](https://www.raffyparenting.com/fr/contact.html): Contactez Raffy pour des retours éditoriaux, corrections ou collaborations.
+- [Politique éditoriale (FR)](https://www.raffyparenting.com/fr/politique-editoriale.html): Politique éditoriale Raffy: qualité, mise à jour et limites du contenu santé.
+- [Demande de Suppression des Donnees - Raffy (FR)](https://www.raffyparenting.com/fr/suppression-donnees.html): Comment demander par email la suppression des donnees personnelles sur Raffy, informations requises et delai de traitement.
+- [Contato (PT)](https://www.raffyparenting.com/pt/contato.html): Entre em contato com a Raffy para sugestões editoriais, correções e parcerias.
+- [Solicitacao de Exclusao de Dados - Raffy (PT)](https://www.raffyparenting.com/pt/exclusao-dados.html): Como solicitar por email a exclusao de dados pessoais na Raffy, informacoes necessarias e prazo de processamento.
+- [Política editorial (PT)](https://www.raffyparenting.com/pt/politica-editorial.html): Política editorial da Raffy: padrões de qualidade, revisão e limites em temas de saúde.
+- [Politica de Privacidade Raffy (PT)](https://www.raffyparenting.com/pt/privacidade.html): Politica de privacidade da Raffy sobre coleta de dados, seguranca, consentimento, servicos de terceiros e direitos de exclusao.
+- [Sobre (PT)](https://www.raffyparenting.com/pt/sobre.html): Conheça a missão da Raffy, nossos padrões editoriais e compromisso com famílias.
+- [Termos de uso (PT)](https://www.raffyparenting.com/pt/termos.html): Termos de uso do conteúdo e recursos publicados no site da Raffy.
