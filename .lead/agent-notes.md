@@ -51,3 +51,5 @@ Facts learned while working. One line each. Newest at the bottom. Trim via a "Re
 - Since T-023 all 8 tool pages per locale are in the manifest/sitemap (100 validated pages, 103 sitemap URLs); new tools must be added to `seo/articles.manifest.json`.
 - `~/.config/raffy-analytics/` did not exist on 2026-10-25: `npm run analytics:pull` fails until the owner sets up credentials.
 - No official Raffy/Gurru Labs social or developer profile URL exists (web + raffy-app repo, 2026-10-25); Organization `sameAs` = Play Store only.
+- T-019 design run (2026-10-26): `python3` and `node` scripts needed approval; a single headless Chrome `--screenshot` command did not; Chrome writes into an existing folder only (create it with Write of a `.keep` file).
+- Read times are inconsistent (as of 2026-10-26): bylines vary 1–5 min, every related-article card hardcodes "1 min read", library cards can disagree with their article's byline.
