@@ -54,3 +54,5 @@ Facts learned while working. One line each. Newest at the bottom. Trim via a "Re
 - Meal planner macros (T-003): whole milk (450–500 ml/day) is 27–43% of energy, so solids must be carb-heavy; protein (max 20%) and carbs (min 45%) are the tight AMDR bounds at 12 m, fat (min 30%) at 23 m. `chooseDish` has a macro-balance penalty (`MACRO_BALANCE_WEIGHT`); editing dish grams can push plans out of range — rerun the validator over ages 12–23.
 - Planner pages show dish names, kcal and the C/F/P split only, never ingredient grams. Data JSON is fetched with `cache: no-store` (no `?v=` bump needed).
 - Port 8142 may be held by a stale python server from the T-013 worktree; for before/after renders `git archive main | tar -x -C /tmp/...` and serve it on another port.
+- T-019 design run (2026-10-26): `python3` and `node` scripts needed approval; a single headless Chrome `--screenshot` command did not; Chrome writes into an existing folder only (create it with Write of a `.keep` file).
+- Read times are inconsistent (as of 2026-10-26): bylines vary 1–5 min, every related-article card hardcodes "1 min read", library cards can disagree with their article's byline.
