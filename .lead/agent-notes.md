@@ -49,7 +49,7 @@ Facts learned while working. One line each. Newest at the bottom. Trim via a "Re
 - Since T-018: IndexNow key file `8009526c53babac4013f97218b92f330.txt` at root; `npm run seo:indexnow [-- --dry-run] [-- --changed <ref>]` submits sitemap URLs (diffs `<ref>..HEAD`, committed only). Run after each deploy.
 - Live `/LLMS.md` and `/AGENTS.md` are served raw (`text/markdown`) because they have no front matter; never add `---` front matter to them.
 - Since T-023 all 8 tool pages per locale are in the manifest/sitemap (100 validated pages, 103 sitemap URLs); new tools must be added to `seo/articles.manifest.json`.
-- `~/.config/raffy-analytics/` did not exist on 2026-10-25: `npm run analytics:pull` fails until the owner sets up credentials.
+- Since 2026-10-26 `~/.config/raffy-analytics/` has GSC only (key = symlink to the Play publisher SA `play-publisher@raffy-android`, Full on the GSC property; no Mixpanel yet). URL inspection takes ~7 s/URL, so `analytics:pull` runs ~13 min: run it detached (`nohup … &`), a 10-min tool timeout kills it.
 - No official Raffy/Gurru Labs social or developer profile URL exists (web + raffy-app repo, 2026-10-25); Organization `sameAs` = Play Store only.
 - T-019 design run (2026-10-26): `python3` and `node` scripts needed approval; a single headless Chrome `--screenshot` command did not; Chrome writes into an existing folder only (create it with Write of a `.keep` file).
 - Read times are inconsistent (as of 2026-10-26): bylines vary 1–5 min, every related-article card hardcodes "1 min read", library cards can disagree with their article's byline.
