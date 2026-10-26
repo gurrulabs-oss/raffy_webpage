@@ -1266,11 +1266,11 @@
       "ingredients": [
         {
           "foodId": "lentils_cooked",
-          "grams": 120
+          "grams": 90
         },
         {
           "foodId": "carrot",
-          "grams": 40
+          "grams": 60
         },
         {
           "foodId": "zucchini",
@@ -1278,7 +1278,7 @@
         },
         {
           "foodId": "olive_oil",
-          "grams": 5
+          "grams": 3
         }
       ],
       "tags": {
@@ -1354,7 +1354,7 @@
       "ingredients": [
         {
           "foodId": "white_beans_cooked",
-          "grams": 110
+          "grams": 90
         },
         {
           "foodId": "leek",
@@ -1362,7 +1362,7 @@
         },
         {
           "foodId": "carrot",
-          "grams": 50
+          "grams": 60
         },
         {
           "foodId": "olive_oil",
@@ -1398,11 +1398,11 @@
       "ingredients": [
         {
           "foodId": "hake",
-          "grams": 65
+          "grams": 35
         },
         {
           "foodId": "potato_boiled",
-          "grams": 110
+          "grams": 140
         },
         {
           "foodId": "green_beans",
@@ -1410,7 +1410,7 @@
         },
         {
           "foodId": "olive_oil",
-          "grams": 5
+          "grams": 4
         }
       ],
       "tags": {
@@ -1442,11 +1442,11 @@
       "ingredients": [
         {
           "foodId": "salmon",
-          "grams": 60
+          "grams": 35
         },
         {
           "foodId": "sweet_potato_baked",
-          "grams": 120
+          "grams": 150
         },
         {
           "foodId": "broccoli",
@@ -1454,7 +1454,7 @@
         },
         {
           "foodId": "olive_oil",
-          "grams": 4
+          "grams": 2
         }
       ],
       "tags": {
@@ -1486,11 +1486,11 @@
       "ingredients": [
         {
           "foodId": "cod",
-          "grams": 70
+          "grams": 35
         },
         {
           "foodId": "potato_boiled",
-          "grams": 100
+          "grams": 140
         },
         {
           "foodId": "broccoli",
@@ -1498,7 +1498,7 @@
         },
         {
           "foodId": "olive_oil",
-          "grams": 5
+          "grams": 4
         }
       ],
       "tags": {
@@ -1530,7 +1530,7 @@
       "ingredients": [
         {
           "foodId": "chicken_thigh_cooked",
-          "grams": 65
+          "grams": 30
         },
         {
           "foodId": "carrot",
@@ -1542,11 +1542,11 @@
         },
         {
           "foodId": "couscous_cooked",
-          "grams": 80
+          "grams": 120
         },
         {
           "foodId": "olive_oil",
-          "grams": 5
+          "grams": 3
         }
       ],
       "tags": {
@@ -1578,11 +1578,11 @@
       "ingredients": [
         {
           "foodId": "turkey_cooked",
-          "grams": 60
+          "grams": 30
         },
         {
           "foodId": "rice_cooked",
-          "grams": 90
+          "grams": 130
         },
         {
           "foodId": "zucchini",
@@ -1590,7 +1590,7 @@
         },
         {
           "foodId": "olive_oil",
-          "grams": 5
+          "grams": 4
         }
       ],
       "tags": {
@@ -1620,7 +1620,7 @@
       "ingredients": [
         {
           "foodId": "beef_lean_cooked",
-          "grams": 60
+          "grams": 30
         },
         {
           "foodId": "tomato",
@@ -1636,11 +1636,11 @@
         },
         {
           "foodId": "potato_boiled",
-          "grams": 70
+          "grams": 120
         },
         {
           "foodId": "olive_oil",
-          "grams": 4
+          "grams": 3
         }
       ],
       "tags": {
@@ -1719,11 +1719,11 @@
       "ingredients": [
         {
           "foodId": "rice_cooked",
-          "grams": 100
+          "grams": 120
         },
         {
           "foodId": "chicken_thigh_cooked",
-          "grams": 55
+          "grams": 30
         },
         {
           "foodId": "carrot",
@@ -1735,7 +1735,7 @@
         },
         {
           "foodId": "olive_oil",
-          "grams": 4
+          "grams": 3
         }
       ],
       "tags": {
@@ -1765,11 +1765,11 @@
       "ingredients": [
         {
           "foodId": "quinoa_cooked",
-          "grams": 100
+          "grams": 120
         },
         {
           "foodId": "egg",
-          "grams": 45
+          "grams": 30
         },
         {
           "foodId": "zucchini",
@@ -1781,7 +1781,7 @@
         },
         {
           "foodId": "olive_oil",
-          "grams": 4
+          "grams": 2
         }
       ],
       "tags": {
@@ -1812,7 +1812,7 @@
       "ingredients": [
         {
           "foodId": "potato_boiled",
-          "grams": 90
+          "grams": 110
         },
         {
           "foodId": "zucchini",
@@ -1824,11 +1824,11 @@
         },
         {
           "foodId": "egg",
-          "grams": 45
+          "grams": 30
         },
         {
           "foodId": "olive_oil",
-          "grams": 4
+          "grams": 3
         }
       ],
       "tags": {
@@ -1863,15 +1863,15 @@
         },
         {
           "foodId": "potato_boiled",
-          "grams": 80
+          "grams": 120
         },
         {
           "foodId": "turkey_cooked",
-          "grams": 50
+          "grams": 25
         },
         {
           "foodId": "olive_oil",
-          "grams": 4
+          "grams": 3
         }
       ],
       "tags": {
@@ -1904,11 +1904,11 @@
         },
         {
           "foodId": "vermicelli_cooked",
-          "grams": 70
+          "grams": 110
         },
         {
           "foodId": "chicken_thigh_cooked",
-          "grams": 50
+          "grams": 25
         },
         {
           "foodId": "carrot",
@@ -1916,7 +1916,7 @@
         },
         {
           "foodId": "olive_oil",
-          "grams": 3
+          "grams": 2
         }
       ],
       "tags": {
@@ -1989,11 +1989,11 @@
       "ingredients": [
         {
           "foodId": "sweet_potato_baked",
-          "grams": 120
+          "grams": 140
         },
         {
           "foodId": "fresh_cheese_pasteurized",
-          "grams": 70
+          "grams": 40
         },
         {
           "foodId": "olive_oil",
@@ -2028,7 +2028,7 @@
       "ingredients": [
         {
           "foodId": "egg",
-          "grams": 55
+          "grams": 40
         },
         {
           "foodId": "spinach_cooked",
@@ -2036,11 +2036,11 @@
         },
         {
           "foodId": "potato_boiled",
-          "grams": 90
+          "grams": 120
         },
         {
           "foodId": "olive_oil",
-          "grams": 4
+          "grams": 2
         }
       ],
       "tags": {
@@ -2396,11 +2396,11 @@
       "ingredients": [
         {
           "foodId": "hake",
-          "grams": 90
+          "grams": 40
         },
         {
           "foodId": "rice_cooked",
-          "grams": 90
+          "grams": 120
         },
         {
           "foodId": "zucchini",
@@ -2439,11 +2439,11 @@
       "ingredients": [
         {
           "foodId": "turkey_cooked",
-          "grams": 85
+          "grams": 35
         },
         {
           "foodId": "sweet_potato_baked",
-          "grams": 100
+          "grams": 140
         },
         {
           "foodId": "broccoli",
@@ -2480,7 +2480,7 @@
       "ingredients": [
         {
           "foodId": "lentils_cooked",
-          "grams": 120
+          "grams": 90
         },
         {
           "foodId": "pumpkin",
@@ -2488,7 +2488,7 @@
         },
         {
           "foodId": "quinoa_cooked",
-          "grams": 85
+          "grams": 100
         },
         {
           "foodId": "olive_oil",
@@ -2523,11 +2523,11 @@
       "ingredients": [
         {
           "foodId": "beef_lean_cooked",
-          "grams": 55
+          "grams": 30
         },
         {
           "foodId": "couscous_cooked",
-          "grams": 80
+          "grams": 120
         },
         {
           "foodId": "leek",
@@ -2539,7 +2539,7 @@
         },
         {
           "foodId": "olive_oil",
-          "grams": 4
+          "grams": 3
         }
       ],
       "tags": {
@@ -2736,11 +2736,11 @@
         },
         {
           "foodId": "potato_boiled",
-          "grams": 90
+          "grams": 130
         },
         {
           "foodId": "hake",
-          "grams": 70
+          "grams": 35
         },
         {
           "foodId": "olive_oil",
@@ -2775,7 +2775,7 @@
       "ingredients": [
         {
           "foodId": "rice_cooked",
-          "grams": 75
+          "grams": 110
         },
         {
           "foodId": "spinach_cooked",
@@ -2783,11 +2783,11 @@
         },
         {
           "foodId": "egg",
-          "grams": 45
+          "grams": 30
         },
         {
           "foodId": "olive_oil",
-          "grams": 4
+          "grams": 3
         }
       ],
       "tags": {
@@ -2818,7 +2818,7 @@
       "ingredients": [
         {
           "foodId": "white_beans_cooked",
-          "grams": 110
+          "grams": 90
         },
         {
           "foodId": "pumpkin",
@@ -2861,11 +2861,11 @@
       "ingredients": [
         {
           "foodId": "couscous_cooked",
-          "grams": 75
+          "grams": 120
         },
         {
           "foodId": "turkey_cooked",
-          "grams": 70
+          "grams": 30
         },
         {
           "foodId": "broccoli",
@@ -3242,11 +3242,11 @@
       "ingredients": [
         {
           "foodId": "salmon",
-          "grams": 70
+          "grams": 35
         },
         {
           "foodId": "rice_cooked",
-          "grams": 85
+          "grams": 130
         },
         {
           "foodId": "broccoli",
@@ -3254,7 +3254,7 @@
         },
         {
           "foodId": "olive_oil",
-          "grams": 4
+          "grams": 2
         }
       ],
       "tags": {
@@ -3285,11 +3285,11 @@
       "ingredients": [
         {
           "foodId": "chicken_thigh_cooked",
-          "grams": 65
+          "grams": 30
         },
         {
           "foodId": "potato_boiled",
-          "grams": 110
+          "grams": 150
         },
         {
           "foodId": "carrot",
@@ -3297,7 +3297,7 @@
         },
         {
           "foodId": "olive_oil",
-          "grams": 4
+          "grams": 3
         }
       ],
       "tags": {
@@ -3326,11 +3326,11 @@
       "ingredients": [
         {
           "foodId": "cod",
-          "grams": 85
+          "grams": 40
         },
         {
           "foodId": "quinoa_cooked",
-          "grams": 95
+          "grams": 120
         },
         {
           "foodId": "pumpkin",
@@ -3369,11 +3369,11 @@
       "ingredients": [
         {
           "foodId": "turkey_cooked",
-          "grams": 80
+          "grams": 35
         },
         {
           "foodId": "couscous_cooked",
-          "grams": 90
+          "grams": 120
         },
         {
           "foodId": "zucchini",
@@ -3583,11 +3583,11 @@
         },
         {
           "foodId": "cod",
-          "grams": 75
+          "grams": 35
         },
         {
           "foodId": "rice_cooked",
-          "grams": 80
+          "grams": 110
         },
         {
           "foodId": "olive_oil",
@@ -3622,7 +3622,7 @@
       "ingredients": [
         {
           "foodId": "potato_boiled",
-          "grams": 100
+          "grams": 140
         },
         {
           "foodId": "broccoli",
@@ -3630,11 +3630,11 @@
         },
         {
           "foodId": "chicken_thigh_cooked",
-          "grams": 60
+          "grams": 30
         },
         {
           "foodId": "olive_oil",
-          "grams": 4
+          "grams": 3
         }
       ],
       "tags": {
@@ -3663,7 +3663,7 @@
       "ingredients": [
         {
           "foodId": "quinoa_cooked",
-          "grams": 85
+          "grams": 120
         },
         {
           "foodId": "zucchini",
@@ -3671,7 +3671,7 @@
         },
         {
           "foodId": "turkey_cooked",
-          "grams": 75
+          "grams": 30
         },
         {
           "foodId": "olive_oil",
