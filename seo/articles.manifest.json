@@ -81,6 +81,56 @@
       }
     },
     {
+      "id": "tool_wake_window",
+      "type": "tool",
+      "routes": {
+        "en": "/en/tools/wake-window-planner.html",
+        "es": "/es/herramientas/planificador-ventanas-sueno.html",
+        "fr": "/fr/outils/planificateur-fenetres-eveil.html",
+        "pt": "/pt/ferramentas/planejador-janelas-vigilia.html"
+      }
+    },
+    {
+      "id": "tool_nap_transition",
+      "type": "tool",
+      "routes": {
+        "en": "/en/tools/nap-transition-helper.html",
+        "es": "/es/herramientas/ayudante-transicion-siestas.html",
+        "fr": "/fr/outils/assistant-transition-siestes.html",
+        "pt": "/pt/ferramentas/ajudante-transicao-sonecas.html"
+      }
+    },
+    {
+      "id": "tool_solids_progression",
+      "type": "tool",
+      "routes": {
+        "en": "/en/tools/solids-progression-planner.html",
+        "es": "/es/herramientas/planificador-progresion-solidos.html",
+        "fr": "/fr/outils/planificateur-progression-diversification.html",
+        "pt": "/pt/ferramentas/planejador-progresso-alimentacao.html"
+      }
+    },
+    {
+      "id": "tool_feeding_quantity",
+      "type": "tool",
+      "routes": {
+        "en": "/en/tools/feeding-quantity-estimator.html",
+        "es": "/es/herramientas/estimador-cantidad-alimentacion.html",
+        "fr": "/fr/outils/estimateur-quantites-alimentation.html",
+        "pt": "/pt/ferramentas/estimador-quantidade-alimentacao.html"
+      }
+    },
+    {
+      "id": "tool_diaper_output",
+      "type": "tool",
+      "routes": {
+        "en": "/en/tools/diaper-output-tracker.html",
+        "es": "/es/herramientas/calculadora-panales-eliminacion.html",
+        "fr": "/fr/outils/calculateur-couches-elimination.html",
+        "pt": "/pt/ferramentas/calculadora-fraldas-eliminacao.html"
+      }
+    },
+    {
       "id": "tool_library",
       "type": "tool",
       "routes": {

@@ -48,6 +48,6 @@ Facts learned while working. One line each. Newest at the bottom. Trim via a "Re
 - `npm run seo:sitemap` REGENERATES `robots.txt` from `scripts/seo_sitemap.mjs` (since T-018 incl. named AI-bot/Bingbot groups): edit robots rules there, never in robots.txt.
 - Since T-018: IndexNow key file `8009526c53babac4013f97218b92f330.txt` at root; `npm run seo:indexnow [-- --dry-run] [-- --changed <ref>]` submits sitemap URLs (diffs `<ref>..HEAD`, committed only). Run after each deploy.
 - Live `/LLMS.md` and `/AGENTS.md` are served raw (`text/markdown`) because they have no front matter; never add `---` front matter to them.
-- As of 2026-10-25 only 3 of 8 tool pages per locale are in the sitemap/manifest (hub, percentile, meal planner); fix tracked in T-023.
+- Since T-023 all 8 tool pages per locale are in the manifest/sitemap (100 validated pages, 103 sitemap URLs); new tools must be added to `seo/articles.manifest.json`.
 - `~/.config/raffy-analytics/` did not exist on 2026-10-25: `npm run analytics:pull` fails until the owner sets up credentials.
 - No official Raffy/Gurru Labs social or developer profile URL exists (web + raffy-app repo, 2026-10-25); Organization `sameAs` = Play Store only.
