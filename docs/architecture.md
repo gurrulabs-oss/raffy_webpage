@@ -32,3 +32,4 @@
 
 ## Known defects (Oct 2026)
 - `seo_sync` `rewriteJsonLdPublisher` regex never sees the existing publisher → appends a duplicate each run.
+- `npm run meal:validate` fails all seeds on macro and WHO/pediatric checks (cause not investigated).

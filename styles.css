@@ -1208,3 +1208,27 @@ a.btn-play.on-blue, a.btn-play.on-blue:hover { color: var(--ink); }
 .prose .faq summary { font-size: 1.0625rem; }
 .prose .faq details p { margin: 0; font-size: var(--fs-md); }
 .prose .faq details > * + * { margin-top: 0; }
+
+/* ===================== T-019 · Article trust layer: updated date, direct answer, sources ===================== */
+/* Byline: "Updated <date>" with a calendar icon instead of another dot, so it wraps cleanly on phones */
+.byline time { white-space: nowrap; }
+.byline .upd { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+.byline .upd svg { width: 16px; height: 16px; flex: none; }
+
+/* Direct answer: the T-013 "In short" box without the 4-figure grid */
+.prose .answer-box { margin-block: 0 1.6em; }
+.prose .answer-box > p:last-child { margin-bottom: 0; }
+
+/* Sources: last block of the article column */
+.sources { margin-top: 2.2em; border-top: 1px solid var(--line); padding-top: 1.4em; }
+.prose .sources h2 { margin: 0 0 .7em; font-size: 1.375rem; }
+.sources ol { list-style: none; padding: 0 !important; margin: 0; display: grid; gap: 10px; counter-reset: src; }
+.sources li { counter-increment: src; display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: 12px; align-items: start; margin: 0 !important; font-size: var(--fs-md); line-height: 1.45; }
+.sources li::before { content: counter(src); width: 28px; height: 28px; border-radius: 8px; background: var(--mint-100); color: var(--mint-700); display: grid; place-items: center; font-weight: 800; font-size: var(--fs-xs); }
+.sources .org { display: block; font-size: var(--fs-xs); font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); }
+.prose .sources a { color: var(--ink); font-weight: 700; text-decoration: underline; text-decoration-color: var(--mint-300); text-underline-offset: 3px; overflow-wrap: anywhere; }
+.prose .sources a:hover { text-decoration-color: var(--mint-700); color: var(--mint-700); }
+.prose .sources a:focus-visible { outline: 3px solid var(--navy-500); outline-offset: 2px; border-radius: 4px; }
+.sources a svg { width: 14px; height: 14px; vertical-align: -1px; margin-left: 3px; }
+.sources .checked { margin: 1em 0 0; font-size: var(--fs-sm); color: var(--ink-3); }
+.prose .sources .checked a { color: var(--ink-3); font-weight: 600; }
