@@ -1232,3 +1232,68 @@ a.btn-play.on-blue, a.btn-play.on-blue:hover { color: var(--ink); }
 .sources a svg { width: 14px; height: 14px; vertical-align: -1px; margin-left: 3px; }
 .sources .checked { margin: 1em 0 0; font-size: var(--fs-sm); color: var(--ink-3); }
 .prose .sources .checked a { color: var(--ink-3); font-weight: 600; }
+
+/* T-016: percentile-worry article components (curve figure, row-of-100 infographic, trend pair). Reuses existing tokens and the .chart-card look from styles.css. */
+.curve-fig { margin: 1.8em 0; }
+.curve-fig .panels { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.curve-fig .chart-card { padding: 14px 12px 8px; }
+.curve-fig .chart-head { font-size: var(--fs-sm); }
+.curve-fig .chart-head b { display: inline-flex; align-items: center; gap: 6px; }
+.curve-fig .chart-head .ok { color: var(--mint-700); }
+.curve-fig .chart-head .warn { color: var(--coral-600); }
+.curve-fig figcaption { font-size: var(--fs-sm); color: var(--ink-3); margin-top: 10px; line-height: 1.55; }
+.curve-fig svg { width: 100%; height: auto; display: block; overflow: visible; font-family: inherit; }
+.curve-fig .ax { font-size: 10px; fill: var(--ink-3); }
+.curve-fig .pl { stroke: var(--mint-150); stroke-width: 1.1; }
+.curve-fig .p50l { stroke: var(--mint-700); stroke-width: 1.8; }
+.curve-fig .pout { stroke: #a9bdb6; stroke-dasharray: 3 4; }
+.curve-fig .plab { font-size: 9.5px; font-weight: 700; fill: var(--ink-3); }
+.curve-fig .ln-n { stroke: var(--navy-500); stroke-width: 2.6; stroke-linejoin: round; }
+.curve-fig .ln-w { stroke: var(--coral-600); stroke-width: 2.6; stroke-dasharray: 7 4; stroke-linejoin: round; }
+.curve-fig .mk-n { fill: var(--navy-500); stroke: #fff; stroke-width: 2; }
+.curve-fig .mk-w { fill: var(--coral-600); stroke: #fff; stroke-width: 2; }
+.curve-fig .tag-n { font-size: 10.5px; font-weight: 800; fill: var(--navy-500); }
+.curve-fig .tag-w { font-size: 10.5px; font-weight: 800; fill: var(--coral-600); }
+.curve-fig .legend { margin-top: 8px; }
+.curve-fig .legend .n { background: var(--navy-500); }
+.curve-fig .legend .w { background: repeating-linear-gradient(90deg, var(--coral-600) 0 6px, transparent 6px 9px); }
+@media (max-width: 640px) { .curve-fig .panels { grid-template-columns: 1fr; } }
+
+/* "What is a percentile": text + delicate "row of 10 babies" infographic */
+.pct-cols { display: grid; grid-template-columns: 1.4fr 1fr; gap: 28px; align-items: center; }
+.pct-cols > div > p:first-child { margin-top: 0; }
+.pct-cols > div > * + * { margin-top: 1.1em; } /* .prose > * + * only reaches direct children */
+.pct-info { margin: 0; padding: 18px 16px 14px; background: var(--mint-50); border-radius: var(--r-md); }
+.pct-row svg { width: 100%; height: auto; display: block; overflow: visible; }
+.pct-row line { stroke-width: 1; stroke-linecap: round; }
+.pct-row .rw-lo { stroke: var(--mint-700); opacity: .4; }
+.pct-row .rw-hi { stroke: var(--navy-200); }
+.pct-row .rw-me { stroke: var(--navy-500); stroke-width: 2.2; }
+.pct-row .rw-br { stroke: var(--ink-3); opacity: .5; }
+.pct-row .rw-cnt { font-size: 11px; font-weight: 700; fill: var(--ink-2); }
+.pct-row .rw-pill { fill: var(--navy-500); }
+.pct-row .rw-pill-t { font-size: 11px; font-weight: 700; fill: #fff; }
+.pct-row .rw-ax { font-size: 10px; fill: var(--ink-3); }
+.pct-info figcaption { font-size: var(--fs-sm); color: var(--ink-3); margin-top: 10px; line-height: 1.5; }
+.pct-info figcaption strong { color: var(--ink); }
+@media (max-width: 860px) { .pct-cols { grid-template-columns: 1fr; } .pct-info { max-width: 380px; } }
+
+/* "Watch the curve" mini list */
+.trend-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 1.4em 0; }
+.trend-pair > div { border-radius: var(--r-md); padding: 14px 16px; font-size: var(--fs-md); line-height: 1.5; }
+.trend-pair .ok { background: var(--mint-50); border: 1px solid var(--mint-300); }
+.trend-pair .warn { background: var(--coral-50); border: 1px solid #f3c4bf; }
+.trend-pair strong { display: block; font-size: var(--fs-sm); margin-bottom: 4px; }
+.trend-pair .ok strong { color: var(--mint-700); }
+.trend-pair .warn strong { color: var(--coral-600); }
+.trend-pair .num { font-weight: 800; font-size: 1.25rem; color: var(--ink); letter-spacing: -.01em; }
+@media (max-width: 640px) { .trend-pair { grid-template-columns: 1fr; } }
+
+/* T-016: tinted left rail behind the article contents list (all articles, desktop only); runs from the screen's left edge to the end of the 240px column and up to the hero. */
+@media (min-width: 981px) {
+  .article-layout { position: relative; isolation: isolate; }
+  .article-layout::before { content: ""; position: absolute; z-index: -1; top: calc(-1 * var(--s7)); bottom: 0; right: calc(100% - 240px - var(--s4)); width: 100vw; background: var(--sky-50); }
+  .toc { padding: var(--s5) 0; }
+  .toc ol { border-left-color: var(--navy-200); }
+  .toc a.active { color: var(--ink); border-left-color: var(--navy-500); }
+}
