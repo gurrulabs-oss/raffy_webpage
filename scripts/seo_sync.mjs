@@ -305,6 +305,8 @@ function relativeHref(fromRoute, toRoute) {
   const toFile = stripLeading(toRoute.endsWith("/") ? `${toRoute}index.html` : toRoute);
   const fromDir = path.posix.dirname(fromFile);
   const relPath = path.posix.relative(fromDir, toFile);
+  // link hubs by folder (canonical form), not …/index.html
+  if (toRoute.endsWith("/")) return relPath.replace(/(^|\/)index\.html$/, "$1") || "./";
   return relPath || "./";
 }
 
