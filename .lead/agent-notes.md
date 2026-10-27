@@ -69,3 +69,9 @@ Facts learned while working. One line each. Newest at the bottom. Trim via a "Re
 - T-016 design run (2026-10-27): `cp` of several files into `.lead/designs/` and headless Chrome `--screenshot` of `file://` pages ran without approval; a pipe to `sort` needed approval. Below ~500px Chrome clamps the window: screenshot `movil.html` (390px iframe) at 600 wide.
 - Nav/brand/breadcrumb links in ~105 files point to `…/index.html` (200 + canonical to `/`): a duplicate URL per hub. `en/articles/baby-naps-transitions-and-sleep-0-2-years.html` is linked but not in manifest/sitemap (as of 2026-10-27).
 - Since T-027 internal hub links use folder form (`../`, `articles/`), never `index.html`; `relativeHref` in seo_sync.mjs strips it for footer. en naps article is a noindex redirect stub to baby-sleep-routine-by-age.
+- `seo_sync.mjs`/`seo_validate.mjs` crash (`startsWith` of undefined) on a manifest group missing a locale: fill all 4 routes before running `seo:all` (T-016).
+- Since T-016 every article has a desktop TOC rail (`.article-layout::before`, sky-50, styles.css T-016 block); its `top: -var(--s7)` relies on the article.css `margin-top: var(--s7)` on the first `.article-layout`.
+- T-016 charts are static inline SVG (no JS) from WHO girls weight-for-age LMS; to redraw for another article, rebuild from `tools/who-lms-data.json` (generator was throwaway in /tmp, not kept).
+- Raffy app (per raffy-app Lead, 2026-10-27) plots measurements over WHO curves P3/P15/P50/P85/P97 for weight, length and head circumference, 0-60 months, boys/girls.
+- Changing an article's word count makes `articles:readtime` rewrite its "N min" on every related card in other articles: expect ~10 collateral files.
+- T-016: a Node CDP script (`Emulation.setDeviceMetricsOverride`, Chrome `--remote-debugging-port=9333`, wait 6 s) and two `python3 -m http.server` on 8171/8172 ran without approval.
