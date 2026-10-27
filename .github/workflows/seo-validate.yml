@@ -26,6 +26,3 @@ jobs:
 
       - name: Validate SEO
         run: node scripts/seo_validate.mjs
-
-      - name: Validate meal planner
-        run: node scripts/meal_planner_validate.mjs

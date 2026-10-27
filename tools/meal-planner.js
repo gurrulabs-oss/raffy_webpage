@@ -9,13 +9,6 @@ const DEFAULT_INPUT = {
   strictMode: true
 };
 const DEFAULT_DATA_PATH = new URL("./meal-planner-data.json", import.meta.url);
-const MACRO_BANDS = [
-  { key: "carb", field: "carbG", kcalPerG: 4 },
-  { key: "fat", field: "fatG", kcalPerG: 9 },
-  { key: "protein", field: "proteinG", kcalPerG: 4 }
-];
-// Weight of the tie-break that steers each pick toward the middle of the AMDR bands.
-const MACRO_BALANCE_WEIGHT = 1;
 
 const LOCALES = {
   en: {
@@ -325,7 +318,6 @@ export function generateMealPlanner(rawInput, dataset) {
   const repeatCount = new Map();
   const week = [];
   const rng = createRng(input.seed);
-  const macroBalance = createMacroBalance(rules.amdrPct, kcalTarget);
 
   for (let dayIndex = 0; dayIndex < DAY_KEYS.length; dayIndex += 1) {
     const dayKey = DAY_KEYS[dayIndex];
@@ -352,11 +344,6 @@ export function generateMealPlanner(rawInput, dataset) {
       solidMealTargets[mealKey] = daySolidTargetKcal * Number(distribution[mealKey] || 0);
     }
 
-    const runningMacros = addMacros(
-      { ...macroBalance.prior },
-      aggregateNutrition(week.map((day) => day.totals))
-    );
-
     for (const mealKey of MEAL_KEYS) {
       const candidate = chooseDish({
         mealKey,
@@ -371,8 +358,6 @@ export function generateMealPlanner(rawInput, dataset) {
         recentDishIds,
         minPortionScale,
         slotTarget: solidMealTargets[mealKey],
-        macroBalance,
-        runningMacros: addMacros({ ...runningMacros }, milkNutritionByMeal[mealKey]),
         rng
       });
 
@@ -382,7 +367,6 @@ export function generateMealPlanner(rawInput, dataset) {
       const baseline = dishStatsById.get(candidate.id);
       const scale = computeInitialScale(candidate, baseline.kcal, solidMealTargets[mealKey], minPortionScale);
       const nutrition = computeDishNutrition(candidate, foodsById, scale);
-      addMacros(addMacros(runningMacros, nutrition), milkNutritionByMeal[mealKey]);
 
       meals.push({
         mealKey,
@@ -508,8 +492,6 @@ function chooseDish(context) {
     recentDishIds,
     minPortionScale,
     slotTarget,
-    macroBalance,
-    runningMacros,
     rng
   } = context;
 
@@ -565,9 +547,7 @@ function chooseDish(context) {
     const repeatPenalty = currentUses * 0.12;
     const exceptionPenalty = repeatExceptions.has(dish.id) ? 0.08 : 0;
     const randomBoost = rng() * 0.6;
-    const balancePenalty =
-      MACRO_BALANCE_WEIGHT * computeMacroBalancePenalty(macroBalance, runningMacros, baseline, projectedScale);
-    const score = energyScore + randomBoost - repeatPenalty - exceptionPenalty - balancePenalty;
+    const score = energyScore + randomBoost - repeatPenalty - exceptionPenalty;
 
     if (score > bestScore) {
       bestScore = score;
@@ -803,50 +783,6 @@ function computeKcalTarget(ageMonths, formula) {
   const max = Number(formula?.maxKcal || 1000);
   const raw = Math.round(base + (ageMonths - 12) * slope);
   return Math.min(max, Math.max(base, raw));
-}
-
-/**
- * Seeds the running weekly macro totals with one virtual day at the AMDR midpoints, so early
- * picks in the week are not over-steered by a single meal.
- */
-function createMacroBalance(amdrPct, kcalTarget) {
-  const bands = [];
-  const prior = { proteinG: 0, fatG: 0, carbG: 0 };
-  for (const macro of MACRO_BANDS) {
-    const min = Number(amdrPct?.[macro.key]?.min);
-    const max = Number(amdrPct?.[macro.key]?.max);
-    if (!Number.isFinite(min) || !Number.isFinite(max) || max <= min) continue;
-    const mid = (min + max) / 2;
-    bands.push({ ...macro, mid, halfWidth: (max - min) / 2 });
-    prior[macro.field] = (kcalTarget * mid) / 100 / macro.kcalPerG;
-  }
-  return { bands, prior };
-}
-
-function addMacros(target, nutrition) {
-  target.proteinG += Number(nutrition?.proteinG || 0);
-  target.fatG += Number(nutrition?.fatG || 0);
-  target.carbG += Number(nutrition?.carbG || 0);
-  return target;
-}
-
-/** Squared distance (in half-band units) of the projected weekly macro split from the AMDR midpoints. */
-function computeMacroBalancePenalty(macroBalance, runningMacros, baseline, scale) {
-  if (!macroBalance || macroBalance.bands.length === 0 || !runningMacros) return 0;
-  const kcalByMacro = {};
-  let totalKcal = 0;
-  for (const band of macroBalance.bands) {
-    const grams = runningMacros[band.field] + Number(baseline?.[band.field] || 0) * scale;
-    kcalByMacro[band.key] = grams * band.kcalPerG;
-    totalKcal += kcalByMacro[band.key];
-  }
-  if (totalKcal <= 0) return 0;
-  let penalty = 0;
-  for (const band of macroBalance.bands) {
-    const deviation = ((kcalByMacro[band.key] / totalKcal) * 100 - band.mid) / band.halfWidth;
-    penalty += deviation * deviation;
-  }
-  return penalty;
 }
 
 function computeInitialScale(dish, baselineKcal, slotTarget, minPortionScale = 0.55) {
