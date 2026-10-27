@@ -75,3 +75,7 @@ Facts learned while working. One line each. Newest at the bottom. Trim via a "Re
 - Raffy app (per raffy-app Lead, 2026-10-27) plots measurements over WHO curves P3/P15/P50/P85/P97 for weight, length and head circumference, 0-60 months, boys/girls.
 - Changing an article's word count makes `articles:readtime` rewrite its "N min" on every related card in other articles: expect ~10 collateral files.
 - T-016: a Node CDP script (`Emulation.setDeviceMetricsOverride`, Chrome `--remote-debugging-port=9333`, wait 6 s) and two `python3 -m http.server` on 8171/8172 ran without approval.
+- Since T-020 every tool page (not hubs) has `section.tool-explain` (tables copied from tool-cluster.js models / percentile-calculator.js) + WebApplication/FAQPage/BreadcrumbList JSON-LD: changing a tool rule or threshold means updating that text in 4 locales too.
+- fr copy uses U+00A0 before `: ; ? !` and inside « »: exact-string replacements on fr pages must include it.
+- Full-page CDP captures (`captureBeyondViewport`) leave `loading=lazy` images and the CTA phone mockup blank; force `img.loading='eager'` first; the mockup still stays empty (scroll-triggered).
+- es/fr/pt meal-planner pages and percentile-calculator LOCALES fr/pt strings are unaccented (pre-existing, as of 2026-10-27).
