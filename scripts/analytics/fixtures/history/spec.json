@@ -1,0 +1,5 @@
+{
+  "_comment": "Prior snapshots for test-indexing.mjs: dated dirs are cloned from the fixture run's index.json, then the listed URLs are set to NEUTRAL (every other URL stays PASS). Current fixture date: 2026-10-26.",
+  "2026-10-12": ["fr/articles/routine-quotidienne-nouveau-ne.html", "es/articulos/percentiles-peso-talla-bebe.html", "pt/ferramentas/planejador-cardapio-semanal-12-23-meses.html", "en/privacy.html"],
+  "2026-10-19": ["fr/articles/routine-quotidienne-nouveau-ne.html", "es/articulos/percentiles-peso-talla-bebe.html", "en/privacy.html"]
+}

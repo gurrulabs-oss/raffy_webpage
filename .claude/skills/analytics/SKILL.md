@@ -1,13 +1,14 @@
 ---
 name: analytics
-description: Pull fresh Search Console + Mixpanel data for raffyparenting.com, check which sitemap URLs Google has indexed, and interpret it. Use when defining/planning a content ticket, when the owner asks about traffic, queries, indexing or conversions, and in the weekly (Monday) report run, which also files up to 2 article proposals as inbox tickets.
+description: Pull fresh Search Console + Mixpanel data for raffyparenting.com, check which sitemap URLs Google has indexed, and interpret it. Use when defining/planning a content ticket, when the owner asks about traffic, queries, indexing or conversions, and in the weekly (Monday) report run, which also files up to 2 article proposals and, when pages stay non-indexed for 2+ weeks, one indexing ticket as inbox tickets.
 ---
 
 Read-only analytics for the Lead. Setup and credentials: `docs/analytics.md`.
 
 ## 1. Pull
-- `npm run analytics:pull` (gsc + URL inspection + sitemap resubmit → mixpanel → report). Takes ~1 min
-  (83 URL inspections). Writes `.lead/analytics/<UTC date>/{gsc,index,mixpanel}.json` + `report.md`.
+- `npm run analytics:pull` (gsc + URL inspection + sitemap resubmit → mixpanel → site audit → report). Takes ~13 min
+  (100 URL inspections; run it detached / without a short timeout). Writes
+  `.lead/analytics/<UTC date>/{gsc,index,mixpanel,site-audit}.json` + `report.md`.
 - Exit 2 = credentials missing: tell the owner which file (the message names it) and point to
   `docs/analytics.md#setup`. Do not retry or invent numbers. A failed source still leaves the others' report.
 - Already pulled today and only need the numbers? Read the existing `report.md` instead of pulling again
@@ -15,7 +16,8 @@ Read-only analytics for the Lead. Setup and credentials: `docs/analytics.md`.
 - Never commit `.lead/analytics/`; never print or copy credential files.
 
 ## 2. Read
-Read `report.md` first; open the JSON only for a detail the report lacks (e.g. all pages for one query:
+Read `report.md` first (its **Indexing** section has the indexed trend, the target-pages line vs 80%,
+newly non-indexed pages, and pages non-indexed ≥ 2 weeks with the probable cause from `site-audit.json`); open the JSON only for a detail the report lacks (e.g. all pages for one query:
 filter `gsc.json` `current.rows`). Older snapshots in sibling dated dirs give week-over-week trends.
 Caveats to state when relevant: GSC lags ~3 days and anonymises rare queries (query rows sum to less than
 page totals); Mixpanel counts only `Raffy Webpage - ` events from browsers that load it; downloads are Play
@@ -25,9 +27,13 @@ Store clicks, not installs. Small counts (< ~30 views, < ~100 impressions) are n
 Answer with the few numbers that matter for the decision, with the window and their uncertainty.
 
 ## 4. Weekly mode (scheduled Monday run, prompt says "weekly")
-1. Pull. Write a short report (≤ ~150 words) to `.lead/analytics/<date>/weekly.md`:
+1. The pull already ran in `weekly.sh` before this prompt (the prompt gives its exit code). Do **not** run
+   `analytics:pull` yourself (too slow for a tool timeout); read the newest `.lead/analytics/<date>/report.md`.
+   Exit 2 = credentials missing: tell the owner which file and stop. If the report is not from today, say so.
+   Write a short report (≤ ~150 words) to `.lead/analytics/<date>/weekly.md`:
    clicks/impressions by locale with Δ, 3-5 notable top/rising queries, high-impression/low-CTR pages
-   (title/meta fix candidates), best/worst converting pages, and the URLs needing a manual
+   (title/meta fix candidates), best/worst converting pages, the **indexed trend + target line**
+   (target pages indexed vs 80%), the **newly non-indexed** pages, and the URLs needing a manual
    "Request indexing" (list them; sitemap resubmitted yes/no).
 2. Propose **at most 2** new articles or content lines, only if the data supports them (0 is fine):
    - Evidence: queries with impressions where no page targets them well (position > 10, or the ranking page is
@@ -37,4 +43,9 @@ Answer with the few numbers that matter for the decision, with the window and th
    - File each with the `ticket` skill (`status: inbox`). Fill the Summary with **Need / Why it matters /
      Proposed / Size guess** (≤ 60 words) and put the supporting numbers (queries, impressions, position,
      window, locale) in the Spec. Content ships in all 4 locales; name the target query per locale if known.
-3. Do not edit site files, commit, or push in weekly mode. Only `.lead/analytics/` and new ticket files change.
+3. If the report's **Non-indexed ≥ 2 weeks** list is non-empty and no ticket in `.lead/tickets/*.md` that is not
+   `status: done` (or that was created after the oldest "Out since" date; check title + Spec) already covers those
+   pages' indexing, file **one** `status: inbox` ticket with the `ticket`
+   skill listing the URLs and their probable causes (and the target-pages numbers). This is separate from the
+   article proposals and does not count toward the ≤ 2.
+4. Do not edit site files, commit, or push in weekly mode. Only `.lead/analytics/` and new ticket files change.

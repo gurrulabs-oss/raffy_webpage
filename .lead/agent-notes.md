@@ -61,3 +61,9 @@ Facts learned while working. One line each. Newest at the bottom. Trim via a "Re
 - Article count is 37 (en 10, es/fr/pt 9), not 39.
 - Source sites that block curl (2026-10-26): cdc.gov 403, sbp.com.br 403 (Cloudflare), 1000-premiers-jours.fr empty text, mangerbouger.fr maintenance. `enfamilia.aeped.es/...` redirects to home: use `www.aeped.es/enfamilia/salud-en-familia/<slug>`. WHO pt pages often 404 (use en + "em inglês").
 - Headless Chrome with `--remote-debugging-port` needs ~5 s before the port answers; a Node CDP script fetching `/json/new` right after launch gets ECONNREFUSED.
+- Since T-025: `npm run analytics:audit` (`scripts/analytics/site-audit.mjs`, `--self-test`) = link depth/inbound/dup/canonical audit from local files; `all.mjs` writes `site-audit.json` into each snapshot; diagnosis lives in `docs/indexing.md`. Legal/trust URL regex: `LEGAL_RE` in `scripts/analytics/lib/indexing.mjs` (test: `node scripts/analytics/test-indexing.mjs`).
+- Since T-025 `weekly.sh` runs `npm run analytics:pull` itself before `claude -p` (a Bash call inside `claude -p` caps at 10 min; the pull takes ~13).
+- GSC Sitemaps API `contents[].indexed` is always 0 (Google stopped filling it); use URL inspection counts instead.
+- In headless runs, writing to `~/Library/LaunchAgents` + `launchctl bootstrap` is denied by the auto-mode classifier ("Unauthorized Persistence"): the owner must install launchd jobs.
+- Workers that generate HTML cards with regexes produced nested/dumped `<article>` blocks in T-025 (lazy `[\s\S]*?` ran across blocks; seo:validate does not check markup): always run a structural check (balanced `<a>`, no `<article>` inside related grids) on generated card edits.
+- Nav/brand/breadcrumb links in ~105 files point to `…/index.html` (200 + canonical to `/`): a duplicate URL per hub. `en/articles/baby-naps-transitions-and-sleep-0-2-years.html` is linked but not in manifest/sitemap (as of 2026-10-27).

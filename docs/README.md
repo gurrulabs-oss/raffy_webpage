@@ -10,3 +10,4 @@ One line per doc: when to read it. Keep each doc focused and under ~150 lines.
   `../seo/backlink-sprint.md`, `../seo/traffic-scorecard.md`.
 - `analytics.md` — read when using Search Console/Mixpanel data (`analytics` skill), setting up credentials or the weekly run.
 - `ai-visibility.md` — read when working on AI-assistant visibility (llms.txt, AI crawlers, IndexNow, baseline prompts).
+- `indexing.md` — read when pages aren't indexed: re-run the site audit (`analytics:audit`), GSC sitemap status, causes per non-indexed page.

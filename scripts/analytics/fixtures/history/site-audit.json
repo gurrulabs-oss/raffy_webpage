@@ -1,0 +1,7 @@
+{
+  "generatedAt": "2026-10-26T06:00:00.000Z",
+  "pages": [
+    { "url": "https://www.raffyparenting.com/fr/articles/routine-quotidienne-nouveau-ne.html", "locale": "fr", "depthOwnHome": 4, "inbound": 1, "flags": ["deep", "few-inbound"], "cause": "4 clicks from /fr/, 1 internal link" },
+    { "url": "https://www.raffyparenting.com/es/articulos/percentiles-peso-talla-bebe.html", "locale": "es", "depthOwnHome": 2, "inbound": 5, "flags": [], "cause": null }
+  ]
+}

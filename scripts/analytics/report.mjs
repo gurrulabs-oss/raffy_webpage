@@ -4,6 +4,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { analyze, TARGET } from './lib/indexing.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const SNAP_ROOT = path.join(ROOT, '.lead', 'analytics');
@@ -196,16 +197,55 @@ function sectionToolFunnel() {
 }
 
 // ---------- Indexing ----------
+// Prior snapshots = sibling dated dirs of the report dir that have an index.json.
+function priorIndexSnaps() {
+  const parent = path.dirname(dir);
+  const readJson = (f) => { try { return JSON.parse(fs.readFileSync(f, 'utf8')); } catch { return null; } };
+  try {
+    return fs.readdirSync(parent, { withFileTypes: true })
+      .filter((d) => d.isDirectory() && /^\d{4}-\d{2}-\d{2}$/.test(d.name) && d.name < date)
+      .map((d) => ({ date: d.name, idx: readJson(path.join(parent, d.name, 'index.json')) }))
+      .filter((s) => s.idx).sort((a, b) => a.date.localeCompare(b.date));
+  } catch { return []; }
+}
+const kv = (o) => Object.entries(o).filter(([, v]) => v != null && typeof v !== 'object').map(([k, v]) => `${k} ${v}`).join(', ');
+function sitemapLine(sm) {
+  if (!sm || typeof sm !== 'object') return null;
+  const contents = Array.isArray(sm.contents) ? sm.contents.map((c) => `${c.type || 'urls'} submitted ${c.submitted ?? '?'} / indexed ${c.indexed ?? '?'}`).join('; ')
+    : sm.contents && typeof sm.contents === 'object' ? `submitted ${sm.contents.submitted ?? '?'} / indexed ${sm.contents.indexed ?? '?'}` : '';
+  const f = ['lastDownloaded', 'isPending', 'errors', 'warnings'].filter((k) => sm[k] != null).map((k) => `${k} ${sm[k]}`).join(', ');
+  return `- Sitemap in Search Console: ${[f, contents].filter(Boolean).join(' | ') || kv(sm) || 'no details'}`;
+}
+function probableCause(url, audit, coverage) {
+  const p = arr(audit?.pages).find((x) => x.url === url);
+  if (!p) return coverage || '-';
+  if (p.cause) return p.cause;
+  const bits = [p.depthOwnHome != null && `depth ${p.depthOwnHome}`, p.inbound != null && `inbound ${p.inbound}`, arr(p.flags).length && `flags ${p.flags.join(', ')}`].filter(Boolean);
+  return bits.length ? bits.join(', ') : coverage || '-';
+}
 function sectionIndex() {
   const s = idx.summary || {};
   const sub = idx.sitemapSubmitted;
   const subTxt = sub === true ? 'yes' : sub === 'skipped' ? 'skipped' : 'no (resubmit manually in Search Console)';
+  const h = analyze({ date, idx }, priorIndexSnaps());
+  const t = h.target;
+  const audit = (() => { try { return JSON.parse(fs.readFileSync(path.join(dir, 'site-audit.json'), 'utf8')); } catch { return null; } })();
   const lines = [
     `- Total checked: ${int(s.total)} | Indexed: ${int(s.indexed)} | Not indexed: ${int(s.notIndexed)} | Errors: ${int(s.errors)}`,
+    `- Target pages (excluding legal/trust): ${int(t.tIndexed)}/${int(t.tTotal)} indexed (${t.tTotal ? pct(t.tIndexed / t.tTotal, 0) : '-'}) vs target ${pct(TARGET, 0)} = ${int(t.goal)} pages ${t.tIndexed >= t.goal ? '(met)' : `(${int(t.goal - t.tIndexed)} short)`}`,
     `- Sitemap resubmitted: ${subTxt}${idx.sitemapUrl ? ` (${idx.sitemapUrl})` : ''}`,
-    '',
   ];
+  const sm = sitemapLine(idx.sitemap);
+  if (sm) lines.push(sm);
+  lines.push('', '**Indexed trend**', '',
+    table(['Date', 'Indexed / total', 'Target pages indexed'], h.trend.map((r) => [r.date, `${int(r.indexed)}/${int(r.total)}`, `${int(r.tIndexed)}/${int(r.tTotal)}`])), '');
+  lines.push(`**Newly non-indexed** (indexed in ${h.trend.length > 1 ? h.trend[h.trend.length - 2].date : 'previous snapshot'}, not now)`, '');
   const byUrl = new Map(arr(idx.results).map((r) => [r.url, r]));
+  lines.push(h.trend.length < 2 ? '_No previous snapshot to compare._'
+    : h.newly.length ? table(['URL', 'Coverage state'], h.newly.map((u) => [pagePath(u), byUrl.get(u)?.coverageState || '-'])) : '_None._', '');
+  lines.push('**Non-indexed ≥2 weeks** (not indexed in every snapshot back to ≥13 days ago; legal/trust excluded)', '',
+    h.long.length ? table(['URL', 'Out since', 'Probable cause'], h.long.map((l) => [pagePath(l.url), l.since, probableCause(l.url, audit, l.coverageState)]))
+      : '_None._', '');
   const need = arr(idx.needsManualRequest);
   if (!need.length) lines.push('_No URLs need a manual indexing request._');
   else lines.push('**Needs manual "Request indexing" in Search Console**', '',
