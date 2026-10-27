@@ -71,6 +71,16 @@
       }
     },
     {
+      "id": "article_growth_percentile_worry",
+      "type": "article",
+      "routes": {
+        "en": "/en/articles/baby-low-percentile-when-to-worry.html",
+        "es": "/es/articulos/percentil-bajo-bebe-cuando-preocuparse.html",
+        "fr": "/fr/articles/percentile-bas-bebe-quand-s-inquieter.html",
+        "pt": "/pt/artigos/percentil-baixo-bebe-quando-se-preocupar.html"
+      }
+    },
+    {
       "id": "tool_growth_percentiles",
       "type": "tool",
       "routes": {
