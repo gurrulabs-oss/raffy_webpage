@@ -150,10 +150,29 @@ async function main() {
     }
   }
 
+  // Sitemap status as Google sees it (GET works with the read-only scope); never fails the run.
+  let sitemap;
+  try {
+    let sm;
+    if (fixturesDir) {
+      const f = path.join(fixturesDir, 'gsc-sitemap.json');
+      sm = fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')) : null;
+    } else {
+      sm = await api(token, 'GET', `https://www.googleapis.com/webmasters/v3/sites/${encodeURIComponent(property)}/sitemaps/${encodeURIComponent(sitemapUrl)}`);
+    }
+    sitemap = sm ? {
+      path: sm.path ?? null, lastSubmitted: sm.lastSubmitted ?? null, lastDownloaded: sm.lastDownloaded ?? null,
+      isPending: sm.isPending ?? null, errors: sm.errors ?? null, warnings: sm.warnings ?? null,
+      contents: (sm.contents || []).map((c) => ({ type: c.type, submitted: c.submitted ?? null, indexed: c.indexed ?? null })),
+    } : 'skipped';
+  } catch (e) {
+    sitemap = { error: e.message };
+  }
+
   const indexed = results.filter((r) => r.verdict === 'PASS').length;
   const errors = results.filter((r) => r.error).length;
   const index = {
-    generatedAt, property, sitemapUrl, sitemapSubmitted, results,
+    generatedAt, property, sitemapUrl, sitemapSubmitted, sitemap, results,
     summary: { total: results.length, indexed, notIndexed: results.length - indexed - errors, errors },
     needsManualRequest: results.filter((r) => !r.error && r.verdict !== 'PASS').map((r) => r.url),
   };

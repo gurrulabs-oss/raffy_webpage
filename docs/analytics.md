@@ -3,7 +3,8 @@
 Read-only pulls the Lead uses to pick article topics and get pages indexed. Driven by the `analytics` skill.
 
 ## Commands
-- `npm run analytics:pull` — `scripts/analytics/all.mjs`: `gsc.mjs --index` → `mixpanel.mjs` → `report.mjs`.
+- `npm run analytics:pull` — `scripts/analytics/all.mjs`: `gsc.mjs --index` → `mixpanel.mjs` → `site-audit.mjs` (optional, never blocks) → `report.mjs`.
+  Takes ~13 min (7 s per URL inspection, 100 URLs): run it detached / without a short timeout.
   Continues past a failed source; exit 0 all ok, 2 all sources lack credentials, else first failure code.
 - `npm run analytics:report [-- --dir <snapshot dir>]` — rebuild `report.md` from existing JSON.
 - Flags (each script): `--fixtures scripts/analytics/fixtures` (canned fake responses, no credentials, no
@@ -13,6 +14,9 @@ Read-only pulls the Lead uses to pick article topics and get pages indexed. Driv
 - Windows: current = 28 days ending 3 days ago (GSC lag), previous = the 28 days before. Rising query =
   impressions ≥ 20 and +≥50% (or new). Low-CTR page = ≥ 100 impressions and CTR < half its locale's CTR.
   The index check covers sitemap pages only (`.html` or `/`), not `AGENTS.md`/`LLMS.md`.
+- Report **Indexing** section: indexed trend over the last 4 prior sibling snapshots, target-pages line (excludes
+  legal/trust pages, target 80%), newly non-indexed, and non-indexed ≥ 2 weeks with probable cause from `site-audit.json`.
+  Offline check: `node scripts/analytics/test-indexing.mjs`.
 - Mixpanel: raw export (EU), only `Raffy Webpage - ` events; page view = any prefixed event except
   Download Button Clicked / Growth Tool Submit Clicked / Growth Tool Results Shown; path from `path` property.
 - Google has no API for "Request indexing" on normal pages: the report lists not-indexed sitemap URLs for a
@@ -44,11 +48,13 @@ If the GSC property is a URL-prefix property, use `"https://www.raffyparenting.c
 Test: `npm run analytics:pull`, then open the newest `.lead/analytics/*/report.md`.
 
 ## Weekly run
-Mondays 06:00 via macOS `launchd` on the owner's Mac: `scripts/analytics/weekly.sh` runs
-`claude -p "Use the analytics skill in weekly mode."` in the repo (writes `weekly.md`, files ≤ 2 inbox tickets).
+Mondays 06:00 via macOS `launchd` on the owner's Mac: `scripts/analytics/weekly.sh` first runs
+`npm run analytics:pull` itself (~13 min; `claude -p` Bash calls time out at 10 min max), then
+`claude -p "Use the analytics skill in weekly mode."` reads the fresh report (writes `weekly.md`, files ≤ 2 article
+proposals, plus 1 indexing ticket when the report lists pages non-indexed ≥ 2 weeks).
 Needs the `analytics` skill in `.claude/skills/` (the hub moves it there from `.lead/pending-claude/`).
 The run reads search queries (outside text), so it may only run the analytics npm scripts and write under
-`.lead/analytics/` and `.lead/tickets/`; everything else is denied.
+`.lead/analytics/` and `.lead/tickets/`; everything else is denied (it cannot start a pull).
 Install once, from the main checkout:
 ```sh
 sed -e "s#REPO_PATH#$PWD#" -e "s#HOME_PATH#$HOME#" scripts/analytics/com.raffyparenting.analytics-weekly.plist \

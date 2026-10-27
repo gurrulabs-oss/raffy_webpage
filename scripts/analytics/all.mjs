@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Runs gsc (with indexing), mixpanel, then the report.
+// Runs gsc (with indexing), mixpanel, site-audit (optional), then the report.
 // Usage: node scripts/analytics/all.mjs [--fixtures <dir>] [--out <dir>] [--no-submit]
 import fs from 'node:fs';
 import path from 'node:path';
@@ -47,6 +47,14 @@ if (codes.every((c) => c !== 0)) {
   console.log('[skip] report (no source succeeded)');
   fs.rmSync(path.join(outDir, 'report.md'), { force: true });
   process.exit(codes.every((c) => c === 2) ? 2 : first);
+}
+// Site audit explains non-indexed pages in the report; its failure (or absence) never blocks the report.
+if (fs.existsSync(path.join(here, 'site-audit.mjs'))) {
+  const started = Date.now();
+  const ac = run('site-audit.mjs', ['--out', outDir]);
+  const f = path.join(outDir, 'site-audit.json');
+  if (ac !== 0 && fs.existsSync(f) && fs.statSync(f).mtimeMs < started) fs.rmSync(f);
+  console.log(`[${ac === 0 ? 'ok' : 'FAIL ' + ac}] site-audit`);
 }
 const rc = run('report.mjs', ['--dir', outDir]);
 console.log(`[${rc === 0 ? 'ok' : 'FAIL ' + rc}] report`);
