@@ -56,3 +56,7 @@ Facts learned while working. One line each. Newest at the bottom. Trim via a "Re
 - Port 8142 may be held by a stale python server from the T-013 worktree; for before/after renders `git archive main | tar -x -C /tmp/...` and serve it on another port.
 - T-019 design run (2026-10-26): `python3` and `node` scripts needed approval; a single headless Chrome `--screenshot` command did not; Chrome writes into an existing folder only (create it with Write of a `.keep` file).
 - Read times are inconsistent (as of 2026-10-26): bylines vary 1–5 min, every related-article card hardcodes "1 min read", library cards can disagree with their article's byline.
+- Since T-019: articles carry `.upd` byline date, `answer-box#in-short` (menus keep their own ids), `section.sources` + `p.checked` last in `.prose` (not on the app guides); new articles need all three. Read times come only from `npm run articles:readtime` (`-- --check` = guard); never hand-edit "N min read".
+- Article count is 37 (en 10, es/fr/pt 9), not 39.
+- Source sites that block curl (2026-10-26): cdc.gov 403, sbp.com.br 403 (Cloudflare), 1000-premiers-jours.fr empty text, mangerbouger.fr maintenance. `enfamilia.aeped.es/...` redirects to home: use `www.aeped.es/enfamilia/salud-en-familia/<slug>`. WHO pt pages often 404 (use en + "em inglês").
+- Headless Chrome with `--remote-debugging-port` needs ~5 s before the port answers; a Node CDP script fetching `/json/new` right after launch gets ECONNREFUSED.
