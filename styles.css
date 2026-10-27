@@ -1297,3 +1297,6 @@ a.btn-play.on-blue, a.btn-play.on-blue:hover { color: var(--ink); }
   .toc ol { border-left-color: var(--navy-200); }
   .toc a.active { color: var(--ink); border-left-color: var(--navy-500); }
 }
+
+/* T-020: static explainer under the tools (reuses .prose, .faq, .sources) */
+.tool-explain .prose > h2:first-child { margin-top: 0; }

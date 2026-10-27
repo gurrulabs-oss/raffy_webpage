@@ -31,6 +31,89 @@
   <link rel="icon" type="image/png" href="../../assets/raffy-logo.png">
   <link rel="stylesheet" href="../../styles.css">
   <link rel="stylesheet" href="../../tools/tool-cluster.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Estimateur de quantités alimentaires par âge",
+      "url": "https://www.raffyparenting.com/fr/outils/estimateur-quantites-alimentation.html",
+      "description": "Estimez les apports quotidiens selon âge, poids et nombre de repas.",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "inLanguage": "fr-FR",
+      "isAccessibleForFree": true,
+      "dateModified": "2026-10-27"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "De combien de calories un enfant de 1 an a-t-il besoin ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "L'estimateur utilise 82 kcal par kg jusqu'à 12 mois et 78 kcal par kg à partir de 13 mois. Un bébé de 9,5 kg arrive à 779 kcal par jour. L'appétit et la croissance comptent plus que le chiffre exact."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "De combien de lait un jeune enfant a-t-il encore besoin ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "L'estimateur affiche 500-700 ml par jour de 4 à 8 mois, 400-500 ml de 9 à 17 mois et 300-450 ml à partir de 18 mois, en complément d'une alimentation solide."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Mon bébé doit-il finir chaque objectif de repas ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Non. Le chiffre par repas est une moyenne. Laissez votre bébé décider de ce qu'il mange et suivez sa courbe de croissance avec votre pédiatre."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Cela remplace-t-il l'avis de mon pédiatre ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Non. Si votre bébé a un problème de santé, est né prématuré ou prend du poids lentement, votre pédiatre peut proposer un plan adapté à lui."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://www.raffyparenting.com/fr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Outils",
+          "item": "https://www.raffyparenting.com/fr/outils/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Estimateur de quantités alimentaires par âge",
+          "item": "https://www.raffyparenting.com/fr/outils/estimateur-quantites-alimentation.html"
+        }
+      ]
+    }
+  ]
+}
+  </script>
 </head>
 <body class="state-empty" data-page-key="tool_feeding" data-locale="fr">
   <header class="site-header">
@@ -127,6 +210,50 @@
               <div class="copy"><b>Enregistrez les repas dans Raffy et voyez comment les apports de votre bébé s'additionnent sur la semaine.</b><a class="btn-play sm" href="https://play.google.com/store/apps/details?id=com.gurrulabs.raffy" data-track-download="true" data-page-type="tool" data-cta-location="tool-result" aria-label="Disponible sur Google Play"><i class="gp-logo" aria-hidden="true"></i>Disponible sur Google Play</a></div>
             </div>
             <p class="disclaimer"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg></span><span data-r-disclaimer></span></p>
+          </section>
+        </div>
+      </section>
+
+
+      <section class="section tool-explain" aria-labelledby="explain-title">
+        <div class="prose">
+          <h2 id="explain-title">Ce que calcule l'estimateur de quantités alimentaires</h2>
+          <p>Saisissez l'âge de votre bébé (4 à 36 mois), son poids (3 à 20 kg) et le nombre de repas par jour (3 à 7). L'estimateur affiche un apport énergétique quotidien approximatif en kcal, une quantité approximative par repas et un volume de lait typique pour son âge.</p>
+<p>Ce sont des chiffres de planification pour se représenter la journée. Les bébés mangent des quantités différentes d'un jour à l'autre, et l'appétit est un meilleur guide que n'importe quel total.</p>
+
+          <h2>Comment ça marche</h2>
+          <p>L'énergie quotidienne est le poids de votre bébé en kg multiplié par un nombre de kcal par kg, arrondi à l'entier. L'objectif par repas est l'énergie quotidienne divisée par le nombre de repas par jour, arrondie.</p>
+<table>
+<thead><tr><th scope="col">Âge (mois)</th><th scope="col">Énergie (kcal par kg et par jour)</th><th scope="col">Volume de lait typique</th></tr></thead>
+<tbody>
+<tr><td>4 à 8</td><td>82</td><td>500-700 ml/jour</td></tr><tr><td>9 à 12</td><td>82</td><td>400-500 ml/jour</td></tr><tr><td>13 à 17</td><td>78</td><td>400-500 ml/jour</td></tr><tr><td>18 à 36</td><td>78</td><td>300-450 ml/jour</td></tr>
+</tbody>
+</table>
+<p>Les valeurs de kcal par kg et les volumes de lait sont des approximations de planification intégrées à cet outil. Nous ne connaissons pas de tableau officiel donnant ces chiffres exacts. Pour les repères officiels sur la fréquence et les quantités des repas des bébés, consultez les sources ci-dessous.</p>
+
+          <h2>Exemple concret</h2>
+          <p>Bébé de 12 mois, 9,5 kg, 5 repas par jour. L'énergie quotidienne est 9,5 x 82 = 779 kcal/jour. Par repas : 779 / 5 = 156 kcal/repas. L'outil affiche « Apport énergétique quotidien estimé: 779 kcal/jour », « Objectif approximatif par repas (5 repas): 156 kcal/repas », « Volume de lait typique selon l'âge: 400-500 ml/jour » et « Ajustez les portions selon l'appétit et la courbe de croissance avec votre équipe pédiatrique. »</p>
+
+          <h2>Questions fréquentes</h2>
+          <div class="faq">
+            <details><summary>De combien de calories un enfant de 1 an a-t-il besoin ?</summary><p>L'estimateur utilise 82 kcal par kg jusqu'à 12 mois et 78 kcal par kg à partir de 13 mois. Un bébé de 9,5 kg arrive à 779 kcal par jour. L'appétit et la croissance comptent plus que le chiffre exact.</p></details>
+            <details><summary>De combien de lait un jeune enfant a-t-il encore besoin ?</summary><p>L'estimateur affiche 500-700 ml par jour de 4 à 8 mois, 400-500 ml de 9 à 17 mois et 300-450 ml à partir de 18 mois, en complément d'une alimentation solide.</p></details>
+            <details><summary>Mon bébé doit-il finir chaque objectif de repas ?</summary><p>Non. Le chiffre par repas est une moyenne. Laissez votre bébé décider de ce qu'il mange et suivez sa courbe de croissance avec votre pédiatre.</p></details>
+            <details><summary>Cela remplace-t-il l'avis de mon pédiatre ?</summary><p>Non. Si votre bébé a un problème de santé, est né prématuré ou prend du poids lentement, votre pédiatre peut proposer un plan adapté à lui.</p></details>
+          </div>
+
+          <h2>La sécurité d'abord</h2>
+          <p>Cet outil est éducatif et ne pose aucun diagnostic. Appelez votre pédiatre si votre bébé refuse ses repas pendant une journée, vomit souvent, prend peu de poids ou présente des signes de déshydratation, comme très peu de couches mouillées.</p>
+
+          <section class="sources" aria-labelledby="sources">
+            <h2 id="sources">Sources</h2>
+            <ol>
+            <li><span><span class="org">Assurance Maladie · ameli.fr</span><a href="https://www.ameli.fr/assure/sante/themes/alimentation/alimentation-0-3-ans/repas-equilibres-repartis" target="_blank" rel="noopener">De 8 mois à 3 ans : des repas équilibrés et bien répartis<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+            <li><span><span class="org">Académie américaine de pédiatrie · HealthyChildren.org</span><a href="https://www.healthychildren.org/English/ages-stages/baby/feeding-nutrition/Pages/How-Often-and-How-Much-Should-Your-Baby-Eat.aspx" target="_blank" rel="noopener">How Often and How Much Should Your Baby Eat? (en anglais)<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+            <li><span><span class="org">Organisation mondiale de la Santé</span><a href="https://www.who.int/fr/news-room/fact-sheets/detail/infant-and-young-child-feeding" target="_blank" rel="noopener">Alimentation du nourrisson et du jeune enfant<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+            <li><span><span class="org">NHS (Royaume-Uni)</span><a href="https://www.nhs.uk/baby/weaning-and-feeding/babys-first-solid-foods/" target="_blank" rel="noopener">Your baby's first solid foods (en anglais)<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+            </ol>
+            <p class="checked">Dernière vérification : 27 octobre 2026. Cet outil est éducatif, il ne remplace pas un avis médical. <a href="../politique-editoriale.html">Politique éditoriale</a></p>
           </section>
         </div>
       </section>

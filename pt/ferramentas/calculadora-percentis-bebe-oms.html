@@ -33,33 +33,101 @@
   <link rel="stylesheet" href="../../styles.css">
   <link rel="stylesheet" href="../../tools/percentile-calculator.css">
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebPage",
-        "name": "Calculadora OMS de percentis do bebe",
-        "url": "https://www.raffyparenting.com/pt/ferramentas/calculadora-percentis-bebe-oms.html",
-        "description": "Calcule percentis OMS do bebe para peso, comprimento/altura e perimetro cefalico com opcao de idade corrigida para prematuridade.",
-        "inLanguage": "pt-BR"
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "name": "Calculadora OMS de percentis do bebe",
+      "url": "https://www.raffyparenting.com/pt/ferramentas/calculadora-percentis-bebe-oms.html",
+      "description": "Calcule percentis OMS do bebe para peso, comprimento/altura e perimetro cefalico com opcao de idade corrigida para prematuridade.",
+      "inLanguage": "pt-BR"
+    },
+    {
+      "@type": "WebApplication",
+      "name": "Calculadora OMS de percentis do bebe (peso, altura e perimetro cefalico)",
+      "url": "https://www.raffyparenting.com/pt/ferramentas/calculadora-percentis-bebe-oms.html",
+      "description": "Calcule percentis OMS do bebe para peso, comprimento/altura e perimetro cefalico com opcao de idade corrigida para prematuridade.",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       },
-      {
-        "@type": "SoftwareApplication",
-        "name": "Raffy",
-        "applicationCategory": "HealthApplication",
-        "operatingSystem": "Android",
-        "url": "https://play.google.com/store/apps/details?id=com.gurrulabs.raffy"
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.raffyparenting.com/pt/"},
-          {"@type": "ListItem", "position": 2, "name": "Ferramentas", "item": "https://www.raffyparenting.com/pt/ferramentas/calculadora-percentis-bebe-oms.html"},
-          {"@type": "ListItem", "position": 3, "name": "Calculadora OMS de percentis do bebe", "item": "https://www.raffyparenting.com/pt/ferramentas/calculadora-percentis-bebe-oms.html"}
-        ]
-      }
-    ]
-  }
+      "inLanguage": "pt-BR",
+      "isAccessibleForFree": true,
+      "dateModified": "2026-10-27"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Qual é um percentil saudável para um bebê?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não existe um único número saudável. A maioria dos bebês saudáveis fica entre o percentil 3 e o 97. O padrão ao longo do tempo importa mais do que uma única medição."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Por que usar os padrões de crescimento da OMS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Os padrões da OMS descrevem como as crianças crescem quando são alimentadas e cuidadas em condições saudáveis, e são usados no mundo todo para crianças do nascimento aos 5 anos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quando devo usar a idade corrigida?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Para bebês nascidos antes do tempo, muitos pediatras usam a idade corrigida para avaliar o crescimento nos dois primeiros anos. Marque a caixa e informe a idade gestacional ao nascer, e a ferramenta faz a subtração."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Meu bebê está abaixo do percentil 10. Devo me preocupar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não por isso apenas. Repita a medição em alguns dias e compartilhe a evolução com o pediatra, que pode olhar o conjunto."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Raffy",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Android",
+      "url": "https://play.google.com/store/apps/details?id=com.gurrulabs.raffy"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://www.raffyparenting.com/pt/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Ferramentas",
+          "item": "https://www.raffyparenting.com/pt/ferramentas/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Calculadora OMS de percentis do bebe",
+          "item": "https://www.raffyparenting.com/pt/ferramentas/calculadora-percentis-bebe-oms.html"
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body data-page-key="tool_growth_percentiles" data-locale="pt">
@@ -207,6 +275,52 @@
               <div class="copy"><b>Acompanhe a evolução no Raffy</b><span>Salve cada medição e veja a curva crescer.</span><a class="btn-play sm" href="https://play.google.com/store/apps/details?id=com.gurrulabs.raffy" data-track-download="true" data-page-type="tool" data-cta-location="tool-result" aria-label="Disponível no Google Play"><i class="gp-logo" aria-hidden="true"></i>Disponível no Google Play</a></div>
             </div>
           </div>
+        </div>
+      </section>
+
+
+      <section class="section tool-explain" aria-labelledby="explain-title">
+        <div class="prose">
+          <h2 id="explain-title">O que a calculadora OMS de percentis de crescimento mostra</h2>
+          <p>Escolha o sexo do seu bebê, informe a data de nascimento e a data da medição e acrescente pelo menos uma medida: peso, comprimento ou altura, ou perímetro cefálico. A calculadora mostra, em forma de percentil, onde essa medida fica entre crianças saudáveis da mesma idade e do mesmo sexo.</p>
+<p>Um percentil 50 é o meio. Um percentil 20 significa que cerca de 20 em cada 100 crianças dessa idade e sexo medem menos. Ambos são comuns e saudáveis para muitas crianças.</p>
+
+          <h2>Como funciona</h2>
+          <p>A calculadora usa os Padrões de Crescimento Infantil da OMS. Para cada medida, ela pega os valores LMS da OMS (L, M e S) da idade exata do seu bebê em dias e do sexo, transforma a medida em escore z e converte o escore z em percentil.</p>
+<ul>
+<li>Faixa de idade: de 0 a 60 meses. Fora dela, a ferramenta mostra um erro de idade.</li>
+<li>Medidas: peso para a idade, comprimento para a idade (deitado, menores de 24 meses), altura para a idade (em pé, a partir de 24 meses) e perímetro cefálico para a idade, para meninas e meninos.</li>
+<li>Valores aceitos: peso de 0,5 a 35 kg, comprimento ou altura de 30 a 130 cm, perímetro cefálico de 20 a 65 cm. Você pode alternar entre kg e cm ou lb e in.</li>
+<li>No peso, valores extremos usam o método LMS restrito da OMS além de 3 desvios-padrão. Os percentis aparecem como números inteiros e limitados entre 0,1 e 99,9.</li>
+<li>Idade corrigida: marque a caixa e informe a idade gestacional ao nascer (22 a 40 semanas). A ferramenta subtrai (40 menos as semanas de gestação) x 7 dias da idade do seu bebê antes da consulta. Se o resultado for menor que zero, mostra um erro.</li>
+</ul>
+
+          <h2>Exemplo prático</h2>
+          <p>Menina nascida em 1º de outubro de 2025, medida em 1º de abril de 2026 (182 dias, exibidos como “5m 30d”), peso 7,3 kg, sem idade corrigida. A ferramenta mostra, para peso por idade (OMS), “7.3 kg · Percentil P50.5”, um “50º” grande e a frase “Bem no meio: cerca de 50 em cada 100 meninas da mesma idade pesam menos, e 50 pesam mais.”</p>
+
+          <h2>Perguntas frequentes</h2>
+          <div class="faq">
+            <details><summary>Qual é um percentil saudável para um bebê?</summary><p>Não existe um único número saudável. A maioria dos bebês saudáveis fica entre o percentil 3 e o 97. O padrão ao longo do tempo importa mais do que uma única medição.</p></details>
+            <details><summary>Por que usar os padrões de crescimento da OMS?</summary><p>Os padrões da OMS descrevem como as crianças crescem quando são alimentadas e cuidadas em condições saudáveis, e são usados no mundo todo para crianças do nascimento aos 5 anos.</p></details>
+            <details><summary>Quando devo usar a idade corrigida?</summary><p>Para bebês nascidos antes do tempo, muitos pediatras usam a idade corrigida para avaliar o crescimento nos dois primeiros anos. Marque a caixa e informe a idade gestacional ao nascer, e a ferramenta faz a subtração.</p></details>
+            <details><summary>Meu bebê está abaixo do percentil 10. Devo me preocupar?</summary><p>Não por isso apenas. Repita a medição em alguns dias e compartilhe a evolução com o pediatra, que pode olhar o conjunto.</p></details>
+          </div>
+
+          <h2>Segurança em primeiro lugar</h2>
+          <p>Esta ferramenta é educativa e não faz diagnóstico. Fale com o pediatra se o seu bebê cair de uma faixa de percentil para outra, ficar abaixo do percentil 3 ou acima do 97, ou se estiver mamando mal ou parecer doente. O pediatra decide o que é melhor para o seu bebê.</p>
+
+          <section class="sources" aria-labelledby="sources">
+            <h2 id="sources">Fontes</h2>
+            <ol>
+            <li><span><span class="org">Ministério da Saúde</span><a href="https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/s/saude-da-crianca/caderneta" target="_blank" rel="noopener">Caderneta da Criança<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+            <li><span><span class="org">Organização Mundial da Saúde</span><a href="https://www.who.int/tools/child-growth-standards/standards" target="_blank" rel="noopener">WHO Child Growth Standards: length/height-for-age, weight-for-age, head circumference-for-age (em inglês)<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+            <li><span><span class="org">Organização Mundial da Saúde</span><a href="https://www.who.int/tools/child-growth-standards/standards/weight-for-age" target="_blank" rel="noopener">Weight-for-age: birth to 5 years (em inglês)<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+            <li><span><span class="org">Academia Americana de Pediatria · HealthyChildren.org</span><a href="https://www.healthychildren.org/English/ages-stages/baby/preemie/Pages/Corrected-Age-For-Preemies.aspx" target="_blank" rel="noopener">Corrected Age For Preemies (em inglês)<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+            <li><span><span class="org">Academia Americana de Pediatria · HealthyChildren.org</span><a href="https://www.healthychildren.org/English/health-issues/conditions/Glands-Growth-Disorders/Pages/growth-charts-by-the-numbers.aspx" target="_blank" rel="noopener">Understanding Growth Charts: A Parent's Guide to Percentiles &amp; Z-Scores (em inglês)<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+            <li><span><span class="org">NHS (Reino Unido)</span><a href="https://www.nhs.uk/baby/babys-development/height-weight-and-reviews/baby-height-and-weight/" target="_blank" rel="noopener">Your baby's weight and height (em inglês)<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+            </ol>
+            <p class="checked">Última verificação: 27 de outubro de 2026. Esta ferramenta é educativa, não é orientação médica. <a href="../politica-editorial.html">Política editorial</a></p>
+          </section>
         </div>
       </section>
 
