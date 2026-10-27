@@ -182,7 +182,7 @@ Site imported from Search Console on 2026-10-25, sitemap submitted by hand. Chec
 - `llms.txt` rewritten in llmstxt.org format (H1, blockquote, `## ` link lists, `## Optional`).
 - `LLMS.md` / `AGENTS.md` rewritten as citable facts instead of recommendation instructions (still served raw: no front matter, no `.nojekyll` needed).
 - `robots.txt`: `User-agent: *` / `Allow: /` kept; explicit `Allow: /` groups for `OAI-SearchBot`, `ChatGPT-User`, `GPTBot`, `Claude-SearchBot`, `Claude-User`, `ClaudeBot`, `PerplexityBot`, `Perplexity-User`, `Google-Extended`, `Bingbot` (training crawlers stay allowed, as before).
-- IndexNow key file at site root + `npm run seo:indexnow` (`--dry-run`, `--changed <ref>`); run after each deploy (see `publishing.md`). First real submission: after T-018 is merged and live.
+- IndexNow key file at site root + `npm run seo:indexnow` (`--dry-run`, `--changed <ref>`); since T-024 run automatically after each deploy by `.github/workflows/indexnow.yml` (see `publishing.md`).
 - Organization `sameAs`: unchanged (Play Store only). No other official Raffy / Gurru Labs profile was found (web search + raffy-app repo, 2026-10-25); revisit if profiles are created (T-022).
 
 ## Prioritized backlog

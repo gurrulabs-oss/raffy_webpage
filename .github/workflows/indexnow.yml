@@ -1,0 +1,55 @@
+name: IndexNow ping
+
+# After each push to main, wait until GitHub Pages has published that commit, then submit the changed sitemap URLs.
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pages: read
+
+concurrency:
+  group: indexnow
+  cancel-in-progress: false
+
+jobs:
+  indexnow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Wait for GitHub Pages build of this commit
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          SHA: ${{ github.sha }}
+        run: |
+          for i in $(seq 1 30); do
+            read -r commit status <<< "$(gh api "repos/$REPO/pages/builds/latest" --jq '.commit + " " + .status' || echo "- unknown")"
+            echo "latest build: commit=$commit status=$status"
+            if [ "$commit" = "$SHA" ] && [ "$status" = "built" ]; then exit 0; fi
+            if [ "$commit" = "$SHA" ] && [ "$status" = "errored" ]; then echo "::error::Pages build errored"; exit 1; fi
+            sleep 20
+          done
+          echo "::error::Pages did not publish $SHA within 10 minutes; nothing sent. Re-run this job once the site is live."
+          exit 1
+
+      - name: Submit changed URLs to IndexNow
+        env:
+          BEFORE: ${{ github.event.before }}
+        run: |
+          if [ -z "$BEFORE" ] || [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then
+            echo "::notice::No previous commit (new branch); skipping IndexNow."
+            exit 0
+          fi
+          node scripts/indexnow.mjs --changed "$BEFORE"

@@ -158,6 +158,17 @@ if (config.indexable) {
     }
   }
 
+  const llmsPath = path.join(ROOT, "llms.txt");
+  assertExists(llmsPath, "Missing llms.txt");
+  if (fs.existsSync(llmsPath)) {
+    const llms = fs.readFileSync(llmsPath, "utf8");
+    for (const [, loc] of sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)) {
+      if (loc !== `${siteOrigin}/llms.txt` && !llms.includes(`(${loc})`)) {
+        errors.push(`llms.txt missing sitemap URL: ${loc}`);
+      }
+    }
+  }
+
   const robotsPath = path.join(ROOT, "robots.txt");
   assertExists(robotsPath, "Missing robots.txt");
   if (fs.existsSync(robotsPath)) {
