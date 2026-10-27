@@ -13,7 +13,7 @@ Live in production on GitHub Pages; current focus is new articles and UI improve
 
 ## Commands
 - Build: none (static). SEO pipeline: `npm run seo:all` (sync → sitemap → validate). **Rewrites files — see Rules.**
-- Test: `npm run seo:validate` (passes, 80 pages). `npm run meal:validate` currently FAILS (206 issues, known bug).
+- Test: `npm run seo:validate` (passes, 100 pages). `npm run meal:validate` (passes; also runs in CI).
 - Lint/format: none configured.
 - Run locally: `python3 -m http.server 8000` from repo root, open `http://localhost:8000/en/`.
 

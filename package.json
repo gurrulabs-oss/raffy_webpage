@@ -12,6 +12,7 @@
     "analytics:pull": "node scripts/analytics/all.mjs",
     "analytics:report": "node scripts/analytics/report.mjs",
     "growth:audit": "node scripts/growth/audit.mjs",
-    "growth:build-lms": "node scripts/growth/build-lms.mjs"
+    "growth:build-lms": "node scripts/growth/build-lms.mjs",
+    "articles:readtime": "node scripts/articles/read_time.mjs"
   }
 }
