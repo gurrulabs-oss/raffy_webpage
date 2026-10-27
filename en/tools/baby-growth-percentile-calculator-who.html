@@ -33,33 +33,101 @@
   <link rel="stylesheet" href="../../styles.css">
   <link rel="stylesheet" href="../../tools/percentile-calculator.css">
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebPage",
-        "name": "WHO baby growth percentile calculator",
-        "url": "https://www.raffyparenting.com/en/tools/baby-growth-percentile-calculator-who.html",
-        "description": "Calculate WHO baby growth percentiles for weight, length or height, and head circumference with corrected age support for prematurity.",
-        "inLanguage": "en-US"
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "name": "WHO baby growth percentile calculator",
+      "url": "https://www.raffyparenting.com/en/tools/baby-growth-percentile-calculator-who.html",
+      "description": "Calculate WHO baby growth percentiles for weight, length or height, and head circumference with corrected age support for prematurity.",
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "WebApplication",
+      "name": "WHO Baby Growth Percentile Calculator (Weight, Length/Height, Head Circumference)",
+      "url": "https://www.raffyparenting.com/en/tools/baby-growth-percentile-calculator-who.html",
+      "description": "Calculate WHO baby growth percentiles for weight, length or height, and head circumference with corrected age support for prematurity.",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       },
-      {
-        "@type": "SoftwareApplication",
-        "name": "Raffy",
-        "applicationCategory": "HealthApplication",
-        "operatingSystem": "Android",
-        "url": "https://play.google.com/store/apps/details?id=com.gurrulabs.raffy"
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.raffyparenting.com/en/"},
-          {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://www.raffyparenting.com/en/tools/baby-growth-percentile-calculator-who.html"},
-          {"@type": "ListItem", "position": 3, "name": "WHO baby growth percentile calculator", "item": "https://www.raffyparenting.com/en/tools/baby-growth-percentile-calculator-who.html"}
-        ]
-      }
-    ]
-  }
+      "inLanguage": "en-US",
+      "isAccessibleForFree": true,
+      "dateModified": "2026-10-27"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a healthy percentile for a baby?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "There is no single healthy number. Most healthy babies fall between the 3rd and 97th percentile. The pattern over time matters more than one measurement."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why use WHO growth standards?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The WHO standards describe how children grow when they are fed and cared for in healthy conditions, and they are used internationally for children from birth to 5 years."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When should I use corrected age?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For babies born early, many pediatricians use corrected age for growth in the first two years. Tick the box and enter the gestational age at birth, and the tool does the subtraction."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "My baby is below the 10th percentile. Should I worry?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not by itself. Repeat the measurement in a few days and share the trend with your pediatrician, who can look at the whole picture."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Raffy",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Android",
+      "url": "https://play.google.com/store/apps/details?id=com.gurrulabs.raffy"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.raffyparenting.com/en/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tools",
+          "item": "https://www.raffyparenting.com/en/tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "WHO baby growth percentile calculator",
+          "item": "https://www.raffyparenting.com/en/tools/baby-growth-percentile-calculator-who.html"
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body class="state-empty" data-page-key="tool_growth_percentiles" data-locale="en">
@@ -207,6 +275,51 @@
               <div class="copy"><b>Track this over time in Raffy</b><span>Save every measurement and see the curve grow.</span><a class="btn-play sm" href="https://play.google.com/store/apps/details?id=com.gurrulabs.raffy" data-track-download="true" data-page-type="tool" data-cta-location="tool-result" aria-label="Get it on Google Play"><i class="gp-logo" aria-hidden="true"></i>Get it on Google Play</a></div>
             </div>
           </div>
+        </div>
+      </section>
+
+
+      <section class="section tool-explain" aria-labelledby="explain-title">
+        <div class="prose">
+          <h2 id="explain-title">What the WHO growth percentile calculator shows</h2>
+          <p>Choose your baby's sex, enter the date of birth and the date of measurement, then add at least one measurement: weight, length or height, or head circumference. The calculator shows where that measurement sits among healthy children of the same age and sex, as a percentile.</p>
+<p>A percentile of 50 means the middle. A percentile of 20 means about 20 in 100 children of that age and sex measure less. Both are common and healthy for many children.</p>
+
+          <h2>How it works</h2>
+          <p>The calculator uses the WHO Child Growth Standards. For each measurement it takes the WHO LMS values (L, M and S) for your baby's exact age in days and sex, turns the measurement into a z-score, and converts the z-score to a percentile.</p>
+<ul>
+<li>Age range: 0 to 60 months. Outside it, the tool shows an age error.</li>
+<li>Metrics: weight-for-age, length-for-age (recumbent, under 24 months), height-for-age (standing, from 24 months) and head circumference-for-age, for girls and boys.</li>
+<li>Accepted values: weight 0.5 to 35 kg, length or height 30 to 130 cm, head circumference 20 to 65 cm. You can switch between kg and cm or lb and in.</li>
+<li>For weight, extreme values use the WHO restricted LMS method beyond 3 standard deviations. The headline percentile is a whole number, the detail line shows one decimal, and both are capped between 0.1 and 99.9.</li>
+<li>Corrected age: tick the box and enter the gestational age at birth (22 to 40 weeks). The tool subtracts (40 minus gestational weeks) x 7 days from your baby's age before the lookup. If the result is below zero it shows an error.</li>
+</ul>
+
+          <h2>Worked example</h2>
+          <p>Girl born 1 October 2025, measured 1 April 2026 (182 days, shown as "5m 30d"), weight 7.3 kg, no corrected age. The tool shows "Weight-for-age (WHO): 7.3 kg · Percentile P50.5", a large "50th percentile", and the sentence "Right in the middle: about 50 in 100 girls the same age weigh less, and 50 weigh more."</p>
+
+          <h2>Frequently asked questions</h2>
+          <div class="faq">
+            <details><summary>What is a healthy percentile for a baby?</summary><p>There is no single healthy number. Most healthy babies fall between the 3rd and 97th percentile. The pattern over time matters more than one measurement.</p></details>
+            <details><summary>Why use WHO growth standards?</summary><p>The WHO standards describe how children grow when they are fed and cared for in healthy conditions, and they are used internationally for children from birth to 5 years.</p></details>
+            <details><summary>When should I use corrected age?</summary><p>For babies born early, many pediatricians use corrected age for growth in the first two years. Tick the box and enter the gestational age at birth, and the tool does the subtraction.</p></details>
+            <details><summary>My baby is below the 10th percentile. Should I worry?</summary><p>Not by itself. Repeat the measurement in a few days and share the trend with your pediatrician, who can look at the whole picture.</p></details>
+          </div>
+
+          <h2>Safety first</h2>
+          <p>This tool is educational and does not diagnose anything. Talk to your pediatrician if your baby drops across percentile lines, is below the 3rd or above the 97th percentile, or is feeding poorly or seems unwell. Your pediatrician decides what is right for your baby.</p>
+
+          <section class="sources" aria-labelledby="sources">
+            <h2 id="sources">Sources</h2>
+            <ol>
+            <li><span><span class="org">World Health Organization</span><a href="https://www.who.int/tools/child-growth-standards/standards" target="_blank" rel="noopener">WHO Child Growth Standards: length/height-for-age, weight-for-age, head circumference-for-age<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+            <li><span><span class="org">World Health Organization</span><a href="https://www.who.int/tools/child-growth-standards/standards/weight-for-age" target="_blank" rel="noopener">Weight-for-age: birth to 5 years<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+            <li><span><span class="org">American Academy of Pediatrics · HealthyChildren.org</span><a href="https://www.healthychildren.org/English/ages-stages/baby/preemie/Pages/Corrected-Age-For-Preemies.aspx" target="_blank" rel="noopener">Corrected Age For Preemies<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+            <li><span><span class="org">American Academy of Pediatrics · HealthyChildren.org</span><a href="https://www.healthychildren.org/English/health-issues/conditions/Glands-Growth-Disorders/Pages/growth-charts-by-the-numbers.aspx" target="_blank" rel="noopener">Understanding Growth Charts: A Parent's Guide to Percentiles &amp; Z-Scores<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+            <li><span><span class="org">NHS (UK)</span><a href="https://www.nhs.uk/baby/babys-development/height-weight-and-reviews/baby-height-and-weight/" target="_blank" rel="noopener">Your baby's weight and height<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></span></li>
+            </ol>
+            <p class="checked">Last checked: October 27, 2026. This tool is educational, not medical advice. <a href="../editorial-policy.html">Editorial policy</a></p>
+          </section>
         </div>
       </section>
 
