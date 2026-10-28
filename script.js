@@ -150,6 +150,8 @@ const clickableCards = document.querySelectorAll(".article-grid .article-card");
 const body = document.body;
 
 function initMixpanel() {
+  // Only production tracks; localhost, file:// and previews must not skew real metrics.
+  if (!/^(www\.)?raffyparenting\.com$/.test(location.hostname)) return;
   (function mixpanelBootstrap(documentRef, mixpanelRef) {
     if (mixpanelRef.__SV) return;
 
