@@ -36,7 +36,13 @@ Raffy is an Android baby-care app made by Gurru Labs. The website raffyparenting
 
 - [Baby sleep routine by age](https://www.raffyparenting.com/en/articles/baby-sleep-routine-by-age.html)
 - [Baby solids guide: BLW, purees and safe first foods](https://www.raffyparenting.com/en/articles/baby-solids-guide-blw-purees.html)
+- [6-month-old baby weekly menu](https://www.raffyparenting.com/en/articles/weekly-menu-6-month-old-baby.html)
+- [7-month-old baby weekly menu](https://www.raffyparenting.com/en/articles/weekly-menu-7-month-old-baby.html)
+- [8-month-old baby weekly menu](https://www.raffyparenting.com/en/articles/weekly-menu-8-month-old-baby.html)
 - [9-month-old baby weekly menu](https://www.raffyparenting.com/en/articles/weekly-menu-9-month-old-baby.html)
+- [10-month-old baby weekly menu](https://www.raffyparenting.com/en/articles/weekly-menu-10-month-old-baby.html)
+- [11-month-old baby weekly menu](https://www.raffyparenting.com/en/articles/weekly-menu-11-month-old-baby.html)
+- [12-month-old baby weekly menu](https://www.raffyparenting.com/en/articles/weekly-menu-12-month-old-baby.html)
 - [Baby weight and height percentiles](https://www.raffyparenting.com/en/articles/baby-weight-height-percentiles-guide.html)
 - [Android baby tracker guide](https://www.raffyparenting.com/en/articles/android-baby-tracker-app-guide.html)
 

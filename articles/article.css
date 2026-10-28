@@ -59,6 +59,9 @@
 .day-text ul { margin: 0; font-size: var(--fs-md); line-height: 1.6; }
 .day-figure { margin: 0; }
 .day-figure img { width: 100%; height: auto; border-radius: var(--r-sm); border: 1px solid var(--line); background: #fff; }
+.menu-days .day-menu .day-layout:not(:has(.day-figure)) { grid-template-columns: minmax(0, 1fr); } /* T-014: text-only days until their images exist */
+.day-text .macros { display: block; font-size: var(--fs-sm); color: var(--ink-3); line-height: 1.45; }
+.day-text .day-total { margin: var(--s2) 0 0; font-size: var(--fs-sm); font-weight: 700; color: var(--mint-700); }
 .table-scroll { overflow-x: auto; border-radius: var(--r-md); border: 1px solid var(--line); }
 .table-scroll .menu-table { border: 0; border-radius: 0; min-width: 560px; }
 .menu-table { width: 100%; border-collapse: collapse; background: #fff; font-size: var(--fs-sm); }

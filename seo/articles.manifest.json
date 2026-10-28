@@ -41,6 +41,36 @@
       }
     },
     {
+      "id": "article_weekly_menu_6_months",
+      "type": "article",
+      "routes": {
+        "en": "/en/articles/weekly-menu-6-month-old-baby.html",
+        "es": "/es/articulos/menu-semanal-bebe-6-meses.html",
+        "fr": "/fr/articles/menu-hebdomadaire-bebe-6-mois.html",
+        "pt": "/pt/artigos/cardapio-semanal-bebe-6-meses.html"
+      }
+    },
+    {
+      "id": "article_weekly_menu_7_months",
+      "type": "article",
+      "routes": {
+        "en": "/en/articles/weekly-menu-7-month-old-baby.html",
+        "es": "/es/articulos/menu-semanal-bebe-7-meses.html",
+        "fr": "/fr/articles/menu-hebdomadaire-bebe-7-mois.html",
+        "pt": "/pt/artigos/cardapio-semanal-bebe-7-meses.html"
+      }
+    },
+    {
+      "id": "article_weekly_menu_8_months",
+      "type": "article",
+      "routes": {
+        "en": "/en/articles/weekly-menu-8-month-old-baby.html",
+        "es": "/es/articulos/menu-semanal-bebe-8-meses.html",
+        "fr": "/fr/articles/menu-hebdomadaire-bebe-8-mois.html",
+        "pt": "/pt/artigos/cardapio-semanal-bebe-8-meses.html"
+      }
+    },
+    {
       "id": "article_weekly_menu_9_months",
       "type": "article",
       "routes": {
@@ -48,6 +78,36 @@
         "es": "/es/articulos/menu-semanal-bebe-9-meses.html",
         "fr": "/fr/articles/menu-hebdomadaire-bebe-9-mois.html",
         "pt": "/pt/artigos/cardapio-semanal-bebe-9-meses.html"
+      }
+    },
+    {
+      "id": "article_weekly_menu_10_months",
+      "type": "article",
+      "routes": {
+        "en": "/en/articles/weekly-menu-10-month-old-baby.html",
+        "es": "/es/articulos/menu-semanal-bebe-10-meses.html",
+        "fr": "/fr/articles/menu-hebdomadaire-bebe-10-mois.html",
+        "pt": "/pt/artigos/cardapio-semanal-bebe-10-meses.html"
+      }
+    },
+    {
+      "id": "article_weekly_menu_11_months",
+      "type": "article",
+      "routes": {
+        "en": "/en/articles/weekly-menu-11-month-old-baby.html",
+        "es": "/es/articulos/menu-semanal-bebe-11-meses.html",
+        "fr": "/fr/articles/menu-hebdomadaire-bebe-11-mois.html",
+        "pt": "/pt/artigos/cardapio-semanal-bebe-11-meses.html"
+      }
+    },
+    {
+      "id": "article_weekly_menu_12_months",
+      "type": "article",
+      "routes": {
+        "en": "/en/articles/weekly-menu-12-month-old-baby.html",
+        "es": "/es/articulos/menu-semanal-bebe-12-meses.html",
+        "fr": "/fr/articles/menu-hebdomadaire-bebe-12-mois.html",
+        "pt": "/pt/artigos/cardapio-semanal-bebe-12-meses.html"
       }
     },
     {

@@ -1209,6 +1209,22 @@ a.btn-play.on-blue, a.btn-play.on-blue:hover { color: var(--ink); }
 .prose .faq details p { margin: 0; font-size: var(--fs-md); }
 .prose .faq details > * + * { margin-top: 0; }
 
+/* ===================== T-014 · Menu-by-month series nav: one chip per month + prev/next =====================
+   <nav class="series-nav"><p class="series-title">..</p><ol><li><a>..</a></li><li><span aria-current="page">..</span></li>..</ol><p class="pn"><a rel="prev">..</a><a rel="next">..</a></p></nav> */
+.series-nav { margin: 1.2em 0 1.6em; padding: var(--s4) var(--s5); border-radius: var(--r-md); background: var(--mint-50); border: 1px solid var(--mint-300); }
+.prose .series-nav .series-title { margin: 0 0 var(--s3); font-size: var(--fs-xs); font-weight: 800; color: var(--mint-700); text-transform: uppercase; letter-spacing: .06em; }
+.series-nav ol { list-style: none; padding: 0 !important; margin: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.series-nav li { margin: 0 !important; }
+.series-nav li::marker { content: none; }
+.series-nav li > a, .series-nav li > span { display: inline-flex; align-items: center; min-height: 40px; padding: 0 14px; border-radius: 999px; font-weight: 700; font-size: var(--fs-sm); text-decoration: none; }
+.prose .series-nav li > a { background: #fff; color: var(--ink); border: 1px solid var(--mint-300); }
+.prose .series-nav li > a:hover { border-color: var(--mint-700); color: var(--mint-700); }
+.series-nav li > span[aria-current] { background: var(--mint-700); color: #fff; }
+.prose .series-nav .pn { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px 16px; margin: var(--s3) 0 0; font-size: var(--fs-sm); }
+.prose .series-nav .pn a { font-weight: 700; }
+.prose .series-nav .pn a[rel="next"] { margin-left: auto; }
+.series-nav a:focus-visible { outline: 3px solid var(--navy-500); outline-offset: 2px; }
+
 /* ===================== T-019 · Article trust layer: updated date, direct answer, sources ===================== */
 /* Byline: "Updated <date>" with a calendar icon instead of another dot, so it wraps cleanly on phones */
 .byline time { white-space: nowrap; }
