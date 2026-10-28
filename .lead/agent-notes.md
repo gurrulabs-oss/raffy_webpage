@@ -81,3 +81,4 @@ Facts learned while working. One line each. Newest at the bottom. Trim via a "Re
 - es/fr/pt meal-planner pages and percentile-calculator LOCALES fr/pt strings are unaccented (pre-existing, as of 2026-10-27).
 - T-028 design review (2026-10-27): headless Chrome screenshots and qlmanage were BLOCKED (needs approval) for the lead and Opus subagents; illustrations drawn blind got rejected 4 times. Ask the owner to allow Chrome before iterating on visuals.
 - T-028: a cover = WebP in library card (`a-thumb` img), PNG in og/twitter/JSON-LD image; `sips --resampleWidth` + `sips -c H W` crops centred; headless Chrome --screenshot worked without approval this run.
+- Since T-029 Mixpanel inits only on (www.)raffyparenting.com (`initMixpanel` host regex); local/preview CDP checks see 0 mixpanel requests by design, so test tracking via the call, not the network.
