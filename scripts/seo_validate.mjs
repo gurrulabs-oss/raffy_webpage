@@ -29,6 +29,7 @@ const allHtml = [
   ...walkHtml(path.join(ROOT, "fr")),
   ...walkHtml(path.join(ROOT, "pt")),
   ...walkHtml(path.join(ROOT, "it")),
+  ...walkHtml(path.join(ROOT, "de")),
   path.join(ROOT, "404.html")
 ].filter((filePath) => fs.existsSync(filePath));
 

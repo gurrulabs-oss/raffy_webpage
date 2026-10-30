@@ -12,7 +12,7 @@ const DOWNLOAD = PREFIX + 'Download Button Clicked';
 const NON_PAGE_VIEW_EVENTS = new Set([PREFIX + 'Meal Planner Link Clicked']);
 const SUBMIT_SUFFIX = ' Submit Clicked';
 const RESULTS_SUFFIX = ' Results Shown';
-const LOCALES = new Set(['en', 'es', 'fr', 'pt', 'it']);
+const LOCALES = new Set(['en', 'es', 'fr', 'pt', 'it', 'de']);
 
 function loadCredentials() {
   const file = path.join(credentialsDir(), 'config.json');

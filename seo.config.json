@@ -33,6 +33,10 @@
     "it": {
       "hreflang": "it-IT",
       "name": "Italiano"
+    },
+    "de": {
+      "hreflang": "de-DE",
+      "name": "Deutsch"
     }
   }
 }

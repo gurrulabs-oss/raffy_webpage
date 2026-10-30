@@ -3,8 +3,8 @@ import { readFileSync, writeFileSync, readdirSync, existsSync } from 'node:fs';
 import { join, basename, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const ARTICLE_DIRS = ['en/articles', 'es/articulos', 'fr/articles', 'pt/artigos', 'it/articoli'];
-const LOCALES = ['en', 'es', 'fr', 'pt', 'it'];
+const ARTICLE_DIRS = ['en/articles', 'es/articulos', 'fr/articles', 'pt/artigos', 'it/articoli', 'de/ratgeber'];
+const LOCALES = ['en', 'es', 'fr', 'pt', 'it', 'de'];
 const WPM = 200;
 const EXCLUDE = ['toc-mobile', 'sources', 'appx', 'planner-bridge'];
 

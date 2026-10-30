@@ -44,19 +44,26 @@
     born: 'Nato/a il', old: function (m, d) { return m + ' ' + plural(m, 'mese', 'mesi') + ' e ' + d + ' ' + plural(d, 'giorno', 'giorni'); },
     eFormat: 'Inserisci la data completa, ad esempio {ex}.', eFuture: 'La data non può essere nel futuro.'
   };
-  var PH = { en: { DMY: 'DD/MM/YYYY', MDY: 'MM/DD/YYYY' }, es: { DMY: 'DD/MM/AAAA' }, fr: { DMY: 'JJ/MM/AAAA' }, pt: { DMY: 'DD/MM/AAAA' }, it: { DMY: 'GG/MM/AAAA' } };
+  STR.de = {
+    today: 'Heute', clear: 'Löschen', done: 'Fertig', open: 'Kalender öffnen', hint: 'Eintippen oder auswählen',
+    chooseYear: 'Jahr wählen', chooseMonth: 'Monat wählen', prev: 'Vorheriger Monat', next: 'Nächster Monat',
+    born: 'Geboren am', old: function (m, d) { return m + ' ' + plural(m, 'Monat', 'Monate') + ' und ' + d + ' ' + plural(d, 'Tag', 'Tage'); },
+    eFormat: 'Gib das vollständige Datum ein, zum Beispiel {ex}.', eFuture: 'Das Datum darf nicht in der Zukunft liegen.'
+  };
+  var PH = { en: { DMY: 'DD/MM/YYYY', MDY: 'MM/DD/YYYY' }, es: { DMY: 'DD/MM/AAAA' }, fr: { DMY: 'JJ/MM/AAAA' }, pt: { DMY: 'DD/MM/AAAA' }, it: { DMY: 'GG/MM/AAAA' }, de: { DMY: 'TT.MM.JJJJ' } };
 
   var pageLang = String((document.body && document.body.dataset.locale) || document.documentElement.lang || 'en').slice(0, 2).toLowerCase();
   var lang = STR[pageLang] ? pageLang : 'en';
   var t = STR[lang];
   var LOC = resolveLocale(lang);
 
-  // es/fr/it: Monday first; pt-BR: Sunday first; en: by the visitor's region (en-US Sunday, others Monday).
+  // es/fr/it/de: Monday first; pt-BR: Sunday first; en: by the visitor's region (en-US Sunday, others Monday).
   function resolveLocale(l) {
     if (l === 'es') return { tag: 'es', order: 'DMY', first: 1 };
     if (l === 'fr') return { tag: 'fr', order: 'DMY', first: 1 };
     if (l === 'pt') return { tag: 'pt-BR', order: 'DMY', first: 0 };
     if (l === 'it') return { tag: 'it', order: 'DMY', first: 1 };
+    if (l === 'de') return { tag: 'de', order: 'DMY', first: 1 };
     var nav = navigator.language || 'en-US';
     var region = '';
     try { region = (new Intl.Locale(nav).maximize().region || '').toUpperCase(); } catch (e) { region = (nav.split('-')[1] || '').toUpperCase(); }
@@ -101,11 +108,12 @@
     var d = mk(+m[1], +m[2] - 1, +m[3]);
     return d.getMonth() === +m[2] - 1 && d.getDate() === +m[3] ? d : null;
   }
+  var SEP = lang === 'de' ? '.' : '/'; // German dates are DD.MM.YYYY
   function fmt(d) {
     var dd = pad(d.getDate()), mm = pad(d.getMonth() + 1);
-    return LOC.order === 'MDY' ? mm + '/' + dd + '/' + d.getFullYear() : dd + '/' + mm + '/' + d.getFullYear();
+    return LOC.order === 'MDY' ? mm + SEP + dd + SEP + d.getFullYear() : dd + SEP + mm + SEP + d.getFullYear();
   }
-  function mask(dg) { return dg.length > 4 ? dg.slice(0, 2) + '/' + dg.slice(2, 4) + '/' + dg.slice(4) : (dg.length > 2 ? dg.slice(0, 2) + '/' + dg.slice(2) : dg); }
+  function mask(dg) { return dg.length > 4 ? dg.slice(0, 2) + SEP + dg.slice(2, 4) + SEP + dg.slice(4) : (dg.length > 2 ? dg.slice(0, 2) + SEP + dg.slice(2) : dg); }
   // null = incomplete, 'bad' = impossible date, Date = valid
   function parseTyped(s) {
     var dg = s.replace(/\D/g, '');
@@ -493,7 +501,7 @@
         if (document.activeElement === input && !iso) {
           var pos = 0, seen = 0;
           while (pos < out.length && seen < before) { if (/\d/.test(out[pos])) seen++; pos++; }
-          if (e.inputType && e.inputType.indexOf('insert') === 0 && out[pos] === '/') pos++;
+          if (e.inputType && e.inputType.indexOf('insert') === 0 && out[pos] === SEP) pos++;
           input.setSelectionRange(pos, pos);
         }
       }

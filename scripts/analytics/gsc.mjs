@@ -7,7 +7,7 @@ import { REPO_ROOT, loadConfig, loadGscKey, dateWindows, snapshotDir, parseArgs 
 import { getAccessToken } from './lib/google-auth.mjs';
 
 const args = parseArgs(process.argv.slice(2));
-const LOCALES = new Set(['en', 'es', 'fr', 'pt', 'it']);
+const LOCALES = new Set(['en', 'es', 'fr', 'pt', 'it', 'de']);
 const ROW_LIMIT = 25000;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const fixturesDir = args.fixtures ? path.resolve(String(args.fixtures)) : null;

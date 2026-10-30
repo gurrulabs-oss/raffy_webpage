@@ -237,6 +237,50 @@ const LOCALES = {
     milkTargetLabel: "Latte consigliato al giorno (calcolato in base all'età)",
     milkTag: "Latte",
     breakfastDinnerSplitLabel: "Ripartizione colazione/cena"
+  },
+  de: {
+    dayLabels: {
+      monday: "Montag",
+      tuesday: "Dienstag",
+      wednesday: "Mittwoch",
+      thursday: "Donnerstag",
+      friday: "Freitag",
+      saturday: "Samstag",
+      sunday: "Sonntag"
+    },
+    mealLabels: {
+      breakfast: "Frühstück",
+      snack_am: "Vormittagssnack",
+      lunch: "Mittagessen",
+      snack_pm: "Nachmittagssnack",
+      dinner: "Abendessen"
+    },
+    statusOk: "OK",
+    statusWarn: "Prüfen",
+    unitKcal: "kcal",
+    summaryTitle: "Wochenübersicht",
+    validationTitle: "Prüfung",
+    repetitionTitle: "Häufigkeit der Gerichte",
+    targetLabel: "Tagesziel",
+    weeklyAverageLabel: "Wochendurchschnitt",
+    macroSplitLabel: "Kohlenhydrate / Fette / Eiweiß",
+    unitPerDay: "pro Tag",
+    validationDailyCaloriesLabel: "Tageskalorien",
+    validationWeeklyAverageLabel: "Wochendurchschnitt",
+    validationMacroDistributionLabel: "Verteilung der Makronährstoffe",
+    validationRepetitionLabel: "maximale Wiederholungen",
+    validationUniqueDishesLabel: "verschiedene Gerichte in der Woche",
+    validationStrictModeLabel: "strenger Modus",
+    validationMilkComplianceLabel: "Milchmenge und Verteilung",
+    validationWhoPediatricLabel: "Übereinstimmung mit WHO/Pädiatrie",
+    tableTitle: "Wochenspeiseplan",
+    tableDayLabel: "Tag",
+    tableMealsLabel: "Mahlzeiten",
+    tableTotalLabel: "Tagessumme",
+    usageCountSuffix: "x",
+    milkTargetLabel: "Empfohlene Milchmenge pro Tag (automatisch nach Alter)",
+    milkTag: "Milch",
+    breakfastDinnerSplitLabel: "Aufteilung Frühstück/Abendessen"
   }
 };
 
@@ -1141,7 +1185,7 @@ async function initBrowserTool() {
   };
 
   // ---- Mixpanel tracking (browser only; same base payload as tools/percentile-calculator.js) ----
-  const TRACKING_LANGUAGES = ["en", "es", "fr", "pt", "it"];
+  const TRACKING_LANGUAGES = ["en", "es", "fr", "pt", "it", "de"];
   const TOOL_NAME = "Meal Planner";
 
   function getUtmParams() {

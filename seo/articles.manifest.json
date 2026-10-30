@@ -8,7 +8,8 @@
         "es": "/es/",
         "fr": "/fr/",
         "pt": "/pt/",
-        "it": "/it/"
+        "it": "/it/",
+        "de": "/de/"
       }
     },
     {
@@ -19,7 +20,8 @@
         "es": "/es/articulos/",
         "fr": "/fr/articles/",
         "pt": "/pt/artigos/",
-        "it": "/it/articoli/"
+        "it": "/it/articoli/",
+        "de": "/de/ratgeber/"
       }
     },
     {
@@ -30,7 +32,8 @@
         "es": "/es/articulos/rutina-sueno-bebe-por-edad.html",
         "fr": "/fr/articles/routine-sommeil-bebe-par-age.html",
         "pt": "/pt/artigos/rotina-sono-bebe-por-idade.html",
-        "it": "/it/articoli/routine-sonno-neonato-per-eta.html"
+        "it": "/it/articoli/routine-sonno-neonato-per-eta.html",
+        "de": "/de/ratgeber/schlafroutine-baby-nach-alter.html"
       }
     },
     {
@@ -41,7 +44,8 @@
         "es": "/es/articulos/guia-alimentacion-complementaria-blw.html",
         "fr": "/fr/articles/guide-diversification-bebe-blw.html",
         "pt": "/pt/artigos/guia-introducao-alimentar-bebe-blw.html",
-        "it": "/it/articoli/guida-svezzamento-autosvezzamento-pappe.html"
+        "it": "/it/articoli/guida-svezzamento-autosvezzamento-pappe.html",
+        "de": "/de/ratgeber/beikost-einfuehrung-breifrei-brei.html"
       }
     },
     {
@@ -52,7 +56,8 @@
         "es": "/es/articulos/menu-semanal-bebe-6-meses.html",
         "fr": "/fr/articles/menu-hebdomadaire-bebe-6-mois.html",
         "pt": "/pt/artigos/cardapio-semanal-bebe-6-meses.html",
-        "it": "/it/articoli/menu-settimanale-bambino-6-mesi.html"
+        "it": "/it/articoli/menu-settimanale-bambino-6-mesi.html",
+        "de": "/de/ratgeber/beikostplan-6-monate.html"
       }
     },
     {
@@ -63,7 +68,8 @@
         "es": "/es/articulos/menu-semanal-bebe-7-meses.html",
         "fr": "/fr/articles/menu-hebdomadaire-bebe-7-mois.html",
         "pt": "/pt/artigos/cardapio-semanal-bebe-7-meses.html",
-        "it": "/it/articoli/menu-settimanale-bambino-7-mesi.html"
+        "it": "/it/articoli/menu-settimanale-bambino-7-mesi.html",
+        "de": "/de/ratgeber/beikostplan-7-monate.html"
       }
     },
     {
@@ -74,7 +80,8 @@
         "es": "/es/articulos/menu-semanal-bebe-8-meses.html",
         "fr": "/fr/articles/menu-hebdomadaire-bebe-8-mois.html",
         "pt": "/pt/artigos/cardapio-semanal-bebe-8-meses.html",
-        "it": "/it/articoli/menu-settimanale-bambino-8-mesi.html"
+        "it": "/it/articoli/menu-settimanale-bambino-8-mesi.html",
+        "de": "/de/ratgeber/beikostplan-8-monate.html"
       }
     },
     {
@@ -85,7 +92,8 @@
         "es": "/es/articulos/menu-semanal-bebe-9-meses.html",
         "fr": "/fr/articles/menu-hebdomadaire-bebe-9-mois.html",
         "pt": "/pt/artigos/cardapio-semanal-bebe-9-meses.html",
-        "it": "/it/articoli/menu-settimanale-bambino-9-mesi.html"
+        "it": "/it/articoli/menu-settimanale-bambino-9-mesi.html",
+        "de": "/de/ratgeber/beikostplan-9-monate.html"
       }
     },
     {
@@ -96,7 +104,8 @@
         "es": "/es/articulos/menu-semanal-bebe-10-meses.html",
         "fr": "/fr/articles/menu-hebdomadaire-bebe-10-mois.html",
         "pt": "/pt/artigos/cardapio-semanal-bebe-10-meses.html",
-        "it": "/it/articoli/menu-settimanale-bambino-10-mesi.html"
+        "it": "/it/articoli/menu-settimanale-bambino-10-mesi.html",
+        "de": "/de/ratgeber/beikostplan-10-monate.html"
       }
     },
     {
@@ -107,7 +116,8 @@
         "es": "/es/articulos/menu-semanal-bebe-11-meses.html",
         "fr": "/fr/articles/menu-hebdomadaire-bebe-11-mois.html",
         "pt": "/pt/artigos/cardapio-semanal-bebe-11-meses.html",
-        "it": "/it/articoli/menu-settimanale-bambino-11-mesi.html"
+        "it": "/it/articoli/menu-settimanale-bambino-11-mesi.html",
+        "de": "/de/ratgeber/beikostplan-11-monate.html"
       }
     },
     {
@@ -118,7 +128,8 @@
         "es": "/es/articulos/menu-semanal-bebe-12-meses.html",
         "fr": "/fr/articles/menu-hebdomadaire-bebe-12-mois.html",
         "pt": "/pt/artigos/cardapio-semanal-bebe-12-meses.html",
-        "it": "/it/articoli/menu-settimanale-bambino-12-mesi.html"
+        "it": "/it/articoli/menu-settimanale-bambino-12-mesi.html",
+        "de": "/de/ratgeber/beikostplan-12-monate.html"
       }
     },
     {
@@ -129,7 +140,8 @@
         "es": "/es/articulos/app-android-seguimiento-bebe-guia.html",
         "fr": "/fr/articles/application-android-suivi-bebe-guide.html",
         "pt": "/pt/artigos/app-android-acompanhamento-bebe-guia.html",
-        "it": "/it/articoli/app-android-monitoraggio-neonato-guida.html"
+        "it": "/it/articoli/app-android-monitoraggio-neonato-guida.html",
+        "de": "/de/ratgeber/baby-tracker-app-android-anleitung.html"
       }
     },
     {
@@ -140,7 +152,8 @@
         "es": "/es/articulos/percentiles-peso-talla-bebe.html",
         "fr": "/fr/articles/percentiles-poids-taille-bebe.html",
         "pt": "/pt/artigos/percentis-peso-altura-bebe.html",
-        "it": "/it/articoli/percentili-peso-altezza-neonato.html"
+        "it": "/it/articoli/percentili-peso-altezza-neonato.html",
+        "de": "/de/ratgeber/perzentilen-baby-gewicht-groesse.html"
       }
     },
     {
@@ -151,7 +164,8 @@
         "es": "/es/articulos/percentil-bajo-bebe-cuando-preocuparse.html",
         "fr": "/fr/articles/percentile-bas-bebe-quand-s-inquieter.html",
         "pt": "/pt/artigos/percentil-baixo-bebe-quando-se-preocupar.html",
-        "it": "/it/articoli/percentile-basso-neonato-quando-preoccuparsi.html"
+        "it": "/it/articoli/percentile-basso-neonato-quando-preoccuparsi.html",
+        "de": "/de/ratgeber/baby-niedrige-perzentile-wann-sorgen.html"
       }
     },
     {
@@ -162,7 +176,8 @@
         "es": "/es/herramientas/calculadora-percentiles-bebe-oms.html",
         "fr": "/fr/outils/calculateur-percentiles-bebe-oms.html",
         "pt": "/pt/ferramentas/calculadora-percentis-bebe-oms.html",
-        "it": "/it/strumenti/calcolatore-percentili-oms.html"
+        "it": "/it/strumenti/calcolatore-percentili-oms.html",
+        "de": "/de/tools/perzentilenrechner-baby-who.html"
       }
     },
     {
@@ -173,7 +188,8 @@
         "es": "/es/herramientas/planificador-ventanas-sueno.html",
         "fr": "/fr/outils/planificateur-fenetres-eveil.html",
         "pt": "/pt/ferramentas/planejador-janelas-vigilia.html",
-        "it": "/it/strumenti/finestre-di-veglia-neonato.html"
+        "it": "/it/strumenti/finestre-di-veglia-neonato.html",
+        "de": "/de/tools/wachphasen-baby-rechner.html"
       }
     },
     {
@@ -184,7 +200,8 @@
         "es": "/es/herramientas/ayudante-transicion-siestas.html",
         "fr": "/fr/outils/assistant-transition-siestes.html",
         "pt": "/pt/ferramentas/ajudante-transicao-sonecas.html",
-        "it": "/it/strumenti/transizione-pisolini-neonato.html"
+        "it": "/it/strumenti/transizione-pisolini-neonato.html",
+        "de": "/de/tools/tagschlaf-uebergang-baby.html"
       }
     },
     {
@@ -195,7 +212,8 @@
         "es": "/es/herramientas/planificador-progresion-solidos.html",
         "fr": "/fr/outils/planificateur-progression-diversification.html",
         "pt": "/pt/ferramentas/planejador-progresso-alimentacao.html",
-        "it": "/it/strumenti/pianificatore-svezzamento-per-eta.html"
+        "it": "/it/strumenti/pianificatore-svezzamento-per-eta.html",
+        "de": "/de/tools/beikost-planer-nach-alter.html"
       }
     },
     {
@@ -206,7 +224,8 @@
         "es": "/es/herramientas/estimador-cantidad-alimentacion.html",
         "fr": "/fr/outils/estimateur-quantites-alimentation.html",
         "pt": "/pt/ferramentas/estimador-quantidade-alimentacao.html",
-        "it": "/it/strumenti/quantita-pappe-latte-per-eta.html"
+        "it": "/it/strumenti/quantita-pappe-latte-per-eta.html",
+        "de": "/de/tools/trinkmenge-baby-rechner.html"
       }
     },
     {
@@ -217,7 +236,8 @@
         "es": "/es/herramientas/calculadora-panales-eliminacion.html",
         "fr": "/fr/outils/calculateur-couches-elimination.html",
         "pt": "/pt/ferramentas/calculadora-fraldas-eliminacao.html",
-        "it": "/it/strumenti/calcolatore-pannolini-neonato.html"
+        "it": "/it/strumenti/calcolatore-pannolini-neonato.html",
+        "de": "/de/tools/nasse-windeln-baby-rechner.html"
       }
     },
     {
@@ -228,7 +248,8 @@
         "es": "/es/herramientas/",
         "fr": "/fr/outils/",
         "pt": "/pt/ferramentas/",
-        "it": "/it/strumenti/"
+        "it": "/it/strumenti/",
+        "de": "/de/tools/"
       }
     },
     {
@@ -239,7 +260,8 @@
         "es": "/es/herramientas/planificador-comidas-semanal-12-23-meses.html",
         "fr": "/fr/outils/planificateur-repas-hebdomadaire-12-23-mois.html",
         "pt": "/pt/ferramentas/planejador-cardapio-semanal-12-23-meses.html",
-        "it": "/it/strumenti/pianificatore-menu-settimanale-12-23-mesi.html"
+        "it": "/it/strumenti/pianificatore-menu-settimanale-12-23-mesi.html",
+        "de": "/de/tools/wochenplan-kleinkind-essen-12-23-monate.html"
       }
     },
     {
@@ -250,7 +272,8 @@
         "es": "/es/articulos/rutina-diaria-recien-nacido.html",
         "fr": "/fr/articles/routine-quotidienne-nouveau-ne.html",
         "pt": "/pt/artigos/rotina-diaria-recem-nascido.html",
-        "it": "/it/articoli/routine-quotidiana-neonato.html"
+        "it": "/it/articoli/routine-quotidiana-neonato.html",
+        "de": "/de/ratgeber/tagesablauf-neugeborenes.html"
       }
     },
     {
@@ -261,7 +284,8 @@
         "es": "/es/articulos/hitos-desarrollo-primer-ano-bebe.html",
         "fr": "/fr/articles/etapes-developpement-premiere-annee-bebe.html",
         "pt": "/pt/artigos/marcos-desenvolvimento-primeiro-ano-bebe.html",
-        "it": "/it/articoli/tappe-sviluppo-primo-anno-bambino.html"
+        "it": "/it/articoli/tappe-sviluppo-primo-anno-bambino.html",
+        "de": "/de/ratgeber/entwicklung-baby-erstes-jahr-meilensteine.html"
       }
     },
     {
@@ -272,7 +296,8 @@
         "es": "/es/articulos/criar-con-confianza-y-sin-culpa.html",
         "fr": "/fr/articles/eduquer-avec-confiance-sans-culpabilite.html",
         "pt": "/pt/artigos/criar-com-confianca-sem-culpa.html",
-        "it": "/it/articoli/genitori-con-fiducia-senza-sensi-di-colpa.html"
+        "it": "/it/articoli/genitori-con-fiducia-senza-sensi-di-colpa.html",
+        "de": "/de/ratgeber/elternsein-mit-selbstvertrauen-ohne-schuldgefuehle.html"
       }
     },
     {
@@ -283,7 +308,8 @@
         "es": "/es/articulos/primera-vacuna-bebe-lo-que-aprendi.html",
         "fr": "/fr/articles/premier-vaccin-bebe-ce-que-jai-appris.html",
         "pt": "/pt/artigos/primeira-vacina-bebe-o-que-aprendi.html",
-        "it": "/it/articoli/prima-vaccinazione-neonato-cosa-ho-imparato.html"
+        "it": "/it/articoli/prima-vaccinazione-neonato-cosa-ho-imparato.html",
+        "de": "/de/ratgeber/erste-impfung-baby-erfahrungen.html"
       }
     },
     {
@@ -294,7 +320,8 @@
         "es": "/es/sobre.html",
         "fr": "/fr/a-propos.html",
         "pt": "/pt/sobre.html",
-        "it": "/it/chi-siamo.html"
+        "it": "/it/chi-siamo.html",
+        "de": "/de/ueber-uns.html"
       }
     },
     {
@@ -305,7 +332,8 @@
         "es": "/es/politica-editorial.html",
         "fr": "/fr/politique-editoriale.html",
         "pt": "/pt/politica-editorial.html",
-        "it": "/it/politica-editoriale.html"
+        "it": "/it/politica-editoriale.html",
+        "de": "/de/redaktionelle-richtlinien.html"
       }
     },
     {
@@ -316,7 +344,8 @@
         "es": "/es/privacidad.html",
         "fr": "/fr/confidentialite.html",
         "pt": "/pt/privacidade.html",
-        "it": "/it/privacy.html"
+        "it": "/it/privacy.html",
+        "de": "/de/datenschutz.html"
       }
     },
     {
@@ -327,7 +356,8 @@
         "es": "/es/eliminacion-datos.html",
         "fr": "/fr/suppression-donnees.html",
         "pt": "/pt/exclusao-dados.html",
-        "it": "/it/cancellazione-dati.html"
+        "it": "/it/cancellazione-dati.html",
+        "de": "/de/datenloeschung.html"
       }
     },
     {
@@ -338,7 +368,8 @@
         "es": "/es/terminos.html",
         "fr": "/fr/conditions.html",
         "pt": "/pt/termos.html",
-        "it": "/it/termini.html"
+        "it": "/it/termini.html",
+        "de": "/de/nutzungsbedingungen.html"
       }
     },
     {
@@ -349,7 +380,8 @@
         "es": "/es/contacto.html",
         "fr": "/fr/contact.html",
         "pt": "/pt/contato.html",
-        "it": "/it/contatti.html"
+        "it": "/it/contatti.html",
+        "de": "/de/kontakt.html"
       }
     }
   ]
