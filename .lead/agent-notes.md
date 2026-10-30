@@ -104,3 +104,8 @@ Facts learned while working. One line each. Newest at the bottom. Trim via a "Re
 - `data-article-slug` on article pages must be the page's own (localized) basename; translation workers copying en kept the en slug.
 - Translation workers build pages with exact-match string tables: they miss short labels (nav "Tools", "min read" in cards) and JSON-LD for FAQs not shown visibly; scan JSON-LD/meta/attributes too, not just visible text.
 - LEGAL_RE alternatives are anchored by `\.html$`, so `politica-editorial` does NOT match `politica-editoriale.html`; both entries are needed.
+- Since T-033 there are 6 locales (de = `/de/`, `ratgeber/`, `tools/`, hreflang de-DE); 192 validated pages, 195 sitemap URLs. German slug table lives in the manifest. Fixing the slug table in the briefs up front lets page workers run in parallel with the infra worker.
+- Since T-033 `percentile-calculator.js` `parseDecimal` accepts "7,3" in every locale; `formatValue` prints a comma only for de (guarded with `typeof locale` because `same-outputs.mjs` runs it in a vm without `locale`). de measurement inputs are `type="text" inputmode="decimal"`; tool-cluster pages must keep `type="number"` (read with `Number()`).
+- Newsletter pages carry hand-written hreflang (not in manifest): when adding a locale, add its line to all newsletter pages by hand (en/newsletter still lacks it-IT as of T-033).
+- In zsh, `path` is tied to `$PATH`: a loop variable named `path` breaks every later command ("command not found: node").
+- Translation workers in T-033 left template slots in attributes (`aria-label="{{13}}"`), duplicated a language option they copied and broke a `<small>…</small>Google Play` label to `=`: scan for `{{`, option counts and Play button text after translation.
