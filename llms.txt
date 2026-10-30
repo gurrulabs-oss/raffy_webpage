@@ -1,8 +1,8 @@
 # Raffy
 
-> Raffy is a free Android app for baby care (sleep, feeding, growth, medicines and vaccines) made by Gurru Labs. raffyparenting.com is its website, with free parenting articles and calculators in English, Spanish, French and Brazilian Portuguese. Content is educational and non-diagnostic.
+> Raffy is a free Android app for baby care (sleep, feeding, growth, medicines and vaccines) made by Gurru Labs. raffyparenting.com is its website, with free parenting articles and calculators in English, Spanish, French, Brazilian Portuguese and Italian. Content is educational and non-diagnostic.
 
-The app is available only on Google Play. The website has no accounts; tools run in the browser. Each page exists in four language versions with translated URLs.
+The app is available only on Google Play. The website has no accounts; tools run in the browser. Each page exists in five language versions with translated URLs.
 
 ## App
 
@@ -11,6 +11,7 @@ The app is available only on Google Play. The website has no accounts; tools run
 - [Raffy home (Español)](https://www.raffyparenting.com/es/): Español version
 - [Raffy home (Français)](https://www.raffyparenting.com/fr/): Français version
 - [Raffy home (Português (Brasil))](https://www.raffyparenting.com/pt/): Português (Brasil) version
+- [Raffy home (Italiano)](https://www.raffyparenting.com/it/): Italiano version
 
 ## Free tools
 
@@ -127,6 +128,34 @@ The app is available only on Google Play. The website has no accounts; tools run
 - [Criar com confiança e menos culpa: guia prático](https://www.raffyparenting.com/pt/artigos/criar-com-confianca-sem-culpa.html): Estratégias para reduzir carga mental, alinhar cuidadores e criar com mais confiança no dia a dia.
 - [A primeira vacina do meu bebê: o que senti e o que aprendi](https://www.raffyparenting.com/pt/artigos/primeira-vacina-bebe-o-que-aprendi.html): Um relato real sobre a primeira vacina do bebê: dúvidas, evidências, reações esperadas e proteção coletiva.
 
+## Italiano
+
+- [Strumenti gratuiti per genitori](https://www.raffyparenting.com/it/strumenti/): Strumenti web gratuiti per i genitori: percentili OMS, finestre di veglia, svezzamento, pannolini e quantità di pappe e latte.
+- [Calcolatore percentili OMS per bambini: peso, lunghezza e testa](https://www.raffyparenting.com/it/strumenti/calcolatore-percentili-oms.html): Calcolatore dei percentili OMS gratuito: inserisci peso, lunghezza o circonferenza cranica del tuo bambino e scopri il percentile sulle curve di crescita OMS, da 0 a 5 anni, anche con età corretta per i nati prematuri.
+- [Finestre di veglia del neonato per età](https://www.raffyparenting.com/it/strumenti/finestre-di-veglia-neonato.html): Scopri le finestre di veglia e quanti pisolini fare in base all'età, per costruire ritmi di sonno più sereni durante la giornata.
+- [Transizione dei pisolini del neonato](https://www.raffyparenting.com/it/strumenti/transizione-pisolini-neonato.html): Scopri se il tuo bambino sta per cambiare il ritmo dei pisolini e ricevi consigli graduali per accompagnarlo.
+- [Pianificatore dello svezzamento per età](https://www.raffyparenting.com/it/strumenti/pianificatore-svezzamento-per-eta.html): Pianifica settimana dopo settimana la consistenza e la varietà degli alimenti durante lo svezzamento.
+- [Quantità di pappe e latte per età](https://www.raffyparenting.com/it/strumenti/quantita-pappe-latte-per-eta.html): Stima il fabbisogno giornaliero di energia e latte in base a età, peso e numero di pasti, per organizzare meglio la giornata.
+- [Calcolatore dei pannolini del neonato per età](https://www.raffyparenting.com/it/strumenti/calcolatore-pannolini-neonato.html): Conta pannolini bagnati e cacche per controllare l'idratazione e capire quando chiamare il pediatra.
+- [Menù settimanale per bambini da 12 a 23 mesi: pianificatore](https://www.raffyparenting.com/it/strumenti/pianificatore-menu-settimanale-12-23-mesi.html): Pianificatore di menù per bambini da 12 a 23 mesi: crea un menù di 7 giorni in linea con le indicazioni OMS, con obiettivi di calorie, latte per età e controllo della varietà settimanale.
+- [Libreria di articoli per genitori](https://www.raffyparenting.com/it/articoli/): Guide pratiche su routine del sonno, svezzamento, percentili di crescita, routine del neonato e tappe dello sviluppo.
+- [Routine del sonno del neonato per età: guida pratica settimana per settimana](https://www.raffyparenting.com/it/articoli/routine-sonno-neonato-per-eta.html): Costruisci una routine del sonno realistica per il tuo neonato, per età: finestre di veglia, pisolini, orario della nanna e un risveglio fisso come punto di riferimento.
+- [Svezzamento e autosvezzamento: guida a pappe, BLW e primi cibi sicuri](https://www.raffyparenting.com/it/articoli/guida-svezzamento-autosvezzamento-pappe.html): Guida pratica allo svezzamento e all'autosvezzamento: pappe, BLW, forme e consistenze sicure dei cibi e consigli per organizzare la prima settimana.
+- [Menù settimanale per bambino di 6 mesi: 7 giorni di pappe](https://www.raffyparenting.com/it/articoli/menu-settimanale-bambino-6-mesi.html): Menù settimanale per bambino di 6 mesi: un piano di 7 giorni per iniziare lo svezzamento con le prime pappe, alimenti ricchi di ferro, quantità di latte, calorie e consigli di sicurezza.
+- [Menù settimanale per bambino di 7 mesi: 7 giorni di pappe](https://www.raffyparenting.com/it/articoli/menu-settimanale-bambino-7-mesi.html): Menù settimanale per bambino di 7 mesi: un piano di 7 giorni con 3 pasti, consistenze schiacciate, alimenti ricchi di ferro, quantità di latte, calorie e consigli di sicurezza.
+- [Menù settimanale per bambino di 8 mesi: 7 giorni di pappe](https://www.raffyparenting.com/it/articoli/menu-settimanale-bambino-8-mesi.html): Menù settimanale per bambino di 8 mesi: un piano di 7 giorni con 3 pasti e una merenda, alimenti da prendere in mano, quantità di latte, calorie e consigli di sicurezza.
+- [Menù settimanale per bambino di 9 mesi: piano completo di 7 giorni](https://www.raffyparenting.com/it/articoli/menu-settimanale-bambino-9-mesi.html): Menù settimanale per bambino di 9 mesi: 7 giorni di pasti, intervalli di calorie, consigli di sicurezza e cosa cambia da 10 a 12 mesi.
+- [Menù settimanale per bambino di 10 mesi: 7 giorni di pappe](https://www.raffyparenting.com/it/articoli/menu-settimanale-bambino-10-mesi.html): Menù settimanale per bambino di 10 mesi: 7 giorni di pappe con grammi, calorie e macronutrienti, finger food, consigli di sicurezza e cosa cambia a 11 mesi.
+- [Menù settimanale per bambino di 11 mesi: 7 giorni di pappe](https://www.raffyparenting.com/it/articoli/menu-settimanale-bambino-11-mesi.html): Menù settimanale per bambino di 11 mesi: 7 giorni di pappe con grammi, calorie e macronutrienti, cibi di famiglia tritati, consigli di sicurezza e cosa cambia a 12 mesi.
+- [Menù settimanale per bambino di 12 mesi: 7 giorni di pappe](https://www.raffyparenting.com/it/articoli/menu-settimanale-bambino-12-mesi.html): Menù settimanale per bambino di 12 mesi: 7 giorni di pasti in stile famiglia con grammi, calorie e macronutrienti, latte intero e consigli di sicurezza, più un pianificatore gratuito.
+- [Migliore app Android per monitorare il neonato e le routine quotidiane](https://www.raffyparenting.com/it/articoli/app-android-monitoraggio-neonato-guida.html): Trova il modo giusto di usare un'app Android per il neonato: sonno, pappe, crescita e routine. Scopri quando bastano gli strumenti web e quando conviene tracciare con l'app Raffy.
+- [Percentili di peso e altezza del neonato: come leggere la crescita](https://www.raffyparenting.com/it/articoli/percentili-peso-altezza-neonato.html): Capire i percentili di peso e altezza del neonato, le curve di crescita OMS e quando le variazioni di peso o lunghezza richiedono un controllo dal pediatra.
+- [Percentile basso nel neonato: quando preoccuparsi e quando no](https://www.raffyparenting.com/it/articoli/percentile-basso-neonato-quando-preoccuparsi.html): Il 30° percentile non è una brutta notizia. Scopri quando un percentile basso nel tuo neonato non deve preoccupare e quali segnali meritano una telefonata al pediatra.
+- [Routine quotidiana del neonato che funziona nella vita reale](https://www.raffyparenting.com/it/articoli/routine-quotidiana-neonato.html): Crea una routine quotidiana per il neonato tra poppate, sonno e cambio del pannolino, senza orari rigidi ora per ora. Ritmo e segnali del bambino contano più dell'orologio.
+- [Tappe dello sviluppo nel primo anno: l'anno che ti cambia per sempre](https://www.raffyparenting.com/it/articoli/tappe-sviluppo-primo-anno-bambino.html): Guida alle tappe dello sviluppo nel primo anno del bambino, trimestre per trimestre: attaccamento, dubbi comuni e come sostenere la crescita senza pressioni.
+- [Genitori con fiducia: meno sensi di colpa e meno carico mentale](https://www.raffyparenting.com/it/articoli/genitori-con-fiducia-senza-sensi-di-colpa.html): Strategie pratiche per essere genitori con più fiducia e meno sensi di colpa, riducendo il carico mentale e comunicando meglio in famiglia.
+- [La prima vaccinazione del mio bambino: cosa ho provato e cosa ho imparato](https://www.raffyparenting.com/it/articoli/prima-vaccinazione-neonato-cosa-ho-imparato.html): La prima vaccinazione del mio bambino, raccontata in prima persona: la paura, le evidenze scientifiche, le reazioni più comuni e perché vaccinare protegge tutta la comunità.
+
 ## Optional
 
 - [LLMS.md](https://www.raffyparenting.com/LLMS.md): reference summary of Raffy and the site
@@ -150,6 +179,12 @@ The app is available only on Google Play. The website has no accounts; tools run
 - [Contact (FR)](https://www.raffyparenting.com/fr/contact.html): Contactez Raffy pour des retours éditoriaux, corrections ou collaborations.
 - [Politique éditoriale (FR)](https://www.raffyparenting.com/fr/politique-editoriale.html): Politique éditoriale Raffy: qualité, mise à jour et limites du contenu santé.
 - [Demande de Suppression des Donnees - Raffy (FR)](https://www.raffyparenting.com/fr/suppression-donnees.html): Comment demander par email la suppression des donnees personnelles sur Raffy, informations requises et delai de traitement.
+- [Richiesta di cancellazione dei dati - Raffy (IT)](https://www.raffyparenting.com/it/cancellazione-dati.html): Come richiedere via email la cancellazione dei dati personali di Raffy, quali informazioni indicare e quali sono i tempi di elaborazione previsti.
+- [Chi siamo (IT)](https://www.raffyparenting.com/it/chi-siamo.html): Scopri la missione di Raffy, i nostri standard editoriali e l'impegno a offrire alle famiglie indicazioni pratiche per la cura del bambino.
+- [Contatti (IT)](https://www.raffyparenting.com/it/contatti.html): Contatta Raffy per commenti sui contenuti, segnalazioni di correzioni o opportunità di collaborazione.
+- [Politica editoriale (IT)](https://www.raffyparenting.com/it/politica-editoriale.html): La politica editoriale di Raffy spiega la qualità dei contenuti, il processo di revisione, gli aggiornamenti e i limiti legati alla sicurezza medica.
+- [Informativa sulla privacy di Raffy (IT)](https://www.raffyparenting.com/it/privacy.html): Leggi l'informativa sulla privacy di Raffy: raccolta dei dati, trattamento dei dati dei minori, servizi di terze parti, controllo del consenso, conformità a GDPR e CPRA e diritti di cancellazione.
+- [Termini di utilizzo (IT)](https://www.raffyparenting.com/it/termini.html): Termini e condizioni d'uso dei contenuti del sito di Raffy e dei link per scaricare l'app.
 - [Contato (PT)](https://www.raffyparenting.com/pt/contato.html): Entre em contato com a Raffy para sugestões editoriais, correções e parcerias.
 - [Solicitacao de Exclusao de Dados - Raffy (PT)](https://www.raffyparenting.com/pt/exclusao-dados.html): Como solicitar por email a exclusao de dados pessoais na Raffy, informacoes necessarias e prazo de processamento.
 - [Política editorial (PT)](https://www.raffyparenting.com/pt/politica-editorial.html): Política editorial da Raffy: padrões de qualidade, revisão e limites em temas de saúde.

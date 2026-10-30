@@ -777,7 +777,8 @@
         "es": "Leche entera pasteurizada",
         "en": "Pasteurized whole milk",
         "fr": "Lait entier pasteurise",
-        "pt": "Leite integral pasteurizado"
+        "pt": "Leite integral pasteurizado",
+        "it": "Latte intero pastorizzato"
       },
       "allowedMeals": [
         "breakfast",
@@ -809,7 +810,8 @@
         "es": "Yogur con pera y avena",
         "en": "Yogurt with pear and oats",
         "fr": "Yaourt avec poire et avoine",
-        "pt": "Iogurte com pera e aveia"
+        "pt": "Iogurte com pera e aveia",
+        "it": "Yogurt con pera e fiocchi d'avena"
       },
       "allowedMeals": [
         "breakfast",
@@ -851,7 +853,8 @@
         "es": "Avena cocida con platano",
         "en": "Cooked oats with banana",
         "fr": "Avoine cuite avec banane",
-        "pt": "Aveia cozida com banana"
+        "pt": "Aveia cozida com banana",
+        "it": "Fiocchi d'avena cotti con banana"
       },
       "allowedMeals": [
         "breakfast"
@@ -891,7 +894,8 @@
         "es": "Pan integral blando con tomate y AOVE",
         "en": "Soft wholegrain bread with tomato and olive oil",
         "fr": "Pain complet moelleux avec tomate et huile d'olive",
-        "pt": "Pao integral macio com tomate e azeite"
+        "pt": "Pao integral macio com tomate e azeite",
+        "it": "Pane integrale morbido con pomodoro e olio extravergine d'oliva"
       },
       "allowedMeals": [
         "breakfast"
@@ -930,7 +934,8 @@
         "es": "Gachas de avena con pera",
         "en": "Oat porridge with pear",
         "fr": "Porridge d'avoine a la poire",
-        "pt": "Papa de aveia com pera"
+        "pt": "Papa de aveia com pera",
+        "it": "Porridge d'avena con pera"
       },
       "allowedMeals": [
         "breakfast"
@@ -970,7 +975,8 @@
         "es": "Pan blando con aguacate triturado",
         "en": "Soft bread with mashed avocado",
         "fr": "Pain moelleux avec avocat ecrase",
-        "pt": "Pao macio com abacate amassado"
+        "pt": "Pao macio com abacate amassado",
+        "it": "Pane morbido con avocado schiacciato"
       },
       "allowedMeals": [
         "breakfast"
@@ -1009,7 +1015,8 @@
         "es": "Tortilla francesa con calabacin",
         "en": "French omelette with zucchini",
         "fr": "Omelette nature avec courgette",
-        "pt": "Omelete francesa com abobrinha"
+        "pt": "Omelete francesa com abobrinha",
+        "it": "Omelette alla francese con zucchine"
       },
       "allowedMeals": [
         "breakfast",
@@ -1049,7 +1056,8 @@
         "es": "Compota de manzana y pera con yogur",
         "en": "Apple and pear compote with yogurt",
         "fr": "Compote pomme-poire avec yaourt",
-        "pt": "Compota de maca e pera com iogurte"
+        "pt": "Compota de maca e pera com iogurte",
+        "it": "Composta di mela e pera con yogurt"
       },
       "allowedMeals": [
         "snack_am"
@@ -1088,7 +1096,8 @@
         "es": "Platano chafado con yogur",
         "en": "Mashed banana with yogurt",
         "fr": "Banane ecrasee avec yaourt",
-        "pt": "Banana amassada com iogurte"
+        "pt": "Banana amassada com iogurte",
+        "it": "Banana schiacciata con yogurt"
       },
       "allowedMeals": [
         "snack_am",
@@ -1124,7 +1133,8 @@
         "es": "Manzana con ciruela, avena y yogur",
         "en": "Apple with prune, oats, and yogurt",
         "fr": "Pomme avec pruneau, avoine et yaourt",
-        "pt": "Maca com ameixa, aveia e iogurte"
+        "pt": "Maca com ameixa, aveia e iogurte",
+        "it": "Mela con prugna, fiocchi d'avena e yogurt"
       },
       "allowedMeals": [
         "snack_am"
@@ -1168,7 +1178,8 @@
         "es": "Hummus suave con verduras cocidas",
         "en": "Mild hummus with cooked vegetables",
         "fr": "Houmous doux avec legumes cuits",
-        "pt": "Homus suave com legumes cozidos"
+        "pt": "Homus suave com legumes cozidos",
+        "it": "Hummus delicato con verdure cotte"
       },
       "allowedMeals": [
         "snack_am",
@@ -1212,7 +1223,8 @@
         "es": "Pan blando con queso fresco y tomate",
         "en": "Soft bread with fresh cheese and tomato",
         "fr": "Pain tendre avec fromage frais et tomate",
-        "pt": "Pao macio com queijo fresco e tomate"
+        "pt": "Pao macio com queijo fresco e tomate",
+        "it": "Pane morbido con formaggio fresco e pomodoro"
       },
       "allowedMeals": [
         "breakfast",
@@ -1257,7 +1269,8 @@
         "es": "Lentejas suaves con verduras",
         "en": "Soft lentils with vegetables",
         "fr": "Lentilles douces aux legumes",
-        "pt": "Lentilhas suaves com legumes"
+        "pt": "Lentilhas suaves com legumes",
+        "it": "Lenticchie morbide con verdure"
       },
       "allowedMeals": [
         "lunch",
@@ -1301,7 +1314,8 @@
         "es": "Garbanzos con calabaza y arroz",
         "en": "Chickpeas with pumpkin and rice",
         "fr": "Pois chiches, courge et riz",
-        "pt": "Grao-de-bico com abobora e arroz"
+        "pt": "Grao-de-bico com abobora e arroz",
+        "it": "Ceci con zucca e riso"
       },
       "allowedMeals": [
         "lunch",
@@ -1345,7 +1359,8 @@
         "es": "Alubias blancas con puerro y zanahoria",
         "en": "White beans with leek and carrot",
         "fr": "Haricots blancs, poireau et carotte",
-        "pt": "Feijao branco com alho-poro e cenoura"
+        "pt": "Feijao branco com alho-poro e cenoura",
+        "it": "Fagioli bianchi con porro e carota"
       },
       "allowedMeals": [
         "lunch",
@@ -1389,7 +1404,8 @@
         "es": "Merluza al vapor con patata y judia verde",
         "en": "Steamed hake with potato and green beans",
         "fr": "Merlu vapeur avec pomme de terre et haricots verts",
-        "pt": "Merluza no vapor com batata e vagem"
+        "pt": "Merluza no vapor com batata e vagem",
+        "it": "Nasello al vapore con patate e fagiolini"
       },
       "allowedMeals": [
         "lunch",
@@ -1433,7 +1449,8 @@
         "es": "Salmon al horno con boniato",
         "en": "Baked salmon with sweet potato",
         "fr": "Saumon au four avec patate douce",
-        "pt": "Salmao assado com batata-doce"
+        "pt": "Salmao assado com batata-doce",
+        "it": "Salmone al forno con patata dolce"
       },
       "allowedMeals": [
         "lunch",
@@ -1477,7 +1494,8 @@
         "es": "Bacalao desmigado con patata y brocoli",
         "en": "Flaked cod with potato and broccoli",
         "fr": "Morue emiettee avec pomme de terre et brocoli",
-        "pt": "Bacalhau desfiado com batata e brocolis"
+        "pt": "Bacalhau desfiado com batata e brocolis",
+        "it": "Merluzzo sfilacciato con patate e broccoli"
       },
       "allowedMeals": [
         "lunch",
@@ -1521,7 +1539,8 @@
         "es": "Pollo guisado con verduras y cuscus",
         "en": "Chicken stew with vegetables and couscous",
         "fr": "Poulet mijote aux legumes et couscous",
-        "pt": "Frango cozido com legumes e cuscuz"
+        "pt": "Frango cozido com legumes e cuscuz",
+        "it": "Spezzatino di pollo con verdure e cous cous"
       },
       "allowedMeals": [
         "lunch",
@@ -1569,7 +1588,8 @@
         "es": "Pavo con arroz y calabacin",
         "en": "Turkey with rice and zucchini",
         "fr": "Dinde avec riz et courgette",
-        "pt": "Peru com arroz e abobrinha"
+        "pt": "Peru com arroz e abobrinha",
+        "it": "Tacchino con riso e zucchine"
       },
       "allowedMeals": [
         "lunch",
@@ -1611,7 +1631,8 @@
         "es": "Ternera magra con salsa de verduras",
         "en": "Lean beef with vegetable sauce",
         "fr": "Boeuf maigre sauce legumes",
-        "pt": "Carne bovina magra com molho de legumes"
+        "pt": "Carne bovina magra com molho de legumes",
+        "it": "Manzo magro con salsa di verdure"
       },
       "allowedMeals": [
         "lunch",
@@ -1661,7 +1682,8 @@
         "es": "Pasta integral corta con bolonesa de lentejas",
         "en": "Whole wheat pasta with lentil bolognese",
         "fr": "Pates completes avec bolognaise de lentilles",
-        "pt": "Macarrao integral com bolonhesa de lentilha"
+        "pt": "Macarrao integral com bolonhesa de lentilha",
+        "it": "Pasta integrale con ragù di lenticchie"
       },
       "allowedMeals": [
         "lunch",
@@ -1710,7 +1732,8 @@
         "es": "Arroz meloso con pollo y verduras",
         "en": "Creamy rice with chicken and vegetables",
         "fr": "Riz fondant au poulet et legumes",
-        "pt": "Arroz cremoso com frango e legumes"
+        "pt": "Arroz cremoso com frango e legumes",
+        "it": "Riso cremoso con pollo e verdure"
       },
       "allowedMeals": [
         "lunch",
@@ -1756,7 +1779,8 @@
         "es": "Quinoa con verduras y huevo",
         "en": "Quinoa with vegetables and egg",
         "fr": "Quinoa aux legumes et oeuf",
-        "pt": "Quinoa com legumes e ovo"
+        "pt": "Quinoa com legumes e ovo",
+        "it": "Quinoa con verdure e uovo"
       },
       "allowedMeals": [
         "lunch",
@@ -1804,7 +1828,8 @@
         "es": "Pure de verduras con huevo",
         "en": "Vegetable puree with egg",
         "fr": "Puree de legumes avec oeuf",
-        "pt": "Pure de legumes com ovo"
+        "pt": "Pure de legumes com ovo",
+        "it": "Purè di verdure con uovo"
       },
       "allowedMeals": [
         "dinner"
@@ -1851,7 +1876,8 @@
         "es": "Crema de calabacin con pavo",
         "en": "Zucchini cream with turkey",
         "fr": "Creme de courgette a la dinde",
-        "pt": "Creme de abobrinha com peru"
+        "pt": "Creme de abobrinha com peru",
+        "it": "Crema di zucchine con tacchino"
       },
       "allowedMeals": [
         "dinner"
@@ -1892,7 +1918,8 @@
         "es": "Sopa de fideos finos con pollo",
         "en": "Thin noodle soup with chicken",
         "fr": "Soupe de vermicelles au poulet",
-        "pt": "Sopa de macarrao fino com frango"
+        "pt": "Sopa de macarrao fino com frango",
+        "it": "Zuppa di pastina con pollo"
       },
       "allowedMeals": [
         "dinner"
@@ -1939,7 +1966,8 @@
         "es": "Yogur con frutos rojos triturados",
         "en": "Yogurt with crushed berries",
         "fr": "Yaourt aux fruits rouges ecrases",
-        "pt": "Iogurte com frutas vermelhas amassadas"
+        "pt": "Iogurte com frutas vermelhas amassadas",
+        "it": "Yogurt con frutti di bosco schiacciati"
       },
       "allowedMeals": [
         "snack_am",
@@ -1980,7 +2008,8 @@
         "es": "Boniato asado con queso fresco",
         "en": "Roasted sweet potato with fresh cheese",
         "fr": "Patate douce rotie au fromage frais",
-        "pt": "Batata-doce assada com queijo fresco"
+        "pt": "Batata-doce assada com queijo fresco",
+        "it": "Patata dolce al forno con formaggio fresco"
       },
       "allowedMeals": [
         "snack_pm",
@@ -2020,7 +2049,8 @@
         "es": "Revuelto de huevo con espinaca y patata",
         "en": "Scrambled egg with spinach and potato",
         "fr": "Oeufs brouilles avec epinards et pomme de terre",
-        "pt": "Ovo mexido com espinafre e batata"
+        "pt": "Ovo mexido com espinafre e batata",
+        "it": "Uovo strapazzato con spinaci e patate"
       },
       "allowedMeals": [
         "dinner"
@@ -2063,7 +2093,8 @@
         "es": "Pan blando con queso fresco y pera",
         "en": "Soft bread with fresh cheese and pear",
         "fr": "Pain tendre avec fromage frais et poire",
-        "pt": "Pao macio com queijo fresco e pera"
+        "pt": "Pao macio com queijo fresco e pera",
+        "it": "Pane morbido con formaggio fresco e pera"
       },
       "allowedMeals": [
         "breakfast"
@@ -2103,7 +2134,8 @@
         "es": "Platano, frutos rojos, yogur y avena",
         "en": "Banana, berries, yogurt, and oats",
         "fr": "Banane, fruits rouges, yaourt et avoine",
-        "pt": "Banana, frutas vermelhas, iogurte e aveia"
+        "pt": "Banana, frutas vermelhas, iogurte e aveia",
+        "it": "Banana, frutti di bosco, yogurt e fiocchi d'avena"
       },
       "allowedMeals": [
         "breakfast"
@@ -2147,7 +2179,8 @@
         "es": "Pan blando con aguacate y huevo",
         "en": "Soft bread with avocado and egg",
         "fr": "Pain tendre avec avocat et oeuf",
-        "pt": "Pao macio com abacate e ovo"
+        "pt": "Pao macio com abacate e ovo",
+        "it": "Pane morbido con avocado e uovo"
       },
       "allowedMeals": [
         "breakfast"
@@ -2191,7 +2224,8 @@
         "es": "Manzana, avena y yogur",
         "en": "Apple, oats, and yogurt bowl",
         "fr": "Bol pomme, avoine et yaourt",
-        "pt": "Tigela de maca, aveia e iogurte"
+        "pt": "Tigela de maca, aveia e iogurte",
+        "it": "Ciotola di mela, fiocchi d'avena e yogurt"
       },
       "allowedMeals": [
         "breakfast"
@@ -2231,7 +2265,8 @@
         "es": "Pan blando con hummus y tomate",
         "en": "Soft bread with hummus and tomato",
         "fr": "Pain tendre avec houmous et tomate",
-        "pt": "Pao macio com homus e tomate"
+        "pt": "Pao macio com homus e tomate",
+        "it": "Pane morbido con hummus e pomodoro"
       },
       "allowedMeals": [
         "snack_am"
@@ -2275,7 +2310,8 @@
         "es": "Pera, aguacate y yogur",
         "en": "Pear, avocado, and yogurt",
         "fr": "Poire, avocat et yaourt",
-        "pt": "Pera, abacate e iogurte"
+        "pt": "Pera, abacate e iogurte",
+        "it": "Pera, avocado e yogurt"
       },
       "allowedMeals": [
         "snack_am"
@@ -2314,7 +2350,8 @@
         "es": "Platano con queso fresco",
         "en": "Banana with fresh cheese",
         "fr": "Banane avec fromage frais",
-        "pt": "Banana com queijo fresco"
+        "pt": "Banana com queijo fresco",
+        "it": "Banana con formaggio fresco"
       },
       "allowedMeals": [
         "snack_am"
@@ -2349,7 +2386,8 @@
         "es": "Frutos rojos, yogur y pera",
         "en": "Berries, yogurt, and pear",
         "fr": "Fruits rouges, yaourt et poire",
-        "pt": "Frutas vermelhas, iogurte e pera"
+        "pt": "Frutas vermelhas, iogurte e pera",
+        "it": "Frutti di bosco, yogurt e pera"
       },
       "allowedMeals": [
         "snack_am"
@@ -2388,7 +2426,8 @@
         "es": "Merluza con arroz y calabacin",
         "en": "Hake with rice and zucchini",
         "fr": "Merlu avec riz et courgette",
-        "pt": "Merluza com arroz e abobrinha"
+        "pt": "Merluza com arroz e abobrinha",
+        "it": "Nasello con riso e zucchine"
       },
       "allowedMeals": [
         "lunch"
@@ -2431,7 +2470,8 @@
         "es": "Pavo con boniato y brocoli",
         "en": "Turkey with sweet potato and broccoli",
         "fr": "Dinde avec patate douce et brocoli",
-        "pt": "Peru com batata-doce e brocolis"
+        "pt": "Peru com batata-doce e brocolis",
+        "it": "Tacchino con patata dolce e broccoli"
       },
       "allowedMeals": [
         "lunch"
@@ -2472,7 +2512,8 @@
         "es": "Lentejas con calabaza y quinoa",
         "en": "Lentils with pumpkin and quinoa",
         "fr": "Lentilles avec courge et quinoa",
-        "pt": "Lentilhas com abobora e quinoa"
+        "pt": "Lentilhas com abobora e quinoa",
+        "it": "Lenticchie con zucca e quinoa"
       },
       "allowedMeals": [
         "lunch"
@@ -2515,7 +2556,8 @@
         "es": "Ternera con cuscus, puerro y zanahoria",
         "en": "Beef with couscous, leek, and carrot",
         "fr": "Boeuf avec couscous, poireau et carotte",
-        "pt": "Carne bovina com cuscuz, alho-poro e cenoura"
+        "pt": "Carne bovina com cuscuz, alho-poro e cenoura",
+        "it": "Manzo con cous cous, porro e carota"
       },
       "allowedMeals": [
         "lunch"
@@ -2562,7 +2604,8 @@
         "es": "Boniato asado con hummus",
         "en": "Roasted sweet potato with hummus",
         "fr": "Patate douce rotie avec houmous",
-        "pt": "Batata-doce assada com homus"
+        "pt": "Batata-doce assada com homus",
+        "it": "Patata dolce al forno con hummus"
       },
       "allowedMeals": [
         "snack_pm"
@@ -2601,7 +2644,8 @@
         "es": "Pan blando con aguacate y pavo",
         "en": "Soft bread with avocado and turkey",
         "fr": "Pain tendre avec avocat et dinde",
-        "pt": "Pao macio com abacate e peru"
+        "pt": "Pao macio com abacate e peru",
+        "it": "Pane morbido con avocado e tacchino"
       },
       "allowedMeals": [
         "snack_pm"
@@ -2644,7 +2688,8 @@
         "es": "Pera con yogur y avena",
         "en": "Pear with yogurt and oats",
         "fr": "Poire avec yaourt et avoine",
-        "pt": "Pera com iogurte e aveia"
+        "pt": "Pera com iogurte e aveia",
+        "it": "Pera con yogurt e fiocchi d'avena"
       },
       "allowedMeals": [
         "snack_pm"
@@ -2684,7 +2729,8 @@
         "es": "Pan blando con queso fresco y frutos rojos",
         "en": "Soft bread with fresh cheese and berries",
         "fr": "Pain tendre avec fromage frais et fruits rouges",
-        "pt": "Pao macio com queijo fresco e frutas vermelhas"
+        "pt": "Pao macio com queijo fresco e frutas vermelhas",
+        "it": "Pane morbido con formaggio fresco e frutti di bosco"
       },
       "allowedMeals": [
         "snack_pm"
@@ -2724,7 +2770,8 @@
         "es": "Crema de calabacin, patata y merluza",
         "en": "Zucchini, potato, and hake cream",
         "fr": "Creme de courgette, pomme de terre et merlu",
-        "pt": "Creme de abobrinha, batata e merluza"
+        "pt": "Creme de abobrinha, batata e merluza",
+        "it": "Crema di zucchine, patate e nasello"
       },
       "allowedMeals": [
         "dinner"
@@ -2767,7 +2814,8 @@
         "es": "Arroz con espinaca y huevo",
         "en": "Rice with spinach and egg",
         "fr": "Riz avec epinards et oeuf",
-        "pt": "Arroz com espinafre e ovo"
+        "pt": "Arroz com espinafre e ovo",
+        "it": "Riso con spinaci e uovo"
       },
       "allowedMeals": [
         "dinner"
@@ -2810,7 +2858,8 @@
         "es": "Alubias blancas con calabaza y zanahoria",
         "en": "White beans with pumpkin and carrot",
         "fr": "Haricots blancs avec courge et carotte",
-        "pt": "Feijao branco com abobora e cenoura"
+        "pt": "Feijao branco com abobora e cenoura",
+        "it": "Fagioli bianchi con zucca e carota"
       },
       "allowedMeals": [
         "dinner"
@@ -2853,7 +2902,8 @@
         "es": "Cuscus con pavo y brocoli",
         "en": "Couscous with turkey and broccoli",
         "fr": "Couscous avec dinde et brocoli",
-        "pt": "Cuscuz com peru e brocolis"
+        "pt": "Cuscuz com peru e brocolis",
+        "it": "Cous cous con tacchino e broccoli"
       },
       "allowedMeals": [
         "dinner"
@@ -2896,7 +2946,8 @@
         "es": "Pera, platano, yogur y avena",
         "en": "Pear, banana, yogurt, and oats",
         "fr": "Poire, banane, yaourt et avoine",
-        "pt": "Pera, banana, iogurte e aveia"
+        "pt": "Pera, banana, iogurte e aveia",
+        "it": "Pera, banana, yogurt e fiocchi d'avena"
       },
       "allowedMeals": [
         "breakfast"
@@ -2940,7 +2991,8 @@
         "es": "Pan blando con huevo y tomate",
         "en": "Soft bread with egg and tomato",
         "fr": "Pain tendre avec oeuf et tomate",
-        "pt": "Pao macio com ovo e tomate"
+        "pt": "Pao macio com ovo e tomate",
+        "it": "Pane morbido con uovo e pomodoro"
       },
       "allowedMeals": [
         "breakfast"
@@ -2984,7 +3036,8 @@
         "es": "Aguacate, yogur, frutos rojos y avena",
         "en": "Avocado, yogurt, berries, and oats",
         "fr": "Avocat, yaourt, fruits rouges et avoine",
-        "pt": "Abacate, iogurte, frutas vermelhas e aveia"
+        "pt": "Abacate, iogurte, frutas vermelhas e aveia",
+        "it": "Avocado, yogurt, frutti di bosco e fiocchi d'avena"
       },
       "allowedMeals": [
         "breakfast"
@@ -3028,7 +3081,8 @@
         "es": "Manzana, ciruela, yogur y avena",
         "en": "Apple, prune, yogurt, and oats",
         "fr": "Pomme, pruneau, yaourt et avoine",
-        "pt": "Maca, ameixa, iogurte e aveia"
+        "pt": "Maca, ameixa, iogurte e aveia",
+        "it": "Mela, prugna, yogurt e fiocchi d'avena"
       },
       "allowedMeals": [
         "breakfast"
@@ -3072,7 +3126,8 @@
         "es": "Pan blando con aguacate y queso fresco",
         "en": "Soft bread with avocado and fresh cheese",
         "fr": "Pain tendre avec avocat et fromage frais",
-        "pt": "Pao macio com abacate e queijo fresco"
+        "pt": "Pao macio com abacate e queijo fresco",
+        "it": "Pane morbido con avocado e formaggio fresco"
       },
       "allowedMeals": [
         "snack_am"
@@ -3112,7 +3167,8 @@
         "es": "Manzana, frutos rojos y yogur",
         "en": "Apple, berries, and yogurt",
         "fr": "Pomme, fruits rouges et yaourt",
-        "pt": "Maca, frutas vermelhas e iogurte"
+        "pt": "Maca, frutas vermelhas e iogurte",
+        "it": "Mela, frutti di bosco e yogurt"
       },
       "allowedMeals": [
         "snack_am"
@@ -3151,7 +3207,8 @@
         "es": "Pera, platano y queso fresco",
         "en": "Pear, banana, and fresh cheese",
         "fr": "Poire, banane et fromage frais",
-        "pt": "Pera, banana e queijo fresco"
+        "pt": "Pera, banana e queijo fresco",
+        "it": "Pera, banana e formaggio fresco"
       },
       "allowedMeals": [
         "snack_am"
@@ -3190,7 +3247,8 @@
         "es": "Pan blando con huevo y tomate suave",
         "en": "Soft bread with egg and tomato snack",
         "fr": "Pain tendre avec oeuf et tomate douce",
-        "pt": "Pao macio com ovo e tomate suave"
+        "pt": "Pao macio com ovo e tomate suave",
+        "it": "Pane morbido con uovo e pomodoro"
       },
       "allowedMeals": [
         "snack_am"
@@ -3234,7 +3292,8 @@
         "es": "Salmon con arroz y brocoli",
         "en": "Salmon with rice and broccoli",
         "fr": "Saumon avec riz et brocoli",
-        "pt": "Salmao com arroz e brocolis"
+        "pt": "Salmao com arroz e brocolis",
+        "it": "Salmone con riso e broccoli"
       },
       "allowedMeals": [
         "lunch"
@@ -3277,7 +3336,8 @@
         "es": "Pollo con patata y zanahoria",
         "en": "Chicken with potato and carrot",
         "fr": "Poulet avec pomme de terre et carotte",
-        "pt": "Frango com batata e cenoura"
+        "pt": "Frango com batata e cenoura",
+        "it": "Pollo con patate e carote"
       },
       "allowedMeals": [
         "lunch"
@@ -3318,7 +3378,8 @@
         "es": "Bacalao con quinoa y calabaza",
         "en": "Cod with quinoa and pumpkin",
         "fr": "Cabillaud avec quinoa et courge",
-        "pt": "Bacalhau com quinoa e abobora"
+        "pt": "Bacalhau com quinoa e abobora",
+        "it": "Merluzzo con quinoa e zucca"
       },
       "allowedMeals": [
         "lunch"
@@ -3361,7 +3422,8 @@
         "es": "Pavo con cuscus y calabacin",
         "en": "Turkey with couscous and zucchini",
         "fr": "Dinde avec couscous et courgette",
-        "pt": "Peru com cuscuz e abobrinha"
+        "pt": "Peru com cuscuz e abobrinha",
+        "it": "Tacchino con cous cous e zucchine"
       },
       "allowedMeals": [
         "lunch"
@@ -3404,7 +3466,8 @@
         "es": "Pan blando con hummus y aguacate",
         "en": "Soft bread with hummus and avocado",
         "fr": "Pain tendre avec houmous et avocat",
-        "pt": "Pao macio com homus e abacate"
+        "pt": "Pao macio com homus e abacate",
+        "it": "Pane morbido con hummus e avocado"
       },
       "allowedMeals": [
         "snack_pm"
@@ -3448,7 +3511,8 @@
         "es": "Manzana, yogur y frutos rojos",
         "en": "Apple, yogurt, and berries",
         "fr": "Pomme, yaourt et fruits rouges",
-        "pt": "Maca, iogurte e frutas vermelhas"
+        "pt": "Maca, iogurte e frutas vermelhas",
+        "it": "Mela, yogurt e frutti di bosco"
       },
       "allowedMeals": [
         "snack_pm"
@@ -3492,7 +3556,8 @@
         "es": "Boniato, yogur y pera",
         "en": "Sweet potato, yogurt, and pear",
         "fr": "Patate douce, yaourt et poire",
-        "pt": "Batata-doce, iogurte e pera"
+        "pt": "Batata-doce, iogurte e pera",
+        "it": "Patata dolce, yogurt e pera"
       },
       "allowedMeals": [
         "snack_pm"
@@ -3531,7 +3596,8 @@
         "es": "Platano, avena y queso fresco",
         "en": "Banana, oats, and fresh cheese",
         "fr": "Banane, avoine et fromage frais",
-        "pt": "Banana, aveia e queijo fresco"
+        "pt": "Banana, aveia e queijo fresco",
+        "it": "Banana, fiocchi d'avena e formaggio fresco"
       },
       "allowedMeals": [
         "snack_pm"
@@ -3571,7 +3637,8 @@
         "es": "Calabaza con bacalao y arroz",
         "en": "Pumpkin with cod and rice",
         "fr": "Courge avec cabillaud et riz",
-        "pt": "Abobora com bacalhau e arroz"
+        "pt": "Abobora com bacalhau e arroz",
+        "it": "Zucca con merluzzo e riso"
       },
       "allowedMeals": [
         "dinner"
@@ -3614,7 +3681,8 @@
         "es": "Patata con brocoli y pollo",
         "en": "Potato with broccoli and chicken",
         "fr": "Pomme de terre avec brocoli et poulet",
-        "pt": "Batata com brocolis e frango"
+        "pt": "Batata com brocolis e frango",
+        "it": "Patate con broccoli e pollo"
       },
       "allowedMeals": [
         "dinner"
@@ -3655,7 +3723,8 @@
         "es": "Quinoa con calabacin y pavo",
         "en": "Quinoa with zucchini and turkey",
         "fr": "Quinoa avec courgette et dinde",
-        "pt": "Quinoa com abobrinha e peru"
+        "pt": "Quinoa com abobrinha e peru",
+        "it": "Quinoa con zucchine e tacchino"
       },
       "allowedMeals": [
         "dinner"
@@ -3696,7 +3765,8 @@
         "es": "Lentejas con zanahoria y patata",
         "en": "Lentils with carrot and potato",
         "fr": "Lentilles avec carotte et pomme de terre",
-        "pt": "Lentilhas com cenoura e batata"
+        "pt": "Lentilhas com cenoura e batata",
+        "it": "Lenticchie con carota e patate"
       },
       "allowedMeals": [
         "dinner"
@@ -3739,7 +3809,8 @@
         "es": "Platano con yogur suave",
         "en": "Banana with plain yogurt",
         "fr": "Banane avec yaourt nature",
-        "pt": "Banana com iogurte natural"
+        "pt": "Banana com iogurte natural",
+        "it": "Banana con yogurt naturale"
       },
       "allowedMeals": [
         "snack_am"
@@ -3774,7 +3845,8 @@
         "es": "Pan blando con aguacate",
         "en": "Soft bread with avocado",
         "fr": "Pain tendre avec avocat",
-        "pt": "Pao macio com abacate"
+        "pt": "Pao macio com abacate",
+        "it": "Pane morbido con avocado"
       },
       "allowedMeals": [
         "snack_am"
@@ -3813,7 +3885,8 @@
         "es": "Yogur natural con pera",
         "en": "Plain yogurt with pear",
         "fr": "Yaourt nature avec poire",
-        "pt": "Iogurte natural com pera"
+        "pt": "Iogurte natural com pera",
+        "it": "Yogurt naturale con pera"
       },
       "allowedMeals": [
         "snack_am"
@@ -3848,7 +3921,8 @@
         "es": "Pera y platano con yogur",
         "en": "Pear and banana with yogurt",
         "fr": "Poire et banane avec yaourt",
-        "pt": "Pera e banana com iogurte"
+        "pt": "Pera e banana com iogurte",
+        "it": "Pera e banana con yogurt"
       },
       "allowedMeals": [
         "snack_am"
@@ -3887,7 +3961,8 @@
         "es": "Pan con tomate y AOVE",
         "en": "Bread with tomato and olive oil",
         "fr": "Pain avec tomate et huile d olive",
-        "pt": "Pao com tomate e azeite"
+        "pt": "Pao com tomate e azeite",
+        "it": "Pane con pomodoro e olio extravergine d'oliva"
       },
       "allowedMeals": [
         "snack_am"
@@ -3926,7 +4001,8 @@
         "es": "Mini tortilla con pan",
         "en": "Mini omelette with bread",
         "fr": "Mini omelette avec pain",
-        "pt": "Mini omelete com pao"
+        "pt": "Mini omelete com pao",
+        "it": "Mini omelette con pane"
       },
       "allowedMeals": [
         "snack_am"
@@ -3966,7 +4042,8 @@
         "es": "Queso fresco con pera y pan",
         "en": "Fresh cheese with pear and bread",
         "fr": "Fromage frais avec poire et pain",
-        "pt": "Queijo fresco com pera e pao"
+        "pt": "Queijo fresco com pera e pao",
+        "it": "Formaggio fresco con pera e pane"
       },
       "allowedMeals": [
         "snack_am"
@@ -4006,7 +4083,8 @@
         "es": "Pera con yogur y avena",
         "en": "Pear with yogurt and oats",
         "fr": "Poire avec yaourt et avoine",
-        "pt": "Pera com iogurte e aveia"
+        "pt": "Pera com iogurte e aveia",
+        "it": "Pera con yogurt e fiocchi d'avena"
       },
       "allowedMeals": [
         "snack_am"
@@ -4046,7 +4124,8 @@
         "es": "Avena con platano tipo galleta casera",
         "en": "Oats and banana cookie style",
         "fr": "Avoine et banane style biscuit maison",
-        "pt": "Aveia com banana estilo biscoito caseiro"
+        "pt": "Aveia com banana estilo biscoito caseiro",
+        "it": "Avena e banana in versione biscotto"
       },
       "allowedMeals": [
         "snack_am"
@@ -4086,7 +4165,8 @@
         "es": "Compota de manzana con yogur",
         "en": "Apple compote with yogurt",
         "fr": "Compote de pomme avec yaourt",
-        "pt": "Compota de maca com iogurte"
+        "pt": "Compota de maca com iogurte",
+        "it": "Composta di mela con yogurt"
       },
       "allowedMeals": [
         "snack_am"
@@ -4125,7 +4205,8 @@
         "es": "Mini pan integral con hummus",
         "en": "Mini whole bread with hummus",
         "fr": "Mini pain complet avec houmous",
-        "pt": "Mini pao integral com homus"
+        "pt": "Mini pao integral com homus",
+        "it": "Mini pane integrale con hummus"
       },
       "allowedMeals": [
         "snack_am"
@@ -4169,7 +4250,8 @@
         "es": "Yogur natural con frutos rojos",
         "en": "Plain yogurt with berries",
         "fr": "Yaourt nature aux fruits rouges",
-        "pt": "Iogurte natural com frutas vermelhas"
+        "pt": "Iogurte natural com frutas vermelhas",
+        "it": "Yogurt naturale con frutti di bosco"
       },
       "allowedMeals": [
         "snack_am"
@@ -4209,7 +4291,8 @@
         "es": "Pera y frutos rojos con yogur",
         "en": "Pear and berries with yogurt",
         "fr": "Poire et fruits rouges avec yaourt",
-        "pt": "Pera e frutas vermelhas com iogurte"
+        "pt": "Pera e frutas vermelhas com iogurte",
+        "it": "Pera e frutti di bosco con yogurt"
       },
       "allowedMeals": [
         "snack_am"
@@ -4248,7 +4331,8 @@
         "es": "Tortita suave de avena y platano",
         "en": "Soft oat and banana pancake",
         "fr": "Petite crepe douce avoine-banane",
-        "pt": "Panqueca macia de aveia e banana"
+        "pt": "Panqueca macia de aveia e banana",
+        "it": "Pancake morbido di avena e banana"
       },
       "allowedMeals": [
         "snack_am"
@@ -4288,7 +4372,8 @@
         "es": "Queso fresco con tomate y pan",
         "en": "Fresh cheese with tomato and bread",
         "fr": "Fromage frais avec tomate et pain",
-        "pt": "Queijo fresco com tomate e pao"
+        "pt": "Queijo fresco com tomate e pao",
+        "it": "Formaggio fresco con pomodoro e pane"
       },
       "allowedMeals": [
         "snack_am"
@@ -4332,7 +4417,8 @@
         "es": "Pan integral con queso fresco y pera",
         "en": "Whole bread with fresh cheese and pear",
         "fr": "Pain complet avec fromage frais et poire",
-        "pt": "Pao integral com queijo fresco e pera"
+        "pt": "Pao integral com queijo fresco e pera",
+        "it": "Pane integrale con formaggio fresco e pera"
       },
       "allowedMeals": [
         "snack_am"
@@ -4372,7 +4458,8 @@
         "es": "Yogur con pera y frutos rojos",
         "en": "Yogurt with pear and berries",
         "fr": "Yaourt avec poire et fruits rouges",
-        "pt": "Iogurte com pera e frutas vermelhas"
+        "pt": "Iogurte com pera e frutas vermelhas",
+        "it": "Yogurt con pera e frutti di bosco"
       },
       "allowedMeals": [
         "snack_am"
@@ -4411,7 +4498,8 @@
         "es": "Pan con aguacate y tomate",
         "en": "Bread with avocado and tomato",
         "fr": "Pain avec avocat et tomate",
-        "pt": "Pao com abacate e tomate"
+        "pt": "Pao com abacate e tomate",
+        "it": "Pane con avocado e pomodoro"
       },
       "allowedMeals": [
         "snack_am"
@@ -4454,7 +4542,8 @@
         "es": "Batido suave de leche, platano y avena",
         "en": "Soft milk, banana and oats shake",
         "fr": "Boisson douce lait-banane-avoine",
-        "pt": "Batido suave de leite, banana e aveia"
+        "pt": "Batido suave de leite, banana e aveia",
+        "it": "Frullato morbido di latte, banana e fiocchi d'avena"
       },
       "allowedMeals": [
         "snack_am"
@@ -4494,7 +4583,8 @@
         "es": "Huevo con pan y tomate suave",
         "en": "Egg with bread and soft tomato",
         "fr": "Oeuf avec pain et tomate douce",
-        "pt": "Ovo com pao e tomate suave"
+        "pt": "Ovo com pao e tomate suave",
+        "it": "Uovo con pane e pomodoro morbido"
       },
       "allowedMeals": [
         "snack_am"
@@ -4538,7 +4628,8 @@
         "es": "Yogur natural con fresas trituradas",
         "en": "Plain yogurt with crushed berries",
         "fr": "Yaourt nature avec fruits rouges ecrases",
-        "pt": "Iogurte natural com frutas vermelhas amassadas"
+        "pt": "Iogurte natural com frutas vermelhas amassadas",
+        "it": "Yogurt naturale con frutti di bosco schiacciati"
       },
       "allowedMeals": [
         "snack_pm"
@@ -4578,7 +4669,8 @@
         "es": "Pan con aguacate y aceite suave",
         "en": "Bread with avocado and olive oil",
         "fr": "Pain avec avocat et huile d olive",
-        "pt": "Pao com abacate e azeite"
+        "pt": "Pao com abacate e azeite",
+        "it": "Pane con avocado e olio extravergine d'oliva"
       },
       "allowedMeals": [
         "snack_pm"
@@ -4617,7 +4709,8 @@
         "es": "Avena cocida con platano y leche",
         "en": "Cooked oats with banana and milk",
         "fr": "Avoine cuite avec banane et lait",
-        "pt": "Aveia cozida com banana e leite"
+        "pt": "Aveia cozida com banana e leite",
+        "it": "Fiocchi d'avena cotti con banana e latte"
       },
       "allowedMeals": [
         "snack_pm"
@@ -4657,7 +4750,8 @@
         "es": "Mini sandwich de queso y tomate",
         "en": "Mini cheese and tomato sandwich",
         "fr": "Mini sandwich fromage et tomate",
-        "pt": "Mini sanduiche de queijo e tomate"
+        "pt": "Mini sanduiche de queijo e tomate",
+        "it": "Mini panino con formaggio e pomodoro"
       },
       "allowedMeals": [
         "snack_pm"
@@ -4701,7 +4795,8 @@
         "es": "Mini tortilla francesa con pan",
         "en": "Mini french omelette with bread",
         "fr": "Mini omelette francaise avec pain",
-        "pt": "Mini omelete francesa com pao"
+        "pt": "Mini omelete francesa com pao",
+        "it": "Mini omelette alla francese con pane"
       },
       "allowedMeals": [
         "snack_pm"
@@ -4741,7 +4836,8 @@
         "es": "Compota de pera y manzana con yogur",
         "en": "Pear and apple compote with yogurt",
         "fr": "Compote poire-pomme avec yaourt",
-        "pt": "Compota de pera e maca com iogurte"
+        "pt": "Compota de pera e maca com iogurte",
+        "it": "Composta di pera e mela con yogurt"
       },
       "allowedMeals": [
         "snack_pm"
@@ -4780,7 +4876,8 @@
         "es": "Yogur natural con avena suave",
         "en": "Plain yogurt with soft oats",
         "fr": "Yaourt nature avec avoine douce",
-        "pt": "Iogurte natural com aveia suave"
+        "pt": "Iogurte natural com aveia suave",
+        "it": "Yogurt naturale con fiocchi d'avena morbidi"
       },
       "allowedMeals": [
         "snack_pm"
@@ -4820,7 +4917,8 @@
         "es": "Batido de yogur con frutos rojos y platano",
         "en": "Yogurt shake with berries and banana",
         "fr": "Boisson yaourt avec fruits rouges et banane",
-        "pt": "Batido de iogurte com frutas vermelhas e banana"
+        "pt": "Batido de iogurte com frutas vermelhas e banana",
+        "it": "Frullato di yogurt con frutti di bosco e banana"
       },
       "allowedMeals": [
         "snack_pm"
@@ -4859,7 +4957,8 @@
         "es": "Pan con aguacate y huevo triturado",
         "en": "Bread with avocado and mashed egg",
         "fr": "Pain avec avocat et oeuf ecrase",
-        "pt": "Pao com abacate e ovo amassado"
+        "pt": "Pao com abacate e ovo amassado",
+        "it": "Pane con avocado e uovo schiacciato"
       },
       "allowedMeals": [
         "snack_pm"
@@ -4903,7 +5002,8 @@
         "es": "Dados de queso fresco con pan",
         "en": "Fresh cheese cubes with bread",
         "fr": "Des de fromage frais avec pain",
-        "pt": "Cubos de queijo fresco com pao"
+        "pt": "Cubos de queijo fresco com pao",
+        "it": "Cubetti di formaggio fresco con pane"
       },
       "allowedMeals": [
         "snack_pm"
@@ -4947,7 +5047,8 @@
         "es": "Pera madura con yogur",
         "en": "Ripe pear with yogurt",
         "fr": "Poire mure avec yaourt",
-        "pt": "Pera madura com iogurte"
+        "pt": "Pera madura com iogurte",
+        "it": "Pera matura con yogurt"
       },
       "allowedMeals": [
         "snack_pm"
@@ -4987,7 +5088,8 @@
         "es": "Tortita de avena y manzana",
         "en": "Oat and apple pancake",
         "fr": "Crepe avoine et pomme",
-        "pt": "Panqueca de aveia e maca"
+        "pt": "Panqueca de aveia e maca",
+        "it": "Pancake di avena e mela"
       },
       "allowedMeals": [
         "snack_pm"
@@ -5027,7 +5129,8 @@
         "es": "Pan integral con hummus",
         "en": "Whole bread with hummus",
         "fr": "Pain complet avec houmous",
-        "pt": "Pao integral com homus"
+        "pt": "Pao integral com homus",
+        "it": "Pane integrale con hummus"
       },
       "allowedMeals": [
         "snack_pm"
@@ -5071,7 +5174,8 @@
         "es": "Yogur con platano machacado",
         "en": "Yogurt with mashed banana",
         "fr": "Yaourt avec banane ecrasee",
-        "pt": "Iogurte com banana amassada"
+        "pt": "Iogurte com banana amassada",
+        "it": "Yogurt con banana schiacciata"
       },
       "allowedMeals": [
         "snack_pm"
@@ -5111,7 +5215,8 @@
         "es": "Mini croqueta casera de pollo",
         "en": "Mini homemade chicken croquette",
         "fr": "Mini croquette maison au poulet",
-        "pt": "Mini croquete caseiro de frango"
+        "pt": "Mini croquete caseiro de frango",
+        "it": "Mini crocchetta di pollo fatta in casa"
       },
       "allowedMeals": [
         "snack_pm"
@@ -5159,7 +5264,8 @@
         "es": "Calabacin blandito con queso fresco",
         "en": "Soft zucchini with fresh cheese",
         "fr": "Courgette tendre avec fromage frais",
-        "pt": "Abobrinha macia com queijo fresco"
+        "pt": "Abobrinha macia com queijo fresco",
+        "it": "Zucchine morbide con formaggio fresco"
       },
       "allowedMeals": [
         "snack_pm"
@@ -5203,7 +5309,8 @@
         "es": "Pan con aguacate y pera",
         "en": "Bread with avocado and pear",
         "fr": "Pain avec avocat et poire",
-        "pt": "Pao com abacate e pera"
+        "pt": "Pao com abacate e pera",
+        "it": "Pane con avocado e pera"
       },
       "allowedMeals": [
         "snack_pm"
@@ -5242,7 +5349,8 @@
         "es": "Yogur con pera y frutos rojos",
         "en": "Yogurt with pear and berries",
         "fr": "Yaourt avec poire et fruits rouges",
-        "pt": "Iogurte com pera e frutas vermelhas"
+        "pt": "Iogurte com pera e frutas vermelhas",
+        "it": "Yogurt con pera e frutti di bosco"
       },
       "allowedMeals": [
         "snack_pm"
@@ -5281,7 +5389,8 @@
         "es": "Mini muffin casero de platano y avena",
         "en": "Mini homemade banana oat muffin",
         "fr": "Mini muffin maison banane-avoine",
-        "pt": "Mini muffin caseiro de banana e aveia"
+        "pt": "Mini muffin caseiro de banana e aveia",
+        "it": "Mini muffin di banana e avena fatto in casa"
       },
       "allowedMeals": [
         "snack_pm"
@@ -5326,7 +5435,8 @@
         "es": "Batido de leche, avena y platano",
         "en": "Milk, oats, and banana shake",
         "fr": "Boisson lait, avoine et banane",
-        "pt": "Batido de leite, aveia e banana"
+        "pt": "Batido de leite, aveia e banana",
+        "it": "Frullato di latte, fiocchi d'avena e banana"
       },
       "allowedMeals": [
         "snack_pm"

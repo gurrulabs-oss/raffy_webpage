@@ -1010,18 +1010,6 @@ i.gp-logo {
 .hero-app .t { margin: 0; font-size: var(--fs-sm); font-weight: 800; color: var(--ink); line-height: 1.25; }
 .hero-app .t small { display: block; font-size: var(--fs-xs); font-weight: 600; color: var(--ink-3); }
 
-/* ---- Feature card pill link: <a class="in-app2" href=PLAY ...><i class="gp-logo"></i>In the app<svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a> ---- */
-.in-app2 {
-  align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 14px 0 12px; border-radius: var(--r-pill);
-  background: var(--sky-50); color: var(--ink); font-size: var(--fs-sm); font-weight: 800; text-decoration: none;
-  transition: background .15s ease, transform .15s ease;
-}
-.in-app2 .gp-logo { width: 14px; height: 15px; }
-.in-app2 .arr { width: 14px; height: 14px; flex: none; transition: transform .15s ease; }
-.in-app2:hover { background: var(--navy-200); transform: translateY(-2px); }
-.in-app2:hover .arr { transform: translateX(3px); }
-.in-app2:focus-visible { outline: 3px solid var(--navy-500); outline-offset: 3px; }
-
 /* ---- App card ----
    Default: <div class="appx"><div class="copy"><div class="brandline"><img src=logo alt="" width="28" height="28">Raffy · free on Android</div><h3>..</h3><p>..</p><div class="row"><a class="btn-play">..</a> [<span class="meta">..</span>]</div></div><div class="shot"><img src=screen alt="" width="128" height="176"></div></div>
    .appx.white  (tool result on the blue panel): <div class="appx white"><img src=screen alt="" width="84" height="124"><div class="copy"><b>Title</b><span>Text</span><a class="btn-play sm">..</a></div></div>
@@ -1067,6 +1055,16 @@ i.gp-logo {
 a.btn-play, a.btn-play:hover { color: #fff; font-weight: 800; }
 a.btn-play.on-blue, a.btn-play.on-blue:hover { color: var(--ink); }
 .prose .appx { margin-block: 2.2em; }
+/* Home features banner: a slim .cta-band (same blue, serif title, mint accent word, navy two-line .btn-play) below the feature grid */
+.cta-band.slim { margin-top: var(--s6); padding: var(--s5) var(--s6); border-radius: var(--r-lg); }
+.cta-band.slim .t { margin: 0; color: #fff; font-family: var(--font-display); font-weight: 600; font-size: 1.625rem; line-height: 1.2; letter-spacing: -.01em; }
+.cta-band.slim .t em { color: var(--mint-on-blue); }
+.cta-band.slim .t + p { margin-top: 6px; font-size: var(--fs-sm); max-width: none; }
+.cta-band.slim .btn-play { min-height: 56px; box-shadow: 0 10px 24px -10px rgba(10, 18, 50, .7); }
+@media (max-width: 720px) {
+  .cta-band.slim { padding: var(--s5); gap: var(--s4); }
+  .cta-band.slim .t { font-size: 1.375rem; }
+}
 
 /* Tool result card (white card on the blue result pane): title straight above the button when there is no text line */
 .appx.white b + a { margin-top: 12px; }
@@ -1129,7 +1127,7 @@ a.btn-play.on-blue, a.btn-play.on-blue:hover { color: var(--ink); }
 .lang-menu a[aria-current="true"] { background: var(--mint-100); }
 .lang-menu a .tick { margin-left: auto; width: 16px; height: 16px; color: var(--mint-700); }
 @keyframes pop-in { from { opacity: 0; transform: translateY(-4px) scale(.98); } to { opacity: 1; transform: none; } }
-.lang-seg { display: none; grid-template-columns: repeat(4, 1fr); gap: 6px; flex: 1 1 100%; width: 100%; padding-top: 12px; }
+.lang-seg { display: none; grid-template-columns: repeat(5, 1fr); gap: 6px; flex: 1 1 100%; width: 100%; padding-top: 12px; }
 .lang-seg a { min-height: 44px; display: grid; place-items: center; border-radius: 12px; border: 1.5px solid var(--line); text-decoration: none; color: var(--ink); font-weight: 800; font-size: .875rem; background: #fff; }
 .lang-seg a[aria-current="true"] { background: var(--mint-100); border-color: var(--mint-500); }
 .lang-seg a:focus-visible { outline: 3px solid var(--navy-500); outline-offset: 2px; }
@@ -1144,8 +1142,8 @@ a.btn-play.on-blue, a.btn-play.on-blue:hover { color: var(--ink); }
   .btn-play, .btn-play:hover, .btn-play:active,
   .site-header .btn[data-track-download], .site-header .btn[data-track-download]:hover, .site-header .btn[data-track-download]:active,
   .sticky-cta .btn[data-track-download], .sticky-cta .btn[data-track-download]:hover, .sticky-cta .btn[data-track-download]:active,
-  .gp-badge:hover, .play-store-badge-link:hover, .in-app2:hover { transition: none !important; transform: none !important; }
-  .in-app2:hover .arr, .lang-pill .chev, .lang-pill[aria-expanded="true"] .chev { transition: none !important; transform: none !important; }
+  .gp-badge:hover, .play-store-badge-link:hover { transition: none !important; transform: none !important; }
+  .lang-pill .chev, .lang-pill[aria-expanded="true"] .chev { transition: none !important; transform: none !important; }
   .lang-pill[aria-expanded="true"] .chev { transform: rotate(180deg) !important; }
   .lang-menu { animation: none !important; }
 }
