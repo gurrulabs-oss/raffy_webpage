@@ -29,6 +29,10 @@
     "pt": {
       "hreflang": "pt-BR",
       "name": "Português (Brasil)"
+    },
+    "it": {
+      "hreflang": "it-IT",
+      "name": "Italiano"
     }
   }
 }

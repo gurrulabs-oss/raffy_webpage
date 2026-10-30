@@ -3,10 +3,10 @@ import { readFileSync, writeFileSync, readdirSync, existsSync } from 'node:fs';
 import { join, basename, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const ARTICLE_DIRS = ['en/articles', 'es/articulos', 'fr/articles', 'pt/artigos'];
-const LOCALES = ['en', 'es', 'fr', 'pt'];
+const ARTICLE_DIRS = ['en/articles', 'es/articulos', 'fr/articles', 'pt/artigos', 'it/articoli'];
+const LOCALES = ['en', 'es', 'fr', 'pt', 'it'];
 const WPM = 200;
-const EXCLUDE = ['toc-mobile', 'sources', 'appx', 'in-app2', 'planner-bridge'];
+const EXCLUDE = ['toc-mobile', 'sources', 'appx', 'planner-bridge'];
 
 // Index just past the close tag matching the open tag at `start` (same-name depth balance).
 function endOfElement(html, start, name) {

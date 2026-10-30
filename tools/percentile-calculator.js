@@ -10,6 +10,80 @@ const KG_TO_LB = 2.2046226218;
 const CM_TO_IN = 0.3937007874;
 
 const LOCALES = {
+  it: {
+    pageTitle: 'Calcolatore dei percentili OMS per bambini',
+    toolSubMulti: 'Calcola i percentili OMS con una o più misure: peso, lunghezza/altezza e circonferenza cranica.',
+    measurementLegend: 'Misure (inseriscine una o più)',
+    measurementHelp: 'Puoi inserire una, due o tutte e tre le misure.',
+    unitsLabel: 'Unità',
+    unitsMetric: 'SI (kg, cm)',
+    unitsImperial: 'Imperiali (lb, in)',
+    weightInputMetric: 'Peso (kg)',
+    weightInputImperial: 'Peso (lb)',
+    lengthInputMetric: 'Lunghezza/Altezza (cm)',
+    lengthInputImperial: 'Lunghezza/Altezza (in)',
+    headInputMetric: 'Circonferenza cranica (cm)',
+    headInputImperial: 'Circonferenza cranica (in)',
+    metricWeight: 'Peso per età (OMS)',
+    metricLength: 'Lunghezza per età (OMS)',
+    metricHeight: 'Altezza per età (OMS)',
+    metricHead: 'Circonferenza cranica per età (OMS)',
+    unitKg: 'kg',
+    unitCm: 'cm',
+    unitLb: 'lb',
+    unitIn: 'in',
+    ageChronological: 'Età cronologica',
+    ageCorrected: 'Età corretta',
+    percentileLabel: 'Percentile',
+    multipleSummary: '{count} misure calcolate',
+    rangeError: "L'età è fuori dall'intervallo OMS per questa misura (da 0 a 60 mesi).",
+    missingRequiredError: 'Completa sesso, data di nascita, data della misurazione e almeno una misura.',
+    dateError: 'La data della misurazione deve essere successiva alla data di nascita.',
+    correctedAgeError: "L'età corretta non può essere negativa. Controlla l'età gestazionale alla nascita.",
+    gestationalError: "L'età gestazionale alla nascita deve essere tra 22 e 40 settimane.",
+    invalidValueError: 'Una o più misure sono fuori dai valori accettati da questo calcolatore.',
+    emptyExplanation: 'Compila il modulo per vedere le misure del tuo bambino sulle curve di crescita OMS.',
+    resultExplain: 'Questa misura è intorno a P{percentile}. Continua a seguire l’andamento nel tempo.',
+    lowP10Warning: 'Questo risultato è sotto P10 (P{percentile}). Ripeti la misurazione con calma tra qualche giorno e parlane con il pediatra se resta basso.',
+    chartXAxis: 'Età (mesi)',
+    chartYAxisWeightMetric: 'Peso (kg)',
+    chartYAxisWeightImperial: 'Peso (lb)',
+    chartYAxisLengthMetric: 'Lunghezza/Altezza (cm)',
+    chartYAxisLengthImperial: 'Lunghezza/Altezza (in)',
+    chartYAxisHeadMetric: 'Circonferenza cranica (cm)',
+    chartYAxisHeadImperial: 'Circonferenza cranica (in)',
+    carouselPrev: 'Grafico precedente',
+    carouselNext: 'Grafico successivo',
+    weeksSuffix: 'settimane',
+    tabsLabel: 'Misura',
+    tabWeight: 'Peso',
+    tabLength: 'Lunghezza',
+    tabHeight: 'Altezza',
+    tabHead: 'Testa',
+    tabAdd: '+ Aggiungi',
+    groupFemale: 'bambine',
+    groupMale: 'bambini',
+    lessWeight: 'pesano meno',
+    moreWeight: 'pesano di più',
+    lessLength: 'sono più corti',
+    moreLength: 'sono più lunghi',
+    lessHeight: 'sono più bassi',
+    moreHeight: 'sono più alti',
+    lessHead: 'hanno la testa più piccola',
+    moreHead: 'hanno la testa più grande',
+    sentenceTemplate: 'circa {lower} {group} su 100 della stessa età {less} e {higher} {more}.',
+    sentenceMiddlePrefix: 'Proprio a metà: ',
+    sentenceBelow: 'meno di 3 {group} su 100 della stessa età {less}.',
+    sentenceAbove: 'meno di 3 {group} su 100 della stessa età {more}.',
+    rangeNote: 'Anche alcuni bambini sani si trovano qui, e una sola misura è solo una fotografia. Mostrala al pediatra, che può valutare con te l’andamento.',
+    percentileAria: '{ordinal} percentile',
+    chartAria: 'Grafico di crescita: {metric}',
+    chartRange: 'OMS, {from}–{to} mesi',
+    legendBaby: 'Il tuo bambino',
+    legendMedian: 'Mediana (P50)',
+    legendBand: 'P15–P85',
+    legendOuter: 'P3 / P97'
+  },
   en: {
     pageTitle: 'WHO Baby Growth Percentile Calculator',
     toolSubMulti: 'Calculate WHO percentiles with one or more measurements: weight, length/height, and head circumference.',
@@ -341,7 +415,7 @@ let chartRenderWidth = 0;
 let daysPerMonth = 30.4375;
 let unitSystem = 'metric';
 let lastRenderPayload = null;
-const SUPPORTED_LANGUAGES = ['en', 'es', 'fr', 'pt'];
+const SUPPORTED_LANGUAGES = ['en', 'es', 'fr', 'pt', 'it'];
 
 const locale = document.body.dataset.locale || 'en';
 const copy = LOCALES[locale] || LOCALES.en;
@@ -364,7 +438,7 @@ async function init() {
     daysPerMonth = Number(payload?.meta?.daysPerMonth || 30.4375);
     datasetByMetric = indexRows(payload.rows || []);
   } catch (error) {
-    showError('WHO data could not be loaded.');
+    showError(locale === 'it' ? 'Non è stato possibile caricare i dati OMS. Ricarica la pagina.' : 'WHO data could not be loaded.');
     return;
   }
 
@@ -1133,6 +1207,7 @@ function capitalizeFirst(text) {
 function ordinalSuffix(n) {
   if (locale === 'fr') return n === 1 ? 'er' : 'e';
   if (locale === 'es' || locale === 'pt') return 'º';
+  if (locale === 'it') return '°';
   const j = n % 10;
   const k = n % 100;
   if (j === 1 && k !== 11) return 'st';
