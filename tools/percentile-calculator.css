@@ -434,8 +434,9 @@
 .dp-chip.ghost { border-color: transparent; color: var(--ink-3); }
 
 /* Bottom sheet (phones) */
-html.dp-lock { overflow: hidden; }
-.dp-scrim { position: fixed; inset: 0; background: rgba(15, 26, 68, .42); z-index: 1000; animation: dp-fade-in .2s ease-out; }
+/* No overflow:hidden on <html> while the sheet is open: toggling it is the suspected cause of a cut-off page
+   above the keyboard in Brave Android (T-017). The scrim blocks background panning instead. */
+.dp-scrim { position: fixed; inset: 0; touch-action: none; background: rgba(15, 26, 68, .42); z-index: 1000; animation: dp-fade-in .2s ease-out; }
 .dp-scrim[hidden] { display: none; }
 .dp.sheet {
   position: fixed; left: 0; right: 0; bottom: 0; top: auto; width: auto; max-width: none; max-height: 100dvh; overflow-y: auto; overscroll-behavior: contain;
