@@ -12,6 +12,13 @@
    .site-header.is-open (aria-expanded on the button).
    Sticky app bar: .sticky-cta is hidden until script.js adds .is-visible (mobile widths only). */
 
+/* Metric-matched Fraunces fallback (T-006): headings keep their size while the web font loads, so the
+   page doesn't jump when it swaps in (lab CLS 0.2 -> 0). Values from Fraunces 600 hhea + average advance
+   width vs Georgia Bold / Noto Serif Bold (Android); a missing local() font is skipped. Recompute if the
+   font changes. A Manrope->Arial fallback was tried and made shifts worse (ch-based widths change). */
+@font-face { font-family: "Fraunces FB"; src: local("Georgia Bold"), local("Georgia-Bold"); font-weight: 100 900; size-adjust: 90.12%; ascent-override: 108.52%; descent-override: 28.30%; line-gap-override: 0%; }
+@font-face { font-family: "Fraunces FB Android"; src: local("Noto Serif Bold"), local("NotoSerif-Bold"); font-weight: 100 900; size-adjust: 90.90%; ascent-override: 107.59%; descent-override: 28.05%; line-gap-override: 0%; }
+
 :root {
   /* Surfaces */
   --page: #ffffff;
@@ -61,7 +68,7 @@
 
   /* Type */
   --font: "Manrope", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-display: "Fraunces", "Fraunces FB", "Fraunces FB Android", Georgia, "Times New Roman", serif;
   --fs-xs: .8125rem;   /* 13 meta, tags (minimum) */
   --fs-sm: .9375rem;   /* 15 UI, captions */
   --fs-md: 1rem;       /* 16 body UI */
@@ -181,6 +188,7 @@ body:has(main > .hero:first-child, main > .tool-hero:first-child, main > .articl
 .gp-badge svg { height: 56px; width: auto; }
 .gp-badge.sm svg { height: 44px; }
 .play-store-badge, .gp-badge img { display: block; width: 200px; max-width: 100%; height: auto; }
+.play-store-badge { aspect-ratio: 646 / 250; } /* reserves the remote badge's box before it loads (no layout shift) */
 .play-store-badge-link-sm .play-store-badge, .gp-badge.sm img { width: 160px; }
 
 /* ---------- Hero bands (home, hubs, tool, article) ---------- */
@@ -337,7 +345,7 @@ body:has(main > .hero:first-child, main > .tool-hero:first-child, main > .articl
 /* Variant with a phone screenshot rising from the bottom edge (tool page, as in B v2) */
 .cta-band.has-shot { grid-template-columns: 1.2fr 1fr; padding-bottom: 0; align-items: end; }
 .cta-band.has-shot .copy { padding-bottom: var(--s7); align-self: center; }
-.cta-shot { display: flex; justify-content: center; }
+.cta-shot { display: flex; justify-content: center; align-items: flex-start; } /* no stretch: the screenshot keeps its ratio and is clipped by max-height */
 .cta-shot img { width: 260px; border-radius: 28px 28px 0 0; border: 8px solid #e8eeff; border-bottom: 0; box-shadow: 0 -10px 40px rgba(15, 25, 70, .25); }
 .cta-section { padding-block: var(--s8) 0; }
 
