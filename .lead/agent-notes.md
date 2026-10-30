@@ -9,7 +9,7 @@ Facts learned while working. One line each. Newest at the bottom. Trim via a "Re
 - `tools/meal-planner.js` is imported as an ES module by the Node validator — keep it Node-importable (no top-level DOM access).
 - `seo_sync` replaces `<footer class="container footer">…</footer>` on every manifest page; hand edits to footers are lost.
 - Mixpanel is live: init `script.js:156` (token in `MIXPANEL_TOKEN`, shared Gurru Labs websites project, EU api host); events `Raffy Webpage - <page>` (page view), `Raffy Webpage - Download Button Clicked` (`script.js:552`, uses `data-cta-location`), growth tool events in `tools/percentile-calculator.js:382`. Keep the `Raffy Webpage - ` prefix: the project is shared with other sites. `download_cta_click` in `seo-operations.md` is a KPI name, not an event name.
-- Play Store links carry no `referrer=` param (as of 2026-10-19), so installs can't be attributed to the site.
+- Since T-004 `script.js` `withPlayReferrer` adds `referrer=utm_source=raffy_webpage&utm_medium=web&utm_campaign=<page_key>&utm_content=<data-cta-location>&utm_term=<locale>` to every Play link at runtime (load, pointerdown, click); keep Play hrefs clean in HTML and give new CTAs a `data-cta-location`.
 - Newsletter forms are `mailto:gurrulabs@gmail.com`.
 - In headless runs `curl`, chained shell commands and `git -C` may require approval; plain single `git` commands from repo root work.
 - Local Node is v25; CI uses Node 20. Scripts use only node: built-ins.
