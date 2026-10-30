@@ -78,6 +78,15 @@ const footerLabels = {
     data_deletion: "Exclusão de dados",
     terms: "Termos",
     contact: "Contato"
+  },
+  it: {
+    aria: "Pagine di fiducia e note legali",
+    about: "Chi siamo",
+    editorial_policy: "Politica editoriale",
+    privacy: "Privacy",
+    data_deletion: "Cancellazione dei dati",
+    terms: "Termini",
+    contact: "Contatti"
   }
 };
 
@@ -85,7 +94,8 @@ const preloadMap = {
   en: "../assets/feeding.webp",
   es: "../assets/feeding.webp",
   fr: "../assets/feeding.webp",
-  pt: "../assets/feeding.webp"
+  pt: "../assets/feeding.webp",
+  it: "../assets/feeding.webp"
 };
 
 let touched = 0;
@@ -287,7 +297,8 @@ function buildTrustRouteMap(pages) {
     en: {},
     es: {},
     fr: {},
-    pt: {}
+    pt: {},
+    it: {}
   };
 
   for (const page of pages) {

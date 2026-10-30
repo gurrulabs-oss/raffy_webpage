@@ -1,6 +1,6 @@
 // Indexing history logic shared by report.mjs and test-indexing.mjs (no I/O).
 // Legal/trust pages (privacy, terms, data deletion, contact, editorial policy, about; all 4 locales) are not an indexing target.
-export const LEGAL_RE = /\/(privacy|privacidad|privacidade|confidentialite|terms|terminos|termos|conditions|data-deletion|delete-data|eliminacion-datos|suppression-donnees|exclusao-dados|contact|contacto|contato|editorial-policy|politica-editorial|politique-editoriale|about|sobre|a-propos)\.html$/;
+export const LEGAL_RE = /\/(privacy|privacidad|privacidade|confidentialite|terms|terminos|termos|conditions|data-deletion|delete-data|eliminacion-datos|suppression-donnees|exclusao-dados|contact|contacto|contato|editorial-policy|politica-editorial|politique-editoriale|about|sobre|a-propos|chi-siamo|politica-editoriale|termini|cancellazione-dati|contatti)\.html$/;
 export const TARGET = 0.8;
 export const isLegal = (url) => LEGAL_RE.test(String(url));
 const rows = (idx) => (Array.isArray(idx?.results) ? idx.results : []);

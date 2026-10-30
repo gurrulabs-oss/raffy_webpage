@@ -7,7 +7,8 @@
         "en": "/en/",
         "es": "/es/",
         "fr": "/fr/",
-        "pt": "/pt/"
+        "pt": "/pt/",
+        "it": "/it/"
       }
     },
     {
@@ -17,7 +18,8 @@
         "en": "/en/articles/",
         "es": "/es/articulos/",
         "fr": "/fr/articles/",
-        "pt": "/pt/artigos/"
+        "pt": "/pt/artigos/",
+        "it": "/it/articoli/"
       }
     },
     {
@@ -27,7 +29,8 @@
         "en": "/en/articles/baby-sleep-routine-by-age.html",
         "es": "/es/articulos/rutina-sueno-bebe-por-edad.html",
         "fr": "/fr/articles/routine-sommeil-bebe-par-age.html",
-        "pt": "/pt/artigos/rotina-sono-bebe-por-idade.html"
+        "pt": "/pt/artigos/rotina-sono-bebe-por-idade.html",
+        "it": "/it/articoli/routine-sonno-neonato-per-eta.html"
       }
     },
     {
@@ -37,7 +40,8 @@
         "en": "/en/articles/baby-solids-guide-blw-purees.html",
         "es": "/es/articulos/guia-alimentacion-complementaria-blw.html",
         "fr": "/fr/articles/guide-diversification-bebe-blw.html",
-        "pt": "/pt/artigos/guia-introducao-alimentar-bebe-blw.html"
+        "pt": "/pt/artigos/guia-introducao-alimentar-bebe-blw.html",
+        "it": "/it/articoli/guida-svezzamento-autosvezzamento-pappe.html"
       }
     },
     {
@@ -47,7 +51,8 @@
         "en": "/en/articles/weekly-menu-6-month-old-baby.html",
         "es": "/es/articulos/menu-semanal-bebe-6-meses.html",
         "fr": "/fr/articles/menu-hebdomadaire-bebe-6-mois.html",
-        "pt": "/pt/artigos/cardapio-semanal-bebe-6-meses.html"
+        "pt": "/pt/artigos/cardapio-semanal-bebe-6-meses.html",
+        "it": "/it/articoli/menu-settimanale-bambino-6-mesi.html"
       }
     },
     {
@@ -57,7 +62,8 @@
         "en": "/en/articles/weekly-menu-7-month-old-baby.html",
         "es": "/es/articulos/menu-semanal-bebe-7-meses.html",
         "fr": "/fr/articles/menu-hebdomadaire-bebe-7-mois.html",
-        "pt": "/pt/artigos/cardapio-semanal-bebe-7-meses.html"
+        "pt": "/pt/artigos/cardapio-semanal-bebe-7-meses.html",
+        "it": "/it/articoli/menu-settimanale-bambino-7-mesi.html"
       }
     },
     {
@@ -67,7 +73,8 @@
         "en": "/en/articles/weekly-menu-8-month-old-baby.html",
         "es": "/es/articulos/menu-semanal-bebe-8-meses.html",
         "fr": "/fr/articles/menu-hebdomadaire-bebe-8-mois.html",
-        "pt": "/pt/artigos/cardapio-semanal-bebe-8-meses.html"
+        "pt": "/pt/artigos/cardapio-semanal-bebe-8-meses.html",
+        "it": "/it/articoli/menu-settimanale-bambino-8-mesi.html"
       }
     },
     {
@@ -77,7 +84,8 @@
         "en": "/en/articles/weekly-menu-9-month-old-baby.html",
         "es": "/es/articulos/menu-semanal-bebe-9-meses.html",
         "fr": "/fr/articles/menu-hebdomadaire-bebe-9-mois.html",
-        "pt": "/pt/artigos/cardapio-semanal-bebe-9-meses.html"
+        "pt": "/pt/artigos/cardapio-semanal-bebe-9-meses.html",
+        "it": "/it/articoli/menu-settimanale-bambino-9-mesi.html"
       }
     },
     {
@@ -87,7 +95,8 @@
         "en": "/en/articles/weekly-menu-10-month-old-baby.html",
         "es": "/es/articulos/menu-semanal-bebe-10-meses.html",
         "fr": "/fr/articles/menu-hebdomadaire-bebe-10-mois.html",
-        "pt": "/pt/artigos/cardapio-semanal-bebe-10-meses.html"
+        "pt": "/pt/artigos/cardapio-semanal-bebe-10-meses.html",
+        "it": "/it/articoli/menu-settimanale-bambino-10-mesi.html"
       }
     },
     {
@@ -97,7 +106,8 @@
         "en": "/en/articles/weekly-menu-11-month-old-baby.html",
         "es": "/es/articulos/menu-semanal-bebe-11-meses.html",
         "fr": "/fr/articles/menu-hebdomadaire-bebe-11-mois.html",
-        "pt": "/pt/artigos/cardapio-semanal-bebe-11-meses.html"
+        "pt": "/pt/artigos/cardapio-semanal-bebe-11-meses.html",
+        "it": "/it/articoli/menu-settimanale-bambino-11-mesi.html"
       }
     },
     {
@@ -107,7 +117,8 @@
         "en": "/en/articles/weekly-menu-12-month-old-baby.html",
         "es": "/es/articulos/menu-semanal-bebe-12-meses.html",
         "fr": "/fr/articles/menu-hebdomadaire-bebe-12-mois.html",
-        "pt": "/pt/artigos/cardapio-semanal-bebe-12-meses.html"
+        "pt": "/pt/artigos/cardapio-semanal-bebe-12-meses.html",
+        "it": "/it/articoli/menu-settimanale-bambino-12-mesi.html"
       }
     },
     {
@@ -117,7 +128,8 @@
         "en": "/en/articles/android-baby-tracker-app-guide.html",
         "es": "/es/articulos/app-android-seguimiento-bebe-guia.html",
         "fr": "/fr/articles/application-android-suivi-bebe-guide.html",
-        "pt": "/pt/artigos/app-android-acompanhamento-bebe-guia.html"
+        "pt": "/pt/artigos/app-android-acompanhamento-bebe-guia.html",
+        "it": "/it/articoli/app-android-monitoraggio-neonato-guida.html"
       }
     },
     {
@@ -127,7 +139,8 @@
         "en": "/en/articles/baby-weight-height-percentiles-guide.html",
         "es": "/es/articulos/percentiles-peso-talla-bebe.html",
         "fr": "/fr/articles/percentiles-poids-taille-bebe.html",
-        "pt": "/pt/artigos/percentis-peso-altura-bebe.html"
+        "pt": "/pt/artigos/percentis-peso-altura-bebe.html",
+        "it": "/it/articoli/percentili-peso-altezza-neonato.html"
       }
     },
     {
@@ -137,7 +150,8 @@
         "en": "/en/articles/baby-low-percentile-when-to-worry.html",
         "es": "/es/articulos/percentil-bajo-bebe-cuando-preocuparse.html",
         "fr": "/fr/articles/percentile-bas-bebe-quand-s-inquieter.html",
-        "pt": "/pt/artigos/percentil-baixo-bebe-quando-se-preocupar.html"
+        "pt": "/pt/artigos/percentil-baixo-bebe-quando-se-preocupar.html",
+        "it": "/it/articoli/percentile-basso-neonato-quando-preoccuparsi.html"
       }
     },
     {
@@ -147,7 +161,8 @@
         "en": "/en/tools/baby-growth-percentile-calculator-who.html",
         "es": "/es/herramientas/calculadora-percentiles-bebe-oms.html",
         "fr": "/fr/outils/calculateur-percentiles-bebe-oms.html",
-        "pt": "/pt/ferramentas/calculadora-percentis-bebe-oms.html"
+        "pt": "/pt/ferramentas/calculadora-percentis-bebe-oms.html",
+        "it": "/it/strumenti/calcolatore-percentili-oms.html"
       }
     },
     {
@@ -157,7 +172,8 @@
         "en": "/en/tools/wake-window-planner.html",
         "es": "/es/herramientas/planificador-ventanas-sueno.html",
         "fr": "/fr/outils/planificateur-fenetres-eveil.html",
-        "pt": "/pt/ferramentas/planejador-janelas-vigilia.html"
+        "pt": "/pt/ferramentas/planejador-janelas-vigilia.html",
+        "it": "/it/strumenti/finestre-di-veglia-neonato.html"
       }
     },
     {
@@ -167,7 +183,8 @@
         "en": "/en/tools/nap-transition-helper.html",
         "es": "/es/herramientas/ayudante-transicion-siestas.html",
         "fr": "/fr/outils/assistant-transition-siestes.html",
-        "pt": "/pt/ferramentas/ajudante-transicao-sonecas.html"
+        "pt": "/pt/ferramentas/ajudante-transicao-sonecas.html",
+        "it": "/it/strumenti/transizione-pisolini-neonato.html"
       }
     },
     {
@@ -177,7 +194,8 @@
         "en": "/en/tools/solids-progression-planner.html",
         "es": "/es/herramientas/planificador-progresion-solidos.html",
         "fr": "/fr/outils/planificateur-progression-diversification.html",
-        "pt": "/pt/ferramentas/planejador-progresso-alimentacao.html"
+        "pt": "/pt/ferramentas/planejador-progresso-alimentacao.html",
+        "it": "/it/strumenti/pianificatore-svezzamento-per-eta.html"
       }
     },
     {
@@ -187,7 +205,8 @@
         "en": "/en/tools/feeding-quantity-estimator.html",
         "es": "/es/herramientas/estimador-cantidad-alimentacion.html",
         "fr": "/fr/outils/estimateur-quantites-alimentation.html",
-        "pt": "/pt/ferramentas/estimador-quantidade-alimentacao.html"
+        "pt": "/pt/ferramentas/estimador-quantidade-alimentacao.html",
+        "it": "/it/strumenti/quantita-pappe-latte-per-eta.html"
       }
     },
     {
@@ -197,7 +216,8 @@
         "en": "/en/tools/diaper-output-tracker.html",
         "es": "/es/herramientas/calculadora-panales-eliminacion.html",
         "fr": "/fr/outils/calculateur-couches-elimination.html",
-        "pt": "/pt/ferramentas/calculadora-fraldas-eliminacao.html"
+        "pt": "/pt/ferramentas/calculadora-fraldas-eliminacao.html",
+        "it": "/it/strumenti/calcolatore-pannolini-neonato.html"
       }
     },
     {
@@ -207,7 +227,8 @@
         "en": "/en/tools/",
         "es": "/es/herramientas/",
         "fr": "/fr/outils/",
-        "pt": "/pt/ferramentas/"
+        "pt": "/pt/ferramentas/",
+        "it": "/it/strumenti/"
       }
     },
     {
@@ -217,7 +238,8 @@
         "en": "/en/tools/weekly-meal-planner-12-23-months.html",
         "es": "/es/herramientas/planificador-comidas-semanal-12-23-meses.html",
         "fr": "/fr/outils/planificateur-repas-hebdomadaire-12-23-mois.html",
-        "pt": "/pt/ferramentas/planejador-cardapio-semanal-12-23-meses.html"
+        "pt": "/pt/ferramentas/planejador-cardapio-semanal-12-23-meses.html",
+        "it": "/it/strumenti/pianificatore-menu-settimanale-12-23-mesi.html"
       }
     },
     {
@@ -227,7 +249,8 @@
         "en": "/en/articles/newborn-daily-routine-guide.html",
         "es": "/es/articulos/rutina-diaria-recien-nacido.html",
         "fr": "/fr/articles/routine-quotidienne-nouveau-ne.html",
-        "pt": "/pt/artigos/rotina-diaria-recem-nascido.html"
+        "pt": "/pt/artigos/rotina-diaria-recem-nascido.html",
+        "it": "/it/articoli/routine-quotidiana-neonato.html"
       }
     },
     {
@@ -237,7 +260,8 @@
         "en": "/en/articles/first-year-baby-milestones-guide.html",
         "es": "/es/articulos/hitos-desarrollo-primer-ano-bebe.html",
         "fr": "/fr/articles/etapes-developpement-premiere-annee-bebe.html",
-        "pt": "/pt/artigos/marcos-desenvolvimento-primeiro-ano-bebe.html"
+        "pt": "/pt/artigos/marcos-desenvolvimento-primeiro-ano-bebe.html",
+        "it": "/it/articoli/tappe-sviluppo-primo-anno-bambino.html"
       }
     },
     {
@@ -247,7 +271,8 @@
         "en": "/en/articles/parenting-with-confidence-guide.html",
         "es": "/es/articulos/criar-con-confianza-y-sin-culpa.html",
         "fr": "/fr/articles/eduquer-avec-confiance-sans-culpabilite.html",
-        "pt": "/pt/artigos/criar-com-confianca-sem-culpa.html"
+        "pt": "/pt/artigos/criar-com-confianca-sem-culpa.html",
+        "it": "/it/articoli/genitori-con-fiducia-senza-sensi-di-colpa.html"
       }
     },
     {
@@ -257,7 +282,8 @@
         "en": "/en/articles/first-baby-vaccine-what-i-learned.html",
         "es": "/es/articulos/primera-vacuna-bebe-lo-que-aprendi.html",
         "fr": "/fr/articles/premier-vaccin-bebe-ce-que-jai-appris.html",
-        "pt": "/pt/artigos/primeira-vacina-bebe-o-que-aprendi.html"
+        "pt": "/pt/artigos/primeira-vacina-bebe-o-que-aprendi.html",
+        "it": "/it/articoli/prima-vaccinazione-neonato-cosa-ho-imparato.html"
       }
     },
     {
@@ -267,7 +293,8 @@
         "en": "/en/about.html",
         "es": "/es/sobre.html",
         "fr": "/fr/a-propos.html",
-        "pt": "/pt/sobre.html"
+        "pt": "/pt/sobre.html",
+        "it": "/it/chi-siamo.html"
       }
     },
     {
@@ -277,7 +304,8 @@
         "en": "/en/editorial-policy.html",
         "es": "/es/politica-editorial.html",
         "fr": "/fr/politique-editoriale.html",
-        "pt": "/pt/politica-editorial.html"
+        "pt": "/pt/politica-editorial.html",
+        "it": "/it/politica-editoriale.html"
       }
     },
     {
@@ -287,7 +315,8 @@
         "en": "/en/privacy.html",
         "es": "/es/privacidad.html",
         "fr": "/fr/confidentialite.html",
-        "pt": "/pt/privacidade.html"
+        "pt": "/pt/privacidade.html",
+        "it": "/it/privacy.html"
       }
     },
     {
@@ -297,7 +326,8 @@
         "en": "/en/data-deletion.html",
         "es": "/es/eliminacion-datos.html",
         "fr": "/fr/suppression-donnees.html",
-        "pt": "/pt/exclusao-dados.html"
+        "pt": "/pt/exclusao-dados.html",
+        "it": "/it/cancellazione-dati.html"
       }
     },
     {
@@ -307,7 +337,8 @@
         "en": "/en/terms.html",
         "es": "/es/terminos.html",
         "fr": "/fr/conditions.html",
-        "pt": "/pt/termos.html"
+        "pt": "/pt/termos.html",
+        "it": "/it/termini.html"
       }
     },
     {
@@ -317,7 +348,8 @@
         "en": "/en/contact.html",
         "es": "/es/contacto.html",
         "fr": "/fr/contact.html",
-        "pt": "/pt/contato.html"
+        "pt": "/pt/contato.html",
+        "it": "/it/contatti.html"
       }
     }
   ]

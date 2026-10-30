@@ -97,3 +97,10 @@ Facts learned while working. One line each. Newest at the bottom. Trim via a "Re
 - Google Fonts Manrope is variable: trimming weights from the css2 URL saves 0 font bytes (same woff2 files). Font CLS is handled by metric-matched "Fraunces FB" @font-face fallbacks at the top of styles.css; a Manrope→Arial fallback made CLS worse (`ch` max-widths shift) — don't re-add without testing.
 - Fraunces width vs its fallback varies with optical size (h1 60px ~0.97, 40px ~1.01, h2 ~1.03): one size-adjust can't fit all; desktop home hero still shifts 0.15 (h1 wraps 4 vs 3 lines).
 - `.play-store-badge` has `aspect-ratio: 646/250` (the remote en badge, used by all locales); if the badge image changes, update it.
+- Since T-032 there are 5 locales (it = `/it/`, `articoli/`, `strumenti/`, hreflang it-IT); 160 validated pages, 163 sitemap URLs. Italian slug table lives in the manifest.
+- Adding a locale: `seo_sync` hreflang rewrite keeps one blank line per removed link (callback re-emits matched whitespace), so the first `seo:all` after adding a locale is not idempotent; the second run settles it.
+- Newsletter pages (`en/newsletter.html`, `es/boletin`, `fr/newsletter`, `pt/boletim`, `it/newsletter`) are not in the manifest/sitemap and get no hreflang; the language switcher sends them to the target home via `ROUTE_MAP.home`.
+- Hero trust bullet "English, Español, Français, Português, Italiano" on homes describes the APP's languages; the app is not in Italian yet (as of 2026-10-30, owner chose no notice).
+- `data-article-slug` on article pages must be the page's own (localized) basename; translation workers copying en kept the en slug.
+- Translation workers build pages with exact-match string tables: they miss short labels (nav "Tools", "min read" in cards) and JSON-LD for FAQs not shown visibly; scan JSON-LD/meta/attributes too, not just visible text.
+- LEGAL_RE alternatives are anchored by `\.html$`, so `politica-editorial` does NOT match `politica-editoriale.html`; both entries are needed.

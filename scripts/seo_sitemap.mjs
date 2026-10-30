@@ -157,9 +157,9 @@ function buildLlmsTxt() {
   const out = [
     "# Raffy",
     "",
-    "> Raffy is a free Android app for baby care (sleep, feeding, growth, medicines and vaccines) made by Gurru Labs. raffyparenting.com is its website, with free parenting articles and calculators in English, Spanish, French and Brazilian Portuguese. Content is educational and non-diagnostic.",
+    "> Raffy is a free Android app for baby care (sleep, feeding, growth, medicines and vaccines) made by Gurru Labs. raffyparenting.com is its website, with free parenting articles and calculators in English, Spanish, French, Brazilian Portuguese and Italian. Content is educational and non-diagnostic.",
     "",
-    "The app is available only on Google Play. The website has no accounts; tools run in the browser. Each page exists in four language versions with translated URLs.",
+    "The app is available only on Google Play. The website has no accounts; tools run in the browser. Each page exists in five language versions with translated URLs.",
     "",
     ...section("App", ["- [Raffy on Google Play](https://play.google.com/store/apps/details?id=com.gurrulabs.raffy): Android baby tracker for sleep, feeding, growth, medicines and vaccines", ...homes])
   ];

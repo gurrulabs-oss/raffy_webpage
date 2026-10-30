@@ -38,18 +38,25 @@
       eFormat: 'Digite a data completa, por exemplo {ex}.', eFuture: 'A data não pode ser no futuro.'
     }
   };
-  var PH = { en: { DMY: 'DD/MM/YYYY', MDY: 'MM/DD/YYYY' }, es: { DMY: 'DD/MM/AAAA' }, fr: { DMY: 'JJ/MM/AAAA' }, pt: { DMY: 'DD/MM/AAAA' } };
+  STR.it = {
+    today: 'Oggi', clear: 'Cancella', done: 'Fatto', open: 'Apri il calendario', hint: 'Scrivila o sceglila',
+    chooseYear: "Scegli l'anno", chooseMonth: 'Scegli il mese', prev: 'Mese precedente', next: 'Mese successivo',
+    born: 'Nato/a il', old: function (m, d) { return m + ' ' + plural(m, 'mese', 'mesi') + ' e ' + d + ' ' + plural(d, 'giorno', 'giorni'); },
+    eFormat: 'Inserisci la data completa, ad esempio {ex}.', eFuture: 'La data non può essere nel futuro.'
+  };
+  var PH = { en: { DMY: 'DD/MM/YYYY', MDY: 'MM/DD/YYYY' }, es: { DMY: 'DD/MM/AAAA' }, fr: { DMY: 'JJ/MM/AAAA' }, pt: { DMY: 'DD/MM/AAAA' }, it: { DMY: 'GG/MM/AAAA' } };
 
   var pageLang = String((document.body && document.body.dataset.locale) || document.documentElement.lang || 'en').slice(0, 2).toLowerCase();
   var lang = STR[pageLang] ? pageLang : 'en';
   var t = STR[lang];
   var LOC = resolveLocale(lang);
 
-  // es/fr: Monday first; pt-BR: Sunday first; en: by the visitor's region (en-US Sunday, others Monday).
+  // es/fr/it: Monday first; pt-BR: Sunday first; en: by the visitor's region (en-US Sunday, others Monday).
   function resolveLocale(l) {
     if (l === 'es') return { tag: 'es', order: 'DMY', first: 1 };
     if (l === 'fr') return { tag: 'fr', order: 'DMY', first: 1 };
     if (l === 'pt') return { tag: 'pt-BR', order: 'DMY', first: 0 };
+    if (l === 'it') return { tag: 'it', order: 'DMY', first: 1 };
     var nav = navigator.language || 'en-US';
     var region = '';
     try { region = (new Intl.Locale(nav).maximize().region || '').toUpperCase(); } catch (e) { region = (nav.split('-')[1] || '').toUpperCase(); }
