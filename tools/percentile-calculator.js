@@ -76,6 +76,13 @@ const LOCALES = {
     sentenceBelow: 'weniger als 1 von 100 {group} im gleichen Alter {less}.',
     sentenceAbove: 'weniger als 1 von 100 {group} im gleichen Alter {more}.',
     rangeNote: 'Auch manche gesunde Babys liegen in diesem Bereich, und ein einzelner Messwert ist nur eine Momentaufnahme. Sprich mit deiner Kinderarztpraxis, die den Verlauf gemeinsam mit dir beurteilen kann.',
+    firmTitle: 'Diesen Wert bald ärztlich prüfen lassen',
+    firmBelow: 'Dieser Wert liegt sehr weit außerhalb des Üblichen für sein Alter. Vereinbare in den nächsten Tagen einen Termin in deiner Kinderarztpraxis, um ihn überprüfen zu lassen. Miss vorher noch einmal sorgfältig nach: Messfehler sind häufig, besonders bei der Körperlänge.',
+    firmAbove: 'Dieser Wert liegt deutlich über dem Üblichen für sein Alter. Miss noch einmal sorgfältig nach: Messfehler sind häufig, besonders bei der Körperlänge. Wenn er sich bestätigt, vereinbare in den nächsten Tagen einen Termin in deiner Kinderarztpraxis, um ihn überprüfen zu lassen.',
+    firmHead: 'Dieser Wert liegt sehr weit außerhalb des Üblichen für sein Alter. Vereinbare in den nächsten Tagen einen Termin in deiner Kinderarztpraxis, um ihn überprüfen zu lassen. Miss vorher noch einmal sorgfältig nach, das Maßband knapp über Augenbrauen und Ohren.',
+    firmSameDay: 'Wenn dein Baby außerdem wenig trinkt, weniger nasse Windeln hat oder sehr schlapp wirkt, lass es noch heute ärztlich ansehen.',
+    firmHeadSameDay: 'Wenn dir außerdem eine vorgewölbte Fontanelle, wiederholtes Erbrechen, starke Reizbarkeit oder ungewöhnliche Schläfrigkeit auffällt, lass es noch heute ärztlich ansehen.',
+    firmTabMark: 'enthält einen Hinweis',
     percentileAria: '{ordinal} Perzentil',
     chartAria: 'Wachstumskurve: {metric}',
     chartRange: 'WHO, {from}–{to} Monate',
@@ -150,6 +157,13 @@ const LOCALES = {
     sentenceBelow: 'meno dell’1% di {group} della stessa età {less}.',
     sentenceAbove: 'meno dell’1% di {group} della stessa età {more}.',
     rangeNote: 'Anche alcuni bambini sani si trovano qui, e una sola misura è solo una fotografia. Mostrala al pediatra, che può valutare con te l’andamento.',
+    firmTitle: 'Conviene far controllare presto questa misura',
+    firmBelow: 'Questa misura è molto lontana dal range abituale per la sua età. Prendi un appuntamento con il pediatra nei prossimi giorni per verificarla. Prima, misura di nuovo con attenzione: gli errori di misurazione sono frequenti, soprattutto per la lunghezza.',
+    firmAbove: 'Questa misura è molto al di sopra del range abituale per la sua età. Misura di nuovo con attenzione: gli errori di misurazione sono frequenti, soprattutto per la lunghezza. Se viene confermata, prendi un appuntamento con il pediatra nei prossimi giorni per verificarla.',
+    firmHead: 'Questa misura è molto lontana dal range abituale per la sua età. Prendi un appuntamento con il pediatra nei prossimi giorni per verificarla. Prima, misura di nuovo con attenzione, con il metro appena sopra le sopracciglia e le orecchie.',
+    firmSameDay: 'Se noti anche che mangia poco, bagna meno pannolini o è molto abbattuto, fallo vedere oggi stesso.',
+    firmHeadSameDay: 'Se noti anche una fontanella tesa e sporgente, vomito ripetuto, molta irritabilità o un sonno insolito, fallo vedere oggi stesso.',
+    firmTabMark: 'contiene un avviso',
     percentileAria: '{ordinal} percentile',
     chartAria: 'Grafico di crescita: {metric}',
     chartRange: 'OMS, {from}–{to} mesi',
@@ -224,6 +238,13 @@ const LOCALES = {
     sentenceBelow: 'fewer than 1 in 100 {group} the same age {less}.',
     sentenceAbove: 'fewer than 1 in 100 {group} the same age {more}.',
     rangeNote: 'Some healthy babies sit here, and one measurement is only a snapshot. Share it with your pediatrician, who can look at the trend with you.',
+    firmTitle: 'It is worth getting this measurement checked soon',
+    firmBelow: 'This measurement is far from the usual range for this age. Book an appointment with your pediatrician in the next few days to review it. First, measure again carefully: measuring errors are common, especially for length.',
+    firmAbove: 'This measurement is far above the usual range for this age. Measure again carefully: measuring errors are common, especially for length. If it is confirmed, book an appointment with your pediatrician in the next few days to review it.',
+    firmHead: 'This measurement is far from the usual range for this age. Book an appointment with your pediatrician in the next few days to review it. First, measure again carefully, with the tape just above the eyebrows and ears.',
+    firmSameDay: 'If you also notice that your baby is feeding poorly, has fewer wet diapers or seems very drowsy, get them checked today.',
+    firmHeadSameDay: 'If you also notice a bulging soft spot, repeated vomiting, a lot of irritability or unusual sleepiness, get them checked today.',
+    firmTabMark: 'has a warning',
     percentileAria: '{ordinal} percentile',
     chartAria: 'Growth chart: {metric}',
     chartRange: 'WHO, {from}–{to} months',
@@ -298,6 +319,13 @@ const LOCALES = {
     sentenceBelow: 'menos de 1 de cada 100 {group} de la misma edad {less}.',
     sentenceAbove: 'menos de 1 de cada 100 {group} de la misma edad {more}.',
     rangeNote: 'Algunos bebés sanos están en esta zona y una sola medición es solo una foto del momento. Coméntalo con tu pediatra, que puede revisar la evolución contigo.',
+    firmTitle: 'Conviene revisar esta medida pronto',
+    firmBelow: 'Esta medida está muy lejos de lo habitual para su edad. Pide cita con tu pediatra en los próximos días para revisarla. Antes, vuelve a medir con cuidado: un error de medición es frecuente, sobre todo en la longitud.',
+    firmAbove: 'Esta medida está muy por encima de lo habitual para su edad. Vuelve a medir con cuidado: un error de medición es frecuente, sobre todo en la longitud. Si se confirma, pide cita con tu pediatra en los próximos días para revisarla.',
+    firmHead: 'Esta medida está muy lejos de lo habitual para su edad. Pide cita con tu pediatra en los próximos días para revisarla. Antes, vuelve a medir con cuidado, con la cinta justo por encima de las cejas y las orejas.',
+    firmSameDay: 'Si además notas que come poco, moja menos pañales o está muy decaído, consúltalo hoy mismo.',
+    firmHeadSameDay: 'Si además notas la fontanela abombada, vómitos repetidos, mucha irritabilidad o un sueño fuera de lo normal, consúltalo hoy mismo.',
+    firmTabMark: 'tiene un aviso',
     percentileAria: 'percentil {n}',
     chartAria: 'Gráfica de crecimiento: {metric}',
     chartRange: 'OMS, {from}–{to} meses',
@@ -372,6 +400,13 @@ const LOCALES = {
     sentenceBelow: 'moins de 1 % des {group} du même âge {less}.',
     sentenceAbove: 'moins de 1 % des {group} du même âge {more}.',
     rangeNote: 'Certains bébés en bonne santé se situent ici, et une seule mesure n’est qu’un instantané. Parlez-en à votre pédiatre, qui pourra suivre l’évolution avec vous.',
+    firmTitle: 'Il vaut mieux faire vérifier cette mesure rapidement',
+    firmBelow: 'Cette mesure est très éloignée de la fourchette habituelle pour son âge. Prenez rendez-vous avec votre pédiatre dans les prochains jours pour la vérifier. Avant cela, mesurez de nouveau avec soin : les erreurs de mesure sont fréquentes, surtout pour la taille.',
+    firmAbove: 'Cette mesure est très au-dessus de la fourchette habituelle pour son âge. Mesurez de nouveau avec soin : les erreurs de mesure sont fréquentes, surtout pour la taille. Si elle est confirmée, prenez rendez-vous avec votre pédiatre dans les prochains jours pour la vérifier.',
+    firmHead: 'Cette mesure est très éloignée de la fourchette habituelle pour son âge. Prenez rendez-vous avec votre pédiatre dans les prochains jours pour la vérifier. Avant cela, mesurez de nouveau avec soin, le mètre ruban juste au-dessus des sourcils et des oreilles.',
+    firmSameDay: 'Si vous remarquez en plus que votre bébé mange peu, mouille moins de couches ou semble très abattu, faites-le examiner dès aujourd’hui.',
+    firmHeadSameDay: 'Si vous remarquez en plus une fontanelle bombée, des vomissements répétés, beaucoup d’irritabilité ou un sommeil inhabituel, faites-le examiner dès aujourd’hui.',
+    firmTabMark: 'contient un avertissement',
     percentileAria: '{ordinal} percentile',
     chartAria: 'Courbe de croissance : {metric}',
     chartRange: 'OMS, {from}–{to} mois',
@@ -446,6 +481,13 @@ const LOCALES = {
     sentenceBelow: 'menos de 1 em cada 100 {group} da mesma idade {less}.',
     sentenceAbove: 'menos de 1 em cada 100 {group} da mesma idade {more}.',
     rangeNote: 'Alguns bebês saudáveis ficam nessa faixa, e uma única medição é só um retrato do momento. Converse com o pediatra, que pode acompanhar a evolução com você.',
+    firmTitle: 'Vale a pena revisar essa medida em breve',
+    firmBelow: 'Essa medida está bem distante do habitual para a idade. Marque uma consulta com o pediatra nos próximos dias para avaliá-la. Antes, meça de novo com cuidado: erros de medição são comuns, principalmente no comprimento.',
+    firmAbove: 'Essa medida está bem acima do habitual para a idade. Meça de novo com cuidado: erros de medição são comuns, principalmente no comprimento. Se for confirmada, marque uma consulta com o pediatra nos próximos dias para avaliá-la.',
+    firmHead: 'Essa medida está bem distante do habitual para a idade. Marque uma consulta com o pediatra nos próximos dias para avaliá-la. Antes, meça de novo com cuidado, com a fita logo acima das sobrancelhas e das orelhas.',
+    firmSameDay: 'Se você também notar que o bebê mama pouco, molha menos fraldas ou está muito molinho, procure atendimento hoje mesmo.',
+    firmHeadSameDay: 'Se você também notar a moleira abaulada, vômitos repetidos, muita irritação ou um sono fora do normal, procure atendimento hoje mesmo.',
+    firmTabMark: 'tem um aviso',
     percentileAria: 'percentil {n}',
     chartAria: 'Gráfico de crescimento: {metric}',
     chartRange: 'OMS, {from}–{to} meses',
@@ -1384,9 +1426,21 @@ function resultSentence(result, sex) {
   return lower === 50 ? `${copy.sentenceMiddlePrefix}${text}` : capitalizeFirst(text);
 }
 
-function isOutsideTypicalRange(percentile) {
-  const shown = displayedPercentile(percentile);
-  return shown < 3 || shown > 97;
+// 'firm' | 'soft' | null from the UNROUNDED percentile. Pure (no DOM): scripts/growth/check-range-level.mjs extracts it.
+function rangeLevel(type, percentile) {
+  if (type === 'headCircumference') return percentile < 3 || percentile > 97 ? 'firm' : null;
+  const low = type === 'weight' ? 2.3 : 0.4;
+  if (percentile < low || percentile > 99.6) return 'firm';
+  return percentile < 3 || percentile > 97 ? 'soft' : null;
+}
+
+const FIRM_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 2 20h20Z"/><path d="M12 10v4M12 17h.01"/></svg>';
+
+function firmMarkup(type, percentile) {
+  const below = percentile < 50;
+  const body = type === 'headCircumference' ? copy.firmHead : below ? copy.firmBelow : copy.firmAbove;
+  const day = type === 'headCircumference' ? copy.firmHeadSameDay : below ? copy.firmSameDay : '';
+  return `${FIRM_ICON}<strong>${escapeHtml(copy.firmTitle)}</strong><span>${escapeHtml(body)}${day ? ` <em>${escapeHtml(day)}</em>` : ''}</span>`;
 }
 
 function setResultState(state) {
@@ -1434,9 +1488,16 @@ function renderSelectedResult(payload) {
   if (sentenceOut) sentenceOut.textContent = resultSentence(result, payload.sex);
 
   if (rangeOut) {
-    const outside = isOutsideTypicalRange(result.percentile);
-    rangeOut.textContent = outside ? copy.rangeNote : '';
-    rangeOut.hidden = !outside;
+    const level = rangeLevel(type, result.percentile);
+    rangeOut.classList.toggle('is-firm', level === 'firm');
+    if (level === 'firm') {
+      rangeOut.setAttribute('role', 'note');
+      rangeOut.innerHTML = firmMarkup(type, result.percentile);
+    } else {
+      rangeOut.removeAttribute('role');
+      rangeOut.textContent = level === 'soft' ? copy.rangeNote : '';
+    }
+    rangeOut.hidden = !level;
   }
 
   if (!chartOut) return;
@@ -1481,7 +1542,7 @@ function renderTabs(payload) {
 
     const parts = percentileParts(result.percentile);
     const selected = type === selectedResultType;
-    tabs.push(`<button type="button" role="tab" id="growth-tab-${type}" style="order:${index}" aria-selected="${selected}" aria-controls="growth-chart-panel" tabindex="${selected ? 0 : -1}" data-tab-type="${type}"><small>${label}</small><b>${escapeHtml(parts.number)}${escapeHtml(parts.suffix)}</b></button>`);
+    tabs.push(`<button type="button" role="tab" id="growth-tab-${type}" style="order:${index}" aria-selected="${selected}" aria-controls="growth-chart-panel" tabindex="${selected ? 0 : -1}" data-tab-type="${type}"><small>${label}${!selected && rangeLevel(type, result.percentile) === 'firm' ? `<i class="firm-dot" role="img" aria-label="${escapeHtml(copy.firmTabMark)}"></i>` : ''}</small><b>${escapeHtml(parts.number)}${escapeHtml(parts.suffix)}</b></button>`);
   });
 
   tabsOut.innerHTML = `<div class="mtabs-list" role="tablist" aria-label="${escapeHtml(copy.tabsLabel)}">${tabs.join('')}</div>${adds.join('')}`;
