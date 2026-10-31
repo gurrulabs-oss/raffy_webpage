@@ -192,9 +192,9 @@ Site imported from Search Console on 2026-10-25, sitemap submitted by hand. Chec
 | (a) Content depth on thin articles (6 of 10 en are "1 min read"), outbound sources (WHO, AAP, AEP, SBP, NHS), visible published/updated dates on every article | H | L | Open | T-019 |
 | (b) Tool pages: static explanatory content (what it computes, method, age ranges, example result, FAQ) + JSON-LD on the 20 pages without it | H | M | Open | T-020 |
 | (c) Play Store `referrer=` (e.g. `utm_source=raffyparenting&utm_medium=web&utm_campaign=<page>`) on all store links, to attribute installs by page/AI source | M | S | Open | T-021 |
-| (d) Off-site mentions: Reddit parenting threads, "best baby app" lists, review sites, Play Store listing text | H | L | Open | T-022 |
+| (d) Off-site mentions: Reddit parenting threads, "best baby app" lists, review sites, Play Store listing text | H | L | Plan written (`off-site-mentions.md`), outreach by owner | T-022 |
 | (e) Add the 5 unlisted tool pages per locale to the sitemap (finding 15), if intended to be indexed | M | S | Open | T-023 |
 | (f) Rewrite thin articles with direct-answer leads and extractable facts/tables (months, kcal, ml, counts) | M | M | Open | T-019 |
 | (g) Monthly baseline re-run + Mixpanel/Bing review | M | S | Recurring | - |
-| (h) Organization `sameAs` with real profiles (once they exist) | L | S | Open | - |
+| (h) Organization `sameAs` with real profiles (once they exist; recommended ones in `off-site-mentions.md` (d)) | L | S | Open | - |
 | (i) Medical reviewer / Person author markup | M | M | Deferred (owner: not for now) | - |
