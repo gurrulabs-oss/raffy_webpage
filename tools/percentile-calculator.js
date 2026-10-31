@@ -464,6 +464,15 @@ async function init() {
     onUnitSystemChange(target.value === 'imperial' ? 'imperial' : 'metric');
   });
 
+  // Phones: when the keyboard shrinks the visible area, keep the focused field in view (T-017)
+  window.visualViewport?.addEventListener('resize', () => {
+    const field = document.activeElement;
+    if (!(field instanceof HTMLInputElement) || !form?.contains(field)) return;
+    const rect = field.getBoundingClientRect();
+    const vv = window.visualViewport;
+    if (rect.top < vv.offsetTop || rect.bottom > vv.offsetTop + vv.height) field.scrollIntoView({ block: 'center' });
+  });
+
   // Editing a highlighted field clears its inline error
   form?.addEventListener('input', (event) => {
     const target = event.target;
