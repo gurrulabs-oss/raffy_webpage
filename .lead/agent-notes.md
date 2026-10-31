@@ -115,3 +115,4 @@ Facts learned while working. One line each. Newest at the bottom. Trim via a "Re
 - Percentile calculator dates use tools/date-picker.js: it renames the visible input (`<id>-text`) and moves `name` to a hidden ISO input, so browser scripts must set `input[name=birth_date]` (hidden), not `#birth_date`, then dispatch `submit` on `[data-percentile-form]` (T-035).
 - zsh does not word-split `$VAR` file lists in loops/args; list files literally or use `${=VAR}`.
 - `scripts/growth/check-range-level.mjs` self-checks the firm/soft thresholds of `rangeLevel` (T-035); run it with `same-outputs.mjs` when touching the calculator.
+- T-022 (2026-10-31): outreach plan lives in `docs/off-site-mentions.md`; WebFetch cannot open Reddit, and AlternativeTo/Product Hunt return 403 to bots (curl too): verify those in a browser.
