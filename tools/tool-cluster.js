@@ -103,11 +103,32 @@ const localePack = {
     feeding: {
       summary: "Stima dell'apporto giornaliero"
     }
+  },
+  de: {
+    resultTitle: "Zusammenfassung deines Plans",
+    disclaimer: "Nur zur Information. Bei Verdacht auf eine Erkrankung oder in dringenden Fällen wende dich an deine Kinderarztpraxis.",
+    wake: {
+      summary: "Wachfenster und Aufbau der Schläfchen",
+      napLabel: "Empfohlene Schläfchen",
+      windowLabel: "Wachfenster"
+    },
+    nap: {
+      summary: "Empfehlung zum Wechsel der Schläfchen"
+    },
+    solids: {
+      summary: "Empfehlung zur Beikost-Steigerung"
+    },
+    diaper: {
+      summary: "Check von Flüssigkeitshaushalt und Ausscheidung"
+    },
+    feeding: {
+      summary: "Schätzung der täglichen Nahrungsmenge"
+    }
   }
 };
 
 /* ---------- Mixpanel tracking (same base payload as tools/percentile-calculator.js) ---------- */
-const TRACKING_LANGUAGES = ["en", "es", "fr", "pt", "it"];
+const TRACKING_LANGUAGES = ["en", "es", "fr", "pt", "it", "de"];
 const TOOL_NAMES = {
   wake: "Wake Window Planner",
   nap: "Nap Transition Helper",
@@ -225,7 +246,8 @@ function wakeWindowModel(ageMonths, locale) {
         es: ["Mantén rutinas cortas y calmadas antes de dormir.", "Prioriza la exposición a la luz durante el día."],
         fr: ["Gardez des routines d'endormissement courtes et apaisantes.", "Privilégiez l'exposition à la lumière en journée."],
         pt: ["Mantenha rotinas curtas e calmantes antes de dormir.", "Priorize a exposição à luz durante o dia."],
-        it: ["Mantieni routine brevi e rilassanti prima della nanna.", "Dai priorità all'esposizione alla luce durante il giorno."]
+        it: ["Mantieni routine brevi e rilassanti prima della nanna.", "Dai priorità all'esposizione alla luce durante il giorno."],
+        de: ["Halte die Einschlafrituale kurz und beruhigend.", "Achte auf viel Tageslicht am Tag."]
       }[lang]
     };
   }
@@ -239,7 +261,8 @@ function wakeWindowModel(ageMonths, locale) {
         es: ["Protege la primera siesta de la mañana.", "Empieza una señal constante para la hora de dormir."],
         fr: ["Protégez la première sieste du matin.", "Mettez en place un repère de coucher régulier."],
         pt: ["Proteja a primeira soneca da manhã.", "Comece um sinal consistente para a hora de dormir."],
-        it: ["Proteggi il primo pisolino del mattino.", "Introduci un segnale costante per l'ora della nanna."]
+        it: ["Proteggi il primo pisolino del mattino.", "Introduci un segnale costante per l'ora della nanna."],
+        de: ["Schütze das erste Vormittagsschläfchen.", "Führe ein gleichbleibendes Signal für die Schlafenszeit ein."]
       }[lang]
     };
   }
@@ -253,7 +276,8 @@ function wakeWindowModel(ageMonths, locale) {
         es: ["Ancla una hora fija de despertar.", "Usa una siesta puente de 10-20 minutos si hay mucho cansancio."],
         fr: ["Ancrez une heure de réveil stable.", "Utilisez une sieste relais de 10 à 20 minutes en cas de grande fatigue."],
         pt: ["Fixe um horário estável para acordar.", "Use uma soneca ponte de 10-20 minutos se houver cansaço excessivo."],
-        it: ["Fissa un orario di risveglio stabile.", "Usa un pisolino ponte di 10-20 minuti se c'è troppa stanchezza."]
+        it: ["Fissa un orario di risveglio stabile.", "Usa un pisolino ponte di 10-20 minuti se c'è troppa stanchezza."],
+        de: ["Lege eine feste Aufwachzeit fest.", "Nutze bei Übermüdung ein kurzes Überbrückungsschläfchen von 10–20 Minuten."]
       }[lang]
     };
   }
@@ -267,7 +291,8 @@ function wakeWindowModel(ageMonths, locale) {
         es: ["Es habitual una siesta larga al mediodía.", "Mantén la hora de dormir estable los 7 días."],
         fr: ["Une longue sieste de milieu de journée est fréquente.", "Gardez l'heure du coucher stable 7 jours sur 7."],
         pt: ["Uma soneca longa ao meio-dia é comum.", "Mantenha a hora de dormir estável nos 7 dias."],
-        it: ["Un pisolino lungo a metà giornata è comune.", "Mantieni stabile l'ora della nanna tutti i 7 giorni."]
+        it: ["Un pisolino lungo a metà giornata è comune.", "Mantieni stabile l'ora della nanna tutti i 7 giorni."],
+        de: ["Ein langer Mittagsschlaf ist typisch.", "Halte die Schlafenszeit an allen 7 Tagen stabil."]
       }[lang]
     };
   }
@@ -280,7 +305,8 @@ function wakeWindowModel(ageMonths, locale) {
       es: ["Evita siestas tardías que retrasen la noche.", "Usa una rutina tranquila antes de dormir."],
       fr: ["Évitez les siestes tardives qui repoussent le coucher.", "Utilisez une routine calme avant le sommeil."],
       pt: ["Evite sonecas tardias que empurrem a hora de dormir.", "Use uma rotina tranquila antes de dormir."],
-      it: ["Evita pisolini tardivi che spostano in avanti la nanna.", "Usa una routine tranquilla prima di dormire."]
+      it: ["Evita pisolini tardivi che spostano in avanti la nanna.", "Usa una routine tranquilla prima di dormire."],
+      de: ["Vermeide späte Schläfchen, die das Zubettgehen nach hinten verschieben.", "Nutze vor dem Schlafen eine ruhige Routine."]
     }[lang]
   };
 }
@@ -293,7 +319,8 @@ function napTransitionModel(ageMonths, currentNaps, locale) {
       es: ["Puede que estés entrando en una transición de 3 a 2 siestas.", "Adelanta la hora de dormir durante 7-10 días.", "Observa si la siesta de la mañana se acorta y la del mediodía se alarga."],
       fr: ["Vous entrez peut-être dans une transition de 3 à 2 siestes.", "Avancez l'heure du coucher pendant 7 à 10 jours.", "Surveillez une sieste du matin plus courte et une sieste de midi plus longue."],
       pt: ["Você pode estar entrando em uma transição de 3 para 2 sonecas.", "Antecipe a hora de dormir por 7-10 dias.", "Observe soneca da manhã mais curta e soneca do meio-dia mais longa."],
-      it: ["Potresti essere all'inizio del passaggio da 3 a 2 pisolini.", "Anticipa l'ora della nanna per 7-10 giorni.", "Osserva se il pisolino del mattino si accorcia e quello di metà giornata si allunga."]
+      it: ["Potresti essere all'inizio del passaggio da 3 a 2 pisolini.", "Anticipa l'ora della nanna per 7-10 giorni.", "Osserva se il pisolino del mattino si accorcia e quello di metà giornata si allunga."],
+      de: ["Möglicherweise beginnt gerade der Übergang von 3 auf 2 Schläfchen.", "Verlege die Schlafenszeit für 7–10 Tage nach vorn.", "Beobachte, ob das Vormittagsschläfchen kürzer und der Mittagsschlaf länger wird."]
     }[lang];
   }
   if (currentNaps === 2 && ageMonths >= 14) {
@@ -302,7 +329,8 @@ function napTransitionModel(ageMonths, currentNaps, locale) {
       es: ["Puede que te acerques a una transición de 2 a 1 siesta.", "Retrasa el inicio de la siesta 10-15 minutos cada pocos días.", "Usa tiempo tranquilo si rechaza la segunda siesta repetidamente."],
       fr: ["Vous approchez peut-être d'une transition de 2 à 1 sieste.", "Décalez le début de la sieste de 10 à 15 minutes tous les quelques jours.", "Prévoyez un temps calme si la deuxième sieste est refusée de façon répétée."],
       pt: ["Você pode estar se aproximando de uma transição de 2 para 1 soneca.", "Atrase o início da soneca em 10-15 minutos a cada poucos dias.", "Use tempo calmo se a segunda soneca for recusada repetidamente."],
-      it: ["Potresti essere vicino al passaggio da 2 a 1 pisolino.", "Posticipa l'inizio del pisolino di 10-15 minuti ogni pochi giorni.", "Prevedi un momento di calma se il secondo pisolino viene rifiutato ripetutamente."]
+      it: ["Potresti essere vicino al passaggio da 2 a 1 pisolino.", "Posticipa l'inizio del pisolino di 10-15 minuti ogni pochi giorni.", "Prevedi un momento di calma se il secondo pisolino viene rifiutato ripetutamente."],
+      de: ["Möglicherweise steht bald der Übergang von 2 auf 1 Schläfchen an.", "Verschiebe den Beginn des Schläfchens alle paar Tage um 10–15 Minuten nach hinten.", "Plane eine ruhige Auszeit ein, wenn das zweite Schläfchen wiederholt abgelehnt wird."]
     }[lang];
   }
   return {
@@ -310,7 +338,8 @@ function napTransitionModel(ageMonths, currentNaps, locale) {
     es: ["El número actual de siestas parece adecuado para la edad.", "Mantén una hora de despertar estable.", "Reevalúa si la resistencia al sueño dura más de una semana."],
     fr: ["Le nombre actuel de siestes semble adapté à l'âge.", "Maintenez une heure de réveil stable.", "Réévaluez si la résistance au coucher dure plus d'une semaine."],
     pt: ["A quantidade atual de sonecas parece adequada para a idade.", "Mantenha um horário fixo para acordar.", "Reavalie se a resistência para dormir durar mais de uma semana."],
-    it: ["Il numero attuale di pisolini sembra adatto all'età.", "Mantieni un orario di risveglio stabile.", "Rivaluta se la resistenza alla nanna dura più di una settimana."]
+    it: ["Il numero attuale di pisolini sembra adatto all'età.", "Mantieni un orario di risveglio stabile.", "Rivaluta se la resistenza alla nanna dura più di una settimana."],
+    de: ["Die aktuelle Anzahl der Schläfchen scheint altersgerecht.", "Behalte eine feste Aufwachzeit bei.", "Überprüfe die Lage erneut, wenn das Einschlafen länger als eine Woche schwerfällt."]
   }[lang];
 }
 
@@ -323,7 +352,8 @@ function solidsModel(ageMonths, stage, locale) {
       es: "Los sólidos complementarios suelen introducirse alrededor de los 6 meses con orientación pediátrica.",
       fr: "Les aliments complémentaires sont généralement introduits vers 6 mois avec l'avis du pédiatre.",
       pt: "A introdução alimentar complementar geralmente começa por volta dos 6 meses com orientação pediátrica.",
-      it: "Lo svezzamento di solito inizia verso i 6 mesi, con il consiglio del pediatra."
+      it: "Lo svezzamento di solito inizia verso i 6 mesi, con il consiglio del pediatra.",
+      de: "Die Beikost wird in der Regel um den 6. Lebensmonat herum eingeführt, in Absprache mit der Kinderarztpraxis."
     }[lang]);
   } else if (ageMonths <= 8) {
     base.push({
@@ -331,7 +361,8 @@ function solidsModel(ageMonths, stage, locale) {
       es: "Ofrece alimentos ricos en hierro a diario y repite la exposición a sabores nuevos.",
       fr: "Proposez chaque jour des aliments riches en fer et répétez l'exposition aux nouvelles saveurs.",
       pt: "Ofereça alimentos ricos em ferro diariamente e repita a exposição a novos sabores.",
-      it: "Offri ogni giorno alimenti ricchi di ferro e ripeti l'esposizione ai nuovi sapori."
+      it: "Offri ogni giorno alimenti ricchi di ferro e ripeti l'esposizione ai nuovi sapori.",
+      de: "Biete täglich eisenreiche Lebensmittel an und wiederhole neue Geschmacksrichtungen immer wieder."
     }[lang]);
   } else if (ageMonths <= 12) {
     base.push({
@@ -339,7 +370,8 @@ function solidsModel(ageMonths, stage, locale) {
       es: "Aumenta la complejidad de texturas y fomenta la autoalimentación.",
       fr: "Augmentez la complexité des textures et encouragez l'alimentation autonome.",
       pt: "Aumente a complexidade das texturas e incentive a autoalimentação.",
-      it: "Aumenta la complessità delle consistenze e incoraggia il bambino a mangiare da solo."
+      it: "Aumenta la complessità delle consistenze e incoraggia il bambino a mangiare da solo.",
+      de: "Steigere nach und nach die Konsistenz der Mahlzeiten und fördere das selbstständige Essen."
     }[lang]);
   } else {
     base.push({
@@ -347,7 +379,8 @@ function solidsModel(ageMonths, stage, locale) {
       es: "Pasa gradualmente a comidas familiares compartidas con cortes y porciones adaptadas a la edad.",
       fr: "Évoluez vers les repas familiaux partagés avec des morceaux et portions adaptés à l'âge.",
       pt: "Faça a transição para refeições em família com cortes e porções adequados à idade.",
-      it: "Passa gradualmente ai pasti in famiglia, con tagli e porzioni adatti all'età."
+      it: "Passa gradualmente ai pasti in famiglia, con tagli e porzioni adatti all'età.",
+      de: "Gehe schrittweise zu gemeinsamen Familienmahlzeiten über, mit altersgerecht geschnittenen Stücken und Portionen."
     }[lang]);
   }
 
@@ -357,7 +390,8 @@ function solidsModel(ageMonths, stage, locale) {
       es: "Planifica un paso hacia textura más espesa cada 5-7 días.",
       fr: "Prévoyez une étape vers une texture plus épaisse tous les 5 à 7 jours.",
       pt: "Planeje um passo para textura mais espessa a cada 5-7 dias.",
-      it: "Programma un passo verso una consistenza più densa ogni 5-7 giorni."
+      it: "Programma un passo verso una consistenza più densa ogni 5-7 giorni.",
+      de: "Plane alle 5–7 Tage einen Schritt zu einer festeren Konsistenz ein."
     }[lang]);
   }
   if (stage === "mashed") {
@@ -366,7 +400,8 @@ function solidsModel(ageMonths, stage, locale) {
       es: "Introduce trozos blandos y texturas mixtas.",
       fr: "Introduisez des morceaux fondants et des textures mixtes.",
       pt: "Introduza alimentos em pedaços macios e texturas mistas.",
-      it: "Introduci pezzetti morbidi da prendere con le mani e consistenze miste."
+      it: "Introduci pezzetti morbidi da prendere con le mani e consistenze miste.",
+      de: "Führe weiche Fingerfood-Stücke und gemischte Konsistenzen ein."
     }[lang]);
   }
   if (stage === "finger") {
@@ -375,7 +410,8 @@ function solidsModel(ageMonths, stage, locale) {
       es: "Amplía la variedad de alimentos y rota fuentes de proteína durante la semana.",
       fr: "Élargissez la variété des aliments et alternez les sources de protéines sur la semaine.",
       pt: "Amplie a variedade de alimentos e alterne fontes de proteína ao longo da semana.",
-      it: "Amplia la varietà di alimenti e alterna le fonti di proteine nel corso della settimana."
+      it: "Amplia la varietà di alimenti e alterna le fonti di proteine nel corso della settimana.",
+      de: "Erweitere die Vielfalt der Lebensmittel und wechsle die Eiweißquellen im Lauf der Woche ab."
     }[lang]);
   }
 
@@ -384,7 +420,8 @@ function solidsModel(ageMonths, stage, locale) {
     es: "Mantén sin azúcar ni sal añadidas y vigila formas con riesgo de atragantamiento.",
     fr: "Sans sucre ni sel ajoutés, et surveillez les formes à risque d'étouffement.",
     pt: "Mantenha sem açúcar/sal adicionados e monitore formatos com risco de engasgo.",
-    it: "Evita zucchero e sale aggiunti e fai attenzione ai formati a rischio di soffocamento."
+    it: "Evita zucchero e sale aggiunti e fai attenzione ai formati a rischio di soffocamento.",
+    de: "Verzichte auf Zucker und Salz und achte auf Formen, die sich verschlucken lassen."
   }[lang]);
   return base;
 }
@@ -398,7 +435,8 @@ function diaperModel(ageMonths, wetDiapers, stools, redFlag, locale) {
       es: "Un número bajo de pañales mojados puede sugerir riesgo de hidratación.",
       fr: "Un faible nombre de couches mouillées peut indiquer un risque d'hydratation.",
       pt: "Poucas fraldas molhadas podem sugerir risco de hidratação.",
-      it: "Pochi pannolini bagnati possono indicare un rischio di disidratazione."
+      it: "Pochi pannolini bagnati possono indicare un rischio di disidratazione.",
+      de: "Wenige nasse Windeln können auf ein Risiko für Flüssigkeitsmangel hinweisen."
     }[lang]);
   } else {
     tips.push({
@@ -406,7 +444,8 @@ function diaperModel(ageMonths, wetDiapers, stools, redFlag, locale) {
       es: "La cantidad de pañales mojados suele estar en un rango tranquilizador.",
       fr: "La fréquence des couches mouillées est généralement dans une zone rassurante.",
       pt: "A quantidade de fraldas molhadas costuma ficar em uma faixa tranquilizadora.",
-      it: "Il numero di pannolini bagnati è di solito in un intervallo rassicurante."
+      it: "Il numero di pannolini bagnati è di solito in un intervallo rassicurante.",
+      de: "Die Zahl der nassen Windeln liegt meist in einem beruhigenden Bereich."
     }[lang]);
   }
 
@@ -416,7 +455,8 @@ function diaperModel(ageMonths, wetDiapers, stools, redFlag, locale) {
       es: "No evacuar puede ser normal en algunos bebés amamantados; vigila confort y alimentación.",
       fr: "Une absence de selles peut être normale chez certains bébés allaités, mais surveillez confort et alimentation.",
       pt: "Ausência de evacuação pode ser normal em alguns bebês amamentados, mas observe conforto e alimentação.",
-      it: "Non fare la cacca può essere normale in alcuni neonati allattati al seno, ma osserva il loro benessere e l'alimentazione."
+      it: "Non fare la cacca può essere normale in alcuni neonati allattati al seno, ma osserva il loro benessere e l'alimentazione.",
+      de: "Kein Stuhlgang kann bei manchen gestillten Babys normal sein, achte aber auf das Wohlbefinden und die Ernährung."
     }[lang]);
   }
   if (ageMonths >= 6 && stools === 0) {
@@ -425,7 +465,8 @@ function diaperModel(ageMonths, wetDiapers, stools, redFlag, locale) {
       es: "Revisa fibra y líquidos si baja la frecuencia de evacuaciones.",
       fr: "Revoyez fibres et liquides si la fréquence des selles baisse.",
       pt: "Revise padrão de fibras e líquidos se a frequência de evacuações cair.",
-      it: "Controlla fibre e liquidi se la frequenza delle evacuazioni diminuisce."
+      it: "Controlla fibre e liquidi se la frequenza delle evacuazioni diminuisce.",
+      de: "Prüfe Ballaststoffe und Flüssigkeit, wenn der Stuhlgang seltener wird."
     }[lang]);
   }
   if (stools >= 5) {
@@ -434,7 +475,8 @@ function diaperModel(ageMonths, wetDiapers, stools, redFlag, locale) {
       es: "Evacuaciones frecuentes pueden requerir vigilar hidratación.",
       fr: "Des selles fréquentes peuvent nécessiter une surveillance de l'hydratation.",
       pt: "Evacuações frequentes podem exigir monitoramento da hidratação.",
-      it: "Evacuazioni frequenti possono richiedere di tenere sotto controllo l'idratazione."
+      it: "Evacuazioni frequenti possono richiedere di tenere sotto controllo l'idratazione.",
+      de: "Häufiger Stuhlgang kann es nötig machen, die Flüssigkeitszufuhr im Blick zu behalten."
     }[lang]);
   }
 
@@ -444,7 +486,8 @@ function diaperModel(ageMonths, wetDiapers, stools, redFlag, locale) {
       es: "Como se marcaron señales de alerta, contacta a pediatría cuanto antes.",
       fr: "Des signes d'alerte ont été signalés: contactez rapidement votre pédiatre.",
       pt: "Como sinais de alerta foram marcados, procure atendimento pediátrico rapidamente.",
-      it: "Poiché hai segnalato dei campanelli d'allarme, contatta subito il pediatra."
+      it: "Poiché hai segnalato dei campanelli d'allarme, contatta subito il pediatra.",
+      de: "Da du Warnzeichen angekreuzt hast, wende dich bitte umgehend an die Kinderarztpraxis."
     }[lang]);
   } else {
     tips.push({
@@ -452,7 +495,8 @@ function diaperModel(ageMonths, wetDiapers, stools, redFlag, locale) {
       es: "Si el estado de ánimo, la alimentación o la hidratación cambian de forma brusca, busca consejo pediátrico.",
       fr: "Si l'humeur, l'alimentation ou l'hydratation changent brutalement, demandez un avis pédiatrique.",
       pt: "Se humor, alimentação ou hidratação mudarem de forma abrupta, procure orientação pediátrica.",
-      it: "Se umore, alimentazione o idratazione cambiano all'improvviso, chiedi consiglio al pediatra."
+      it: "Se umore, alimentazione o idratazione cambiano all'improvviso, chiedi consiglio al pediatra.",
+      de: "Wenn sich Stimmung, Essverhalten oder Trinkmenge plötzlich verändern, lass dich kinderärztlich beraten."
     }[lang]);
   }
   return tips;
@@ -477,7 +521,8 @@ function feedingModel(ageMonths, weightKg, mealsPerDay, locale) {
     es: { base: "400-500 ml/día", early: "500-700 ml/día", late: "300-450 ml/día" },
     fr: { base: "400-500 ml/jour", early: "500-700 ml/jour", late: "300-450 ml/jour" },
     pt: { base: "400-500 ml/dia", early: "500-700 ml/dia", late: "300-450 ml/dia" },
-    it: { base: "400-500 ml/giorno", early: "500-700 ml/giorno", late: "300-450 ml/giorno" }
+    it: { base: "400-500 ml/giorno", early: "500-700 ml/giorno", late: "300-450 ml/giorno" },
+    de: { base: "400–500 ml/Tag", early: "500–700 ml/Tag", late: "300–450 ml/Tag" }
   };
 
   const ranges = milkRangeByLocale[lang];
@@ -518,6 +563,15 @@ function feedingModel(ageMonths, weightKg, mealsPerDay, locale) {
       `Obiettivo indicativo per pasto (${mealsPerDay} pasti): ${perMeal} kcal/pasto`,
       `Quantità tipica di latte in base all'età: ${milkRange}`,
       "Adatta le porzioni all'appetito e alla curva di crescita insieme al tuo pediatra."
+    ];
+  }
+
+  if (lang === "de") {
+    return [
+      `Geschätzter Tagesenergiebedarf: ${dailyKcal} kcal/Tag`,
+      `Richtwert pro Mahlzeit (${mealsPerDay} Mahlzeiten): ${perMeal} kcal/Mahlzeit`,
+      `Typische Milchmenge je nach Alter: ${milkRange}`,
+      "Passe die Portionen gemeinsam mit deiner Kinderarztpraxis an Appetit und Wachstumskurve an."
     ];
   }
 
@@ -668,7 +722,7 @@ function attachTool(form) {
       const ageMonths = Number(form.age_months.value || 0);
       const model = wakeWindowModel(ageMonths, locale);
       show({
-        stats: [[pack.wake.napLabel, model.naps], [pack.wake.windowLabel, model.window]],
+        stats: [[pack.wake.napLabel, model.naps], [pack.wake.windowLabel, resolveLocale(locale) === "de" ? model.window.replace(".", ",") : model.window]],
         lines: model.notes,
         summary: pack.wake.summary
       });

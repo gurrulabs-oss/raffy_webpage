@@ -8,7 +8,7 @@ const __dirname = path.dirname(__filename);
 const ROOT = path.resolve(__dirname, "..");
 const DATA_PATH = path.join(ROOT, "tools", "meal-planner-data.json");
 
-const REQUIRED_LOCALES = ["en", "es", "fr", "pt", "it"];
+const REQUIRED_LOCALES = ["en", "es", "fr", "pt", "it", "de"];
 const REQUIRED_MEALS = ["breakfast", "snack_am", "lunch", "snack_pm", "dinner"];
 const VALID_FOOD_GROUPS = new Set(["dairy", "fruit", "vegetable", "grain", "legume", "animal_protein", "starchy_veg", "fat"]);
 const CORE_FOOD_GROUPS = new Set(["dairy", "fruit", "vegetable", "grain", "legume", "animal_protein", "starchy_veg"]);
@@ -345,7 +345,7 @@ for (let seed = 1; seed <= 10; seed += 1) {
   );
   const baselineIds = baseline.week.flatMap((day) => day.meals.map((meal) => meal.dishId));
 
-  for (const locale of ["es", "fr", "pt", "it"]) {
+  for (const locale of ["es", "fr", "pt", "it", "de"]) {
     const candidate = generateMealPlanner(
       {
         locale,

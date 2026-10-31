@@ -8,7 +8,7 @@ import { analyze, TARGET } from './lib/indexing.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const SNAP_ROOT = path.join(ROOT, '.lead', 'analytics');
-const LOCALES = ['en', 'es', 'fr', 'pt', 'it', 'other'];
+const LOCALES = ['en', 'es', 'fr', 'pt', 'it', 'de', 'other'];
 
 const argv = process.argv.slice(2);
 const argVal = (name) => {

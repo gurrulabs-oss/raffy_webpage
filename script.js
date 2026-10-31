@@ -4,7 +4,8 @@ const ROUTE_MAP = {
     es: "/es/",
     fr: "/fr/",
     pt: "/pt/",
-    it: "/it/"
+    it: "/it/",
+    de: "/de/"
   },
   library: {
     en: "/en/articles/",
@@ -125,7 +126,7 @@ const ROUTE_MAP = {
   }
 };
 
-const LOCALE_CODES = ["en", "es", "fr", "pt", "it"];
+const LOCALE_CODES = ["en", "es", "fr", "pt", "it", "de"];
 const STORAGE_KEY = "raffy_locale";
 const MIXPANEL_TOKEN = "20a6baa8d266700297f9b0b16efc0a13";
 const PAGE_LABELS = {
@@ -326,7 +327,8 @@ function initFeatureShotZoom() {
     es: { close: "Cerrar", closeAria: "Cerrar imagen ampliada de la funcionalidad" },
     fr: { close: "Fermer", closeAria: "Fermer l'image agrandie de la fonctionnalite" },
     pt: { close: "Fechar", closeAria: "Fechar imagem ampliada da funcionalidade" },
-    it: { close: "Chiudi", closeAria: "Chiudi l'immagine ingrandita della funzionalità" }
+    it: { close: "Chiudi", closeAria: "Chiudi l'immagine ingrandita della funzionalità" },
+    de: { close: "Schließen", closeAria: "Vergrößertes Funktionsbild schließen" }
   };
   const ui = labels[locale] || labels.en;
 
@@ -447,7 +449,8 @@ function initFooterPlayBadge() {
     es: { aria: "Descargar en Google Play", alt: "Disponible en Google Play" },
     fr: { aria: "Télécharger sur Google Play", alt: "Disponible sur Google Play" },
     pt: { aria: "Baixar no Google Play", alt: "Disponível no Google Play" },
-    it: { aria: "Scarica su Google Play", alt: "Disponibile su Google Play" }
+    it: { aria: "Scarica su Google Play", alt: "Disponibile su Google Play" },
+    de: { aria: "Jetzt bei Google Play", alt: "Jetzt bei Google Play" }
   };
   const copy = labels[locale] || labels.en;
 
@@ -591,7 +594,8 @@ function getRouteForLocale(pageKey, nextLocale) {
     es: "es-ES",
     fr: "fr-FR",
     pt: "pt-BR",
-    it: "it-IT"
+    it: "it-IT",
+    de: "de-DE"
   };
   const targetHreflang = hreflangByLocale[nextLocale];
   if (targetHreflang) {
@@ -669,7 +673,7 @@ function initLanguagePill() {
   const currentLocale = LOCALE_CODES.includes(body.dataset.locale) ? body.dataset.locale : "en";
   const basePrefix = getBasePrefix();
   const groupLabel = languageSelector.getAttribute("aria-label") || "Language";
-  const langAttr = { en: "en", es: "es", fr: "fr", pt: "pt-BR", it: "it" };
+  const langAttr = { en: "en", es: "es", fr: "fr", pt: "pt-BR", it: "it", de: "de" };
 
   const options = [...languageSelector.options].filter((option) => LOCALE_CODES.includes(option.value));
   if (!options.length) return;

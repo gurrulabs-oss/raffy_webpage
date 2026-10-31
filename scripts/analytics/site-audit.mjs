@@ -7,7 +7,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { REPO_ROOT, parseArgs } from './lib/common.mjs';
 
-const HOMES = { en: '/en/', es: '/es/', fr: '/fr/', pt: '/pt/', it: '/it/' };
+const HOMES = { en: '/en/', es: '/es/', fr: '/fr/', pt: '/pt/', it: '/it/', de: '/de/' };
 const DUP_THRESHOLD = 0.6; // Jaccard of 5-word shingles; templated hubs/tools sit well below this
 const LOW_INBOUND = 2;
 const DEEP = 3; // clicks from own-locale home

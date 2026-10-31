@@ -87,6 +87,15 @@ const footerLabels = {
     data_deletion: "Cancellazione dei dati",
     terms: "Termini",
     contact: "Contatti"
+  },
+  de: {
+    aria: "Vertrauensseiten und rechtliche Hinweise",
+    about: "Über uns",
+    editorial_policy: "Redaktionelle Richtlinien",
+    privacy: "Datenschutz",
+    data_deletion: "Datenlöschung",
+    terms: "Nutzungsbedingungen",
+    contact: "Kontakt"
   }
 };
 
@@ -95,7 +104,8 @@ const preloadMap = {
   es: "../assets/feeding.webp",
   fr: "../assets/feeding.webp",
   pt: "../assets/feeding.webp",
-  it: "../assets/feeding.webp"
+  it: "../assets/feeding.webp",
+  de: "../assets/feeding.webp"
 };
 
 let touched = 0;
@@ -298,7 +308,8 @@ function buildTrustRouteMap(pages) {
     es: {},
     fr: {},
     pt: {},
-    it: {}
+    it: {},
+    de: {}
   };
 
   for (const page of pages) {

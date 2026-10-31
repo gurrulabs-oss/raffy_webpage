@@ -10,6 +10,80 @@ const KG_TO_LB = 2.2046226218;
 const CM_TO_IN = 0.3937007874;
 
 const LOCALES = {
+  de: {
+    pageTitle: 'WHO-Perzentilrechner für Babys und Kinder',
+    toolSubMulti: 'Berechne WHO-Perzentile mit einem oder mehreren Messwerten: Gewicht, Länge/Größe und Kopfumfang.',
+    measurementLegend: 'Messwerte (einen oder mehrere eingeben)',
+    measurementHelp: 'Du kannst einen, zwei oder alle drei Messwerte eingeben.',
+    unitsLabel: 'Einheiten',
+    unitsMetric: 'Metrisch (kg, cm)',
+    unitsImperial: 'Imperial (lb, in)',
+    weightInputMetric: 'Gewicht (kg)',
+    weightInputImperial: 'Gewicht (lb)',
+    lengthInputMetric: 'Länge/Größe (cm)',
+    lengthInputImperial: 'Länge/Größe (in)',
+    headInputMetric: 'Kopfumfang (cm)',
+    headInputImperial: 'Kopfumfang (in)',
+    metricWeight: 'Gewicht nach Alter (WHO)',
+    metricLength: 'Länge nach Alter (WHO)',
+    metricHeight: 'Größe nach Alter (WHO)',
+    metricHead: 'Kopfumfang nach Alter (WHO)',
+    unitKg: 'kg',
+    unitCm: 'cm',
+    unitLb: 'lb',
+    unitIn: 'in',
+    ageChronological: 'Tatsächliches Alter',
+    ageCorrected: 'Korrigiertes Alter',
+    percentileLabel: 'Perzentil',
+    multipleSummary: '{count} Messwerte berechnet',
+    rangeError: 'Das Alter liegt außerhalb des WHO-Bereichs für diesen Messwert (0 bis 60 Monate).',
+    missingRequiredError: 'Bitte gib Geschlecht, Geburtsdatum, Messdatum und mindestens einen Messwert an.',
+    dateError: 'Das Messdatum muss nach dem Geburtsdatum liegen.',
+    correctedAgeError: 'Das korrigierte Alter darf nicht negativ sein. Prüfe die Schwangerschaftswoche bei der Geburt.',
+    gestationalError: 'Die Schwangerschaftswoche bei der Geburt muss zwischen 22 und 40 liegen.',
+    invalidValueError: 'Mindestens ein Messwert ist ungültig oder liegt außerhalb der Werte, die dieser Rechner akzeptiert. Bitte gib Zahlen ein, zum Beispiel 7,3.',
+    emptyExplanation: 'Fülle das Formular aus, um die Werte deines Kindes auf den WHO-Wachstumskurven zu sehen.',
+    resultExplain: 'Dieser Messwert liegt etwa bei P{percentile}. Beobachte die Entwicklung weiter im Zeitverlauf.',
+    lowP10Warning: 'Dieses Ergebnis liegt unter P10 (P{percentile}). Miss in ein paar Tagen noch einmal in Ruhe nach und sprich mit der Kinderarztpraxis, wenn der Wert niedrig bleibt.',
+    chartXAxis: 'Alter (Monate)',
+    chartYAxisWeightMetric: 'Gewicht (kg)',
+    chartYAxisWeightImperial: 'Gewicht (lb)',
+    chartYAxisLengthMetric: 'Länge/Größe (cm)',
+    chartYAxisLengthImperial: 'Länge/Größe (in)',
+    chartYAxisHeadMetric: 'Kopfumfang (cm)',
+    chartYAxisHeadImperial: 'Kopfumfang (in)',
+    carouselPrev: 'Vorheriges Diagramm',
+    carouselNext: 'Nächstes Diagramm',
+    weeksSuffix: 'Wochen',
+    tabsLabel: 'Messwert',
+    tabWeight: 'Gewicht',
+    tabLength: 'Länge',
+    tabHeight: 'Größe',
+    tabHead: 'Kopf',
+    tabAdd: '+ Hinzufügen',
+    groupFemale: 'Mädchen',
+    groupMale: 'Jungen',
+    lessWeight: 'wiegen weniger',
+    moreWeight: 'wiegen mehr',
+    lessLength: 'sind kleiner',
+    moreLength: 'sind größer',
+    lessHeight: 'sind kleiner',
+    moreHeight: 'sind größer',
+    lessHead: 'haben einen kleineren Kopfumfang',
+    moreHead: 'haben einen größeren Kopfumfang',
+    sentenceTemplate: 'etwa {lower} von 100 {group} im gleichen Alter {less}, und {higher} {more}.',
+    sentenceMiddlePrefix: 'Genau in der Mitte: ',
+    sentenceBelow: 'weniger als 3 von 100 {group} im gleichen Alter {less}.',
+    sentenceAbove: 'weniger als 3 von 100 {group} im gleichen Alter {more}.',
+    rangeNote: 'Auch manche gesunde Babys liegen in diesem Bereich, und ein einzelner Messwert ist nur eine Momentaufnahme. Sprich mit deiner Kinderarztpraxis, die den Verlauf gemeinsam mit dir beurteilen kann.',
+    percentileAria: '{ordinal} Perzentil',
+    chartAria: 'Wachstumskurve: {metric}',
+    chartRange: 'WHO, {from}–{to} Monate',
+    legendBaby: 'Dein Baby',
+    legendMedian: 'Median (P50)',
+    legendBand: 'P15–P85',
+    legendOuter: 'P3 / P97'
+  },
   it: {
     pageTitle: 'Calcolatore dei percentili OMS per bambini',
     toolSubMulti: 'Calcola i percentili OMS con una o più misure: peso, lunghezza/altezza e circonferenza cranica.',
@@ -415,7 +489,7 @@ let chartRenderWidth = 0;
 let daysPerMonth = 30.4375;
 let unitSystem = 'metric';
 let lastRenderPayload = null;
-const SUPPORTED_LANGUAGES = ['en', 'es', 'fr', 'pt', 'it'];
+const SUPPORTED_LANGUAGES = ['en', 'es', 'fr', 'pt', 'it', 'de'];
 
 const locale = document.body.dataset.locale || 'en';
 const copy = LOCALES[locale] || LOCALES.en;
@@ -438,7 +512,7 @@ async function init() {
     daysPerMonth = Number(payload?.meta?.daysPerMonth || 30.4375);
     datasetByMetric = indexRows(payload.rows || []);
   } catch (error) {
-    showError(locale === 'it' ? 'Non è stato possibile caricare i dati OMS. Ricarica la pagina.' : 'WHO data could not be loaded.');
+    showError(locale === 'it' ? 'Non è stato possibile caricare i dati OMS. Ricarica la pagina.' : locale === 'de' ? 'Die WHO-Daten konnten nicht geladen werden. Bitte lade die Seite neu.' : 'WHO data could not be loaded.');
     return;
   }
 
@@ -741,7 +815,7 @@ function convertCurrentInputs(fromUnit, toUnit) {
     const el = form?.elements?.namedItem(field.name);
     if (!(el instanceof HTMLInputElement) || !el.value) continue;
 
-    const raw = Number(el.value);
+    const raw = parseDecimal(el.value);
     if (!Number.isFinite(raw)) continue;
 
     const siValue = toSi(field.type, raw, fromUnit);
@@ -805,6 +879,13 @@ function runCalculation() {
     readMeasurement('length_height_cm', 'lengthHeight'),
     readMeasurement('head_circumference_cm', 'headCircumference')
   ].filter(Boolean);
+
+  for (const [name, type] of [['weight_kg', 'weight'], ['length_height_cm', 'lengthHeight'], ['head_circumference_cm', 'headCircumference']]) {
+    if (valueOf(name) && !readMeasurement(name, type)) {
+      showError(copy.invalidValueError, name);
+      return;
+    }
+  }
 
   if (!sex || !birthDate || !measurementDate || measurementEntries.length === 0) {
     showError(copy.missingRequiredError, firstMissingField(sex, birthDate, measurementDate, measurementEntries.length));
@@ -1217,6 +1298,7 @@ function ordinalSuffix(n) {
   if (locale === 'fr') return n === 1 ? 'er' : 'e';
   if (locale === 'es' || locale === 'pt') return 'º';
   if (locale === 'it') return '°';
+  if (locale === 'de') return '.';
   const j = n % 10;
   const k = n % 100;
   if (j === 1 && k !== 11) return 'st';
@@ -1775,8 +1857,16 @@ function formatAge(days) {
   return `${months}m ${Math.max(0, remDays)}d`;
 }
 
+// Accepts "7,3" as well as "7.3" (the German page uses type=text inputs); anything else is NaN.
+function parseDecimal(raw) {
+  const text = String(raw ?? '').trim().replace(',', '.');
+  return text === '' ? Number.NaN : Number(text);
+}
+
 function formatValue(value, digits = 2) {
-  return Number(value).toFixed(digits).replace(/\.00$/, '').replace(/(\.\d)0$/, '$1');
+  const out = Number(value).toFixed(digits).replace(/\.00$/, '').replace(/(\.\d)0$/, '$1');
+  // typeof guard: scripts/growth/same-outputs.mjs runs this function alone in a vm without `locale`
+  return typeof locale !== 'undefined' && locale === 'de' ? out.replace('.', ',') : out;
 }
 
 function formatMeasurementValue(value, type, system = unitSystem) {
@@ -1793,7 +1883,7 @@ function valueOf(name) {
 function valueNumber(name) {
   const raw = valueOf(name);
   if (!raw) return Number.NaN;
-  const num = Number(raw);
+  const num = parseDecimal(raw);
   return Number.isFinite(num) ? num : Number.NaN;
 }
 

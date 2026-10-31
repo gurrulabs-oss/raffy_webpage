@@ -1,8 +1,8 @@
 # Raffy
 
-> Raffy is a free Android app for baby care (sleep, feeding, growth, medicines and vaccines) made by Gurru Labs. raffyparenting.com is its website, with free parenting articles and calculators in English, Spanish, French, Brazilian Portuguese and Italian. Content is educational and non-diagnostic.
+> Raffy is a free Android app for baby care (sleep, feeding, growth, medicines and vaccines) made by Gurru Labs. raffyparenting.com is its website, with free parenting articles and calculators in English, Spanish, French, Brazilian Portuguese, Italian and German. Content is educational and non-diagnostic.
 
-The app is available only on Google Play. The website has no accounts; tools run in the browser. Each page exists in five language versions with translated URLs.
+The app is available only on Google Play. The website has no accounts; tools run in the browser. Each page exists in six language versions with translated URLs.
 
 ## App
 
@@ -12,6 +12,7 @@ The app is available only on Google Play. The website has no accounts; tools run
 - [Raffy home (Français)](https://www.raffyparenting.com/fr/): Français version
 - [Raffy home (Português (Brasil))](https://www.raffyparenting.com/pt/): Português (Brasil) version
 - [Raffy home (Italiano)](https://www.raffyparenting.com/it/): Italiano version
+- [Raffy home (Deutsch)](https://www.raffyparenting.com/de/): Deutsch version
 
 ## Free tools
 
@@ -156,11 +157,45 @@ The app is available only on Google Play. The website has no accounts; tools run
 - [Genitori con fiducia: meno sensi di colpa e meno carico mentale](https://www.raffyparenting.com/it/articoli/genitori-con-fiducia-senza-sensi-di-colpa.html): Strategie pratiche per essere genitori con più fiducia e meno sensi di colpa, riducendo il carico mentale e comunicando meglio in famiglia.
 - [La prima vaccinazione del mio bambino: cosa ho provato e cosa ho imparato](https://www.raffyparenting.com/it/articoli/prima-vaccinazione-neonato-cosa-ho-imparato.html): La prima vaccinazione del mio bambino, raccontata in prima persona: la paura, le evidenze scientifiche, le reazioni più comuni e perché vaccinare protegge tutta la comunità.
 
+## Deutsch
+
+- [Kostenlose Tools für Eltern](https://www.raffyparenting.com/de/tools/): Kostenlose Web-Tools für Eltern: Perzentilenrechner Baby WHO, Wachphasen, Beikost-Planer, nasse Windeln und Trinkmenge.
+- [WHO-Perzentilenrechner fürs Baby (Gewicht, Länge/Größe, Kopfumfang)](https://www.raffyparenting.com/de/tools/perzentilenrechner-baby-who.html): Perzentilenrechner fürs Baby nach WHO: Berechne Perzentile für Gewicht, Länge bzw. Größe und Kopfumfang, auch mit korrigiertem Alter bei Frühgeburt.
+- [Wachphasen-Rechner fürs Baby nach Alter](https://www.raffyparenting.com/de/tools/wachphasen-baby-rechner.html): Schätze altersgerechte Wachphasen und den Aufbau der Schläfchen, um einen ruhigeren Tagesrhythmus aufzubauen.
+- [Tagschlaf-Übergang: Hilfe nach Alter](https://www.raffyparenting.com/de/tools/tagschlaf-uebergang-baby.html): Prüfe, ob dein Baby sich einem Wechsel bei den Schläfchen nähert, und erhalte Schritt-für-Schritt-Tipps zur Umstellung.
+- [Beikost-Planer nach Alter](https://www.raffyparenting.com/de/tools/beikost-planer-nach-alter.html): Plane die Steigerung der Konsistenz und die Lebensmittelvielfalt Woche für Woche bei der Beikost.
+- [Trinkmengenrechner fürs Baby nach Alter](https://www.raffyparenting.com/de/tools/trinkmenge-baby-rechner.html): Schätze die tägliche Nahrungsmenge nach Alter, Gewicht und Anzahl der Mahlzeiten für eine praktische Planung.
+- [Nasse-Windeln-Rechner fürs Baby nach Alter](https://www.raffyparenting.com/de/tools/nasse-windeln-baby-rechner.html): Halte nasse Windeln und Stuhlgang fest, um den Flüssigkeitshaushalt im Blick zu behalten und zu erkennen, wann ärztliche Hilfe nötig ist.
+- [Wochenplan fürs Kleinkind: Essensplaner (12–23 Monate)](https://www.raffyparenting.com/de/tools/wochenplan-kleinkind-essen-12-23-monate.html): Essensplaner für Kleinkinder von 12 bis 23 Monaten: ein 7-Tage-Plan mit WHO-orientierter Logik, Kalorienzielen, Milchmengen nach Alter und Vielfaltscheck.
+- [Ratgeber für Eltern: Beikost, Schlaf & Wachstum](https://www.raffyparenting.com/de/ratgeber/): Praktische Ratgeber zu Schlafroutine, Beikost, Wachstumsperzentilen, Tagesablauf mit Neugeborenen und Meilensteinen.
+- [Schlafroutine fürs Baby nach Alter: der praktische Wochenleitfaden](https://www.raffyparenting.com/de/ratgeber/schlafroutine-baby-nach-alter.html): Baue eine realistische Schlafroutine für dein Baby nach Alter auf – mit Wachphasen, Tagschlaf-Zeiten, festen Schlafenszeiten und einem verlässlichen Aufwach-Anker.
+- [Beikost beim Baby: Brei, breifrei (BLW) und sichere erste Lebensmittel](https://www.raffyparenting.com/de/ratgeber/beikost-einfuehrung-breifrei-brei.html): Ein praktischer Beikost-Leitfaden mit Brei und breifreier Beikost (Baby-led Weaning), sicheren Lebensmittelformen und Tipps für die erste Woche.
+- [Beikostplan 6 Monate: Wochenplan mit 7 Tagen Rezepten](https://www.raffyparenting.com/de/ratgeber/beikostplan-6-monate.html): Beikost 6 Monate: Beikostplan und Wochenplan fürs Baby mit 7 Tagen für den Beikoststart, mit ersten Breien, eisenreicher Kost, Milchmengen, Kalorien und Sicherheitstipps.
+- [Beikostplan 7 Monate: Wochenplan mit 7 Tagen Rezepten](https://www.raffyparenting.com/de/ratgeber/beikostplan-7-monate.html): Beikost 7 Monate: Beikostplan und Wochenplan fürs Baby mit 7 Tagen und 3 Mahlzeiten, gröberen Pürees, eisenreicher Kost, Milchmengen, Kalorien und Sicherheitstipps.
+- [Beikostplan 8 Monate: Wochenplan mit 7 Tagen Rezepten](https://www.raffyparenting.com/de/ratgeber/beikostplan-8-monate.html): Beikost 8 Monate: Beikostplan und Wochenplan fürs Baby mit 7 Tagen, 3 Mahlzeiten und Snack, Fingerfood, Milchmengen, Kalorien und Sicherheitstipps.
+- [Beikostplan 9 Monate: Wochenplan mit 7 Tagen Rezepten](https://www.raffyparenting.com/de/ratgeber/beikostplan-9-monate.html): Beikost 9 Monate: Beikostplan und Wochenplan fürs Baby mit 7 Tagen, Kalorienspannen, Sicherheitstipps und dem, was sich von 10 bis 12 Monaten ändert.
+- [Beikostplan 10 Monate: Wochenplan mit 7 Tagen Rezepten](https://www.raffyparenting.com/de/ratgeber/beikostplan-10-monate.html): Beikost 10 Monate: Beikostplan und Wochenplan fürs Baby mit 7 Tagen, Gramm, Kalorien und Makros, Fingerfood, Sicherheitstipps und was sich mit 11 Monaten ändert.
+- [Beikostplan 11 Monate: Wochenplan mit 7 Tagen Rezepten](https://www.raffyparenting.com/de/ratgeber/beikostplan-11-monate.html): Beikost 11 Monate: Beikostplan und Wochenplan fürs Baby mit 7 Tagen, Gramm, Kalorien und Makros, klein geschnittenem Familienessen, Sicherheitstipps und was sich mit 12 Monaten ändert.
+- [Beikostplan 12 Monate: Wochenplan mit 7 Tagen Rezepten](https://www.raffyparenting.com/de/ratgeber/beikostplan-12-monate.html): Beikost 12 Monate: Beikostplan und Wochenplan fürs Baby mit 7 Tagen Familienessen, Gramm, Kalorien und Makros, Vollmilch und Sicherheitstipps – plus kostenloser Planer.
+- [Die beste Baby-Tracker-App für Android: für den Alltag mit Routinen](https://www.raffyparenting.com/de/ratgeber/baby-tracker-app-android-anleitung.html): Finde die passende Android-Baby-Tracker-Lösung für Schlaf, Mahlzeiten, Wachstum und Routinen. Erfahre, wann Web-Tools reichen und wann das Tracking mit der Raffy-App besser ist.
+- [Perzentilen bei Gewicht und Größe: so liest du die Wachstumskurve deines Babys](https://www.raffyparenting.com/de/ratgeber/perzentilen-baby-gewicht-groesse.html): Verstehe die Perzentilen beim Baby-Wachstum, die Verlaufslinien und wann Veränderungen bei Gewicht oder Größe eine kinderärztliche Kontrolle brauchen.
+- [Niedrige Perzentile beim Baby? Wann du dir Sorgen machen solltest und wann nicht](https://www.raffyparenting.com/de/ratgeber/baby-niedrige-perzentile-wann-sorgen.html): Die 30. Perzentile ist keine schlechte Nachricht. Erfahre, wann eine niedrige Perzentile bei deinem Baby kein Grund zur Sorge ist und bei welchen Anzeichen ein Anruf bei der Kinderärztin oder beim Kinderarzt sinnvoll ist.
+- [Tagesablauf mit Neugeborenem, der im Alltag funktioniert](https://www.raffyparenting.com/de/ratgeber/tagesablauf-neugeborenes.html): Entwickle einen Tagesablauf mit Neugeborenem für Mahlzeiten, Schlaf und Wickeln, ganz ohne starre Stunde-für-Stunde-Pläne.
+- [Das erste Lebensjahr deines Babys: das Jahr, das dich für immer verändert](https://www.raffyparenting.com/de/ratgeber/entwicklung-baby-erstes-jahr-meilensteine.html): Ein herzlicher Leitfaden durchs erste Lebensjahr deines Babys: Meilensteine nach Trimestern, Bindung, häufige Zweifel und wie du die Entwicklung ohne Druck begleitest.
+- [Elternsein mit Selbstvertrauen: weniger Schuldgefühle, weniger Mental Load](https://www.raffyparenting.com/de/ratgeber/elternsein-mit-selbstvertrauen-ohne-schuldgefuehle.html): Praktische Strategien, um mit mehr Selbstvertrauen, weniger Schuldgefühlen und besserer Kommunikation zu Hause Eltern zu sein.
+- [Die erste Impfung meines Babys: was ich gefühlt und was ich gelernt habe](https://www.raffyparenting.com/de/ratgeber/erste-impfung-baby-erfahrungen.html): Ein Erfahrungsbericht zur ersten Impfung deines Babys: Angst, Belege, häufige Reaktionen und warum Impfen die ganze Gemeinschaft schützt.
+
 ## Optional
 
 - [LLMS.md](https://www.raffyparenting.com/LLMS.md): reference summary of Raffy and the site
 - [AGENTS.md](https://www.raffyparenting.com/AGENTS.md): short factual overview and URL index
 - [Sitemap](https://www.raffyparenting.com/sitemap.xml): all indexable URLs
+- [Datenlöschung beantragen - Raffy (DE)](https://www.raffyparenting.com/de/datenloeschung.html): So beantragen Sie per E-Mail die Löschung Ihrer personenbezogenen Daten bei Raffy, welche Angaben nötig sind und wie lange die Bearbeitung dauert.
+- [Datenschutzerklärung für Raffy (DE)](https://www.raffyparenting.com/de/datenschutz.html): Lesen Sie die Datenschutzerklärung von Raffy, einschließlich Datenerhebung, Umgang mit Kinderdaten, Drittanbieterdiensten, Einwilligungssteuerung, Einhaltung von DSGVO und CPRA sowie Löschrechten.
+- [Kontakt (DE)](https://www.raffyparenting.com/de/kontakt.html): Kontaktieren Sie Raffy für Feedback zu den Inhalten, Korrekturen oder Kooperationsanfragen.
+- [Nutzungsbedingungen (DE)](https://www.raffyparenting.com/de/nutzungsbedingungen.html): Nutzungsbedingungen für die Website-Inhalte von Raffy und die Links zum Herunterladen der App.
+- [Redaktionelle Richtlinien (DE)](https://www.raffyparenting.com/de/redaktionelle-richtlinien.html): Die redaktionellen Richtlinien von Raffy erläutern Inhaltsqualität, Prüfprozess, Aktualisierungen und die Grenzen der medizinischen Sicherheit.
+- [Über Raffy (DE)](https://www.raffyparenting.com/de/ueber-uns.html): Erfahren Sie mehr über die Mission von Raffy, unsere redaktionellen Standards und unser Engagement für praktische Orientierung in der Babypflege für Familien.
 - [About Raffy (EN)](https://www.raffyparenting.com/en/about.html): Learn about Raffy's mission, editorial standards, and commitment to practical baby-care guidance for families.
 - [Contact (EN)](https://www.raffyparenting.com/en/contact.html): Contact Raffy for content feedback, corrections, or partnership opportunities.
 - [Request Data Deletion - Raffy (EN)](https://www.raffyparenting.com/en/data-deletion.html): How to request personal data deletion for Raffy by email, what information to include, and expected processing time.

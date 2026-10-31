@@ -1135,7 +1135,7 @@ a.btn-play.on-blue, a.btn-play.on-blue:hover { color: var(--ink); }
 .lang-menu a[aria-current="true"] { background: var(--mint-100); }
 .lang-menu a .tick { margin-left: auto; width: 16px; height: 16px; color: var(--mint-700); }
 @keyframes pop-in { from { opacity: 0; transform: translateY(-4px) scale(.98); } to { opacity: 1; transform: none; } }
-.lang-seg { display: none; grid-template-columns: repeat(5, 1fr); gap: 6px; flex: 1 1 100%; width: 100%; padding-top: 12px; }
+.lang-seg { display: none; grid-template-columns: repeat(6, 1fr); gap: 6px; flex: 1 1 100%; width: 100%; padding-top: 12px; }
 .lang-seg a { min-height: 44px; display: grid; place-items: center; border-radius: 12px; border: 1.5px solid var(--line); text-decoration: none; color: var(--ink); font-weight: 800; font-size: .875rem; background: #fff; }
 .lang-seg a[aria-current="true"] { background: var(--mint-100); border-color: var(--mint-500); }
 .lang-seg a:focus-visible { outline: 3px solid var(--navy-500); outline-offset: 2px; }
