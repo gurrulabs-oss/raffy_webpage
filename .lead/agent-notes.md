@@ -9,7 +9,7 @@ Facts learned while working. One line each. Newest at the bottom. Trim via a "Re
 - `tools/meal-planner.js` is imported as an ES module by the Node validator — keep it Node-importable (no top-level DOM access).
 - `seo_sync` replaces `<footer class="container footer">…</footer>` on every manifest page; hand edits to footers are lost.
 - Mixpanel is live: init `script.js:156` (token in `MIXPANEL_TOKEN`, shared Gurru Labs websites project, EU api host); events `Raffy Webpage - <page>` (page view), `Raffy Webpage - Download Button Clicked` (`script.js:552`, uses `data-cta-location`), growth tool events in `tools/percentile-calculator.js:382`. Keep the `Raffy Webpage - ` prefix: the project is shared with other sites. `download_cta_click` in `seo-operations.md` is a KPI name, not an event name.
-- Play Store links carry no `referrer=` param (as of 2026-10-19), so installs can't be attributed to the site.
+- Since T-004 `script.js` `withPlayReferrer` adds `referrer=utm_source=raffy_webpage&utm_medium=web&utm_campaign=<page_key>&utm_content=<data-cta-location>&utm_term=<locale>` to every Play link at runtime (load, pointerdown, click); keep Play hrefs clean in HTML and give new CTAs a `data-cta-location`.
 - Newsletter forms are `mailto:gurrulabs@gmail.com`.
 - In headless runs `curl`, chained shell commands and `git -C` may require approval; plain single `git` commands from repo root work.
 - Local Node is v25; CI uses Node 20. Scripts use only node: built-ins.
@@ -109,3 +109,5 @@ Facts learned while working. One line each. Newest at the bottom. Trim via a "Re
 - Newsletter pages carry hand-written hreflang (not in manifest): when adding a locale, add its line to all newsletter pages by hand (en/newsletter still lacks it-IT as of T-033).
 - In zsh, `path` is tied to `$PATH`: a loop variable named `path` breaks every later command ("command not found: node").
 - Translation workers in T-033 left template slots in attributes (`aria-label="{{13}}"`), duplicated a language option they copied and broke a `<small>…</small>Google Play` label to `=`: scan for `{{`, option counts and Play button text after translation.
+- T-017 (2026-10-31): the `Medium_Phone` Android emulator (arm64, Chrome) works for real-keyboard tests: `emulator -avd Medium_Phone -no-window`, `adb reverse tcp:PORT tcp:PORT`, `/data/local/tmp/chrome-command-line` with `--disable-fre`, tap "Stay signed out", `adb forward tcp:9352 localabstract:chrome_devtools_remote` → CDP; `Input.dispatchTouchEvent` taps open the keyboard, but CDP touch drags don't scroll (use `adb shell input swipe`). Installing Brave via `gh release download`+`adb install` was denied by the classifier.
+- Since T-017 the date sheet no longer sets `html.dp-lock` (overflow hidden); `.dp-scrim` has `touch-action:none`, and percentile-calculator.js scrolls the focused field into view on `visualViewport` resize.

@@ -501,6 +501,34 @@ anchorLinks.forEach((link) => {
   });
 });
 
+// Play Install Referrer: the app reads this into its Mixpanel, so installs trace back to page + CTA.
+const PLAY_LINK_SELECTOR = 'a[href*="play.google.com/store/apps/details"]';
+
+function withPlayReferrer(link) {
+  const { pageKey, language } = getTrackingContext();
+  const referrer = new URLSearchParams({
+    utm_source: "raffy_webpage",
+    utm_medium: "web",
+    utm_campaign: pageKey,
+    utm_content: link.dataset.ctaLocation || "unknown",
+    utm_term: language
+  });
+  Object.entries(getUtmParams()).forEach(([key, value]) => {
+    if (value) referrer.set(`src_${key}`, value);
+  });
+  const url = new URL(link.href);
+  url.searchParams.set("referrer", referrer.toString());
+  link.href = url.toString();
+}
+
+document.querySelectorAll(PLAY_LINK_SELECTOR).forEach(withPlayReferrer);
+
+// Links inserted after load (tool result card, sticky bar) get tagged on press, before navigation.
+document.addEventListener("pointerdown", (event) => {
+  const link = event.target instanceof Element && event.target.closest(PLAY_LINK_SELECTOR);
+  if (link) withPlayReferrer(link);
+});
+
 function trackDownloadClick(link) {
   const payload = {
     ...buildTrackingPayload(false),
@@ -517,6 +545,8 @@ function trackDownloadClick(link) {
 document.addEventListener("click", (event) => {
   const target = event.target;
   if (!(target instanceof Element)) return;
+  const playLink = target.closest(PLAY_LINK_SELECTOR);
+  if (playLink) withPlayReferrer(playLink);
   const link = target.closest('[data-track-download="true"]');
   if (link) trackDownloadClick(link);
 });

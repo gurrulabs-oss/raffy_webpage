@@ -395,7 +395,6 @@
         document.body.appendChild(scrim);
         document.body.appendChild(pop);
         scrim.hidden = false;
-        document.documentElement.classList.add('dp-lock');
       } else {
         wrap.appendChild(pop);
       }
@@ -413,7 +412,6 @@
       var wasSheet = st.sheet;
       pop.hidden = true;
       if (scrim) scrim.hidden = true;
-      document.documentElement.classList.remove('dp-lock');
       wrap.classList.remove('is-open');
       input.setAttribute('aria-expanded', 'false');
       btn.setAttribute('aria-expanded', 'false');
