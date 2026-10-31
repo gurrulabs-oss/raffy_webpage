@@ -73,8 +73,8 @@ const LOCALES = {
     moreHead: 'haben einen größeren Kopfumfang',
     sentenceTemplate: 'etwa {lower} von 100 {group} im gleichen Alter {less}, und {higher} {more}.',
     sentenceMiddlePrefix: 'Genau in der Mitte: ',
-    sentenceBelow: 'weniger als 3 von 100 {group} im gleichen Alter {less}.',
-    sentenceAbove: 'weniger als 3 von 100 {group} im gleichen Alter {more}.',
+    sentenceBelow: 'weniger als 1 von 100 {group} im gleichen Alter {less}.',
+    sentenceAbove: 'weniger als 1 von 100 {group} im gleichen Alter {more}.',
     rangeNote: 'Auch manche gesunde Babys liegen in diesem Bereich, und ein einzelner Messwert ist nur eine Momentaufnahme. Sprich mit deiner Kinderarztpraxis, die den Verlauf gemeinsam mit dir beurteilen kann.',
     percentileAria: '{ordinal} Perzentil',
     chartAria: 'Wachstumskurve: {metric}',
@@ -147,8 +147,8 @@ const LOCALES = {
     moreHead: 'hanno la testa più grande',
     sentenceTemplate: 'circa {lower} {group} su 100 della stessa età {less} e {higher} {more}.',
     sentenceMiddlePrefix: 'Proprio a metà: ',
-    sentenceBelow: 'meno di 3 {group} su 100 della stessa età {less}.',
-    sentenceAbove: 'meno di 3 {group} su 100 della stessa età {more}.',
+    sentenceBelow: 'meno dell’1% di {group} della stessa età {less}.',
+    sentenceAbove: 'meno dell’1% di {group} della stessa età {more}.',
     rangeNote: 'Anche alcuni bambini sani si trovano qui, e una sola misura è solo una fotografia. Mostrala al pediatra, che può valutare con te l’andamento.',
     percentileAria: '{ordinal} percentile',
     chartAria: 'Grafico di crescita: {metric}',
@@ -221,8 +221,8 @@ const LOCALES = {
     moreHead: 'have a larger head',
     sentenceTemplate: 'about {lower} in 100 {group} the same age {less}, and {higher} {more}.',
     sentenceMiddlePrefix: 'Right in the middle: ',
-    sentenceBelow: 'fewer than 3 in 100 {group} the same age {less}.',
-    sentenceAbove: 'fewer than 3 in 100 {group} the same age {more}.',
+    sentenceBelow: 'fewer than 1 in 100 {group} the same age {less}.',
+    sentenceAbove: 'fewer than 1 in 100 {group} the same age {more}.',
     rangeNote: 'Some healthy babies sit here, and one measurement is only a snapshot. Share it with your pediatrician, who can look at the trend with you.',
     percentileAria: '{ordinal} percentile',
     chartAria: 'Growth chart: {metric}',
@@ -254,7 +254,7 @@ const LOCALES = {
     unitCm: 'cm',
     unitLb: 'lb',
     unitIn: 'in',
-    ageChronological: 'Edad cronologica',
+    ageChronological: 'Edad cronológica',
     ageCorrected: 'Edad corregida',
     percentileLabel: 'Percentil',
     multipleSummary: '{count} mediciones calculadas',
@@ -295,8 +295,8 @@ const LOCALES = {
     moreHead: 'tienen la cabeza más grande',
     sentenceTemplate: 'aproximadamente {lower} de cada 100 {group} de la misma edad {less} y {higher} {more}.',
     sentenceMiddlePrefix: 'Justo en el medio: ',
-    sentenceBelow: 'menos de 3 de cada 100 {group} de la misma edad {less}.',
-    sentenceAbove: 'menos de 3 de cada 100 {group} de la misma edad {more}.',
+    sentenceBelow: 'menos de 1 de cada 100 {group} de la misma edad {less}.',
+    sentenceAbove: 'menos de 1 de cada 100 {group} de la misma edad {more}.',
     rangeNote: 'Algunos bebés sanos están en esta zona y una sola medición es solo una foto del momento. Coméntalo con tu pediatra, que puede revisar la evolución contigo.',
     percentileAria: 'percentil {n}',
     chartAria: 'Gráfica de crecimiento: {metric}',
@@ -328,7 +328,7 @@ const LOCALES = {
     unitCm: 'cm',
     unitLb: 'lb',
     unitIn: 'in',
-    ageChronological: 'Age chronologique',
+    ageChronological: 'Âge chronologique',
     ageCorrected: 'Age corrige',
     percentileLabel: 'Percentile',
     multipleSummary: '{count} mesures calculees',
@@ -369,8 +369,8 @@ const LOCALES = {
     moreHead: 'ont un périmètre crânien plus grand',
     sentenceTemplate: 'environ {lower} {group} sur 100 du même âge {less}, et {higher} {more}.',
     sentenceMiddlePrefix: 'Pile au milieu : ',
-    sentenceBelow: 'moins de 3 {group} sur 100 du même âge {less}.',
-    sentenceAbove: 'moins de 3 {group} sur 100 du même âge {more}.',
+    sentenceBelow: 'moins de 1 % des {group} du même âge {less}.',
+    sentenceAbove: 'moins de 1 % des {group} du même âge {more}.',
     rangeNote: 'Certains bébés en bonne santé se situent ici, et une seule mesure n’est qu’un instantané. Parlez-en à votre pédiatre, qui pourra suivre l’évolution avec vous.',
     percentileAria: '{ordinal} percentile',
     chartAria: 'Courbe de croissance : {metric}',
@@ -402,7 +402,7 @@ const LOCALES = {
     unitCm: 'cm',
     unitLb: 'lb',
     unitIn: 'in',
-    ageChronological: 'Idade cronologica',
+    ageChronological: 'Idade cronológica',
     ageCorrected: 'Idade corrigida',
     percentileLabel: 'Percentil',
     multipleSummary: '{count} medicoes calculadas',
@@ -443,8 +443,8 @@ const LOCALES = {
     moreHead: 'têm a cabeça maior',
     sentenceTemplate: 'cerca de {lower} em cada 100 {group} da mesma idade {less}, e {higher} {more}.',
     sentenceMiddlePrefix: 'Bem no meio: ',
-    sentenceBelow: 'menos de 3 em cada 100 {group} da mesma idade {less}.',
-    sentenceAbove: 'menos de 3 em cada 100 {group} da mesma idade {more}.',
+    sentenceBelow: 'menos de 1 em cada 100 {group} da mesma idade {less}.',
+    sentenceAbove: 'menos de 1 em cada 100 {group} da mesma idade {more}.',
     rangeNote: 'Alguns bebês saudáveis ficam nessa faixa, e uma única medição é só um retrato do momento. Converse com o pediatra, que pode acompanhar a evolução com você.',
     percentileAria: 'percentil {n}',
     chartAria: 'Gráfico de crescimento: {metric}',
@@ -1377,8 +1377,8 @@ function resultSentence(result, sex) {
   };
 
   const lower = displayedPercentile(result.percentile);
-  if (lower < 3) return capitalizeFirst(fill(copy.sentenceBelow, values));
-  if (lower > 97) return capitalizeFirst(fill(copy.sentenceAbove, values));
+  if (lower < 1) return capitalizeFirst(fill(copy.sentenceBelow, values));
+  if (lower > 99) return capitalizeFirst(fill(copy.sentenceAbove, values));
 
   const text = fill(copy.sentenceTemplate, { ...values, lower, higher: 100 - lower });
   return lower === 50 ? `${copy.sentenceMiddlePrefix}${text}` : capitalizeFirst(text);
