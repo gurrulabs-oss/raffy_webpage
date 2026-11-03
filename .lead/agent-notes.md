@@ -116,3 +116,5 @@ Facts learned while working. One line each. Newest at the bottom. Trim via a "Re
 - zsh does not word-split `$VAR` file lists in loops/args; list files literally or use `${=VAR}`.
 - `scripts/growth/check-range-level.mjs` self-checks the firm/soft thresholds of `rangeLevel` (T-035); run it with `same-outputs.mjs` when touching the calculator.
 - T-022 (2026-10-31): outreach plan lives in `docs/off-site-mentions.md`; WebFetch cannot open Reddit, and AlternativeTo/Product Hunt return 403 to bots (curl too): verify those in a browser.
+- T-038 (2026-11-03): WebFetch truncates Google Play pages; `curl -sL 'https://play.google.com/store/apps/details?id=<pkg>&hl=en&gl=US'` gives rating/reviews/downloads/"Contains ads". Raffy Play (2026-11-03): no rating, 50+ downloads.
+- Raffy app (per raffy-app Lead, 2026-11-03): no sleep predictions, NO diaper log, no export/import, no caregiver invite (sign-in syncs one account); logs bottle/breastfeeding, solids, sleep + reminders, growth (WHO), doctor, diary, milk bank. Never claim diaper tracking for Raffy.
