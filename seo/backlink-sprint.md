@@ -14,6 +14,8 @@ Acquire relevant links to hubs, tools, and companion guides without aggressive o
 - Pillar hubs: long-form roundup references.
 - Printable checklists: newsletter and community resource links.
 
+Current target list, templates per language and community rules: `docs/off-site-mentions.md`.
+
 ## Outreach Workflow (Weekly)
 1. Identify 25 prospects per locale.
 2. Match one relevant Raffy asset per prospect.
