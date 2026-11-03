@@ -1,8 +1,8 @@
 # Raffy - Short Overview
 
-Last updated: 2026-10-25
+Last updated: 2026-11-03
 
-Raffy is an Android baby-care app made by Gurru Labs. The website raffyparenting.com offers free parenting articles and browser-based tools in English, Spanish, French and Portuguese (Brazil). A longer reference is in [LLMS.md](https://www.raffyparenting.com/LLMS.md).
+Raffy is an Android baby-care app made by Gurru Labs. The website raffyparenting.com offers free parenting articles and browser-based tools in English, Spanish, French, Portuguese (Brazil), Italian and German. The app itself is available in English, Spanish, French and Portuguese (Brazil). A longer reference is in [LLMS.md](https://www.raffyparenting.com/LLMS.md).
 
 ## Facts
 
@@ -21,6 +21,8 @@ Raffy is an Android baby-care app made by Gurru Labs. The website raffyparenting
 | Español | [/es/](https://www.raffyparenting.com/es/) | [articulos](https://www.raffyparenting.com/es/articulos/) | [herramientas](https://www.raffyparenting.com/es/herramientas/) | [politica](https://www.raffyparenting.com/es/politica-editorial.html) |
 | Français | [/fr/](https://www.raffyparenting.com/fr/) | [articles](https://www.raffyparenting.com/fr/articles/) | [outils](https://www.raffyparenting.com/fr/outils/) | [politique](https://www.raffyparenting.com/fr/politique-editoriale.html) |
 | Português (Brasil) | [/pt/](https://www.raffyparenting.com/pt/) | [artigos](https://www.raffyparenting.com/pt/artigos/) | [ferramentas](https://www.raffyparenting.com/pt/ferramentas/) | [politica](https://www.raffyparenting.com/pt/politica-editorial.html) |
+| Italiano | [/it/](https://www.raffyparenting.com/it/) | [articoli](https://www.raffyparenting.com/it/articoli/) | [strumenti](https://www.raffyparenting.com/it/strumenti/) | [politica](https://www.raffyparenting.com/it/politica-editoriale.html) |
+| Deutsch | [/de/](https://www.raffyparenting.com/de/) | [ratgeber](https://www.raffyparenting.com/de/ratgeber/) | [tools](https://www.raffyparenting.com/de/tools/) | [richtlinien](https://www.raffyparenting.com/de/redaktionelle-richtlinien.html) |
 
 ## Free tools (English URLs; translated equivalents are linked from each hub)
 
