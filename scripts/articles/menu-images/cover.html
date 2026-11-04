@@ -1,0 +1,55 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Menu cover render</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,600&display=swap" rel="stylesheet">
+<style>
+/* render.mjs calls render(age, lang, mode): split = 1200x630 cover, card = 1200x750 photo only. Photos live in src/. */
+@font-face{font-family:"Fraunces FB";src:local("Georgia Bold"),local("Georgia-Bold");font-weight:100 900;size-adjust:90.12%}
+*{margin:0;box-sizing:border-box}[hidden]{display:none!important}
+html,body{width:1200px;height:630px;overflow:hidden;background:#f3ece3}
+body.card{height:750px}
+.wall{position:absolute;inset:-40px;background-repeat:no-repeat;background-size:2400px auto;background-position:-234px 40px;filter:blur(22px)}
+.photo{position:absolute;top:0;right:0;width:680px;height:630px;background-repeat:no-repeat;background-size:680px auto;
+ -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 150px);mask-image:linear-gradient(90deg,transparent 0,#000 150px)}
+.txt{position:absolute;left:64px;top:0;bottom:0;width:470px;display:flex;flex-direction:column;justify-content:center;gap:26px}
+.age{align-self:flex-start;font:800 19px/1 "Manrope",system-ui,sans-serif;letter-spacing:2px;text-transform:uppercase;color:#1d2f6f;background:rgba(255,255,255,.8);padding:11px 18px;border-radius:999px}
+h1{font-family:"Fraunces","Fraunces FB",Georgia,serif;font-weight:600;font-size:var(--fs,62px);line-height:1.06;letter-spacing:-.015em;color:#1d2f6f;text-wrap:balance}
+h1 em{font-style:normal;color:#2e6f5c}
+.brand{display:flex;align-items:center;gap:12px;font:700 20px/1 "Manrope",system-ui,sans-serif;color:rgba(29,47,111,.82)}
+.brand img{width:40px;height:40px;border-radius:10px;background:#fff;padding:4px}
+.too-long{outline:5px dashed #e5484d;outline-offset:6px}
+.full{position:absolute;inset:0;background-repeat:no-repeat;background-size:1200px auto}
+</style></head><body>
+<div class="wall" id="wall"></div><div class="photo" id="photo"></div><div class="full" id="full" hidden></div>
+<div class="txt" id="txt"><span class="age" id="age"></span><h1 id="h"></h1><span class="brand" id="brand"><img src="../../../assets/raffy-logo.png" alt="">raffyparenting.com</span></div>
+<script>
+// Headlines: en from the ticket Spec; es/fr/pt/it/de are Lead drafts (owner to confirm). <em> = green accent word.
+const H={
+6:{en:'First tastes, <em>one week</em> at a time',es:'Primeros sabores, <em>semana a semana</em>',fr:'Premières saveurs, <em>une semaine</em> à la fois',pt:'Primeiros sabores, <em>uma semana</em> de cada vez',it:'Primi sapori, <em>una settimana</em> alla volta',de:'Erste Breie, <em>Woche für Woche</em>'},
+7:{en:'A week of <em>first textures</em>',es:'Una semana de <em>primeras texturas</em>',fr:'Une semaine de <em>premières textures</em>',pt:'Uma semana de <em>primeiras texturas</em>',it:'Una settimana di <em>prime consistenze</em>',de:'Eine Woche <em>erste Stückchen</em>'},
+8:{en:'A week of <em>little meals</em>',es:'Una semana de <em>pequeñas comidas</em>',fr:'Une semaine de <em>petits repas</em>',pt:'Uma semana de <em>pequenas refeições</em>',it:'Una settimana di <em>piccoli pasti</em>',de:'Eine Woche <em>kleine Mahlzeiten</em>'},
+9:{en:'New textures, <em>one week</em> at a time',es:'Nuevas texturas, <em>semana a semana</em>',fr:'De nouvelles textures, <em>semaine après semaine</em>',pt:'Novas texturas, <em>semana a semana</em>',it:'Nuove consistenze, <em>settimana dopo settimana</em>',de:'Neue Konsistenzen, <em>Woche für Woche</em>'},
+10:{en:'Family food, <em>baby-sized</em>',es:'Comida de familia, <em>a su medida</em>',fr:'Le repas de famille, <em>à sa taille</em>',pt:'Comida da família, <em>do tamanho dele</em>',it:'Il cibo di casa, <em>a misura di bimbo</em>',de:'Familienessen <em>in Babygröße</em>'},
+11:{en:'Almost one: <em>a week of meals</em>',es:'Casi un año: <em>una semana de comidas</em>',fr:'Bientôt 1 an : <em>une semaine de repas</em>',pt:'Quase 1 ano: <em>uma semana de refeições</em>',it:'Quasi un anno: <em>una settimana di pasti</em>',de:'Fast ein Jahr: <em>eine Woche Essen</em>'},
+12:{en:'Big-kid meals, <em>made simple</em>',es:'Comer como los mayores, <em>sin complicarse</em>',fr:'Manger comme les grands, <em>tout simplement</em>',pt:'Comida de criança grande, <em>sem complicação</em>',it:'Pasti da grande, <em>senza complicazioni</em>',de:'Essen wie die Großen, <em>ganz einfach</em>'}};
+// Age chip: Lead proposal (7/8 m and 10/11/12 m photos look alike; the chip tells them apart in the library).
+const A={en:n=>n+' months · 7-day menu',es:n=>n+' meses · menú de 7 días',fr:n=>n+' mois · menu de 7 jours',pt:n=>n+' meses · cardápio de 7 dias',it:n=>n+' mesi · menù di 7 giorni',de:n=>n+' Monate · 7-Tage-Plan'};
+// Source-photo windows (1024x1536 px), top y per age: split = 950 px tall (faces + food), card = 640 px (16:10).
+const Y={6:{split:390,card:540},7:{split:430,card:580},8:{split:390,card:560},9:{split:380,card:600},10:{split:420,card:560},11:{split:400,card:540},12:{split:400,card:520}};
+window.render=async(age,lang,mode)=>{
+  const src=`src/cover_article_menu_${age}_months.png`;
+  await new Promise((ok,no)=>{const im=new Image();im.onload=ok;im.onerror=()=>no(new Error('missing '+src));im.src=src;});
+  document.documentElement.lang=lang; document.body.className=mode;
+  const u=`url(${src})`; wall.style.backgroundImage=u;
+  photo.hidden=mode!=='split'; full.hidden=mode==='split'; txt.hidden=mode==='card';
+  if(mode==='split'){photo.style.backgroundImage=u;photo.style.backgroundPositionY=-(Y[age].split*680/1024)+'px';}
+  else{full.style.backgroundImage=u;full.style.backgroundPositionY=-(Y[age].card*1200/1024)+'px';}
+  h.classList.remove('too-long'); h.style.removeProperty('--fs');
+  await Promise.all(['600 62px Fraunces','800 19px Manrope','700 20px Manrope'].map(f=>document.fonts.load(f,'Ag\u00e9')));
+  await document.fonts.ready;
+  if(mode==='card')return {tooLong:false};
+  h.innerHTML=H[age][lang]; document.getElementById('age').textContent=A[lang](age);
+  // Fit: headline max 4 lines, no word wider than the panel; shrink 62 -> 44 px, else flag it red.
+  const fits=()=>h.getBoundingClientRect().height<=4*1.06*parseFloat(getComputedStyle(h).fontSize)+2 && h.scrollWidth<=h.clientWidth && txt.scrollHeight<=630;
+  for(let fs=62;fs>=44;fs-=2){h.style.setProperty('--fs',fs+'px');if(fits())break;}
+  const tooLong=!fits(); if(tooLong)h.classList.add('too-long');
+  return {tooLong};};
+</script></body></html>
