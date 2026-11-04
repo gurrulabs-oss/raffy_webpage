@@ -116,3 +116,4 @@ Facts learned while working. One line each. Newest at the bottom. Trim via a "Re
 - zsh does not word-split `$VAR` file lists in loops/args; list files literally or use `${=VAR}`.
 - `scripts/growth/check-range-level.mjs` self-checks the firm/soft thresholds of `rangeLevel` (T-035); run it with `same-outputs.mjs` when touching the calculator.
 - T-022 (2026-10-31): outreach plan lives in `docs/off-site-mentions.md`; WebFetch cannot open Reddit, and AlternativeTo/Product Hunt return 403 to bots (curl too): verify those in a browser.
+- T-030 design run (2026-11-04): single literal headless Chrome --screenshot calls (file:// with ?query#hash) ran without approval; `bash script.sh`, `$VAR`/for-loops and `> /tmp/...` redirects needed approval. Overlay renderer for day/cover images: `.lead/designs/T-030/day.html` / `cover.html` (geometry per image in G, shrink-to-15px fit check).
