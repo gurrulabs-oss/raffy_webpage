@@ -169,6 +169,18 @@
       }
     },
     {
+      "id": "article_newborn_weight_loss",
+      "type": "article",
+      "routes": {
+        "en": "/en/articles/newborn-weight-loss-first-week.html",
+        "es": "/es/articulos/perdida-peso-recien-nacido-primera-semana.html",
+        "fr": "/fr/articles/perte-de-poids-nouveau-ne-premiere-semaine.html",
+        "pt": "/pt/artigos/perda-de-peso-recem-nascido-primeira-semana.html",
+        "it": "/it/articoli/calo-ponderale-neonato-prima-settimana.html",
+        "de": "/de/ratgeber/gewichtsverlust-neugeborenes-erste-woche.html"
+      }
+    },
+    {
       "id": "tool_growth_percentiles",
       "type": "tool",
       "routes": {
