@@ -34,14 +34,14 @@ jobs:
           REPO: ${{ github.repository }}
           SHA: ${{ github.sha }}
         run: |
-          for i in $(seq 1 30); do
+          for i in $(seq 1 90); do
             read -r commit status <<< "$(gh api "repos/$REPO/pages/builds/latest" --jq '.commit + " " + .status' || echo "- unknown")"
             echo "latest build: commit=$commit status=$status"
             if [ "$commit" = "$SHA" ] && [ "$status" = "built" ]; then exit 0; fi
             if [ "$commit" = "$SHA" ] && [ "$status" = "errored" ]; then echo "::error::Pages build errored"; exit 1; fi
             sleep 20
           done
-          echo "::error::Pages did not publish $SHA within 10 minutes; nothing sent. Re-run this job once the site is live."
+          echo "::error::Pages did not publish $SHA within 30 minutes; nothing sent. Re-run this job once the site is live."
           exit 1
 
       - name: Submit changed URLs to IndexNow
