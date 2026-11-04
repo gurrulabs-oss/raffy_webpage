@@ -107,6 +107,8 @@
 .article-wrap .article-card ul, .article-wrap .article-card ol { padding-left: 1.3em; }
 .article-wrap .article-cover { margin: var(--s4) 0; aspect-ratio: auto; }
 .article-wrap .article-cover img { max-height: 460px; }
+.article-cover.is-wide, .article-wrap .article-cover.is-wide { aspect-ratio: 40 / 21; }
+.article-wrap .article-cover.is-wide img { max-height: none; }
 .article-wrap .download-box { margin-top: var(--s6); padding: var(--s5); border-radius: var(--r-md); border: 1px solid var(--mint-300); background: var(--mint-50); }
 .article-wrap .download-box p { margin: 0 0 var(--s3); font-weight: 700; }
 .article-wrap .related-articles { margin-top: var(--s6); }
