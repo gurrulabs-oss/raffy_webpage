@@ -1322,3 +1322,8 @@ a.btn-play.on-blue, a.btn-play.on-blue:hover { color: var(--ink); }
 
 /* T-020: static explainer under the tools (reuses .prose, .faq, .sources) */
 .tool-explain .prose > h2:first-child { margin-top: 0; }
+
+/* Screenshot grid on product pages: 2 columns on phones, 4 on wider screens */
+.shots { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--s4); margin: var(--s5) 0; }
+.shots img { width: 100%; height: auto; border-radius: 12px; display: block; }
+@media (min-width: 720px) { .shots { grid-template-columns: repeat(4, 1fr); } }
