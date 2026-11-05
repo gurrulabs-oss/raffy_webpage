@@ -134,7 +134,8 @@ const TOOL_NAMES = {
   nap: "Nap Transition Helper",
   feeding: "Feeding Quantity Estimator",
   diaper: "Diaper Output Tracker",
-  solids: "Solids Progression Planner"
+  solids: "Solids Progression Planner",
+  weightloss: "Newborn Weight Loss Calculator"
 };
 
 function getUtmParams() {
@@ -186,7 +187,7 @@ function baseTrackingPayload(toolName) {
   };
 }
 
-function trackToolEvent(kind, suffix, properties) {
+export function trackToolEvent(kind, suffix, properties) {
   try {
     const toolName = TOOL_NAMES[kind];
     if (!toolName || !window.mixpanel || typeof window.mixpanel.track !== "function") return;

@@ -253,6 +253,18 @@
       }
     },
     {
+      "id": "tool_newborn_weight_loss",
+      "type": "tool",
+      "routes": {
+        "en": "/en/tools/newborn-weight-loss-calculator.html",
+        "es": "/es/herramientas/calculadora-perdida-peso-recien-nacido.html",
+        "fr": "/fr/outils/calculateur-perte-de-poids-nouveau-ne.html",
+        "pt": "/pt/ferramentas/calculadora-perda-de-peso-recem-nascido.html",
+        "it": "/it/strumenti/calcolatore-calo-ponderale-neonato.html",
+        "de": "/de/tools/gewichtsverlust-rechner-neugeborenes.html"
+      }
+    },
+    {
       "id": "tool_library",
       "type": "tool",
       "routes": {
