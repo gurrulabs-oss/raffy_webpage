@@ -38,6 +38,7 @@ Parents and caregivers of babies and young children, from the newborn stage thro
 - [Solids progression planner](https://www.raffyparenting.com/en/tools/solids-progression-planner.html)
 - [Feeding quantity estimator](https://www.raffyparenting.com/en/tools/feeding-quantity-estimator.html)
 - [Diaper output tracker](https://www.raffyparenting.com/en/tools/diaper-output-tracker.html)
+- [Newborn weight loss calculator](https://www.raffyparenting.com/en/tools/newborn-weight-loss-calculator.html)
 
 Tools hubs in other languages: [Español](https://www.raffyparenting.com/es/herramientas/), [Français](https://www.raffyparenting.com/fr/outils/), [Português (Brasil)](https://www.raffyparenting.com/pt/ferramentas/), [Italiano](https://www.raffyparenting.com/it/strumenti/), [Deutsch](https://www.raffyparenting.com/de/tools/).
 

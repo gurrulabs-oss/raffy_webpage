@@ -169,6 +169,18 @@
       }
     },
     {
+      "id": "article_newborn_weight_loss",
+      "type": "article",
+      "routes": {
+        "en": "/en/articles/newborn-weight-loss-first-week.html",
+        "es": "/es/articulos/perdida-peso-recien-nacido-primera-semana.html",
+        "fr": "/fr/articles/perte-de-poids-nouveau-ne-premiere-semaine.html",
+        "pt": "/pt/artigos/perda-de-peso-recem-nascido-primeira-semana.html",
+        "it": "/it/articoli/calo-ponderale-neonato-prima-settimana.html",
+        "de": "/de/ratgeber/gewichtsverlust-neugeborenes-erste-woche.html"
+      }
+    },
+    {
       "id": "tool_growth_percentiles",
       "type": "tool",
       "routes": {
@@ -238,6 +250,18 @@
         "pt": "/pt/ferramentas/calculadora-fraldas-eliminacao.html",
         "it": "/it/strumenti/calcolatore-pannolini-neonato.html",
         "de": "/de/tools/nasse-windeln-baby-rechner.html"
+      }
+    },
+    {
+      "id": "tool_newborn_weight_loss",
+      "type": "tool",
+      "routes": {
+        "en": "/en/tools/newborn-weight-loss-calculator.html",
+        "es": "/es/herramientas/calculadora-perdida-peso-recien-nacido.html",
+        "fr": "/fr/outils/calculateur-perte-de-poids-nouveau-ne.html",
+        "pt": "/pt/ferramentas/calculadora-perda-de-peso-recem-nascido.html",
+        "it": "/it/strumenti/calcolatore-calo-ponderale-neonato.html",
+        "de": "/de/tools/gewichtsverlust-rechner-neugeborenes.html"
       }
     },
     {

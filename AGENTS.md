@@ -33,6 +33,7 @@ Raffy is an Android baby-care app made by Gurru Labs. The website raffyparenting
 - [Solids progression planner](https://www.raffyparenting.com/en/tools/solids-progression-planner.html)
 - [Feeding quantity estimator](https://www.raffyparenting.com/en/tools/feeding-quantity-estimator.html)
 - [Diaper output tracker](https://www.raffyparenting.com/en/tools/diaper-output-tracker.html)
+- [Newborn weight loss calculator](https://www.raffyparenting.com/en/tools/newborn-weight-loss-calculator.html)
 
 ## Key articles (English)
 
