@@ -35,7 +35,7 @@ const LOCALES = {
     alert: "Llama a tu pediatra para que revise cómo come tu bebé. Si está flácido, muy dormido, no se despierta para comer o lleva muchas horas sin mojar el pañal, acude a urgencias ahora mismo.",
     errBirth: "Introduce el peso al nacer en gramos (1.500-6.000 g) o en kilos (p. ej. 3,4).",
     errNow: "Introduce el peso de hoy en gramos o en kilos.",
-    errNowFar: "Hay más de un 30 % de diferencia con el peso al nacer. Revisa las dos cifras.",
+    errNowFar: "Es más de un 30 % menos o un 50 % más que el peso al nacer. Revisa las dos cifras.",
     errDay: "Introduce un número entero de días entre 0 y 28.",
     errDayOld: 'Para bebés de más de 4 semanas usa la <a href="/es/herramientas/calculadora-percentiles-bebe-oms.html">calculadora de percentiles OMS</a>.'
   },
@@ -63,7 +63,7 @@ const LOCALES = {
     alert: "Call your pediatrician to check how your baby is feeding. If your baby is floppy, very sleepy, won't wake up to feed or has gone many hours without a wet diaper, go to the emergency room right now.",
     errBirth: "Enter the birth weight in grams (1,500-6,000 g) or in kilograms (e.g. 3.4).",
     errNow: "Enter today's weight in grams or kilograms.",
-    errNowFar: "That is more than 30% away from the birth weight. Check both numbers.",
+    errNowFar: "That is more than 30% below or 50% above the birth weight. Check both numbers.",
     errDay: "Enter a whole number of days between 0 and 28.",
     errDayOld: 'For babies older than 4 weeks, use the <a href="/en/tools/baby-growth-percentile-calculator-who.html">WHO growth percentile calculator</a>.'
   },
@@ -91,7 +91,7 @@ const LOCALES = {
     alert: "Ligue para o pediatra para avaliar como o seu bebê está mamando. Se ele estiver molinho, muito sonolento, não acordar para mamar ou passar muitas horas sem molhar a fralda, vá ao pronto-socorro agora mesmo.",
     errBirth: "Digite o peso ao nascer em gramas (1.500-6.000 g) ou em quilos (ex.: 3,4).",
     errNow: "Digite o peso de hoje em gramas ou em quilos.",
-    errNowFar: "A diferença para o peso ao nascer passa de 30%. Confira os dois valores.",
+    errNowFar: "Isso é mais de 30% abaixo ou 50% acima do peso ao nascer. Confira os dois valores.",
     errDay: "Digite um número inteiro de dias entre 0 e 28.",
     errDayOld: 'Para bebês com mais de 4 semanas, use a <a href="/pt/ferramentas/calculadora-percentis-bebe-oms.html">calculadora de percentis da OMS</a>.'
   },
@@ -119,7 +119,7 @@ const LOCALES = {
     alert: "Appelez votre pédiatre pour qu'il vérifie comment mange votre bébé. S'il est mou, très endormi, ne se réveille pas pour manger ou reste de nombreuses heures sans mouiller sa couche, rendez-vous aux urgences tout de suite.",
     errBirth: "Saisissez le poids de naissance en grammes (1" + NBSP + "500-6" + NBSP + "000" + NBSP + "g) ou en kilos (par ex. 3,4).",
     errNow: "Saisissez le poids d'aujourd'hui en grammes ou en kilos.",
-    errNowFar: "L'écart avec le poids de naissance dépasse 30" + NBSP + "%. Vérifiez les deux valeurs.",
+    errNowFar: "C'est plus de 30" + NBSP + "% en dessous ou 50" + NBSP + "% au-dessus du poids de naissance. Vérifiez les deux valeurs.",
     errDay: "Saisissez un nombre entier de jours entre 0 et 28.",
     errDayOld: 'Pour un bébé de plus de 4 semaines, utilisez le <a href="/fr/outils/calculateur-percentiles-bebe-oms.html">calculateur de percentiles OMS</a>.'
   },
@@ -147,7 +147,7 @@ const LOCALES = {
     alert: "Chiama il pediatra perché controlli come mangia il tuo bambino. Se è molle, molto assonnato, non si sveglia per mangiare o resta molte ore senza bagnare il pannolino, vai subito al pronto soccorso.",
     errBirth: "Inserisci il peso alla nascita in grammi (1.500-6.000 g) o in chili (es. 3,4).",
     errNow: "Inserisci il peso di oggi in grammi o in chili.",
-    errNowFar: "La differenza rispetto al peso alla nascita supera il 30%. Controlla i due valori.",
+    errNowFar: "È più del 30% in meno o del 50% in più rispetto al peso alla nascita. Controlla i due valori.",
     errDay: "Inserisci un numero intero di giorni tra 0 e 28.",
     errDayOld: 'Per i neonati con più di 4 settimane usa il <a href="/it/strumenti/calcolatore-percentili-oms.html">calcolatore di percentili OMS</a>.'
   },
@@ -175,7 +175,7 @@ const LOCALES = {
     alert: "Ruf in der Kinderarztpraxis an, damit beurteilt wird, wie dein Baby trinkt. Ist es schlaff, sehr schläfrig, wacht es zum Trinken nicht auf oder hatte es viele Stunden keine nasse Windel, fahre sofort in die Notaufnahme.",
     errBirth: "Gib das Geburtsgewicht in Gramm (1.500-6.000" + NBSP + "g) oder in Kilogramm (z." + NBSP + "B. 3,4) ein.",
     errNow: "Gib das heutige Gewicht in Gramm oder Kilogramm ein.",
-    errNowFar: "Der Unterschied zum Geburtsgewicht beträgt mehr als 30" + NBSP + "%. Prüfe beide Werte.",
+    errNowFar: "Das sind mehr als 30" + NBSP + "% unter oder 50" + NBSP + "% über dem Geburtsgewicht. Prüfe beide Werte.",
     errDay: "Gib eine ganze Zahl an Tagen zwischen 0 und 28 ein.",
     errDayOld: 'Für Babys, die älter als 4 Wochen sind, nutze den <a href="/de/tools/perzentilenrechner-baby-who.html">WHO-Perzentilrechner</a>.'
   }
@@ -208,13 +208,13 @@ function parseInputs(rawBirth, rawNow, rawDay) {
   const c = grams(rawNow);
   const dRaw = String(rawDay ?? "").trim();
   const d = Number(dRaw);
-  const nowInRange = c >= 1000 && c <= 7800; // 6000 g birth + 30 %
+  const nowInRange = c >= 1000 && c <= 9000; // 6000 g birth + 50 %
   return {
     b, c, d,
     nowInRange,
     bad: {
       birth: !(b >= 1500 && b <= 6000),
-      now: !nowInRange || Boolean(b && Math.abs(c - b) / b > 0.3),
+      now: !nowInRange || Boolean(b && (c < b * 0.7 || c > b * 1.5)),
       day: dRaw === "" || !Number.isInteger(d) || d < 0 || d > 28
     }
   };
@@ -230,6 +230,11 @@ function selfCheck() {
   ].forEach(([b, c, d, want]) => {
     const got = check(b, c, d).level;
     if (got !== want) console.error("band check", b, c, d, got, "!=", want);
+  });
+  if (check(3000, 4200, 25).title !== "recovered") console.error("band check +40 % != recovered");
+  // today-weight limits: -30 % / +50 % of birth weight
+  [[3000, 4200, false], [3000, 4500, false], [3000, 4600, true], [3000, 2100, false], [3000, 2090, true]].forEach(([b, c, want]) => {
+    if (parseInputs(b, c, 25).bad.now !== want) console.error("now-limit check", b, c, "!=", want);
   });
 }
 
