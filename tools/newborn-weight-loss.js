@@ -157,17 +157,17 @@ const LOCALES = {
     titles: { recovered: "Das Geburtsgewicht ist schon wieder erreicht", ok: "Im erwarteten Bereich", callToday: "Ruf heute noch in der Kinderarztpraxis an", call: "Ruf in der Kinderarztpraxis an", near: "Kann noch normal sein, liegt aber nahe an der Grenze von 10" + NBSP + "%" },
     lost: "verloren", gained: "zugenommen", same: "unverändert",
     less: "{g}" + NBSP + "g weniger als bei der Geburt", more: "{g}" + NBSP + "g mehr als bei der Geburt",
-    expected: "Typisch für {when}:",
+    expected: "{when}:",
     rows: [
-      ["Tag 0 (Geburt)", "das Geburtsgewicht wird notiert. Mit dieser Zahl wird jedes Gewicht verglichen, das du später notierst."],
-      ["Tag 1", "oft etwa 4-5" + NBSP + "% unter dem Geburtsgewicht am Ende des ersten Tages."],
-      ["Tag 2", "das Gewicht sinkt weiter, meist auf etwa 6-8" + NBSP + "% unter das Geburtsgewicht."],
-      ["Tag 3-4", "tiefster Punkt, meist etwa 5-9" + NBSP + "% unter dem Geburtsgewicht. Bis etwa 10" + NBSP + "% kann das noch normal sein."],
-      ["Tag 5", "die Abnahme hört meist auf und das Gewicht sollte wieder steigen."],
-      ["Tag 6-7", "stetige Zunahme. Viele Babys liegen noch etwas unter dem Geburtsgewicht, und das ist in Ordnung."],
-      ["Tag 8-10", "viele Babys sind nahe am Geburtsgewicht oder haben es schon wieder erreicht."],
-      ["Tag 10-14", "die meisten Babys haben ihr Geburtsgewicht wieder erreicht; Babys mit Flaschennahrung oft etwas früher."],
-      ["die Zeit nach Tag 14", "wenn dein Baby noch unter dem Geburtsgewicht liegt, sprich mit deiner Kinderarztpraxis."]
+      ["Tag 0 (Geburt)", "Das Geburtsgewicht wird notiert. Mit dieser Zahl wird jedes Gewicht verglichen, das du später notierst."],
+      ["Tag 1", "Oft etwa 4-5" + NBSP + "% unter dem Geburtsgewicht am Ende des ersten Tages."],
+      ["Tag 2", "Das Gewicht sinkt weiter, meist auf etwa 6-8" + NBSP + "% unter das Geburtsgewicht."],
+      ["Tag 3-4", "Tiefster Punkt, meist etwa 5-9" + NBSP + "% unter dem Geburtsgewicht. Bis etwa 10" + NBSP + "% kann das noch normal sein."],
+      ["Tag 5", "Die Abnahme hört meist auf und das Gewicht sollte wieder steigen."],
+      ["Tag 6-7", "Stetige Zunahme. Viele Babys liegen noch etwas unter dem Geburtsgewicht, und das ist in Ordnung."],
+      ["Tag 8-10", "Viele Babys sind nahe am Geburtsgewicht oder haben es schon wieder erreicht."],
+      ["Tag 10-14", "Die meisten Babys haben ihr Geburtsgewicht wieder erreicht; Babys mit Flaschennahrung oft etwas früher."],
+      ["Nach Tag 14", "Wenn dein Baby noch unter dem Geburtsgewicht liegt, sprich mit deiner Kinderarztpraxis."]
     ],
     tipLimit: "Für dein Baby sind 10" + NBSP + "% genau {ten}" + NBSP + "g: Liegt das Gewicht unter {limit}" + NBSP + "g, ruf in der Kinderarztpraxis an.",
     tipRise: "Ab Tag 5 sollte das Gewicht steigen: Wiegt dein Baby heute weniger als beim zuletzt notierten Gewicht, ruf in der Kinderarztpraxis an.",
@@ -208,7 +208,7 @@ function parseInputs(rawBirth, rawNow, rawDay) {
   const c = grams(rawNow);
   const dRaw = String(rawDay ?? "").trim();
   const d = Number(dRaw);
-  const nowInRange = c >= 1000 && c <= 7000;
+  const nowInRange = c >= 1000 && c <= 7800; // 6000 g birth + 30 %
   return {
     b, c, d,
     nowInRange,
