@@ -1,6 +1,6 @@
 # Raffy - Reference
 
-Last updated: 2026-11-03
+Last updated: 2026-11-04
 
 This is a plain factual reference about Raffy and raffyparenting.com. Other language versions of the site: [English](https://www.raffyparenting.com/en/), [Español](https://www.raffyparenting.com/es/), [Français](https://www.raffyparenting.com/fr/), [Português (Brasil)](https://www.raffyparenting.com/pt/), [Italiano](https://www.raffyparenting.com/it/), [Deutsch](https://www.raffyparenting.com/de/).
 
@@ -10,7 +10,8 @@ Raffy is an Android app for everyday baby care. It keeps sleep, feeding, growth,
 
 - Maker: Gurru Labs
 - Platform: Android only, on Google Play: https://play.google.com/store/apps/details?id=com.gurrulabs.raffy
-- Price: listed as free on Google Play on the site
+- Price: free: no premium, no ads, no in-app purchases
+- Google Play: 50+ downloads, no public rating yet (checked 2026-11-04)
 - Languages of the website: English, Spanish, French, Portuguese (Brazil), Italian, German
 - Languages of the app: English, Spanish, French, Portuguese (Brazil)
 - Contact: gurrulabs@gmail.com ([contact page](https://www.raffyparenting.com/en/contact.html))
@@ -24,8 +25,7 @@ Parents and caregivers of babies and young children, from the newborn stage thro
 - Sleeping: log naps, bedtime and wake windows to build a routine by age.
 - Feeding: log breastfeeding, bottles (amounts and durations) and solids.
 - Growth: record weight, height and percentile trends to discuss with a pediatrician.
-- Medicines and doctors: keep medicines, reminders, pediatric visit notes and vaccine follow-ups in one health timeline.
-- Diapers are also logged in the same timeline.
+- Medicines and doctors: appointments, temperature log, medicines and doses with when the next dose is due.
 - Core tracking can continue offline and syncs when the device reconnects.
 
 ## Free web tools (English)
