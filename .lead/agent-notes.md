@@ -126,3 +126,6 @@ Facts learned while working. One line each. Newest at the bottom. Trim via a "Re
 - `.menu-table` inside `.table-scroll` has `min-width:560px` (horizontal swipe on phones); 3-column tables with long words can't fit 356px anyway, so keep the pattern.
 - Workers set `data-page-key` from the slug, not the manifest id: set it in the brief (it feeds `utm_campaign`).
 - CDP screenshots of CSS edits: call `Network.enable` + `Network.setCacheDisabled`, else Chrome serves the old CSS from the python server.
+- Since T-034 round 2 (2026-11-05): 204 validated pages, 207 sitemap URLs. Weight-loss calculator = `tools/newborn-weight-loss.js` (`[data-wl-root]`, LOCALES × 6, locale from `<html lang>`, imports `trackToolEvent` from tool-cluster.js); article day-table rows must match its `rows` per locale.
+- `/tmp/t034-check.mjs <cdpPort> <url> [shot]` pattern (stub mixpanel via addScriptToEvaluateOnNewDocument, fill fields, `form.requestSubmit()`, read `[data-r-*]`) checks any `[data-wl-root]` page in ~4 s; worth recreating for tool QA.
+- Public `LLMS.md`/`AGENTS.md` still say the app logs diapers, but it doesn't (raffy-app Lead): keep diaper promises out of CTAs.
