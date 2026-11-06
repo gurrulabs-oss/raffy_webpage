@@ -145,30 +145,6 @@
       }
     },
     {
-      "id": "article_best_tracker_android",
-      "type": "article",
-      "routes": {
-        "en": "/en/articles/best-baby-tracker-apps-android.html",
-        "es": "/es/articulos/mejores-apps-seguimiento-bebe-android.html",
-        "fr": "/fr/articles/meilleures-applis-suivi-bebe-android.html",
-        "pt": "/pt/artigos/melhores-apps-acompanhamento-bebe-android.html",
-        "it": "/it/articoli/migliori-app-monitoraggio-neonato-android.html",
-        "de": "/de/ratgeber/beste-baby-tracker-apps-android.html"
-      }
-    },
-    {
-      "id": "article_huckleberry_alternatives",
-      "type": "article",
-      "routes": {
-        "en": "/en/articles/huckleberry-alternatives-android.html",
-        "es": "/es/articulos/alternativas-huckleberry-android.html",
-        "fr": "/fr/articles/alternatives-huckleberry-android.html",
-        "pt": "/pt/artigos/alternativas-huckleberry-android.html",
-        "it": "/it/articoli/alternative-huckleberry-android.html",
-        "de": "/de/ratgeber/huckleberry-alternativen-android.html"
-      }
-    },
-    {
       "id": "article_growth_percentiles",
       "type": "article",
       "routes": {

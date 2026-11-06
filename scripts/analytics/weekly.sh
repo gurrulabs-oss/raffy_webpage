@@ -10,6 +10,6 @@ npm run analytics:pull
 pull=$?
 echo "=== analytics:pull exit $pull"
 # Search queries are outside text: allow only the analytics scripts and writes to snapshots/tickets.
-claude -p "Use the analytics skill in weekly mode. The pull already ran (npm run analytics:pull exit code $pull). Also: if the dateModified of en/articles/best-baby-tracker-apps-android.html or en/articles/huckleberry-alternatives-android.html is more than 90 days old, file one refresh ticket for both (see docs/publishing.md#refresh-comparison-pages-quarterly), unless an open one exists." \
+claude -p "Use the analytics skill in weekly mode. The pull already ran (npm run analytics:pull exit code $pull)." \
   --allowedTools "Bash(npm run analytics:report)" Read Glob Grep Skill \
   "Write(./.lead/analytics/**)" "Edit(./.lead/analytics/**)" "Write(./.lead/tickets/**)" "Edit(./.lead/tickets/**)"
