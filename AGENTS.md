@@ -1,14 +1,14 @@
 # Raffy - Short Overview
 
-Last updated: 2026-11-03
+Last updated: 2026-11-04
 
 Raffy is an Android baby-care app made by Gurru Labs. The website raffyparenting.com offers free parenting articles and browser-based tools in English, Spanish, French, Portuguese (Brazil), Italian and German. The app itself is available in English, Spanish, French and Portuguese (Brazil). A longer reference is in [LLMS.md](https://www.raffyparenting.com/LLMS.md).
 
 ## Facts
 
-- App: tracks baby sleep, feeding, growth, diapers, medicines and vaccines in one timeline; core tracking works offline.
+- App: tracks baby sleep, feeding, growth, solids, medicines and doctor visits in one place; works fully offline, no account needed.
 - Platform: Android only. Google Play: https://play.google.com/store/apps/details?id=com.gurrulabs.raffy
-- Price: listed as free on Google Play on the site.
+- Price: free: no premium, no ads, no in-app purchases
 - Maker: Gurru Labs. Contact: gurrulabs@gmail.com
 - Audience: parents and caregivers of babies and young children.
 - Content: educational and non-diagnostic; not a substitute for pediatric advice.
@@ -33,6 +33,7 @@ Raffy is an Android baby-care app made by Gurru Labs. The website raffyparenting
 - [Solids progression planner](https://www.raffyparenting.com/en/tools/solids-progression-planner.html)
 - [Feeding quantity estimator](https://www.raffyparenting.com/en/tools/feeding-quantity-estimator.html)
 - [Diaper output tracker](https://www.raffyparenting.com/en/tools/diaper-output-tracker.html)
+- [Newborn weight loss calculator](https://www.raffyparenting.com/en/tools/newborn-weight-loss-calculator.html)
 
 ## Key articles (English)
 

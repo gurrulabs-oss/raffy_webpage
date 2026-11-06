@@ -1,0 +1,69 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Day image render 1024×1536</title><style>
+/* One day image as rendered by render.mjs, which calls render(data) through CDP. Photos live in src/. */
+*{margin:0;box-sizing:border-box}
+html,body{width:1024px;height:1536px;overflow:hidden}
+body{position:relative;background:0 0/1024px 1536px no-repeat;font-family:"Iowan Old Style",Palatino,Georgia,serif;color:#4a4038}
+.hd{position:absolute;left:0;right:0;text-align:center}
+.hd h1{font-size:80px;font-weight:400;color:#8a6a55;letter-spacing:.5px}.hd h1 span{color:#6f8a74}
+.hd p{font-size:30px;color:#7a6e64;margin-top:8px}.hd .k{color:#4a4038;margin-top:4px}
+.c{position:absolute;display:flex;flex-direction:column;overflow:hidden;font-size:calc(21px * var(--s,1));hyphens:auto}
+.c h2{font-size:1em;font-weight:600;letter-spacing:1.5px;color:#9a6e52;text-transform:uppercase;margin-bottom:.5em;line-height:1.2}
+.c p{line-height:1.3}
+.c b{font-weight:400;font-size:1.4em;margin:auto 0 .3em}
+.c small{font-size:.82em;line-height:1.45;color:#6b625a}
+.top .hd h1{font-size:64px}.top .hd p{font-size:27px;margin-top:2px}
+.top .c b{margin:.35em 0 .15em}
+.t{position:absolute;left:78px;right:78px;display:flex;align-items:center;gap:40px}
+.t h2{font-size:21px;font-weight:600;letter-spacing:2px;color:#9a6e52;text-transform:uppercase;width:180px;line-height:1.3}
+.t .kc{font-size:40px;white-space:nowrap}
+.t ul{list-style:none;font-size:22px;line-height:1.55;padding:0}
+.c.nofit{outline:4px dashed #e5484d;outline-offset:4px}
+#flag{position:absolute;left:0;right:0;bottom:0;background:#e5484d;color:#fff;font:700 24px/1.3 system-ui,sans-serif;padding:14px 24px}
+</style></head><body>
+<div class="hd" id="hd"><h1 id="h1"></h1><p id="sub"></p><p class="k" id="k"></p></div>
+<div id="cards"></div>
+<div class="t" id="t"></div>
+<div id="flag" hidden></div>
+<script>
+// Geometry: x, y, w, h of the empty text area of each card (measured on each delivered photo), plus header top and
+// totals card [top, bottom-offset] (the totals row is centred on the photo's totals card). cls 'top' = text above the food.
+const G={
+ monday:{cls:'',hd:70,boxes:[[66,362,190,392],[552,362,185,392],[66,840,180,392],[552,840,210,392]],t:[1318,62]},
+ tuesday:{cls:'top',hd:28,boxes:[[56,268,420,196],[554,268,420,196],[56,782,420,186],[554,782,420,186]],t:[1262,64]},
+ // photo left, text right: strip right of each bottle or bowl
+ wednesday:{cls:'',hd:76,boxes:[[262,352,234,424],[802,352,172,424],[330,820,166,420],[724,822,248,415]],t:[1315,93]},
+ thursday:{cls:'top',hd:40,boxes:[[62,272,430,190],[538,272,430,190],[62,790,430,170],[538,790,430,170]],t:[1300,98]},
+ // photo right, text left
+ friday:{cls:'',hd:50,boxes:[[32,312,252,368],[534,312,190,372],[32,718,200,362],[534,718,255,362]],t:[1150,160]},
+ // photo left half, text right half
+ saturday:{cls:'',hd:70,boxes:[[274,326,222,418],[762,326,226,418],[274,786,222,404],[762,786,226,404]],t:[1290,126]},
+ sunday:{cls:'top',hd:24,boxes:[[34,244,458,162],[534,244,458,230],[34,778,458,222],[534,778,458,218]],t:[1330,96]}};
+// Per locale: day names, title template, subtitle, macro names, "Daily totals" label (kept from the approved design).
+const L={
+en:{d:{monday:'Monday',tuesday:'Tuesday',wednesday:'Wednesday',thursday:'Thursday',friday:'Friday',saturday:'Saturday',sunday:'Sunday'},h:d=>`${d} <span>Menu</span>`,s:'— for a 6-month-old baby —',m:['Carbs','Protein','Fat'],tt:'Daily totals'},
+es:{d:{monday:'lunes',tuesday:'martes',wednesday:'miércoles',thursday:'jueves',friday:'viernes',saturday:'sábado',sunday:'domingo'},h:d=>`Menú del <span>${d}</span>`,s:'— para un bebé de 6 meses —',m:['Carbohidratos','Proteínas','Grasas'],tt:'Totales del día'},
+fr:{d:{monday:'lundi',tuesday:'mardi',wednesday:'mercredi',thursday:'jeudi',friday:'vendredi',saturday:'samedi',sunday:'dimanche'},h:d=>`Menu du <span>${d}</span>`,s:'— pour un bébé de 6 mois —',m:['Glucides','Protéines','Lipides'],tt:'Totaux de la journée'},
+pt:{d:{monday:'segunda',tuesday:'terça',wednesday:'quarta',thursday:'quinta',friday:'sexta',saturday:'sábado',sunday:'domingo'},h:d=>`Cardápio de <span>${d}</span>`,s:'— para um bebê de 6 meses —',m:['Carboidratos','Proteínas','Gorduras'],tt:'Totais do dia'},
+it:{d:{monday:'lunedì',tuesday:'martedì',wednesday:'mercoledì',thursday:'giovedì',friday:'venerdì',saturday:'sabato',sunday:'domenica'},h:d=>`Menù di <span>${d}</span>`,s:'— per un bambino di 6 mesi —',m:['Carboidrati','Proteine','Grassi'],tt:'Totali giornalieri'},
+de:{d:{monday:'Montag',tuesday:'Dienstag',wednesday:'Mittwoch',thursday:'Donnerstag',friday:'Freitag',saturday:'Samstag',sunday:'Sonntag'},h:d=>`Speiseplan <span>${d}</span>`,s:'— für ein Baby mit 6 Monaten —',m:['Kohlenhydrate','Eiweiß','Fett'],tt:'Tagesgesamt'}};
+// render.mjs calls render(data); data comes from the locale's 6-month page:
+// {lang, day, kcal, meals:[{label,text,kcal,macros:[c,p,f]}], tot:['Carbs 81 g (50%)',...]}. Returns {bad:[labels that do not fit]}.
+const keep=s=>s.replace(/ (?=(g|ml)\b)/g,' ').replace(/ × /g,' × ').replace(/ :/g,' :'); // never split "60 g" or "4 × 150"
+window.render=async data=>{
+const {lang,day}=data, g=G[day], d=L[lang];
+document.documentElement.lang=lang;
+const bg=`src/menu_6_months_${day}.png`;
+await new Promise((ok,no)=>{const im=new Image();im.onload=ok;im.onerror=()=>no(new Error('missing '+bg));im.src=bg;});
+document.body.style.backgroundImage=`url(${bg})`; document.body.className=g.cls;
+await document.fonts.ready;
+hd.style.top=g.hd+'px'; h1.innerHTML=d.h(d.d[day]); sub.textContent=d.s; k.textContent='~'+data.kcal+' kcal';
+const stacked=g.cls!=='top';
+cards.innerHTML=g.boxes.map(([x,y,w,h],i)=>{const m=data.meals[i];return `<div class="c" style="left:${x}px;top:${y}px;width:${w}px;height:${h}px"><h2>${m.label}</h2><p>${keep(m.text)}</p><b>~${m.kcal} kcal</b><small>${m.macros.map((v,j)=>d.m[j]+' '+v+' g').join(stacked?'<br>':' · ')}</small></div>`;}).join('');
+t.style.top=g.t[0]+'px'; t.style.bottom=g.t[1]+'px';
+t.innerHTML=`<h2>${d.tt}</h2><div class="kc">~${data.kcal} kcal</div><ul>${data.tot.map(v=>`<li>${v}</li>`).join('')}</ul>`;
+// Fit rule: shrink a card's text down to 15 px (from 21); if it still overflows, mark it and send the image back.
+const bad=[]; flag.hidden=true;
+document.querySelectorAll('.c').forEach((c,i)=>{for(let s=1;s>=15/21;s-=.02){c.style.setProperty('--s',s);if(c.scrollHeight<=c.clientHeight&&c.scrollWidth<=c.clientWidth)return;}c.classList.add('nofit');bad.push(data.meals[i].label);});
+if(bad.length){flag.hidden=false;flag.textContent='No cabe ni a 15 px: '+bad.join(', ')+' → esta imagen vuelve a Unai para regenerarla con más hueco';}
+return {bad};};
+</script></body></html>
