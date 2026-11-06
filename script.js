@@ -104,7 +104,9 @@ const ROUTE_MAP = {
     en: "/en/privacy.html",
     es: "/es/privacidad.html",
     fr: "/fr/confidentialite.html",
-    pt: "/pt/privacidade.html"
+    pt: "/pt/privacidade.html",
+    it: "/it/privacy.html",
+    de: "/de/datenschutz.html"
   },
   data_deletion: {
     en: "/en/data-deletion.html",
@@ -571,8 +573,94 @@ document.addEventListener("click", (event) => {
   if (link) trackPlannerLinkClick(link);
 });
 
-initMixpanel();
-trackPageView();
+// Analytics consent (GDPR/ePrivacy): Mixpanel stores an id on the device, so it only starts after "Accept".
+// The choice itself is strictly necessary storage. A footer "Cookies" link reopens the banner to change it.
+const CONSENT_KEY = "raffy_analytics_consent";
+const CONSENT_COPY = {
+  en: { text: "We use cookies to see which parts of the site are useful. They only turn on if you accept.", accept: "Accept", reject: "Reject", more: "Privacy policy", link: "Cookies" },
+  es: { text: "Usamos cookies para saber qué partes de la web son útiles. Solo se activan si aceptas.", accept: "Aceptar", reject: "Rechazar", more: "Política de privacidad", link: "Cookies" },
+  fr: { text: "Nous utilisons des cookies pour savoir quelles parties du site sont utiles. Ils ne s’activent que si vous acceptez.", accept: "Accepter", reject: "Refuser", more: "Politique de confidentialité", link: "Cookies" },
+  pt: { text: "Usamos cookies para saber quais partes do site são úteis. Eles só são ativados se você aceitar.", accept: "Aceitar", reject: "Recusar", more: "Política de privacidade", link: "Cookies" },
+  it: { text: "Usiamo i cookie per capire quali parti del sito sono utili. Si attivano solo se accetti.", accept: "Accetta", reject: "Rifiuta", more: "Privacy", link: "Cookie" },
+  de: { text: "Wir nutzen Cookies, um zu sehen, welche Teile der Website nützlich sind. Sie werden nur aktiviert, wenn du zustimmst.", accept: "Akzeptieren", reject: "Ablehnen", more: "Datenschutz", link: "Cookies" }
+};
+
+function getConsent() {
+  try {
+    return localStorage.getItem(CONSENT_KEY);
+  } catch (error) {
+    return null;
+  }
+}
+
+function setConsent(value) {
+  const previous = getConsent();
+  try {
+    localStorage.setItem(CONSENT_KEY, value);
+  } catch (error) {
+    // Ignore storage restrictions; the choice then only lasts for this page.
+  }
+  if (value === "granted" && previous !== "granted") {
+    initMixpanel();
+    trackPageView();
+  } else if (value === "denied" && previous === "granted") {
+    // Withdrawal: drop Mixpanel's stored id and reload so the library is no longer running.
+    try {
+      Object.keys(localStorage).filter((key) => key.startsWith("mp_")).forEach((key) => localStorage.removeItem(key));
+    } catch (error) {
+      // Ignore storage restrictions.
+    }
+    window.location.reload();
+  }
+}
+
+function showConsentBanner() {
+  if (document.querySelector(".consent-banner")) return;
+  const locale = CONSENT_COPY[body?.dataset.locale] ? body.dataset.locale : "en";
+  const copy = CONSENT_COPY[locale];
+  const privacyHref = `${getBasePrefix()}${ROUTE_MAP.privacy[locale]}`;
+  const banner = document.createElement("div");
+  banner.className = "consent-banner";
+  banner.setAttribute("role", "dialog");
+  banner.setAttribute("aria-label", copy.link);
+  banner.innerHTML = `<p>${copy.text} <a href="${privacyHref}">${copy.more}</a></p>`
+    + `<div class="consent-actions"><button type="button" class="btn btn-sm btn-secondary" data-consent="denied">${copy.reject}</button>`
+    + `<button type="button" class="btn btn-sm btn-secondary" data-consent="granted">${copy.accept}</button></div>`;
+  banner.addEventListener("click", (event) => {
+    const button = event.target instanceof Element && event.target.closest("[data-consent]");
+    if (!button) return;
+    banner.remove();
+    body.classList.remove("consent-open");
+    setConsent(button.dataset.consent);
+  });
+  document.body.appendChild(banner);
+  body.classList.add("consent-open");
+}
+
+function initConsent() {
+  const locale = CONSENT_COPY[body?.dataset.locale] ? body.dataset.locale : "en";
+  const footerLinks = document.querySelector(".footer-links");
+  if (footerLinks) {
+    const link = document.createElement("a");
+    link.href = "#";
+    link.textContent = CONSENT_COPY[locale].link;
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      showConsentBanner();
+    });
+    footerLinks.appendChild(link);
+  }
+
+  const consent = getConsent();
+  if (consent === "granted") {
+    initMixpanel();
+    trackPageView();
+  } else if (consent !== "denied") {
+    showConsentBanner();
+  }
+}
+
+initConsent();
 
 function getBasePrefix() {
   const segments = window.location.pathname.split("/").filter(Boolean);
@@ -878,6 +966,8 @@ function initStickyCta() {
     const visible = mobileQuery.matches && !isDismissed() && !suppressed
       && (requested || (wantsScroll(bar) && scrolledPast));
     bar.classList.toggle("is-visible", visible);
+    // The consent banner (styles.css) sits above the bar, whose height depends on its text.
+    if (visible) body.style.setProperty("--sticky-h", `${bar.offsetHeight}px`);
   }
 
   function onScroll() {

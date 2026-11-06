@@ -1333,3 +1333,25 @@ a.btn-play.on-blue, a.btn-play.on-blue:hover { color: var(--ink); }
 .shots { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--s4); margin: var(--s5) 0; }
 .shots img { width: 100%; height: auto; border-radius: 12px; display: block; }
 @media (min-width: 720px) { .shots { grid-template-columns: repeat(4, 1fr); } }
+
+/* ---------- Analytics consent banner (script.js initConsent; design .lead/designs/T-050) ---------- */
+.consent-banner {
+  position: fixed; left: var(--s4); right: var(--s4); bottom: var(--s4); z-index: 50; max-width: 760px; margin-inline: auto;
+  display: flex; flex-wrap: wrap; align-items: center; gap: var(--s3) var(--s4); padding: var(--s4) var(--s5);
+  background: var(--surface); color: var(--ink); border: 1px solid var(--line); border-radius: var(--r-md); box-shadow: var(--shadow-2);
+}
+.consent-banner p { flex: 1 1 320px; margin: 0; font-size: .9375rem; line-height: 1.5; color: var(--ink-2); }
+.consent-banner a { color: var(--mint-700); font-weight: 700; }
+.consent-actions { display: flex; gap: var(--s2); }
+.consent-actions .btn { min-width: 116px; }
+/* While the banner is open, the footer and last CTA can still scroll above it */
+body.consent-open { padding-bottom: 120px; }
+@media (max-width: 720px) {
+  body.consent-open { padding-bottom: 200px; }
+  .consent-banner { left: var(--s2); right: var(--s2); bottom: var(--s2); padding: var(--s4); }
+  .consent-banner p { flex-basis: 100%; }
+  .consent-actions { flex: 1 1 100%; }
+  .consent-actions .btn { flex: 1; min-width: 0; }
+  /* With the mobile app bar showing, the banner sits right above it */
+  body:has(.sticky-cta.is-visible) .consent-banner { bottom: calc(var(--sticky-h, 76px) + var(--s2)); }
+}
