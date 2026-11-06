@@ -29,11 +29,3 @@ Manual (reruns, full resubmits):
 
 The key file `<key>.txt` at the repo root must stay published (not in `_config.yml` exclude). 200/202 = accepted;
 anything else exits 1.
-
-## Refresh comparison pages (quarterly)
-
-App comparison pages (manifest ids `article_best_tracker_android`, `article_huckleberry_alternatives`) quote competitor
-prices, ratings, platforms and languages with a check date. Re-check them at least every 90 days: re-read each source
-(Play pages via `curl -sL '…details?id=<pkg>&hl=en&gl=US'`; WebFetch truncates them), update facts, check dates and
-screenshots in all 6 locales, and bump `dateModified`. The weekly run files a refresh ticket when the EN page's
-`dateModified` is more than 90 days old.

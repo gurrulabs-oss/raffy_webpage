@@ -1323,12 +1323,6 @@ a.btn-play.on-blue, a.btn-play.on-blue:hover { color: var(--ink); }
 /* T-020: static explainer under the tools (reuses .prose, .faq, .sources) */
 .tool-explain .prose > h2:first-child { margin-top: 0; }
 
-/* T-038: app store screenshot beside an app's section in comparison articles */
-.prose .app-entry, .prose .huck-intro { display: flow-root; }
-.prose .app-shot { float: right; width: 150px; margin: var(--s1) 0 var(--s4) var(--s5); }
-.prose .app-shot img { display: block; width: 100%; height: auto; border-radius: var(--r-sm); border: 1px solid var(--line); }
-.prose .app-shot figcaption { font-size: var(--fs-xs); color: var(--ink-3); margin-top: 6px; line-height: 1.4; }
-@media (max-width: 600px) { .prose .app-shot { width: 108px; margin-left: var(--s4); } }
 /* Screenshot grid on product pages: 2 columns on phones, 4 on wider screens */
 .shots { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--s4); margin: var(--s5) 0; }
 .shots img { width: 100%; height: auto; border-radius: 12px; display: block; }
