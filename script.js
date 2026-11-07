@@ -625,7 +625,7 @@ function showConsentBanner() {
   banner.setAttribute("aria-label", copy.link);
   banner.innerHTML = `<p>${copy.text} <a href="${privacyHref}">${copy.more}</a></p>`
     + `<div class="consent-actions"><button type="button" class="btn btn-sm btn-secondary" data-consent="denied">${copy.reject}</button>`
-    + `<button type="button" class="btn btn-sm btn-secondary" data-consent="granted">${copy.accept}</button></div>`;
+    + `<button type="button" class="btn btn-sm" data-consent="granted">${copy.accept}</button></div>`;
   banner.addEventListener("click", (event) => {
     const button = event.target instanceof Element && event.target.closest("[data-consent]");
     if (!button) return;
