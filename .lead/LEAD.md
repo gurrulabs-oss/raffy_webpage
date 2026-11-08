@@ -34,7 +34,7 @@ execution, since a worker pays a whole second context.
    `agent: lead` you do yourself). Give each a self-contained
    brief; workers do not see the ticket or chat. Run independent subtasks in parallel.
 3. Verify: use the `verify` skill, review the diff against every acceptance criterion.
-   For M/L tickets also spawn `reviewer`. Send fixes back to workers. Max 3 rounds.
+   Spawn `reviewer` only when "Spending" in the owner's section calls for one. Send fixes back to workers. Max 3 rounds.
 4. Commit on the branch with a clear message.
 5. Write the **Summary** section: what changed, what was verified (with command output excerpts),
    what was NOT verified, follow-ups.
