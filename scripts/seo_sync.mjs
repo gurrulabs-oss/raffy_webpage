@@ -127,7 +127,7 @@ for (const page of manifest.pages) {
     html = updateCanonical(html, `${siteOrigin}${route}`);
     html = updateAlternates(html, buildAlternates(page.routes, config, siteOrigin));
     html = updateMetaContent(html, "property", "og:url", `${siteOrigin}${route}`);
-    html = updateRobots(html, config.indexable ? "index,follow" : "noindex,follow");
+    html = updateRobots(html, config.indexable ? "index,follow,max-image-preview:large" : "noindex,follow");
     html = html.replace(/href="#screens"/g, 'href="#features"');
     html = rewriteJsonLdPublisher(html, page.type);
 
