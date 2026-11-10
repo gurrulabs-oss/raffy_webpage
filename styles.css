@@ -1376,4 +1376,4 @@ a.chip{text-decoration:none}
 .topic .menu-block .a-thumb{flex:0 0 38%;aspect-ratio:auto}
 .topic .menu-block .a-body p{-webkit-line-clamp:3}
 .topic .menu-ages .chip{min-height:32px;padding:4px 10px;font-size:.8rem}
-@media(max-width:700px){.topic .a-card{flex-basis:72%}.topic .menu-block{flex:0 0 88%;flex-direction:column}.topic .menu-block .a-thumb{aspect-ratio:16/9}}
+@media(max-width:700px){.topic .a-card{flex-basis:72%}.topic .menu-block{flex:0 0 88%;flex-direction:column}.topic .menu-block .a-thumb{aspect-ratio:16/9;flex:none}}
