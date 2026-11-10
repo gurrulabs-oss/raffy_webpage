@@ -57,3 +57,5 @@ Learned gotchas, terse. Trim via a "Refresh knowledge" ticket.
 - zsh: never name a loop variable `path`; `$VAR` lists don't word-split (`${=VAR}`).
 - Full-page CDP captures (`captureBeyondViewport`) leave `loading=lazy` images blank: set `img.loading='eager'` first (the scroll-triggered CTA phone mockup stays empty).
 - `#fragment` URLs don't scroll before a headless capture, and styles.css smooth scroll cuts captures short: scroll with `window.scrollTo({…, behavior:'instant'})` or an iframe with negative `margin-top`.
+- Hide the consent banner in captures: seed `localStorage.raffy_analytics_consent='denied'` in `addScriptToEvaluateOnNewDocument`.
+- Articles hubs (T-047): `section.topic` horizontal rows + one `.menu-block` card with 7 age links; new articles go in their topic row, menus as an age link. Robots for indexable pages = `index,follow,max-image-preview:large` (seo_sync).
