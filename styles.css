@@ -1355,3 +1355,25 @@ body.consent-open { padding-bottom: 120px; }
   /* With the mobile app bar showing, the banner sits right above it */
   body:has(.sticky-cta.is-visible) .consent-banner { bottom: calc(var(--sticky-h, 76px) + var(--s2)); }
 }
+
+/* Articles hub: topic sections with horizontal rows */
+a.chip{text-decoration:none}
+.topic{scroll-margin-top:90px;margin-top:56px}
+.menu-block{grid-column:1/-1;flex-direction:row}
+.menu-block .a-thumb{flex:0 0 42%;aspect-ratio:auto}
+.menu-ages{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+@media(max-width:700px){.menu-block{flex-direction:column}.menu-block .a-thumb{aspect-ratio:16/9}}
+/* owner request: one horizontal row per section, smaller cards */
+.topic .article-grid{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 14px;scroll-padding-left:2px}
+.topic .a-card{flex:0 0 250px;scroll-snap-align:start}
+.topic .a-card.featured{flex-direction:column}
+.topic .a-card .a-thumb,.topic .a-card.featured .a-thumb:not(.is-shot){aspect-ratio:16/9;min-height:0;flex:none}
+.topic .a-card .a-thumb.fallback svg{width:40px;height:40px}
+.topic .a-body,.topic .a-card.featured .a-body{padding:14px;gap:6px}
+.topic .a-body h3{font-size:.95rem}
+.topic .a-body p{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:.85rem}
+.topic .menu-block{flex:0 0 520px;flex-direction:row}
+.topic .menu-block .a-thumb{flex:0 0 38%;aspect-ratio:auto}
+.topic .menu-block .a-body p{-webkit-line-clamp:3}
+.topic .menu-ages .chip{min-height:32px;padding:4px 10px;font-size:.8rem}
+@media(max-width:700px){.topic .a-card{flex-basis:72%}.topic .menu-block{flex:0 0 88%;flex-direction:column}.topic .menu-block .a-thumb{aspect-ratio:16/9}}

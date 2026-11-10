@@ -124,19 +124,13 @@
     </header>
 
     <div class="container library">
-      <div class="section-head">
-        <h2>All available articles</h2>
-        <p>A clear library of actionable articles for modern parents.</p>
-      </div>
-
-      <div class="chips" role="group" aria-label="Filter by topic" data-filter>
-        <button class="chip" type="button" aria-pressed="true" data-filter-value="all">All · 10</button>
-        <button class="chip" type="button" aria-pressed="false" data-filter-value="sleep">Sleep</button>
-        <button class="chip" type="button" aria-pressed="false" data-filter-value="feeding">Feeding</button>
-        <button class="chip" type="button" aria-pressed="false" data-filter-value="growth">Growth & development</button>
-        <button class="chip" type="button" aria-pressed="false" data-filter-value="health">Health</button>
-        <button class="chip" type="button" aria-pressed="false" data-filter-value="family">Family & app</button>
-      </div>
+      <nav class="chips" aria-label="Jump to topic">
+        <a class="chip" href="#feeding">Feeding</a>
+        <a class="chip" href="#sleep">Sleep &amp; routines</a>
+        <a class="chip" href="#growth">Growth &amp; development</a>
+        <a class="chip" href="#health">Health</a>
+        <a class="chip" href="#family">Family &amp; apps</a>
+      </nav>
 
       <div class="appx compact">
         <img src="../../assets/raffy-logo.png" alt="" width="44" height="44" decoding="async" loading="lazy">
@@ -144,56 +138,55 @@
         <a class="btn-play sm" href="https://play.google.com/store/apps/details?id=com.gurrulabs.raffy" data-track-download="true" data-page-type="library" data-cta-location="library-banner"><i class="gp-logo" aria-hidden="true"></i>Get the app</a>
       </div>
 
-      <div class="article-grid">
-          <article class="card a-card featured" data-topic="growth">
-            <div class="a-thumb"><img decoding="async" loading="lazy" src="../../articles/images/hitos-desarrollo-4-6.webp" alt="Your baby's first year article cover"></div>
-            <div class="a-body"><span class="tag">Development</span><h3>Your Baby's First Year: The Year That Changes You Forever</h3><p>A warm, trimester-by-trimester guide to support your baby's development without pressure.</p><div class="a-meta"><span>4 min read</span><a href="first-year-baby-milestones-guide.html" class="article-link">Read article</a></div></div>
-          </article>
-          <article class="card a-card" data-topic="feeding">
-            <div class="a-thumb"><img decoding="async" loading="lazy" src="../../articles/menu_9_months/card_menu_9_months.webp" alt="Cover of the 7-day menu for a 9-month-old baby"></div>
-            <div class="a-body"><span class="tag peach">9-Month Menu</span><h3>9-Month-Old Baby Weekly Menu: Complete 7-Day Meal Plan</h3><p>A practical 7-day menu for babies at 9 months with meal ideas, daily calories, and texture safety notes.</p><div class="a-meta"><span>12 min read</span><a href="weekly-menu-9-month-old-baby.html" class="article-link">Read article</a></div></div>
-          </article>
-          <article class="card a-card" data-topic="feeding">
+      <section class="topic" id="feeding">
+        <div class="section-head"><h2>Feeding</h2><p>From first purees to family meals.</p></div>
+        <div class="article-grid">
+          <article class="card a-card menu-block" data-topic="feeding">
             <div class="a-thumb"><img decoding="async" loading="lazy" src="../../articles/menu_6_months/card_menu_6_months.webp" alt="Parent feeding a 6-month-old baby a smooth puree — 7-day menu for 6 months"></div>
-            <div class="a-body"><span class="tag peach">6-Month Menu</span><h3>6-Month-Old Baby Weekly Menu: 7-Day Meal Plan</h3><p>6-month-old baby weekly menu: a 7-day plan for starting solids with first purees, iron-rich foods, milk amounts, calories and safety tips.</p><div class="a-meta"><span>11 min read</span><a href="weekly-menu-6-month-old-baby.html" class="article-link">Read article</a></div></div>
-          </article>
-          <article class="card a-card" data-topic="feeding">
-            <div class="a-thumb"><img decoding="async" loading="lazy" src="../../articles/menu_7_months/card_menu_7_months.webp" alt="Cover of the 7-day menu for a 7-month-old baby"></div>
-            <div class="a-body"><span class="tag peach">7-Month Menu</span><h3>7-Month-Old Baby Weekly Menu: 7-Day Meal Plan</h3><p>7-month-old baby weekly menu: a 7-day meal plan with 3 meals, mashed textures, iron-rich foods, milk amounts, calories and safety tips.</p><div class="a-meta"><span>11 min read</span><a href="weekly-menu-7-month-old-baby.html" class="article-link">Read article</a></div></div>
-          </article>
-          <article class="card a-card" data-topic="feeding">
-            <div class="a-thumb"><img decoding="async" loading="lazy" src="../../articles/menu_8_months/card_menu_8_months.webp" alt="Cover of the 7-day menu for an 8-month-old baby"></div>
-            <div class="a-body"><span class="tag peach">8-Month Menu</span><h3>8-Month-Old Baby Weekly Menu: 7-Day Meal Plan</h3><p>8-month-old baby weekly menu: a 7-day meal plan with 3 meals and a snack, finger foods, milk amounts, calories and safety tips.</p><div class="a-meta"><span>12 min read</span><a href="weekly-menu-8-month-old-baby.html" class="article-link">Read article</a></div></div>
-          </article>
-          <article class="card a-card" data-topic="feeding">
-            <div class="a-thumb"><img decoding="async" loading="lazy" src="../../articles/menu_10_months/card_menu_10_months.webp" alt="Cover of the 7-day menu for a 10-month-old baby"></div>
-            <div class="a-body"><span class="tag peach">10-Month Menu</span><h3>10-Month-Old Baby Weekly Menu: 7-Day Meal Plan</h3><p>10-month-old baby weekly menu: 7 days of meals with grams, calories and macros, finger foods, safety tips and what changes at 11 months.</p><div class="a-meta"><span>12 min read</span><a href="weekly-menu-10-month-old-baby.html" class="article-link">Read article</a></div></div>
-          </article>
-          <article class="card a-card" data-topic="feeding">
-            <div class="a-thumb"><img decoding="async" loading="lazy" src="../../articles/menu_11_months/card_menu_11_months.webp" alt="Cover of the 7-day menu for an 11-month-old baby"></div>
-            <div class="a-body"><span class="tag peach">11-Month Menu</span><h3>11-Month-Old Baby Weekly Menu: 7-Day Meal Plan</h3><p>11-month-old baby weekly menu: 7 days of meals with grams, calories and macros, chopped family foods, safety tips and what changes at 12 months.</p><div class="a-meta"><span>12 min read</span><a href="weekly-menu-11-month-old-baby.html" class="article-link">Read article</a></div></div>
-          </article>
-          <article class="card a-card" data-topic="feeding">
-            <div class="a-thumb"><img decoding="async" loading="lazy" src="../../articles/menu_12_months/card_menu_12_months.webp" alt="Cover of the 7-day menu for a 12-month-old baby"></div>
-            <div class="a-body"><span class="tag peach">12-Month Menu</span><h3>12-Month-Old Baby Weekly Menu: 7-Day Meal Plan</h3><p>12-month-old baby weekly menu: 7 days of family-style meals with grams, calories and macros, whole milk and safety tips, plus a free planner.</p><div class="a-meta"><span>13 min read</span><a href="weekly-menu-12-month-old-baby.html" class="article-link">Read article</a></div></div>
-          </article>
-          <article class="card a-card" data-topic="health">
-            <div class="a-thumb"><img decoding="async" loading="lazy" src="../../articles/images/vaccine.webp" alt="Cover image for baby's first vaccine article"></div>
-            <div class="a-body"><span class="tag sun">Vaccines</span><h3>Baby's First Vaccines: What to Expect and What I Learned</h3><p>A first-person guide to first vaccine day: doubts, evidence, and calm after the appointment.</p><div class="a-meta"><span>8 min read</span><a href="first-baby-vaccine-what-i-learned.html" class="article-link">Read article</a></div></div>
-          </article>
-          <article class="card a-card" data-topic="sleep">
-            <div class="a-thumb fallback t-sky"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg></div>
-            <div class="a-body"><span class="tag sky">Baby Sleep</span><h3>Baby Sleep Routine by Age: Practical Weekly Guide</h3><p>Build a realistic baby sleep routine by age with nap windows, bedtime consistency and wake-up anchors.</p><div class="a-meta"><span>1 min read</span><a href="baby-sleep-routine-by-age.html" class="article-link">Read article</a></div></div>
+            <div class="a-body"><span class="tag peach">Weekly menus</span><h3>Weekly baby menus from 6 to 12 months</h3><p>A 7-day meal plan for every month, with grams, calories, textures and safety tips. Choose your baby's age:</p>
+              <nav class="menu-ages" aria-label="Weekly menus by age">
+                <a class="chip" href="weekly-menu-6-month-old-baby.html">6-month menu</a>
+                <a class="chip" href="weekly-menu-7-month-old-baby.html">7-month menu</a>
+                <a class="chip" href="weekly-menu-8-month-old-baby.html">8-month menu</a>
+                <a class="chip" href="weekly-menu-9-month-old-baby.html">9-month menu</a>
+                <a class="chip" href="weekly-menu-10-month-old-baby.html">10-month menu</a>
+                <a class="chip" href="weekly-menu-11-month-old-baby.html">11-month menu</a>
+                <a class="chip" href="weekly-menu-12-month-old-baby.html">12-month menu</a>
+              </nav>
+            </div>
           </article>
           <article class="card a-card" data-topic="feeding">
             <div class="a-thumb fallback t-peach"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 11h16a8 8 0 0 1-16 0ZM12 3v4M8 5l1 2M16 5l-1 2"/></svg></div>
             <div class="a-body"><span class="tag peach">Feeding</span><h3>Baby Solids Guide: BLW, Purees and Safe First Foods</h3><p>A practical baby solids guide with BLW and puree options, safe food formats, and first-week planning tips.</p><div class="a-meta"><span>2 min read</span><a href="baby-solids-guide-blw-purees.html" class="article-link">Read article</a></div></div>
           </article>
+        </div>
+      </section>
+
+      <section class="topic" id="sleep">
+        <div class="section-head"><h2>Sleep &amp; routines</h2><p>Naps, bedtime and a newborn day that works.</p></div>
+        <div class="article-grid">
+          <article class="card a-card" data-topic="sleep">
+            <div class="a-thumb fallback t-sky"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg></div>
+            <div class="a-body"><span class="tag sky">Baby Sleep</span><h3>Baby Sleep Routine by Age: Practical Weekly Guide</h3><p>Build a realistic baby sleep routine by age with nap windows, bedtime consistency and wake-up anchors.</p><div class="a-meta"><span>1 min read</span><a href="baby-sleep-routine-by-age.html" class="article-link">Read article</a></div></div>
+          </article>
+          <article class="card a-card" data-topic="sleep">
+            <div class="a-thumb fallback t-mint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/></svg></div>
+            <div class="a-body"><span class="tag">Newborn Routine</span><h3>Newborn Daily Routine That Works in Real Life</h3><p>Create a newborn routine for feeds, sleep and diaper care without rigid hour-by-hour schedules.</p><div class="a-meta"><span>1 min read</span><a href="newborn-daily-routine-guide.html" class="article-link">Read article</a></div></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="topic" id="growth">
+        <div class="section-head"><h2>Growth &amp; development</h2><p>Percentiles, weight and first-year milestones.</p></div>
+        <div class="article-grid">
+          <article class="card a-card featured" data-topic="growth">
+            <div class="a-thumb"><img decoding="async" loading="lazy" src="../../articles/images/hitos-desarrollo-4-6.webp" alt="Your baby's first year article cover"></div>
+            <div class="a-body"><span class="tag">Development</span><h3>Your Baby's First Year: The Year That Changes You Forever</h3><p>A warm, trimester-by-trimester guide to support your baby's development without pressure.</p><div class="a-meta"><span>4 min read</span><a href="first-year-baby-milestones-guide.html" class="article-link">Read article</a></div></div>
+          </article>
           <article class="card a-card" data-topic="growth">
             <div class="a-thumb fallback t-mint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 20h18M5 16l4-5 4 3 6-8"/><path d="M15 6h4v4"/></svg></div>
             <div class="a-body"><span class="tag">Growth</span><h3>Baby Weight and Height Percentiles: How to Read Growth Trends</h3><p>Understand baby growth percentiles, trend lines and when weight or height changes require pediatric follow-up.</p><div class="a-meta"><span>2 min read</span><a href="baby-weight-height-percentiles-guide.html" class="article-link">Read article</a></div></div>
           </article>
-
           <article class="card a-card" data-topic="growth">
             <div class="a-thumb"><img decoding="async" loading="lazy" src="../../articles/images/percentil-bajo-bebe.webp" alt="Smiling baby lying on a blanket next to a WHO weight percentile chart"></div>
             <div class="a-body"><span class="tag">Growth</span><h3>Low percentile in your baby? When to worry and when not to</h3><p>A 30th percentile is not bad news. Learn when your baby's low percentile is nothing to worry about and which signs deserve a call to the pediatrician.</p><div class="a-meta"><span>7 min read</span><a href="baby-low-percentile-when-to-worry.html" class="article-link">Read article</a></div></div>
@@ -202,10 +195,22 @@
             <div class="a-thumb"><img decoding="async" loading="lazy" src="../../articles/images/perdida-peso-recien-nacido.webp" alt="Newborn sleeping on a baby scale with a parent's hands resting on them"></div>
             <div class="a-body"><span class="tag">Growth</span><h3>Newborn weight loss in the first week: what's normal and when to worry</h3><p>Most newborns lose about 5-9% of birth weight in the first days and regain it by 10-14 days. See a day-by-day guide, how to calculate it and red flags.</p><div class="a-meta"><span>10 min read</span><a href="newborn-weight-loss-first-week.html" class="article-link">Read article</a></div></div>
           </article>
-          <article class="card a-card" data-topic="sleep">
-            <div class="a-thumb fallback t-mint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/></svg></div>
-            <div class="a-body"><span class="tag">Newborn Routine</span><h3>Newborn Daily Routine That Works in Real Life</h3><p>Create a newborn routine for feeds, sleep and diaper care without rigid hour-by-hour schedules.</p><div class="a-meta"><span>1 min read</span><a href="newborn-daily-routine-guide.html" class="article-link">Read article</a></div></div>
+        </div>
+      </section>
+
+      <section class="topic" id="health">
+        <div class="section-head"><h2>Health</h2><p>Vaccines and doctor visits, told by a parent.</p></div>
+        <div class="article-grid">
+          <article class="card a-card" data-topic="health">
+            <div class="a-thumb"><img decoding="async" loading="lazy" src="../../articles/images/vaccine.webp" alt="Cover image for baby's first vaccine article"></div>
+            <div class="a-body"><span class="tag sun">Vaccines</span><h3>Baby's First Vaccines: What to Expect and What I Learned</h3><p>A first-person guide to first vaccine day: doubts, evidence, and calm after the appointment.</p><div class="a-meta"><span>8 min read</span><a href="first-baby-vaccine-what-i-learned.html" class="article-link">Read article</a></div></div>
           </article>
+        </div>
+      </section>
+
+      <section class="topic" id="family">
+        <div class="section-head"><h2>Family &amp; apps</h2><p>Confidence at home and choosing a baby tracker.</p></div>
+        <div class="article-grid">
           <article class="card a-card" data-topic="family">
             <div class="a-thumb fallback t-sun"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 3 2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.5 6.7 19.4l1.2-6L3.4 9.3l6-.7Z"/></svg></div>
             <div class="a-body"><span class="tag sun">Parenting Mindset</span><h3>Parenting With Confidence: Reduce Guilt and Mental Load</h3><p>Practical strategies to parent with more confidence, less guilt and better communication at home.</p><div class="a-meta"><span>1 min read</span><a href="parenting-with-confidence-guide.html" class="article-link">Read article</a></div></div>
@@ -222,7 +227,8 @@
             <div class="a-thumb fallback t-mint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3.5v17l14-8.5Z"/></svg></div>
             <div class="a-body"><span class="tag">Android Workflow</span><h3>Huckleberry alternatives on Android (2026)</h3><p>Looking for a Huckleberry alternative on Android? Compare Baby Tracker, Baby Daybook, Glow, Sprout and Raffy on price, platforms, app languages and features.</p><div class="a-meta"><span>11 min read</span><a href="huckleberry-alternatives-android.html" class="article-link">Read article</a></div></div>
           </article>
-      </div>
+        </div>
+      </section>
 
       <section class="cta-section">
         <div class="cta-band">

@@ -124,19 +124,13 @@
     </header>
 
     <div class="container library">
-      <div class="section-head">
-        <h2>Tutti gli articoli disponibili</h2>
-        <p>Una libreria chiara di articoli pratici per i genitori di oggi.</p>
-      </div>
-
-      <div class="chips" role="group" aria-label="Filtra per argomento" data-filter>
-        <button class="chip" type="button" aria-pressed="true" data-filter-value="all">Tutti · 16</button>
-        <button class="chip" type="button" aria-pressed="false" data-filter-value="sleep">Sonno</button>
-        <button class="chip" type="button" aria-pressed="false" data-filter-value="feeding">Alimentazione</button>
-        <button class="chip" type="button" aria-pressed="false" data-filter-value="growth">Crescita e sviluppo</button>
-        <button class="chip" type="button" aria-pressed="false" data-filter-value="health">Salute</button>
-        <button class="chip" type="button" aria-pressed="false" data-filter-value="family">Famiglia e app</button>
-      </div>
+      <nav class="chips" aria-label="Vai a un argomento">
+        <a class="chip" href="#feeding">Alimentazione</a>
+        <a class="chip" href="#sleep">Sonno e routine</a>
+        <a class="chip" href="#growth">Crescita e sviluppo</a>
+        <a class="chip" href="#health">Salute</a>
+        <a class="chip" href="#family">Famiglia e app</a>
+      </nav>
 
       <div class="appx compact">
         <img src="../../assets/raffy-logo.png" alt="" width="44" height="44" decoding="async" loading="lazy">
@@ -144,50 +138,50 @@
         <a class="btn-play sm" href="https://play.google.com/store/apps/details?id=com.gurrulabs.raffy" data-track-download="true" data-page-type="library" data-cta-location="library-banner"><i class="gp-logo" aria-hidden="true"></i>Scarica l'app</a>
       </div>
 
-      <div class="article-grid">
-          <article class="card a-card featured" data-topic="growth">
-            <div class="a-thumb"><img decoding="async" loading="lazy" src="../../articles/images/hitos-desarrollo-4-6.webp" alt="Copertina dell'articolo sul primo anno del tuo bambino"></div>
-            <div class="a-body"><span class="tag">Sviluppo</span><h3>Il primo anno del tuo bambino: l'anno che ti cambia per sempre</h3><p>Una guida affettuosa, trimestre per trimestre, per accompagnare lo sviluppo del tuo bambino senza pressioni.</p><div class="a-meta"><span>4 min di lettura</span><a href="tappe-sviluppo-primo-anno-bambino.html" class="article-link">Leggi l'articolo</a></div></div>
-          </article>
-          <article class="card a-card" data-topic="feeding">
-            <div class="a-thumb"><img decoding="async" loading="lazy" src="../../articles/menu_9_months/card_menu_9_months.webp" alt="Copertina del menù di 7 giorni per un bambino di 9 mesi"></div>
-            <div class="a-body"><span class="tag peach">Menù 9 mesi</span><h3>Menù settimanale per bambino di 9 mesi: piano completo di 7 giorni</h3><p>Un menù pratico di 7 giorni per bambini di 9 mesi, con idee per i pasti, calorie giornaliere e consigli di sicurezza sulle consistenze.</p><div class="a-meta"><span>13 min di lettura</span><a href="menu-settimanale-bambino-9-mesi.html" class="article-link">Leggi l'articolo</a></div></div>
-          </article>
-          <article class="card a-card" data-topic="feeding">
+      <section class="topic" id="feeding">
+        <div class="section-head"><h2>Alimentazione</h2><p>Dalle prime pappe ai pasti in famiglia.</p></div>
+        <div class="article-grid">
+          <article class="card a-card menu-block" data-topic="feeding">
             <div class="a-thumb"><img decoding="async" loading="lazy" src="../../articles/menu_6_months/card_menu_6_months.webp" alt="Genitore che dà una purea liscia a un bambino di 6 mesi — menù di 7 giorni per 6 mesi"></div>
-            <div class="a-body"><span class="tag peach">Menù 6 mesi</span><h3>Menù settimanale per bambino di 6 mesi: piano di 7 giorni</h3><p>Menù settimanale per bambino di 6 mesi: un piano di 7 giorni per iniziare lo svezzamento con le prime pappe, alimenti ricchi di ferro, quantità di latte, calorie e consigli di sicurezza.</p><div class="a-meta"><span>12 min di lettura</span><a href="menu-settimanale-bambino-6-mesi.html" class="article-link">Leggi l'articolo</a></div></div>
-          </article>
-          <article class="card a-card" data-topic="feeding">
-            <div class="a-thumb"><img decoding="async" loading="lazy" src="../../articles/menu_7_months/card_menu_7_months.webp" alt="Copertina del menù di 7 giorni per un bambino di 7 mesi"></div>
-            <div class="a-body"><span class="tag peach">Menù 7 mesi</span><h3>Menù settimanale per bambino di 7 mesi: piano di 7 giorni</h3><p>Menù settimanale per bambino di 7 mesi: un piano di 7 giorni con 3 pasti, consistenze schiacciate, alimenti ricchi di ferro, quantità di latte, calorie e consigli di sicurezza.</p><div class="a-meta"><span>12 min di lettura</span><a href="menu-settimanale-bambino-7-mesi.html" class="article-link">Leggi l'articolo</a></div></div>
-          </article>
-          <article class="card a-card" data-topic="feeding">
-            <div class="a-thumb"><img decoding="async" loading="lazy" src="../../articles/menu_8_months/card_menu_8_months.webp" alt="Copertina del menù di 7 giorni per un bambino di 8 mesi"></div>
-            <div class="a-body"><span class="tag peach">Menù 8 mesi</span><h3>Menù settimanale per bambino di 8 mesi: piano di 7 giorni</h3><p>Menù settimanale per bambino di 8 mesi: un piano di 7 giorni con 3 pasti e uno spuntino, finger food, quantità di latte, calorie e consigli di sicurezza.</p><div class="a-meta"><span>13 min di lettura</span><a href="menu-settimanale-bambino-8-mesi.html" class="article-link">Leggi l'articolo</a></div></div>
-          </article>
-          <article class="card a-card" data-topic="feeding">
-            <div class="a-thumb"><img decoding="async" loading="lazy" src="../../articles/menu_10_months/card_menu_10_months.webp" alt="Copertina del menù di 7 giorni per un bambino di 10 mesi"></div>
-            <div class="a-body"><span class="tag peach">Menù 10 mesi</span><h3>Menù settimanale per bambino di 10 mesi: piano di 7 giorni</h3><p>Menù settimanale per bambino di 10 mesi: 7 giorni di pasti con grammi, calorie e macronutrienti, finger food, consigli di sicurezza e cosa cambia a 11 mesi.</p><div class="a-meta"><span>13 min di lettura</span><a href="menu-settimanale-bambino-10-mesi.html" class="article-link">Leggi l'articolo</a></div></div>
-          </article>
-          <article class="card a-card" data-topic="feeding">
-            <div class="a-thumb"><img decoding="async" loading="lazy" src="../../articles/menu_11_months/card_menu_11_months.webp" alt="Copertina del menù di 7 giorni per un bambino di 11 mesi"></div>
-            <div class="a-body"><span class="tag peach">Menù 11 mesi</span><h3>Menù settimanale per bambino di 11 mesi: piano di 7 giorni</h3><p>Menù settimanale per bambino di 11 mesi: 7 giorni di pasti con grammi, calorie e macronutrienti, cibi di famiglia tagliati a pezzetti, consigli di sicurezza e cosa cambia a 12 mesi.</p><div class="a-meta"><span>13 min di lettura</span><a href="menu-settimanale-bambino-11-mesi.html" class="article-link">Leggi l'articolo</a></div></div>
-          </article>
-          <article class="card a-card" data-topic="feeding">
-            <div class="a-thumb"><img decoding="async" loading="lazy" src="../../articles/menu_12_months/card_menu_12_months.webp" alt="Copertina del menù di 7 giorni per un bambino di 12 mesi"></div>
-            <div class="a-body"><span class="tag peach">Menù 12 mesi</span><h3>Menù settimanale per bambino di 12 mesi: piano di 7 giorni</h3><p>Menù settimanale per bambino di 12 mesi: 7 giorni di pasti in stile famiglia con grammi, calorie e macronutrienti, latte intero e consigli di sicurezza, più un pianificatore gratuito.</p><div class="a-meta"><span>14 min di lettura</span><a href="menu-settimanale-bambino-12-mesi.html" class="article-link">Leggi l'articolo</a></div></div>
-          </article>
-          <article class="card a-card" data-topic="health">
-            <div class="a-thumb"><img decoding="async" loading="lazy" src="../../articles/images/vaccine.webp" alt="Immagine di copertina dell'articolo sulla prima vaccinazione del bambino"></div>
-            <div class="a-body"><span class="tag sun">Vaccini</span><h3>Prima vaccinazione del neonato: cosa aspettarsi e cosa ho imparato</h3><p>Una guida in prima persona al giorno della prima vaccinazione: dubbi, evidenze scientifiche e serenità dopo l'appuntamento.</p><div class="a-meta"><span>8 min di lettura</span><a href="prima-vaccinazione-neonato-cosa-ho-imparato.html" class="article-link">Leggi l'articolo</a></div></div>
-          </article>
-          <article class="card a-card" data-topic="sleep">
-            <div class="a-thumb fallback t-sky"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg></div>
-            <div class="a-body"><span class="tag sky">Sonno</span><h3>Routine del sonno del neonato per età: guida pratica settimanale</h3><p>Costruisci una routine del sonno realistica in base all'età, con finestre di veglia, orari della nanna costanti e punti fermi al risveglio.</p><div class="a-meta"><span>2 min di lettura</span><a href="routine-sonno-neonato-per-eta.html" class="article-link">Leggi l'articolo</a></div></div>
+            <div class="a-body"><span class="tag peach">Menù settimanali</span><h3>Menù settimanali per bambini da 6 a 12 mesi</h3><p>Un piano di 7 giorni per ogni mese, con grammi, calorie, consistenze e consigli di sicurezza. Scegli l'età del tuo bambino:</p>
+              <nav class="menu-ages" aria-label="Menù settimanali per età">
+                <a class="chip" href="menu-settimanale-bambino-6-mesi.html">Menù 6 mesi</a>
+                <a class="chip" href="menu-settimanale-bambino-7-mesi.html">Menù 7 mesi</a>
+                <a class="chip" href="menu-settimanale-bambino-8-mesi.html">Menù 8 mesi</a>
+                <a class="chip" href="menu-settimanale-bambino-9-mesi.html">Menù 9 mesi</a>
+                <a class="chip" href="menu-settimanale-bambino-10-mesi.html">Menù 10 mesi</a>
+                <a class="chip" href="menu-settimanale-bambino-11-mesi.html">Menù 11 mesi</a>
+                <a class="chip" href="menu-settimanale-bambino-12-mesi.html">Menù 12 mesi</a>
+              </nav>
+            </div>
           </article>
           <article class="card a-card" data-topic="feeding">
             <div class="a-thumb fallback t-peach"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 11h16a8 8 0 0 1-16 0ZM12 3v4M8 5l1 2M16 5l-1 2"/></svg></div>
             <div class="a-body"><span class="tag peach">Alimentazione</span><h3>Guida allo svezzamento: autosvezzamento, pappe e primi alimenti sicuri</h3><p>Una guida pratica allo svezzamento con autosvezzamento e pappe, formati di cibo sicuri e consigli per pianificare la prima settimana.</p><div class="a-meta"><span>2 min di lettura</span><a href="guida-svezzamento-autosvezzamento-pappe.html" class="article-link">Leggi l'articolo</a></div></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="topic" id="sleep">
+        <div class="section-head"><h2>Sonno e routine</h2><p>Pisolini, nanna e una giornata da neonato che funziona.</p></div>
+        <div class="article-grid">
+          <article class="card a-card" data-topic="sleep">
+            <div class="a-thumb fallback t-sky"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg></div>
+            <div class="a-body"><span class="tag sky">Sonno</span><h3>Routine del sonno del neonato per età: guida pratica settimanale</h3><p>Costruisci una routine del sonno realistica in base all'età, con finestre di veglia, orari della nanna costanti e punti fermi al risveglio.</p><div class="a-meta"><span>2 min di lettura</span><a href="routine-sonno-neonato-per-eta.html" class="article-link">Leggi l'articolo</a></div></div>
+          </article>
+          <article class="card a-card" data-topic="sleep">
+            <div class="a-thumb fallback t-mint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/></svg></div>
+            <div class="a-body"><span class="tag">Routine del neonato</span><h3>La routine quotidiana del neonato che funziona nella vita reale</h3><p>Crea una routine per poppate, sonno e cambio del pannolino senza orari rigidi ora per ora.</p><div class="a-meta"><span>2 min di lettura</span><a href="routine-quotidiana-neonato.html" class="article-link">Leggi l'articolo</a></div></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="topic" id="growth">
+        <div class="section-head"><h2>Crescita e sviluppo</h2><p>Percentili, peso e tappe del primo anno.</p></div>
+        <div class="article-grid">
+          <article class="card a-card featured" data-topic="growth">
+            <div class="a-thumb"><img decoding="async" loading="lazy" src="../../articles/images/hitos-desarrollo-4-6.webp" alt="Copertina dell'articolo sul primo anno del tuo bambino"></div>
+            <div class="a-body"><span class="tag">Sviluppo</span><h3>Il primo anno del tuo bambino: l'anno che ti cambia per sempre</h3><p>Una guida affettuosa, trimestre per trimestre, per accompagnare lo sviluppo del tuo bambino senza pressioni.</p><div class="a-meta"><span>4 min di lettura</span><a href="tappe-sviluppo-primo-anno-bambino.html" class="article-link">Leggi l'articolo</a></div></div>
           </article>
           <article class="card a-card" data-topic="growth">
             <div class="a-thumb fallback t-mint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 20h18M5 16l4-5 4 3 6-8"/><path d="M15 6h4v4"/></svg></div>
@@ -201,10 +195,22 @@
             <div class="a-thumb"><img decoding="async" loading="lazy" src="../../articles/images/perdida-peso-recien-nacido.webp" alt="Neonato che dorme su una bilancia pesaneonati con le mani di un genitore appoggiate su di lui"></div>
             <div class="a-body"><span class="tag">Crescita</span><h3>Calo ponderale del neonato nella prima settimana: cosa è normale e quando preoccuparsi</h3><p>Di solito un neonato perde il 5-9% del peso alla nascita nei primi giorni e lo recupera in 10-14 giorni. Giorno per giorno, calcolo e segnali d'allarme.</p><div class="a-meta"><span>11 min di lettura</span><a href="calo-ponderale-neonato-prima-settimana.html" class="article-link">Leggi l'articolo</a></div></div>
           </article>
-          <article class="card a-card" data-topic="sleep">
-            <div class="a-thumb fallback t-mint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/></svg></div>
-            <div class="a-body"><span class="tag">Routine del neonato</span><h3>La routine quotidiana del neonato che funziona nella vita reale</h3><p>Crea una routine per poppate, sonno e cambio del pannolino senza orari rigidi ora per ora.</p><div class="a-meta"><span>2 min di lettura</span><a href="routine-quotidiana-neonato.html" class="article-link">Leggi l'articolo</a></div></div>
+        </div>
+      </section>
+
+      <section class="topic" id="health">
+        <div class="section-head"><h2>Salute</h2><p>Vaccini e visite dal pediatra, raccontati da un genitore.</p></div>
+        <div class="article-grid">
+          <article class="card a-card" data-topic="health">
+            <div class="a-thumb"><img decoding="async" loading="lazy" src="../../articles/images/vaccine.webp" alt="Immagine di copertina dell'articolo sulla prima vaccinazione del bambino"></div>
+            <div class="a-body"><span class="tag sun">Vaccini</span><h3>Prima vaccinazione del neonato: cosa aspettarsi e cosa ho imparato</h3><p>Una guida in prima persona al giorno della prima vaccinazione: dubbi, evidenze scientifiche e serenità dopo l'appuntamento.</p><div class="a-meta"><span>8 min di lettura</span><a href="prima-vaccinazione-neonato-cosa-ho-imparato.html" class="article-link">Leggi l'articolo</a></div></div>
           </article>
+        </div>
+      </section>
+
+      <section class="topic" id="family">
+        <div class="section-head"><h2>Famiglia e app</h2><p>Serenità in famiglia e come scegliere un'app per seguire il neonato.</p></div>
+        <div class="article-grid">
           <article class="card a-card" data-topic="family">
             <div class="a-thumb fallback t-sun"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 3 2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.5 6.7 19.4l1.2-6L3.4 9.3l6-.7Z"/></svg></div>
             <div class="a-body"><span class="tag sun">Genitorialità</span><h3>Genitori con fiducia: meno sensi di colpa e meno carico mentale</h3><p>Strategie pratiche per essere genitori con più fiducia, meno sensi di colpa e una comunicazione migliore in famiglia.</p><div class="a-meta"><span>2 min di lettura</span><a href="genitori-con-fiducia-senza-sensi-di-colpa.html" class="article-link">Leggi l'articolo</a></div></div>
@@ -221,7 +227,8 @@
             <div class="a-thumb fallback t-mint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3.5v17l14-8.5Z"/></svg></div>
             <div class="a-body"><span class="tag">App Android</span><h3>Alternative a Huckleberry su Android (2026)</h3><p>Cerchi un'alternativa a Huckleberry su Android? Confronta Baby Tracker, Baby Daybook, Glow, Sprout e Raffy per prezzo, piattaforme, lingue dell'app e funzioni.</p><div class="a-meta"><span>12 min di lettura</span><a href="alternative-huckleberry-android.html" class="article-link">Leggi l'articolo</a></div></div>
           </article>
-      </div>
+        </div>
+      </section>
 
       <section class="cta-section">
         <div class="cta-band">

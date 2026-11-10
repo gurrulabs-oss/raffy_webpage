@@ -1,6 +1,5 @@
 // Article pages: highlight the current section in the table of contents, close the mobile contents list
-// after picking a section. Library: client-side topic filter (all cards stay in the HTML; filtering only
-// toggles the `hidden` attribute). No tracking events.
+// after picking a section. No tracking events.
 (function () {
   "use strict";
 
@@ -30,21 +29,6 @@
   if (mobileToc) {
     mobileToc.addEventListener("click", function (e) {
       if (e.target.closest("a")) mobileToc.removeAttribute("open");
-    });
-  }
-
-  var filter = document.querySelector("[data-filter]");
-  if (filter) {
-    var chips = Array.prototype.slice.call(filter.querySelectorAll("[data-filter-value]"));
-    var cards = Array.prototype.slice.call(document.querySelectorAll(".a-card[data-topic]"));
-    chips.forEach(function (chip) {
-      chip.addEventListener("click", function () {
-        var value = chip.getAttribute("data-filter-value");
-        chips.forEach(function (c) { c.setAttribute("aria-pressed", c === chip ? "true" : "false"); });
-        cards.forEach(function (card) {
-          card.hidden = value !== "all" && card.getAttribute("data-topic") !== value;
-        });
-      });
     });
   }
 })();
