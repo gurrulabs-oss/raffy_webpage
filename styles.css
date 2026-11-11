@@ -1364,8 +1364,10 @@ a.chip{text-decoration:none}
 .menu-ages{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
 @media(max-width:700px){.menu-block{flex-direction:column}.menu-block .a-thumb{aspect-ratio:16/9}}
 /* owner request: one horizontal row per section, smaller cards */
-.topic .article-grid{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 14px;scroll-padding-left:2px}
-.topic .a-card{flex:0 0 250px;scroll-snap-align:start}
+.topic .article-grid{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 8px 20px;margin:0 -8px;scroll-padding-left:8px}
+/* the scroll row clips anything outside its padding: keep shadows and the hover lift inside it */
+.topic .a-card{flex:0 0 250px;scroll-snap-align:start;box-shadow:0 2px 6px rgba(29,47,111,.06)}
+.topic .a-card:hover{box-shadow:0 6px 14px -4px rgba(29,47,111,.18)}
 .topic .a-card.featured{flex-direction:column}
 .topic .a-card .a-thumb,.topic .a-card.featured .a-thumb:not(.is-shot){aspect-ratio:16/9;min-height:0;flex:none}
 .topic .a-card .a-thumb.fallback svg{width:40px;height:40px}
