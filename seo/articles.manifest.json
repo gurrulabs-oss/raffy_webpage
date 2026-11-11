@@ -205,6 +205,18 @@
       }
     },
     {
+      "id": "article_baby_teeth",
+      "type": "article",
+      "routes": {
+        "en": "/en/articles/baby-teeth-order-age.html",
+        "es": "/es/articulos/dientes-bebe-orden-edad.html",
+        "fr": "/fr/articles/dents-bebe-ordre-age.html",
+        "pt": "/pt/artigos/dentes-bebe-ordem-idade.html",
+        "it": "/it/articoli/denti-bambino-ordine-eta.html",
+        "de": "/de/ratgeber/zaehne-baby-reihenfolge-alter.html"
+      }
+    },
+    {
       "id": "tool_growth_percentiles",
       "type": "tool",
       "routes": {

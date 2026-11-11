@@ -1379,3 +1379,12 @@ a.chip{text-decoration:none}
 .topic .menu-block .a-body p{-webkit-line-clamp:3}
 .topic .menu-ages .chip{min-height:32px;padding:4px 10px;font-size:.8rem}
 @media(max-width:700px){.topic .a-card{flex-basis:72%}.topic .menu-block{flex:0 0 88%;flex-direction:column}.topic .menu-block .a-thumb{aspect-ratio:16/9;flex:none}}
+
+/* Baby teeth article: eruption map (SVG overlay on the arches drawing) and order badges */
+.tooth-map { margin: 1.25rem 0; }
+.tooth-map img { width: 100%; max-width: 420px; height: auto; display: block; margin: 0 auto; background: url(/articles/images/baby-teeth-arches.webp) center / 100% 100% no-repeat; }
+.tn { display: inline-flex; align-items: center; justify-content: center; width: 1.75em; height: 1.75em; border-radius: 50%; margin-right: .5em; font-weight: 800; color: #163b31; vertical-align: middle; }
+.tn + .tn { margin-left: -.25em; }
+.tn.ce { background: #57bfa3; } .tn.la { background: #a6e0cc; } .tn.m1 { background: #ffd27a; } .tn.ca { background: #ffb59a; } .tn.m2 { background: #c9b8f0; }
+.tooth-map figcaption { font-size: var(--fs-sm); color: var(--ink-2); margin-top: .5rem; }
+.a-thumb img[src$="baby-teeth.webp"] { object-position: 70% 30%; }
