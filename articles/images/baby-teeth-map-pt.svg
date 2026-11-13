@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1217 1293" width="1217" height="1293" font-family="Manrope, Arial, sans-serif">
+  <!-- drawing (arcadas.png) goes behind as CSS background: an SVG shown via <img> cannot load external images -->
+  <text x="608" y="620" text-anchor="middle" font-size="40" font-weight="800" fill="#2e6f5c" letter-spacing="3">CIMA</text>
+  <text x="608" y="700" text-anchor="middle" font-size="40" font-weight="800" fill="#2e6f5c" letter-spacing="3">BAIXO</text>
+  <!-- numbers over the image's empty circles (r 41 covers the drawn ring): order of eruption, 1 = first -->
+  <g font-size="40" font-weight="800" text-anchor="middle" dominant-baseline="central" fill="#163b31" stroke-width="0">
+    <g stroke="#5a5a5a" stroke-width="3">
+      <!-- upper arch, left to right: m2 m1 c l ce | ce l c m1 m2 -->
+      <circle cx="95" cy="457" r="41" fill="#c9b8f0"/>
+      <circle cx="176" cy="276" r="41" fill="#ffd27a"/>
+      <circle cx="295" cy="179" r="41" fill="#ffb59a"/>
+      <circle cx="412" cy="109" r="41" fill="#a6e0cc"/>
+      <circle cx="539" cy="66" r="41" fill="#57bfa3"/>
+      <circle cx="683" cy="66" r="41" fill="#57bfa3"/>
+      <circle cx="811" cy="109" r="41" fill="#a6e0cc"/>
+      <circle cx="924" cy="179" r="41" fill="#ffb59a"/>
+      <circle cx="1043" cy="276" r="41" fill="#ffd27a"/>
+      <circle cx="1127" cy="457" r="41" fill="#c9b8f0"/>
+      <!-- lower arch, left to right -->
+      <circle cx="91" cy="879" r="41" fill="#c9b8f0"/>
+      <circle cx="185" cy="1046" r="41" fill="#ffd27a"/>
+      <circle cx="308" cy="1149" r="41" fill="#ffb59a"/>
+      <circle cx="425" cy="1199" r="41" fill="#a6e0cc"/>
+      <circle cx="544" cy="1232" r="41" fill="#57bfa3"/>
+      <circle cx="671" cy="1232" r="41" fill="#57bfa3"/>
+      <circle cx="787" cy="1199" r="41" fill="#a6e0cc"/>
+      <circle cx="907" cy="1149" r="41" fill="#ffb59a"/>
+      <circle cx="1032" cy="1046" r="41" fill="#ffd27a"/>
+      <circle cx="1127" cy="879" r="41" fill="#c9b8f0"/>
+    </g>
+    <text x="95" y="457">7</text><text x="176" y="276">5</text><text x="295" y="179">6</text><text x="412" y="109">3</text><text x="539" y="66">2</text>
+    <text x="683" y="66">2</text><text x="811" y="109">3</text><text x="924" y="179">6</text><text x="1043" y="276">5</text><text x="1127" y="457">7</text>
+    <text x="91" y="879">7</text><text x="185" y="1046">5</text><text x="308" y="1149">6</text><text x="425" y="1199">4</text><text x="544" y="1232">1</text>
+    <text x="671" y="1232">1</text><text x="787" y="1199">4</text><text x="907" y="1149">6</text><text x="1032" y="1046">5</text><text x="1127" y="879">7</text>
+  </g>
+</svg>
