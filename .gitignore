@@ -13,3 +13,5 @@
 
 # Analytics snapshots (GSC / Mixpanel pulls); local only, never published
 .lead/analytics/
+.lead/art/*
+!.lead/art/index.md
