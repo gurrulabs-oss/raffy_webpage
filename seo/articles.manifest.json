@@ -217,6 +217,18 @@
       }
     },
     {
+      "id": "article_night_shifts",
+      "type": "article",
+      "routes": {
+        "en": "/en/articles/split-night-shifts-newborn.html",
+        "es": "/es/articulos/turnos-noche-bebe-pareja.html",
+        "fr": "/fr/articles/se-relayer-la-nuit-bebe.html",
+        "pt": "/pt/artigos/revezar-noites-bebe.html",
+        "it": "/it/articoli/turni-notturni-neonato.html",
+        "de": "/de/ratgeber/nachtschichten-baby-aufteilen.html"
+      }
+    },
+    {
       "id": "tool_growth_percentiles",
       "type": "tool",
       "routes": {
