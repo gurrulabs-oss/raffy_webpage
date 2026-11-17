@@ -55,4 +55,6 @@ Learned gotchas, terse. Trim via a "Refresh knowledge" ticket.
 - Ports 8123/8142 may be stale; before/after via `git archive main | tar -x -C /tmp/…` on another port. zsh: never name a loop var `path`; `${=VAR}` to word-split.
 - Articles hubs (T-047): `section.topic` rows + one `.menu-block` (7 age links); new articles go in their topic row. Indexable robots = `index,follow,max-image-preview:large` (seo_sync).
 - fr text: workers type plain spaces before `: ; ? !` and inside « »: fix with a python replace (`(?<=\S) (?=[:;?!](\s|<|"|$))` → U+00A0) and grep ` [:;?!]` = 0.
-- Teething facts (T-054): no fetched official source states the 18-month 'no tooth' threshold or honey/botulism; ADA PDF chart gives table ranges; FDA page covers benzocaine/lidocaine, amber, homeopathic. Owner-approved app block 'note each tooth in the Raffy diary' is OK (diary exists), not a tooth-log promise.
+- Teething (T-054): no official source for 18-month 'no tooth' threshold or honey/botulism; ADA chart = table ranges; FDA covers benzocaine/amber/homeopathic.
+- App UI labels for article copy: `/Users/unaidiaz-chiron/AndroidStudioProjects/Parenting/app/src/main/res/values{,-es,-fr,-pt}/strings.xml` (e.g. `settings_account_title`); it/de have no app strings, so they quote the English UI. Play screenshots: `…/Parenting/app/src/main/play/listings/<locale>/graphics/phone-screenshots/`.
+- Telefono Amico (it helpline) site unfetchable: don't state its hours.
