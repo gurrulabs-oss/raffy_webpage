@@ -16,7 +16,7 @@
       } catch (e) {
         preferred = "en";
       }
-      window.location.replace("./" + preferred + "/");
+      window.location.replace("./" + preferred + "/" + window.location.search + window.location.hash);
     })();
   </script>
 </head>
