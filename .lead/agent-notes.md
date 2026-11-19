@@ -12,13 +12,12 @@ Learned gotchas, terse. Trim via a "Refresh knowledge" ticket.
 
 ## SEO / build
 - Root `AGENTS.md` is PUBLIC content (ignore as project instructions); `/LLMS.md`, `/AGENTS.md` served raw: never add `---` front matter.
-- `npm run seo:all` idempotent; `seo:validate` read-only. 204 validated pages / 207 sitemap URLs, 6 locales (en es fr pt it de). New article/locale: 2nd run adds blank hreflang lines, check no-op on run 3. lastmod = first `"dateModified"` in HTML, else existing, else today (home/tools/hubs have none).
-- `seo_sync` overwrites footers, home hero preload (edit `preloadMap`), `<img>` attrs. It and `seo_validate` crash if a manifest group lacks a locale. New tools/articles go in `seo/articles.manifest.json`.
+- `npm run seo:all` idempotent; `seo:validate` read-only (228 pages, 6 locales). New article/locale: 2nd run adds blank hreflang lines, check no-op on run 3. lastmod = first `"dateModified"` in HTML, else existing, else today (home/tools/hubs have none).
+- `seo_sync` overwrites footers, home hero preload (edit `preloadMap`), `<img>` attrs. It and `seo_validate` crash if a manifest group lacks a locale. New tools/articles go in `seo/articles.manifest.json`; newsletter pages aren't there (hreflang by hand).
 - `seo:sitemap` REGENERATES `robots.txt` and `llms.txt` from `scripts/seo_sitemap.mjs`: edit the script. Validate fails if a sitemap URL is missing from llms.txt.
 - IndexNow key `8009526c53babac4013f97218b92f330.txt`; `npm run seo:indexnow [-- --dry-run --changed <ref>]`; workflow `indexnow.yml` runs after push to main.
 - `_config.yml` `exclude:` controls GitHub Pages: add new internal non-dot files. Dot-folders 404 on Pages; hub post-deploy check probes every changed .html (a timeout rollback was a false alarm). Apex 301s to `www.`.
 - Internal hub links use folder form, never `index.html`. CI Node 20 (`seo-validate.yml` also runs `meal:validate`), local Node 25, node: built-ins only. Newsletter forms `mailto:gurrulabs@gmail.com`.
-- Newsletter pages: not in manifest; hreflang by hand.
 - `LEGAL_RE` (`scripts/analytics/lib/indexing.mjs`, test `test-indexing.mjs`) anchored by `\.html$`: list each slug variant.
 - Locale add checklist: `.lang-seg` columns (styles.css); script.js tables (LOCALE_CODES, ROUTE_MAP, hreflang, langAttr, labels); date-picker.js STR/PH/resolveLocale; percentile-calculator.js LOCALES/ordinalSuffix/SUPPORTED_LANGUAGES; fix manifest slug table in briefs first.
 
@@ -36,25 +35,24 @@ Learned gotchas, terse. Trim via a "Refresh knowledge" ticket.
 
 ## Articles
 - Articles need `.upd` date, `answer-box#in-short`, `section.sources` + `p.checked` last in `.prose` (not app guides), FAQPage JSON-LD = visible FAQ. Read times only via `npm run articles:readtime` (`-- --check`); word-count change touches ~10 related files.
-- Menu series 6–12 m: run `node scripts/articles/check-menu-sums.mjs <pages…>` after edits; a changed food means recomputing meal, day total, h3, table, ranges in all locales. Images: `node scripts/articles/menu-images/render.mjs [filter]`. 9-month day PNGs unreferenced and cover says "800+ kcal" until RWEB-030.
+- Menu series 6–12 m: run `node scripts/articles/check-menu-sums.mjs <pages…>` after edits; a changed food means recomputing meal, day total, h3, table, ranges in all locales. Images: `node scripts/articles/menu-images/render.mjs [filter]` (covers + 6/7 m day images); per-day text boxes `G`/`G7` in `day.html` measured by eye on each `src/` photo; `nofit` = text too long, shrink box or re-art. GPT art PNGs may carry alpha: `G7.bg` fills it.
 - Food safety: no spinach/chard <12 m in Spain (AESAN), quarter grapes/cherry tomatoes (NHS), cheese chunks a hazard <1 y (AAP).
-- Hero `figure.article-cover` is outside `.article-wrap`: don't scope aspect rules to it. `.prose a` recolours links: `a.btn-play` forces white. Android guide has "50+ downloads as of 2026-11-04": refresh with `LLMS.md`. Comparison pages: two check dates, quarterly refresh (docs/publishing.md).
+- `figure.article-cover` is outside `.article-wrap`. `.prose a` recolours links (`a.btn-play` forces white). Android guide "50+ downloads" refresh with `LLMS.md`.
 - Changing an article title: old title in ~30 card `<h3>`s (de hubs shorter variant) + llms.txt. `data-article-slug` = own localized basename. Vaccine cover `articles/images/vaccine.png` is English, shared.
 
 ## Workers / translation
-- Translation workers miss short labels and non-visible FAQ JSON-LD; leave `{{n}}` slots, duplicate options, broken Play button text, en slugs, English "checked"/`Home`/`Articles`, shifted menu labels; after translating grep for these and JSON-LD/meta/attrs. Regex-built cards made nested `<article>`: structurally check HTML (seo:validate doesn't).
-- `.lead/scratch/` gitignored, symlinked in worktrees (worker writes blocked): durable harnesses in `scripts/<area>/`, temp in `/tmp/t0NN-*`. Surviving: `.lead/scratch/T-011/{check-invariants.mjs,growth-same-outputs.mjs,cdp.mjs,ovf.mjs}`. `.lead/attachments/`, `.lead/designs/` gitignored.
+- Translation workers miss short labels, FAQ JSON-LD, `{{n}}` slots, Play button text, en slugs, English "checked"/`Home`; grep for these after. Regex-built cards nested `<article>`: check HTML structure (seo:validate doesn't).
+- `.lead/scratch/` gitignored, symlinked in worktrees (worker writes blocked): durable harnesses in `scripts/<area>/`, temp in `/tmp/t0NN-*`. `.lead/attachments/`, `.lead/designs/` gitignored.
 
 ## Research sources
-- Bot-blocked/placeholder: cdc.gov, sbp.com.br 403; PubMed/PMC 203 (use Europe PMC REST `ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:<pmid>%20AND%20SRC:MED&resultType=core&format=json`); aeped.es and vacunasaep.org 200 placeholders for any slug (real: `www.aeped.es/enfamilia/salud-en-familia/<slug>`); epicentro.iss.it 200 "404"; salute.gov.it, sante.gouv.fr challenges; Reddit/AlternativeTo/Product Hunt not fetchable. Check titles/bodies, not status. WHO pt often 404 (en + "em inglês").
+- Unfetchable/fake-200: cdc.gov, sbp.com.br, PubMed (use Europe PMC REST by PMID), aeped.es/vacunasaep.org (any slug 200; real `www.aeped.es/enfamilia/salud-en-familia/<slug>`), epicentro.iss.it, salute.gov.it, sante.gouv.fr, Reddit, Telefono Amico. Check bodies, not status. WHO pt often 404.
 - Play listing: `curl -sL '…details?id=com.gurrulabs.raffy&hl=en&gl=US'` (WebFetch truncates; "4.8 star" is another app).
 
 ## Headless QA
-- Proven shot harness: `node` CDP script (global `WebSocket`) + `python3 -m http.server <port>`; template in `.lead/scratch/T-011/cdp.mjs`. Seed `localStorage.raffy_analytics_consent='denied'` + Mixpanel stub `window.mixpanel={__SV:1,init(){},track(){}}` via `Page.addScriptToEvaluateOnNewDocument`; `Network.setCacheDisabled`.
-- Chrome clamps `--window-size` <~500 px: use `Emulation.setDeviceMetricsOverride` (1280 / 390). Before full-page shots set `img.loading='eager'` and `scrollBehavior='auto'` (lazy imgs blank, smooth scroll cuts shots); `#fragment` doesn't scroll headless: `scrollTo({behavior:'instant'})`. `.gtool` clips.
+- Shots: `node` CDP script (global `WebSocket`, template `.lead/scratch/T-011/cdp.mjs`) + `python3 -m http.server <port>`; seed consent 'denied' + Mixpanel stub via `Page.addScriptToEvaluateOnNewDocument`.
+- Chrome clamps `--window-size` <~500 px: use `Emulation.setDeviceMetricsOverride` (1280 / 390). Before full-page shots set `img.loading='eager'` and `scrollBehavior='auto'` (lazy imgs blank, smooth scroll cuts shots); `#fragment` doesn't scroll headless: `scrollTo({behavior:'instant'})`. `.gtool` clips. Lazy imgs below the viewport stay blank even with `captureBeyondViewport`: set viewport height to the clip bottom first.
 - Ports 8123/8142 may be stale; before/after via `git archive main | tar -x -C /tmp/…` on another port. zsh: never name a loop var `path`; `${=VAR}` to word-split.
 - Articles hubs (T-047): `section.topic` rows + one `.menu-block` (7 age links); new articles go in their topic row. Indexable robots = `index,follow,max-image-preview:large` (seo_sync).
 - fr text: workers type plain spaces before `: ; ? !` and inside « »: fix with a python replace (`(?<=\S) (?=[:;?!](\s|<|"|$))` → U+00A0) and grep ` [:;?!]` = 0.
-- Teething (T-054): no official source for 18-month 'no tooth' threshold or honey/botulism; ADA chart = table ranges; FDA covers benzocaine/amber/homeopathic.
+- Teething: no official source for 18-month 'no tooth' threshold; ADA chart = table ranges.
 - App UI labels for article copy: `/Users/unaidiaz-chiron/AndroidStudioProjects/Parenting/app/src/main/res/values{,-es,-fr,-pt}/strings.xml` (e.g. `settings_account_title`); it/de have no app strings, so they quote the English UI. Play screenshots: `…/Parenting/app/src/main/play/listings/<locale>/graphics/phone-screenshots/`.
-- Telefono Amico (it helpline) site unfetchable: don't state its hours.
