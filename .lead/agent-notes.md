@@ -36,7 +36,7 @@ Learned gotchas, terse. Trim via a "Refresh knowledge" ticket.
 
 ## Articles
 - Articles need `.upd` date, `answer-box#in-short`, `section.sources` + `p.checked` last in `.prose` (not app guides), FAQPage JSON-LD = visible FAQ. Read times only via `npm run articles:readtime` (`-- --check`); word-count change touches ~10 related files.
-- Menu series 6–12 m: run `node scripts/articles/check-menu-sums.mjs <pages…>` after edits; a changed food means recomputing meal, day total, h3, table, ranges in all locales. Images: `node scripts/articles/menu-images/render.mjs [filter]`. 9-month day PNGs unreferenced and cover says "800+ kcal" until RWEB-030.
+- Menu series 6–12 m: run `node scripts/articles/check-menu-sums.mjs <pages…>` after edits; a changed food means recomputing meal, day total, h3, table, ranges in all locales. Day images: `node scripts/articles/menu-images/render.mjs [filter|--self-test]`, ages in its loop (6, 8), geometry `G[age][day]` in `day.html` measured per photo; full re-render must leave other ages byte-identical. 9-month day PNGs unreferenced.
 - Food safety: no spinach/chard <12 m in Spain (AESAN), quarter grapes/cherry tomatoes (NHS), cheese chunks a hazard <1 y (AAP).
 - Hero `figure.article-cover` is outside `.article-wrap`: don't scope aspect rules to it. `.prose a` recolours links: `a.btn-play` forces white. Android guide has "50+ downloads as of 2026-11-04": refresh with `LLMS.md`. Comparison pages: two check dates, quarterly refresh (docs/publishing.md).
 - Changing an article title: old title in ~30 card `<h3>`s (de hubs shorter variant) + llms.txt. `data-article-slug` = own localized basename. Vaccine cover `articles/images/vaccine.png` is English, shared.
@@ -55,6 +55,5 @@ Learned gotchas, terse. Trim via a "Refresh knowledge" ticket.
 - Ports 8123/8142 may be stale; before/after via `git archive main | tar -x -C /tmp/…` on another port. zsh: never name a loop var `path`; `${=VAR}` to word-split.
 - Articles hubs (T-047): `section.topic` rows + one `.menu-block` (7 age links); new articles go in their topic row. Indexable robots = `index,follow,max-image-preview:large` (seo_sync).
 - fr text: workers type plain spaces before `: ; ? !` and inside « »: fix with a python replace (`(?<=\S) (?=[:;?!](\s|<|"|$))` → U+00A0) and grep ` [:;?!]` = 0.
-- Teething (T-054): no official source for 18-month 'no tooth' threshold or honey/botulism; ADA chart = table ranges; FDA covers benzocaine/amber/homeopathic.
 - App UI labels for article copy: `/Users/unaidiaz-chiron/AndroidStudioProjects/Parenting/app/src/main/res/values{,-es,-fr,-pt}/strings.xml` (e.g. `settings_account_title`); it/de have no app strings, so they quote the English UI. Play screenshots: `…/Parenting/app/src/main/play/listings/<locale>/graphics/phone-screenshots/`.
 - Telefono Amico (it helpline) site unfetchable: don't state its hours.
