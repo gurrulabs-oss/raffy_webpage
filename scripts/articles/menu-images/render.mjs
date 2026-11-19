@@ -19,20 +19,21 @@ const PORT = 9347;
 const LANGS = ['en', 'es', 'fr', 'pt', 'it', 'de'];
 const DAYS = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
 
-// ---- extractor: one locale's 6-month page -> 7 days of {kcal, meals, tot} ----
+// ---- extractor: one locale's 6/7-month page -> 7 days of {kcal, meals, tot} ----
 const dec = s => s.replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ').replace(/&#39;|&apos;/g, "'").replace(/&quot;/g, '"')
   .replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&').replace(/[\s ]+/g, ' ').trim();
 
-export function extractDays(lang) {
+export function extractDays(lang, age = 6) {
   const manifest = JSON.parse(readFileSync(join(ROOT, 'seo/articles.manifest.json'), 'utf8'));
-  const route = manifest.pages.find(p => p.id === 'article_weekly_menu_6_months').routes[lang];
+  const route = manifest.pages.find(p => p.id === `article_weekly_menu_${age}_months`).routes[lang];
   const html = readFileSync(join(ROOT, route), 'utf8');
   const secs = html.split('<section class="day-menu').slice(1);
   if (secs.length !== 7) throw new Error(`${route}: expected 7 day sections, found ${secs.length}`);
   return secs.map((sec, i) => {
     const where = `${route} ${DAYS[i]}`;
     const lis = [...sec.matchAll(/<li><span class="meal-label">(.*?)<\/span>(.*?)<span class="macros">(.*?)<\/span><\/li>/gs)];
-    if (lis.length !== 4) throw new Error(`${where}: expected 4 meals, found ${lis.length}`);
+    const n = age === 7 ? 5 : 4;
+    if (lis.length !== n) throw new Error(`${where}: expected ${n} meals, found ${lis.length}`);
     const meals = lis.map(([, label, text, mac]) => {
       const nums = [...dec(mac).matchAll(/(\d+(?:\.\d+)?) g/g)].map(m => +m[1]);
       const kcal = dec(mac).match(/~(\d+) kcal/);
@@ -53,8 +54,11 @@ if (process.argv.includes('--self-test')) {
   const mon = extractDays('en')[0];
   const got = JSON.stringify([mon.kcal, ...mon.meals.map(m => m.kcal)]);
   if (got !== '[630,400,95,35,100]') { console.error('self-test FAILED: ' + got); process.exit(1); }
-  for (const l of LANGS) extractDays(l); // every locale must parse too
-  console.log('self-test ok: en monday 630 kcal, cards 400/95/35/100; all 6 locales parse');
+  const m7 = extractDays('en', 7)[0];
+  const got7 = JSON.stringify([m7.kcal, ...m7.meals.map(m => m.kcal)]);
+  if (got7 !== '[685,400,65,85,55,80]') { console.error('self-test FAILED (7 m): ' + got7); process.exit(1); }
+  for (const l of LANGS) { extractDays(l); extractDays(l, 7); } // every locale must parse too
+  console.log('self-test ok: en monday 630 kcal, cards 400/95/35/100 (6 m), 685 kcal 400/65/85/55/80 (7 m); all 6 locales parse');
   process.exit(0);
 }
 
@@ -128,14 +132,14 @@ try {
   }
   await view('day');
   await open('day.html');
-  for (const lang of LANGS) {
-    const days = extractDays(lang);
+  for (const age of [6, 7]) for (const lang of LANGS) {
+    const days = extractDays(lang, age);
     for (const data of days) {
-      const name = `menu_6_months_${data.day}_${lang}`;
+      const name = `menu_${age}_months_${data.day}_${lang}`;
       if (!wanted(name)) continue;
-      const { bad } = await run(`render(${JSON.stringify({ lang, ...data })})`);
+      const { bad } = await run(`render(${JSON.stringify({ lang, age, ...data })})`);
       const tmp = join(TMP, name + '.png');
-      await shot(tmp); webp(tmp, join(ROOT, 'articles/menu_6_months', name + '.webp')); count++;
+      await shot(tmp); webp(tmp, join(ROOT, `articles/menu_${age}_months`, name + '.webp')); count++;
       if (bad.length) problems.push(`${name}: nofit: ${bad.join(', ')}`);
     }
   }
