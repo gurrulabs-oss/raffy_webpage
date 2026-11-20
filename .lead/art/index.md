@@ -30,13 +30,13 @@
 | menu10-sunday-1.png | 10-month Sunday: lavender linen, photo bottom; peach yogurt shows round drops | other | photoreal food magazine, pastel cards | T-043 | |
 | menu10-sunday-r-1.png | 10-month Sunday retry: lavender linen, white text band on top of each card, smooth peach swirl, full-width totals | other | photoreal food magazine, pastel cards | T-043 | yes |
 | menu9-monday-1.png | 9-month Monday: overhead paper + linen, 6 cards photo right; NO totals card | other | photoreal food magazine, pastel cards | T-042 | |
-| menu9-monday-r-1.png | 9-month Monday retry: overhead, linen + oak board, 6 cards photo right, full-width totals | other | photoreal food magazine, pastel cards | T-042 | |
-| menu9-tuesday-1.png | 9-month Tuesday: sage linen ~60°, photo bottom, apple + thin almond swirl, omelet + mash, full-width totals | other | photoreal food magazine, pastel cards | T-042 | |
+| menu9-monday-r-1.png | 9-month Monday retry: overhead, linen + oak board, 6 cards photo right, full-width totals | other | photoreal food magazine, pastel cards | T-042 | yes |
+| menu9-tuesday-1.png | 9-month Tuesday: sage linen ~60°, photo bottom, apple + thin almond swirl, omelet + mash, full-width totals | other | photoreal food magazine, pastel cards | T-042 | yes |
 | menu9-wednesday-1.png | 9-month Wednesday: blush pink, photo left; fish with whole round peas (no green beans) | other | photoreal food magazine, pastel cards | T-042 | |
-| menu9-wednesday-r-1.png | 9-month Wednesday retry: blush pink, photo left, fish + mash + green-bean strips, full-width totals | other | photoreal food magazine, pastel cards | T-042 | |
-| menu9-thursday-1.png | 9-month Thursday: low angle, blue linen + birch, photo bottom, beef + mash + pumpkin, full-width totals | other | photoreal food magazine, pastel cards | T-042 | |
-| menu9-friday-1.png | 9-month Friday: butter-yellow, sunlight, photo right, chicken pasta, omelet + carrot puree, full-width totals | other | photoreal food magazine, pastel cards | T-042 | |
+| menu9-wednesday-r-1.png | 9-month Wednesday retry: blush pink, photo left, fish + mash + green-bean strips, full-width totals | other | photoreal food magazine, pastel cards | T-042 | yes |
+| menu9-thursday-1.png | 9-month Thursday: low angle, blue linen + birch, photo bottom, beef + mash + pumpkin, full-width totals | other | photoreal food magazine, pastel cards | T-042 | yes |
+| menu9-friday-1.png | 9-month Friday: butter-yellow, sunlight, photo right, chicken pasta, omelet + carrot puree, full-width totals | other | photoreal food magazine, pastel cards | T-042 | yes |
 | menu9-saturday-1.png | 9-month Saturday: whitewashed wood, photo left; pear in yogurt looks like round pearls, veg cubes | other | photoreal food magazine, pastel cards | T-042 | |
-| menu9-saturday-r-1.png | 9-month Saturday retry: whitewashed wood, sage napkin, photo left, salmon + 3 mashes, smooth pear swirl; small plant top-right | other | photoreal food magazine, pastel cards | T-042 | |
+| menu9-saturday-r-1.png | 9-month Saturday retry: whitewashed wood, sage napkin, photo left, salmon + 3 mashes, smooth pear swirl; small plant top-right | other | photoreal food magazine, pastel cards | T-042 | yes |
 | menu9-sunday-1.png | 9-month Sunday: lavender, photo bottom; lunch with round peas, turkey in little balls | other | photoreal food magazine, pastel cards | T-042 | |
-| menu9-sunday-r-1.png | 9-month Sunday retry: lavender linen, photo bottom, smooth peach, chickpea mash + bean strips, minced turkey | other | photoreal food magazine, pastel cards | T-042 | |
+| menu9-sunday-r-1.png | 9-month Sunday retry: lavender linen, photo bottom, smooth peach, chickpea mash + bean strips, minced turkey | other | photoreal food magazine, pastel cards | T-042 | yes |
