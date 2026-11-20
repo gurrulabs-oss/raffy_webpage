@@ -27,7 +27,7 @@ export function extractDays(lang, age = 6) {
   const manifest = JSON.parse(readFileSync(join(ROOT, 'seo/articles.manifest.json'), 'utf8'));
   const route = manifest.pages.find(p => p.id === `article_weekly_menu_${age}_months`).routes[lang];
   const html = readFileSync(join(ROOT, route), 'utf8');
-  const meals = { 6: 4, 7: 5, 8: 6 }[age];
+  const meals = { 6: 4, 7: 5, 8: 6, 10: 5 }[age];
   const secs = html.split('<section class="day-menu').slice(1);
   if (secs.length !== 7) throw new Error(`${route}: expected 7 day sections, found ${secs.length}`);
   return secs.map((sec, i) => {
@@ -54,14 +54,17 @@ if (process.argv.includes('--self-test')) {
   const mon = extractDays('en')[0];
   const got = JSON.stringify([mon.kcal, ...mon.meals.map(m => m.kcal)]);
   if (got !== '[630,400,95,35,100]') { console.error('self-test FAILED: ' + got); process.exit(1); }
-  for (const l of LANGS) for (const a of [6, 7, 8]) extractDays(l, a); // every locale must parse too
+  for (const l of LANGS) for (const a of [6, 7, 8, 10]) extractDays(l, a); // every locale must parse too
   const m7 = extractDays('en', 7)[0];
   const got7 = JSON.stringify([m7.kcal, ...m7.meals.map(m => m.kcal)]);
   if (got7 !== '[685,400,65,85,55,80]') { console.error('self-test FAILED (7 m): ' + got7); process.exit(1); }
   const mon8 = extractDays('en', 8)[0];
   const got8 = JSON.stringify([mon8.kcal, ...mon8.meals.map(m => m.kcal)]);
   if (got8 !== '[690,300,60,100,50,80,100]') { console.error('self-test FAILED (8 months): ' + got8); process.exit(1); }
-  console.log('self-test ok: en monday 630 kcal, cards 400/95/35/100 (6 m); 685 kcal 400/65/85/55/80 (7 m); 690 kcal 300/60/100/50/80/100 (8 m); all 6 locales parse at ages 6, 7, 8');
+  const mon10 = extractDays('en', 10)[0];
+  const got10 = JSON.stringify([mon10.kcal, ...mon10.meals.map(m => m.kcal)]);
+  if (got10 !== '[700,375,90,110,30,95]') { console.error('self-test FAILED (10 months): ' + got10); process.exit(1); }
+  console.log('self-test ok: en monday 630 kcal, cards 400/95/35/100 (6 m); 685 kcal 400/65/85/55/80 (7 m); 690 kcal 300/60/100/50/80/100 (8 m); 700 kcal 375/90/110/30/95 (10 m); all 6 locales parse at ages 6, 7, 8, 10');
   process.exit(0);
 }
 
@@ -135,7 +138,7 @@ try {
   }
   await view('day');
   await open('day.html');
-  for (const age of [6, 7, 8]) for (const lang of LANGS) {
+  for (const age of [6, 7, 8, 10]) for (const lang of LANGS) {
     const days = extractDays(lang, age);
     for (const data of days) {
       const name = `menu_${age}_months_${data.day}_${lang}`;
@@ -143,7 +146,7 @@ try {
       const { bad, small } = await run(`render(${JSON.stringify({ lang, age, ...data })})`);
       const tmp = join(TMP, name + '.png');
       await shot(tmp); webp(tmp, join(ROOT, `articles/menu_${age}_months`, name + '.webp')); count++;
-      if (age === 8 && small.length) console.log(`${name}: font < 17 px: ${small.join(', ')}`);
+      if ((age === 8 || age === 10) && small.length) console.log(`${name}: font < 17 px: ${small.join(', ')}`);
       if (bad.length) problems.push(`${name}: nofit: ${bad.join(', ')}`);
     }
   }
