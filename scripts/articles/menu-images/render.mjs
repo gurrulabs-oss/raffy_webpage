@@ -19,7 +19,7 @@ const PORT = 9347;
 const LANGS = ['en', 'es', 'fr', 'pt', 'it', 'de'];
 const DAYS = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
 
-// ---- extractor: one locale's menu page -> 7 days of {kcal, meals, tot} ----
+// ---- extractor: one locale's 6/7/8-month page -> 7 days of {kcal, meals, tot} ----
 const dec = s => s.replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ').replace(/&#39;|&apos;/g, "'").replace(/&quot;/g, '"')
   .replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&').replace(/[\s ]+/g, ' ').trim();
 
@@ -27,7 +27,7 @@ export function extractDays(lang, age = 6) {
   const manifest = JSON.parse(readFileSync(join(ROOT, 'seo/articles.manifest.json'), 'utf8'));
   const route = manifest.pages.find(p => p.id === `article_weekly_menu_${age}_months`).routes[lang];
   const html = readFileSync(join(ROOT, route), 'utf8');
-  const meals = age === 6 ? 4 : 6;
+  const meals = { 6: 4, 7: 5, 8: 6 }[age];
   const secs = html.split('<section class="day-menu').slice(1);
   if (secs.length !== 7) throw new Error(`${route}: expected 7 day sections, found ${secs.length}`);
   return secs.map((sec, i) => {
@@ -54,11 +54,14 @@ if (process.argv.includes('--self-test')) {
   const mon = extractDays('en')[0];
   const got = JSON.stringify([mon.kcal, ...mon.meals.map(m => m.kcal)]);
   if (got !== '[630,400,95,35,100]') { console.error('self-test FAILED: ' + got); process.exit(1); }
-  for (const l of LANGS) { extractDays(l); extractDays(l, 8); } // every locale must parse too
+  for (const l of LANGS) for (const a of [6, 7, 8]) extractDays(l, a); // every locale must parse too
+  const m7 = extractDays('en', 7)[0];
+  const got7 = JSON.stringify([m7.kcal, ...m7.meals.map(m => m.kcal)]);
+  if (got7 !== '[685,400,65,85,55,80]') { console.error('self-test FAILED (7 m): ' + got7); process.exit(1); }
   const mon8 = extractDays('en', 8)[0];
   const got8 = JSON.stringify([mon8.kcal, ...mon8.meals.map(m => m.kcal)]);
   if (got8 !== '[690,300,60,100,50,80,100]') { console.error('self-test FAILED (8 months): ' + got8); process.exit(1); }
-  console.log('self-test ok: en monday 630 kcal, cards 400/95/35/100; 8 months 690 kcal, cards 300/60/100/50/80/100; all 6 locales parse at ages 6 and 8');
+  console.log('self-test ok: en monday 630 kcal, cards 400/95/35/100 (6 m); 685 kcal 400/65/85/55/80 (7 m); 690 kcal 300/60/100/50/80/100 (8 m); all 6 locales parse at ages 6, 7, 8');
   process.exit(0);
 }
 
@@ -132,7 +135,7 @@ try {
   }
   await view('day');
   await open('day.html');
-  for (const age of [6, 8]) for (const lang of LANGS) {
+  for (const age of [6, 7, 8]) for (const lang of LANGS) {
     const days = extractDays(lang, age);
     for (const data of days) {
       const name = `menu_${age}_months_${data.day}_${lang}`;
