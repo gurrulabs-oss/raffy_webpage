@@ -50,7 +50,17 @@ const G={6:{
  thursday:{cls:'top',hd:36,boxes:[[46,262,435,127],[543,262,435,128],[46,662,435,98],[543,662,435,98],[46,1011,435,104],[543,1011,435,104]],t:[1360,20]},
  friday:{cls:'',hd:40,boxes:[[40,288,262,279],[538,288,207,279],[40,626,187,264],[538,626,193,264],[40,947,163,266],[538,947,237,266]],t:[1252,42]},
  saturday:{cls:'',hd:100,boxes:[[301,378,191,243],[794,378,196,243],[301,687,191,245],[794,687,196,245],[301,999,191,246],[794,999,196,246]],t:[1291,40]},
- sunday:{cls:'top',hd:36,boxes:[[36,236,455,97],[533,236,455,97],[36,601,455,98],[533,601,455,98],[36,964,455,97],[533,964,455,97]],t:[1325,20]}}};
+ sunday:{cls:'top',hd:36,boxes:[[36,236,455,97],[533,236,455,97],[36,601,455,98],[533,601,455,98],[36,964,455,97],[533,964,455,97]],t:[1325,20]}},
+// 9 months: same grid as 8 (6 cards + totals card), measured on src/menu_9_months_<day>.png. Mon/Wed/Fri/Sat: text beside the photo; Tue/Thu/Sun: text in the light band above the food.
+9:{
+ monday:{cls:'',hd:60,boxes:[[36,362,190,260],[538,362,185,260],[36,672,200,260],[538,672,185,260],[36,982,196,262],[538,982,200,262]],t:[1292,42]},
+ tuesday:{cls:'top',hd:40,boxes:[[34,252,440,138],[538,252,440,138],[34,638,440,128],[538,638,440,128],[34,1008,440,120],[538,1008,440,120]],t:[1396,22]},
+ wednesday:{cls:'',hd:60,boxes:[[274,288,216,280],[778,288,216,280],[276,624,214,270],[782,624,212,270],[276,950,214,270],[782,950,212,270]],t:[1274,42]},
+ thursday:{cls:'top',hd:36,boxes:[[36,250,450,125],[540,250,448,125],[36,658,450,108],[540,658,450,108],[36,1012,450,105],[540,1012,450,105]],t:[1368,34]},
+ friday:{cls:'',hd:50,boxes:[[34,305,215,280],[536,305,215,280],[34,635,205,260],[536,635,195,260],[34,943,200,262],[536,943,165,262]],t:[1252,40]},
+ saturday:{cls:'',hd:90,boxes:[[278,366,215,275],[778,366,218,275],[284,690,210,260],[794,690,204,260],[284,996,210,262],[794,996,204,262]],t:[1302,40]},
+ sunday:{cls:'top',hd:24,boxes:[[34,214,450,115],[538,214,450,115],[34,612,450,110],[538,612,450,110],[34,985,450,110],[538,985,450,110]],t:[1354,30]}},
+};
 // 7-month geometry (measured on src/menu_7_months_<day>.png): same fields; t = [x,y,w,h,col?]: totals text box inside the totals card
 // (col = totals is a half-width 6th card, stacked). Tue/Thu/Sun: text in the light top part of each card; Mon/Wed/Fri/Sat: text beside the photo.
 const G7={
@@ -91,7 +101,7 @@ await document.fonts.ready;
 hd.style.top=g.hd+'px'; h1.innerHTML=d.h(d.d[day]); sub.textContent=d.s(age); k.textContent='~'+data.kcal+' kcal';
 // Wed 7 m: semi-transparent dark smudge right of card 5 -> cover with the page tone
 const pa=m7&&g.patch;patch.style.display=pa?'block':'none';if(pa)Object.assign(patch.style,{left:pa[0]+'px',top:pa[1]+'px',width:pa[2]+'px',height:pa[3]+'px',background:g.bg});
-const wide=g.cls==='top'&&(age===8||g.wide), stacked=g.cls!=='top'||wide; // 8 months: the text band above the food is only ~85-125 px tall, so label+text sit left of kcal+macros
+const wide=g.cls==='top'&&(age===8||age===9||g.wide), stacked=g.cls!=='top'||wide; // 8 months: the text band above the food is only ~85-125 px tall, so label+text sit left of kcal+macros
 cards.innerHTML=g.boxes.map(([x,y,w,h],i)=>{const m=data.meals[i];return `<div class="c${wide?' w':''}" style="left:${x}px;top:${y}px;width:${w}px;height:${h}px"><h2>${m.label}</h2><p>${keep(m.text)}</p><b>~${m.kcal} kcal</b><small>${m.macros.map((v,j)=>d.m[j]+' '+v+' g').join(stacked?'<br>':' · ')}</small></div>`;}).join('');
 if(m7){const [x,y,w,h,col,tight]=g.t;t.className='t tb'+(col?' col':'')+(tight?' tight':'');Object.assign(t.style,{left:x+'px',top:y+'px',width:w+'px',height:h+'px',right:'auto',bottom:'auto'});}
 else{t.className='t';Object.assign(t.style,{left:'',width:'',height:'',right:'',top:g.t[0]+'px',bottom:g.t[1]+'px'});}
