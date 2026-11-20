@@ -80,9 +80,18 @@ const G10={
  friday:{cls:'',hd:50,boxes:[[30,305,215,300],[530,305,195,300],[30,648,200,300],[530,648,195,300],[30,990,190,280]],t:[40,1312,940,190],bg:'#fbdb91'},
  saturday:{cls:'',hd:90,boxes:[[302,415,196,315],[802,415,200,315],[302,780,196,315],[802,780,200,315],[302,1148,196,315]],t:[530,1146,470,315,1],bg:'#f2eceb'},
  sunday:{cls:'top',wide:1,hd:24,boxes:[[30,212,462,148],[535,212,455,148],[30,644,462,145],[535,644,455,145],[30,1048,462,122]],t:[40,1398,940,112,0,1],bg:'#dfd7e5'}};
+// 11-month geometry (measured on src/menu_11_months_<day>.png): same fields as G10. Tue/Thu/Sun/Fri/Wed/Sat: the photo has 5 meal cards; where a 6th empty card exists it holds the totals (col).
+const G11={
+ monday:{cls:'',hd:70,boxes:[[40,375,200,285],[535,375,185,285],[40,712,190,280],[535,712,175,280],[40,1038,190,260]],t:[34,1340,956,160],bg:'#f1e9dd'},
+ tuesday:{cls:'top',wide:1,hd:28,boxes:[[40,222,450,155],[536,222,450,155],[40,676,450,130],[536,676,450,130],[40,1102,450,130]],t:[536,1100,450,390,1,1],bg:'#d4dcc9'},
+ wednesday:{cls:'',hd:50,boxes:[[290,275,205,305],[790,275,205,305],[292,625,200,300],[796,625,200,300],[292,968,200,285]],t:[30,1300,950,190],bg:'#f6d9d9'},
+ thursday:{cls:'top',wide:1,hd:34,boxes:[[40,244,450,180],[536,244,450,180],[40,710,450,130],[536,710,450,130],[40,1120,450,130]],t:[536,1120,450,370,1,1],bg:'#d9e6f3'},
+ friday:{cls:'',hd:50,boxes:[[34,335,262,325],[535,335,175,325],[34,712,170,330],[535,712,175,330],[34,1092,160,330]],t:[538,1092,470,330,1],bg:'#f6e4b0'},
+ saturday:{cls:'',hd:90,boxes:[[290,320,205,295],[792,320,205,295],[290,658,205,295],[792,658,205,295],[326,1000,665,270]],t:[34,1318,950,170],bg:'#efe9e5'},
+ sunday:{cls:'top',wide:1,hd:24,boxes:[[34,280,450,135],[536,280,450,135],[34,708,450,130],[536,708,450,130],[34,1124,450,130]],t:[536,1124,450,365,1,1],bg:'#dcd6e5'}};
 // Per locale: day names, title template, subtitle, macro names, "Daily totals" label (kept from the approved design).
 const L={
-en:{d:{monday:'Monday',tuesday:'Tuesday',wednesday:'Wednesday',thursday:'Thursday',friday:'Friday',saturday:'Saturday',sunday:'Sunday'},h:d=>`${d} <span>Menu</span>`,s:a=>`— for a ${a}-month-old baby —`,m:['Carbs','Protein','Fat'],tt:'Daily totals'},
+en:{d:{monday:'Monday',tuesday:'Tuesday',wednesday:'Wednesday',thursday:'Thursday',friday:'Friday',saturday:'Saturday',sunday:'Sunday'},h:d=>`${d} <span>Menu</span>`,s:a=>`— for ${a==11?"an":"a"} ${a}-month-old baby —`,m:['Carbs','Protein','Fat'],tt:'Daily totals'},
 es:{d:{monday:'lunes',tuesday:'martes',wednesday:'miércoles',thursday:'jueves',friday:'viernes',saturday:'sábado',sunday:'domingo'},h:d=>`Menú del <span>${d}</span>`,s:a=>`— para un bebé de ${a} meses —`,m:['Carbohidratos','Proteínas','Grasas'],tt:'Totales del día'},
 fr:{d:{monday:'lundi',tuesday:'mardi',wednesday:'mercredi',thursday:'jeudi',friday:'vendredi',saturday:'samedi',sunday:'dimanche'},h:d=>`Menu du <span>${d}</span>`,s:a=>`— pour un bébé de ${a} mois —`,m:['Glucides','Protéines','Lipides'],tt:'Totaux de la journée'},
 pt:{d:{monday:'segunda',tuesday:'terça',wednesday:'quarta',thursday:'quinta',friday:'sexta',saturday:'sábado',sunday:'domingo'},h:d=>`Cardápio de <span>${d}</span>`,s:a=>`— para um bebê de ${a} meses —`,m:['Carboidratos','Proteínas','Gorduras'],tt:'Totais do dia'},
@@ -92,7 +101,7 @@ de:{d:{monday:'Montag',tuesday:'Dienstag',wednesday:'Mittwoch',thursday:'Donners
 // {lang, age, day, kcal, meals:[{label,text,kcal,macros:[c,p,f]}], tot:['Carbs 81 g (50%)',...]}. Returns {bad:[labels that do not fit]}.
 const keep=s=>s.replace(/ (?=(g|ml)\b)/g,' ').replace(/ × /g,' × ').replace(/ :/g,' :'); // never split "60 g" or "4 × 150"
 window.render=async data=>{
-const {lang,day,age}=data, m7=age===7||age===10, g=(age===7?G7:age===10?G10:G[age])[day], d=L[lang];
+const {lang,day,age}=data, m7=age===7||age===10||age===11, g=(age===7?G7:age===10?G10:age===11?G11:G[age])[day], d=L[lang];
 document.documentElement.lang=lang;
 const bg=`src/menu_${age}_months_${day}.png`;
 await new Promise((ok,no)=>{const im=new Image();im.onload=ok;im.onerror=()=>no(new Error('missing '+bg));im.src=bg;});
