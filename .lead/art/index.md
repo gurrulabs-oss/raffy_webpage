@@ -41,16 +41,16 @@
 | menu9-sunday-1.png | 9-month Sunday: lavender, photo bottom; lunch with round peas, turkey in little balls | other | photoreal food magazine, pastel cards | T-042 | |
 | menu9-sunday-r-1.png | 9-month Sunday retry: lavender linen, photo bottom, smooth peach, chickpea mash + bean strips, minced turkey | other | photoreal food magazine, pastel cards | T-042 | yes |
 | menu12-monday-1.png | 12-month Monday: overhead paper + linen + board, photo right, full-width totals; lentils look like whole round peas | other | photoreal food magazine, pastel cards | T-045 | |
-| menu12-monday-r-1.png | 12-month Monday retry: overhead linen + board, photo right, smooth lentil-rice-carrot stew, crushed peas, full-width totals | other | photoreal food magazine, pastel cards | T-045 | |
+| menu12-monday-r-1.png | 12-month Monday retry: overhead linen + board, photo right, smooth lentil-rice-carrot stew, crushed peas, full-width totals | other | photoreal food magazine, pastel cards | T-045 | yes |
 | menu12-tuesday-1.png | 12-month Tuesday: sage linen ~60°, photo bottom; dinner shows whole black beans | other | photoreal food magazine, pastel cards | T-045 | |
-| menu12-tuesday-r-1.png | 12-month Tuesday retry: sage linen ~60°, photo bottom, black-bean mash + tomato, full-width totals | other | photoreal food magazine, pastel cards | T-045 | |
+| menu12-tuesday-r-1.png | 12-month Tuesday retry: sage linen ~60°, photo bottom, black-bean mash + tomato, full-width totals | other | photoreal food magazine, pastel cards | T-045 | yes |
 | menu12-wednesday-1.png | 12-month Wednesday: blush pink, photo left; dinner shows whole chickpeas | other | photoreal food magazine, pastel cards | T-045 | |
-| menu12-wednesday-r-1.png | 12-month Wednesday retry: blush pink, photo left, chickpea mash with couscous + carrot, full-width totals | other | photoreal food magazine, pastel cards | T-045 | |
+| menu12-wednesday-r-1.png | 12-month Wednesday retry: blush pink, photo left, chickpea mash with couscous + carrot, full-width totals | other | photoreal food magazine, pastel cards | T-045 | yes |
 | menu12-thursday-1.png | 12-month Thursday: sky-blue linen, photo bottom; dinner shows whole white beans | other | photoreal food magazine, pastel cards | T-045 | |
-| menu12-thursday-r-1.png | 12-month Thursday retry: blue linen + birch, photo bottom, halved meatballs, white-bean mash + rice + spinach, full-width totals | other | photoreal food magazine, pastel cards | T-045 | |
-| menu12-friday-1.png | 12-month Friday: butter-yellow, sunlight shadows, photo right, thin PB smear, halved blueberries, full-width totals | other | photoreal food magazine, pastel cards | T-045 | |
-| menu12-saturday-1.png | 12-month Saturday: whitewashed wood, sage napkin, photo left, frittata wedges, cheese toast, full-width totals | other | photoreal food magazine, pastel cards | T-045 | |
-| menu12-sunday-1.png | 12-month Sunday: lavender linen, photo bottom, peach slices, chickpea-spinach mash, full-width totals | other | photoreal food magazine, pastel cards | T-045 | |
+| menu12-thursday-r-1.png | 12-month Thursday retry: blue linen + birch, photo bottom, halved meatballs, white-bean mash + rice + spinach, full-width totals | other | photoreal food magazine, pastel cards | T-045 | yes |
+| menu12-friday-1.png | 12-month Friday: butter-yellow, sunlight shadows, photo right, thin PB smear, halved blueberries, full-width totals | other | photoreal food magazine, pastel cards | T-045 | yes |
+| menu12-saturday-1.png | 12-month Saturday: whitewashed wood, sage napkin, photo left, frittata wedges, cheese toast, full-width totals | other | photoreal food magazine, pastel cards | T-045 | yes |
+| menu12-sunday-1.png | 12-month Sunday: lavender linen, photo bottom, peach slices, chickpea-spinach mash, full-width totals | other | photoreal food magazine, pastel cards | T-045 | yes |
 | menu11-monday-1.png | 11-month Monday: overhead paper + linen + board, photo right, full-width totals; red lentils look like round beads | other | photoreal food magazine, pastel cards | T-044 | |
 | menu11-monday-r-1.png | 11-month Monday retry: overhead linen + oak board, photo right, mushy lentil pasta, full-width totals | other | photoreal food magazine, pastel cards | T-044 | yes |
 | menu11-tuesday-1.png | 11-month Tuesday: sage linen ~60°, neat 2x3 grid, photo bottom, crushed peas, 6th card empty for totals | other | photoreal food magazine, pastel cards | T-044 | yes |
