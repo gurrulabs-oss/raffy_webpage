@@ -17,11 +17,13 @@ body{position:relative;background:0 0/1024px 1536px no-repeat;font-family:"Iowan
 .t h2{font-size:21px;font-weight:600;letter-spacing:2px;color:#9a6e52;text-transform:uppercase;width:180px;line-height:1.3}
 .t .kc{font-size:40px;white-space:nowrap}
 .t ul{list-style:none;font-size:22px;line-height:1.55;padding:0}
+.t.tb{height:auto;gap:36px;padding:0 6px}.t.tb ul{font-size:20px;line-height:1.4}.t.tb.col{flex-direction:column;align-items:flex-start;justify-content:center;gap:8px}.t.tb.tight ul{font-size:18px;line-height:1.3}.t.tb.tight .kc{font-size:36px}
 .c.nofit{outline:4px dashed #e5484d;outline-offset:4px}
 #flag{position:absolute;left:0;right:0;bottom:0;background:#e5484d;color:#fff;font:700 24px/1.3 system-ui,sans-serif;padding:14px 24px}
 </style></head><body>
 <div class="hd" id="hd"><h1 id="h1"></h1><p id="sub"></p><p class="k" id="k"></p></div>
 <div id="cards"></div>
+<div id="patch" style="position:absolute;display:none"></div>
 <div class="t" id="t"></div>
 <div id="flag" hidden></div>
 <script>
@@ -38,6 +40,16 @@ const G={
  // photo left half, text right half
  saturday:{cls:'',hd:70,boxes:[[274,326,222,418],[762,326,226,418],[274,786,222,404],[762,786,226,404]],t:[1290,126]},
  sunday:{cls:'top',hd:24,boxes:[[34,244,458,162],[534,244,458,230],[34,778,458,222],[534,778,458,218]],t:[1330,96]}};
+// 7-month geometry (measured on src/menu_7_months_<day>.png): same fields; t = [x,y,w,h,col?]: totals text box inside the totals card
+// (col = totals is a half-width 6th card, stacked). Tue/Thu/Sun: text in the light top part of each card; Mon/Wed/Fri/Sat: text beside the photo.
+const G7={
+ monday:{cls:'',hd:70,boxes:[[38,304,214,292],[538,304,200,292],[38,646,206,296],[538,646,206,296],[38,990,256,236]],t:[48,1266,910,205],bg:'#f3eee6'},
+ tuesday:{cls:'top',hd:24,boxes:[[38,262,450,150],[538,262,450,150],[38,703,450,148],[538,703,450,148],[38,1127,450,148]],t:[546,1135,440,365,1],bg:'#e5ece2'},
+ wednesday:{cls:'',hd:50,boxes:[[272,284,222,304],[780,284,216,304],[272,632,222,296],[780,632,216,296],[272,967,222,292]],t:[48,1302,910,190],bg:'#f3e6e6',patch:[512,944,512,336]},
+ thursday:{cls:'top',hd:34,boxes:[[44,250,448,164],[540,250,448,164],[44,775,448,150],[540,775,448,150],[338,1186,152,320]],t:[544,1185,440,325,1],bg:'#e2ebf2'},
+ friday:{cls:'',hd:50,boxes:[[30,300,284,280],[536,300,172,280],[30,618,180,286],[536,618,174,286],[30,945,284,272]],t:[48,1264,910,220],bg:'#f6eed6'},
+ saturday:{cls:'',hd:18,boxes:[[270,305,226,306],[786,305,212,306],[292,664,204,288],[786,664,212,288],[326,1002,670,256]],t:[48,1306,910,196],bg:'#eef0eb'},
+ sunday:{cls:'top',hd:24,boxes:[[338,243,150,350],[540,243,448,150],[36,653,448,138],[540,653,448,138],[338,1063,150,298]],t:[48,1405,910,85,0,1],bg:'#ebe8ef'}};
 // Per locale: day names, title template, subtitle, macro names, "Daily totals" label (kept from the approved design).
 const L={
 en:{d:{monday:'Monday',tuesday:'Tuesday',wednesday:'Wednesday',thursday:'Thursday',friday:'Friday',saturday:'Saturday',sunday:'Sunday'},h:d=>`${d} <span>Menu</span>`,s:'— for a 6-month-old baby —',m:['Carbs','Protein','Fat'],tt:'Daily totals'},
@@ -50,16 +62,19 @@ de:{d:{monday:'Montag',tuesday:'Dienstag',wednesday:'Mittwoch',thursday:'Donners
 // {lang, day, kcal, meals:[{label,text,kcal,macros:[c,p,f]}], tot:['Carbs 81 g (50%)',...]}. Returns {bad:[labels that do not fit]}.
 const keep=s=>s.replace(/ (?=(g|ml)\b)/g,' ').replace(/ × /g,' × ').replace(/ :/g,' :'); // never split "60 g" or "4 × 150"
 window.render=async data=>{
-const {lang,day}=data, g=G[day], d=L[lang];
+const {lang,day,age=6}=data, g=(age===7?G7:G)[day], d=L[lang];
 document.documentElement.lang=lang;
-const bg=`src/menu_6_months_${day}.png`;
+const bg=`src/menu_${age}_months_${day}.png`;
 await new Promise((ok,no)=>{const im=new Image();im.onload=ok;im.onerror=()=>no(new Error('missing '+bg));im.src=bg;});
-document.body.style.backgroundImage=`url(${bg})`; document.body.className=g.cls;
+document.body.style.backgroundImage=`url(${bg})`; document.body.className=g.cls; document.body.style.backgroundColor=age===7?g.bg:''; // 7 m: some PNGs have alpha, keep a pale base
 await document.fonts.ready;
-hd.style.top=g.hd+'px'; h1.innerHTML=d.h(d.d[day]); sub.textContent=d.s; k.textContent='~'+data.kcal+' kcal';
+hd.style.top=g.hd+'px'; h1.innerHTML=d.h(d.d[day]); sub.textContent=d.s.replace('6',age); k.textContent='~'+data.kcal+' kcal';
+// Wed 7 m: semi-transparent dark smudge right of card 5 -> cover with the page tone
+const pa=age===7&&g.patch;patch.style.display=pa?'block':'none';if(pa)Object.assign(patch.style,{left:pa[0]+'px',top:pa[1]+'px',width:pa[2]+'px',height:pa[3]+'px',background:g.bg});
 const stacked=g.cls!=='top';
 cards.innerHTML=g.boxes.map(([x,y,w,h],i)=>{const m=data.meals[i];return `<div class="c" style="left:${x}px;top:${y}px;width:${w}px;height:${h}px"><h2>${m.label}</h2><p>${keep(m.text)}</p><b>~${m.kcal} kcal</b><small>${m.macros.map((v,j)=>d.m[j]+' '+v+' g').join(stacked?'<br>':' · ')}</small></div>`;}).join('');
-t.style.top=g.t[0]+'px'; t.style.bottom=g.t[1]+'px';
+if(age===7){const [x,y,w,h,col,tight]=g.t;t.className='t tb'+(col?' col':'')+(tight?' tight':'');Object.assign(t.style,{left:x+'px',top:y+'px',width:w+'px',height:h+'px',right:'auto',bottom:'auto'});}
+else{t.className='t';Object.assign(t.style,{left:'',width:'',height:'',right:'',top:g.t[0]+'px',bottom:g.t[1]+'px'});}
 t.innerHTML=`<h2>${d.tt}</h2><div class="kc">~${data.kcal} kcal</div><ul>${data.tot.map(v=>`<li>${v}</li>`).join('')}</ul>`;
 // Fit rule: shrink a card's text down to 15 px (from 21); if it still overflows, mark it and send the image back.
 const bad=[]; flag.hidden=true;
