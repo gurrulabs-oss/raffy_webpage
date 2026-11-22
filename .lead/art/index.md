@@ -61,3 +61,5 @@
 | menu11-friday-r-1.png | 11-month Friday retry: butter-yellow, photo right, 2x3 grid, 6th card empty for totals, flat peanut-butter smear | other | photoreal food magazine, pastel cards | T-044 | yes |
 | menu11-saturday-1.png | 11-month Saturday: whitewashed wood, sage napkin, photo left, meal 5 wide + full-width totals | other | photoreal food magazine, pastel cards | T-044 | yes |
 | menu11-sunday-1.png | 11-month Sunday: lavender linen, photo bottom, flat peach pieces, 6th card empty for totals | other | photoreal food magazine, pastel cards | T-044 | yes |
+| palabras-bebe-a-1.png | Toddler on cream rug points at knitted bunny, mid-word; mother lying on floor face to face (side view) | scene | photoreal warm lifestyle (.lead/style.md) | T-062 cover candidate | |
+| palabras-bebe-b-1.png | Toddler on mother's lap points at dog in animal board book, mouth open saying the word; mother's face partly in frame | scene | photoreal warm lifestyle (.lead/style.md) | T-062 cover candidate | |
