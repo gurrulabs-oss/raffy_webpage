@@ -37,8 +37,9 @@ execution, since a worker pays a whole second context.
    Spawn `reviewer` only when "Spending" in the owner's section calls for one. Send fixes back to workers. Max 3 rounds.
 4. Commit on the branch with a clear message. Then copy every page the ticket creates or changes (at least
    the es version of a new article) to `.lead/designs/T-NNN/` with the CSS/images it loads (paths made local,
-   `script.js`/`article.js` removed so no analytics fire) and embed it under `## Design` with
-   `![label](.lead/designs/T-NNN/<file>.html)` alone on a line (owner wants it embedded, not a ▶ Open link).
+   `script.js`/`article.js` removed so no analytics fire) and put under `## Design` both a
+   `[▶ Open](.lead/designs/T-NNN/<file>.html)` link and the embed `![label](.lead/designs/T-NNN/<file>.html)`
+   alone on a line (owner wants both, like design mockups).
    Required even without a design step; T-062 shipped without it and the owner had
    nothing to open. The Technical plan lists it as part of the last subtask.
 5. Write the **Summary** section: what changed, what was verified (with command output excerpts),
