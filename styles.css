@@ -419,6 +419,18 @@ body:has(main > .hero:first-child, main > .tool-hero:first-child, main > .articl
 .prose tr:last-child td { border-bottom: 0; }
 .prose tbody tr:nth-child(even) td { background: #fafbff; }
 .table-wrap { overflow-x: auto; }
+@media (max-width: 720px) {
+  /* Age table (words-by-age article): one card per row on mobile */
+  .table-cards table, .table-cards tbody, .table-cards tr, .table-cards td { display: block; width: auto; }
+  .table-cards table { border: 0; border-radius: 0; overflow: visible; }
+  .table-cards thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .table-cards tr { border: 1px solid var(--line); border-radius: var(--r-md); overflow: hidden; }
+  .table-cards tr + tr { margin-top: var(--s3); }
+  .table-cards tbody tr:nth-child(even) td, .table-cards td { background: none; padding: .5rem 1rem; border-bottom: 0; }
+  .table-cards tbody tr td:first-child { background: var(--mint-100); padding: .65rem 1rem; font-size: var(--fs-md); }
+  .table-cards td + td::before { content: attr(data-label); display: block; font-weight: 800; color: var(--ink); }
+  .table-cards td:last-child { padding-bottom: .9rem; }
+}
 
 /* Callouts: light tints only */
 .callout { border-radius: var(--r-md); padding: var(--s5); background: var(--mint-50); border: 1px solid var(--mint-300); font-size: var(--fs-md); line-height: 1.6; color: var(--ink-2); }

@@ -361,6 +361,18 @@
       }
     },
     {
+      "id": "article_words_by_age",
+      "type": "article",
+      "routes": {
+        "en": "/en/articles/baby-words-by-age.html",
+        "es": "/es/articulos/palabras-bebe-por-edad.html",
+        "fr": "/fr/articles/mots-bebe-par-age.html",
+        "pt": "/pt/artigos/palavras-bebe-por-idade.html",
+        "it": "/it/articoli/parole-bambino-per-eta.html",
+        "de": "/de/ratgeber/sprachentwicklung-baby-woerter-alter.html"
+      }
+    },
+    {
       "id": "article_parenting_confidence",
       "type": "article",
       "routes": {
