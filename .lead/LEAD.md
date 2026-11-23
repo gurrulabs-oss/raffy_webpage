@@ -35,7 +35,11 @@ execution, since a worker pays a whole second context.
    brief; workers do not see the ticket or chat. Run independent subtasks in parallel.
 3. Verify: use the `verify` skill, review the diff against every acceptance criterion.
    Spawn `reviewer` only when "Spending" in the owner's section calls for one. Send fixes back to workers. Max 3 rounds.
-4. Commit on the branch with a clear message.
+4. Commit on the branch with a clear message. Then copy every page the ticket creates or changes (at least
+   the es version of a new article) to `.lead/designs/T-NNN/` with the CSS/images it loads (paths made local,
+   `script.js`/`article.js` removed so no analytics fire) and put `[▶ Open](.lead/designs/T-NNN/<file>.html)`
+   above `## Screenshots`. Required even without a design step; T-062 shipped without it and the owner had
+   nothing to open. The Technical plan lists it as part of the last subtask.
 5. Write the **Summary** section: what changed, what was verified (with command output excerpts),
    what was NOT verified, follow-ups.
 6. If blocked on a decision only the owner can make: write the question under `## Blocked` in the ticket,
