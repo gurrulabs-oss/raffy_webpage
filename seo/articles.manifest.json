@@ -37,6 +37,18 @@
       }
     },
     {
+      "id": "article_crib_to_bed",
+      "type": "article",
+      "routes": {
+        "en": "/en/articles/crib-to-bed-transition-age.html",
+        "es": "/es/articulos/cuando-pasar-bebe-cuna-a-cama.html",
+        "fr": "/fr/articles/passer-lit-bebe-au-grand-lit.html",
+        "pt": "/pt/artigos/quando-tirar-bebe-do-berco.html",
+        "it": "/it/articoli/quando-passare-dal-lettino-al-letto.html",
+        "de": "/de/ratgeber/vom-gitterbett-ins-kinderbett.html"
+      }
+    },
+    {
       "id": "article_solids_guide",
       "type": "article",
       "routes": {
