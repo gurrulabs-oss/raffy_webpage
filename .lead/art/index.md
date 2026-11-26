@@ -63,3 +63,5 @@
 | menu11-sunday-1.png | 11-month Sunday: lavender linen, photo bottom, flat peach pieces, 6th card empty for totals | other | photoreal food magazine, pastel cards | T-044 | yes |
 | palabras-bebe-a-1.png | Toddler on cream rug points at knitted bunny, mid-word; mother lying on floor face to face (side view) | scene | photoreal warm lifestyle (.lead/style.md) | T-062 cover candidate | yes |
 | palabras-bebe-b-1.png | Toddler on mother's lap points at dog in animal board book, mouth open saying the word; mother's face partly in frame | scene | photoreal warm lifestyle (.lead/style.md) | T-062 cover candidate | |
+| cuna-cama-a-1.png | Evening, lamp: parent (face out of frame) tucks smiling curly-haired toddler into low oak toddler bed with rail, knitted blanket, bunny | scene | photoreal warm lifestyle (.lead/style.md) | T-067 cover candidate | |
+| cuna-cama-b-1.png | Daylight room: empty oak crib left, low Montessori bed with rail right; toddler sits on new bed, mother crouches from behind pointing at it | scene | photoreal warm lifestyle (.lead/style.md) | T-067 cover candidate | |
