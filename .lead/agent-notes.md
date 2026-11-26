@@ -46,7 +46,7 @@ Learned gotchas, terse. Trim via a "Refresh knowledge" ticket.
 - `.lead/scratch/` gitignored, symlinked in worktrees (worker writes blocked): durable harnesses in `scripts/<area>/`, temp in `/tmp/t0NN-*`. `.lead/attachments/`, `.lead/designs/` gitignored.
 
 ## Research sources
-- Unfetchable/fake-200: cdc.gov, sbp.com.br, PubMed (use Europe PMC REST by PMID), aeped.es/vacunasaep.org (any slug 200; real `www.aeped.es/enfamilia/salud-en-familia/<slug>`), epicentro.iss.it, salute.gov.it, sante.gouv.fr, Reddit, Telefono Amico. Check bodies, not status. WHO pt often 404.
+- Unfetchable/fake-200: cdc.gov, sbp.com.br, PubMed (use Europe PMC REST by PMID), aeped.es/vacunasaep.org (any slug 200; real `www.aeped.es/enfamilia/salud-en-familia/<slug>`), epicentro.iss.it, salute.gov.it, sante.gouv.fr, Reddit, Telefono Amico. Check bodies, not status. WHO pt often 404. healthychildren.org/cpsc.gov block curl (tiny body/403): use WebFetch. nhs.uk has no cot-to-bed page (used cambspborochildrenshealth.nhs.uk).
 - Play listing: `curl -sL '…details?id=com.gurrulabs.raffy&hl=en&gl=US'` (WebFetch truncates; "4.8 star" is another app).
 
 ## Headless QA
