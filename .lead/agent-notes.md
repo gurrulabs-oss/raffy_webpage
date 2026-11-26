@@ -31,7 +31,7 @@ Learned gotchas, terse. Trim via a "Refresh knowledge" ticket.
 - Growth guards: `npm run growth:audit` (network first run), `node scripts/growth/same-outputs.mjs --base main`, `node scripts/growth/check-range-level.mjs`. Regenerate `tools/who-lms-data.json` only via `npm run growth:build-lms` and bump its `?v=N` (force-cache); edge rows need whole-month `ageMonths`. WHO: restricted z beyond ±3 weight-for-age only; length table if age < 731 d.
 - Date picker (`tools/date-picker.js`) moves `name` to hidden ISO input: scripts set `input[name=birth_date]`, then submit `[data-percentile-form]`. Its age line and the calculator share 30.4375 days/month. de inputs `type=text inputmode=decimal`; tool-cluster pages stay `type=number`.
 - Tool pages carry `section.tool-explain` + JSON-LD copied from `tool-cluster.js`/`percentile-calculator.js`: rule changes need text updates in all locales. Weight-loss calc `tools/newborn-weight-loss.js` (`[data-wl-root]`): article day-table rows must match its `rows`.
-- es/fr/pt planner pages and calculator fr/pt strings are unaccented (pre-existing). fr uses U+00A0 before `: ; ? !` and inside « ».
+- es/fr/pt planner pages and calculator fr/pt strings are unaccented (pre-existing).
 
 ## Articles
 - Articles need `.upd` date, `answer-box#in-short`, `section.sources` + `p.checked` last in `.prose` (not app guides), FAQPage JSON-LD = visible FAQ. Read times only via `npm run articles:readtime` (`-- --check`); word-count change touches ~10 related files.
@@ -46,7 +46,8 @@ Learned gotchas, terse. Trim via a "Refresh knowledge" ticket.
 - `.lead/scratch/` gitignored, symlinked in worktrees (worker writes blocked): durable harnesses in `scripts/<area>/`, temp in `/tmp/t0NN-*`. `.lead/attachments/`, `.lead/designs/` gitignored.
 
 ## Research sources
-- Unfetchable/fake-200: cdc.gov, sbp.com.br, PubMed (use Europe PMC REST by PMID), aeped.es/vacunasaep.org (any slug 200; real `www.aeped.es/enfamilia/salud-en-familia/<slug>`), epicentro.iss.it, salute.gov.it, sante.gouv.fr, Reddit, Telefono Amico. Check bodies, not status. WHO pt often 404.
+- Unfetchable/fake-200: cdc.gov, sbp.com.br, PubMed (use Europe PMC REST by PMID), aeped.es/vacunasaep.org (any slug 200; real `www.aeped.es/enfamilia/salud-en-familia/<slug>`), epicentro.iss.it, salute.gov.it, sante.gouv.fr, Reddit, Telefono Amico. Check bodies, not status. WHO pt often 404. healthychildren.org/cpsc.gov block curl (tiny body/403): use WebFetch. nhs.uk has no cot-to-bed page (used cambspborochildrenshealth.nhs.uk).
+- `reviewer` agent has no WebFetch: Red Nose (rednose.org.au), cpsc.gov, anchorit.gov fail via curl, so it reports facts from them as untraceable; the worker (WebFetch) can quote them. Brief accordingly.
 - Play listing: `curl -sL '…details?id=com.gurrulabs.raffy&hl=en&gl=US'` (WebFetch truncates; "4.8 star" is another app).
 
 ## Headless QA
